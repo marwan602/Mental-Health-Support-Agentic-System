@@ -1,0 +1,591 @@
+{
+  "therapy_id": "BA",
+  "therapy_name": "Behavioral Activation",
+  "interventions": [
+    {
+      "intervention_id": "ba_case_conceptualization_and_orientation",
+      "name": "Collaborative BA Case Conceptualization and Orientation to the BA Treatment Model",
+      "description": "Collaborative BA Case Conceptualization and Orientation to the BA Treatment Model involves introducing the depressed client to the behavioral model of depression and change while collaboratively constructing an individualized formulation of how contextual life changes and secondary coping behaviors maintain their depressive symptoms. Grounded in the first two core principles of Behavioral Activation—that changing what people do is the key to changing how they feel, and that life changes can lead to depression while short-term coping strategies inadvertently maintain it over time—the clinician presents a contextual, non-blaming rationale for treatment. Using a visual diagram (such as Figure 3.1 / Appendix 1a, 'The Behavioral Activation Depression Model'), the therapist and client map out how specific external or internal life events, biological vulnerabilities, or ongoing daily hassles have resulted in 'primary problems' characterized by reduced access to positive reinforcement and/or increased environmental punishment. The clinician validates that feeling sad, lonely, fatigued, or hopeless makes complete sense within an unrewarding or stressful context, explicitly communicating that depression is not the client's fault. Together, they examine how the client's natural reactions to these feelings—such as pulling back from formerly pleasurable activities, isolating, sleeping excessively, or engaging in escape, avoidance, and ruminative behaviors—provide temporary relief from distress but function as 'secondary problems' that further limit rewards, compound life stressors, and perpetuate a downward spiral. Throughout this process, the therapist treats the conceptualization as a collaborative, testable hypothesis rather than a rigid pronouncement, uses the client's own language to describe symptoms, solicits feedback on whether the model fits the client's lived experience, and directly addresses common client questions or doubts (such as concerns about biological/chemical imbalances, antidepressant medication, cognitive therapy differences, or whether the model seems overly simplistic or impossible when exhausted). When clients feel ambivalent about behavioral change despite wanting symptom relief, the therapist integrates Motivational Interviewing strategies—expressing empathy, developing discrepancy, avoiding argumentation, rolling with resistance, and supporting self-efficacy—to build readiness for 'outside-in' activation.",
+      "therapeutic_purpose": "To demystify therapy, validate the client's depressive experience as an understandable response to contextual shifts in reinforcement and punishment, establish a shared language and nonjudgmental collaborative alliance, and build a compelling individualized rationale for targeting secondary avoidance and withdrawal patterns through behavioral activation.",
+      "when_to_use": [
+        "When orienting a depressed client to the rationale, structure, and expectations of Behavioral Activation.",
+        "When a client blames themselves or feels defective for experiencing depressive symptoms, lethargy, or withdrawal following major life stressors, losses, or ongoing daily hassles.",
+        "When a client holds preconceptions or doubts about behavioral treatment, such as believing depression is purely a chemical imbalance, feeling that activation is impossible while exhausted, or viewing BA as overly simplistic.",
+        "When returning to the treatment model later in therapy to re-anchor activation targets, understand stuck points, or renew therapist empathy when progress is slow."
+      ],
+      "target_patterns": [
+        "Primary contextual problems involving loss of response-contingent positive reinforcement or heightened environmental punishment following life changes (e.g., divorce, job loss, financial distress, interpersonal rejection, role transitions, or chronic daily hassles).",
+        "Secondary coping problems—such as social withdrawal, staying in bed, passivity, escape/avoidance, and rumination—that temporarily dull or relieve emotional pain but worsen stressors and restrict access to natural rewards over time.",
+        "Self-blame and demoralization regarding depressive symptoms and reduced functioning.",
+        "Ambivalence about committing to behavioral change when energy and motivation are depleted."
+      ],
+      "prerequisites": [
+        "Initial clinical interview data regarding the client's presenting depressive symptoms, recent and historical life events, and current daily functioning.",
+        "A warm, genuine, empathic, and nonjudgmental therapeutic stance that invites the client to collaborate as the expert on their own experience."
+      ],
+      "possible_questions": [
+        "What happened in the client's context that triggered or made likely the conditions for depression?",
+        "Use this form to keep track of how changes in life (1) impact how rewarding or stressful life has become (2). How do you react to this (3)? What do you do to cope (4)? What impact do these behaviors have on the rewards and stressors in your life (5)?",
+        "What if we treated this like an experiment? We can work together for a period of time and see if this approach works for you.",
+        "This seems to fit exactly in what we were discussing about the BA model. What do you think?",
+        "Would you be open to talking about some strategies that can help us learn from these kinds of difficult situations and identify some actions that might help you feel less crummy?",
+        "Are you okay with us discussing it all in principle and possibly coming up with potential activities, even if you aren't quite ready yet to do them?"
+      ],
+      "cautions": [
+        "Avoid presenting the BA conceptualization as a replacement for or contradiction to biological, interpersonal, or cognitive models of depression, or using it to discredit the client's existing beliefs.",
+        "Never presume to know with certainty what caused or maintains a client's depression; always present the conceptualization as a collaborative hypothesis to be tested and modify it if the client does not agree.",
+        "Guard against caricaturing BA as simply 'doing more activities' or expecting clients to 'just muscle through' without acknowledging how difficult change is when depressed ('BA is simple, but not easy').",
+        "Do not mistake client ambivalence or low energy for stubbornness or 'noncompliance'; avoid arguing with reluctant clients and instead validate their struggle while using motivational strategies."
+      ],
+      "expected_outcomes": [
+        "Increased client validation and reduced self-blame through recognizing how depressive feelings and withdrawal make sense in their life context.",
+        "Shared therapist-client understanding of how short-term avoidance and coping behaviors inadvertently maintain the vicious cycle of depression.",
+        "Greater client buy-in and willingness to experiment with 'outside-in' behavioral activation assignments.",
+        "Enhanced therapeutic alliance grounded in collaborative empiricism and mutual respect."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 2 ('The Core Principles of Behavioral Activation'), 'Principle 2: Changes in life are associated with depression, and short-term coping strategies may inadvertently maintain depression over time', PDF pp. 40-42 (Book pp. 23-25)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 3 ('The Structure and Style of Therapy'), 'The Structure of BA: Orienting to the BA Model', PDF pp. 55-62 (Book pp. 38-45)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 3 ('The Structure and Style of Therapy'), 'Essential Elements of the BA Therapist's Structure and Style', PDF pp. 68-74 (Book pp. 51-57)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 1a ('The Behavioral Activation Depression Model'), PDF p. 209 (Book p. 192)"
+      ]
+    },
+    {
+      "intervention_id": "ba_functional_behavioral_assessment_abc",
+      "name": "Idiographic Functional Behavioral Assessment (ABC / Contingency Analysis)",
+      "description": "Idiographic Functional Behavioral Assessment in Behavioral Activation is an ongoing investigative process guided by Principle 3 ('The clues to figuring out what will be antidepressant for a particular client lie in the ABCs') to determine how specific behaviors function within the client's unique environment. Rather than evaluating behaviors by their surface appearance ('form'), the clinician and client analyze the functional contingencies governing behavior by examining Antecedents (A)—the external or internal contexts, historical respondent conditioning pairings, interpersonal triggers, or private emotional/cognitive states that precede and cue an action; Behaviors (B)—both public actions and private behaviors such as ruminating, defined in concrete, specific terms; and Consequences (C)—the immediate and long-term outcomes that positively reinforce, negatively reinforce, or punish the behavior. Through detailed questioning and collaborative contingency analysis (including use of the simplified ABC formulation diagram in Figure 3.2 and the client ACTION worksheet in Appendix 1h), the therapist disentangles how respondent conditioning may elicit automatic distress in specific contexts and how operant consequences maintain maladaptive behavioral chains. In particular, the assessment distinguishes 'antidepressant behaviors' (actions to increase because they bring positive reinforcement, pleasure, mastery, problem resolution, or alignment with personal values and goals) from 'depressant behaviors' (actions to decrease because, despite providing immediate negative reinforcement via escape or relief from aversive affect, they punish approach efforts, worsen life problems, or isolate the client from natural environmental rewards). Because identical behavioral forms—such as browsing social media or going on family bike rides—can serve as healthy connection for one person and subtle emotional avoidance for another, functional analysis prioritizes function over form and links assessment directly to the client's idiographic values and concrete therapy goals.",
+      "therapeutic_purpose": "To uncover the contextual triggers and reinforcement/punishment contingencies maintaining a client's depressive behavior patterns, differentiate behaviors that serve an avoidant/depressant function from those that serve an antidepressant function, and translate overarching client values and goals into concrete behavioral targets to increase or decrease.",
+      "when_to_use": [
+        "When establishing individualized treatment targets and translating broad desire to 'feel better' into concrete behavioral goals.",
+        "When examining chains of events, triggers, and emotional reactions to understand why a client remains stuck in withdrawal, passivity, or rumination.",
+        "When a behavior appears outwardly productive or neutral in form, but its underlying function (e.g., subtle avoidance of grief, shame, or anxiety) needs to be clarified.",
+        "Throughout treatment whenever clients encounter barriers to activation, experience unexpected mood shifts, or evaluate whether a newly tried activity is acting as an antidepressant or a depressant."
+      ],
+      "target_patterns": [
+        "Behaviors maintained by short-term negative reinforcement (escape/avoidance of anxiety, shame, grief, or interpersonal discomfort) that produce long-term depressive consequences.",
+        "Deficits in positively reinforced approach behaviors that formerly provided pleasure, competence, or environmental reward.",
+        "Classically (respondently) conditioned emotional reactions (e.g., dread, shame, or grief elicited by specific environmental or interpersonal cues) that trigger secondary avoidance.",
+        "Private behaviors such as ruminative brooding that occur covertly during otherwise benign external activities and generate despair or disengagement.",
+        "Environments that fail to reinforce or actively punish the client's initial activation attempts."
+      ],
+      "prerequisites": [
+        "Collaborative inquiry into what the client wants out of therapy and what has been important or valued in their life.",
+        "Willingness to examine specific instances of behavior in concrete contextual detail rather than relying on global summaries."
+      ],
+      "possible_questions": [
+        "What has been important to you in your life?",
+        "What would you like to be different when therapy is complete? What changes do you hope to make in your life as a result of therapy?",
+        "How will we know when therapy is completed? What will be different?",
+        "What happened? (Antecedent) How did you feel? What did you do? (Behavior) Then, how did you feel, and what happened following your action? (Consequence)",
+        "Assess the function of a behavior. How is this behavior serving you? What are the consequences? Does the behavior act as a depressant? Is it inconsistent with long-term goals? Does the behavior act as an antidepressant? Is it consistent with long-term goals?",
+        "What are you likely to do when you're not depressed?",
+        "What contexts increase my vulnerability to depression? What behaviors contribute to keeping the depression cycle going?"
+      ],
+      "cautions": [
+        "Never judge a behavior solely by its outward form or appearance; an activity that looks like positive engagement (e.g., rigid family bike riding or spending hours on social media) may actually function as subtle avoidance of painful affect.",
+        "Avoid imposing the therapist's own ideas of how the client should 'just get busy'; goals and target behaviors must be collaboratively derived from what the client wants and values.",
+        "Be cautious with overemphasizing the abstract word 'values' if it confuses the client or feels overly personal in non-Western cultural contexts; simple questions about what is important to the client are often more effective.",
+        "Recognize that not all environments are benevolent—when a client begins to activate, the environment may initially fail to reinforce or may even punish their behavior, requiring careful analysis of contingencies and potential use of arbitrary self-reinforcement."
+      ],
+      "expected_outcomes": [
+        "Clear identification of specific idiographic behaviors to increase (antidepressant targets) and behaviors to decrease (depressant/avoidance targets).",
+        "Increased client insight into the sequential links (ABCs) between environmental/internal triggers, their own public or private actions, and short- versus long-term consequences.",
+        "Empowerment of the client to independently use the ACTION framework to assess how their behaviors are serving them in daily life.",
+        "Selection of high-impact initial behavioral targets that interrupt secondary avoidance cycles and reconnect the client with natural environmental reinforcers."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 2 ('The Core Principles of Behavioral Activation'), 'Principle 3: The clues to figuring out what will be antidepressant for a particular client lie in the ABCs' & 'Principle 6: Emphasize activities that are naturally reinforcing', PDF pp. 42-45 (Book pp. 25-28)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 3 ('The Structure and Style of Therapy'), 'The Structure of BA: Orienting to the BA Model (Figure 3.2: The ABC model as BA formulation)', PDF pp. 60-61 (Book pp. 43-44)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 4 ('Identifying the Ingredients of the Behavioral Antidepressant'), 'Assessing Goals' & 'The Basics of Behavioral Assessment', PDF pp. 81-88 (Book pp. 64-71)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 4 ('Identifying the Ingredients of the Behavioral Antidepressant'), 'Making an Effective Choice of Activities', PDF p. 100 (Book p. 83)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 1h ('The ACTION Acronym—Client Version'), Appendix 3 ('Notebook and Posttherapy Plan'), & Appendix 4 ('ACTIVATE Reference Sheet for Therapists'), PDF pp. 216, 218-219 (Book pp. 199, 201-202)"
+      ]
+    },
+    {
+      "intervention_id": "ba_activity_and_mood_monitoring",
+      "name": "Activity, Emotion, and Mood Monitoring",
+      "description": "Activity, Emotion, and Mood Monitoring uses structured self-monitoring logs (such as Appendices 1b, 1c, and 1d) or flexible client-chosen formats (calendars, notebooks, Post-it notes, or mobile apps) to gather baseline and ongoing empirical data on the client's daily activities and corresponding internal states outside the therapy hour. Clients are coached to act like scientists examining their lives in detail, recording what they are doing, where, and with whom as close to the actual occurrence of the activity as possible rather than relying on global retrospective memory. Depending on client capability and preference, recording may be structured via hour-by-hour monitoring across all waking hours, monitoring in blocks of 3–4 hours several times a day (e.g., at lunch, dinner, and bedtime), or pre-selected time-sampling spot checks across varied weekday, evening, and weekend periods. Along with specific public and private activities (such as ruminating), clients record associated dimensions tailored to their clinical needs: overall depressed mood intensity on a single dimensional scale (e.g., 1–10), a range of discrete emotions (e.g., sad, happy, scared, angry, ashamed, disgusted, surprised) with intensity ratings, and/or ratings of Pleasure ('P', enjoyment) and Mastery ('M', sense of accomplishment) on a 0–10 or 1–10 scale (or verbal/symbolic anchors for clients averse to numbers). To orient the client, the therapist anchors the endpoints of intensity scales using real examples from the client's life and practices filling out the chart in session for the hours immediately preceding therapy. In the following session, the clinician and client thoroughly review the completed chart using five guiding clinical inquiries: examining connections and subtle shifts between specific contexts/activities and mood; evaluating the breadth or restriction of emotions experienced; identifying disruptions in daily biological and social routines (sleep, waking, meals, work); detecting overt and subtle avoidance patterns (including activities that bring temporary relief); and selecting initial behavioral targets to increase or decrease while conducting a straightforward suicide and safety risk assessment whenever indicated.",
+      "therapeutic_purpose": "To obtain accurate, detailed baseline and ongoing data on the client's real-world functioning, illuminate subtle fluctuations and functional links between specific activities/contexts and mood, identify routine disruptions and avoidance behaviors, and empirically guide the selection of individualized activation targets.",
+      "when_to_use": [
+        "Early in BA treatment to establish an empirical baseline of the client's daily activities, routines, avoidance patterns, and mood variability.",
+        "When a client perceives their depression or anxiety as unremitting and uniform ('I feel terrible all the time') and cannot identify what situations or actions influence how they feel.",
+        "When assessing whether a client's low mood during seemingly normal social or daily activities is driven by covert private behaviors such as rumination.",
+        "Ongoing throughout therapy (in standard or modified form) to track progress, evaluate the emotional and mastery/pleasure outcomes of scheduled activation experiments, and monitor routine regulation."
+      ],
+      "target_patterns": [
+        "Overgeneralized perception of unvarying depressed mood that obscures momentary mood shifts and context-activity-mood connections.",
+        "Disruptions in daily biological and social routines, such as erratic sleep/wake times, staying in bed awake for hours, or irregular meal and work schedules.",
+        "Overt and subtle passive/avoidant behaviors (e.g., excessive sleeping, mindless television or magazine browsing, muting phone calls, leaving work early, or escapist substance use).",
+        "Restricted emotional awareness or difficulty differentiating specific emotional states and their intensities.",
+        "Covert ruminative thinking occurring during daily activities that undermines pleasure and engagement."
+      ],
+      "prerequisites": [
+        "Collaborative explanation of the rationale for self-monitoring and agreement on a recording format and schedule (hourly, time-blocks, or time-sampling) that feels realistic for the client.",
+        "In-session orientation to the monitoring form, including anchoring rating scale endpoints with concrete examples from the client's life and practicing with the hours just prior to session."
+      ],
+      "possible_questions": [
+        "Can you tell me what you noticed from recording this week?",
+        "What are the connections between the client's activities and moods?",
+        "What is the client's overall mood, and what are the specific emotions experienced throughout the week?",
+        "Has there been a disruption in the client's routine?",
+        "What avoidance patterns are present?",
+        "Where should one start making changes?",
+        "I notice on Monday that you have written 'working in garden' and you have written that your mood was 'blue,' whereas on Tuesday you have 'working in garden' and you've recorded your mood as 'happy.' What was different about those two days?",
+        "Is there a difference in how you feel when you sleep late and then awaken, like on Thursday, compared to when you are awake but staying in bed?",
+        "It is not uncommon for people to want to escape their depression and to have thoughts of hurting themselves. Do you ever have thoughts about wanting to die or to hurt or kill yourself?"
+      ],
+      "cautions": [
+        "Do not take a rigid stance on the monitoring format ('function trumps form'); if standard hourly charts are overwhelming or impractical, adapt to time-block recording, time-sampling, apps, or even notes on a calendar or napkin.",
+        "Never assign an activity monitoring chart without thoroughly reviewing it in the next session; failing to review homework extinguishes client compliance.",
+        "Coach clients away from overly global entries (e.g., writing 'at work—bored 8' for an entire 8-hour block or 'Work, Miserable!!'), which mask critical hour-to-hour variability and specific micro-activities.",
+        "Do not automatically assume that an activity associated with a negative mood rating (e.g., checking voicemail from a friend or working in a garden at dusk) is a behavior to decrease, or that an activity associated with immediate relief (e.g., canceling a social event or drinking alcohol) is adaptive; always investigate the context and function first.",
+        "When using mobile monitoring apps, be mindful of privacy and data safety limitations and adhere to regional/national informed consent regulations.",
+        "Always remain alert to suicidal ideation and risk during assessment and monitoring review; never be cavalier about passive or active thoughts of death, and conduct a thorough safety assessment (ideation, plans, intent, access to lethal means/weapons/medications, and protective factors) when indicated."
+      ],
+      "expected_outcomes": [
+        "Heightened client awareness of subtle hour-to-hour fluctuations in mood, pleasure, and mastery across different daily contexts.",
+        "Identification of specific naturally reinforcing activities to increase and secondary avoidance or ruminative behaviors to decrease.",
+        "Detection of sleep, meal, and daily routine dysregulation that can be targeted for stabilization.",
+        "Concrete baseline data from which to construct realistic, graded activity scheduling assignments."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 4 ('Identifying the Ingredients of the Behavioral Antidepressant'), 'Assessment How-To: The Activity Chart', PDF pp. 88-104 (Book pp. 71-87)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 1b ('Behavioral Activation Activity Chart—Monitoring Activity and Emotion'), Appendix 1c ('Monitoring Activity and Mood'), & Appendix 1d ('Monitoring Activity/Pleasure/Mastery'), PDF pp. 210-212 (Book pp. 193-195)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 2 ('Notebook and Weekly Therapy Plan') & Appendix 4 ('ACTIVATE Reference Sheet for Therapists'), PDF pp. 217, 219 (Book pp. 200, 202)"
+      ]
+    },
+    {
+      "intervention_id": "ba_activity_scheduling_and_structuring",
+      "name": "Activity Scheduling and Structuring ('Outside-In' Activation)",
+      "description": "Activity Scheduling and Structuring is the core behavioral change strategy of Behavioral Activation, grounded in Principle 1 ('The key to changing how people feel is helping them change what they do'), Principle 4 ('Structure and schedule activities that follow a plan, not a mood'), and Principle 6 ('Emphasize activities that are naturally reinforcing'). Because depressed mood naturally pulls clients toward passivity and withdrawal ('emotions love themselves'), waiting for internal motivation or energy before acting ('inside-out' action) traps clients in a vicious cycle of inactivity. The therapist coaches the client to instead act from the 'outside-in'—committing to engage in planned, goal-directed, or formerly rewarding activities regardless of their current mood state, on the premise that positive feelings, mastery, and motivation will eventually follow action. Using the broken-arm analogy, the clinician normalizes that acting from the outside-in initially feels clumsy, effortful, and unnatural (like a right-handed person relying on their left hand while a broken arm heals), while clarifying that clients are asked to allow and acknowledge their sad or unmotivated feelings rather than 'put on a happy face' or pretend to feel good. To bridge the gap between good intentions and actual follow-through, the therapist and client collaboratively select activities linked to natural environmental reinforcers, pleasure, mastery, or routine regulation (e.g., consistent wake-up routines, physical exercise, social reconnection, or household/work tasks) and write them into a Planned or Scheduled Activities Chart (Appendices 1e–1f) or electronic calendar. Structuring and scheduling specify in concrete behavioral terms what the client will do, how frequently the activity will occur, the exact duration and intensity (e.g., walking for 20 minutes three times a week), where and with whom it will take place, and the specific days and times that fit the client's baseline routine. To further maximize implementation and positive contingencies, the clinician and client troubleshoot potential obstacles in advance (e.g., inclement weather or waking up unmotivated), ensure practical resources are ready (e.g., walking shoes and dog leash accessible), arrange public commitments (e.g., scheduling a walk with a neighbor or calling the therapist upon completion), or apply contingency management such as the Premack principle (making a high-frequency behavior like watching television contingent on first completing a brief low-frequency task) or arbitrary self-reinforcement when natural rewards are delayed.",
+      "therapeutic_purpose": "To overcome mood-dependent passivity and withdrawal by helping the client act according to a concrete schedule rather than internal mood states, re-establish regular daily routines, and bring the client into repeated contact with natural environmental contingencies of pleasure, mastery, and social reward.",
+      "when_to_use": [
+        "Once baseline activity monitoring and functional assessment have identified specific antidepressant behaviors to increase or routine disruptions to stabilize.",
+        "When a client waits to 'feel motivated' or 'have more energy' before engaging in daily tasks, work, exercise, or social contact ('inside-out' trap).",
+        "When a client has good intentions to become more active between sessions but repeatedly fails to follow through due to low mood, lethargy, or lack of structure.",
+        "When daily biological and social routines (waking, sleeping, meals, work attendance) have become dysregulated or chaotic."
+      ],
+      "target_patterns": [
+        "Mood-dependent behavior and 'inside-out' waiting for internal motivation before acting.",
+        "Low rates of response-contingent positive reinforcement, pleasure, and mastery in daily life.",
+        "Behavioral withdrawal, lethargy, staying in bed awake, and social isolation.",
+        "Vague, unstructured behavioral intentions that succumb to moment-to-moment depressive mood states.",
+        "Disrupted sleep-wake, mealtime, and work routines."
+      ],
+      "prerequisites": [
+        "Baseline information from activity monitoring or functional assessment regarding the client's current schedule, constraints, and potentially reinforcing activities.",
+        "Collaborative client agreement to experiment with 'outside-in' action across multiple occasions before judging whether an activity is helpful."
+      ],
+      "possible_questions": [
+        "Does this assignment give us both enough information so that the agreement we are making is clear?",
+        "What task frequency will be most effectual for the client? What duration and/or intensity of the activity will be most effectual for the client? On what specific days and at what times should the client do the activity?",
+        "What behaviors do I need to increase that are antidepressant for me? When will I engage in these behaviors?",
+        "What if you wake up feeling absolutely unmotivated?",
+        "What will they need in order to be more likely to engage in the task?"
+      ],
+      "cautions": [
+        "Do not confuse 'outside-in' activation with asking clients to be 'fake,' 'phony,' or to 'put on a happy face'; explicitly instruct clients to acknowledge and allow their depressed feelings while choosing to act according to their plan.",
+        "Avoid vague, unanchored homework agreements (e.g., 'take a walk three times this week' without specifying duration, days, or times) and do not expect depressed clients to rely on willpower alone.",
+        "Do not schedule activities at times that conflict with the client's realistic baseline functioning (e.g., do not schedule an early morning walk for a client who is barely waking up in time to get to work).",
+        "Never treat a single trial of an activity as definitive proof of its utility; just as laboratory experiments require replication, clients must test planned activities on multiple occasions and evaluate whether environmental contingencies or half-hearted engagement affected the outcome.",
+        "Always review scheduled assignments in the subsequent session and reinforce any adaptive steps taken; if an assignment was not completed, maintain a nonjudgmental, matter-of-fact stance and analyze the barriers rather than expressing frustration."
+      ],
+      "expected_outcomes": [
+        "Increased frequency and consistency of engagement in goal-directed, pleasurable, and mastery-producing activities independent of immediate mood state.",
+        "Re-establishment of predictable, comforting daily routines around waking, working, exercising, and socializing.",
+        "Gradual improvement in mood, energy, and motivation as 'outside-in' actions contact natural environmental reinforcement ('activity breeds activity').",
+        "Enhanced client self-efficacy in planning, structuring, and managing environmental contingencies to support ongoing activation."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 2 ('The Core Principles of Behavioral Activation'), 'Principle 1', 'Principle 4', 'Principle 6', 'Principle 8', & 'Principle 9', PDF pp. 39-40, 43-49 (Book pp. 22-23, 26-32)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 5 ('Activity Scheduling and Structuring'), 'How to Activate Clients (Principle 1, Principle 4, & Principle 6)', PDF pp. 108-116, 122-125 (Book pp. 91-99, 105-108)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 1e ('Behavioral Activation Activity Chart—Planned Activities'), Appendix 1f ('Scheduled Activities'), & Appendix 2 ('Notebook and Weekly Therapy Plan'), PDF pp. 213-214, 217 (Book pp. 196-197, 200)"
+      ]
+    },
+    {
+      "intervention_id": "ba_graded_task_assignment",
+      "name": "Graded Task Assignment and Countering All-or-Nothing Activation",
+      "description": "Graded Task Assignment and Countering All-or-Nothing Activation operationalizes Principle 5 of Behavioral Activation ('Change will be easier when starting small') by breaking down overwhelming, complex, or ambitious behavioral goals into their smallest, most manageable component parts and sequencing them in a stepwise fashion from simple to complex. When depressed, clients frequently fall into 'all-or-nothing behaving'—either setting perfectionistic, overly ambitious activation plans based on their pre-depression functioning (the 'Nike' or 'Just do it!' approach, such as a former marathon runner planning to start with 45-minute runs several days a week, or a socially isolated client planning to call five friends and family members in one week) or feeling so overwhelmed by the magnitude of a problem (such as launching a business, catching up on backlogged work projects, or rebuilding a social network) that they conclude 'I can't do it' and do nothing at all. Starting strictly from the client's current baseline functioning rather than where the client believes they 'should' be functioning, the therapist acts as a compassionate coach who knows when to encourage and when to hold back. Together, clinician and client decompose large goals into discrete, behaviorally specific steps, rank or select the easiest and most achievable initial step with the highest odds of success (for example, buying athletic shoes and shorts before attempting to run, having a single cup of coffee with one supportive friend rather than calling everyone at once, or gradually reducing a 5-hour daily computer gaming avoidance habit by 10 minutes every two days rather than cutting it immediately to 30 minutes), and estimate the time required for each subcomponent. Concurrently, the clinician actively counters all-or-nothing evaluation of outcomes by framing partial completion or any incremental forward step as a meaningful success upon which to build, emphasizing the reinforcement value of mastery (sense of accomplishment) even when chores or initial steps do not immediately produce pleasure or lift depressed mood.",
+      "therapeutic_purpose": "To prevent demoralization, failure experiences, and behavioral paralysis by calibrating activation steps to the client's current energy and baseline functioning, ensuring early mastery experiences that build momentum ('activity breeds activity') toward complex long-term goals.",
+      "when_to_use": [
+        "When a client feels overwhelmed or paralyzed by a complex, multi-step life problem or goal (e.g., finding employment, starting a business, catching up on overdue work projects, or rebuilding an entire social network).",
+        "When a client exhibits 'all-or-nothing' activation by proposing overly ambitious between-session assignments (e.g., exercising at pre-depression intensity or contacting numerous estranged friends at once) that risk failure and heightened hopelessness.",
+        "When a client dismisses small behavioral steps as 'not enough' or feels like a failure if a task is not 100% completed.",
+        "When working to decrease entrenched, high-frequency avoidance behaviors (such as excessive daily computer gaming or staying in bed) that cannot be eliminated abruptly."
+      ],
+      "target_patterns": [
+        "All-or-nothing behaving and perfectionistic expectations ('Just do it!' or expecting pre-depression performance levels immediately).",
+        "Task paralysis and avoidance triggered by perceiving goals as monolithic, overwhelming 'big productions.'",
+        "Self-criticism and discouragement when activation tasks are only partially completed or do not yield immediate pleasure.",
+        "Complex interpersonal, occupational, or household problems requiring sequential skill and task building."
+      ],
+      "prerequisites": [
+        "Baseline assessment of where the client is currently functioning (including current energy, time, and practical resources).",
+        "Identification of an overarching goal or target behavior domain to be broken down into component steps."
+      ],
+      "possible_questions": [
+        "My hope is that we could develop a plan that is doable, one that won't feel overwhelming when you get started on it. What is one thing you feel pretty confident you could do this week in order to reconnect with some friends?",
+        "What do you think about making a list of some of the specific activities that are involved in rebuilding the social connections in your life? Then, we can see what might be a helpful place to start.",
+        "What if we ranked those in terms of who was easiest and who was hardest?",
+        "Sounds like we could break down the task more! What about starting with something like asking her to grab a cup of coffee with you on one afternoon?",
+        "What might be an easy way to make a first step in approaching your neighbor that wouldn't be overwhelming?",
+        "Have I broken these behaviors into steps that I'm likely to complete? If so, what are the steps?",
+        "Have you and the client started 'small'? Have you and the client countered 'all-or-nothing activation'?"
+      ],
+      "cautions": [
+        "Guard against the therapist pitfall of failing to notice when a client is taking on too much, too soon; enthusiastically endorsing an overly ambitious client plan can set the client up for failure, punishment, and deeper despair.",
+        "Always start grading tasks from the client's current baseline functioning, not from where the client (or therapist) believes the client 'should' be functioning.",
+        "When reducing high-frequency avoidance behaviors (e.g., 5 hours a day of computer games), avoid demanding an abrupt, drastic cut (e.g., down to 30 minutes), which is likely to fail; instead, grade the reduction in small, doable increments.",
+        "Prepare clients that chore-oriented or problem-solving steps (like yard work, cleaning, or résumé writing) may not bring immediate pleasure or happiness, and highlight the reinforcing value of mastery and incremental progress."
+      ],
+      "expected_outcomes": [
+        "Early behavioral success that makes treatment feel rewarding rather than punishing.",
+        "Reduced sense of overwhelm and relief at both ends of the 'can-do' continuum (for clients who feel they must do everything at once and clients who feel they cannot do anything).",
+        "Accumulation of mastery experiences that generate hope and momentum ('activity breeds activity') to tackle progressively more challenging steps.",
+        "Sustained step-by-step progress toward complex long-term occupational, domestic, and interpersonal goals."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 2 ('The Core Principles of Behavioral Activation'), 'Principle 5: Change will be easier when starting small', PDF pp. 43-44 (Book pp. 26-27)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 4 ('Identifying the Ingredients of the Behavioral Antidepressant'), 'Useful Questions to Facilitate the Review (5. Where should one start making changes?)', PDF pp. 98-99 (Book pp. 81-82)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 5 ('Activity Scheduling and Structuring'), 'Chapter Opening Vignette', 'Principle 5: Change will be easier when starting small', 'Countering All-or-Nothing Activation', & 'Table 5.1: Two Examples of Grading Complex Tasks', PDF pp. 106-107, 115-124 (Book pp. 89-90, 98-107)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 2 ('Notebook and Weekly Therapy Plan'), PDF p. 217 (Book p. 200)"
+      ]
+    },
+    {
+      "intervention_id": "ba_avoidance_modification_trap_trac",
+      "name": "Avoidance Modification Using TRAP and TRAC",
+      "description": "Avoidance modification in Behavioral Activation targets both overt and subtle behaviors that function to prevent an aversive event from occurring (avoidance) or to remove the client from an undesirable situation or internal state (escape). Because life with depression is frequently punishing or devoid of positive reinforcement, withdrawal and passivity are negatively reinforced by immediate relief from fatigue, anxiety, shame, or effort, which inadvertently creates secondary life problems and maintains depression over time under aversive control. Clinicians begin by identifying when avoidance is occurring through functional behavioral analysis and validating the client's struggle—acknowledging that pulling away feels natural when approaching life has been punishing or unrewarding, which reduces shame and self-blame and fosters collaborative change. To help clients recognize and modify avoidance in daily life, therapists introduce the TRAP and TRAC mnemonics alongside the TRAP-TRAC Sheet (Appendix 1g). Clients break down an episode into its Trigger (an environmental event or demand), emotional Response (such as overwhelm, anxiety, fatigue, or hopelessness), and Avoidance-Pattern (the habitual escape behavior, such as returning to bed, ignoring phone calls, or turning on the television). Once clients recognize they are caught in a TRAP, they are coached to get back on TRAC by pairing the same Trigger and emotional Response with Alternative Coping—concrete approach behaviors designed to reengage with the environment and move toward long-term goals despite immediate discomfort.",
+      "therapeutic_purpose": "To help clients recognize how negatively reinforced escape and avoidance behaviors provide temporary emotional relief at the cost of exacerbating long-term secondary problems and depression, while validating the difficulty of change and replacing avoidance patterns with active, approach-oriented alternative coping.",
+      "when_to_use": [
+        "When clients exhibit coping strategies of passivity, withdrawal, or escape that generate secondary problems maintaining depression over time.",
+        "When clients express self-criticism or confusion about why they cannot simply force themselves out of being 'stuck' (e.g., asking why they cannot just make themselves job hunt or call friends).",
+        "When behavioral analyses or activity charts reveal that a behavior is negatively reinforced by temporarily alleviating fatigue, anxiety, guilt, or hopelessness.",
+        "When clients are active on the surface yet derive no sense of reward because their actions subtly serve to avoid more challenging or meaningful demands."
+      ],
+      "target_patterns": [
+        "Overt withdrawal and isolation, such as staying in bed, neglecting household chores, and failing to return phone calls from friends.",
+        "Escape behaviors that temporarily block aversive tasks or feelings, such as watching television to escape preparing tax documents or paying bills, or using alcohol and addictive behaviors to inhibit loneliness and emotional distress.",
+        "Subtle interpersonal avoidance, such as subordinating one's own needs to those of a spouse or family members, or remaining in an unsatisfying relationship out of fear of being alone.",
+        "Ingrained 'just do it' or force-yourself-to-do-it attitudes that provoke shame and anxiety when depressed clients fail to initiate difficult tasks on their own."
+      ],
+      "prerequisites": [
+        "Collaborative socialization to the Behavioral Activation model, specifically how life changes reduce reward and how short-term coping strategies inadvertently maintain depression.",
+        "Foundational ABC functional assessment skills so the client and clinician can examine the antecedents and short- versus long-term consequences of behavior."
+      ],
+      "possible_questions": [
+        "Help me to understand what takes place for you when you're feeling down. You said that often on weekends and weekday evenings you lie in bed and 'mindlessly' thumb through magazines. What would 'unstuck' look like?",
+        "Do you sometimes think about getting up and doing any of those things when you're lying in bed, or do you sometimes get up and attempt to do some of them? What do you notice then?",
+        "Tell me, what happens to those feelings of fatigue and anxiety and the thoughts of hopelessness when you go back to or stay in bed?",
+        "If you avoid them, you can feel a little better in the short run, but you're more down and stressed in the long run. I'm wondering if this is a pattern that has become pretty well established. What do you think?",
+        "Are there any activities that I'm trying to escape or avoid?",
+        "Write down any situations that occur that result in an emotional response leaving you with a strong urge to escape or avoid. Record the event as a Trigger, and record your emotional Response to the trigger. Then document what you did to avoid as the Avoidance-Pattern. This is the TRAP. Now to get out of the TRAP and get back on TRAC, write the same trigger and response but think of some other way to approach the situation. Record this as your Alternative Coping."
+      ],
+      "cautions": [
+        "Relying on a 'force-yourself-to-do-it' or 'just do it' approach does not work well with depression; failing to validate why avoidance feels natural can heighten client shame and hinder collaboration.",
+        "Clients raised in contexts that emphasize a strict 'do-it-yourself' mentality where asking for help was punished may find it particularly difficult to accept validation and coaching around the power of avoidance.",
+        "When avoidance patterns are subtle, complex, or seemingly intractable, both therapists and clients risk becoming discouraged or hopeless over incomplete homework unless the clinician actively remembers why aversive control and depressive fatigue make activation feel unnatural.",
+        "Punishment mainly teaches a person to avoid punishment rather than promoting adaptive behavior change."
+      ],
+      "expected_outcomes": [
+        "Reduced client shame and anxiety as clients feel understood by the therapist and recognize the environmental contingencies keeping them stuck.",
+        "Increased client self-awareness in daily life regarding triggers, emotional responses, and habitual escape or avoidance patterns.",
+        "Substitution of negatively reinforced avoidance responses with concrete approach behaviors (Alternative Coping) that reconnect the client with long-term goals and natural environmental reinforcement."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Introduction', PDF pp. 127-128 (Book pp. 110-111)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Identifying Avoidance Patterns and Validating the Challenge of Change', PDF pp. 128-132 (Book pp. 111-115)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Identifying and Changing Avoidance Behaviors', PDF pp. 132-133 (Book pp. 115-116)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 1g ('TRAP-TRAC Sheet'), PDF p. 215 (Book p. 198)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 4 ('ACTIVATE Reference Sheet for Therapists'), 'Validate', PDF p. 219 (Book p. 202)"
+      ]
+    },
+    {
+      "intervention_id": "ba_functional_self_assessment_action",
+      "name": "Client Functional Self-Assessment Using the ACTION Framework",
+      "description": "The ACTION framework (Jacobson et al., 2001) equips clients with a structured self-assessment and self-activation guide (supported by the therapist guide in Table 6.2 and the client worksheet in Appendix 1h) to evaluate the function of their behavior and adopt an empirical, 'outside-in' approach to behavior change. Through ACTION, clients learn to Assess the function of a behavior by examining its consequences and asking how it serves them—specifically whether it acts as a depressant that is functioning as avoidance and is inconsistent with long-term goals, or as an antidepressant that aligns with long-term goals. Clients then Choose an action, which explicitly highlights their personal agency, collaborative partnership, and capacity to exert control by deciding to approach rather than avoid and to increase or decrease specific behaviors. Next, clients Try the behavior chosen by putting a concrete plan into action, and Integrate new behaviors into a regular routine, recognizing that after months or years of depression, a single trial of activation rarely alters mood and cumulative repetition is required. Clients then Observe the results across multiple trials to learn what worked, whether mood improved or goals were advanced, and how to refine future plans. Finally, clients are coached to Never give up, persevering through repeated cycles of assessment and behavioral experimentation until antidepressant behaviors become automatic habits even in the presence of negative affect.",
+      "therapeutic_purpose": "To teach clients to independently evaluate the functional consequences of their own behaviors, restore a sense of personal choice and agency, and cultivate persistent, routine-based behavioral experimentation from the 'outside-in'.",
+      "when_to_use": [
+        "When coaching clients to become their own functional analysts in recognizing when their behavior is serving as avoidance versus an antidepressant.",
+        "When depressed clients feel a lack of personal agency or control over their lives and need explicit reminders that they have a choice in how they respond to situations.",
+        "When clients try a new behavior once, notice no immediate mood relief, and prematurely conclude that activation is unhelpful.",
+        "When consolidating core BA skills for ongoing self-assessment and routine building between sessions."
+      ],
+      "target_patterns": [
+        "Unexamined engagement in behaviors that act as depressants and conflict with long-term goals.",
+        "Low perceived personal control or helplessness regarding behavioral choices.",
+        "Abandoning potentially antidepressant activities after a single attempt rather than integrating them into a consistent routine.",
+        "Waiting to feel motivated before acting rather than acting from the 'outside-in' and observing cumulative outcomes over time."
+      ],
+      "prerequisites": [
+        "Understanding of the distinction between behaviors that function as avoidance/depressants and behaviors that function as approach/antidepressants.",
+        "Collaborative agreement to treat activation assignments as empirical experiments in which all observed outcomes provide useful information."
+      ],
+      "possible_questions": [
+        "How is this behavior serving you? What are the consequences?",
+        "Does the behavior act as a depressant? Is it inconsistent with long-term goals?",
+        "Does the behavior act as an antidepressant? Is it consistent with long-term goals?",
+        "What action did you choose?",
+        "If you are trying something new or engaging in behavior that is opposite to your mood, it is important to try more than once before concluding whether this is helpful or not. Integrate this into a normal routine. How will you do this?",
+        "What is the outcome? Do you feel better or worse after the action you chose to take? Has the action moved you closer to any of your goals? Have you integrated a new routine into your schedule? What changes do you notice?",
+        "Are there any behaviors I need to decrease because they act as a depressant for me and are inconsistent with my long-term goals?"
+      ],
+      "cautions": [
+        "Trying a new behavior just once after months or years of depression is not sufficient for evaluating its outcome; both clinician and client must guard against judging an activity's efficacy before it has been integrated into a routine across several trials.",
+        "Because BA is a collaborative treatment, therapists must ensure clients maintain genuine choice over the actions they implement rather than imposing plans unilaterally."
+      ],
+      "expected_outcomes": [
+        "Enhanced client ability to independently assess whether daily behaviors function as depressants or antidepressants.",
+        "Increased sense of personal agency and control through explicitly choosing approach actions.",
+        "Consistent integration of chosen antidepressant behaviors into daily and weekly routines across multiple trials.",
+        "Greater persistence and automaticity in activating even amid overwhelmingly negative feelings."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Identifying and Changing Avoidance Behaviors', PDF p. 133 (Book p. 116)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Table 6.2. The ACTION Acronym—Therapist Version', PDF p. 135 (Book p. 118)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 1h ('The ACTION Acronym—Client Version'), PDF p. 216 (Book p. 199)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 4 ('ACTIVATE Reference Sheet for Therapists'), 'Assess', PDF p. 219 (Book p. 202)"
+      ]
+    },
+    {
+      "intervention_id": "ba_problem_solving",
+      "name": "Behavioral Problem Solving",
+      "description": "Behavioral problem solving in BA provides an active, concrete alternative to passive avoidance and brooding when solutions to primary life stressors (such as job loss, housing instability, financial bills, or interpersonal conflict) or secondary avoidance problems are not readily apparent. Rather than teaching problem solving in a rigid didactic manner, BA therapists actively collaborate with clients in solving problems. The clinician and client first transform vague, global complaints (such as 'I can't get anything done') into a specific, concrete behavioral definition of the problem that captures its timing, frequency, duration, and behavioral topography (often drawing directly from activity charts), thereby reducing 'brain overload.' Next, they brainstorm a wide, diverse array of possible solutions without judging or censoring them prematurely, and then carefully evaluate the pros and cons of each option to clarify the most realistic course of action. Once the client selects a solution, it is specified in concrete behavioral terms—often utilizing task grading, scheduling, and contingency management—and implemented over a realistic, predetermined time frame. Finally, the clinician and client evaluate the outcome of the behavioral experiment and either maintain, modify, or replace the solution as needed. When careful assessment reveals that an environmental stressor is genuinely uncontrollable (such as awaiting medical test results), problem solving shifts toward generating soothing or distracting activities to help the client tolerate the difficult context.",
+      "therapeutic_purpose": "To replace passive avoidance, secondary problem cycles, and ruminative 'wheel-spinning' with concrete behavioral problem definition, nonjudgmental generation and evaluation of action options, and structured implementation of steps to resolve or cope with primary and secondary life problems.",
+      "when_to_use": [
+        "When primary life problems (e.g., unemployment, financial hassles, unsatisfactory living conditions, interpersonal conflicts) or secondary avoidance behaviors are triggering or maintaining depression.",
+        "When clients present with vague, overwhelming complaints ('brain overload') and solutions are not immediately obvious.",
+        "When clients are caught in repetitive ruminative thinking about a life difficulty without moving toward a concrete plan or decision.",
+        "When deciding which domain of life (e.g., friendships versus employment) offers the most feasible starting point for action."
+      ],
+      "target_patterns": [
+        "Vague, global problem descriptions (e.g., 'My life is a mess,' 'I can't get anything done') that impede actionable solutions.",
+        "Secondary avoidance cycles where escaping a stressor (e.g., closing the office door and watching TV all day to avoid looking at unpaid bills) compounds the original problem (failing to complete billable work).",
+        "Depressive cognitive impairment in problem solving and 'brain overload' when facing complex tasks.",
+        "Ruminative brooding that masquerades as trying to figure out problems while actually keeping the client passive."
+      ],
+      "prerequisites": [
+        "Identification of primary or secondary problem areas via behavioral assessment or activity monitoring charts.",
+        "Validation of the difficulty of solving problems while depressed so the client is receptive to collaborative coaching."
+      ],
+      "possible_questions": [
+        "Together, we can look at what avoidance is, determine specifically what patterns of avoidance are keeping you stuck, and explore ways to use problem-solving skills to move ahead in your life. I'm wondering which area is a better place for us to start working on—friends or work?",
+        "I know we've been starting to work on your friendships, and I'm wondering too about the ways in which your work situation is impacting your mood. Have you sidelined your goal of finding better employment?",
+        "What problems were discussed today in therapy?"
+      ],
+      "cautions": [
+        "Cognitive impairment with regard to problem solving is an empirically supported phenomenon in depression; clinicians should not expect depressed clients to engage successfully in problem solving without active coaching and assistance.",
+        "Stating problems or solutions in vague terms (e.g., telling a client who says 'I can't get anything done' to simply 'Go out and finish some tasks') is ineffective; both the problem and the chosen solution must be stated in specific, concrete behavioral terms.",
+        "Prematurely judging options during brainstorming restricts the client to a narrow set of possibilities; clinicians should encourage generating diverse options before weighing pros and cons.",
+        "Some contexts cannot be immediately changed or solved (e.g., waiting for medical test results over which one has little control); in such cases, attempting to force a direct solution is unhelpful, and the focus should shift to soothing or distracting activities to tolerate the difficult context."
+      ],
+      "expected_outcomes": [
+        "Translation of overwhelming, global life difficulties into manageable, behaviorally specific problems and graded action steps.",
+        "Reversal of secondary avoidance cycles that compound environmental stressors (such as financial, occupational, or interpersonal problems).",
+        "Reduction in time spent passively ruminating as the client shifts from abstractly reviewing problems to testing concrete behavioral solutions."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Table 6.1. Understanding the Power of Avoidance', PDF p. 132 (Book p. 115)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Problem Solving and Avoidance Modification', PDF pp. 133-134 (Book pp. 116-117)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 7 ('How Thinking Can Be Problematic Behavior'), 'Targeting Depressive Rumination in BA—Listen, Understand, and Remain Action Oriented: Problem Solving', PDF pp. 149-150 (Book pp. 132-133)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 4 ('ACTIVATE Reference Sheet for Therapists'), 'Counter Avoidance with Structured Activation and Effective Problem Solving' & 'Take Time to Get Specific', PDF p. 219 (Book p. 202)"
+      ]
+    },
+    {
+      "intervention_id": "ba_value_directed_activation",
+      "name": "Value-Directed Behavior and Core Life Area Activation",
+      "description": "Value-directed activation helps clients overcome avoidance and demoralization by clarifying what matters most to them across key life domains—such as family, interpersonal relationships, work, and leisure—and translating those values into attainable goals and concrete, observable antidepressant behaviors. Drawing on the distinction between values and goals (Hayes et al., 2011), values are conceptualized as desired ongoing life consequences that provide a sense of direction, purpose, and meaning (but cannot be permanently obtained like a discrete object), whereas goals are attainable milestones pursued along the way. When clients encounter stuck points or face competing goals—such as the conflict between acting on a valued commitment to help a friend versus yielding to the mood-dependent urge to stay home with the shades drawn for short-term relief—orienting to held values guides the client toward value-consistent action rather than mood-directed or avoidance-driven behavior. Because value-consistent activities tap into what the client deems personally meaningful above and beyond simply feeling better immediately, they are more likely to be naturally and positively reinforced in the environment, sustaining activation momentum even when mood improvement takes time.",
+      "therapeutic_purpose": "To counter avoidance and demoralization from prolonged or recurrent depression by identifying the client's personal values across core life domains and using those values as a roadmap to select naturally reinforcing, goal-directed behaviors over mood-dependent withdrawal.",
+      "when_to_use": [
+        "During stuck points in therapy when clients face conflicting and competing goals, such as the pull for short-term relief through withdrawal versus acting in line with a meaningful relationship or responsibility.",
+        "When individualizing BA goals and generating activities that have a high likelihood of being naturally reinforced in the client's environment.",
+        "When clients experience deep demoralization, loss of energy, or lack of purpose from long or multiple episodes of depression, and mood change is slow to emerge."
+      ],
+      "target_patterns": [
+        "Mood-dependent decision making in which lethargy or depressed affect overrides valued commitments (e.g., staying home with the shades drawn instead of helping a friend).",
+        "Avoidance-driven narrowing of behavioral repertoire where clients disengage from meaningful domains such as friendships, family, work, or leisure due to shame, guilt, or fear.",
+        "Demoralization and hopelessness characterized by wondering 'What's the point?' when activities are evaluated solely by whether they produce immediate symptom relief."
+      ],
+      "prerequisites": [
+        "A nonjudgmental, compassionate therapeutic stance that respects client autonomy in defining what gives their life meaning.",
+        "Clarification of the distinction between ongoing values (desired life directions) and concrete, attainable goals."
+      ],
+      "possible_questions": [
+        "It sounds like you have very little that's meaningful or fun in your life right now, and you're spending an awful lot of time in an environment that you don't like.",
+        "What behaviors do I need to increase that are antidepressant for me?",
+        "When will I engage in these behaviors?"
+      ],
+      "cautions": [
+        "Clinicians must explicitly clarify that values are not morals; BA therapists do not seek to identify what clients believe is morally right or wrong or what clients think they 'should' value.",
+        "While therapists would never encourage behavior that harms another living being, they must respect client values that differ from their own or from high social acceptability—recognizing that while some clients value altruism, social connection, or humanitarianism, others may value power, control, pleasure, or solitude.",
+        "Therapists must not impose their own personal values, beliefs, or morals to shape a client into a predetermined image of how people should act."
+      ],
+      "expected_outcomes": [
+        "Clearer roadmap of individualized, positively reinforcing goals and activities across family, interpersonal, work, and leisure domains.",
+        "Increased selection of value-directed approach behaviors over mood-dependent withdrawal when facing competing urges.",
+        "Greater sense of purpose and meaning that helps lift clients out of depressive demoralization even while mood recovery is still in progress."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Increasing Value-Directed Behavior', PDF pp. 134-137 (Book pp. 117-120)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 6 ('Avoidance Modification, Solving Problems, and Value-Directed Behavior'), 'Summary' & 'Take-Home Points', PDF pp. 137-138 (Book pp. 120-121)"
+      ]
+    },
+    {
+      "intervention_id": "ba_targeting_depressive_rumination",
+      "name": "Targeting Depressive Rumination as Covert Avoidance",
+      "description": "In Behavioral Activation, thinking is conceptualized as a private (covert) behavior governed by the same learning principles of reinforcement and punishment as public (overt) behavior. Depressive rumination—repetitively 'chewing over' one's depressive symptoms, causes, and consequences, or passively 'brooding' through abstract evaluative comparisons between one's current state and an optimal state—functions as a secondary problem behavior and covert avoidance strategy. It disengages clients from their immediate environment (leaving them merely 'going through the motions' during potentially rewarding activities), blocks effective problem solving, and sometimes serves to numb or avoid acute emotional pain such as grief or sadness. Rather than disputing the validity or content of negative thoughts as in cognitive therapy, the BA therapist targets the process, context, antecedents, and consequences of ruminating, guided by Principle 9 ('Listen, understand, and remain action oriented'). Clinicians trace the behavioral chain backward to identify vulnerability triggers (such as watching daytime talk shows) and assess the function of rumination, teaching clients heuristics like the '2-minute rule' (Addis & Martell, 2004) and the RCA ('Rumination Cues Action') mnemonic. Based on functional analysis, the clinician deploys five behavioral strategies: highlighting the negative consequences of ruminating versus the benefits of action; engaging in concrete problem solving (or approaching avoided emotions like grief through active tasks); practicing 'attention to experience' (brief, graded exercises shifting awareness from internal mental loops to immediate sensory sights, sounds, smells, tastes, and textures in the present moment, rather than demanding sedentary formal meditation); refocusing attention on the specific step-by-step mechanics of the task at hand; and using active physical or mental distraction (such as turning on the radio, singing lyrics, or naming animals alphabetically at bedtime) to introduce new stimuli that interrupt recursive mental loops.",
+      "therapeutic_purpose": "To interrupt passive, repetitive mental looping (brooding) by assessing its environmental triggers and avoidance functions and shifting the client's attention and behavior from internal self-focus to present-moment sensory experience, task engagement, emotional approach, or active problem solving.",
+      "when_to_use": [
+        "When clients complete overt activation assignments (e.g., attending a dinner party or walking the dog in the park) yet report feeling worse or deriving no enjoyment because they were 'in their head' and 'going through the motions.'",
+        "When clients spend extended periods brooding over why they feel depressed, comparing their current state to how they used to feel, or spinning their wheels without generating actionable solutions.",
+        "When rumination functions as covert emotional avoidance to dampen acute feelings of grief or sadness (inhibited grieving).",
+        "When rumination impairs work concentration, delays task completion, or interferes with falling asleep at night."
+      ],
+      "target_patterns": [
+        "Covert ruminative brooding while outwardly performing scheduled activities ('going through the motions').",
+        "Abstract, evaluative self-focused thinking ('Why am I always so depressed? Will I ever beat this?') that lacks an endpoint and prevents problem solving.",
+        "Environmental setups that reliably cue rumination (e.g., watching daytime television talk shows or isolating at home after a perceived social rejection).",
+        "In-session passive co-ruminating, where the client and therapist become immersed in talking about the content of distress without moving toward action.",
+        "Nighttime mental looping in bed when trying to fall asleep."
+      ],
+      "prerequisites": [
+        "Assessment differentiating public (motor) behavior from private (ruminative) behavior during scheduled activities.",
+        "Functional chain analysis of the antecedents (triggers/contexts) and consequences (mood worsening, missed 'Plan B' opportunities, or emotional numbing) of the client's rumination."
+      ],
+      "possible_questions": [
+        "I'd like to know as much as possible about the situation yesterday when you were stuck in your thoughts about work. Can you tell me what was happening when you began to think that you weren't performing up to standard?",
+        "Were you ruminating before you started to answer e-mails? What were you doing before you answered the e-mails?",
+        "What has been the result of playing this over in your mind or ruminating about this? Did the ruminating keep you from doing anything else that you had planned?",
+        "Is this way of thinking useful for me right now?",
+        "How does ruminating affect my mood? Is it useful to ruminate? Does it help me to solve a problem in any way? Does it have short-term or long-term benefits (e.g., reducing an aversive experience such as sadness) or costs?",
+        "After 2 minutes of thinking about a topic: Have I made progress toward solving a problem, understood something about the problem that I did not before, or am I less self-critical or depressed after thinking things over?",
+        "I would like to suggest that you practice a brief exercise that we call 'attention to experience.' The idea is to give your mind an alternative to that miserable mental loop your brain gets into. If we can train your brain to refocus on the here and now instead of its usual 'looping,' you stand a better chance of enjoying more what's in front of you and concentrating better on those things you need to, like work. Are you willing to practice this?",
+        "What activities have a good chance of being powerful enough for me to lose myself in?",
+        "To what stimuli or activities can I attend so as not to be stuck in my head?"
+      ],
+      "cautions": [
+        "BA therapists must not examine the validity of ruminative thoughts or ask clients to test the accuracy of their beliefs; engaging with the content rather than the process and context of rumination departs from BA and risks reinforcing rumination.",
+        "If therapists engage in too much passive conversation or become immersed in talking about the content of a client's ruminations in session without moving to action, they risk publicly perpetuating the same passive ruminating the client does privately.",
+        "Formal meditation is generally not emphasized for acutely depressed clients in BA because it imposes high demands for concentration and relies on sedentary, solitary practice that can foster further rumination.",
+        "Attention-to-experience exercises may initially sound odd or weird to clients and even a few minutes can feel very long; clinicians should start small (e.g., 60 seconds in session or a few minutes at home in an easier context), normalize that the mind will repeatedly drift back to looping, and frame each drift as a useful opportunity to practice refocusing.",
+        "Attending closely to sensory experience in a dark, quiet room late at night (e.g., listening to occasional traffic noises) can make some clients feel uneasy; in such contexts, mental distraction (such as the alphabet animal game) is preferable."
+      ],
+      "expected_outcomes": [
+        "Increased client recognition of when thinking has crossed from adaptive reflection into maladaptive brooding (using the 2-minute rule and RCA).",
+        "Greater present-moment sensory engagement and enjoyment during social, family, and recreational activities instead of merely 'going through the motions.'",
+        "Improved task focus and productivity during work or daily responsibilities through scheduled intervals of refocusing on the task at hand.",
+        "Healthy emotional processing when rumination that was inhibiting grief is replaced with active behavioral approach toward memories and loved ones."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 7 ('How Thinking Can Be Problematic Behavior'), 'Introduction' & 'Rumination and Depression', PDF pp. 140-144 (Book pp. 123-127)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 7 ('How Thinking Can Be Problematic Behavior'), 'Assessing Rumination', PDF pp. 144-147 (Book pp. 127-130)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 7 ('How Thinking Can Be Problematic Behavior'), 'Targeting Depressive Rumination in BA—Listen, Understand, and Remain Action Oriented', PDF pp. 147-156 (Book pp. 130-139)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 7 ('How Thinking Can Be Problematic Behavior'), 'Table 7.1. Interventions for Ruminative Thinking', PDF p. 156 (Book p. 139)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 7 ('How Thinking Can Be Problematic Behavior'), 'Summary' & 'Take-Home Points', PDF p. 157 (Book p. 140)"
+      ]
+    },
+    {
+      "intervention_id": "ba_troubleshooting_and_contingency_management",
+      "name": "Troubleshooting Activation Barriers and Managing Contingencies",
+      "description": "Guided by Principle 10 ('Troubleshoot possible and actual barriers to activation') and Principle 8 ('Emphasize a problem-solving empirical approach and recognize that all results are useful'), troubleshooting in BA encompasses both prospective assessment—anticipating internal and external obstacles and maximizing commitment when an action plan is first designed—and retrospective debriefing when an attempted assignment goes awry or is not completed. Throughout troubleshooting, the clinician maintains a warm, genuine, matter-of-fact, nonjudgmental, and persistent stance, treating setbacks as puzzles to be solved rather than personal failings or 'laziness,' and openly considering whether the therapist failed to grade the task adequately. Rather than abandoning an action plan after an initial difficulty, the clinician conducts a detailed behavioral chain analysis to 'tweak' the plan across seven common barrier domains: clarifying task understanding by specifying concrete behavioral details (who, what, where, when, how) and asking the client to summarize the plan in session; remediating skills deficits in self-management (such as underestimating how long tasks take), interpersonal assertiveness, emotion regulation (teaching breathing, relaxation, or timeouts when hyperarousal derails interactions), or emotion identification; re-grading overly ambitious tasks into smaller, achievable increments; adapting activity and mood self-monitoring when clients find forms aversive or report flat, unvarying 'gray' moods (e.g., temporarily monitoring only activities, shortening monitoring periods, using audio recorders or golf counters, or walking back through the hours just prior to session to spot subtle mood shifts); establishing environmental cue control for forgotten assignments via visual cues (sticky notes, objects placed by the door or bed), auditory cues (alarms, timers, calling oneself to leave a voicemail during session), or scheduled between-session phone check-ins; managing contingencies by rearranging the timing and context of activities so desired behaviors are positively reinforced rather than punished (e.g., avoiding scheduling window-shopping right before family dinnertime) and addressing competing secondary gains (such as disability/legal claims or a partner inadvertently reinforcing bed rest with extra attention, sometimes inviting the partner into session); and identifying classically conditioned triggers (such as a specific neighborhood linked to a traumatic breakup or coworkers at a bar and grill eliciting automatic urges to drink) so cues can be modified through desensitization or avoided.",
+      "therapeutic_purpose": "To prospectively prevent and retrospectively resolve obstacles to homework completion and behavioral activation by nonjudgmentally analyzing contextual contingencies, skill deficits, task grading, cueing, and conditioned responses, and 'tweaking' action plans until they succeed.",
+      "when_to_use": [
+        "Prospectively whenever assigning a between-session activation plan, to anticipate external barriers (e.g., bad weather, needing help carrying heavy supplies) and internal barriers (e.g., waking up feeling unmotivated) and secure a firm commitment.",
+        "Retrospectively when a client returns having not completed, only partially completed, or done the exact opposite of a planned assignment, or after a client misses a therapy session out of shame or discouragement.",
+        "When a client completes an assigned activity (such as window-shopping) but experiences a worsening of mood due to unexamined contextual contingencies.",
+        "When clients fail to complete activity charts, object that monitoring makes them feel worse, or record activities with no mood ratings or no variance in mood."
+      ],
+      "target_patterns": [
+        "Incomplete or forgotten between-session activation assignments and self-monitoring charts.",
+        "Client shame, guilt, and self-blame following homework noncompletion or workplace/interpersonal missteps, leading to further withdrawal or missed therapy appointments.",
+        "Overestimation of what can be accomplished in a given time frame, or romanticizing pre-depression productivity and making unfair comparisons to others.",
+        "Skills deficits in time estimation, task sequencing, interpersonal assertiveness, or regulating emotional hyperarousal/identifying emotions.",
+        "Unfavorable environmental contingencies where an otherwise rewarding activity disrupts household routines (e.g., delaying children's dinner) or where problematic behavior (e.g., staying in bed) is inadvertently reinforced by a partner's attention or competing legal/disability contingencies.",
+        "Automatic, classically conditioned avoidance or maladaptive urges (e.g., alcohol abuse or sudden emotional overwhelm) elicited by specific people, places, or trauma-related cues."
+      ],
+      "prerequisites": [
+        "Client buy-in to the BA treatment rationale and a collaborative session structure that prioritizes reviewing homework.",
+        "A nonjudgmental, matter-of-fact, optimistic therapist stance that models curiosity ('What can we learn here?') and reinforces even small or partial client efforts."
+      ],
+      "possible_questions": [
+        "Hmmm. It seems we haven't solved this problem yet. Let's take a closer look at what interfered and see what we can learn.",
+        "Okay, there's a good reason that this happened (or didn't happen) in this way. We must have missed something last week when we came up with this assignment, or perhaps a new problem arose. Let's take a close look and figure out which it is.",
+        "I notice you didn't get around to doing what you had planned on Saturday. How did that afternoon go for you?",
+        "When we say that change happens in small increments, we really do mean small. I'd like to maximize your success in doing this task, so let's start really small. It's okay if you do more; I just want to be sure that you know that you will have succeeded in the assignment if you do this first step.",
+        "When you are feeling down, it is common to not notice small changes in mood because everything seems so gray. From experience, I know that putting a microscope to your mood throughout the day will help you fine-tune your observations of subtle changes.",
+        "Did you think about or remember the homework assignment at any time during the past week?",
+        "Will anything get in the way of your going window-shopping? Is there anything that would make this activity harder or easier if you went at the time we have planned?",
+        "Where am I likely to have a particularly hard time? What can I do to make it likely that I'll be able to cope?"
+      ],
+      "cautions": [
+        "Mood-dependent behavior can get the best of therapists as well as clients; when clients repeatedly fail to complete homework, therapists must guard against frustration, blaming the client, attributing lack of progress to 'Axis II issues,' or using nonbehaviorally descriptive labels such as 'help-rejecting' ('Yes, but...'), 'manipulative,' or 'wanting to remain depressed.'",
+        "Failing to follow up on an assigned task or dropping homework inquiry altogether inadvertently reinforces client avoidance, forfeits opportunities to reinforce partial progress, and leaves the therapist without the behavioral data needed to solve the problem.",
+        "Therapists must avoid three stylistic pitfalls: expecting change too quickly (which can cause a therapeutic alliance rupture when life conditions do not support rapid change and the therapist needs to step back and build rapport), carrying out BA in a mechanical, technique-driven manner devoid of warmth and genuineness, and giving up on BA too soon (switching treatment modalities prematurely rather than practicing 'patience with vigilance').",
+        "At the same time, it is unwise to persist indefinitely in forcing BA if a client is repeatedly not improving or is deteriorating over time.",
+        "Clinicians should not assume clients possess basic adult skills (such as checkbook balancing, time estimation, or assertiveness) or that clients will speak up if they do not understand a vague assignment, as embarrassment often keeps clients silent."
+      ],
+      "expected_outcomes": [
+        "Preservation of a strong, non-shaming therapeutic alliance in which clients return to therapy even after setbacks or missed appointments.",
+        "Iterative 'tweaking' of task grading, scheduling, environmental cues, and contingency arrangements so that activation experiments succeed and yield positive reinforcement.",
+        "Acquisition of missing self-management, interpersonal assertiveness, self-monitoring, and emotion regulation skills required to sustain activation."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 8 ('Troubleshooting Difficulties in Activation'), 'Introduction' & 'The Challenges of Activation', PDF pp. 160-162 (Book pp. 143-145)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 8 ('Troubleshooting Difficulties in Activation'), 'The Therapist's Style and Stance in Troubleshooting Problems', PDF pp. 162-165 (Book pp. 145-148)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 8 ('Troubleshooting Difficulties in Activation'), 'Challenges with Style and Stance That Can Complicate BA', PDF pp. 165-166 (Book pp. 148-149)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 8 ('Troubleshooting Difficulties in Activation'), 'Finding Out What May (or Did) Go Awry' & 'Common Problems with Activation', PDF pp. 166-175 (Book pp. 149-158)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 8 ('Troubleshooting Difficulties in Activation'), 'Table 8.1. Troubleshooting', PDF p. 176 (Book p. 159)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 4 ('ACTIVATE Reference Sheet for Therapists'), 'Include Monitoring', PDF p. 219 (Book p. 202)"
+      ]
+    },
+    {
+      "intervention_id": "ba_relapse_prevention_and_posttherapy_planning",
+      "name": "Progress Monitoring, Generalizing Activation, and Posttherapy Relapse Prevention Planning",
+      "description": "Because major depressive disorder is highly recurrent, BA integrates progress monitoring and generalization throughout treatment and dedicates the final phase of therapy to consolidating gains, expanding activation to broader life contexts, and constructing an individualized posttherapy relapse prevention plan. Clinicians and clients collaboratively evaluate readiness for termination using behavioral indicators alongside quantitative symptom and process measures—such as the PHQ-9, BDI-II, GAD-7, BAI, and the Behavioral Activation for Depression Scale (BADS; Appendix 5), which tracks Activation, Avoidance/Rumination, Work/School Impairment, and Social Impairment. By graphing symptom trajectories (e.g., BDI-II scores across sessions) and reviewing past activity charts, the dyad identifies specific historical spikes in depression and extracts lessons about the client's unique vulnerability contexts (such as loss of status, critical feedback at work, unstructured weekend hours, or reminders of past losses) and early warning behaviors (such as staying in bed, skipping social or therapy commitments, or 'going through the motions'). Clinicians actively promote both stimulus generalization (performing learned antidepressant behaviors across new settings, times, and people) and response generalization (adapting the form of skillful behaviors, such as assertiveness, across varied contexts), sometimes enlisting supportive family members or partners—particularly when culturally congruent, as in collectivist contexts—to reinforce antidepressant behaviors and extinguish depressed behaviors. As treatment nears completion, the client and clinician expand activation plans to larger, long-term life goals across interpersonal relationships, employment, recreation/education, finances, and housing, and compile a personalized 'behavioral antidepressant' handbook using the Notebook and Weekly Therapy Plan (Appendix 2) and the Notebook and Posttherapy Plan (Appendix 3; illustrated in Figure 9.1). Finally, the clinician may space final sessions further apart to allow extended real-world practice and troubleshooting, and arrange maintenance or posttermination 'booster sessions' should the client slip back into withdrawal.",
+      "therapeutic_purpose": "To evaluate treatment progress objectively, generalize antidepressant habits across diverse naturalistic contexts and long-term life domains, and equip the client with a written, individualized relapse prevention plan and maintenance structure to protect against future depressive episodes.",
+      "when_to_use": [
+        "Throughout therapy via periodic or session-by-session quantitative measurement (e.g., PHQ-9, BDI-II, GAD-7, BADS) to track fluctuations in depressive symptoms, avoidance, and activation.",
+        "When a client's depressive symptoms have consistently remitted into the nondepressed range, secondary avoidance habits have been reduced, and the dyad is mutually preparing for termination.",
+        "When clients have mastered initial activation targets and are ready to tackle larger primary life problems and long-term goals (such as career advancement, moving to a better neighborhood, or pursuing intimate relationships).",
+        "When tapering therapy frequency (spaced sessions) or scheduling follow-up booster sessions after an acute course of BA."
+      ],
+      "target_patterns": [
+        "Vulnerability to depressive relapse triggered by high-risk contexts such as occupational criticism, loss of status or effort-based rewards, unstructured leisure time, or reminders of past losses.",
+        "Early warning relapse behaviors that restart the depression cycle, including not returning phone calls, slowing down on household chores, working from home repeatedly in isolation, staying in bed, or telling oneself 'I'm too tired' or 'This is totally overwhelming.'",
+        "Context-bound skills that occur in the clinician's office but have not yet generalized to varied naturalistic settings, times of day, or interpersonal relationships."
+      ],
+      "prerequisites": [
+        "Collection of longitudinal symptom measures (e.g., BDI-II, PHQ-9), activation/avoidance measures (BADS), and activity monitoring charts across the course of therapy.",
+        "Demonstration of meaningful symptom relief, decreased avoidance, and increased engagement in antidepressant behaviors."
+      ],
+      "possible_questions": [
+        "I've included on this graph the scores from the questionnaires you fill out at each of our sessions. I'm curious about any impressions you have as you look over this. Do you notice anything in particular that surprises you as you look at the patterns over the course of our work together?",
+        "I'm thinking that one of the ways we can learn from this graph is to identify specific ways in which your mood may be vulnerable in the future and what you can do about it.",
+        "When you are in one of those vulnerable times, like if you receive some critical feedback, continuing to engage instead of avoid is even more important. Let's talk about the specific activities you have learned to use to help you engage during those times. Do any come to mind?",
+        "When is this [high-risk situation] most likely to occur? What can you do, if anything, to prevent this from happening? If this does happen, what are possible consequences and what can you do to reduce the impact?",
+        "What contexts increase my vulnerability to depression?",
+        "What behaviors contribute to keeping the depression cycle going?",
+        "What antidepressant behaviors do I need to maintain or increase?",
+        "What can I do to increase the chances that I will follow through on my antidepressant behaviors?"
+      ],
+      "cautions": [
+        "Before inviting family members or significant others to assist with generalization and relapse prevention, the clinician must thoroughly assess the nature of those relationships; if members of the client's close social network contribute to their problems, involving them is unwise. Clinicians should also attend to cultural variables, noting that family involvement is commonplace in collectivist cultures but may not fit every client.",
+        "When preparing for high-risk situations, it is not necessary or helpful to ask clients to imagine every painful event possible; planning should focus on high-risk situations for which reasonable evidence exists based on the client's history and BA formulation.",
+        "While there are no fixed cutoffs on the BADS and termination should be mutually agreed upon based on progress rather than arbitrary time cutoffs (outside of insurance constraints), clinicians should also reflect on their own adherence and competence (using tools like the Q-BAS or postsession fidelity checklist) while recognizing that if BA is only one part of a broader case conceptualization, fidelity checklists apply only to the BA portion."
+      ],
+      "expected_outcomes": [
+        "Stimulus and response generalization of antidepressant behaviors across diverse physical settings, times of day, and interpersonal contexts.",
+        "Creation of a concrete, personalized written Notebook and Posttherapy Plan detailing vulnerability contexts, depression-maintaining behaviors, core antidepressant behaviors, and commitment/follow-through strategies.",
+        "Continued pursuit of long-term life changes across employment, housing, financial, recreational, and relationship domains after formal therapy ends.",
+        "Sustained protection against depressive relapse, supported by spaced termination sessions or brief booster sessions when needed."
+      ],
+      "source_references": [
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 9 ('Measuring Progress and Preparing for Termination'), 'Introduction' & 'Monitoring Progress', PDF pp. 179-180 (Book pp. 162-163)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 9 ('Measuring Progress and Preparing for Termination'), 'Termination and Beyond', PDF pp. 181-183 (Book pp. 164-166)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 9 ('Measuring Progress and Preparing for Termination'), 'Expanding Activation to New Life Contexts and Goals After Treatment Ends', PDF pp. 183-190 (Book pp. 166-173)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Ch. 9 ('Measuring Progress and Preparing for Termination'), 'Figure 9.1. Addilyn's notebook and posttherapy plan', PDF p. 184 (Book p. 167)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 2 ('Notebook and Weekly Therapy Plan'), PDF p. 217 (Book p. 200)",
+        "Martell, Dimidjian, & Herman-Dunn (2022), Behavioral Activation for Depression (2nd ed.), Appendix 3 ('Notebook and Posttherapy Plan'), PDF p. 218 (Book p. 201)"
+      ]
+    }
+  ]
+}

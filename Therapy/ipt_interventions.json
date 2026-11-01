@@ -1,0 +1,767 @@
+{
+  "therapy_id": "IPT",
+  "therapy_name": "Interpersonal Psychotherapy",
+  "interventions": [
+    {
+      "intervention_id": "ipt_diagnosis_and_sick_role",
+      "name": "Diagnosing Depression as a Medical Illness and Assigning the Sick Role",
+      "description": "The clinician systematically assesses the patient's emotional, cognitive, and physical depressive symptoms using formal diagnostic criteria (such as DSM-5 or ICD-10/ICD-11) alongside standardized rating scales (such as the Hamilton Rating Scale for Depression, PHQ-9, Beck Depression Inventory, or QIDS). By showing the patient her symptoms on an established rating scale, the clinician helps externalize the syndrome as a discrete, ego-alien, and long-defined medical disorder rather than a personal flaw or toxic character trait, while establishing a baseline score to repeat periodically (for example, every few weeks) to track recovery. The clinician explicitly names the disorder, provides psychoeducation on its prevalence, clinical course, and excellent prognosis, and clarifies that hopelessness and guilt are symptoms of the illness rather than reflections of reality or the true outlook. Concurrently, the clinician screens for comorbid anxiety, alcohol or drug abuse, and potential underlying medical conditions (recommending a physical examination if not recently completed, especially for patients over age 50), and evaluates whether antidepressant pharmacotherapy is indicated based on symptom severity, suicidality, comorbidity, prior treatment response, or patient preference. Finally, the clinician confers the temporary 'sick role,' using medical analogies (such as appendicitis or influenza) to excuse the patient from self-blame when exhaustion or low mood impairs usual performance, while pairing this relief with the clear expectation that the patient will actively collaborate in therapy to recover and gradually resume normal social functioning.",
+      "therapeutic_purpose": "To demystify and externalize depressive symptoms as a treatable medical illness, alleviate pervasive self-blame and demoralization by granting the temporary sick role, establish an objective baseline for monitoring symptom remission, and determine whether standalone IPT or combined pharmacotherapy is clinically optimal.",
+      "when_to_use": [
+        "At the beginning of IPT when evaluating a patient presenting with depressive symptoms, dysphoria, anhedonia, or unexplained somatic complaints such as insomnia, weight loss, and fatigue.",
+        "Periodically throughout treatment (approximately every three to four weeks) to objectively monitor symptom trajectory and demonstrate clinical progress using the standardized depression scale.",
+        "During intermediate work when a patient blames herself for low energy, social withdrawal, or difficulty executing interpersonal tasks, requiring renewed psychoeducation and reinforcement of the sick role.",
+        "When evaluating whether severe symptom burden, neurovegetative signs, or high suicide risk warrant adding or consulting for antidepressant medication."
+      ],
+      "target_patterns": [
+        "Viewing depressive symptoms, passivity, or impaired daily functioning as personal moral failings, character defects, or deliberate misconduct.",
+        "Mistaking the depressive symptom of hopelessness for an accurate prognosis of untreatability.",
+        "Confusing chronic depressive states (such as dysthymia/persistent depressive disorder) or state-dependent dependency and irritability with immutable personality traits.",
+        "Somatizing distress and attributing sleep, appetite, and energy disturbances solely to undetected physical illness while overlooking clinical depression.",
+        "Self-criticism and guilt over inability to fulfill social, occupational, or family obligations at pre-illness capacity."
+      ],
+      "prerequisites": [
+        "Availability of formal diagnostic criteria (DSM-5 or ICD) and a standardized depression rating scale (e.g., Ham-D, PHQ-9, BDI, or QIDS).",
+        "Medical clearance or referral for a physical examination (particularly for patients over age 50) to rule out organic mimics such as hypothyroidism.",
+        "Assessment of substance use frequency and severity (including hangovers, blackouts, or seizures) and screening for bipolar or psychotic/delusional features."
+      ],
+      "possible_questions": [
+        "When did you start feeling depressed, sad, blue?",
+        "What do you see as the things that you can do well (or were able to do well before you got depressed)?",
+        "What situations make you feel guilty, ashamed, or angry?"
+      ],
+      "cautions": [
+        "Delusional (psychotic) depression requires antidepressant/antipsychotic medication or electroconvulsive therapy and usually cannot be treated by any psychotherapy alone, including IPT.",
+        "Patients with bipolar I disorder require mood-stabilizing pharmacotherapy; IPT should only be used as an adjunct to medication in bipolar disorder.",
+        "Patients with severe depression (e.g., Ham-D scores in the high 20s or 30s), marked agitation or psychomotor retardation, incoherent thinking, or high suicide risk generally require combined pharmacotherapy and psychotherapy rather than IPT monotherapy, as medication acts more rapidly.",
+        "While telling female patients that depression is more common in women can be reassuring, clinicians should avoid emphasizing this epidemiological fact to male patients, who may feel diminished by hearing it.",
+        "In non-Western or primary care health clinic settings where patients present with subsyndromal distress or chronic severe stressors rather than full major depression, rigid insistence on the medical term 'depression' may be less fitting than speaking of 'symptoms' or 'distress'.",
+        "Conferring the sick role must not encourage permanent passivity or regression; it must be explicitly balanced with the patient's responsibility to work actively in therapy toward recovery."
+      ],
+      "expected_outcomes": [
+        "Early symptomatic relief and reduced demoralization as the patient distinguishes the ego-alien disorder from her core sense of self.",
+        "Decreased self-blame and guilt regarding current functional limitations at home, work, or in social relationships.",
+        "Enhanced therapeutic alliance and treatment optimism grounded in a clear medical understanding of depression and its favorable prognosis.",
+        "Appropriate integration of antidepressant pharmacotherapy when clinically indicated or preferred."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Initial Sessions', PDF pp. 30-31 (Book pp. 13-14)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 3 ('What Is IPT?'), 'Overview' & 'Concept of Depression in IPT', PDF pp. 38-40 (Book pp. 21-23)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 3 ('What Is IPT?'), 'Facts About Depression' & 'Major Depressive Disorder', PDF pp. 43-44 (Book pp. 26-27)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 4 ('Beginning IPT'), 'Review the Symptoms and Make the Diagnosis', 'Explain the Diagnosis and Treatment Options', 'Evaluate the Need for Medication', & 'The Sick Role', PDF pp. 47-51, 56 (Book pp. 30-34, 39)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_interpersonal_inventory",
+      "name": "Conducting the Interpersonal Inventory",
+      "description": "The clinician conducts a comprehensive, interpersonally focused review of the patient's current and significant past relationships across family, romantic partners, roommates, friends, coworkers, and broader social networks to establish the social context of the depressive episode. Rather than searching for childhood origins or intrapsychic causality, the clinician investigates what was happening in the patient's life around the time depressive symptoms emerged or worsened, noting both interpersonal precipitants of depression and interpersonal disruptions that followed as consequences of the mood disorder. The inquiry examines the quality and depth of key attachments, including how close the patient gets to others, whether she can confide intimate feelings, who is available for practical and emotional support, and whether she has become estranged from important figures. Furthermore, the clinician evaluates interaction patterns across relationships: mutual and nonreciprocal expectations and whether they are fulfilled, satisfying and unsatisfying aspects of each bond, how effectively the patient expresses wishes ('I want...') or anger and displeasure ('I don't like it when you...'), and what changes the patient desires. Both open-ended exploration and targeted prompting (for withdrawn patients) are used to uncover hidden losses, covert disputes, major life changes, or chronic isolation so the clinician can accurately identify the most emotionally salient interpersonal problem area.",
+      "therapeutic_purpose": "To map the patient's social support network, attachment patterns, communication difficulties, and recent life stressors in order to link the depressive episode to its interpersonal context and select a pivotal, emotionally meaningful focal problem area for treatment.",
+      "when_to_use": [
+        "During the initial evaluation phase after establishing the diagnosis of depression, to gather the interpersonal history necessary for case formulation.",
+        "When a patient presents with vague, somatic, or purely symptomatic complaints and does not spontaneously connect her mood to recent life events.",
+        "When an initial candidate focus (such as a minor job change or superficial complaint about children) appears to be a dead end or 'tip of the iceberg,' requiring deeper inquiry into past and current attachments to uncover a hidden loss or more pressing crisis."
+      ],
+      "target_patterns": [
+        "Inability to perceive the connection between current interpersonal stressors or losses and the onset or maintenance of depressive symptoms.",
+        "Social withdrawal and underutilization of available family, friendship, or community supports during a depressive episode.",
+        "Chronic passivity, avoidance of confrontation, and difficulty expressing intimate needs, wishes, or anger to significant others.",
+        "Concealment or avoidance of painful interpersonal events, such as an unmourned death or a partner's infidelity, out of shame, guilt, or emotional numbing."
+      ],
+      "prerequisites": [
+        "Establishment of a preliminary diagnosis of depression and an initial supportive, empathic listening stance.",
+        "Sufficient clinical time in the opening visits to survey family, romantic, friendship, and occupational relationships thoroughly before locking in a treatment focus."
+      ],
+      "possible_questions": [
+        "What was going on in your life and what was happening around the time you started feeling bad—at work, at home, with your family and friends? Had anything changed?",
+        "Who are the people who are important to you these days? Who are potential social supports, and from whom may you have become estranged?",
+        "When you started to feel depressed, what was happening in your life? Was there a disappointment in a relationship? Did your marriage begin to have problems? Were you and your children or parents in a dispute? Did your child leave home? Did you start a new job? Did someone move in with you? Did you yourself move? Was it the anniversary of someone's death? Were you put in situations where you had to meet new people and establish relationships?",
+        "What problems are you facing at the moment?",
+        "Are you involved in disputes or disagreements with other people in your life right now? How are you dealing with these disputes?",
+        "What are your current disappointments? How are you dealing with them?",
+        "What are your stresses?"
+      ],
+      "cautions": [
+        "Do not allow the interpersonal inventory to turn into an unstructured digression into early childhood, character pathology, fantasy life, or psychodynamic defenses; keep the primary focus on the 'here and now' and recent life context.",
+        "Do not prematurely settle on the first problem a patient mentions (e.g., complaining about children when the true crisis is a spouse's extramarital affair) or default to 'interpersonal deficits' before thoroughly probing for hidden life events such as an unmentioned bereavement.",
+        "Recognize that interpersonal events need not precede the depression to be valid focal areas; role disputes or transitions that arise as consequences of depressive withdrawal are equally valid targets because IPT links mood and interpersonal state rather than proving etiology."
+      ],
+      "expected_outcomes": [
+        "A clear, comprehensive picture of the patient's social resources, relationship dissatisfactions, and communication style.",
+        "Identification of the specific life events or relationship patterns temporally and emotionally linked to the depressive episode.",
+        "Accurate selection of one (or at most two) of the four IPT focal problem areas—grief, role dispute, role transition, or interpersonal deficits—preventing late-treatment surprises."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Initial Sessions', PDF p. 31 (Book p. 14)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 3 ('What Is IPT?'), 'Goals of IPT' & 'Understanding How the Depression Began', PDF pp. 41-43 (Book pp. 24-26)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 4 ('Beginning IPT'), 'Review the Patient's Current Problems in Relationship to Depression (Interpersonal Inventory)', PDF pp. 51-54 (Book pp. 34-37)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_interpersonal_formulation_and_contract",
+      "name": "Interpersonal Formulation and Treatment Contract Agreement",
+      "description": "Drawing together the psychiatric diagnosis and the findings of the interpersonal inventory, the clinician presents a concise, plausible interpersonal formulation that links the patient's depressive illness to one (or at most two) of the four IPT problem areas: complicated bereavement (grief), an interpersonal role dispute, a role transition, or social isolation/interpersonal deficits. The clinician offers this contextualizing narrative as feedback, explaining that while depression has multiple causes, it is closely tied to current interpersonal crises, and that resolving the focal life problem should both improve the patient's life situation and alleviate depressive symptoms. The clinician explicitly seeks the patient's collaborative agreement on this focus; if the patient disagrees, the clinician explores alternative interpersonal foci that make better sense to the patient. Alongside the formulation, the clinician establishes an explicit treatment contract specifying a predetermined, fixed number of consecutive weekly sessions (typically eight to sixteen fifty-minute sessions over three to four months, rather than an open-ended range) to create healthy time pressure that counters depressive passivity. Finally, the clinician outlines the practical and procedural framework of IPT: focusing on current 'here-and-now' relationships and feelings between sessions, inviting the patient to raise important concerns or any dissatisfaction with therapy, and clarifying fees, scheduling, missed-appointment policies, and confidentiality (including legal exceptions).",
+      "therapeutic_purpose": "To bridge the initial assessment and the active treatment phase by providing an organizing narrative that helps the patient feel understood, securing explicit collaborative agreement on a single primary interpersonal focus, and establishing a firm time limit and procedural structure that mobilize patient agency.",
+      "when_to_use": [
+        "At the conclusion of the initial assessment phase (no later than the third visit) once the depressive diagnosis and interpersonal inventory are complete.",
+        "During subsequent intermediate sessions as a reference point to redirect the patient back to the agreed-upon interpersonal theme if she digresses into unrelated topics.",
+        "When renegotiating treatment focus or duration if an unforeseen major life crisis erupts mid-treatment or when contracting separately for continuation/maintenance IPT."
+      ],
+      "target_patterns": [
+        "Depressive disorganization, distractibility, and poor concentration that cause therapy to drift into unfocused complaints or a 'laundry list' of problems.",
+        "Depressive passivity and procrastination that thrive in open-ended, indefinite treatment arrangements.",
+        "Disconnect between experiencing physical or emotional symptoms of depression and recognizing how solving a current interpersonal crisis can relieve those symptoms."
+      ],
+      "prerequisites": [
+        "Completion of the formal depressive diagnosis and baseline symptom rating scale.",
+        "Completion of the interpersonal inventory identifying at least one core interpersonal problem area connected to the mood episode."
+      ],
+      "possible_questions": [
+        "You've given me a lot of helpful information in the last two sessions. May I give you some feedback to see whether you think I understand your situation?",
+        "I propose that, for the next X weeks, we focus on helping you solve your [complicated bereavement/role dispute/role transition/social isolation]. If you can solve that problem, not only will you improve your life situation, but your depressive symptoms are likely to improve as well. Repeated research studies have shown this to be the case. Does this plan make sense to you?",
+        "You're suffering from depression, and that seems to have something to do with what's going on in your life. We call that (complicated bereavement, a role dispute, etc.). I suggest that we spend the next X weeks working on solving that difficult life crisis. If you can solve that problem, your depression is likely to lift as well. Does that make sense to you?"
+      ],
+      "cautions": [
+        "Focus on one problem area (or at most two); choosing multiple foci or giving the patient a 'laundry list' of interpersonal problems dilutes the therapy so that there is no real focus at all.",
+        "Always prefer the three life-event categories (grief, role dispute, role transition) over interpersonal deficits whenever a plausible life event can be identified.",
+        "Never tell a patient directly that her problem area is 'interpersonal deficits,' as the term sounds insulting and implies a personality defect; instead, frame the focus to the patient as 'social isolation,' 'lack of friends,' 'loneliness,' or 'boredom'.",
+        "Present the formulation early—no later than the third session—so that sufficient time remains for the intermediate and termination phases.",
+        "Set a predetermined fixed number of sessions (e.g., twelve weeks) rather than a vague range, and do not assume more sessions are more helpful, as the firm time limit is needed to pressure both patient and therapist into action.",
+        "Do not proceed into the middle phase without obtaining the patient's explicit agreement on the formulation and focus; if the patient rejects the proposed focus, collaboratively explore and adopt an alternative interpersonal focus."
+      ],
+      "expected_outcomes": [
+        "A clear, shared conceptual map linking the patient's depressive symptoms to a manageable interpersonal problem area.",
+        "Explicit patient buy-in and collaborative commitment to working on the agreed-upon focus within a specified number of weekly sessions.",
+        "Enhanced patient hope and organization, counteracting depressive helplessness and distractibility."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Initial Sessions', PDF pp. 31-32 (Book pp. 14-15)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 3 ('What Is IPT?'), 'Concept of Depression in IPT' & 'Goals of IPT', PDF pp. 40-42 (Book pp. 23-25)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 4 ('Beginning IPT'), 'Review the Patient's Current Problems in Relationship to Depression (Interpersonal Inventory)', 'Present the Formulation', 'Make the Treatment Contract and Explain What to Expect', & 'The Sick Role', PDF pp. 52-57 (Book pp. 35-40)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_grief_resolution",
+      "name": "Facilitating Mourning in Complicated Bereavement / Grief",
+      "description": "When major depression is associated with the death of a significant other (complicated bereavement), the clinician helps the patient process the avoided or derailed mourning process and subsequently build a new life direction. The clinician educates the patient that complicated grief is a treatable form of depression and that recovering is not a betrayal of or sign of disrespect for the deceased. Using nondirective exploration, clarification, and direct encouragement of affect, the clinician invites the patient to recount the sequence and consequences of events prior to, during, and after the death, including how she learned of the death, funeral experiences, and memories of the shared relationship. To help the patient access suppressed affect, the clinician may encourage reviewing photo albums or memorabilia, visiting meaningful places or places of worship, or reminiscing with mutual friends and family. When strong waves of sadness or crying emerge in the office (catharsis), the clinician remains calmly quiet and allows the affect to linger without interrupting or changing the subject, teaching the patient that powerful feelings are tolerable and not dangerous. After initially exploring warm, positive memories of the deceased, the clinician gently normalizes and elicits negative or ambivalent feelings—such as anger, hurt, abandonment, resentment over caregiving burdens, or guilt over things done or left undone—to transform a narrowly idealized, two-dimensional image of the deceased into a balanced, three-dimensional portrait. Once painful grief affect has been processed and diminishes in intensity, the clinician uses communication analysis, decision analysis, and role play to help the patient fill the interpersonal void by resuming pleasurable activities, reconnecting with old friends, and forming new relationships.",
+      "therapeutic_purpose": "To facilitate emotional catharsis and realistic three-dimensional integration of the lost relationship—including both positive and negative/ambivalent feelings—and to help the bereaved patient re-establish social supports, interests, and relationships to fill the void left by the deceased.",
+      "when_to_use": [
+        "When the onset or worsening of a depressive episode (or severe, impairing distress in a patient lacking social supports) is linked to the actual death of a significant other (spouse, partner, child, parent, relative, friend, or dear pet).",
+        "When a bereaved patient has postponed or avoided mourning by keeping overly busy, taking care of other mourners, refusing to attend the funeral or grave, burying memorabilia, or blocking out memories of the deceased.",
+        "When a patient presents with chronic complicated bereavement as a 'professional mourner' whose life has halted in perpetual dedication to the dead and who views any personal pleasure as a betrayal of the deceased.",
+        "When a patient presents with unexplained physical symptoms or somatic fears around the anniversary of a loved one's death or fears contracting the illness from which the deceased died."
+      ],
+      "target_patterns": [
+        "Emotional numbing, constriction, and avoidance of mourning due to fear that crying or grief will be overwhelming, dangerous, or unending.",
+        "Idealized, abstracted, two-dimensional view of the deceased coupled with intense guilt or shame over harbouring normal anger, disappointment, or resentment toward the dead person.",
+        "Excessive depressive guilt over minor omissions around the time of death ('If only I had stayed in the hospital room...') or survivor guilt that improving means one did not truly love the deceased.",
+        "Enshrining the deceased's environment and adopting a permanent 'professional mourner' identity that precludes living one's own life.",
+        "Social isolation, atrophy of broader life interests after caregiving or bereavement, and fear of abandonment in prospective new relationships."
+      ],
+      "prerequisites": [
+        "Verification that the loss is an actual death (postmortem bereavement); non-death losses must be conceptualized and treated as role transitions.",
+        "Agreement on complicated bereavement/grief as the primary IPT treatment focus.",
+        "For the phase of re-establishing outside interests and relationships: the patient must first have had sufficient opportunity to experience and process the acute grief feelings and address the loss."
+      ],
+      "possible_questions": [
+        "Has anyone close to you died?",
+        "I'm sorry to hear that. How did you handle that loss? What feelings did you have?",
+        "Did you attend the funeral? What was it like?",
+        "Where were you when you found out about X's death? (Did you feel you did something wrong?)",
+        "Do you feel you've been able to mourn that loss?",
+        "What do you miss about your mother? What were some of her good qualities? What do you miss about your relationship with her?",
+        "You seem to feel guilty if you catch yourself enjoying an activity. But does that mean you'll ever forget your lost Jimmy? It is possible to have more than one feeling at a time, to honor his memory and to live your life.",
+        "What might help you to feel better during this time?",
+        "How would you approach her? What might you say?"
+      ],
+      "cautions": [
+        "In IPT, the grief category is strictly reserved for the death of a significant other; non-death losses (such as divorce, job loss, or loss of health) must be treated as role transitions.",
+        "When a wave of crying or strong emotion rolls through the office, do not yield to therapist anxiety by interrupting the patient or changing the subject; stay calmly quiet and let the patient sit with and talk out her feelings.",
+        "Do not rush into encouraging new relationships and activities until the patient has first had a chance to experience catharsis and process the feelings of loss.",
+        "Avoid being overly directive or didactic in steering the patient through grieving; the less the clinician says while facilitating mourning, the better.",
+        "Patients with severe grief reactions—especially those with early caretaking deficits (insecure attachments) for whom the deceased provided an adult secure attachment—may become irritated at premature hints to discuss ambivalent or negative feelings about the deceased; explore positive memories first and handle negative emotions with cultural sensitivity.",
+        "Unlike CBT, do not ask the patient to weigh objective evidence for and against guilty beliefs; instead, let the patient air and reflect on the guilt before identifying excessive guilt as a symptom of depression (while exploring more complex, potentially justified guilt—such as true neglect or assisted suicide—more fully).",
+        "When persistent longing and preoccupation involve traumatic loss with intrusive images (prolonged acute grief / traumatic grief), standard IPT may require exposure-based PTSD adaptations."
+      ],
+      "expected_outcomes": [
+        "Experience of emotional catharsis and realization that strong feelings of grief, sadness, and anger are tolerable and subside when expressed.",
+        "Replacement of a rigid, idealized, or guilt-ridden memory of the deceased with a nuanced, realistic three-dimensional view of the relationship.",
+        "Reduction in depressive symptoms, somatic preoccupations, and survivor guilt.",
+        "Re-engagement with old friends, resumption of pleasurable activities, and formation of new social supports and life directions while honoring the deceased's memory."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Table 2.1 IPT Outline (Grief/Complicated Bereavement)', PDF pp. 33-34 (Book pp. 16-17)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 5 ('Grief'), 'Normal Grief', 'Complicated Grief', 'DSM-5 and Grief', 'Grief as a Problem Area in IPT', 'Goals in Treating a Grief Reaction', 'Catharsis', & 'Reestablishing Interests and Relationships', PDF pp. 60-68 (Book pp. 43-51)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_role_dispute_resolution",
+      "name": "Resolving Interpersonal Role Disputes",
+      "description": "When depression is linked to an overt or covert conflict involving nonreciprocal expectations with a significant other (such as a spouse, lover, child, parent, friend, or coworker/boss), the clinician helps the patient identify the core issues, clashes in expectations and values, unspoken assumptions, and secondary gains or behaviors perpetuating the struggle. A central diagnostic task is determining the stage of the dispute: Renegotiation (parties are in active, often heated contact trying to change things), Impasse (discussions have ceased, leaving smoldering resentment, hopeless resignation, and the 'silent treatment'), or Dissolution (the relationship is irretrievably disrupted and one or both parties seek to end it). The clinician adapts the strategy to the stage: calming the participants to facilitate constructive resolution during Renegotiation; bringing suppressed issues into the open to intentionally increase disharmony and reopen negotiation during an Impasse; or helping the patient end the relationship with minimal harm and mourn the resulting role transition during Dissolution. Across sessions, the clinician links weekly mood fluctuations to interpersonal encounters, reconstructs blow-by-blow transcripts of interactions (examining exact words, emotional tone, feelings, and partner responses), and highlights disjunctions between what the patient felt and how she acted. The clinician validates negative affects such as anger and frustration as normal, useful interpersonal signals rather than 'bad' or selfish feelings, encourages a modicum of healthy selfishness, explores realistic options for changing expectations or communication, and uses repeated in-session role play so the patient can practice asserting wishes ('I would like...') and setting limits ('I don't like it when...') directly outside the office.",
+      "therapeutic_purpose": "To help the depressed patient recognize and assert her own needs and negative feelings, understand nonreciprocal role expectations, and actively renegotiate (or, when irreconcilable, dissolve) a stalemated conflict with a significant other, thereby restoring interpersonal agency and resolving depressive symptoms.",
+      "when_to_use": [
+        "When the onset or maintenance of depression is linked to an open struggle or tacit stalemate with an important person in the patient's current life (spouse, partner, family member, friend, or work supervisor/colleague).",
+        "When a patient and a significant other hold conflicting expectations about their relationship (such as division of household labor, financial contributions, emotional intimacy, fidelity, or workplace demands) in which the depressed patient is invariably losing out.",
+        "When a patient suppresses anger and hurt, puts others' needs ahead of her own, and feels helpless or out of control in a repetitive or silent relational conflict."
+      ],
+      "target_patterns": [
+        "Nonreciprocal role expectations and inequitable compromise between the patient and a significant other.",
+        "Disjunctions between affect and action—feeling understandably angry, hurt, or frustrated during an encounter but remaining silent and submissive.",
+        "Viewing anger and self-assertion as 'bad,' shameful, or selfish emotions that will inevitably drive others away or cause abandonment.",
+        "Hopeless conviction that 'nothing works' or 'I have no options' in a stalemated relationship, accompanied by passive expectation that a partner should know what the patient wants without being told.",
+        "Smoldering resentment and mutual withdrawal ('silent treatment') in an interpersonal impasse."
+      ],
+      "prerequisites": [
+        "Existence of an ongoing relationship with a significant other in which expectations conflict (as opposed to complete social isolation).",
+        "Identification of the current stage of the dispute (Renegotiation, Impasse, or Dissolution) through history-taking and blow-by-blow communication reconstruction."
+      ],
+      "possible_questions": [
+        "Are you having disagreements or a dispute with someone? (Is there someone important with whom you haven't been getting along?)",
+        "How do you feel when you want something and he doesn't agree? What do you do with that feeling?",
+        "How do you fight?",
+        "What did you say? What did she say? How did you feel then? Then what did you say?",
+        "Are you and [the other person] aware of the differences between you? Have you been trying to change things, even if unsuccessfully?",
+        "Have discussions between you and [the other person] about important issues stopped?",
+        "Are the differences between you so large or unsolvable that you want to end the relationship? Some relationships end because of irreconcilable differences. If you feel you've reached that point, how can you dissolve the relationship with the least harm?",
+        "Is it reasonable that you were feeling angry?",
+        "Looking back, what could you have done in that situation? What might you do when it arises again? Have you expressed those feelings to your spouse?",
+        "I'm interested in how you feel about these things, what you would like, and how you would like to get them. And what is [the other person's] point of view? How much of what you'd like to do have you actually told him?",
+        "Are you reluctant to approach each other? How do you handle differences? Can you handle them in a nondestructive way?",
+        "How did you and [the other person in the dispute] communicate with each other? What was the outcome? What did you like about the way you handled it? What didn't seem to work? Are you glad you had the discussion? What do you see as the next step? What options do you have?",
+        "How did [the way you just said] that sound to you? Did you say what you wanted to get across? What did you think about your tone of voice?"
+      ],
+      "cautions": [
+        "Opening up an Impasse by bringing suppressed disagreements out into the open often initially increases disharmony and arguments; both clinician and patient must be prepared to tolerate this temporary escalation on the path to negotiation.",
+        "Dissolution is usually not the first option and should be considered only when a relationship is irretrievably disrupted and cannot be renegotiated to the patient's satisfaction; once chosen, it triggers a role transition that requires mourning the lost relationship.",
+        "In some cultures, dissolving a marriage may be impossible or irreparably damaging; in such contexts, the clinician and patient should explore ways to maintain the relationship with minimal distress rather than pushing for dissolution.",
+        "When generating options to resolve a dispute, do not offer direct advice or suggest solutions yourself (which makes the clinician look clever and the patient feel incompetent); instead, use gentle questioning so the patient generates her own options and takes credit for her agency.",
+        "Do not assign role-played communication strategies as formal homework; instead, use in-session role play to prime the patient and rely on the time pressure of brief therapy to motivate real-world experimentation.",
+        "While validating normal anger and hurt, do not validate inappropriate depressive guilt—identify excessive guilt as a symptom of depression.",
+        "When role disputes coexist with role transitions, select only one primary focus (whichever is most central and palatable to the patient) to keep treatment organized."
+      ],
+      "expected_outcomes": [
+        "Recognition and acceptance of negative emotions (such as anger, irritation, and hurt) as valid, useful signals in interpersonal relationships.",
+        "Direct, clear, and assertive communication of wishes and boundaries to the significant other.",
+        "Successful renegotiation and equitable compromise in the relationship (or, where unsolvable, realizing the problem is not entirely the patient's fault and executing a constructive dissolution).",
+        "Increased sense of interpersonal mastery, independent agency, and remission of depressive symptoms."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Intermediate Sessions: The Problem Areas' & 'Table 2.1 IPT Outline', PDF pp. 32-34 (Book pp. 15-17)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 4 ('Beginning IPT'), 'Entering the Intermediate Sessions' & 'Involvement of Others', PDF pp. 57-59 (Book pp. 40-42)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 6 ('Role Disputes'), 'Definition', 'Goals of Treatment', 'Stage of the Dispute', & 'Managing Role Disputes', PDF pp. 72-78 (Book pp. 55-61)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_role_transition_adaptation",
+      "name": "Facilitating Adaptation to Role Transitions",
+      "description": "When depression is triggered by or complicates a major life change—such as moving, starting or losing a job, promotion, retirement, marriage, divorce, birth of a child, leaving home, immigration/refugee dislocation, economic shift, or diagnosis of a severe medical illness—the clinician helps the patient connect her mood to the disruption of familiar roles and social supports. First, the clinician explicitly names the problem as a 'role transition,' reassuring the patient that what feels like chaotic free fall is a definable adjustment process that will become more controllable over time. The clinician then guides the patient in evaluating and mourning the lost old role, eliciting and validating painful affects (sadness, anger, guilt, powerlessness, fear) while gently challenging the patient's depressed nostalgia by exploring what was difficult, limited, or unpleasant about the old situation. Reciprocally, as catharsis over the old role progresses, the clinician examines what is upsetting and demanding about the unfamiliar new role while helping the patient recognize its hidden opportunities, freedoms, and positive aspects—developing a balanced, realistic view of both old and new roles. Finally, the clinician helps the patient assess her assets, explore practical options, build new friendship patterns or support networks to replace those left behind, and rehearse new interpersonal or occupational skills (such as self-assertion, setting limits, or approaching new people) through in-session role play.",
+      "therapeutic_purpose": "To replace the patient's dually distorted view of a life change (idealizing the lost past while catastrophizing the chaotic present) with a balanced emotional perspective, facilitate mourning of the old role, and build the social supports and interpersonal skills needed to achieve mastery and symptom relief in the new role.",
+      "when_to_use": [
+        "When depressive symptoms arise in the context of an immediate or gradual life change that alters social status, daily routines, or close relationships.",
+        "When a patient experiences an ostensibly positive milestone (such as a wished-for baby, a dream home move, or a career promotion) yet becomes depressed due to unacknowledged loss of freedom, severed social ties, or conflicted feelings about new responsibilities.",
+        "When a patient faces an unexpected, undesired, or objectively negative life transition, such as divorce, job jeopardy/retirement, relocation, or diagnosis of a serious medical illness.",
+        "Following the Dissolution stage of an interpersonal role dispute, when the end of a marriage or relationship creates a new single role."
+      ],
+      "target_patterns": [
+        "Experiencing a major life change as chaotic 'free fall' and feeling completely out of control.",
+        "Depressed nostalgia that idealizes the pre-transition situation as idyllic ('Life was okay') while minimizing its real limitations, pressures, or destructiveness.",
+        "Viewing the new role as entirely dreadful, overwhelming, and devoid of potential rewards or opportunities for personal growth.",
+        "Guilt or shame over feeling sad, lonely, or resentful after a socially desirable change (such as moving to a better house or becoming a parent).",
+        "Disruption of familiar social support networks coupled with anxiety, shyness, or perceived skill deficits in forming new attachments or handling new role demands."
+      ],
+      "prerequisites": [
+        "Identification of a distinct recent or ongoing life change (non-death transition) temporally or emotionally associated with the depressive episode.",
+        "Collaborative agreement to focus treatment on adapting to the role transition."
+      ],
+      "possible_questions": [
+        "What was going on in your life when you started to feel depressed? Had there been a big change in your life that might be related to the start of your depression?",
+        "What was your old [house, job, living situation, marriage] like? What was good about it? What do you miss?",
+        "What wasn't ideal about the old role?... What didn't you like?",
+        "What's upsetting about your current situation?",
+        "What would make you feel better about it?... What options do you have to make it that way?... How could you do that?"
+      ],
+      "cautions": [
+        "Do not rush directly into asking what was bad about the old role or pushing positive aspects of the new role; first allow the patient (often over a session or more) to reminisce about what she misses and experience catharsis for the loss of the old role.",
+        "Remember that the IPT therapist is not a vocational counselor or real-estate agent; while practical situations (finding a job, navigating a community, arranging childcare) are discussed, the focus must remain on exploring the feelings and interpersonal barriers keeping the patient from adjusting and building supports.",
+        "When marital tension or interpersonal friction arises secondary to a major life change (or when framing the problem as a role transition is less threatening and more plausible to a sensitive patient than a marital role dispute or interpersonal deficits), keep the overarching focus on the role transition while addressing the secondary withdrawal or friction within it."
+      ],
+      "expected_outcomes": [
+        "Relief of acute anxiety and helplessness through naming and structuring the chaotic experience as a manageable role transition.",
+        "Processing of grief and emotional catharsis over giving up the old role.",
+        "A realistic, balanced appraisal recognizing both the pros and cons of the old role and the challenges and opportunities of the new role.",
+        "Acquisition of new social supports, adaptive role skills, restored self-esteem, and resolution of depressive symptoms."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Table 2.1 IPT Outline (Role Transitions)', PDF pp. 33-34 (Book pp. 16-17)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 7 ('Role Transitions'), 'Definition', 'Goals and Strategies', & 'New Social or Work Skills', PDF pp. 81-85 (Book pp. 64-68)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_interpersonal_deficits_work",
+      "name": "Reducing Social Isolation in Interpersonal Deficits",
+      "description": "Reserved strictly as a focal category of last resort when careful inquiry reveals no acute interpersonal life events (no deaths, no role disputes, and no role transitions), this intervention targets chronic social isolation, loneliness, boredom, or a paucity of fulfilling attachments. In formulating the problem with the patient, the clinician frames the focus around 'loneliness,' 'social isolation,' 'boredom,' or 'lack of supports' rather than using the stigmatizing label 'interpersonal deficits,' and explicitly attributes interpersonal awkwardness or cautiousness to the depressive disorder (or comorbid social anxiety) rather than a personality defect. Because meaningful current relationships are scarce or absent, the clinician reviews past significant relationships (exploring both positive and negative aspects) and examines current superficial ties to identify repetitive patterns of interpersonal strengths and difficulties (such as interrupting, lecturing, passivity, or boundary difficulties). Uniquely among IPT problem areas, the clinician also explicitly uses the here-and-now therapeutic relationship as an interpersonal laboratory, inviting the patient to voice shyness, discomfort, or annoyance with the clinician directly so she can learn that expressing positive and negative feelings is safe and transferable to outside relationships. Throughout treatment, the clinician encourages the patient to take graded social risks between sessions—such as re-contacting old friends, joining clubs, or attending social events—and uses extensive in-session communication reconstruction and role play to practice starting conversations, listening, expressing feelings, and setting boundaries.",
+      "therapeutic_purpose": "To reduce chronic social isolation and loneliness in depressed patients lacking acute life events by uncovering repetitive relational patterns from past relationships and the here-and-now therapeutic alliance, building communication skills through role play, and modestly expanding real-world social supports.",
+      "when_to_use": [
+        "Only when none of the three life-event problem areas (grief, role disputes, or role transitions) can be found in the patient's history ('none of the above').",
+        "When a depressed patient presents with pervasive social isolation, lack of intimate friends or work relationships, and longstanding difficulty forming attachments.",
+        "When a patient has an adequate number of relationships on the surface but finds them chronically unfulfilling, superficial, or impossible to sustain beyond a few months.",
+        "When lingering chronic depression/dysthymia or comorbid social anxiety disorder leaves the patient lonely, bored, and fearful of interpersonal closeness."
+      ],
+      "target_patterns": [
+        "Severe paucity of attachments, chronic loneliness, boredom, and absence of protective social supports.",
+        "Viewing social awkwardness, dependency, or avoidance as an immutable personal defect or personality disorder rather than a treatable state worsened by depression.",
+        "Maladaptive repetitive interpersonal behaviors (such as lecturing, interrupting out of anxiety, inability to confide feelings, or inability to ward off unwanted advances) that sabotage intimacy.",
+        "Discomfort, guardedness, or difficulty maintaining a treatment alliance within the therapy relationship itself."
+      ],
+      "prerequisites": [
+        "Thorough exclusion of hidden complicated bereavement, covert role disputes, and recent role transitions during the interpersonal inventory.",
+        "Collaborative agreement to focus treatment on overcoming social isolation, loneliness, or difficulty sustaining close relationships."
+      ],
+      "possible_questions": [
+        "How often do you see them?",
+        "What do you enjoy about seeing them?",
+        "What problems come up?",
+        "How can you find friends and activities like those you used to enjoy in the past or new ones that you might enjoy?",
+        "You have said it's hard for you to feel comfortable around other people. I expect that may happen here. If you feel shy and it's uncomfortable to talk to me, you can tell me so. If I should do anything that annoys you, please bring it up.",
+        "Tell me how it went. How did you feel? What did you say?... Then what happened? Then how did you feel? What did you say?",
+        "You felt angry when he said that. Was that a reasonable feeling?... If so, how might you express that? (Or: What would you think about just saying to him what you just said to me now?)",
+        "Describe how it went. What did you do to meet people? How did you feel?"
+      ],
+      "cautions": [
+        "Do not use 'interpersonal deficits' if any plausible grief, role dispute, or role transition can be found (for instance, do not use it for multiple role disputes, which belong under Role Disputes, or for a post-graduation adjustment, which is more palatably framed as a Role Transition).",
+        "Never use the phrase 'interpersonal deficits' (or 'interpersonal sensitivities') with the patient, as it sounds insulting and implies a personality disorder; always speak of 'social isolation,' 'loneliness,' 'lack of friends,' or 'boredom'.",
+        "Do not diagnose or try to treat a personality disorder during an acute depressive episode, as apparent 'Cluster C' traits (avoidant, dependent) frequently vanish when the depression remits; withhold judgment and displace blame onto the depressive illness.",
+        "When examining the patient–therapist relationship, never interpret transference psychodynamically; treat the therapeutic relationship strictly as a here-and-now interpersonal laboratory serving as a temporary bridge to outside relationships.",
+        "Do not attempt to transform a socially cautious patient into a 'social butterfly,' which the patient would find terrifying; aim for modest, achievable extensions of social functioning.",
+        "Do not assign social outings as formal homework, because patients who fail to complete homework feel like 'bad' patients and risk dropping out of treatment.",
+        "Patients in the interpersonal deficits category tend to have poorer acute outcomes than those with life-event foci and may require maintenance IPT, combined pharmacotherapy, or an alternative psychotherapy if initial IPT does not yield improvement."
+      ],
+      "expected_outcomes": [
+        "Increased awareness of one's own emotional reactions and repetitive communication habits in interpersonal interactions.",
+        "Greater comfort expressing both positive and negative feelings openly within the therapeutic relationship and with outside contacts.",
+        "Modest reduction of social isolation through reconnecting with old friends, joining structured social activities, or setting healthier interpersonal boundaries.",
+        "Improved social self-confidence and reduction in depressive symptoms."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Table 2.1 IPT Outline (Interpersonal Deficits)', PDF pp. 33-34 (Book pp. 16-17)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 4 ('Beginning IPT'), 'Present the Formulation', PDF p. 55 (Book p. 38)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 8 ('Interpersonal Deficits (Social Isolation; No Life Events)'), 'Definition' & 'Goals and Strategies', PDF pp. 89-94 (Book pp. 72-77)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_termination_and_maintenance",
+      "name": "Termination Processing, Competence Consolidation, and Maintenance IPT",
+      "description": "Several sessions prior to the end of the contracted treatment period, the clinician explicitly initiates the termination phase to conclude acute therapy, consolidate gains, and plan for future stability. The clinician frames termination as a mini-role transition—acknowledging that ending an intimate, collaborative working relationship naturally evokes bittersweet feelings—and carefully distinguishes normal, healthy sadness over separation from a relapse into clinical depression. To counter lingering insecurity and foster independent competence, the clinician readministers the standardized depression rating scale (and problem-area outcome measures) to document symptomatic improvement, reviews the interpersonal progress achieved, and explicitly asks why the patient has improved so that the patient claims personal credit and agency for her outside efforts rather than attributing success solely to the therapist. The clinician also reviews early warning signs of depressive recurrence and interpersonal triggers, framing any future return of symptoms as a treatable medical vulnerability (akin to hypertension) rather than a personal failure, and ensures the patient knows how to seek timely help. If the patient has not responded to acute IPT, the clinician invokes the medical model to blame the treatment rather than the patient, protecting her from self-blame while exploring alternative options (such as adding or switching medication, consulting a psychiatrist, or switching psychotherapies). Conversely, when a patient has responded to acute IPT but faces high relapse risk—due to a history of multiple recurrent episodes, persistent residual symptoms, or contraindications/aversion to pharmacotherapy (such as pregnancy, lactation, or frailty)—the clinician negotiates a separate time-limited contract for continuation or maintenance IPT (commonly monthly, fortnightly, or weekly over six months to several years) to preserve euthymia, consolidate fragile social confidence, and flexibly address new interpersonal life events as they arise.",
+      "therapeutic_purpose": "To process the end of acute treatment as a normal separation without depressive relapse, consolidate the patient's sense of independent interpersonal mastery, prevent self-blame in cases of nonresponse by arranging alternative care, or contract for prophylactic Maintenance IPT in patients at high risk of recurrence.",
+      "when_to_use": [
+        "During the final few sessions (several weeks before the scheduled end) of a time-limited acute IPT contract.",
+        "When a recovering patient feels anxious about stopping therapy, mistakes normal sadness about parting for returning depression, or attributes all clinical gains to the therapist.",
+        "At the end of the contracted acute trial when a patient remains significantly symptomatic (nonresponse) and requires transition to pharmacotherapy or an alternative treatment.",
+        "Following acute remission or partial response when the patient has a history of recurrent major depression (multiple prior episodes), elevated residual symptoms (e.g., Ham-D around 13), or cannot/will not take maintenance antidepressant medication (e.g., pregnant, nursing, or medically fragile elderly patients)."
+      ],
+      "target_patterns": [
+        "Confusing the normal, healthy sadness of interpersonal separation at the end of therapy with the return of clinical depression.",
+        "Attributing symptom remission and relational improvements entirely to the therapist while discounting one's own hard work and agency outside the office.",
+        "Fragile euthymia and cautious avoidance of appropriate social risks after recovery for fear of 'rocking the boat' and triggering relapse.",
+        "Severe self-blame and demoralization ('I'm a failure') when an acute course of psychotherapy does not resolve the depressive episode.",
+        "High biological and interpersonal vulnerability to depressive relapse or recurrence following acute recovery."
+      ],
+      "prerequisites": [
+        "Completion of the initial and intermediate phases of time-limited IPT under an explicit session contract.",
+        "Re-administration of the standardized depression rating scale (e.g., Ham-D or PHQ-9) and review of progress in the focal interpersonal problem area.",
+        "For Maintenance IPT: acute symptomatic response or remission from the index episode and explicit renegotiation of a new time-limited maintenance contract specifying session frequency and duration."
+      ],
+      "possible_questions": [
+        "Why are you better?",
+        "Why have you gotten better?"
+      ],
+      "cautions": [
+        "Begin addressing termination explicitly several sessions before the final scheduled visit rather than waiting until the last session.",
+        "Emphasize that the patient–therapist relationship is a temporary therapeutic alliance meant to enhance health and real-world relationships, not a permanent friendship or substitute for outside attachments.",
+        "If a recovered patient with a single episode and few residual symptoms is reluctant to terminate, suggest a waiting period of several months to see whether further treatment is truly needed rather than automatically extending acute therapy (unless a major new environmental crisis, such as an unexpected death, has just occurred).",
+        "If the patient has failed to respond after twelve to sixteen weeks of acute IPT, do not let treatment drag on indefinitely; explicitly blame the treatment (not the patient) for nonresponse and actively pursue medication consultation or an alternative psychotherapy.",
+        "In Maintenance IPT, do not lock the patient into a single rigid interpersonal focus over multiple years; maintain the flexibility to shift between grief, role disputes, and role transitions as new life events emerge, and adjust session frequency (e.g., monthly vs. fortnightly) during unsettling interpersonal crises."
+      ],
+      "expected_outcomes": [
+        "Successful completion of acute therapy with clear differentiation between healthy separation sadness and depressive illness.",
+        "Internalized sense of independent competence, agency, and readiness to apply communication and problem-solving skills in future interpersonal situations.",
+        "In cases of nonresponse, preservation of patient morale and smooth transition to pharmacotherapy or alternative evidence-based care.",
+        "In Maintenance IPT, sustained euthymia, prophylaxis against depressive recurrence, progressive recession of apparent personality pathology, and continued growth in social risk-taking and intimacy."
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 2 ('An Outline of IPT'), 'Termination' & 'Table 2.1 IPT Outline', PDF pp. 32, 35 (Book pp. 15, 18)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 9 ('Termination and Maintenance Treatment'), 'Termination' & 'Maintenance Treatment', PDF pp. 97-104 (Book pp. 80-87)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_exploratory_techniques",
+      "name": "Nondirective and Directive Exploration",
+      "description": "In Interpersonal Psychotherapy, clinicians flexibly alternate between nondirective exploration and direct elicitation to gather interpersonal and symptomatic information, build a comfortable therapeutic alliance, and anchor sessions in affectively meaningful recent events. Nondirective exploration uses open-ended prompts and supportive acknowledgments ('Please go on,' 'I understand') to encourage free discussion of relationship themes and allow the patient's emotional state to develop and deepen naturally. When more focus or specific detail is needed—such as when constructing the interpersonal inventory, assessing diagnostic symptoms and suicidality, piercing defensive intellectualization, or supporting a less verbal or anxious patient—the therapist shifts to direct elicitation, asking targeted questions about concrete interpersonal encounters, timelines, and unexpressed feelings. Throughout intermediate sessions, exploration typically opens with a focused inquiry linking mood and interpersonal events over the past week, and the clinician continuously balances reflective listening with active structuring to keep the conversation grounded in the agreed-upon interpersonal problem area.",
+      "therapeutic_purpose": "To elicit concrete, affectively charged interpersonal narratives and specific symptomatic or historical details while maintaining an optimal balance between supportive, open-ended emotional deepening and structured, focused inquiry linked to the patient's mood.",
+      "when_to_use": [
+        "At the opening of sessions to link recent mood shifts with interpersonal events from the preceding week",
+        "During initial sessions when conducting the interpersonal inventory, gathering diagnostic symptoms, or assessing suicide risk and substance use",
+        "With verbal patients who benefit from open-ended prompts and supportive acknowledgments to deepen their emotional state",
+        "Using active, direct elicitation when treating less verbal or anxious patients who become uncomfortable with unstructured exploration",
+        "When a patient intellectualizes, speaks in generalities, or uses psychiatric jargon ('My wife is narcissistic', 'Work has been hectic') and needs to be grounded in specific interpersonal examples",
+        "When evaluating peripartum patients (exploring feelings about pregnancy, delivery, the infant, the partner's role, reproductive history, or the timing and experience of a miscarriage)",
+        "When exploring how physical or somatic symptoms in primary care or medically ill patients connect to recent changes in life circumstances, mood, and social functioning",
+        "When redirecting older adult patients who reminisce about the past or display 'off-target verbosity' back to current interpersonal relationships and the agreed-upon focal problem area"
+      ],
+      "target_patterns": [
+        "Vague, discursive, or overly abstract recounting of interpersonal problems and psychiatric jargon that distances the patient from painful affect",
+        "Unstructured digressions away from the core interpersonal problem area that dilute the therapeutic focus",
+        "Reticence, passivity, or anxiety in less verbal patients who struggle to initiate topics without clinician structure",
+        "Omission of critical interpersonal or clinical details regarding the patient's role in a dispute, unexpressed emotions, suicidal ideation, or reproductive and medical stressors",
+        "Somatic preoccupation or denial of life stress in primary care and medically ill patients presenting with physical complaints"
+      ],
+      "prerequisites": [
+        "A collaborative, nonjudgmental therapeutic stance that conveys warmth and advocacy",
+        "Awareness of the patient's verbal capacity, concentration level, and comfort with unstructured versus structured inquiry",
+        "In intermediate sessions, an established interpersonal formulation and focal problem area to guide which narratives are expanded"
+      ],
+      "possible_questions": [
+        "Who are the important people in your life?",
+        "How have you been since we last met?",
+        "How have things been since we last met? ... I'm sorry to hear that; did something happen in the past week that contributed to your feeling so bad?",
+        "Can you tell me more about the friend you mentioned earlier?",
+        "Can you tell me what you said before your wife accused you?",
+        "How did you feel when clearing out your husband's clothes after the funeral?",
+        "For example?",
+        "What does that ['narcissistic'] mean? Can you tell me what she did or said that gave you that sense? ... How did you feel about that behavior?",
+        "Have you been feeling so bad that life hasn't felt worth living? ... How far have those thoughts gone? ... Do you have a plan for how you might kill yourself?",
+        "Was the pregnancy wanted? What is the woman's relationship with the father and other social supports? What was her experience of the miscarriage? Does she feel guilty? What were her expectations of life with the baby?"
+      ],
+      "cautions": [
+        "Nondirective exploration can make a less verbal patient anxious; active, directed techniques are indicated instead to preserve a comfortable therapeutic alliance.",
+        "Do not allow long, painful silences, as IPT is an active therapy and depressed patients may interpret therapist silence after self-criticism as agreement that they are worthless or as withholding behavior.",
+        "Conversely, excessive therapist activity or probing too quickly when emotionally charged material surfaces can fragment patient affect and prevent sessions from building emotional depth.",
+        "Keep interventions pithy and use a minimum of words; patients with poor depressive concentration can get lost in long therapist speeches, which also tend to intellectualize the treatment.",
+        "When primary care patients insist they have an undetected physical illness or focus on somatic distress while denying life stress, do not push, lecture, or argue with them, and never deny the reality of their physical discomfort.",
+        "When tolerating brief digressions, avoid disparaging information the patient feels is important while gently reminding the patient of the time limit and central interpersonal focus."
+      ],
+      "expected_outcomes": [
+        "Identification of concrete, emotionally salient interpersonal events from the patient's current life that clarify the link between mood and relationship triggers",
+        "Reduced intellectualization and greater emotional vitality during therapy sessions",
+        "Comprehensive clinical understanding of the patient's interpersonal inventory, symptom severity, suicidal risk, and relevant developmental or medical context",
+        "Sustained thematic continuity and focus on the agreed-upon interpersonal problem area across the time-limited treatment"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'Nondirective Exploration' & 'Direct Elicitation', PDF pp. 105-106 (Book pp. 88-89)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'The Therapist's Role', PDF pp. 111-113 (Book pp. 94-96)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'The Intellectualizing Patient', 'Keeping the Focus', & 'Silence', PDF pp. 117-121 (Book pp. 100-104)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'What If I Have Thoughts of Suicide?' & 'Depression Presenting as Physical Symptoms', PDF pp. 129-131 (Book pp. 112-114)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 13 ('Peripartum Depression'), 'Adaptations' & 'IPT for Depressive Symptoms After Miscarriage', PDF pp. 140, 142-143 (Book pp. 123, 125-126)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 14 ('Depression in Adolescents and Children'), 'Suicide Risk', PDF pp. 149-150 (Book pp. 132-133)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 15 ('Depression in Older Adults'), 'Interpersonal Inventory' & 'Maintaining the IPT Focus', PDF p. 159 (Book p. 142)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_encouragement_of_affect",
+      "name": "Encouragement and Acceptance of Affect",
+      "description": "Encouragement of affect helps depressed patients experience, name, accept, and manage painful or constricted emotions that arise in interpersonal relationships. Depressed patients frequently view strong negative emotions—such as anger, resentment, hatred, sadness, or guilt—as shameful evidence of personal defectiveness or dangerousness, leading them to suppress their feelings and withdraw. The IPT therapist elicits details of emotionally charged interactions, lingers when emotion wells up in session rather than cutting it off, and offers direct validation and normalization that strong feelings are human, understandable, and interpersonally informative signals (for instance, recognizing that anger signals someone is bothering you or has committed an interpersonal transgression). Once feelings are expressed and accepted within the safety of the therapeutic session, the clinician helps the patient reflect on the meaning of those emotions, evaluate the pros and cons of expressing them outside the office, and convert raw affect into adaptive verbal communication—or, when a patient engages in repetitive hostile outbursts, temper impulsive emotional displays by examining thoughts and consequences before acting. Therapists also encourage the expression of positive affects such as affection, gratitude, and caring when patients constrict these feelings.",
+      "therapeutic_purpose": "To help patients recognize, tolerate, and accept strong negative and positive emotions as normal, non-dangerous interpersonal guideposts, reducing guilt over feeling angry or sad and harnessing affect to motivate adaptive interpersonal change.",
+      "when_to_use": [
+        "When patients constrict, suppress, or avoid painful feelings about key interpersonal situations, making it difficult for them to decide what is important or make meaningful changes",
+        "When depressed or dysthymic patients view strong negative emotions (such as anger, competitiveness, or resentment) as 'bad' emotions or proof of their own selfishness and toxic defectiveness",
+        "In complicated grief reactions (including death of a spouse in late life or perinatal loss/miscarriage) where the patient has idealized the deceased, withdrawn from social supports, or suppressed disappointment, burden, and ambivalent feelings",
+        "When mobilizing passive, unassertive patients who have experienced an interpersonal transgression (a violation of a social code such as an affair, physical harm, or unfair blame) to validate their moral right to anger and redress",
+        "When a patient engages in counterproductive, repetitive angry, hostile, or sad outbursts and needs help tempering impulsive affective displays and finding more adaptive ways to express feelings",
+        "When patients have difficulty expressing positive feelings such as affection, gratitude, or caring in therapy sessions and outside relationships",
+        "When medically ill or newly diagnosed patients (such as youths with diabetes or patients with cancer or HIV) experience frustration, despair, and grief over lost health and shattered role expectations"
+      ],
+      "target_patterns": [
+        "Constriction, denial, or bottling up of painful interpersonal feelings (sadness, grief, anger, guilt, resentment)",
+        "Viewing normal interpersonal anger or self-assertion as shameful, dangerous, selfish, or evidence of personal defectiveness",
+        "Idealization of a deceased significant other accompanied by avoidance of ambivalent, disappointed, or burdened feelings in bereavement",
+        "Passivity and reluctance to confront mistreatment or transgressions due to fear that anger will destroy the relationship",
+        "Counterproductive, repetitive angry, hostile, or sad outbursts that fail to resolve interpersonal problems",
+        "Difficulty expressing warmth, affection, caring, or gratitude to significant others"
+      ],
+      "prerequisites": [
+        "A supportive, nonjudgmental therapeutic relationship where the clinician is comfortable sitting with painful affect without prematurely intervening or acting chipper",
+        "Identification of concrete interpersonal events or topics to which the patient shows an emotional response or noticeable affective constriction",
+        "Differentiation between normal interpersonal feelings to be validated and depressive symptoms (such as suicidal ideation or depressive self-deprecation) to be attributed to the illness"
+      ],
+      "possible_questions": [
+        "Most people would feel like that.",
+        "Of course you're angry! It makes sense to feel angry.",
+        "You seem to get into this pattern that doesn't really help you to feel better. Do you agree? ... What other options might you have to express these feelings? How else might you communicate how you feel to your friend?",
+        "Anyone would feel angry under such circumstances. Anger is a healthy interpersonal signal that someone is bothering you.",
+        "Feelings are powerful, but they're not dangerous. They can even help you understand what's happening with another person.",
+        "There are no 'bad' feelings. Your feelings tell us something about what's going on in your life, and they can be helpful guideposts to understanding your situation. Even if it feels awkward, I encourage you to let me know as much as you can about how you're feeling. Often it feels better to bring uncomfortable feelings up rather than bottling them inside.",
+        "So how do you feel when Jack blames you? ... And do you think that's a reasonable feeling?",
+        "If you're selfish all of the time, that's a problem. But if you're selfless all of the time, you're a martyr, and you're going to have trouble getting what you want and need. Everyone does better if they are a little selfish; if you don't speak up on your own behalf, who will?"
+      ],
+      "cautions": [
+        "How patients should express emotions in close relationships outside the office varies by culture and situation; in some instances, strong expression of anger and resentment might damage already fragile relationships, so pros and cons must be weighed after eliciting feelings in session.",
+        "While normalizing interpersonal emotions, do not normalize suicidal feelings or self-deprecating remarks—define suicidal thoughts and self-blame explicitly as treatable symptoms of depression.",
+        "Constant repetition of angry, hostile, and sad outbursts can be counterproductive; rather than encouraging further venting in such cases, help the patient delay acting on impulse, reflect on thoughts and consequences, and explore alternative communication options.",
+        "When painful emotion wells up in a session, even if it makes the therapist uncomfortable, do not intervene prematurely or act chipper and saccharine; allow the patient time to recognize, live with, reflect on, and develop comfort and control over the feelings.",
+        "In adolescents with non-suicidal self-injury, overwhelming negative affect triggered by interpersonal disputes or loss may combine with emotion regulation deficits and distress intolerance, requiring structured focus on communication and problem solving to replace self-injury."
+      ],
+      "expected_outcomes": [
+        "Increased awareness, tolerance, and acceptance of strong negative and positive emotions as normal, non-dangerous human responses",
+        "Recognition of painful emotions (such as anger, sadness, and resentment) as useful interpersonal signals that clarify what is bothering the patient and what needs to change",
+        "Reduced guilt and self-blame for experiencing anger, grief, or personal wishes, particularly in chronic depression and role disputes",
+        "Conversion of unexpressed or dysregulated emotions into articulate, adaptive interpersonal communication and effective utilization of social supports"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'Encouragement of Affect' & 'The Therapist's Role', PDF pp. 106-107, 111-112 (Book pp. 89-90, 94-95)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'Mobilizing the Passive Patient', 'The Intellectualizing Patient', & 'Silence', PDF pp. 117-121 (Book pp. 100-104)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 14 ('Depression in Adolescents and Children'), 'Depression Prevention for Adolescents', PDF pp. 151-152 (Book pp. 134-135)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 15 ('Depression in Older Adults'), 'Case Example: I Lost My Wife and My Life', PDF pp. 161-162 (Book pp. 144-145)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 16 ('Depression in Medical Patients: Interpersonal Counseling and Brief IPT'), 'Case Example: Diabetes Was Not the Only Problem', PDF pp. 166-168 (Book pp. 149-151)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 17 ('Persistent Depressive Disorder/Dysthymia'), 'Diagnosis', 'Adaptation', & 'Case Example: Taking All of the Blame', PDF pp. 177-178, 180-183 (Book pp. 160-161, 163-166)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_clarification",
+      "name": "Interpersonal Clarification",
+      "description": "Interpersonal clarification involves restructuring, repeating, or reflecting back what the patient has communicated to heighten awareness of how the patient is interacting, feeling, and coming across to others. The therapist may ask the patient to repeat or rephrase a statement, reframe the patient's words to name an implicit emotion, or point out the logical extension of what the patient has just said. A central function of clarification in IPT is bringing contradictions, contrasts, and discrepancies to the patient's attention—such as a mismatch between the affective content of a story and the patient's facial expression or tone (e.g., describing a spouse's affair without emotion or smiling while recounting an angry argument), shifts in emotional state across sessions, or contradictions between earlier and current statements. Clarification is also used to examine interpersonal patterns, such as the impact of pouting or silence on significant others, parallels between an extraneous dispute and the core focal problem area, or the distinction between treatable depressive symptoms and the patient's underlying personality.",
+      "therapeutic_purpose": "To increase the patient's conscious awareness of unspoken emotions, implicit wishes, interpersonal contradictions, and recurring behavioral patterns as an essential prelude to taking purposeful interpersonal action.",
+      "when_to_use": [
+        "When a patient's affect contradicts the content of her speech (e.g., smiling while describing an angry exchange, or recounting a betrayal with flat emotion)",
+        "When a patient makes statements whose logical interpersonal extension or underlying emotion remains unacknowledged",
+        "When a patient contradicts something she said earlier or displays a marked shift in emotional response to the same topic over time",
+        "When a patient uses silence, pouting, or sulking as an interpersonal style rather than voicing legitimate complaints",
+        "When a patient raises an interpersonal incident (such as an office disagreement) that parallels the central focal problem area (such as a marital role dispute)",
+        "When a patient with mild paranoid or maladaptive personality features—or chronic depression/dysthymia—blames her character or fails to see how touchiness or depressive self-deprecation affects interactions"
+      ],
+      "target_patterns": [
+        "Incongruence between verbal content and nonverbal affect (such as smiling during distressing narratives or emotional detachment during major betrayals)",
+        "Unawareness of implicit interpersonal wishes or the logical consequences of one's statements",
+        "Inconsistent or contradictory accounts of interpersonal relationships and feelings across sessions",
+        "Passive or indirect interpersonal behaviors, such as sulking or silence, whose impact on others the patient has not examined",
+        "Confusion of acute or chronic depressive symptoms (passivity, social withdrawal, self-blame) with permanent personal defectiveness or character traits"
+      ],
+      "prerequisites": [
+        "Careful observation of the patient's verbal statements, nonverbal demeanor, and shifts in affect across the session",
+        "A solid therapeutic alliance, particularly before pointing out maladaptive interpersonal dispositions (such as touchiness in a patient with mild paranoid tendencies) or addressing persistent silence"
+      ],
+      "possible_questions": [
+        "You were angry with her?",
+        "Do you mean to say that you would like your daughter to move out of the house?",
+        "You just described your husband's affair without showing any emotion. How do you feel about it?",
+        "You were smiling when you told me about the angry exchange between you and your friend, but it hardly seems a happy matter.",
+        "I noticed that you said X when you had previously said something else.",
+        "Before, when you told me about this, you were sad, and now you seem to be calm.",
+        "When you're feeling depressed, is it hard to let someone know when you're feeling upset with him? ... If this is the case, it might be helpful to look at the effects your silence has on others and whether it is an effective form of communication for you.",
+        "You keep blaming yourself for these behaviors, but I see them as part of your depression. People who are depressed see themselves as defective, but that's a part of the disorder. Once we treat your depression and you're feeling better, we'll see what your 'character' is like."
+      ],
+      "cautions": [
+        "When pointing out a patient's use of silence, sulking, or maladaptive interpersonal dispositions (such as touchiness under certain conditions), wait until a therapeutic alliance is established and frame the observation nonjudgmentally rather than as a criticism.",
+        "Do not confuse depressive symptoms (social anxiety, dependency, passivity, avoidance of confrontation) with fixed Axis II personality pathology during an acute depressive episode; attribute these behaviors to the depressive illness rather than blaming the patient's character.",
+        "Use clarification as a concise prelude to interpersonal problem solving and action rather than allowing reflection to become abstract or intellectualized."
+      ],
+      "expected_outcomes": [
+        "Heightened patient awareness of how she communicates, interacts, and comes across to significant others",
+        "Recognition of previously unacknowledged emotions and wishes underlying incongruent affect or contradictory statements",
+        "Clearer differentiation between treatable depressive symptoms and the patient's personal identity or character",
+        "Greater readiness to examine faulty communication patterns and test out more direct interpersonal behaviors"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'Clarification', PDF pp. 107-108 (Book pp. 90-91)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'Personality', 'Keeping the Focus', & 'Silence', PDF pp. 114-116, 118-121 (Book pp. 97-99, 101-104)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 17 ('Persistent Depressive Disorder/Dysthymia'), 'Adaptation' & 'Case Example: Taking All of the Blame', PDF pp. 180-182 (Book pp. 163-165)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_communication_analysis",
+      "name": "Communication Analysis",
+      "description": "Communication analysis is a central IPT technique in which the therapist and patient reconstruct a recent, specific conversation or argument with a significant other in fine-grained, turn-by-turn detail to examine how the pair communicates and where communication breaks down. By tracking the exact sequence of dialogue—what was said, how the patient felt at critical junctures, what the other person replied, and what remained unsaid—the clinician and patient uncover three core dimensions: the patient's feeling state and behavioral patterns, the interpersonal meaning of the transaction, and the dyad's characteristic communication methods. Throughout this detailed reconstruction, the therapist listens closely for dissonance between what the patient felt and what she actually expressed (such as feeling insulted and angry but remaining silent for fear of shattering the relationship), reliance on ambiguous, indirect, or nonverbal signals (such as sulking), and untested assumptions that others can read the patient's mind or that the patient has accurately understood the other's intent. Rather than delivering immediate interpretations, the therapist guides the patient to recognize these communication pitfalls on her own and then collaboratively explores clearer, more direct verbal alternatives.",
+      "therapeutic_purpose": "To diagnose specific verbal and nonverbal communication breakdowns, mind-reading assumptions, and discrepancies between felt emotion and expressed speech in key relationships, enabling the patient to communicate needs and feelings more directly and effectively.",
+      "when_to_use": [
+        "When reconstructing an important recent conversation, argument, or distressing interaction with a significant other",
+        "When there is a dissonance between what the patient feels and what she actually says in interpersonal encounters (e.g., feeling angered by an insult but saying nothing)",
+        "When a patient relies on ambiguous, indirect, or nonverbal communication (such as sulking or silence) instead of direct verbal confrontation",
+        "When a patient assumes others will anticipate her wants or read her mind, leading to anger, frustration, and relationship destabilization when those unspoken needs go unmet",
+        "When a patient makes unverified assumptions about another person's thoughts or intentions (e.g., assuming an ambiguous comment was meant as a criticism) or assumes she has been understood without checking",
+        "In adolescent depression treatment and prevention (IPT-A and IPT-AST), family-based IPT for preadolescents, and persistent depressive disorder (IPT-D) to help patients understand the impact of their communication on others and resolve interpersonal stressors"
+      ],
+      "target_patterns": [
+        "Dissonance between internal affect and outward verbal expression during interpersonal interactions",
+        "Ambiguous, indirect, or nonverbal communication substitutes for direct speech, such as sulking, pouting, or silent withdrawal",
+        "Expecting significant others to anticipate needs or read one's mind without explicit verbal requests",
+        "Unverified assumptions about the meaning or intent behind another person's remarks, or assuming one's own message was understood",
+        "Depressive distortion of other people's messages and suppression of legitimate complaints due to fear that direct expression will destroy the relationship"
+      ],
+      "prerequisites": [
+        "Selection of a concrete, recent interpersonal conversation or argument rather than a generalized complaint about a relationship",
+        "Willingness of the patient to recount the interaction turn by turn and attend to emotional reactions at critical points in the dialogue"
+      ],
+      "possible_questions": [
+        "Then what did (s)he say? ... Then how did you feel? ... Then what did you say?",
+        "What other options do you have?",
+        "Was a friend's comment about the patient's hair meant as a criticism or a compliment?"
+      ],
+      "cautions": [
+        "When treating patients from other cultures, carefully consider which forms of communication are culturally accepted and which are proscribed; adopting the therapist's own cultural modes of direct communication may not always be in the patient's best interest.",
+        "Rather than giving immediate feedback on faulty assumptions or poor communication, encourage patients to follow through the conversation and draw their own conclusions first before suggesting alternatives."
+      ],
+      "expected_outcomes": [
+        "Clear identification by both patient and therapist of specific communication breakdowns, unspoken assumptions, and discrepancies between feelings and words",
+        "Reduction in indirect, ambiguous, or passive-aggressive communication behaviors such as sulking or expecting mind-reading",
+        "Generation of more direct, assertive verbal options for expressing needs and feelings, leading to improved interpersonal encounters",
+        "Greater sense of personal and environmental mastery and consequent reduction in depressive symptoms"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'Communication Analysis', PDF pp. 108-109 (Book pp. 91-92)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'The Intellectualizing Patient' & 'Silence', PDF pp. 118, 120-121 (Book pp. 101, 103-104)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 14 ('Depression in Adolescents and Children'), 'Depression Prevention for Adolescents' & 'Prepubertal Depression', PDF pp. 150-152 (Book pp. 133-135)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_decision_analysis",
+      "name": "Decision Analysis",
+      "description": "Decision analysis is a collaborative problem-solving technique in which the therapist helps the patient clarify her wishes and goals in a troubling interpersonal situation, generate a range of realistic alternative courses of action, and systematically evaluate the tradeoffs and interpersonal consequences of each option before acting. Because depressed patients often feel helpless, hopeless, and trapped in their circumstances—frequently believing they have no options at all—the therapist actively probes to elicit what outcome would make the patient happiest and what specific changes she wants from significant others. Only if the patient remains unable to generate new approaches despite leading questions does the clinician suggest additional alternatives not previously entertained, always emphasizing the patient's own agency and autonomy so that she internalizes decision analysis as an enduring interpersonal skill.",
+      "therapeutic_purpose": "To help depressed patients overcome helplessness and passivity by clarifying their interpersonal wishes, expanding their perceived repertoire of action options, and weighing the realistic pros, cons, and tradeoffs of each choice prior to taking action.",
+      "when_to_use": [
+        "When a patient faces an interpersonal problem, role dispute, or role transition and needs to consider alternative courses of action and their consequences",
+        "After communication analysis or encouragement of affect has clarified the patient's feelings and communication difficulties, as a bridge to selecting a new interpersonal strategy and rehearsing it in role play",
+        "When mobilizing a passive or chronically depressed patient who feels helpless or believes she has no options in dealing with an unfair situation or interpersonal transgression",
+        "When deciding whether, how, and to whom to express strong feelings (such as anger) or mobilize social supports in outside relationships",
+        "When helping primary care or medically ill patients problem-solve practical obstacles to treatment adherence, self-care, or medical regimen management",
+        "In adolescent depression prevention and treatment (IPT-A and IPT-AST) to build systematic interpersonal problem-solving skills"
+      ],
+      "target_patterns": [
+        "Depressive helplessness, passivity, and the subjective conviction that 'it hasn't felt like there were any options'",
+        "Difficulty identifying or prioritizing one's own interpersonal wishes, needs, and goals due to chronic self-effacement or guilt",
+        "Impulsive emotional action or, conversely, paralysis and avoidance when confronting interpersonal predicaments",
+        "Narrow or rigid problem-solving repertoires that overlook viable interpersonal alternatives or social supports"
+      ],
+      "prerequisites": [
+        "Clarification of the focal interpersonal problem and awareness of the patient's feelings and wishes regarding the situation",
+        "Sufficient affective regulation for the patient to delay impulsive action and reflect on consequences and tradeoffs"
+      ],
+      "possible_questions": [
+        "What would you want to happen?",
+        "What solution to this would make you happiest?",
+        "What are the alternatives?",
+        "What are the tradeoffs?",
+        "Have you considered all the choices?",
+        "What would you want him to do? What would be helpful to you? ... So what options do you have in dealing with Jack?"
+      ],
+      "cautions": [
+        "Always encourage the patient to think of solutions first through probing or leading questions before suggesting alternatives yourself; the goal is to foster the patient's own sense of agency and autonomy rather than doing things for her.",
+        "When offering advice, frame it as helping the patient consider options not previously entertained rather than giving direct suggestions or authoritarian commands.",
+        "When evaluating options for expressing strong anger outside the office, carefully weigh realistic cultural norms and relationship fragility so the chosen action does not endanger the patient or damage a fragile relationship."
+      ],
+      "expected_outcomes": [
+        "Clear articulation by the patient of her own wishes, goals, and desired changes in a problematic relationship or life transition",
+        "Generation and realistic evaluation of multiple interpersonal options and their associated tradeoffs",
+        "Selection of a concrete, actionable interpersonal plan to rehearse via role play and implement between sessions",
+        "Internalization of decision analysis as a generalizable interpersonal skill that enhances autonomy and environmental control beyond termination"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'Encouragement of Affect', 'Decision Analysis', & 'The Therapist's Role', PDF pp. 107, 109, 111-113 (Book pp. 90, 92, 94-96)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'Mobilizing the Passive Patient' & 'Will I Get Along on My Own at the End of the Treatment?', PDF pp. 117, 126 (Book pp. 100, 109)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 14 ('Depression in Adolescents and Children'), 'Depression Prevention for Adolescents', PDF pp. 150-151 (Book pp. 133-134)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 17 ('Persistent Depressive Disorder/Dysthymia'), 'Case Example: Taking All of the Blame', PDF pp. 182-183 (Book pp. 165-166)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_role_playing",
+      "name": "Interpersonal Role Playing",
+      "description": "Interpersonal role playing is an active behavioral rehearsal technique used across all four IPT problem areas to help patients practice new ways of interacting, build interpersonal skills, and prepare for challenging encounters outside the office. Typically, the therapist takes the role of the significant other—often jumping directly into character without elaborate preamble so the exercise feels natural rather than like artificial playacting—and invites the patient to practice self-assertion, confrontation, limit-setting, or self-disclosure. In cases of interpersonal deficits, the patient may occasionally take the role of someone with whom she wishes to build a relationship, while in complicated bereavement, role play can take the form of an imaginary conversation with the deceased. Following each rehearsal, the clinician and patient evaluate both the verbal content ('Did you say what you wanted to say?') and the vocal delivery and tone ('How did you feel about your tone of voice?'), repeating the role play until the patient feels reasonably confident and planning contingencies for how the other person might interrupt, object, or react.",
+      "therapeutic_purpose": "To clarify how the patient reacts to others and provide safe, iterative behavioral rehearsal of clear, assertive verbal content and appropriate vocal tone, building confidence and readiness to handle real-world interpersonal encounters and contingencies.",
+      "when_to_use": [
+        "Across all four IPT problem areas to prepare the patient to interact differently, particularly in acting more assertively, setting limits, or expressing anger",
+        "In role disputes and role transitions to rehearse handling new situations or testing new ways to manage old, entrenched conflicts (including seeking an apology after an interpersonal transgression)",
+        "In complicated grief to conduct an imaginary conversation between the patient and the deceased significant other",
+        "In interpersonal deficits to practice self-disclosure and relationship-building skills, sometimes having the patient take the role of the person with whom she would like to develop a relationship",
+        "Extensively in persistent depressive disorder (IPT-D) to help chronically passive, risk-averse patients who have rarely expressed a wish or said 'no' become comfortable with self-assertion and confrontation",
+        "With depressed medical or college patients (e.g., socializing in nondrinking situations after a diabetes diagnosis) and in adolescent/preadolescent IPT (including dyadic parent-child sessions) to practice communication and peer or family problem-solving skills"
+      ],
+      "target_patterns": [
+        "Deficits in self-assertion, confrontation, limit-setting, or self-disclosure across interpersonal contexts",
+        "Incongruent, overly timid, or overly hostile tone of voice and delivery when attempting to express feelings or requests",
+        "Anxiety, trepidation, or avoidance regarding how a significant other will react (e.g., fear of being interrupted, blamed, or rejected)",
+        "Unresolved or unexpressed thoughts and feelings toward a deceased person in complicated bereavement",
+        "Social awkwardness or reliance on maladaptive coping (such as drinking) to navigate social or dating interactions"
+      ],
+      "prerequisites": [
+        "Identification of a specific interpersonal scenario, feeling, or message the patient wishes to communicate",
+        "Exploration of the patient's options (via communication and decision analysis) so the patient has a target approach to rehearse"
+      ],
+      "possible_questions": [
+        "But Deborah, I wanted to go to this movie!",
+        "Did you say what you wanted to say?",
+        "How did you feel about your tone of voice?",
+        "How did that sound? ... Is there something you would say differently? Did you say what you wanted to say? ... Were you happy with your tone of voice?",
+        "Let's talk about what you would specifically like Jack to do to help you out and also about how you can handle it if he should interrupt."
+      ],
+      "cautions": [
+        "To avoid the role play feeling like artificial playacting, it is often helpful for the therapist to jump directly into the role of the other person, implicitly inviting the patient to respond.",
+        "Do not stop after a single pass if the patient remains shaky; repeat the role play until the patient feels reasonably confident with both the message content and the medium (tone of voice).",
+        "Always anticipate realistic contingencies—what might go wrong in the actual interchange (such as the partner becoming angry, denying, or cutting the patient off)—and rehearse how the patient can respond to those obstacles."
+      ],
+      "expected_outcomes": [
+        "Increased clarity for both patient and therapist regarding how the patient reacts and comes across in interpersonal encounters",
+        "Greater patient confidence and satisfaction with both the verbal content and vocal tone of planned communications",
+        "Preparedness to handle interruptions, pushback, or unexpected reactions from significant others without retreating into silence or passivity",
+        "Successful execution of assertive communication, limit-setting, or social overtures outside therapy, reinforcing environmental mastery and symptom relief"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'Encouragement of Affect', 'Communication Analysis', & 'Role Play', PDF pp. 107, 108-110 (Book pp. 90, 91-93)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'Mobilizing the Passive Patient', PDF p. 117 (Book p. 100)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 14 ('Depression in Adolescents and Children'), 'Depression Prevention for Adolescents' & 'Prepubertal Depression', PDF pp. 150, 152 (Book pp. 133, 135)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 16 ('Depression in Medical Patients: Interpersonal Counseling and Brief IPT'), 'Case Example: Diabetes Was Not the Only Problem', PDF p. 168 (Book p. 151)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 17 ('Persistent Depressive Disorder/Dysthymia'), 'Adaptation' & 'Case Example: Taking All of the Blame', PDF pp. 181-183 (Book pp. 164-166)"
+      ]
+    },
+    {
+      "intervention_id": "ipt_use_of_therapeutic_relationship",
+      "name": "Use of the Here-and-Now Therapeutic Relationship",
+      "description": "While the primary focus of IPT remains squarely on the patient's relationships outside the office and IPT explicitly avoids psychodynamic transference interpretations, the therapist actively attends to the here-and-now therapeutic relationship as a vital foundation for treatment and an interpersonal arena in its own right. The clinician adopts the stance of a warm, authentic, nonjudgmental, hopeful ally and patient advocate. Because psychiatric patients are notoriously reluctant to criticize their clinicians, the IPT therapist explicitly invites the patient to voice negative feelings, complaints, apprehensions, or anger about the therapy or the therapist—and readily acknowledges and apologizes for genuine clinician mistakes (such as being late or mixing up an appointment). Addressing tensions or feedback directly in the present moment corrects interpersonal distortions, models constructive confrontation, and helps the patient experience herself as an active partner in treatment. In specific problem areas, the therapist also uses the dyadic relationship to give constructive feedback on how the patient comes across to others (in role disputes) or to serve as a direct, safe model for building outside relationships (in interpersonal deficits).",
+      "therapeutic_purpose": "To maintain a strong, collaborative therapeutic alliance, model direct and non-defensive interpersonal communication, provide here-and-now feedback on how the patient comes across, and validate the patient's capacity to voice complaints and assert needs.",
+      "when_to_use": [
+        "When difficulties, tensions, or negative feelings arise in the therapeutic relationship (e.g., the patient becomes angry at, feels criticized by, or dislikes something in the therapist's style)",
+        "When the therapist makes a mistake or is late to a session, requiring direct acknowledgment and a genuine apology",
+        "When patients new to psychotherapy feel uncomfortable with the therapeutic situation, question the therapist's credentials, or wish to end treatment early",
+        "In role disputes, to give the patient direct, nonjudgmental feedback on how she comes across to others and to illuminate maladaptive interaction styles",
+        "In interpersonal deficits, where the patient's relationship with the therapist provides a primary in-session model for interacting and building trust in outside relationships",
+        "When managing personality traits that complicate the alliance—such as disarming a mildly paranoid patient's suspiciousness with openness and optimal interpersonal distance, or gently encouraging independence and agency in a dependent patient who defers to authority",
+        "When consolidating the alliance with overburdened peripartum, adolescent, older adult, or medically hospitalized patients through flexible scheduling, telephone sessions, or brief practical assistance in early sessions"
+      ],
+      "target_patterns": [
+        "Aversion to criticizing authority figures or voicing legitimate complaints, apprehensions, and dislikes within a relationship",
+        "Interpersonal distortions or expectations of rejection/criticism occurring within the therapeutic dyad",
+        "Maladaptive interpersonal styles in role disputes or severe social isolation in interpersonal deficits that manifest in how the patient relates to the clinician",
+        "Excessive deference to authority and dependency, or guarded suspiciousness toward the clinician",
+        "Premature desire to drop out of treatment due to unvoiced alliance ruptures, discomfort with seeking help, or depressive hopelessness"
+      ],
+      "prerequisites": [
+        "Clinician authenticity, warmth, empathy, and willingness to act as the patient's non-neutral advocate against a depressive outlook and hostile environment",
+        "Clear professional boundaries (being warm and friendly without turning therapy into a social friendship or indulging therapist self-disclosure)",
+        "Non-defensive clinician readiness to accept criticism and apologize for real errors without interpreting patient complaints as childhood transference"
+      ],
+      "possible_questions": [
+        "Let's talk about what's going on between us. It's good that you're telling me you're upset—this is the sort of interpersonal communication we're working on, and with your feedback I can stop doing what's bothering you.",
+        "Are you feeling guilty about something? Ashamed? Fearful of what I might think about what's on your mind? Do you feel that something is inappropriate? That I'll disapprove?",
+        "Why do you want to stop at this point? If you want to end the treatment early, it's your choice, but we should consider why you do. ... Is there some problem between the two of us that we haven't discussed?",
+        "It's hard to get to treatment when you are feeling so bad and when you haven't slept and don't have much energy."
+      ],
+      "cautions": [
+        "Do not exploit or interpret transference or link the patient's feelings toward the therapist to childhood antecedents or remote historical material; address all therapeutic relationship issues strictly in the here and now.",
+        "Do not keep the primary focus of treatment on the therapeutic dyad; the main focus of IPT must remain on the patient's relationships outside the office.",
+        "Maintain clear medical-model boundaries: being warm and friendly does not mean having a social friendship, and therapist self-disclosure is generally discouraged so the focus stays on the patient.",
+        "Do not adopt a neutral or silent stance when a patient is self-deprecating, as depressed patients interpret silence as agreement that they are worthless; actively attribute self-criticism and lateness to the depressive illness.",
+        "When reassuring a skeptical or uncomfortable patient that she may consider a different treatment or therapist without insulting you, do not present such nonchalance in offering a referral that the patient experiences you as uncaring or rejecting.",
+        "With a paranoid patient, avoid acting either too distant (and uninterested) or too intimate (and hence threatening); with a dependent patient, avoid accepting an authoritarian role or doing things for the patient that undermine her agency."
+      ],
+      "expected_outcomes": [
+        "A robust, collaborative therapeutic alliance in which the patient feels understood, respected as a partner, and hopeful about recovery",
+        "Corrective in-session experience of voicing complaints, anger, or discomfort directly and having those feelings received non-defensively and constructively",
+        "Greater patient insight into how her interpersonal style comes across to others, alongside a healthy model for building outside relationships",
+        "Sustained treatment engagement and adherence to psychotherapy and pharmacotherapy across the time-limited course"
+      ],
+      "source_references": [
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 10 ('IPT Techniques and the Therapist's Role'), 'The Therapeutic Relationship' & 'The Therapist's Role', PDF pp. 110-113 (Book pp. 93-96)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'Personality', 'Silence', & 'Comparison with Other Treatments', PDF pp. 114-116, 120-123 (Book pp. 97-99, 103-106)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 11 ('Common Therapeutic Issues and Patient Questions'), 'What Credentials Should My Therapist Have?', 'I Thought It Didn't Matter If I Came Late', & 'What If I Want to End Treatment Early?', PDF pp. 124-125, 127 (Book pp. 107-108, 110)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 13 ('Peripartum Depression'), 'Adaptations', PDF pp. 140-141 (Book pp. 123-124)",
+        "Weissman, Markowitz, & Klerman, The Guide to Interpersonal Psychotherapy, Ch. 16 ('Depression in Medical Patients: Interpersonal Counseling and Brief IPT'), 'Adaptation', PDF p. 166 (Book p. 149)"
+      ]
+    }
+  ]
+}
