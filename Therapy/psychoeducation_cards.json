@@ -1,0 +1,1394 @@
+{
+  "psychoeducation_cards": [
+    {
+      "concept_id": "cognitive_model_thoughts_feelings_behavior",
+      "concept_name": "Link Between Thoughts, Feelings, and Behavior (Cognitive Model)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Cognitive therapy is based on the rationale that the way people feel and behave is influenced by how they perceive and structure their experience. Cognitive behavior therapies share the premise that psychological distress is largely a function of disturbances in cognitive processes. Cognitions, emotions, and behaviors are described as interacting significantly and having a reciprocal cause-and-effect relationship. A core assumption is that people's internal communication is accessible to introspection and that the personal meanings of their beliefs can be discovered by the client.",
+      "patient_friendly_explanation": "How we feel and what we do is shaped not only by what happens to us, but also by how we see and make sense of it. Our thoughts, feelings, and actions affect one another, so a change in one can influence the others.",
+      "examples": [
+        {
+          "example": "A person who feels depressed after a divorce may be reacting not to the divorce itself, but to their beliefs about it, such as their belief that they have failed.",
+          "type": "source_example"
+        },
+        {
+          "example": "Two people receive the same critical comment at work. One thinks 'They want me to improve' and feels motivated; the other thinks 'They think I'm useless' and feels discouraged.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Introduction (p. 291); REBT Key Concepts (pp. 291-294); Aaron Beck's Cognitive Therapy, Introduction (p. 303)"
+        }
+      ]
+    },
+    {
+      "concept_id": "negative_bias_in_depression",
+      "concept_name": "Negative Interpretation Bias in Depression",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Beck's observations of depressed clients showed a negative bias in the way they interpreted certain life events. This bias contributed to cognitive distortions. The negative automatic thoughts persisted even when they were contrary to objective evidence. This view replaced Freud's explanation of depression as anger turned inward. In Beck's cognitive theory of depression, negative thoughts reflect underlying dysfunctional beliefs and assumptions. When situational events trigger these beliefs, a depressive pattern is set in motion.",
+      "patient_friendly_explanation": "When someone is depressed, the mind often leans toward reading events in a negative light. This can happen even when the facts do not really support that view. Certain situations can set off deeper negative beliefs, and that can start a downward spiral in mood.",
+      "examples": [
+        {
+          "example": "Someone who is feeling low gets a short reply to a message and concludes 'They're annoyed with me,' even though there is no evidence for that.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck biography (pp. 288-289); Aaron Beck's Cognitive Therapy, Introduction and Basic Principles (pp. 302-303)"
+        }
+      ]
+    },
+    {
+      "concept_id": "negative_automatic_thoughts",
+      "concept_name": "Negative Automatic Thoughts",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Automatic thoughts are personalized notions that are triggered by particular stimuli and lead to emotional responses. In depression, Beck observed negative automatic thoughts that persisted even though they were contrary to objective evidence. Unrealistic negative thoughts can affect how a person feels and acts. Cognitive therapy treats these thoughts as hypotheses whose accuracy can be examined, rather than as established facts.",
+      "patient_friendly_explanation": "Automatic thoughts are quick thoughts that pop into your mind in certain situations without you deciding to think them. They often come with an emotional reaction. When they are negative, they can feel true even if the evidence points the other way.",
+      "examples": [
+        {
+          "example": "A thought such as 'This situation proves I really let that client down' appears right after a client misses a second session.",
+          "type": "source_example"
+        },
+        {
+          "example": "You walk into a room, see people laughing, and instantly think 'They're laughing at me,' which leaves you feeling embarrassed.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (pp. 303-304)"
+        }
+      ]
+    },
+    {
+      "concept_id": "core_beliefs_schemas",
+      "concept_name": "Core Beliefs (Core Schemas)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Individuals tend to maintain core beliefs about themselves, their world, and their future. These are also referred to as core schemas. Negative thoughts are understood to reflect underlying dysfunctional beliefs and assumptions. Core beliefs can be triggered by situational events. Cognitive therapy treats these deeper beliefs as a primary focus, in addition to surface-level automatic thoughts.",
+      "patient_friendly_explanation": "Core beliefs are deep, long-held ideas about who you are, what the world is like, and what your future holds. They sit beneath your everyday thoughts and quietly shape how you read situations.",
+      "examples": [
+        {
+          "example": "Someone who deeply believes 'I am not good enough' may read an ordinary setback as proof of that belief, while another person with a different core belief would shrug it off.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck biography (p. 289); Basic Principles of Cognitive Therapy (p. 303)"
+        }
+      ]
+    },
+    {
+      "concept_id": "unrealistic_personal_rules",
+      "concept_name": "Unrealistic or Overly Rigid Personal Rules",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "In Beck's view, people live by rules (premises or formulas). They get into trouble when they label, interpret, and evaluate by a set of rules that are unrealistic, or when they apply the rules inappropriately or excessively. Cognitive therapists regard dysfunctional beliefs as problematic when they are too absolute, broad, and extreme. Beck sees such beliefs as more inaccurate than irrational.",
+      "patient_friendly_explanation": "Most of us run our lives by inner rules about how we or others should behave. Trouble starts when the rules are unrealistic, too strict, or applied too widely, because they can lead to a lot of unhappiness.",
+      "examples": [
+        {
+          "example": "A rule like 'I must never make a mistake, or I'm a failure' leaves no room for being human and is likely to cause constant distress.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Some Differences Between CT and REBT (p. 305)"
+        }
+      ]
+    },
+    {
+      "concept_id": "cognitive_distortions",
+      "concept_name": "Cognitive Distortions (Thinking Errors)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Beck contends that people with emotional difficulties tend to commit characteristic 'logical errors' that distort objective reality. These systematic errors in reasoning lead to faulty assumptions and misconceptions and are termed cognitive distortions. Cognitive therapy sees psychological problems as stemming from commonplace processes such as faulty thinking, drawing incorrect inferences from inadequate or incorrect information, and failing to distinguish between fantasy and reality.",
+      "patient_friendly_explanation": "Cognitive distortions are habitual mistakes in thinking that twist how we see a situation, so what we conclude doesn't match what is actually going on. Everyone can fall into them, but they can make us feel worse than the facts justify.",
+      "examples": [
+        {
+          "example": "A new counselor is convinced that she fooled her professors and that people will soon see through her.",
+          "type": "source_example"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Introduction and Basic Principles of Cognitive Therapy (pp. 302-303)"
+        }
+      ]
+    },
+    {
+      "concept_id": "arbitrary_inference_catastrophizing",
+      "concept_name": "Arbitrary Inference and Catastrophizing",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Arbitrary inference means drawing conclusions without supporting and relevant evidence. It includes catastrophizing, which is thinking of the absolute worst scenario and outcome for most situations.",
+      "patient_friendly_explanation": "This is jumping to a conclusion without real evidence, often picturing the worst possible outcome as if it were certain.",
+      "examples": [
+        {
+          "example": "Starting a first job as a counselor convinced that neither colleagues nor clients will like or value you.",
+          "type": "source_example"
+        },
+        {
+          "example": "A slightly higher bill arrives and you think 'I'll never manage my money and I'll lose everything.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 303)"
+        }
+      ]
+    },
+    {
+      "concept_id": "selective_abstraction",
+      "concept_name": "Selective Abstraction",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Selective abstraction consists of forming conclusions based on an isolated detail of an event. Other information is ignored and the significance of the total context is missed. The assumption is that the events that matter are those dealing with failure and deprivation.",
+      "patient_friendly_explanation": "This means zooming in on one small negative detail and ignoring the rest of the picture, so that failures or shortcomings seem to be all that count.",
+      "examples": [
+        {
+          "example": "Measuring your worth as a counselor by your errors and weaknesses rather than by your successes.",
+          "type": "source_example"
+        },
+        {
+          "example": "You get positive feedback on ten parts of a project and one small criticism, and you can only think about the criticism.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 303)"
+        }
+      ]
+    },
+    {
+      "concept_id": "overgeneralization",
+      "concept_name": "Overgeneralization",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Overgeneralization is holding extreme beliefs on the basis of a single incident and applying them inappropriately to dissimilar events or settings.",
+      "patient_friendly_explanation": "This is taking one bad experience and treating it as a rule that applies everywhere, for example 'this happened once, so it will always happen.'",
+      "examples": [
+        {
+          "example": "Having difficulty working with one adolescent and concluding you will not be effective with any adolescents, or with any clients at all.",
+          "type": "source_example"
+        },
+        {
+          "example": "After one awkward conversation, thinking 'I'm bad at talking to people in general.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 304)"
+        }
+      ]
+    },
+    {
+      "concept_id": "magnification_and_minimization",
+      "concept_name": "Magnification and Minimization",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Magnification and minimization consist of perceiving a case or situation in a greater or lesser light than it truly deserves.",
+      "patient_friendly_explanation": "This is blowing problems or mistakes up to look much bigger than they are, or shrinking things down so they look smaller than they really are.",
+      "examples": [
+        {
+          "example": "Assuming that even minor mistakes in counseling a client could easily create a crisis and psychological damage.",
+          "type": "source_example"
+        },
+        {
+          "example": "Treating a small slip as a disaster, while brushing off a real accomplishment as 'no big deal.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 304)"
+        }
+      ]
+    },
+    {
+      "concept_id": "personalization",
+      "concept_name": "Personalization",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Personalization is a tendency to relate external events to oneself even when there is no basis for making this connection.",
+      "patient_friendly_explanation": "This is taking things personally, assuming that events or other people's actions are about you or your fault when there is no real reason to think so.",
+      "examples": [
+        {
+          "example": "A client does not return for a second session, and the counselor is certain it was due to their own terrible performance, thinking 'I really let that client down.'",
+          "type": "source_example"
+        },
+        {
+          "example": "A friend seems quiet and you assume you must have upset them, although they may simply be tired.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 304)"
+        }
+      ]
+    },
+    {
+      "concept_id": "labeling_and_mislabeling",
+      "concept_name": "Labeling and Mislabeling",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Labeling and mislabeling involve portraying one's identity on the basis of imperfections and mistakes made in the past and allowing them to define one's true identity.",
+      "patient_friendly_explanation": "This is describing your whole self with a harsh label, such as 'worthless' or 'failure,' because of mistakes or flaws, as if one error defined who you are.",
+      "examples": [
+        {
+          "example": "Being unable to live up to all of a client's expectations and telling yourself 'I'm totally worthless.'",
+          "type": "source_example"
+        },
+        {
+          "example": "After missing a deadline, thinking 'I'm just a lazy person' instead of 'I missed this deadline.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 304)"
+        }
+      ]
+    },
+    {
+      "concept_id": "dichotomous_thinking",
+      "concept_name": "Dichotomous (All-or-Nothing) Thinking",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Dichotomous thinking involves categorizing experiences in either-or extremes. With such polarized thinking, events are labeled in black-or-white terms, leaving no latitude for imperfection.",
+      "patient_friendly_explanation": "This is seeing things in black and white, as either perfect or a total failure, with no middle ground.",
+      "examples": [
+        {
+          "example": "Viewing yourself as either the perfectly competent counselor who always succeeds or a total flop if you are not fully competent.",
+          "type": "source_example"
+        },
+        {
+          "example": "Thinking 'If I can't do this perfectly, there's no point trying at all.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Aaron Beck's Cognitive Therapy, Basic Principles of Cognitive Therapy (p. 304)"
+        }
+      ]
+    },
+    {
+      "concept_id": "abc_model_beliefs_and_emotions",
+      "concept_name": "The A-B-C Model (Beliefs Shape Emotional Reactions)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "In rational emotive behavior therapy, the A-B-C framework is a model for understanding a person's feelings, thoughts, events, and behavior. A is an activating event or an inference about an event. C is the emotional and behavioral consequence. According to the model, A does not cause C. B, the person's belief about A, largely creates C. Ellis summarized this as 'you mainly feel the way you think.' Disturbed emotional reactions such as depression and anxiety are said to be initiated and perpetuated by self-defeating belief systems.",
+      "patient_friendly_explanation": "It is often not the event itself that determines how we feel, but what we believe about the event. The same situation can lead to very different feelings depending on the beliefs we bring to it.",
+      "examples": [
+        {
+          "example": "A person becomes depressed after a divorce. According to Ellis, it may not be the divorce or the inference of having failed that mainly causes the depression, but the person's beliefs about the divorce and the failure.",
+          "type": "source_example"
+        },
+        {
+          "example": "Two people are not invited to the same party. One believes 'They don't like me at all' and feels hurt. The other believes 'They probably just kept it small' and feels fine.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Albert Ellis's REBT, Key Concepts: A-B-C Framework (pp. 293-294)"
+        }
+      ]
+    },
+    {
+      "concept_id": "rigid_musts_and_irrational_beliefs",
+      "concept_name": "Rigid 'Musts' and 'Shoulds' (Irrational Beliefs)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "REBT proposes that people have a strong tendency to transform desires and preferences into dogmatic 'shoulds,' 'musts,' 'oughts,' demands, and commands. These absolutist demands underpin disruptive feelings and dysfunctional behaviors. Ellis describes three basic 'musts': (1) I must do well and win others' approval or else I am no good; (2) others must treat me considerately and fairly, or else they are no good and deserve to be condemned; (3) I must get what I want when I want it, and if I don't, it is terrible and I can't stand it. The basic assumption of REBT is that people contribute to their own psychological problems through the rigid and extreme beliefs they hold about events and situations.",
+      "patient_friendly_explanation": "We all have wishes and preferences, but sometimes they harden into strict demands, such as 'I must always succeed' or 'People must always treat me well.' When life doesn't meet those demands, we can feel very distressed, because the demand itself is inflexible.",
+      "examples": [
+        {
+          "example": "'I must do well and win the approval of others for my performances or else I am no good.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Moving from 'It would be nice if my boss praised my work' to 'My boss must praise my work' turns a wish into a demand that is easy to break.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Albert Ellis's REBT, Introduction and Key Concepts: View of Emotional Disturbance (pp. 291-293)"
+        }
+      ]
+    },
+    {
+      "concept_id": "global_self_rating",
+      "concept_name": "Rating Your Whole Self by Your Performance (Self-Downing)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "According to Ellis, people have a strong tendency to rate their acts as 'good' or 'bad,' 'worthy' or 'unworthy,' and also to rate themselves as total persons on the basis of their performances. These global ratings are one of the main sources of emotional disturbance. Ellis also identifies blame of oneself and others as being at the core of most emotional disturbances. Self-downing is named as one of the kinds of irrational belief.",
+      "patient_friendly_explanation": "It is easy to move from 'I did something badly' to 'I am a bad person.' Judging your whole worth by how you perform on one thing can lead to a lot of emotional pain, and it is possible to separate how you behave from who you are.",
+      "examples": [
+        {
+          "example": "'If I fail, I am then a failure as a person.'",
+          "type": "source_example"
+        },
+        {
+          "example": "After a poor presentation, thinking 'I'm worthless' rather than 'That presentation didn't go well.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Albert Ellis's REBT, View of Emotional Disturbance (p. 293); Therapeutic Goals (p. 295); Application, Emotive Techniques (p. 299)"
+        }
+      ]
+    },
+    {
+      "concept_id": "self_defeating_self_talk",
+      "concept_name": "Self-Defeating Self-Talk and How It Is Maintained",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "In REBT, emotional disturbance is fed by the self-defeating sentences clients continually repeat to themselves. Irrational beliefs are learned from significant others in childhood and then actively reinforced through autosuggestion and self-repetition. Ellis contends that it is largely a person's own repetition of early-indoctrinated beliefs that keeps dysfunctional attitudes alive. People then behave in ways that are consistent with these beliefs. The cognitive therapy view likewise holds that the way people structure their experience through internal dialogue influences how they feel and behave.",
+      "patient_friendly_explanation": "The harsh things we repeatedly tell ourselves can keep painful feelings going. Some of these messages were picked up long ago, but it is our own repetition of them today that keeps them strong.",
+      "examples": [
+        {
+          "example": "Self-defeating sentences such as 'I am totally to blame for the divorce,' 'I am a miserable failure, and everything I did was wrong,' and 'I am a worthless person.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Silently telling yourself 'I always mess things up' every time something goes wrong, until it feels like a fact.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Albert Ellis's REBT, Key Concepts: View of Emotional Disturbance and A-B-C Framework (pp. 292-294)"
+        }
+      ]
+    },
+    {
+      "concept_id": "self_fulfilling_prophecy",
+      "concept_name": "Self-Fulfilling Prophecy",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "The source explains that clients often create a negative, self-fulfilling prophecy and actually fail because they told themselves in advance that they would. Self-limiting beliefs shape behavior in ways that confirm the expectation.",
+      "patient_friendly_explanation": "When we tell ourselves in advance that we will fail, that expectation can shape how we act and make the feared outcome more likely. This then seems to prove the original belief right.",
+      "examples": [
+        {
+          "example": "A client with a talent for acting is afraid to act in front of an audience because of fear of failure, holding beliefs such as 'I will fail and therefore be a failure.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Someone convinced they will be awkward at a gathering stays quiet and avoids people, which makes the evening feel awkward and confirms their expectation.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Albert Ellis's REBT, Application: Cognitive Methods, Doing cognitive homework (p. 298)"
+        }
+      ]
+    },
+    {
+      "concept_id": "self_stories_and_organizing_schemas",
+      "concept_name": "The Stories We Tell Ourselves (Self-Narratives)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "In Meichenbaum's constructivist narrative approach to cognitive behavior therapy, the focus is on the stories people tell about themselves and others regarding significant life events. The approach assumes that there are multiple realities and that people construct their own realities and author their own stories. Phrases such as 'prisoners of the past' or 'stubborn victims' are described as organizing schemas that color how individuals view themselves, their world, and their future. These stories carry implications and conclusions, as well as a behavioral and emotional toll.",
+      "patient_friendly_explanation": "We all carry stories about who we are and what our life means. These stories shape how we see ourselves, the world, and our future, and there can be other ways of telling the story, including parts about how we coped and survived.",
+      "examples": [
+        {
+          "example": "Victimized clients might see themselves as 'prisoners of the past' or as 'stubborn victims.' Telling the 'rest of the story,' meaning what they did to survive and cope, can shift this view to 'tenacious survivors.'",
+          "type": "source_example"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 10, Donald Meichenbaum's Cognitive Behavior Modification, The Constructivist Approach to Cognitive Behavior Therapy (p. 315)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_interpersonal_context_of_depression",
+      "concept_name": "The Interpersonal Context of Depression",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "Interpersonal Psychotherapy posits that psychological distress and clinical depression occur within an interpersonal context. Depressive episodes are typically triggered by interpersonal events, difficulties, or disruptions in close attachments. Furthermore, the symptoms of depression significantly impair social functioning and communication, which strains relationships and elicits negative reactions from others, thereby creating a reciprocal cycle between interpersonal distress and depressive symptoms.",
+      "patient_friendly_explanation": "Depression does not happen in a vacuum—it is closely tied to what is happening in our relationships. Difficulties or changes with the important people in our lives can trigger depression, and being depressed makes it harder to connect and communicate, which in turn strains relationships even more.",
+      "examples": [
+        {
+          "example": "A person develops major depression following intense conflict with a spouse or after moving to a new community where they have no social ties.",
+          "type": "source_example"
+        },
+        {
+          "example": "Feeling irritable and exhausted from depression causes someone to withdraw from friends, and their friends stop calling, making the person feel even more isolated.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 1: The Interpersonal Psychotherapy Platform (pp. 3-8); Chapter 3: What Is IPT? (pp. 21-25)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_sick_role_medical_model",
+      "concept_name": "The Medical Model and the 'Sick Role' in Depression",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "In IPT, depression is conceptualized using a medical model as a treatable illness rather than a moral defect, personal failure, or character flaw. The therapist explicitly assigns the patient the temporary 'sick role' (derived from sociological medical theory). This relieves the individual from self-blame, validates their suffering as a genuine medical condition, and temporarily excuses them from overwhelming social obligations while establishing an active responsibility to collaborate in treatment to recover.",
+      "patient_friendly_explanation": "Depression is a medical illness, not a weakness of character or personal failure. Just as you would not blame yourself for having pneumonia or the flu, you do not need to blame yourself for feeling unable to function at your best right now. Acknowledging this 'sick role' gives you permission to recover while working on getting better.",
+      "examples": [
+        {
+          "example": "Comparing depression to appendicitis or the flu: if you had the flu, you wouldn't expect yourself to perform at peak capacity or blame yourself for being tired.",
+          "type": "source_example"
+        },
+        {
+          "example": "A mother who feels guilty for struggling to care for her children learns that her fatigue and sadness are symptoms of a medical condition rather than signs of being a bad parent.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 4: Beginning IPT, The Sick Role (pp. 39-40)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_unresolved_grief",
+      "concept_name": "Unresolved (Complicated) Grief",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "Grief is considered one of the four core interpersonal problem areas in IPT when a depressive episode is triggered by the death of a significant other and the bereavement process has become complicated, delayed, or stuck. Unlike normal bereavement, complicated grief involves prolonged, disabling sadness, severe social withdrawal, idealization or demonization of the deceased, and an inability to mourn fully or reestablish new interpersonal relationships.",
+      "patient_friendly_explanation": "Grief is a natural human reaction to losing someone we love, but sometimes mourning gets stuck or overwhelming, turning into clinical depression. When this happens, a person may find it impossible to process the loss, adjust to life without the person, or form new meaningful connections.",
+      "examples": [
+        {
+          "example": "A woman whose husband died two years ago continues to keep his room untouched, avoids speaking about his death, and remains profoundly depressed and isolated.",
+          "type": "source_example"
+        },
+        {
+          "example": "An individual cannot move forward because they feel intense guilt over things left unsaid before a loved one passed away.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 5: Grief (pp. 43-54)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_role_disputes",
+      "concept_name": "Interpersonal Role Disputes",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "An interpersonal role dispute occurs when a patient and a significant other (such as a partner, family member, coworker, or friend) have differing, incompatible, or nonreciprocal expectations about their relationship, roles, or boundaries. This mismatch leads to overt conflict or passive struggle, during which the depressed individual frequently feels powerless, frustrated, and unappreciated, generating or perpetuating depressive symptoms.",
+      "patient_friendly_explanation": "A role dispute happens when you and someone important in your life have very different expectations about your relationship—such as what each person should do, how you treat each other, or how decisions are made. When expectations clash without a mutually agreeable compromise, it leads to ongoing struggle, frustration, and depression.",
+      "examples": [
+        {
+          "example": "A wife expects her husband to support the family financially, while he expects her to hold a job and contribute equally to the household income.",
+          "type": "source_example"
+        },
+        {
+          "example": "An employee expects recognition and clear work-life boundaries from their manager, while the manager expects after-hours availability without extra pay.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 6: Role Disputes, Definition (pp. 55-56)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_role_dispute_stages",
+      "concept_name": "Stages of Interpersonal Role Disputes (Renegotiation, Impasse, Dissolution)",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "In IPT, interpersonal role disputes progress through three distinct stages that characterize the communication and emotional dynamic between parties: (1) Renegotiation, where both individuals are in active, often argumentative communication and still attempting to resolve their differences; (2) Impasse, characterized by a cessation of productive discussion, a 'cold war' of resentment, and suppressed or indirect hostility; and (3) Dissolution, where the relationship has effectively broken down and is beyond repair.",
+      "patient_friendly_explanation": "Relationship conflicts tend to fall into three stages: active arguing and negotiating (where people still talk and try to change things), an impasse (where communication shuts down into cold silence and resentment), or dissolution (where the relationship has ended or is ending). Recognizing which stage you are in helps you understand what options are realistic.",
+      "examples": [
+        {
+          "example": "A couple who has stopped talking about their finances altogether and merely avoids each other in cold resentment is at an impasse.",
+          "type": "source_example"
+        },
+        {
+          "example": "Two roommates who argue frequently about cleaning schedules are in the renegotiation stage because they are still actively communicating their demands.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 6: Role Disputes, Stage of the Dispute (pp. 57-58)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_role_transitions",
+      "concept_name": "Interpersonal Role Transitions",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "A role transition is an IPT problem area defined as a major psychosocial life change that requires an individual to adapt to a new social status, altered relationships, and unfamiliar demands. Transitions can stem from developmental milestones, career shifts, geographical relocations, physical illness, retirement, or family restructuring (e.g., divorce or parenthood). Depression develops when the individual struggles to mourn the loss of their former role and feels overwhelmed or unskilled in mastering the requirements of the new role.",
+      "patient_friendly_explanation": "A role transition is any major life change—like starting college, retiring, changing jobs, having a baby, getting divorced, or dealing with an illness. Even positive changes require letting go of an old familiar lifestyle and learning how to navigate new expectations and relationships, which can trigger depression if you feel overwhelmed.",
+      "examples": [
+        {
+          "example": "A successful professional who retires finds themselves feeling useless, lonely, and depressed because their daily structure and social status vanished.",
+          "type": "source_example"
+        },
+        {
+          "example": "A new mother experiences depression as she grieves the sudden loss of personal freedom and career focus while adjusting to around-the-clock infant care.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 7: Role Transitions, Definition (pp. 64-66)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_interpersonal_deficits_isolation",
+      "concept_name": "Interpersonal Deficits and Social Isolation",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "Interpersonal deficits represents an IPT problem area characterized by a chronic paucity of meaningful social attachments, pervasive loneliness, and difficulties forming or sustaining close relationships. Patients presenting with this focus often lack acute precipitating life events, experiencing instead long-standing social withdrawal, social anxiety, or deficits in interpersonal skills, leaving them without an adequate social support system to buffer emotional distress.",
+      "patient_friendly_explanation": "This concept refers to chronic loneliness and social isolation. When someone has had trouble making or keeping close friends throughout life, they may not have the emotional support they need when hard times hit, leaving them vulnerable to persistent depression.",
+      "examples": [
+        {
+          "example": "A person who has lived alone for years with no close friends or confidants and struggles to initiate conversations with coworkers.",
+          "type": "source_example"
+        },
+        {
+          "example": "Someone who wants companionship but feels so socially awkward and fearful of rejection that they spend all weekends in complete solitude.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 8: Interpersonal Deficits (Social Isolation; No Life Events) (pp. 73-77)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_interpersonal_inventory",
+      "concept_name": "The Interpersonal Inventory (Social Network Assessment)",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "The Interpersonal Inventory is a systematic clinical assessment in IPT that maps the patient's current and past social world. It reviews significant relationships with partners, family members, friends, and colleagues, examining: (1) the frequency and nature of contact; (2) mutual expectations; (3) positive and negative aspects; (4) communication patterns; and (5) how changes in these relationships correspond directly with fluctuations in depressive symptoms.",
+      "patient_friendly_explanation": "An interpersonal inventory is a structured look at all the key people in your life. It helps you see who gives you support, who causes you stress, what you expect from each other, and how your daily interactions with them influence your mood.",
+      "examples": [
+        {
+          "example": "Reviewing each person in the patient's immediate circle to identify which relationships provide emotional warmth and which involve unspoken tensions that trigger crying spells.",
+          "type": "source_example"
+        },
+        {
+          "example": "Discovering through a relationship review that a patient's mood drops every Sunday evening anticipating interactions with a critical manager on Monday morning.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 4: Beginning IPT, Review the Patient's Current Problems in Relationship to Depression (pp. 34-37)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_nonreciprocal_role_expectations",
+      "concept_name": "Nonreciprocal Role Expectations",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "Nonreciprocal expectations occur when two parties in a relationship hold unshared, contrasting, or incompatible assumptions regarding mutual rights, responsibilities, emotional commitment, or division of labor. Because these expectations are often tacit (unspoken) rather than clearly communicated, neither party's needs are met, generating chronic friction, unacknowledged hurt, and depressive demoralization.",
+      "patient_friendly_explanation": "Nonreciprocal expectations happen when two people expect different things from each other without realizing it. For example, one person might expect deep emotional talks while the other assumes quiet companionship is enough. Because neither explains their expectations openly, both end up feeling let down and misunderstood.",
+      "examples": [
+        {
+          "example": "A husband expects his partner to ask for help when overwhelmed, while the partner expects him to notice her distress and offer help without being asked.",
+          "type": "source_example"
+        },
+        {
+          "example": "An adult child expects their aging parent to respect their independence, while the parent expects daily check-in calls and consultation on all decisions.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 6: Role Disputes (pp. 55-57)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_maladaptive_communication_patterns",
+      "concept_name": "Maladaptive Communication Patterns in Relationships",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "IPT recognizes that depression impairs communication, leading to characteristic maladaptive patterns such as: indirect nonverbal hints, silence, assuming the other person 'should know' what is wrong without being told, ambiguous messaging, emotional withdrawal, or sudden outbursts of anger. These distorted patterns prevent effective resolution of conflicts and alienate needed social support.",
+      "patient_friendly_explanation": "When we feel down, we often communicate poorly. We might give the silent treatment, use sarcastic comments, expect others to read our minds, or shut down completely. These habits make it hard for others to know what we need and usually make relationship friction worse.",
+      "examples": [
+        {
+          "example": "A depressed patient sighs heavily and sulks around the house for days, expecting their partner to guess why they are upset instead of directly saying 'I felt hurt by what you said.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Someone feeling overwhelmed at work quietly agrees to take on more tasks while feeling intense unspoken resentment toward their boss.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 10: IPT Techniques and the Therapist's Role, Communication Analysis (pp. 91-92)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_social_support_and_attachment",
+      "concept_name": "Social Support and Attachment as Buffers Against Depression",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "Drawing on John Bowlby's attachment theory and Adolf Meyer's psychobiological model, IPT emphasizes that human beings are innately social organisms with an instinctual need for secure attachments. Strong, confiding social relationships act as vital psychological buffers that protect individuals against stress and depressive illness. Conversely, the absence, disruption, or loss of secure attachments greatly elevates vulnerability to clinical depression.",
+      "patient_friendly_explanation": "Having close, reliable people you can talk to is one of nature's best shields against emotional distress. When we lose these connections or feel unsupported during tough times, our vulnerability to depression goes way up.",
+      "examples": [
+        {
+          "example": "An individual experiencing high job stress who has an empathetic partner to confide in stays emotionally stable, whereas another undergoing the same stress in isolation becomes clinically depressed.",
+          "type": "source_example"
+        },
+        {
+          "example": "After moving to a new city, an individual joins a community group and finds that having regular social interactions significantly lightens their depressive mood.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 1: The Interpersonal Psychotherapy Platform, Historical, Theoretical, and Empirical Basis of IPT (pp. 8-11); Chapter 3: What Is IPT? (p. 23)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ipt_feelings_as_interpersonal_signals",
+      "concept_name": "Emotions as Interpersonal Signals",
+      "related_therapies": [
+        "IPT"
+      ],
+      "clinical_explanation": "In IPT, affects and emotional states are not viewed as mere distress symptoms to be suppressed, but as biologically rooted, adaptive interpersonal signals. Feelings inform the individual about their interpersonal desires, boundaries, and unmet needs, while also serving as communicative cues to others about what is happening within the social relationship.",
+      "patient_friendly_explanation": "Feelings like sadness, anger, and hurt are not just painful experiences—they are internal signals telling you what is and isn't working in your relationships. Anger tells you a boundary has been crossed, and sadness tells you something important is missing or lost.",
+      "examples": [
+        {
+          "example": "A patient realizes that a sudden wave of sadness during a conversation was an internal signal that she felt dismissed and unheard by her friend.",
+          "type": "source_example"
+        },
+        {
+          "example": "Recognizing that sudden annoyance when a partner makes a request indicates you are feeling taken for granted and need to negotiate expectations.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "The Guide to Interpersonal Psychotherapy: Updated and Expanded Edition",
+          "author": "Myrna M. Weissman, John C. Markowitz, Gerald L. Klerman",
+          "year": 2018,
+          "location": "Chapter 10: IPT Techniques and the Therapist's Role, Encouragement of Affect (pp. 89-90)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_depression_context_model",
+      "concept_name": "Behavioral Activation Model of Depression (Depression in Context)",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "Behavioral Activation conceptualizes depression not as an internal disease originating solely within the individual, but as an understandable response to life context and environmental changes. Difficult life events, chronic stress, or losses reduce opportunities for positive reinforcement in a person's life and increase aversive experiences. As a consequence, the individual experiences low mood and instinctually pulls back, which initiates a downward spiral of depression.",
+      "patient_friendly_explanation": "Depression is an understandable reaction to what is happening around you. When life hits you with painful events, stress, or losses, you stop experiencing enjoyable and rewarding moments. It makes sense that your mood drops, but pulling away from life makes the depression stick around.",
+      "examples": [
+        {
+          "example": "Following the loss of an important job and months of unemployment, Kenneth loses interest in activities he previously enjoyed, feels constant fatigue, and spends evenings watching television alone.",
+          "type": "source_example"
+        },
+        {
+          "example": "A college student under heavy academic pressure stops going to the gym and seeing friends; having fewer enjoyable activities in their week causes their mood to sink further.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 1: The Development of Behavioral Activation (pp. 1-16); Chapter 2: The Core Principles of Behavioral Activation (pp. 17-23)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_vicious_cycle_inactivity_withdrawal",
+      "concept_name": "The Vicious Cycle of Inactivity and Withdrawal",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "When individuals become depressed, their natural inclination is to pull back, rest, and withdraw from social, occupational, and physical activities. While inactivity and withdrawal provide short-term relief from feeling overwhelmed, they reduce contact with sources of positive reinforcement and mastery. This deprivation worsens fatigue, low mood, and self-criticism, generating a self-perpetuating maintenance cycle of depression.",
+      "patient_friendly_explanation": "When you feel exhausted and down, staying in bed or sitting on the couch feels like the safest thing to do. But withdrawal cuts you off from the very things that give you energy, satisfaction, and pleasure. Less activity leads to lower energy and worse mood, creating a trap where the less you do, the less you feel like doing.",
+      "examples": [
+        {
+          "example": "Staying in bed all weekend because of low energy leads to feeling guilty, isolated, and even more exhausted by Sunday night.",
+          "type": "source_example"
+        },
+        {
+          "example": "Canceling plans with friends because you feel sad, only to spend the evening dwelling on how lonely you feel.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 2: The Core Principles of Behavioral Activation, Principle 2 (pp. 23-26)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_inside_out_vs_outside_in",
+      "concept_name": "Inside-Out vs. Outside-In Living",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "In non-depressed states, people frequently act from the 'inside-out'—waiting to feel an internal urge, interest, or motivation before engaging in an activity. In depression, relying on internal feelings leads to pervasive inertia because the motivation is absent. Behavioral Activation teaches clients to act from the 'outside-in'—acting according to a planned schedule, goal, or personal value regardless of current internal feelings, allowing positive mood and energy to follow the action.",
+      "patient_friendly_explanation": "Waiting until you 'feel like' doing something is called living 'inside-out.' When you are depressed, that feeling rarely arrives. Living 'outside-in' means taking an action because it matters to you or is on your plan, even if you do not feel motivated in the moment. Very often, the energy and better mood come after you start.",
+      "examples": [
+        {
+          "example": "Going for a planned 15-minute walk despite feeling tired and unmotivated, and noticing feeling slightly lighter and more alert afterward.",
+          "type": "source_example"
+        },
+        {
+          "example": "Waiting until you feel excited to clean your kitchen versus setting a timer and washing three dishes according to plan.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 2: The Core Principles of Behavioral Activation, Principle 1 (pp. 21-23); Principle 4 (pp. 26-28)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_avoidance_as_negative_reinforcement",
+      "concept_name": "Avoidance Maintained by Negative Reinforcement",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "Avoidance and escape behaviors in depression are maintained primarily through operant negative reinforcement. When a depressed client avoids a stressful task (e.g., ignoring unread bills or declining a social invitation), they experience an immediate, temporary reduction of anxiety, discomfort, or effort. This immediate relief negatively reinforces the avoidance behavior, making the person significantly more likely to avoid again in the future despite catastrophic long-term consequences.",
+      "patient_friendly_explanation": "When you avoid something difficult—like an overdue task or a social gathering—you feel instant relief. That relief acts like a reward for your brain, teaching you to avoid again next time. Even though avoidance feels good for a minute, it keeps problems growing in the background.",
+      "examples": [
+        {
+          "example": "Ignoring a pile of bills on the desk brings a temporary sense of relief, but ensures that the bills remain unpaid and compound the financial crisis.",
+          "type": "source_example"
+        },
+        {
+          "example": "Turning down an invitation to a family dinner immediately takes away social anxiety, but reinforces the habit of isolating at home.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 6: Avoidance Modification, Solving Problems, and Value-Directed Behavior (pp. 109-115)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_trap_model",
+      "concept_name": "The TRAP Model of Avoidance",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "The TRAP acronym conceptualizes how depressive avoidance cycles operate: an environmental Trigger (T) precipitates an internal emotional Response (R, such as feeling overwhelmed, sad, or hopeless), which then triggers an Avoidance Pattern (AP, such as pulling the covers over one's head, procrastinating, or drinking). While the avoidance pattern provides momentary relief, it traps the individual in depression by preventing resolution of the trigger.",
+      "patient_friendly_explanation": "TRAP explains how depression catches you: a Trigger (like a stressful phone call) leads to an emotional Response (feeling overwhelmed), which leads to an Avoidance Pattern (like crawling into bed and ignoring it). While avoiding gives brief relief, it traps you right where you started.",
+      "examples": [
+        {
+          "example": "Trigger: Getting an email from a difficult supervisor. Response: Anxiety and feeling incompetent. Avoidance Pattern: Leaving the desk, watching TV for the rest of the day, and avoiding the email.",
+          "type": "source_example"
+        },
+        {
+          "example": "Trigger: Walking into an empty apartment after work. Response: Loneliness and despair. Avoidance Pattern: Drinking alcohol and scrolling on social media until falling asleep on the sofa.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 6: Avoidance Modification, Solving Problems, and Value-Directed Behavior (pp. 115-116)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_trac_alternative_coping",
+      "concept_name": "The TRAC Model (Alternative Coping)",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "TRAC represents the behavioral antidote to a TRAP. When faced with the same environmental Trigger (T) and distressing emotional Response (R), the individual replaces the avoidance pattern with Alternative Coping (AC). Alternative coping involves purposeful approach behaviors, graded problem solving, or value-consistent activities designed to re-engage with life and modify the distressing context.",
+      "patient_friendly_explanation": "TRAC is how you get out of a TRAP. When the same Trigger and difficult emotional Response happen, instead of retreating into avoidance, you choose an Alternative Coping action—such as breaking the problem down, asking for help, or taking one small step forward.",
+      "examples": [
+        {
+          "example": "When stressed by an unpaid bill (Trigger) and feeling panicked (Response), instead of hiding it in a drawer (Avoidance), the person calls the utility company to set up a monthly payment plan (Alternative Coping).",
+          "type": "source_example"
+        },
+        {
+          "example": "Feeling lonely on a Friday night (Trigger and Response) and choosing to message a friend to meet for coffee rather than turning off the phone and isolating.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 6: Avoidance Modification, Solving Problems, and Value-Directed Behavior (pp. 115-116)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_function_versus_form_of_behavior",
+      "concept_name": "Function vs. Form of Behavior",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "In behavioral psychology and BA, the 'form' (or topography) of a behavior describes what the action physically looks like, whereas the 'function' describes what the behavior achieves or what maintains it. Two behaviors with identical form can serve completely opposite functions (e.g., attending a dinner party to engage with loved ones versus attending to avoid conflict with a spouse). Understanding behavior requires looking past surface appearance to its functional impact.",
+      "patient_friendly_explanation": "What an action looks like on the outside (its form) does not tell you why it is happening or what it does for you (its function). For example, going to a party could be an active way to connect with friends, or it could be a way to avoid being alone with painful thoughts at home.",
+      "examples": [
+        {
+          "example": "Addilyn attends a dinner party (form of social engagement), but spends the entire evening ruminating quietly in her head and not engaging with anyone (function of avoidance).",
+          "type": "source_example"
+        },
+        {
+          "example": "Cleaning the kitchen can be an act of self-care and accomplishment, or it can be a way of procrastinating on studying for a difficult exam.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 4: Identifying the Ingredients of the Behavioral Antidepressant (pp. 64-68); Chapter 7: How Thinking Can Be Problematic Behavior (pp. 122-124)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_rumination_as_avoidance",
+      "concept_name": "Rumination as an Avoidant Mental Behavior",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "Behavioral Activation views thinking as a private (covert) behavior subject to the same principles of reinforcement as overt action. Rumination—repetitive, passive mulling over negative emotions, problems, and their causes without concrete problem solving—frequently functions as a form of cognitive avoidance. By staying immersed in abstract mental brooding ('Why am I like this?'), the individual avoids confronting difficult real-world situations, taking risks, or experiencing immediate painful feelings.",
+      "patient_friendly_explanation": "Rumination is when your mind gets caught in a loop, endlessly replaying problems, regrets, or asking 'Why do I feel this way?' without ever reaching a solution. Although it feels like you are trying to solve something, it is actually a mental way of avoiding taking action or feeling uncomfortable emotions.",
+      "examples": [
+        {
+          "example": "Spending hours lying on the sofa analyzing why one lost their job instead of opening a resume file or calling an employer.",
+          "type": "source_example"
+        },
+        {
+          "example": "Endlessly replaying a minor awkward comment made during a lunch break instead of getting back to your afternoon work.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 7: How Thinking Can Be Problematic Behavior, Rumination (pp. 122-127)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_mood_follows_action",
+      "concept_name": "Mood Follows Action (Motivation Follows Behavior)",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "A foundational premise of Behavioral Activation is that human motivation, positive affect, and energy are primarily byproducts of behavioral engagement rather than prerequisites for it. When depressed individuals wait to feel better or more motivated before doing an activity, inertia persists. Engaging in structured, manageable activity stimulates dopamine pathways, encounters natural reinforcement, and creates positive shifts in affect during and after the action.",
+      "patient_friendly_explanation": "You do not need to feel motivated in order to act; motivation almost always comes AFTER you start. Taking even one small step gets momentum going, and feelings of energy and satisfaction follow along behind the action.",
+      "examples": [
+        {
+          "example": "A client dreads stepping out for a walk and feels completely lethargic, but notices after 10 minutes that their energy has lifted and their mind feels clearer.",
+          "type": "source_example"
+        },
+        {
+          "example": "Sitting down to write one sentence when you feel uninspired, and discovering that after five minutes you have written half a page.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 2: The Core Principles of Behavioral Activation, Principle 1 and Principle 4 (pp. 21-28)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_secondary_problems_from_avoidance",
+      "concept_name": "Secondary Problems Caused by Avoidance and Inactivity",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "When individuals withdraw and avoid daily responsibilities due to depression, practical real-life tasks are left unattended. Over time, unaddressed chores, unanswered correspondence, neglected bills, and professional delays accumulate, creating secondary crises (e.g., debt, job reprimands, household disarray). These secondary problems create fresh environmental stressors and confirm feelings of inadequacy, worsening the primary depression.",
+      "patient_friendly_explanation": "When depression makes you put things off, the undone tasks do not disappear—they pile up. Unopened mail turns into late fees, and unreturned messages turn into strained friendships. These new problems created by pulling back end up making the depression feel even more unmanageable.",
+      "examples": [
+        {
+          "example": "A person stops submitting client invoices due to feeling depressed, which leads to having no money to pay rent, adding an acute financial crisis onto their depression.",
+          "type": "source_example"
+        },
+        {
+          "example": "Neglecting dirty dishes and laundry until the living space feels chaotic, leaving the person feeling overwhelmed every time they look around their home.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 6: Avoidance Modification, Solving Problems, and Value-Directed Behavior (pp. 116-118)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_environmental_reward_deprivation",
+      "concept_name": "Environmental Reward Deprivation (Low Reinforcement)",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "Depression is fundamentally characterized by an environmental reward deficit: a dramatic reduction in positive reinforcement obtained from one's surroundings, coupled with high rates of aversive experiences. When life circumstances diminish activities that provide pleasure, competence, or social connection, the behavioral repertoire shrinks and depressive lethargy takes over.",
+      "patient_friendly_explanation": "To feel good and stay energized, our brains need a steady diet of positive, rewarding experiences. When life becomes filled with nothing but duties, stress, or emptiness, we become 'reward-deprived,' and depression naturally sets in.",
+      "examples": [
+        {
+          "example": "A caregiver whose entire life has become centered on managing an ill parent's medications and appointments, with zero leisure time or personal interests left in the week.",
+          "type": "source_example"
+        },
+        {
+          "example": "Working long hours at a monotonous job with no hobbies, creative outlets, or social gatherings on the weekends.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 1: The Development of Behavioral Activation (pp. 5-11); Chapter 2 (pp. 23-26)"
+        }
+      ]
+    },
+    {
+      "concept_id": "ba_values_directed_action",
+      "concept_name": "Value-Directed Action vs. Mood-Directed Action",
+      "related_therapies": [
+        "BA"
+      ],
+      "clinical_explanation": "Behavioral Activation emphasizes structuring activity around an individual's personal values—what has historically been meaningful, caring, or important in their life—rather than their momentary emotional urges. When people act consistently with their values, the activities are naturally reinforcing and foster a genuine sense of purpose and identity that counters depressive emptiness.",
+      "patient_friendly_explanation": "Values are what truly matter to you deep down—like being a dependable parent, being creative, or taking care of your health. Living by your values means choosing what to do based on what you care about, rather than letting a gloomy mood decide your day for you.",
+      "examples": [
+        {
+          "example": "A father who deeply values his relationship with his children plays a board game with them for twenty minutes even though he feels tired, because being an engaged father is important to him.",
+          "type": "source_example"
+        },
+        {
+          "example": "Someone who values learning registers for an online course despite doubts, feeling a quiet sense of satisfaction for honoring what matters to them.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Behavioral Activation for Depression: A Clinician's Guide (2nd ed.)",
+          "author": "Christopher R. Martell, Sona Dimidjian, Ruth Herman-Dunn",
+          "year": 2022,
+          "location": "Chapter 2: The Core Principles of Behavioral Activation, Values (pp. 22-23); Chapter 6 (pp. 118-121)"
+        }
+      ]
+    },
+    {
+      "concept_id": "beck_levels_of_cognition",
+      "concept_name": "The Three Levels of Cognition (Automatic Thoughts, Intermediate Beliefs, Core Beliefs)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Cognitive Behavior Therapy conceptualizes human thought along three distinct levels of depth: (1) Automatic Thoughts, the surface-level, situation-specific thoughts that spontaneously stream through our minds; (2) Intermediate Beliefs, consisting of unarticulated attitudes, rules, and conditional assumptions ('If... then...'); and (3) Core Beliefs, the most fundamental, rigid, global understandings an individual holds about the self, others, and the world.",
+      "patient_friendly_explanation": "Our thoughts exist at three different levels: on the surface are quick 'automatic thoughts' that pop into your head right now; beneath them are 'rules and assumptions' about how life works; and at the deepest level are 'core beliefs' about who you are at your center.",
+      "examples": [
+        {
+          "example": "Automatic thought: 'I won't be able to finish this report'; Intermediate rule: 'I must do everything perfectly or I'm incompetent'; Core belief: 'I am incompetent.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Automatic thought: 'She didn't wave back'; Intermediate assumption: 'If people don't show warmth, they dislike me'; Core belief: 'I am unlovable.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Cognitive Behavior Therapy: Basics and Beyond (3rd ed.)",
+          "author": "Judith S. Beck",
+          "year": 2021,
+          "location": "Chapter 3: Cognitive Conceptualization (pp. 46-55)"
+        }
+      ]
+    },
+    {
+      "concept_id": "beck_core_belief_categories",
+      "concept_name": "The Three Categories of Negative Core Beliefs (Helpless, Unlovable, Worthless)",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Judith Beck classifies negative core beliefs about the self into three broad psychological categories: (1) Helpless core beliefs, reflecting feelings of inadequacy, vulnerability, incompetence, and inability to protect oneself or achieve goals (e.g., 'I am powerless', 'I'm a failure'); (2) Unlovable core beliefs, centered on an inability to gain or sustain affection and intimacy (e.g., 'I am unattractive', 'I am bound to be rejected'); and (3) Worthless core beliefs, involving perceived moral defectiveness or toxicity (e.g., 'I am bad', 'I am toxic').",
+      "patient_friendly_explanation": "Deep-seated negative beliefs usually fall into one of three buckets: feeling helpless (believing you are weak, failing, or can't cope), feeling unlovable (believing nobody could truly love or want you), or feeling worthless (believing you are fundamentally defective or bad).",
+      "examples": [
+        {
+          "example": "A patient whose default belief when facing challenges is 'I'm incompetent and out of control' is operating from the helpless category of core beliefs.",
+          "type": "source_example"
+        },
+        {
+          "example": "A person who believes that if people get to know their true self they will inevitably leave is carrying an unlovable core belief.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Cognitive Behavior Therapy: Basics and Beyond (3rd ed.)",
+          "author": "Judith S. Beck",
+          "year": 2021,
+          "location": "Chapter 3: Cognitive Conceptualization, Core Beliefs (pp. 51-54)"
+        }
+      ]
+    },
+    {
+      "concept_id": "beck_intermediate_beliefs_attitudes_rules_assumptions",
+      "concept_name": "Intermediate Beliefs: Attitudes, Rules, and Assumptions",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Intermediate beliefs represent the intermediate layer of cognition between core beliefs and automatic thoughts. They are structured as: (1) Attitudes ('It's terrible to fail'); (2) Rules ('I must work twice as hard as others to prove my worth'); and (3) Conditional Assumptions ('If I achieve perfection, then I will be acceptable; but if I make a mistake, then I am a failure'). These beliefs develop as compensatory mechanisms to keep painful core beliefs from being activated.",
+      "patient_friendly_explanation": "Intermediate beliefs are the hidden rules and formulas we live by. They often sound like 'If I don't please everyone, then they will reject me' or 'I must always be on guard.' We create these rules to protect ourselves, but when they are too rigid, they create intense stress and depression.",
+      "examples": [
+        {
+          "example": "A client lives by the rule: 'If I ask for help, it shows that I am weak; but if I handle everything on my own, I will be safe.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Believing 'If I never disagree with my partner, our relationship will survive; if I speak up, they will leave.'",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Cognitive Behavior Therapy: Basics and Beyond (3rd ed.)",
+          "author": "Judith S. Beck",
+          "year": 2021,
+          "location": "Chapter 3: Cognitive Conceptualization, Intermediate Beliefs (pp. 48-51); Chapter 17: Introduction to Beliefs (pp. 238-245)"
+        }
+      ]
+    },
+    {
+      "concept_id": "beck_compensatory_coping_strategies",
+      "concept_name": "Compensatory (Coping) Strategies",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Compensatory strategies are behavioral patterns and coping styles developed since childhood to avoid triggering or exposing painful core beliefs. For example, a person with a core belief of incompetence may develop compensatory strategies of extreme perfectionism, over-preparation, or excessive vigilance; alternatively, they may compensate through avoidance and passivity so their competence is never put to the test. When these strategies inevitably break down under stress, depressive symptoms erupt.",
+      "patient_friendly_explanation": "Compensatory strategies are the shields we put up to keep our deepest insecurities hidden. For instance, if you secretly fear you are incompetent, you might become an extreme perfectionist or work 80 hours a week to make sure no one finds out. When life becomes too heavy to maintain that shield, depression often hits.",
+      "examples": [
+        {
+          "example": "A student spends twenty hours reviewing every detail of an assignment to protect against feeling incompetent, but collapses in exhaustion when course loads increase.",
+          "type": "source_example"
+        },
+        {
+          "example": "An employee always agrees to help coworkers with their projects to compensate for a fear of being unlikable, ending up overwhelmed and resentful.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Cognitive Behavior Therapy: Basics and Beyond (3rd ed.)",
+          "author": "Judith S. Beck",
+          "year": 2021,
+          "location": "Chapter 3: Cognitive Conceptualization, Behavioral Strategies (pp. 53-56)"
+        }
+      ]
+    },
+    {
+      "concept_id": "beck_hopelessness_concept",
+      "concept_name": "Hopelessness and Negative Future Expectations",
+      "related_therapies": [
+        "CBT"
+      ],
+      "clinical_explanation": "Hopelessness is a cardinal cognitive feature of depressive pathology, representing the third component of Beck's cognitive triad (negative view of self, world, and future). It involves an unshakable cognitive assumption that current suffering is permanent, that personal efforts to change are futile, and that the future holds only failure and deprivation. Hopelessness paralyzes behavioral activation and is clinically significant as a primary driver of suicidal ideation.",
+      "patient_friendly_explanation": "Hopelessness is when depression tricks you into believing that things will never get better, that you are stuck forever, and that trying is pointless. It is a symptom of the depression itself rather than a true picture of what the future holds.",
+      "examples": [
+        {
+          "example": "A client asserts: 'Nothing has ever worked for me in the past, so there is no reason to believe therapy or anything else will help now.'",
+          "type": "source_example"
+        },
+        {
+          "example": "Believing that because you feel exhausted today, you will still feel this same level of exhaustion five months from now.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Cognitive Behavior Therapy: Basics and Beyond (3rd ed.)",
+          "author": "Judith S. Beck",
+          "year": 2021,
+          "location": "Chapter 2: Overview of Treatment (pp. 20-25); Chapter 6: The First Therapy Session (pp. 95-98)"
+        }
+      ]
+    },
+    {
+      "concept_id": "gen_therapeutic_alliance",
+      "concept_name": "The Therapeutic Alliance (Collaborative Partnership)",
+      "related_therapies": [
+        "CBT",
+        "IPT",
+        "BA"
+      ],
+      "clinical_explanation": "Across modern evidence-based psychotherapies, the therapeutic alliance is a central common mechanism of change. It is defined by three interconnected components: (1) mutual agreement on therapeutic goals; (2) consensus on the relevant tasks of therapy; and (3) an affective bond characterized by mutual trust, warmth, respect, and unconditional positive regard. Psychotherapy operates not through expert pronouncement, but through an active, egalitarian partnership between therapist and client.",
+      "patient_friendly_explanation": "Therapy is a team effort. The therapeutic alliance means you and your therapist work together as partners who agree on what goals matter to you, agree on what steps to take, and share a trusting relationship where you feel respected and heard.",
+      "examples": [
+        {
+          "example": "Rather than a therapist telling a client what to do, the therapist and client collaboratively set the session agenda and negotiate weekly homework tasks together.",
+          "type": "source_example"
+        },
+        {
+          "example": "A client feels safe enough to tell their therapist that a suggested exercise did not feel right, and they adjust the plan together without judgment.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 2: The Counselor: Person and Professional (pp. 18-24); Chapter 10: Cognitive Behavior Therapy, The Client-Therapist Relationship (pp. 305-306)"
+        }
+      ]
+    },
+    {
+      "concept_id": "gen_behavioral_abc_functional_analysis",
+      "concept_name": "The ABC Model of Functional Behavior Analysis",
+      "related_therapies": [
+        "BA",
+        "CBT"
+      ],
+      "clinical_explanation": "In behavioral therapy and functional assessment, human behavior is conceptualized using the ABC model: Antecedents (A), the situational, environmental, or internal cues that trigger or precede a behavior; Behavior (B), the observable overt or covert action taken; and Consequences (C), the immediate outcome, reinforcement, or punishment that follows and determines whether the behavior is repeated in the future.",
+      "patient_friendly_explanation": "The ABC model is a way to understand why we do what we do: A is the Antecedent (what happened right before), B is the Behavior (what you did or thought), and C is the Consequence (what happened as a result). Looking at this chain helps you see what keeps unwanted habits going.",
+      "examples": [
+        {
+          "example": "Antecedent: Feeling lonely on a Sunday evening. Behavior: Spending four hours mindlessly scrolling on a smartphone. Consequence: Brief distraction, followed by guilt and disrupted sleep.",
+          "type": "source_example"
+        },
+        {
+          "example": "Antecedent: An unexpected knock on the door. Behavior: Pretending not to be home and hiding in the kitchen. Consequence: Immediate relief from anxiety, reinforcing the urge to hide next time.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 9: Behavior Therapy, Key Concepts: The ABC Model (pp. 250-252)"
+        }
+      ]
+    },
+    {
+      "concept_id": "gen_positive_and_negative_reinforcement",
+      "concept_name": "Reinforcement Principles (Positive vs. Negative Reinforcement)",
+      "related_therapies": [
+        "BA",
+        "CBT"
+      ],
+      "clinical_explanation": "In operant behavioral theory, reinforcement refers to any consequence that increases the future frequency or strength of a behavior. Positive reinforcement occurs when a behavior is followed by the addition of a rewarding, desirable stimulus (e.g., praise, mastery, or pleasure). Negative reinforcement occurs when a behavior is strengthened because it leads to the removal, reduction, or termination of an aversive or painful stimulus (e.g., escaping discomfort). Both mechanisms powerfully shape human habit patterns.",
+      "patient_friendly_explanation": "Our habits are shaped by reinforcement: positive reinforcement happens when doing something brings you a good reward (like praise or enjoyment), making you want to do it again. Negative reinforcement happens when doing something removes an unpleasant feeling (like avoiding a tough conversation to escape anxiety), which also makes you want to repeat that habit.",
+      "examples": [
+        {
+          "example": "Positive reinforcement: A client finishes an exercise routine and feels a mood boost and sense of accomplishment, increasing their desire to exercise again.",
+          "type": "source_example"
+        },
+        {
+          "example": "Negative reinforcement: Taking a painkiller to remove a headache reinforces reaching for medicine whenever pain appears.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 9: Behavior Therapy, Operant Conditioning (pp. 248-250)"
+        }
+      ]
+    },
+    {
+      "concept_id": "gen_ambivalence_and_resistance",
+      "concept_name": "Psychological Ambivalence and Fear of Change",
+      "related_therapies": [
+        "CBT",
+        "IPT",
+        "BA"
+      ],
+      "clinical_explanation": "Resistance in contemporary psychotherapy is understood not as uncooperative obstinacy, but as normal psychological ambivalence toward change. Even when a person's current behaviors and relationship patterns cause distress, they also serve defensive functions, provide familiarity, and protect against unknown risks or vulnerabilities. Change involves abandoning known coping strategies and facing anxiety, creating an understandable internal conflict between the desire to heal and the fear of letting go.",
+      "patient_friendly_explanation": "Feeling torn about making changes is completely normal. Even when our old patterns cause us pain, they feel familiar and safe compared to the unknown. Healing often means stepping into discomfort, and it is natural to want to change while simultaneously feeling afraid to let your old habits go.",
+      "examples": [
+        {
+          "example": "A client desperately wants to overcome depression and re-enter social life, yet hesitates and delays assignments out of fear of being hurt or failing again.",
+          "type": "source_example"
+        },
+        {
+          "example": "Someone wanting to speak up for themselves in a marriage holds back because they fear that being honest might lead to conflict or divorce.",
+          "type": "illustrative"
+        }
+      ],
+      "source_references": [
+        {
+          "source_title": "Theory and Practice of Counseling and Psychotherapy (9th ed.)",
+          "author": "Gerald Corey",
+          "year": 2011,
+          "location": "Chapter 2: The Counselor: Person and Professional (pp. 25-29); Chapter 10: Cognitive Behavior Therapy (pp. 318-320)"
+        }
+      ]
+    }
+  ]
+}
