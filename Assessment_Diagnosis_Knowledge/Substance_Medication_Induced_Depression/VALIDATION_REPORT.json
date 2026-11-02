@@ -1,0 +1,151 @@
+{
+  "passed": true,
+  "checks": 36,
+  "results": [
+    {
+      "check": "schema is valid Draft 2020-12",
+      "passed": true
+    },
+    {
+      "check": "first fictional snapshot accepted",
+      "passed": true
+    },
+    {
+      "check": "later contextual multi-exposure snapshot accepted",
+      "passed": true
+    },
+    {
+      "check": "source IDs resolve across cards and criteria map",
+      "passed": true
+    },
+    {
+      "check": "capability reference sources resolve",
+      "passed": true
+    },
+    {
+      "check": "all source entries have links locators uses and access notes",
+      "passed": true
+    },
+    {
+      "check": "unique concepts and described optional project fields",
+      "passed": true
+    },
+    {
+      "check": "clinical map covers A through E with known concepts",
+      "passed": true
+    },
+    {
+      "check": "MDD count duration and universal wait rules not imported",
+      "passed": true
+    },
+    {
+      "check": "adult scope and unconnected unvalidated status explicit",
+      "passed": true
+    },
+    {
+      "check": "initial mood duration not copied from medication duration",
+      "passed": true
+    },
+    {
+      "check": "contextual answer carries earlier question reference",
+      "passed": true
+    },
+    {
+      "check": "prior independent-period clue preserved separately",
+      "passed": true
+    },
+    {
+      "check": "two agents retain distinct exposure-event records",
+      "passed": true
+    },
+    {
+      "check": "invented quote rejected",
+      "passed": true
+    },
+    {
+      "check": "assistant text cannot be patient evidence",
+      "passed": true
+    },
+    {
+      "check": "future context reference rejected",
+      "passed": true
+    },
+    {
+      "check": "same-message context reference rejected",
+      "passed": true
+    },
+    {
+      "check": "unsupported known detail rejected",
+      "passed": true
+    },
+    {
+      "check": "wrong concept-specific field rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown detail cannot carry a value",
+      "passed": true
+    },
+    {
+      "check": "not-applicable detail requires reason",
+      "passed": true
+    },
+    {
+      "check": "invalid controlled event value rejected",
+      "passed": true
+    },
+    {
+      "check": "diagnosis property outside extractor contract rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown exposure reference rejected",
+      "passed": true
+    },
+    {
+      "check": "agent-specific timing cannot be unassigned",
+      "passed": true
+    },
+    {
+      "check": "duplicate registry reference rejected",
+      "passed": true
+    },
+    {
+      "check": "invented registry name rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate snapshot key rejected",
+      "passed": true
+    },
+    {
+      "check": "unsubstantiated conflict rejected",
+      "passed": true
+    },
+    {
+      "check": "same-concept unknown field accepted without fabricated value",
+      "passed": true
+    },
+    {
+      "check": "empty evidence list rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate message ID rejected",
+      "passed": true
+    },
+    {
+      "check": "capability material cannot be inserted as patient output",
+      "passed": true
+    },
+    {
+      "check": "one substance table has no invented cannabis depressive entry",
+      "passed": true
+    },
+    {
+      "check": "all_nested_source_ids_resolve",
+      "passed": true
+    }
+  ],
+  "scope": "Mechanical schema, provenance and fixture assertions only; no live LLM, diagnostic accuracy or clinical validation performed."
+}

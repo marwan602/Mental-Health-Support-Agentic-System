@@ -1,0 +1,484 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What changes would you like to discuss?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I have felt down for six weeks. My doctor diagnosed hypothyroidism two weeks ago. I also have arthritis."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Had the low mood already begun before the thyroid diagnosis?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "Yes. But I do not know when the thyroid problem itself began."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "What symptoms or treatment changes have you noticed?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "My joints hurt, so I cannot draw for long, but I still enjoy drawing. I started prednisone last week."
+    },
+    {
+      "id": "m7",
+      "speaker": "assistant",
+      "text": "Has a clinician explained whether your mood is related to the thyroid condition?"
+    },
+    {
+      "id": "m8",
+      "speaker": "patient",
+      "text": "The doctor said it might contribute, but that other explanations still need checking."
+    },
+    {
+      "id": "m9",
+      "speaker": "assistant",
+      "text": "Have you had a similar low period earlier in life?"
+    },
+    {
+      "id": "m10",
+      "speaker": "patient",
+      "text": "I felt low for a few months five years ago, but I do not remember what my thyroid tests were then."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_depression_due_to_medical_condition",
+    "schema_version": "1.0.0",
+    "conditions": [
+      {
+        "condition_ref": "condition_a",
+        "name_as_reported": "hypothyroidism",
+        "source_message_id": "m2",
+        "quote": "My doctor diagnosed hypothyroidism two weeks ago."
+      },
+      {
+        "condition_ref": "condition_b",
+        "name_as_reported": "arthritis",
+        "source_message_id": "m2",
+        "quote": "I also have arthritis."
+      }
+    ],
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "felt down"
+          },
+          "duration": {
+            "status": "known",
+            "value": "six weeks"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I have felt down for six weeks.",
+            "supports": [
+              "finding_status",
+              "description",
+              "duration"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "condition_identification",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "hypothyroidism"
+          },
+          "diagnosis_basis": {
+            "status": "known",
+            "value": "reported_clinician_diagnosis"
+          },
+          "diagnosis_time": {
+            "status": "known",
+            "value": "two weeks ago"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "My doctor diagnosed hypothyroidism two weeks ago.",
+            "supports": [
+              "finding_status",
+              "name_as_reported",
+              "diagnosis_basis",
+              "diagnosis_time"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "condition_identification",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_b",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "arthritis"
+          },
+          "diagnosis_basis": {
+            "status": "unknown"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I also have arthritis.",
+            "supports": [
+              "finding_status",
+              "name_as_reported"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_depression_due_to_medical_condition",
+    "schema_version": "1.0.0",
+    "conditions": [
+      {
+        "condition_ref": "condition_a",
+        "name_as_reported": "hypothyroidism",
+        "source_message_id": "m2",
+        "quote": "My doctor diagnosed hypothyroidism two weeks ago."
+      },
+      {
+        "condition_ref": "condition_b",
+        "name_as_reported": "arthritis",
+        "source_message_id": "m2",
+        "quote": "I also have arthritis."
+      }
+    ],
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "felt down"
+          },
+          "duration": {
+            "status": "known",
+            "value": "six weeks"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I have felt down for six weeks.",
+            "supports": [
+              "finding_status",
+              "description",
+              "duration"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "condition_identification",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "hypothyroidism"
+          },
+          "diagnosis_basis": {
+            "status": "known",
+            "value": "reported_clinician_diagnosis"
+          },
+          "diagnosis_time": {
+            "status": "known",
+            "value": "two weeks ago"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "My doctor diagnosed hypothyroidism two weeks ago.",
+            "supports": [
+              "finding_status",
+              "name_as_reported",
+              "diagnosis_basis",
+              "diagnosis_time"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "condition_identification",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_b",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "arthritis"
+          },
+          "diagnosis_basis": {
+            "status": "unknown"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I also have arthritis.",
+            "supports": [
+              "finding_status",
+              "name_as_reported"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "mood_medical_timing",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "relationship": {
+            "status": "known",
+            "value": "mood_before_diagnosis_onset_uncertain"
+          },
+          "uncertainty": {
+            "status": "known",
+            "value": "disease onset unknown"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m4",
+            "quote": "Yes. But I do not know when the thyroid problem itself began.",
+            "supports": [
+              "finding_status",
+              "relationship",
+              "uncertainty"
+            ],
+            "context_message_ids": [
+              "m2",
+              "m3"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "overlapping_symptoms",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_b",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "symptom": {
+            "status": "known",
+            "value": "joint pain limits time drawing"
+          },
+          "contexts": {
+            "status": "known",
+            "value": "still enjoys drawing"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m6",
+            "quote": "My joints hurt, so I cannot draw for long, but I still enjoy drawing.",
+            "supports": [
+              "finding_status",
+              "symptom",
+              "contexts"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "treatment_exposure_review",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "named_exposures": {
+            "status": "known",
+            "value": "prednisone"
+          },
+          "changes": {
+            "status": "known",
+            "value": "started last week"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m6",
+            "quote": "I started prednisone last week.",
+            "supports": [
+              "finding_status",
+              "named_exposures",
+              "changes"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "reported_professional_opinion",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "condition_ref": "condition_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "speaker": {
+            "status": "known",
+            "value": "doctor"
+          },
+          "opinion": {
+            "status": "known",
+            "value": "thyroid condition might contribute; alternatives need checking"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m8",
+            "quote": "The doctor said it might contribute, but that other explanations still need checking.",
+            "supports": [
+              "finding_status",
+              "speaker",
+              "opinion"
+            ],
+            "context_message_ids": [
+              "m7"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "prior_depressive_course",
+        "episode_key": "five_years_ago",
+        "subject": "patient",
+        "condition_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "historical",
+        "time_reference": null,
+        "attributes": {
+          "earlier_period": {
+            "status": "known",
+            "value": "low for a few months five years ago"
+          },
+          "medical_context_then": {
+            "status": "known",
+            "value": "thyroid test history not remembered"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m10",
+            "quote": "I felt low for a few months five years ago, but I do not remember what my thyroid tests were then.",
+            "supports": [
+              "finding_status",
+              "earlier_period",
+              "medical_context_then"
+            ],
+            "context_message_ids": [
+              "m9"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Diagnosis date is not disease onset. Arthritis-related inability to draw is not automatically loss of pleasure. Prednisone is a competing treatment exposure, not a confirmed cause. Prior mood history is not proven to be disease-free. Clinical attribution and safety remain unresolved. Snapshots are authored fixtures, not live model performance."
+}

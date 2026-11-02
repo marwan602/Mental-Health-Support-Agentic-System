@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0-integration-handoff",
+  "date": "2026-11-02",
+  "clinical_threshold_changes": false,
+  "clarified_attribute_meanings": [
+    "Depression_Due_To_Medical_Condition/worthlessness_guilt/kind",
+    "MDD/worthlessness_guilt/kind",
+    "Other_Specified_Depressive_Disorder/worthlessness_guilt/kind",
+    "PDD/appetite_eating/pattern",
+    "PMDD/appetite_cravings/pattern",
+    "Substance_Medication_Induced_Depression/worthlessness_guilt/kind",
+    "Unspecified_Depressive_Disorder/worthlessness_guilt/kind"
+  ],
+  "completed": [
+    "All 219 concept route assignments and 1428 attribute references",
+    "Conditional supplement reference scheduler",
+    "Role prompts and output contracts for conversation, extraction, planning and provisional synthesis",
+    "Source-qualified category-specific review knowledge",
+    "Portable context loading and original-schema validation",
+    "Exact quote and chronological context checks",
+    "Append-only concept/episode history reference functions",
+    "Evidence-to-state integration specification and fictional examples",
+    "Portable acceptance verifier"
+  ],
+  "clinical_validation": false,
+  "agents_connected": false
+}

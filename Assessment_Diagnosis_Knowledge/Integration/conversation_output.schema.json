@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "action": {
+      "enum": [
+        "ASK",
+        "CLARIFY",
+        "RETURN_OFFER",
+        "OFFER_OPTIONS",
+        "SUMMARY",
+        "PAUSE",
+        "STOP",
+        "REVIEW_REQUIRED",
+        "URGENT_REVIEW"
+      ]
+    },
+    "target_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "period_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "acknowledgment": {
+      "type": "string"
+    },
+    "spoken_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_preserved": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "action",
+    "target_id",
+    "period_id",
+    "acknowledgment",
+    "spoken_text",
+    "target_preserved"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "enum": [
+              "ASK",
+              "CLARIFY",
+              "RETURN_OFFER",
+              "OFFER_OPTIONS",
+              "DEFER_TARGET",
+              "RECONCILE_EVIDENCE"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "period_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

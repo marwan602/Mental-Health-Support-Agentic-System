@@ -1,0 +1,2993 @@
+[
+  {
+    "id": "welcome",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "not_started",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "q.welcome"
+    }
+  },
+  {
+    "id": "opening",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "q.opening"
+    }
+  },
+  {
+    "id": "already_answered_all_mood_details",
+    "description": "A single source may cover several details; the router skips all already supported targets.",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        },
+        "detail/MDD/depressed_mood/duration": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "detail/MDD/depressed_mood/frequency": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "detail/MDD/depressed_mood/proportion_of_day": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/depressed_mood/duration",
+          "reason": "Check an episode persistence detail only if still missing."
+        },
+        {
+          "target_id": "detail/MDD/depressed_mood/frequency",
+          "reason": "Check an episode persistence detail only if still missing."
+        },
+        {
+          "target_id": "detail/MDD/depressed_mood/proportion_of_day",
+          "reason": "Check an episode persistence detail only if still missing."
+        }
+      ]
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure"
+    }
+  },
+  {
+    "id": "later_sleep_information_updates_history",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/sleep_disturbance": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        },
+        "detail/MDD/sleep_disturbance/latency": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "fact_tags": {
+        "root/MDD/sleep_disturbance": [
+          "sleep_onset_difficulty"
+        ]
+      },
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/sleep_disturbance/latency",
+          "reason": "Clarify relevant sleep detail not already volunteered."
+        },
+        {
+          "target_id": "detail/MDD/sleep_disturbance/frequency",
+          "reason": "Clarify relevant sleep detail not already volunteered."
+        }
+      ]
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "detail/MDD/sleep_disturbance/frequency"
+    }
+  },
+  {
+    "id": "sleep_subtype_guard",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/sleep_disturbance": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "fact_tags": {
+        "root/MDD/sleep_disturbance": [
+          "excessive_sleep"
+        ]
+      },
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/sleep_disturbance/latency",
+          "reason": "Rejected because the indicated pattern does not justify this detail."
+        }
+      ]
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "denied_current_mood_no_duration_probe",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/depressed_mood/duration",
+          "reason": "Not eligible after a clear denial for this period."
+        }
+      ]
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure"
+    }
+  },
+  {
+    "id": "unclear_reply_clarify",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/depressed_mood",
+        "reply_class": "unclear"
+      }
+    },
+    "expected": {
+      "action": "CLARIFY",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "unclear_after_offer_defer",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/depressed_mood",
+        "reply_class": "unclear",
+        "clarification_offers": 1
+      }
+    },
+    "expected": {
+      "action": "DEFER_TARGET",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "relevant_detour_offer_return",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/sleep_disturbance",
+        "reply_class": "relevant_off_topic"
+      }
+    },
+    "expected": {
+      "action": "RETURN_OFFER",
+      "target_id": "root/MDD/sleep_disturbance"
+    }
+  },
+  {
+    "id": "safety_detour_interrupts",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": true,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/sleep_disturbance",
+        "reply_class": "relevant_off_topic"
+      }
+    },
+    "expected": {
+      "action": "URGENT_REVIEW"
+    }
+  },
+  {
+    "id": "declined_concept_preserves_facts",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/sleep_disturbance",
+        "reply_class": "declined",
+        "decline_scope": "concept"
+      }
+    },
+    "expected": {
+      "action": "RECORD_DECLINE"
+    }
+  },
+  {
+    "id": "repeated_detour_defer",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/sleep_disturbance",
+        "reply_class": "unrelated_off_topic",
+        "return_offers": 1
+      }
+    },
+    "expected": {
+      "action": "DEFER_TARGET",
+      "target_id": "root/MDD/sleep_disturbance"
+    }
+  },
+  {
+    "id": "no_answer_offer_options",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/depressed_mood",
+        "reply_class": "no_answer"
+      }
+    },
+    "expected": {
+      "action": "OFFER_OPTIONS",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "no_answer_after_offer_defer",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/depressed_mood",
+        "reply_class": "no_answer",
+        "option_offers": 1
+      }
+    },
+    "expected": {
+      "action": "DEFER_TARGET",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "different_period_does_not_satisfy_current_target",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "earlier_episode",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "persistent_branch_survives_negative_recent_mood",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {
+        "persistent": {
+          "status": "open",
+          "reason": "Longstanding account requires clarification despite no recent low mood.",
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ]
+        }
+      },
+      "fixture_annotation_only": true,
+      "priority_branch": {
+        "id": "persistent",
+        "reason": "Clarify the longstanding course already volunteered."
+      }
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/PDD/longitudinal_timeline"
+    }
+  },
+  {
+    "id": "open_menstrual_branch",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {
+        "menstrual": {
+          "status": "open",
+          "reason": "Relevant cycle-linked account.",
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ]
+        }
+      },
+      "fixture_annotation_only": true,
+      "priority_branch": {
+        "id": "menstrual",
+        "reason": "Clarify the cyclicity the person raised."
+      }
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/PMDD/cycle_context"
+    }
+  },
+  {
+    "id": "stop_honoured",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "stop",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "STOP"
+    }
+  },
+  {
+    "id": "stop_retains_urgent_review_need",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "stop",
+      "urgent_review_required": true,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "URGENT_REVIEW"
+    }
+  },
+  {
+    "id": "invalid_attribute_rejected",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/weight_change/frequency",
+          "reason": "Invalid field: weight change does not have a generic frequency attribute."
+        }
+      ]
+    },
+    "expected": {
+      "action": "REJECT_INVALID_STATE"
+    },
+    "expected_error": "ValueError"
+  },
+  {
+    "id": "new_safety_information_invalidates_old_review",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 2,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "safety_review_acknowledgements": {
+        "q.safety.suicidal_thoughts": {
+          "period_id": "presenting_period",
+          "coverage_revision": 1,
+          "review_record": "fictional_review_record"
+        }
+      }
+    },
+    "expected": {
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts"
+    }
+  },
+  {
+    "id": "review_record_allows_routing_without_safe_label",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 2,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "safety_review_acknowledgements": {
+        "q.safety.suicidal_thoughts": {
+          "period_id": "presenting_period",
+          "coverage_revision": 2,
+          "review_record": "fictional_review_record"
+        }
+      }
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/depressed_mood"
+    }
+  },
+  {
+    "id": "declined_safety_is_not_negative",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "declined",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent",
+          "reason": "Fictional fixture: explicitly deferred/declined/not applicable."
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts"
+    }
+  },
+  {
+    "id": "detail_burst_returns_to_breadth",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/depressed_mood/duration",
+          "reason": "Still missing."
+        }
+      ],
+      "consecutive_detail_questions": 2
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure"
+    }
+  },
+  {
+    "id": "string_boolean_rejected",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": "false",
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "REJECT_INVALID_STATE"
+    },
+    "expected_error": "ValueError"
+  },
+  {
+    "id": "missing_period_rejected",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "REJECT_INVALID_STATE"
+    },
+    "expected_error": "ValueError"
+  },
+  {
+    "id": "pause_honoured",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "pause",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {},
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "PAUSE"
+    }
+  },
+  {
+    "id": "core_coverage_does_not_claim_diagnosis",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/interest_pleasure": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/episode_timeline": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/functioning_distress": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/sleep_disturbance": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/energy_fatigue": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/appetite_change": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/weight_change": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/cognition_decisions": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/worthlessness_guilt": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/psychomotor_change": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/activation_history": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/medical_context": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/exposure_context": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/psychotic_experience": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.pattern.longstanding": {
+          "status": "supported",
+          "period_id": "longstanding_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.pattern.brief_recurrent": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/treatment_history": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/family_history": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.context.menstrual": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.context.perinatal": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.context.seasonal": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/life_context": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.care.priorities": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "PREPARE_SUMMARY",
+      "target_id": "q.summary.check"
+    }
+  },
+  {
+    "id": "summary_silence_not_confirmation",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/interest_pleasure": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/episode_timeline": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/functioning_distress": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/sleep_disturbance": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/energy_fatigue": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/appetite_change": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/weight_change": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/cognition_decisions": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/worthlessness_guilt": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/psychomotor_change": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/activation_history": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/medical_context": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/exposure_context": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/psychotic_experience": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.pattern.longstanding": {
+          "status": "supported",
+          "period_id": "longstanding_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.pattern.brief_recurrent": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/treatment_history": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/family_history": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.context.menstrual": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.context.perinatal": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.context.seasonal": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/life_context": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.care.priorities": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.summary.check": {
+          "status": "declined",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent",
+          "reason": "Fictional fixture: explicitly deferred/declined/not applicable."
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "HANDOFF_WITH_GAPS"
+    }
+  },
+  {
+    "id": "module_decline_blocks_followups_without_erasing_mood",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "blocked_targets": {
+        "root/MDD/depressed_mood": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/description": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/days_per_week": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/proportion_of_day": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/depressed_mood/impact": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/interest_pleasure": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/days_per_week": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/proportion_of_day": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/interest": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/pleasure": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/activities": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/breadth": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/interest_pleasure/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/episode_timeline": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/episode_timeline/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/episode_timeline/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/episode_timeline/course": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/episode_timeline/overlap": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/episode_timeline/intervals": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/functioning_distress": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/functioning_distress/domain": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/functioning_distress/examples": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/functioning_distress/baseline": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/functioning_distress/supports": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/sleep_disturbance": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/pattern": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/latency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/awakenings": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/wake_timing": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/total_sleep": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/sleep_opportunity": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/sleep_disturbance/daytime_effect": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/energy_fatigue": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/experience": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/sleepiness": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/energy_fatigue/impact": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/appetite_change": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/direction": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/appetite_vs_intake": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/appetite_change/impact": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/weight_change": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/weight_change/direction": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/weight_change/amount": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/weight_change/interval": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/weight_change/baseline_weight": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/weight_change/measurement": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/weight_change/intentionality": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/cognition_decisions": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/kind": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/tasks": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/cognition_decisions/impact": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/worthlessness_guilt": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/duration": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/content": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/kind": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/context": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/worthlessness_guilt/impact": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "root/MDD/psychomotor_change": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/onset": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/frequency": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/direction": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/examples": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/observer": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/baseline_comparison": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        },
+        "detail/MDD/psychomotor_change/impact": {
+          "period_id": "presenting_period",
+          "reason": "Patient declined the remaining recent-symptom module."
+        }
+      },
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/depressed_mood/duration",
+          "reason": "Should stay blocked despite earlier supported mood evidence."
+        }
+      ]
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/activation_history"
+    }
+  },
+  {
+    "id": "safety_scope_block_is_not_clearance",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "blocked_targets": {
+        "q.safety.suicidal_thoughts": {
+          "period_id": "presenting_period",
+          "reason": "Person declines further safety questions."
+        }
+      }
+    },
+    "expected": {
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts"
+    }
+  },
+  {
+    "id": "module_decline_emits_root_and_detail_blocks",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "pending": {
+        "target_id": "root/MDD/depressed_mood",
+        "reply_class": "declined",
+        "decline_scope": "module",
+        "declined_module": "M3"
+      }
+    },
+    "expected": {
+      "action": "RECORD_DECLINE"
+    }
+  },
+  {
+    "id": "unknown_clinical_status_rejected",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "unrecognized_status"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "REJECT_INVALID_STATE"
+    },
+    "expected_error": "ValueError"
+  },
+  {
+    "id": "supported_safety_without_polarity_needs_review",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ]
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true
+    },
+    "expected": {
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts"
+    }
+  },
+  {
+    "id": "declined_parent_does_not_allow_detail_request",
+    "description": "",
+    "state": {
+      "age": 24,
+      "participation": "proceed",
+      "urgent_review_required": false,
+      "safety_review_needed": false,
+      "channel_usable": true,
+      "period_bindings": {
+        "current": "presenting_period",
+        "longterm": "longstanding_period",
+        "cycle": "cycle_pattern",
+        "lifetime": "lifetime",
+        "contact": "contact_1"
+      },
+      "coverage": {
+        "q.opening": {
+          "status": "supported",
+          "period_id": "contact_1",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.death_wish": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.suicidal_thoughts": {
+          "status": "supported",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "q.safety.past_behaviour": {
+          "status": "supported",
+          "period_id": "lifetime",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_absent"
+        },
+        "root/MDD/depressed_mood": {
+          "status": "declined",
+          "period_id": "presenting_period",
+          "revision": 1,
+          "source_message_ids": [
+            "annotated_fixture_record"
+          ],
+          "finding_status": "reported_present",
+          "reason": "Fictional fixture: explicitly deferred/declined/not applicable."
+        }
+      },
+      "branch_facts": {},
+      "fixture_annotation_only": true,
+      "detail_requests": [
+        {
+          "target_id": "detail/MDD/depressed_mood/duration",
+          "reason": "Must not bypass the parent target decline even if a historical finding status remains."
+        }
+      ]
+    },
+    "expected": {
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure"
+    }
+  }
+]

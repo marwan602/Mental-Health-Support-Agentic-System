@@ -1,0 +1,362 @@
+{
+  "map_id": "adult_mental_health_overall_session",
+  "version": "0.1.0-design",
+  "status": "PROPOSED_PROJECT_ARCHITECTURE_NOT_CLINICALLY_VALIDATED",
+  "date": "2026-11-02",
+  "population": "Adults 18+, including older adults",
+  "modalities": [
+    "text",
+    "voice",
+    "video"
+  ],
+  "modality_status": "Planned interface options; this file does not enable speech/video or implement recording/transcription.",
+  "stages": [
+    {
+      "id": "welcome",
+      "label": "Welcome, participation and channel setup",
+      "purpose": "Make the purpose and participation clear before asking for personal information.",
+      "entry": "New session or resumption needing context/permission clarification.",
+      "activities": [
+        "Introduce the AI assessment-support role honestly.",
+        "Confirm adult-scope eligibility using supplied case/intake information rather than guessing.",
+        "Confirm text/voice/video availability, accessibility and permissions for any transcription/recording.",
+        "Explain pause/skip/stop and relevant use of conversation content."
+      ],
+      "output": [
+        "participation_and_modality_context",
+        "unresolved_access_or_scope_needs"
+      ],
+      "exit": "Person chooses to proceed and the channel is usable; otherwise pause, clarify access or provide an appropriate handoff.",
+      "owner": "Conversational role and application setup",
+      "knowledge": [
+        "population_scope",
+        "communication_policy"
+      ],
+      "source_ids": [
+        "NICE_197",
+        "NICE_222"
+      ]
+    },
+    {
+      "id": "main_concern",
+      "label": "Patient main concern and priorities",
+      "purpose": "Understand what brought the person and what they want help with.",
+      "entry": "Person is willing and able to begin.",
+      "activities": [
+        "Start with an open invitation.",
+        "Listen and acknowledge in context without presuming symptoms.",
+        "Capture relevant symptoms, time course and impact already volunteered.",
+        "Retain goals, communication preferences and practical priorities for care planning."
+      ],
+      "output": [
+        "opening_account",
+        "initial_source_linked_evidence",
+        "care_context"
+      ],
+      "exit": "There is enough context to choose a focused next target, or a safety/access concern changes priority.",
+      "owner": "Conversational role; extractor; planner",
+      "knowledge": [
+        "shared_assessment_concepts",
+        "relevant_module_cards"
+      ],
+      "source_ids": [
+        "NICE_222",
+        "NICE_197"
+      ]
+    },
+    {
+      "id": "assessment_loop",
+      "label": "Natural conversation with ongoing assessment",
+      "purpose": "Collect and clarify relevant evidence during the conversation.",
+      "entry": "A meaningful unanswered target remains and the person wants to continue.",
+      "activities": [
+        "Normalize text or speech to source-linked messages with speaker/time context.",
+        "Extractor reviews the whole available conversation and existing evidence.",
+        "Update concept-specific details, corrections, periods and uncertainties.",
+        "Planner chooses one useful missing target from applicable knowledge.",
+        "Conversational role asks that target naturally using prior context.",
+        "Use standardized tools only through a separately specified instrument protocol; placement is not decided here."
+      ],
+      "output": [
+        "updated_assessment_evidence",
+        "question_coverage_and_unresolved_targets",
+        "review_needs"
+      ],
+      "exit": "Enough information for a useful summary/review, the person pauses/stops, or a concern requires another pathway; this is not an automatic diagnosis-completion test.",
+      "owner": "Extractor, planner and conversational role; application guards",
+      "knowledge": [
+        "module_qualified_concepts",
+        "source_locations",
+        "conditional_alternative_pathways"
+      ],
+      "source_ids": [
+        "NICE_222"
+      ]
+    },
+    {
+      "id": "summary_check",
+      "label": "Summary and patient clarification",
+      "purpose": "Check that the account is represented accurately before handoff/formulation.",
+      "entry": "A useful summary can be offered, including an incomplete assessment.",
+      "activities": [
+        "Summarize reported symptoms, course, impact and relevant context.",
+        "State uncertainties without filling gaps.",
+        "Invite corrections and additions.",
+        "Return clinically meaningful corrections to extraction and planning."
+      ],
+      "output": [
+        "patient_checked_or_unconfirmed_summary",
+        "corrections_and_remaining_gaps"
+      ],
+      "exit": "Summary is ready for review with its confirmation status, or more clarification is appropriate; no reply is not confirmation.",
+      "owner": "Conversational role; evidence update; later summarization component",
+      "knowledge": [
+        "source_linked_evidence",
+        "unresolved_questions"
+      ],
+      "source_ids": [
+        "NICE_197"
+      ]
+    },
+    {
+      "id": "clinical_review",
+      "label": "Provisional impressions and professional review",
+      "purpose": "Organize possible explanations and their uncertainty for a qualified diagnostic judgment.",
+      "entry": "Available evidence and its limitations can be reviewed; full certainty is not required for an appropriate handoff.",
+      "activities": [
+        "Later synthesis component compares evidence with relevant category and alternative requirements.",
+        "Separate supporting/conflicting evidence, unknowns and unresolved source questions.",
+        "Qualified professional reviews and may confirm, revise or defer a diagnosis.",
+        "Record who made a formulation, when and its status; the AI does not label itself the diagnosing clinician."
+      ],
+      "output": [
+        "reviewed_or_pending_formulation",
+        "diagnostic_status_and_uncertainty",
+        "further_assessment_or_referral_needs"
+      ],
+      "exit": "The responsible professional/workflow identifies appropriate next care or further assessment; no reviewer available does not count as approval.",
+      "owner": "Planned clinical synthesis and qualified professional review",
+      "knowledge": [
+        "clinical_reference_requirements",
+        "alternatives",
+        "source_ambiguities"
+      ],
+      "source_ids": [
+        "NICE_222"
+      ]
+    },
+    {
+      "id": "shared_care_plan",
+      "label": "Discuss and agree next care",
+      "purpose": "Choose appropriate next steps with the person, based on needs, reviewed findings and preferences.",
+      "entry": "An appropriate review-informed proposal can be discussed; provisional/uncertain diagnoses may still allow support, referral or continued assessment.",
+      "activities": [
+        "Discuss suitable options in understandable terms.",
+        "Consider goals, preferences, barriers, history and availability.",
+        "Agree what happens next and when it will be reviewed.",
+        "Record actual agreement and clinical authorization where required.",
+        "Medication decisions remain with qualified prescribers."
+      ],
+      "output": [
+        "agreed_or_pending_care_plan",
+        "review_timing",
+        "care_agreement_and_authorization_status"
+      ],
+      "exit": "Agreed applicable actions can proceed; otherwise continue discussion, arrange review or close with pending needs.",
+      "owner": "Planned care-planning component, responsible professional and patient",
+      "knowledge": [
+        "reviewed_assessment_handoff",
+        "care_context",
+        "later_treatment_knowledge"
+      ],
+      "source_ids": [
+        "NICE_197",
+        "NICE_222"
+      ]
+    },
+    {
+      "id": "therapy_support",
+      "label": "Agreed therapy or management support",
+      "purpose": "Support the selected, appropriate therapeutic activities and management plan.",
+      "entry": "Relevant plan is agreed and required clinical review/authorization and capability checks are actually satisfied.",
+      "activities": [
+        "Use only applicable selected approaches such as CBT, BA or IPT within the approved scope.",
+        "Update therapy formulation, activities and agreed homework with provenance.",
+        "Keep patient reports separate from suggested reframes or clinician hypotheses.",
+        "Route new clinical or safety information back to assessment/review."
+      ],
+      "output": [
+        "therapy_specific_parameters_updates",
+        "session_events_and_agreed_actions",
+        "new_assessment_or_safety_information"
+      ],
+      "exit": "Activity/session ends, plan needs review, person pauses, or current concerns change the pathway.",
+      "owner": "Later therapy/management components and responsible care team",
+      "knowledge": [
+        "agreed_plan",
+        "later_therapy_specific_knowledge",
+        "therapy_state"
+      ],
+      "source_ids": [
+        "NICE_222",
+        "NICE_197"
+      ]
+    },
+    {
+      "id": "close_monitor_followup",
+      "label": "Close, monitor and plan follow-up",
+      "purpose": "End clearly and track meaningful change across contacts.",
+      "entry": "Assessment or therapy contact is ending, including an incomplete or paused assessment.",
+      "activities": [
+        "Summarize what was discussed and actually agreed.",
+        "Record remaining questions and review/contact status.",
+        "Set homework only if selected and agreed; no homework is a valid outcome.",
+        "Compare future symptoms, function and goals with the actual baseline; no invented improvement or scores.",
+        "At a later contact, use the agreed agenda and re-enter the relevant assessment/review/care stage."
+      ],
+      "output": [
+        "session_summary",
+        "followup_plan_or_unresolved_followup",
+        "longitudinal_baseline_and_updates"
+      ],
+      "exit": "Session closes with accurate status; future review reopens the appropriate stage rather than requiring the whole intake again.",
+      "owner": "Conversation, later summary/monitoring components and care team",
+      "knowledge": [
+        "current_state",
+        "agreed_plan",
+        "validated_measure_protocol_if_selected"
+      ],
+      "source_ids": [
+        "NICE_222",
+        "NICE_197"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "welcome",
+      "target": "main_concern",
+      "condition": "Participation and usable channel established"
+    },
+    {
+      "source": "main_concern",
+      "target": "assessment_loop",
+      "condition": "Select useful assessment target"
+    },
+    {
+      "source": "assessment_loop",
+      "target": "assessment_loop",
+      "condition": "Patient replies; extract and replan"
+    },
+    {
+      "source": "assessment_loop",
+      "target": "summary_check",
+      "condition": "Useful summary/review point reached"
+    },
+    {
+      "source": "summary_check",
+      "target": "assessment_loop",
+      "condition": "Patient correction or important gap merits clarification"
+    },
+    {
+      "source": "summary_check",
+      "target": "clinical_review",
+      "condition": "Available account ready for provisional review"
+    },
+    {
+      "source": "clinical_review",
+      "target": "assessment_loop",
+      "condition": "Further clarification needed and appropriate"
+    },
+    {
+      "source": "clinical_review",
+      "target": "shared_care_plan",
+      "condition": "Review informs suitable next steps"
+    },
+    {
+      "source": "shared_care_plan",
+      "target": "therapy_support",
+      "condition": "Applicable plan agreed; required clinical authorization/capability verified"
+    },
+    {
+      "source": "shared_care_plan",
+      "target": "close_monitor_followup",
+      "condition": "Support/referral/continued assessment or deferred therapy agreed"
+    },
+    {
+      "source": "therapy_support",
+      "target": "close_monitor_followup",
+      "condition": "Session/activity complete"
+    },
+    {
+      "source": "therapy_support",
+      "target": "assessment_loop",
+      "condition": "New clinical information merits reassessment"
+    },
+    {
+      "source": "close_monitor_followup",
+      "target": "assessment_loop",
+      "condition": "Later contact requires focused reassessment"
+    },
+    {
+      "source": "close_monitor_followup",
+      "target": "shared_care_plan",
+      "condition": "Later review of goals/plan"
+    }
+  ],
+  "global_interrupts": [
+    {
+      "id": "urgent_review",
+      "applies_to": "all_stages",
+      "condition": "Reported current safety or acute medical/clinical concerns require prompt human/medical review.",
+      "action": "Interrupt ordinary progression and follow the setting-specific reviewed pathway. Record concerns, uncertainty and actual contact/delivery status.",
+      "return_rule": "Resume only through an appropriate clinical/workflow decision; a flag does not establish resolution.",
+      "implementation": "PATHWAY_AND_OPERATIONS_NOT_IMPLEMENTED_BY_THIS_MAP",
+      "source_ids": [
+        "NICE_222",
+        "NICE_225",
+        "ASQ_BSSA"
+      ]
+    },
+    {
+      "id": "pause_or_stop",
+      "applies_to": "all_stages",
+      "condition": "Person pauses/declines/stops, channel fails, or required capability is unavailable.",
+      "action": "Respect participation; preserve evidence and unresolved items. Provide an appropriate summary/handoff when feasible; do not invent agreement or diagnostic completion.",
+      "return_rule": "If resuming, restore verified history and recheck context rather than restart blindly.",
+      "implementation": "PROJECT_POLICY_TO_IMPLEMENT",
+      "source_ids": [
+        "NICE_197"
+      ]
+    }
+  ],
+  "entry_point": "welcome",
+  "session_may_span_multiple_contacts": true,
+  "diagnosis_required_before_any_support": false,
+  "confirmed_diagnosis_assigned_by_ai": false,
+  "operational_safety_pathway_implemented": false,
+  "runtime_integration": "NOT_CONNECTED",
+  "therapy_state_boundary": {
+    "field": "therapy_specific_parameters",
+    "diagnostic_criteria_input": false,
+    "raw_clinically_relevant_statements_still_reviewed": true,
+    "safety_information_ignored_because_in_therapy": false,
+    "scores_are_diagnostic_thresholds": false,
+    "unknown_score_default": null,
+    "score_definition_required": [
+      "construct",
+      "scale_and_range",
+      "time_reference",
+      "rater_or_source",
+      "interpretation"
+    ],
+    "formulation_vs_patient_report_vs_suggestion_must_remain_distinct": true
+  },
+  "source_ids": [
+    "NICE_222",
+    "NICE_225",
+    "ASQ_BSSA",
+    "NICE_197"
+  ],
+  "sequence_origin": "PROJECT_DESIGN_INFORMED_BY_ASSESSMENT_SHARED_DECISION_AND_MONITORING_GUIDANCE_NOT_A_VALIDATED_ORDER"
+}

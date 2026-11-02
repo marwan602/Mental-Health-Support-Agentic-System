@@ -1,0 +1,2010 @@
+{
+  "module_id": "adult_depression_due_to_medical_condition",
+  "package_version": "1.0.0-source-reviewed",
+  "date": "2026-11-02",
+  "status": "SOURCE_REVIEWED_ASSESSMENT_DESIGN_NOT_CLINICALLY_VALIDATED",
+  "population": {
+    "minimum_age": 18,
+    "maximum_age": null,
+    "origin": "PROJECT_SCOPE",
+    "notes": "18+ including older adults; not a clinical minimum age; adapt for medical/cognitive/communication context."
+  },
+  "classification_basis": "DSM-5-TR 2022, separately labelled adult physical-health and condition-specific guidance",
+  "clinical_reference_rules": {
+    "primary_domains": [
+      "depressed_mood",
+      "interest_pleasure"
+    ],
+    "primary_domain_requirement": "Predominant persistent depressed mood OR markedly diminished interest/pleasure in all or almost all activities.",
+    "direct_pathophysiological_evidence_required": true,
+    "physical_diagnosis_alone_sufficient": false,
+    "timing_alone_proves_causation": false,
+    "universal_full_major_episode_required": false,
+    "exclusive_delirium_excluded": true,
+    "distress_or_impairment_required": true,
+    "major_depressive_like_reference": {
+      "minimum_symptom_groups": 5,
+      "total_symptom_groups": 9,
+      "minimum_duration_days": 14,
+      "requires_depressed_mood_or_interest_pleasure": true,
+      "exception": "Major depressive episode Criterion C regarding physiological attribution; this category still requires the medical-cause and alternative-explanation review.",
+      "automatic_count_from_reported_presence": false
+    },
+    "diagnosis_date_equals_disease_onset": false,
+    "universal_fixed_onset_window": false,
+    "absence_of_family_history_proves_cause": false,
+    "source_ids": [
+      "DSM_MEDICAL"
+    ]
+  },
+  "descriptive_specifiers": [
+    {
+      "id": "with_depressive_features",
+      "meaning": "The depressive presentation does not meet full major depressive episode criteria.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "id": "with_major_depressive_like_episode",
+      "meaning": "Major depressive episode criteria are met except the exclusion of a physiological medical cause (episode Criterion C); this is not an independent MDD diagnosis.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "id": "with_mixed_features",
+      "meaning": "Manic/hypomanic symptoms are also present but do not predominate; professional interpretation is needed.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    }
+  ],
+  "criteria_information_map": [
+    {
+      "id": "A",
+      "meaning": "Predominant persistent mood/interest-pleasure change",
+      "concept_ids": [
+        "depressed_mood",
+        "interest_pleasure",
+        "syndrome_course"
+      ],
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "id": "B",
+      "meaning": "History, examination or laboratory evidence for a direct physiological relationship",
+      "concept_ids": [
+        "condition_identification",
+        "medical_condition_course",
+        "mood_medical_timing",
+        "reported_investigation",
+        "reported_professional_opinion"
+      ],
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "id": "C",
+      "meaning": "Not better explained by another mental disorder",
+      "concept_ids": [
+        "prior_depressive_course",
+        "illness_related_distress",
+        "activation_history",
+        "treatment_exposure_review"
+      ],
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "id": "D",
+      "meaning": "Not exclusively during delirium",
+      "concept_ids": [
+        "acute_cognitive_change"
+      ],
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "id": "E",
+      "meaning": "Clinically significant distress OR impairment",
+      "concept_ids": [
+        "functioning_distress"
+      ],
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "depressed_mood",
+      "label": "Depressed mood",
+      "definition": "Reported low, sad or empty mood.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222",
+        "DSM_MEDICAL"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience, without adding a diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "days_per_week": {
+          "meaning": "Stated days affected; keep units and wording instead of imposing a diagnostic cutoff.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "proportion_of_day": {
+          "meaning": "Reported share of an affected day; most of the day is already useful.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has your mood been during this period?",
+      "followup_focus": "Meaning, persistence and episode timing if unclear.",
+      "do_not_infer": "A sad day alone does not establish the domain threshold or MDD.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "primary_mood_domain"
+    },
+    {
+      "id": "interest_pleasure",
+      "label": "Interest and pleasure",
+      "definition": "Reduced desire for activities and/or reduced enjoyment.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222",
+        "DSM_MEDICAL"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "days_per_week": {
+          "meaning": "Stated days affected; keep units and wording instead of imposing a diagnostic cutoff.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "proportion_of_day": {
+          "meaning": "Reported share of an affected day; most of the day is already useful.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "interest": {
+          "meaning": "Reported wanting or motivation to engage.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pleasure": {
+          "meaning": "Enjoyment when engaged.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "activities": {
+          "meaning": "Affected activities and retained interests.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "breadth": {
+          "meaning": "How broadly activities are affected.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have your interest or enjoyment in your usual activities changed?",
+      "followup_focus": "Separate wanting from enjoying; establish breadth if relevant.",
+      "do_not_infer": "One retained hobby does not negate all symptoms; not doing an activity may reflect lack of opportunity.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "primary_mood_domain"
+    },
+    {
+      "id": "appetite_change",
+      "label": "Appetite change",
+      "definition": "Change in desire for food.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "direction": {
+          "meaning": "Reported appetite direction.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "increased",
+            "decreased",
+            "variable",
+            "unclear"
+          ]
+        },
+        "appetite_vs_intake": {
+          "meaning": "Distinguish hunger/desire from actual eating.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has your appetite changed compared with usual?",
+      "followup_focus": "Direction, persistence and appetite versus eating.",
+      "do_not_infer": "Do not infer weight change from appetite. This is supporting symptom information, not a separate induced-disorder count threshold.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "weight_change",
+      "label": "Weight change",
+      "definition": "Reported change in body weight.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "direction": {
+          "meaning": "Weight direction.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "gain",
+            "loss",
+            "variable",
+            "unclear"
+          ]
+        },
+        "amount": {
+          "meaning": "Amount with original units; no guessing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "interval": {
+          "meaning": "Period over which weight changed.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_weight": {
+          "meaning": "Earlier weight if supplied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "measurement": {
+          "meaning": "Measured versus estimated account.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "measured_report",
+            "estimate",
+            "unclear"
+          ]
+        },
+        "intentionality": {
+          "meaning": "Whether intentional.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "intentional",
+            "unintentional",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      "question_example": "Have you noticed a change in your weight during this period?",
+      "followup_focus": "Amount, interval and intentionality when relevant.",
+      "do_not_infer": "Do not calculate a percentage without compatible stated weights/dates. Do not infer appetite change from weight alone.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "sleep_disturbance",
+      "label": "Sleep disturbance",
+      "definition": "Difficulty sleeping or excessive sleep.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pattern": {
+          "meaning": "Reported sleep complaint.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        },
+        "latency": {
+          "meaning": "Time taken to fall asleep.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "awakenings": {
+          "meaning": "Waking during sleep and return-to-sleep account.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "wake_timing": {
+          "meaning": "Actual versus intended/usual waking.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "total_sleep": {
+          "meaning": "Reported sleep hours with period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleep_opportunity": {
+          "meaning": "Opportunity and external interruptions.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "daytime_effect": {
+          "meaning": "Sleepiness, exhaustion or other reported effects.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has your sleep changed from what is usual for you?",
+      "followup_focus": "Identify complaint before asking subtype-specific details.",
+      "do_not_infer": "Insomnia while tired is not reduced sleep need; insufficient opportunity is not automatically insomnia.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "psychomotor_change",
+      "label": "Psychomotor change",
+      "definition": "Noticeable motor/speech slowing or agitation.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "direction": {
+          "meaning": "Reported observable change.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "slowing",
+            "agitation",
+            "both",
+            "unclear"
+          ]
+        },
+        "examples": {
+          "meaning": "Concrete speech/movement behaviour.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "observer": {
+          "meaning": "Who noticed it; self-report about another observer remains patient report.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you or other people noticed changes in how quickly you move or speak?",
+      "followup_focus": "Observable examples and reporter, rather than restlessness alone.",
+      "do_not_infer": "Text response speed and feeling restless alone do not establish observable psychomotor change.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "energy_fatigue",
+      "label": "Energy and fatigue",
+      "definition": "Unusual tiredness or reduced energy.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "experience": {
+          "meaning": "Fatigue, low energy or both.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleepiness": {
+          "meaning": "Reported sleepiness if distinguished.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has your energy been compared with usual?",
+      "followup_focus": "Examples and timing; separate sleepiness if ambiguous.",
+      "do_not_infer": "Do not automatically attribute fatigue to depression or infer it from short sleep.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "worthlessness_guilt",
+      "label": "Worthlessness and guilt",
+      "definition": "Low self-worth or excessive/inappropriate guilt.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "content": {
+          "meaning": "Actual self-evaluation or guilt account.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "kind": {
+          "meaning": "Which experience is actually reported: feeling worthless, guilt, both, or unclear. This label does not by itself establish excessive/inappropriate guilt or its diagnostic threshold.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "worthlessness",
+            "guilt",
+            "both",
+            "unclear"
+          ]
+        },
+        "context": {
+          "meaning": "What the thought concerns; retain uncertainty about proportionality.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How have you been thinking about yourself during this period?",
+      "followup_focus": "Actual thought content; clarify without endorsing it.",
+      "do_not_infer": "Ordinary regret, low confidence and guilt about illness are not automatically qualifying guilt.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "cognition_decisions",
+      "label": "Concentration and decisions",
+      "definition": "Reported thinking, attention or decision difficulty.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "kind": {
+          "meaning": "Reported difficulty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        },
+        "tasks": {
+          "meaning": "Concrete affected tasks.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have concentrating or making decisions become harder than usual?",
+      "followup_focus": "Task examples and change from baseline.",
+      "do_not_infer": "Do not label dementia, ADHD or depression from this alone.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "death_suicide",
+      "label": "Death/suicide-related reports",
+      "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ASQ_BSSA",
+        "NICE_225"
+      ],
+      "attribute_specs": {
+        "experience": {
+          "meaning": "Preserve distinctions.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ]
+        },
+        "recency": {
+          "meaning": "When last/current; do not infer resolution.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "intent": {
+          "meaning": "Intent as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "plan_present": {
+          "meaning": "Whether a plan was explicitly reported or denied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        },
+        "access": {
+          "meaning": "Access to means as reported, without generating procedural details.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "past_behaviour": {
+          "meaning": "Historical self-injury/attempt account, intent and timing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Available support as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you had thoughts about ending your life?",
+      "followup_focus": "Use dedicated safety pathway; preserve current versus historical information.",
+      "do_not_infer": "Fear of death is not automatically recurrent thoughts of death; self-harm and suicidal intent must be distinguished.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "functioning_distress",
+      "label": "Functioning and distress",
+      "definition": "Reported burden in important life areas.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "domain": {
+          "meaning": "Affected area such as work, relationships or self-care.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "examples": {
+          "meaning": "Concrete difficulty or distress.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline": {
+          "meaning": "Usual functioning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "supports": {
+          "meaning": "Assistance helping preserve functioning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How have these changes affected your daily life?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "activation_history",
+      "label": "Activation history",
+      "definition": "Possible distinct elevated/overactive periods requiring review.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NIMH_BIPOLAR",
+        "DSM_MEDICAL"
+      ],
+      "attribute_specs": {
+        "period": {
+          "meaning": "Current/historical time.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "mood": {
+          "meaning": "Elevated, expansive or irritable mood as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "energy_activity": {
+          "meaning": "Change in energy/activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleep_need": {
+          "meaning": "Sleep need and tiredness, not just sleep hours.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_changes": {
+          "meaning": "Associated speech, thoughts, confidence or risky behaviour.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "Duration of that period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Consequences or other observers.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "exposure_context": {
+          "meaning": "Medicines/substances/medical context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you had a distinct period of unusually increased energy or activity?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "psychotic_experience",
+      "label": "Psychotic experiences",
+      "definition": "Reported experiences requiring specialist interpretation.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "kind": {
+          "meaning": "Experience as described, not an automatic diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "content": {
+          "meaning": "Brief relevant content without affirming beliefs.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "mood_relationship": {
+          "meaning": "During versus outside mood episodes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "conviction_context": {
+          "meaning": "Reported belief/context and uncertainty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "safety_concerns": {
+          "meaning": "Any reported urgent implications.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_mood_congruence": {
+          "meaning": "Professional mood-congruence description if actually supplied; do not invent it.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      "question_example": "Have you had experiences that other people do not seem to share?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "treatment_history",
+      "label": "Previous care",
+      "definition": "Prior mental-health assessment and care.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "reported_diagnosis": {
+          "meaning": "Person-reported professional diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "treatment": {
+          "meaning": "Therapy/medicines/admissions as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "period": {
+          "meaning": "When and for which symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "response": {
+          "meaning": "Reported benefits, persistence or unwanted effects.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "use": {
+          "meaning": "Actual use and barriers as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you received help for something similar before?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "family_history",
+      "label": "Family history",
+      "definition": "Relevant family mood/psychiatric history.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "relative": {
+          "meaning": "Relationship, without unnecessary identifying details.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_condition": {
+          "meaning": "Condition as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "certainty": {
+          "meaning": "How the person knows; unknown remains unknown.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Is there relevant mental-health history in your family?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "life_context",
+      "label": "Life context",
+      "definition": "Relevant stress, loss, trauma and support.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "events": {
+          "meaning": "Events relevant to symptom timeline.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "timing": {
+          "meaning": "Temporal relationship.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Current supports.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "barriers": {
+          "meaning": "Practical barriers.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "meaning": {
+          "meaning": "Person's interpretation of the context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has anything important been happening around the time these changes began?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_assessment"
+    },
+    {
+      "id": "syndrome_course",
+      "label": "Overall depressive presentation",
+      "definition": "Predominance, persistence and actual course of the depressive presentation.",
+      "role": "supporting_assessment",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "Actual start of the mood change, including uncertain dates.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "Reported duration; no universal two-week requirement in this module.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "course": {
+          "meaning": "Continuous, fluctuating, improving or worsening course in the person's words.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "predominance": {
+          "meaning": "What is most troubling; professional review decides syndrome predominance.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "related_symptoms": {
+          "meaning": "Other simultaneous symptoms with their own source support.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "clinical_attention": {
+          "meaning": "Reported reason for seeking care or clinician concern.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "intensity_as_reported": {
+          "meaning": "Severity in the person's own words; not an invented scale score or automatically assigned clinical severity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "When did this change in your mood first begin?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify baseline, continuity and burden before collecting redundant details.",
+      "do_not_infer": "The base medical-condition category does not universally require a full major depressive episode; its major-depressive-like specifier does."
+    },
+    {
+      "id": "acute_cognitive_change",
+      "label": "Acute confusion and attention changes",
+      "definition": "Recent or fluctuating change in attention, awareness or thinking that requires medical assessment.",
+      "role": "supporting_assessment",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "NICE_103"
+      ],
+      "attribute_specs": {
+        "change": {
+          "meaning": "What changed from baseline, as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset": {
+          "meaning": "Hours/days versus longstanding pattern, if known.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "fluctuation": {
+          "meaning": "Changes over the day as described.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "observer": {
+          "meaning": "Patient or identified collateral observer.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_context": {
+          "meaning": "Concurrent illness, exposure or withdrawal context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "review_status": {
+          "meaning": "Reported assessment or unresolved need.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you or someone with you noticed any sudden change in confusion or ability to pay attention?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Use appropriate urgent clinical review when acute changes are reported; do not continue a diagnostic checklist.",
+      "do_not_infer": "Symptoms exclusively during delirium do not establish this depressive disorder; a neurocognitive disorder is not an automatic exclusion."
+    },
+    {
+      "id": "condition_identification",
+      "label": "Reported medical condition and diagnostic basis",
+      "definition": "What illness is reported and how its identification is known; patient report is distinct from verified medical documentation.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "name_as_reported": {
+          "meaning": "The medical condition or concern in the person's own account; do not supply a diagnosis from symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "diagnosis_basis": {
+          "meaning": "How the person describes its identification.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "reported_clinician_diagnosis",
+            "reported_under_investigation",
+            "self_suspected",
+            "unclear"
+          ]
+        },
+        "diagnosing_professional": {
+          "meaning": "Reported professional/service, if identified.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "diagnosis_time": {
+          "meaning": "When it was recognized or diagnosed, distinct from when physical symptoms began.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_subtype": {
+          "meaning": "Clinically meaningful subtype/stage only when actually supplied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "records_available": {
+          "meaning": "Whether clinical documents are reportedly available; not proof of verification.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you been diagnosed with a medical condition, or are any symptoms being investigated?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Identify the actual condition and source of the information; suspected disease stays suspected.",
+      "do_not_infer": "A reported physical diagnosis does not confirm it or establish that it caused depression."
+    },
+    {
+      "id": "medical_condition_course",
+      "label": "Medical illness chronology and course",
+      "definition": "Onset, recognition, changes and current state of each condition, kept distinct from mood chronology.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "symptom_onset": {
+          "meaning": "When physical/neurological symptoms began, including an uncertain period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "recognition_time": {
+          "meaning": "When the condition was recognized; diagnosis may follow biological onset.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "recent_change": {
+          "meaning": "Reported worsening, improvement, acute event or stable period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "course": {
+          "meaning": "Reported progression, recurrence or recovery; not a stage assigned by the agent.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "current_burden": {
+          "meaning": "Current physical/cognitive symptoms and practical consequences.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "treatment_events": {
+          "meaning": "Actual treatment start/change and timing, linked in narrative to the named condition.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "When did the physical symptoms begin, and what has changed since then?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Distinguish symptoms, diagnosis and treatment dates rather than treating them as the same event.",
+      "do_not_infer": "Mood before the diagnosis date does not automatically mean mood before the disease."
+    },
+    {
+      "id": "mood_medical_timing",
+      "label": "Relationship of mood and medical course",
+      "definition": "Reported timing of mood changes relative to illness onset, exacerbation, improvement or treatment.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL"
+      ],
+      "attribute_specs": {
+        "relationship": {
+          "meaning": "Chronology in the account; not a causal verdict.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "mood_before_reported_illness_onset",
+            "mood_after_reported_illness_onset",
+            "mood_before_diagnosis_onset_uncertain",
+            "mood_changes_with_illness_course",
+            "no_clear_relationship",
+            "unclear"
+          ]
+        },
+        "mood_onset": {
+          "meaning": "Actual reported start of mood change.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_event": {
+          "meaning": "Specific illness event used for comparison.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "interval": {
+          "meaning": "Reported gap; do not invent dates or apply a fixed post-event window.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "course_comparison": {
+          "meaning": "Reported similarities/differences across improving or worsening periods.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "patient_explanation": {
+          "meaning": "The person's belief about the relationship, labelled as a belief.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "uncertainty": {
+          "meaning": "Uncertain disease onset, recall or competing events.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How did the timing of your mood change compare with the illness or its treatment?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Ask which event the person means; physiological onset may differ from diagnosis.",
+      "do_not_infer": "Temporal association, simultaneous improvement or a plausible story is not proof of a direct physiological cause."
+    },
+    {
+      "id": "reported_investigation",
+      "label": "Reported examination and investigation findings",
+      "definition": "What the patient says an examination, test or scan showed, with its limits and attributed interpretation.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022",
+        "NICE_145",
+        "NICE_239"
+      ],
+      "attribute_specs": {
+        "investigation": {
+          "meaning": "Name of the test/examination as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_result": {
+          "meaning": "Exact reported result or wording; preserve units and any uncertainty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "test_time": {
+          "meaning": "When it was done relative to illness and mood changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_reference_range": {
+          "meaning": "Reference range only if supplied; no invented cutoffs.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "clinician_interpretation": {
+          "meaning": "What a clinician reportedly said it means, attributed to them.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "document_status": {
+          "meaning": "Availability of original documentation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "not_available",
+            "reportedly_available_not_reviewed",
+            "unclear"
+          ]
+        },
+        "review_need": {
+          "meaning": "What needs professional verification or explanation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have any tests or examinations been done, and what did your clinician tell you about the results?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Separate the numerical result, reported interpretation and unresolved questions.",
+      "do_not_infer": "The transcript is not a verified lab record. An abnormal test alone does not establish depression or its cause."
+    },
+    {
+      "id": "reported_professional_opinion",
+      "label": "Reported professional view of the relationship",
+      "definition": "An explicitly attributed clinician statement about whether a medical condition could explain the mood presentation.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "speaker": {
+          "meaning": "Reported clinician/service, if known.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "opinion": {
+          "meaning": "What they reportedly said, preserving possibility versus certainty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "opinion_time": {
+          "meaning": "When this assessment occurred.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_reasoning": {
+          "meaning": "Reasoning or evidence the patient reports; no inferred mechanism.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "review_plan": {
+          "meaning": "Reported follow-up or uncertainty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has a clinician discussed whether the condition, its treatment or something else may be affecting your mood?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Ask what was said and what remains uncertain; do not upgrade it to independent verification.",
+      "do_not_infer": "A patient's account of a causal opinion remains attributed testimony, not the system's causal conclusion."
+    },
+    {
+      "id": "prior_depressive_course",
+      "label": "Earlier depressive periods and baseline",
+      "definition": "Lifetime mood information relevant to an independent depressive explanation, without using diagnosis date as disease onset.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "earlier_period": {
+          "meaning": "Specific earlier low mood or interest/pleasure change.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration_course": {
+          "meaning": "Reported duration, recurrence and recovery.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_context_then": {
+          "meaning": "Known/suspected condition status at that time; unknown does not mean disease-free.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "treatment_exposure_then": {
+          "meaning": "Relevant medicines/substances then, if supplied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "previous_diagnosis": {
+          "meaning": "Reported earlier mental-health diagnosis, not confirmation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "family_context": {
+          "meaning": "Relevant family history if supplied, without treating its absence as a causal test.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have there been similar periods earlier in your life, and what was happening with your health then?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Keep historical and present periods separate; review relevant MDD/PDD history.",
+      "do_not_infer": "Previous depression is relevant but does not automatically exclude an additional current medical contribution."
+    },
+    {
+      "id": "treatment_exposure_review",
+      "label": "Treatment, medication and substance alternatives",
+      "definition": "Treatments for an illness may have their own mood effects, independently of the illness.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "VA_2022",
+        "NICE_215"
+      ],
+      "attribute_specs": {
+        "named_exposures": {
+          "meaning": "Actual named medicines, nonprescribed products, supplements or substances; no assumed agent.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "actual_use": {
+          "meaning": "Reported dose/use, with units/strength only if known.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "changes": {
+          "meaning": "Starts, dose changes, missed doses, stopping or resumed use.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "symptom_relationship": {
+          "meaning": "Mood course relative to named treatment events.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_changes": {
+          "meaning": "Other treatments/life changes occurring at the same time.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "professional_review": {
+          "meaning": "Reported prescriber assessment or unresolved medication review need.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What treatments or medicines were started or changed around the time your mood changed?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Use the substance/medication module for detailed agent-specific timelines when indicated.",
+      "do_not_infer": "Do not attribute the mood to the illness simply because the medicine was prescribed for it. Do not recommend stopping/restarting treatment to test causation."
+    },
+    {
+      "id": "overlapping_symptoms",
+      "label": "Symptoms with several possible explanations",
+      "definition": "Fatigue, sleep, appetite, movement or cognitive changes may reflect illness, treatment, depression or more than one factor.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "symptom": {
+          "meaning": "Specific reported experience, not a causal label.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline": {
+          "meaning": "What was usual before the relevant changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "change": {
+          "meaning": "Actual change from that baseline.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "contexts": {
+          "meaning": "When it occurs or is different; distinguish ability, opportunity, motivation and enjoyment.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "patient_attribution": {
+          "meaning": "Person's own explanation, labelled as theirs.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "clinical_uncertainty": {
+          "meaning": "Alternative explanations needing review.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Is this different from your usual experience with the physical condition?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify the experience and its independent timing; preserve uncertainty.",
+      "do_not_infer": "Do not automatically include every physical symptom as depression, or discard it merely because there is a medical illness."
+    },
+    {
+      "id": "illness_related_distress",
+      "label": "Response to illness, loss and demoralization",
+      "definition": "Meaning, helplessness and emotional response to illness may need care without establishing a physiological depressive disorder.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "stressors": {
+          "meaning": "Actual illness-related losses, fears or changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "emotional_experience": {
+          "meaning": "Reported sadness, hopelessness, helplessness or wish to give up.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pleasure_preserved": {
+          "meaning": "Activities still enjoyed, if explicitly described; not an exclusion by itself.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pervasiveness": {
+          "meaning": "Whether feelings are tied to particular situations or broadly present, as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support_needs": {
+          "meaning": "Clinically relevant barriers/support needs and current care.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has living with the condition affected how you feel about your life?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Explore meaning without implying that all distress is an expected or trivial reaction.",
+      "do_not_infer": "Do not diagnose adjustment disorder or demoralization solely because distress followed an illness. Preserved enjoyment alone does not rule out depression."
+    },
+    {
+      "id": "motivation_emotional_expression",
+      "label": "Motivation, mood and involuntary expression",
+      "definition": "Clinical clarification when reduced initiation or sudden crying/laughing may differ from sustained sadness or loss of pleasure.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "STROKE_DEFINITIONS"
+      ],
+      "attribute_specs": {
+        "initiation": {
+          "meaning": "Reported difficulty getting started or doing purposeful activities.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "felt_mood": {
+          "meaning": "How the person actually feels during the event.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "enjoyment": {
+          "meaning": "Reported pleasure when participating, distinct from initiation or motor capacity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "expression": {
+          "meaning": "Reported crying/laughing or other outward expression.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "event_duration": {
+          "meaning": "How long an expressive event lasts.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "control_triggers": {
+          "meaning": "Reported control, triggers and whether expression matches felt emotion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "neurological_context": {
+          "meaning": "Relevant reported neurological condition and professional review.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "When that happens, how do you feel inside, and does the crying or laughing match that feeling?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Ask only when the account raises this distinction; obtain specialist interpretation.",
+      "do_not_infer": "Do not label crying as depressed mood or reduced initiation as anhedonia without clarifying the experience."
+    },
+    {
+      "id": "communication_assessment_context",
+      "label": "Communication, cognition and source limitations",
+      "definition": "Requirements for an interpretable assessment; difficulty answering must not become a symptom denial.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222",
+        "STROKE_2025"
+      ],
+      "attribute_specs": {
+        "barrier": {
+          "meaning": "Reported language, hearing, vision, speech, cognitive or fatigue-related barrier.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "adaptation": {
+          "meaning": "Actual support used or requested, such as a slower pace or accessible format.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "understanding": {
+          "meaning": "Reported uncertainty about understanding the question.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "collateral_available": {
+          "meaning": "Whether another informant/record might help through an authorized workflow.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "assessment_limit": {
+          "meaning": "Why an answer, tool or chat may not be interpretable.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Would a slower pace or another way of asking make this easier to answer?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Respect supported communication and capacity needs; seek an appropriate professional pathway when needed.",
+      "do_not_infer": "Aphasia, silence or difficulty using chat is not evidence that a symptom is absent. Patient and collateral accounts must retain separate provenance."
+    },
+    {
+      "id": "concurrent_activation",
+      "label": "Concurrent activation features for review",
+      "definition": "Possible manic/hypomanic symptoms alongside the depressive presentation; no automatic mixed-features label.",
+      "role": "medical_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "NIMH_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "mood": {
+          "meaning": "Reported unusual elevation/expansiveness or irritability.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "energy_activity": {
+          "meaning": "Change in purposeful activity/energy.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleep_need": {
+          "meaning": "Reduced need for sleep versus insomnia with fatigue.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "speech_thoughts": {
+          "meaning": "Reported speech/thought-speed changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_changes": {
+          "meaning": "Grandiosity, risky behaviour or other reported features.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "overlap": {
+          "meaning": "Timing relative to the depressive presentation and medical/treatment changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "predominance": {
+          "meaning": "Which presentation dominates as reported; professional interpretation required.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "During this low period, have there also been times of unusually increased energy or needing much less sleep?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify one endorsed feature at a time; evaluate lifetime activation and treatment effects.",
+      "do_not_infer": "Do not copy the MDD mixed-features three-symptom algorithm onto this disorder's differently described specifier. Predominant mania needs a different pathway."
+    }
+  ],
+  "value_sets": {
+    "finding_status": {
+      "reported_present": "Explicitly described or affirmed in context; not clinical confirmation.",
+      "reported_absent": "Explicitly denied for this subject/period.",
+      "unclear": "Meaning or polarity unresolved.",
+      "conflicting": "Accounts for the same subject/period conflict and are retained."
+    },
+    "temporal_status": {
+      "current": "Described as relevant to current period.",
+      "historical": "An earlier period.",
+      "unclear": "Timing unresolved."
+    },
+    "detail_status": {
+      "known": "A supported value is available.",
+      "unknown": "Relevant but unresolved; no value asserted.",
+      "not_applicable": "Inapplicability is explicitly justified; not equivalent to not asked."
+    },
+    "question_status": {
+      "not_asked": "No recorded question.",
+      "answered": "Target addressed.",
+      "partially_answered": "Some target information supplied.",
+      "unclear": "Response ambiguous.",
+      "declined": "Person chose not to answer."
+    },
+    "semantic_check_status": {
+      "supported": "Evidence appears to support the claim.",
+      "needs_review": "Meaning/attribution remains unresolved."
+    },
+    "safety_handoff_status": {
+      "not_assessed": "Available conversation has not assessed current safety; no reassuring inference.",
+      "no_signal_reported_in_available_text": "No concern reported in reviewed text; does not establish safety or predict future behaviour.",
+      "needs_clinical_review": "An unresolved concern requires clinical review; not a predictive risk category or proof of contact.",
+      "urgent_review_needed": "Current reported concerns require urgent human/medical review; no claim of response delivery."
+    }
+  },
+  "assessment_structure": [
+    {
+      "step": "acute_concerns",
+      "action": "Attend to current suicide-related or acute medical/cognitive concerns before ordinary assessment."
+    },
+    {
+      "step": "open_presentation",
+      "action": "Understand what changed in mood, interest, baseline and functioning."
+    },
+    {
+      "step": "medical_context",
+      "action": "Identify actual reported conditions, diagnostic basis and care team; clarify suspicion versus diagnosis."
+    },
+    {
+      "step": "parallel_timelines",
+      "action": "Compare physical symptoms, diagnosis, treatment changes and mood onset as separate events."
+    },
+    {
+      "step": "targeted_followup",
+      "action": "Clarify relevant symptom details already missing; review overlaps without assuming attribution."
+    },
+    {
+      "step": "alternative_explanations",
+      "action": "Review past mood/activation, medication/substance effects, illness-related distress and cognitive changes."
+    },
+    {
+      "step": "source_and_review_needs",
+      "action": "Identify reported investigations, accessible records and remaining professional interpretation needs."
+    },
+    {
+      "step": "summary_handoff",
+      "action": "Summarize supported findings, unresolved causation, burdens, unanswered questions and actual review status."
+    }
+  ],
+  "sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_INTERVIEW",
+  "diagnostic_automation_enabled": false,
+  "runtime_integration": "NOT_CONNECTED",
+  "clinical_review": "NOT_PERFORMED",
+  "final_question_graph": "SHARED_DESIGN_AND_REFERENCE_ROUTER_AVAILABLE_NOT_CLINICALLY_VALIDATED",
+  "route_handoff": {
+    "status": "ALL_CONCEPTS_MAPPED_TO_SCHEDULED_OR_CONDITIONAL_ROUTES",
+    "reference_base": "package_root",
+    "graph": "Workflow/Interview_Graph/question_graph.json",
+    "complete_route_index": "Integration/route_completion.json",
+    "guide": "README.md",
+    "actual_agents_connected": false,
+    "clinical_validation": false
+  }
+}

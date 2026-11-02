@@ -1,0 +1,290 @@
+{
+  "VA_2022": {
+    "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+    "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+    "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+    "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_222": {
+    "title": "NICE NG222, Depression in adults",
+    "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+    "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+    "used_for": "Comprehensive assessment, communication, safety and specialist review",
+    "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_DEP": {
+    "title": "NIMH, Depression",
+    "url": "https://www.nimh.nih.gov/health/publications/depression",
+    "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+    "used_for": "Plain-language symptom domains and adult context",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_BIPOLAR": {
+    "title": "NIMH, Bipolar Disorder",
+    "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+    "locator": "Types; symptom comparison; diagnosis",
+    "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_185": {
+    "title": "NICE CG185, Bipolar disorder",
+    "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+    "locator": "1.2.1–1.2.3; 1.3.1–1.3.3: recognition/referral, assessment and differential",
+    "used_for": "Depression presentations require lifetime overactivity/disinhibition history; specialist review; questionnaires not used for primary-care bipolar identification",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "ASQ_BSSA": {
+    "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+    "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+    "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+    "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_225": {
+    "title": "NICE NG225, Self-harm",
+    "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+    "locator": "1.6.1–1.6.6",
+    "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_2001": {
+    "title": "Kroenke et al., 2001, PHQ-9 validity",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+    "locator": "Abstract; Methods; diagnostic-status comparison",
+    "used_for": "Original validation of symptom/severity measure versus independent interview",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ2_2003": {
+    "title": "Kroenke et al., 2003, PHQ-2 validity",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+    "locator": "Abstract, Methods and Results",
+    "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+    "access": "Primary-study abstract inspected; full paper not accessed",
+    "checked_at": "2026-11-02"
+  },
+  "APA_GRIEF": {
+    "title": "APA, What Is Depression?",
+    "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+    "locator": "Grief versus depression discussion",
+    "used_for": "Loss context and possible coexistence",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_145": {
+    "title": "NICE NG145, Thyroid disease: assessment and management",
+    "url": "https://www.nice.org.uk/guidance/ng145/chapter/Recommendations",
+    "locator": "1.2.1–1.2.6; particularly 1.2.3 and 1.2.6",
+    "used_for": "Clinician consideration of thyroid tests with depression and caution about acute illness affecting results",
+    "access": "Public primary-source recommendations/indexed extracts inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_239": {
+    "title": "NICE NG239, Vitamin B12 deficiency in over 16s (2024)",
+    "url": "https://www.nice.org.uk/guidance/ng239/chapter/recommendations",
+    "locator": "1.2.1–1.2.6; symptom/risk-factor boxes",
+    "used_for": "Possible mental-health associations, nonspecific symptoms and context-based testing",
+    "access": "Public primary-source recommendations/indexed extracts inspected",
+    "checked_at": "2026-11-02"
+  },
+  "DSM_MEDICAL": {
+    "title": "APA DSM-5-TR (2022), Depressive Disorder Due to Another Medical Condition",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+    "locator": "Printed pp.206–209; inspected PDF viewer pp.336–340. Major depressive episode reference: MDD criteria in same chapter.",
+    "used_for": "Criteria A–E, three descriptive specifiers, attribution, medical examples, course and differential",
+    "access": "Original APA text inspected locally through previously obtained public psychiatry.ru mirror. Publisher full text blocked; licensing/redistribution rights not inferred. No manual bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "DSM_INDUCED": {
+    "title": "APA DSM-5-TR (2022), Substance/Medication-Induced Depressive Disorder",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+    "locator": "Printed pp.201–206; substance-class Table 1 pp.545–546; PDF viewer pp.330–336 and 755–756",
+    "used_for": "Criteria-information map, onset descriptions, differential and substance-class reference",
+    "access": "Original APA text inspected through public psychiatry.ru mirror; publisher full text blocked; no redistribution rights inferred and no book bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "TIP42": {
+    "title": "SAMHSA TIP 42 (2020), Chapter 4",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK571021/",
+    "locator": "Substance-Induced Mental Disorders; Substance-Induced Depressive Disorders; Exhibits 4.16–4.18",
+    "used_for": "Longitudinal assessment, independent/induced distinction and co-occurring conditions",
+    "access": "Public primary-source material; relevant sections inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_215": {
+    "title": "NICE NG215, medicines associated with dependence or withdrawal symptoms",
+    "url": "https://www.nice.org.uk/guidance/ng215/chapter/Recommendations",
+    "locator": "1.5.6; 1.5.15–1.5.17",
+    "used_for": "Withdrawal assessment and prescriber review; no abrupt-stop experiments",
+    "access": "Public primary-source material; relevant sections inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_100": {
+    "title": "NICE CG100, alcohol-use disorders: physical complications",
+    "url": "https://www.nice.org.uk/guidance/cg100/chapter/recommendations",
+    "locator": "1.1.1 acute withdrawal assessment/admission and warning against sudden reduction",
+    "used_for": "Alcohol withdrawal safety boundary; no home detoxification protocol",
+    "access": "Public primary-source material; relevant sections inspected",
+    "checked_at": "2026-11-02"
+  },
+  "DSM_BIPOLAR": {
+    "title": "APA DSM-5-TR (2022), Bipolar and Related Disorders",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "locator": "Printed pp.140–143,150–154,160 / PDF viewer pp.256–259,268–272,279",
+    "used_for": "Mania/hypomania, bipolar I/II and adult cyclothymic boundaries",
+    "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "DSM_ANXIETY": {
+    "title": "APA DSM-5-TR (2022), Anxiety Disorders",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "locator": "Printed pp.235–236 and 250–251 / PDF viewer pp.374–375 and 393",
+    "used_for": "Panic attack versus panic disorder; generalized worry criteria context",
+    "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "DSM_ADJUST": {
+    "title": "APA DSM-5-TR (2022), Adjustment Disorders",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "locator": "Printed pp.319–320 / PDF viewer pp.477–478; differential/comorbidity p.322 / PDF p.481",
+    "used_for": "Stressor timing, burden, continuing consequences and alternatives",
+    "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "DSM_PGD": {
+    "title": "APA DSM-5-TR (2022), Prolonged Grief Disorder",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "locator": "Printed pp.322–323 / PDF viewer pp.481–482",
+    "used_for": "Adult bereavement interval, core/additional symptoms, culture and differential",
+    "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "DSM_PSYCH": {
+    "title": "APA DSM-5-TR (2022), Schizoaffective Disorder",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "locator": "Printed pp.121–122 / PDF viewer pp.232–233",
+    "used_for": "Mood/psychosis lifetime relationship; isolated duration is insufficient",
+    "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "DSM_SLEEP": {
+    "title": "APA DSM-5-TR (2022), Insomnia Disorder",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "locator": "Printed p.410 / PDF viewer p.590",
+    "used_for": "Frequency/duration/opportunity and alternate sleep/exposure explanations",
+    "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "NICE_113": {
+    "title": "NICE CG113, Generalised anxiety disorder and panic disorder in adults",
+    "url": "https://www.nice.org.uk/guidance/cg113/chapter/Recommendations",
+    "locator": "1.2.6–1.2.8; 1.3.1–1.3.3",
+    "used_for": "Distress/function, comorbidity and assessment of panic presentations",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_159": {
+    "title": "NICE CG159, Social anxiety disorder",
+    "url": "https://www.nice.org.uk/guidance/cg159/chapter/recommendations",
+    "locator": "Adult identification/assessment section 1.2, especially fear/avoidance and depression relationship",
+    "used_for": "Distinguish social withdrawal related to negative evaluation from depressive withdrawal",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_116": {
+    "title": "NICE NG116, PTSD",
+    "url": "https://www.nice.org.uk/guidance/ng116/chapter/recommendations",
+    "locator": "1.1 recognition, symptom domains; 1.2 assessment/coordination",
+    "used_for": "Trauma-associated symptoms, impairment and appropriate assessment",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_PTSD": {
+    "title": "NIMH, Post-Traumatic Stress Disorder",
+    "url": "https://www.nimh.nih.gov/health/publications/post-traumatic-stress-disorder-ptsd",
+    "locator": "What is PTSD?; Signs and symptoms",
+    "used_for": "Exposure/cluster/duration context and coexistence with depression",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "VA_PCL5": {
+    "title": "US VA National Center for PTSD, PTSD Checklist for DSM-5",
+    "url": "https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp",
+    "locator": "Description; Administration and Scoring; availability",
+    "used_for": "Self-report screening/monitoring/provisional role versus clinician interview; no instrument implemented",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_178": {
+    "title": "NICE CG178, Psychosis and schizophrenia in adults",
+    "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations",
+    "locator": "1.2 recognition/referral; 1.3.3.1–1.3.3.4 multidisciplinary assessment and affective presentations",
+    "used_for": "Prompt specialist assessment and medical/exposure/cultural/contextual review",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_103": {
+    "title": "NICE CG103, delirium",
+    "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+    "locator": "1.3.1, 1.5 and 1.6.1–1.6.3; 2023 assessment update: competent practitioner/4AT and final clinical diagnosis",
+    "used_for": "Acute/fluctuating changes in attention/cognition need assessment; hospital/long-term-care guideline context",
+    "access": "Public primary-source material; relevant sections inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_97": {
+    "title": "NICE NG97, Dementia assessment and management",
+    "url": "https://www.nice.org.uk/guidance/ng97/chapter/Recommendations",
+    "locator": "1.2.1–1.2.11; delirium/dementia differentiation",
+    "used_for": "Baseline decline, informant history, reversible contributors and test limitations",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_202": {
+    "title": "NICE NG202, Obstructive sleep apnoea/hypopnoea syndrome",
+    "url": "https://www.nice.org.uk/guidance/ng202/chapter/1-obstructive-sleep-apnoeahypopnoea-syndrome",
+    "locator": "1.1 initial assessment; symptom features and scales; rationale for initial assessment",
+    "used_for": "Sleep history, breathing clues, daytime effects and limits of sleepiness scales",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "AASM_2008": {
+    "title": "Schutte-Rodin et al. (2008), Clinical guideline for chronic insomnia evaluation in adults",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2576317/",
+    "locator": "J Clin Sleep Med 4(5):487–504; Summary Recommendations: Evaluation",
+    "used_for": "Sleep/medical/psychiatric/substance history; not routine polysomnography for all insomnia",
+    "access": "Primary AASM guideline/indexed full text inspected; older ICSD-era diagnostic duration is not substituted for DSM-5-TR thresholds.",
+    "checked_at": "2026-11-02"
+  },
+  "APA_PGD": {
+    "title": "APA, Prolonged Grief Disorder fact sheet",
+    "url": "https://www.psychiatry.org/getContentAsset/2a667a19-80ac-4aaf-8751-9ed240619757/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/APA-DSM5TR-ProlongedGriefDisorder.pdf?language=en",
+    "locator": "p.1: description and adult/child timing",
+    "used_for": "Official overview; not a complete diagnostic interview",
+    "access": "Official primary guidance/indexed recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PG13R_2021": {
+    "title": "Prigerson et al. (2021), Validation of DSM-5-TR PGD criteria and PG-13-Revised",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7801836/",
+    "locator": "World Psychiatry 20:96–106; objectives, Table 1 and validation results",
+    "used_for": "Primary validation study supports grief-specific measurement; does not validate our wording or predict an individual",
+    "access": "Primary indexed article excerpts inspected; direct PMC text encountered a browser check. No raw data or scale items bundled.",
+    "checked_at": "2026-11-02"
+  }
+}

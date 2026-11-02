@@ -1,0 +1,468 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What has changed recently?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I feel down. I started prednisone three weeks ago for my arthritis. I also take Medicine B, but I cannot remember when I started it."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Did the low mood begin after you started prednisone?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "Yes, about a week after starting it."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "Have you had a similar low period before taking prednisone?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "Yes, I felt low for two months last year, before I ever took prednisone."
+    },
+    {
+      "id": "m7",
+      "speaker": "assistant",
+      "text": "Has either medicine changed recently?"
+    },
+    {
+      "id": "m8",
+      "speaker": "patient",
+      "text": "I missed Medicine B for two days last week. I have not changed prednisone."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_substance_medication_induced_depression",
+    "schema_version": "1.0.0",
+    "exposures": [
+      {
+        "exposure_ref": "agent_a",
+        "name_as_reported": "prednisone",
+        "source_message_id": "m2",
+        "quote": "I started prednisone three weeks ago for my arthritis."
+      },
+      {
+        "exposure_ref": "agent_b",
+        "name_as_reported": "Medicine B",
+        "source_message_id": "m2",
+        "quote": "I also take Medicine B, but I cannot remember when I started it."
+      }
+    ],
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "feel down"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I feel down.",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_events",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "event": {
+            "status": "known",
+            "value": "started"
+          },
+          "event_time": {
+            "status": "known",
+            "value": "three weeks ago"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I started prednisone three weeks ago for my arthritis.",
+            "supports": [
+              "finding_status",
+              "event",
+              "event_time"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_details",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "prednisone"
+          },
+          "indication": {
+            "status": "known",
+            "value": "arthritis"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I started prednisone three weeks ago for my arthritis.",
+            "supports": [
+              "finding_status",
+              "name_as_reported",
+              "indication"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_details",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_b",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "Medicine B"
+          },
+          "certainty": {
+            "status": "known",
+            "value": "cannot remember when started"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I also take Medicine B, but I cannot remember when I started it.",
+            "supports": [
+              "finding_status",
+              "name_as_reported",
+              "certainty"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_substance_medication_induced_depression",
+    "schema_version": "1.0.0",
+    "exposures": [
+      {
+        "exposure_ref": "agent_a",
+        "name_as_reported": "prednisone",
+        "source_message_id": "m2",
+        "quote": "I started prednisone three weeks ago for my arthritis."
+      },
+      {
+        "exposure_ref": "agent_b",
+        "name_as_reported": "Medicine B",
+        "source_message_id": "m2",
+        "quote": "I also take Medicine B, but I cannot remember when I started it."
+      }
+    ],
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "feel down"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I feel down.",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_events",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "event": {
+            "status": "known",
+            "value": "started"
+          },
+          "event_time": {
+            "status": "known",
+            "value": "three weeks ago"
+          },
+          "subsequent_use": {
+            "status": "known",
+            "value": "not changed"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I started prednisone three weeks ago for my arthritis.",
+            "supports": [
+              "finding_status",
+              "event",
+              "event_time"
+            ],
+            "context_message_ids": []
+          },
+          {
+            "message_id": "m8",
+            "quote": "I have not changed prednisone.",
+            "supports": [
+              "subsequent_use"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_details",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "prednisone"
+          },
+          "indication": {
+            "status": "known",
+            "value": "arthritis"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I started prednisone three weeks ago for my arthritis.",
+            "supports": [
+              "finding_status",
+              "name_as_reported",
+              "indication"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_details",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_b",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "name_as_reported": {
+            "status": "known",
+            "value": "Medicine B"
+          },
+          "certainty": {
+            "status": "known",
+            "value": "cannot remember when started"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I also take Medicine B, but I cannot remember when I started it.",
+            "supports": [
+              "finding_status",
+              "name_as_reported",
+              "certainty"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_mood_timing",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_a",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "relation": {
+            "status": "known",
+            "value": "after_start_or_increase"
+          },
+          "interval": {
+            "status": "known",
+            "value": "about a week after starting"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m4",
+            "quote": "Yes, about a week after starting it.",
+            "supports": [
+              "finding_status",
+              "relation",
+              "interval"
+            ],
+            "context_message_ids": [
+              "m2",
+              "m3"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "independent_depression_history",
+        "episode_key": "last_year",
+        "subject": "patient",
+        "exposure_ref": null,
+        "finding_status": "reported_present",
+        "temporal_status": "historical",
+        "time_reference": null,
+        "attributes": {
+          "earlier_period": {
+            "status": "known",
+            "value": "low for two months last year"
+          },
+          "onset_before_use": {
+            "status": "known",
+            "value": "before ever taking prednisone"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m6",
+            "quote": "Yes, I felt low for two months last year, before I ever took prednisone.",
+            "supports": [
+              "finding_status",
+              "earlier_period",
+              "onset_before_use"
+            ],
+            "context_message_ids": [
+              "m5"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "exposure_events",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "exposure_ref": "agent_b",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "event": {
+            "status": "known",
+            "value": "missed_doses"
+          },
+          "event_time": {
+            "status": "known",
+            "value": "for two days last week"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m8",
+            "quote": "I missed Medicine B for two days last week.",
+            "supports": [
+              "finding_status",
+              "event",
+              "event_time"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Medicine timing and prior low mood are both preserved. Neither establishes a confirmed induced or independent disorder. Current mood duration is not copied from medicine duration. Medicine B is not mapped to a real drug."
+}

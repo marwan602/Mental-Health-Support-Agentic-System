@@ -1,0 +1,170 @@
+{
+  "NICE_222": {
+    "title": "NICE NG222, Depression in adults",
+    "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+    "locator": "1.2.4, 1.2.6-1.2.9; 1.4.3; severity definitions",
+    "used_for": "Validated measures alongside comprehensive assessment and follow-up; not automatic diagnosis or a requirement for every encounter",
+    "access": "Official indexed recommendation text inspected; direct retrieval intermittently blocked",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_197": {
+    "title": "NICE NG197, Shared decision making",
+    "url": "https://www.nice.org.uk/guidance/ng197/chapter/recommendations",
+    "locator": "1.2.7-1.2.11",
+    "used_for": "Participation, shared agenda and manageable information; exact invitation wording/placement is project design",
+    "access": "Previously inspected official recommendation text; same source retained",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_2001": {
+    "title": "Kroenke, Spitzer & Williams (2001), PHQ-9 validation",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+    "locator": "J Gen Intern Med 16:606-613; abstract, Methods and Appendix p.613",
+    "used_for": "Original validation, 0-27 total and conventional symptom-severity bands; independent professional interview comparison",
+    "access": "Full/indexed original text inspected via official IHS mirror https://www.ihs.gov/sites/crs/themes/responsive2017/display_objects/documents/phq_9.pdf; direct local download timed out",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ2_2003": {
+    "title": "Kroenke, Spitzer & Williams (2003), PHQ-2 validation",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+    "locator": "Abstract Methods/Results; Med Care 41:1284-1292",
+    "used_for": "Two-item, two-week case finding; 0-6 score and >=3 screening threshold in original study",
+    "access": "Primary abstract inspected; full article not claimed read",
+    "checked_at": "2026-11-02"
+  },
+  "CDC_DPQ": {
+    "title": "CDC NHANES August 2021-August 2023 depression screener documentation",
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DPQ_L.htm",
+    "locator": "Component Description; Interview Setting; Analytic Notes; codebook",
+    "used_for": "Two-week item-frequency categories 0-3, complete-item total, separate functional-difficulty question and explicit missing/refused codes; no survey-specific routing imported",
+    "access": "Official/primary text inspected on 2 November 2026",
+    "checked_at": "2026-11-02"
+  },
+  "UW_PHQ_FORM": {
+    "title": "University of Washington-hosted PHQ-9 form and tally sheet",
+    "url": "https://depts.washington.edu/dbpeds/Screening%20Tools/PHQ9.pdf",
+    "locator": "PDF pp.1-2 form and numeric tally; p.3 arithmetic only",
+    "used_for": "Verification of item order, response coding and separate function item. Old treatment/diagnostic shortcuts on p.3 are not adopted",
+    "access": "Public form/indexed PDF inspected; no full questionnaire wording bundled here",
+    "checked_at": "2026-11-02"
+  },
+  "APA_ASSESSMENT": {
+    "title": "American Psychological Association, Depression assessment instruments",
+    "url": "https://www.apa.org/depression-guideline/assessment",
+    "locator": "PHQ-9 entry",
+    "used_for": "Official professional source lists PHQ-9 as free to use; availability does not establish validity of an altered language or mode",
+    "access": "Official indexed instrument entry inspected",
+    "checked_at": "2026-11-02"
+  },
+  "WHO5_2024": {
+    "title": "WHO (2024), The World Health Organization-Five Well-Being Index",
+    "url": "https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01",
+    "locator": "Questionnaire printed p.1 and scoring p.2 / PDF pp.6-7",
+    "used_for": "Five-item two-week well-being measure; 0-25 raw, x4 to 0-100, higher is better; raw <13 suggests further assessment",
+    "access": "Official PDF downloaded; scoring page rendered/visually reviewed. Publication licensed CC-BY-NC-SA 3.0 IGO; item wording not bundled",
+    "checked_at": "2026-11-02"
+  },
+  "ACOG_SCREEN": {
+    "title": "ACOG, Patient Screening",
+    "url": "https://www.acog.org/programs/perinatal-mental-health/patient-screening",
+    "locator": "Perinatal screening recommendations and tool resources",
+    "used_for": "Perinatal context uses a standardized validated instrument; PHQ-9 or EPDS can be relevant",
+    "access": "Official indexed page inspected; direct retrieval returned 402",
+    "checked_at": "2026-11-02"
+  },
+  "EPDS_1987": {
+    "title": "Cox, Holden & Sagovsky (1987), EPDS development",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3651732/",
+    "locator": "Abstract; Br J Psychiatry 150:782-786",
+    "used_for": "Original ten-item postnatal screening scale, distinct from PHQ; no universal perinatal superiority claim",
+    "access": "Primary abstract inspected",
+    "checked_at": "2026-11-02"
+  },
+  "EPDS_FORM": {
+    "title": "Black Dog Institute, EPDS form and instructions",
+    "url": "https://www.blackdoginstitute.org.au/wp-content/uploads/2020/04/edinburgh-postnatal-depression-scale.pdf",
+    "locator": "Instrument description and scoring instructions",
+    "used_for": "Seven-day recall and item-specific coding; candidate protocol only, not an enabled scorer",
+    "access": "Institutional form/indexed instructions inspected; permissions/language/version review still required before bundling",
+    "checked_at": "2026-11-02"
+  },
+  "GDS_AUTHOR": {
+    "title": "Yesavage, Stanford Geriatric Depression Scale resource",
+    "url": "https://www-leland.stanford.edu/~yesavage/GDS.html",
+    "locator": "Scale purpose, short-form resources, basic references and translation disclaimer; linked English short-form scoring page specifies the past week",
+    "used_for": "Older-adult screening candidate; author states original scale public domain. Translation availability does not mean verified accuracy",
+    "access": "Author-maintained page and linked scoring key inspected; informal missing-item prorating suggestion is not adopted in this prototype",
+    "checked_at": "2026-11-02"
+  },
+  "MADRS_1979": {
+    "title": "Montgomery & Asberg (1979), A new depression scale designed to be sensitive to change",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/444788/",
+    "locator": "Abstract; Br J Psychiatry 134:382-389",
+    "used_for": "Original ten-item depression severity-rating development; not a license or an unrestricted conversation scoring method",
+    "access": "Primary abstract inspected",
+    "checked_at": "2026-11-02"
+  },
+  "SIGMA_2008": {
+    "title": "Williams & Kobak (2008), Development and reliability of a structured interview guide for MADRS (SIGMA)",
+    "url": "https://doi.org/10.1192/bjp.bp.106.032532",
+    "locator": "Publisher abstract; Br J Psychiatry 192:52-58",
+    "used_for": "Evidence that interview-based clinician rating uses a defined guide and rater process; not permission to let an unvalidated LLM assign scores",
+    "access": "Original publisher abstract inspected; instrument/manual not obtained. Publisher webpage upload date differs from original 2008 journal issue",
+    "checked_at": "2026-11-02"
+  },
+  "ISPMD_2011": {
+    "title": "O’Brien et al. (2011), ISPMD Montreal consensus",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4134928/",
+    "locator": "Methods of measurement",
+    "used_for": "Prospective cycle-wide records for premenstrual pattern assessment",
+    "access": "Previously inspected original consensus/indexed text; detailed PMDD module retained",
+    "checked_at": "2026-11-02"
+  },
+  "DRSP_2006": {
+    "title": "Endicott, Nee & Harrison (2006), DRSP reliability and validity",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16172836/",
+    "locator": "Arch Womens Ment Health 9:41-49; existing PMDD source register",
+    "used_for": "Daily symptom measurement for menstrual-pattern review; not a one-visit PHQ substitute",
+    "access": "Existing PMDD source review reused; item text/scorer not bundled",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_ASQ": {
+    "title": "NIMH, Ask Suicide-Screening Questions toolkit",
+    "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials",
+    "locator": "Adult materials; using the toolkit; response-plan requirement",
+    "used_for": "Dedicated safety screen/pathway is distinct from depression scoring; plan and trained follow-up required",
+    "access": "Official/primary text inspected on 2 November 2026",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_SAFETY_LIMIT": {
+    "title": "Limitations of Screening for Depression as a Proxy for Suicide Risk in Adult Medical Inpatients",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8258235/",
+    "locator": "Results and conclusions",
+    "used_for": "Adult inpatient evidence that a negative depression/item-9 result cannot stand in for dedicated suicide assessment",
+    "access": "Primary indexed study findings inspected; no universal performance estimate generalized",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_225": {
+    "title": "NICE NG225, Self-harm",
+    "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+    "locator": "1.6.1-1.6.6",
+    "used_for": "No predictive global low/medium/high risk labels or score-only treatment/discharge",
+    "access": "Existing official source review retained",
+    "checked_at": "2026-11-02"
+  },
+  "CHAT_PHQ_2021": {
+    "title": "Dosovitsky et al. (2021), Psychometric Properties of a Chatbot Version of the PHQ-9 With Adults and Older Adults",
+    "url": "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2021.645805/full",
+    "locator": "Methods, Results, Limitations",
+    "used_for": "Feasibility/internal consistency in 3895 respondents; no paper comparator or criterion/construct validation, so not proof of diagnostic equivalence",
+    "access": "Official/primary text inspected on 2 November 2026",
+    "checked_at": "2026-11-02"
+  },
+  "HOPEBOT_2026": {
+    "title": "Guo et al. (2026), Feasibility and user evaluation of HopeBot",
+    "url": "https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0001446",
+    "locator": "Published 25 June 2026; Methods, Results, Study limitations",
+    "used_for": "132 adults, chatbot vs self-administered PHQ-9 concordance; no clinician diagnostic reference, fixed order/recall and sample limitations; research design context only",
+    "access": "Official/primary text inspected on 2 November 2026",
+    "checked_at": "2026-11-02"
+  }
+}

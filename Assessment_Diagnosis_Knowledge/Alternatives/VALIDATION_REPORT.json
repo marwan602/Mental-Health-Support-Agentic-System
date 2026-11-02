@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "checks": 53,
+  "results": [
+    {
+      "check": "schema valid Draft 2020-12",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: short_sleep_with_exhaustion",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: activation_clue_not_diagnosis",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: trauma_declined",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: early_grief_not_automatic_pgd",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: panic_fear_not_suicidal_intent",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: acute_change_interrupts_routine",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: avoidance_not_automatic_anhedonia",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: continuing_stressor_consequences",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: psychosis_timeline_not_schizoaffective",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: physical_help_not_cognitive_dependence",
+      "passed": true
+    },
+    {
+      "check": "authored case schema/provenance: exposure_timing_not_causation",
+      "passed": true
+    },
+    {
+      "check": "history fixture first_snapshot",
+      "passed": true
+    },
+    {
+      "check": "history fixture later_snapshot",
+      "passed": true
+    },
+    {
+      "check": "unique concept IDs and described optional project fields",
+      "passed": true
+    },
+    {
+      "check": "all concept sources resolve",
+      "passed": true
+    },
+    {
+      "check": "eleven agreed focused pathway groups present",
+      "passed": true
+    },
+    {
+      "check": "every pathway states purpose benefit scope followups limits and review",
+      "passed": true
+    },
+    {
+      "check": "pathway concept and source references resolve",
+      "passed": true
+    },
+    {
+      "check": "sources have links exact locations contributions access and dates",
+      "passed": true
+    },
+    {
+      "check": "each canonical pathway has a readable Markdown projection",
+      "passed": true
+    },
+    {
+      "check": "existing medical/exposure module links resolve",
+      "passed": true
+    },
+    {
+      "check": "adult scope and no diagnostic/runtime/clinical validation claims",
+      "passed": true
+    },
+    {
+      "check": "coexistence and shared evidence reuse explicit",
+      "passed": true
+    },
+    {
+      "check": "unknown decline error and questionnaire shortcuts disabled",
+      "passed": true
+    },
+    {
+      "check": "short-sleep/exhaustion fixture does not claim reduced sleep need",
+      "passed": true
+    },
+    {
+      "check": "panic-fear fixture does not assert suicidal intent",
+      "passed": true
+    },
+    {
+      "check": "acute-change fixture records review need without delivered contact",
+      "passed": true
+    },
+    {
+      "check": "declined trauma context not converted to PTSD denial",
+      "passed": true
+    },
+    {
+      "check": "history update retains earlier and later evidence",
+      "passed": true
+    },
+    {
+      "check": "contextual yes uses earlier messages",
+      "passed": true
+    },
+    {
+      "check": "invented quote rejected",
+      "passed": true
+    },
+    {
+      "check": "assistant text cannot become patient evidence",
+      "passed": true
+    },
+    {
+      "check": "future context rejected",
+      "passed": true
+    },
+    {
+      "check": "same-message context rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown context rejected",
+      "passed": true
+    },
+    {
+      "check": "wrong concept-specific field rejected",
+      "passed": true
+    },
+    {
+      "check": "unsupported known field rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown cannot carry value",
+      "passed": true
+    },
+    {
+      "check": "not-applicable requires reason",
+      "passed": true
+    },
+    {
+      "check": "unknown optional field accepted without value",
+      "passed": true
+    },
+    {
+      "check": "confirmed alternative diagnosis property rejected",
+      "passed": true
+    },
+    {
+      "check": "forced single-pathway assignment rejected",
+      "passed": true
+    },
+    {
+      "check": "criterion count property rejected",
+      "passed": true
+    },
+    {
+      "check": "invented instrument score property rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate record rejected",
+      "passed": true
+    },
+    {
+      "check": "separate period can have same concept",
+      "passed": true
+    },
+    {
+      "check": "unsubstantiated conflict rejected",
+      "passed": true
+    },
+    {
+      "check": "empty evidence rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate message ID rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid clinical-confirmation status rejected",
+      "passed": true
+    },
+    {
+      "check": "reference knowledge cannot be inserted as patient output",
+      "passed": true
+    },
+    {
+      "check": "all_nested_source_ids_resolve",
+      "passed": true
+    }
+  ],
+  "scope": "Mechanical schema/reference/provenance and authored-fixture checks only. No live LLM, clinical validation, diagnostic accuracy, semantic proof or care delivery."
+}

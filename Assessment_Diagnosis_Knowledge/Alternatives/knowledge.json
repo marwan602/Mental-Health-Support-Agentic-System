@@ -1,0 +1,2426 @@
+{
+  "module_id": "adult_depression_alternatives",
+  "package_version": "1.0.0-source-reviewed",
+  "date": "2026-11-02",
+  "status": "FOCUSED_DIFFERENTIAL_ASSESSMENT_DESIGN_NOT_CLINICALLY_VALIDATED",
+  "population": {
+    "minimum_age": 18,
+    "maximum_age": null,
+    "origin": "PROJECT_SCOPE",
+    "notes": "Adults including older adults; not pediatric diagnostic pathways."
+  },
+  "purpose": "Collect distinguishing and coexisting-condition evidence for depression assessment and professional review, not automatically diagnose/manage every alternative.",
+  "concepts": [
+    {
+      "id": "depressed_mood",
+      "label": "Depressed mood",
+      "definition": "Reported low, sad or empty mood.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience, without adding a diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "days_per_week": {
+          "meaning": "Stated days affected; keep units and wording instead of imposing a diagnostic cutoff.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "proportion_of_day": {
+          "meaning": "Reported share of an affected day; most of the day is already useful.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has your mood been during this period?",
+      "followup_focus": "Meaning, persistence and episode timing if unclear.",
+      "do_not_infer": "A sad day alone does not establish the domain threshold or MDD.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "interest_pleasure",
+      "label": "Interest and pleasure",
+      "definition": "Reduced desire for activities and/or reduced enjoyment.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "days_per_week": {
+          "meaning": "Stated days affected; keep units and wording instead of imposing a diagnostic cutoff.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "proportion_of_day": {
+          "meaning": "Reported share of an affected day; most of the day is already useful.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "interest": {
+          "meaning": "Reported wanting or motivation to engage.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pleasure": {
+          "meaning": "Enjoyment when engaged.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "activities": {
+          "meaning": "Affected activities and retained interests.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "breadth": {
+          "meaning": "How broadly activities are affected.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have your interest or enjoyment in your usual activities changed?",
+      "followup_focus": "Separate wanting from enjoying; establish breadth if relevant.",
+      "do_not_infer": "One retained hobby does not negate all symptoms; not doing an activity may reflect lack of opportunity.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "sleep_disturbance",
+      "label": "Sleep disturbance",
+      "definition": "Difficulty sleeping or excessive sleep.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pattern": {
+          "meaning": "Reported sleep complaint.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        },
+        "latency": {
+          "meaning": "Time taken to fall asleep.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "awakenings": {
+          "meaning": "Waking during sleep and return-to-sleep account.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "wake_timing": {
+          "meaning": "Actual versus intended/usual waking.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "total_sleep": {
+          "meaning": "Reported sleep hours with period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleep_opportunity": {
+          "meaning": "Opportunity and external interruptions.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "daytime_effect": {
+          "meaning": "Sleepiness, exhaustion or other reported effects.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has your sleep changed from what is usual for you?",
+      "followup_focus": "Identify complaint before asking subtype-specific details.",
+      "do_not_infer": "Insomnia while tired is not reduced sleep need; insufficient opportunity is not automatically insomnia.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "energy_fatigue",
+      "label": "Energy and fatigue",
+      "definition": "Unusual tiredness or reduced energy.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "experience": {
+          "meaning": "Fatigue, low energy or both.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleepiness": {
+          "meaning": "Reported sleepiness if distinguished.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has your energy been compared with usual?",
+      "followup_focus": "Examples and timing; separate sleepiness if ambiguous.",
+      "do_not_infer": "Do not automatically attribute fatigue to depression or infer it from short sleep.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "cognition_decisions",
+      "label": "Concentration and decisions",
+      "definition": "Reported thinking, attention or decision difficulty.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_comparison": {
+          "meaning": "How this differs from the person's usual state.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "kind": {
+          "meaning": "Reported difficulty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        },
+        "tasks": {
+          "meaning": "Concrete affected tasks.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Concrete reported consequences of this experience.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have concentrating or making decisions become harder than usual?",
+      "followup_focus": "Task examples and change from baseline.",
+      "do_not_infer": "Do not label dementia, ADHD or depression from this alone.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "death_suicide",
+      "label": "Death/suicide-related reports",
+      "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ASQ_BSSA",
+        "NICE_225"
+      ],
+      "attribute_specs": {
+        "experience": {
+          "meaning": "Preserve distinctions.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ]
+        },
+        "recency": {
+          "meaning": "When last/current; do not infer resolution.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "intent": {
+          "meaning": "Intent as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "plan_present": {
+          "meaning": "Whether a plan was explicitly reported or denied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        },
+        "access": {
+          "meaning": "Access to means as reported, without generating procedural details.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "past_behaviour": {
+          "meaning": "Historical self-injury/attempt account, intent and timing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Available support as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you had thoughts about ending your life?",
+      "followup_focus": "Use dedicated safety pathway; preserve current versus historical information.",
+      "do_not_infer": "Fear of death is not automatically recurrent thoughts of death; self-harm and suicidal intent must be distinguished.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "functioning_distress",
+      "label": "Functioning and distress",
+      "definition": "Reported burden in important life areas.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "domain": {
+          "meaning": "Affected area such as work, relationships or self-care.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "examples": {
+          "meaning": "Concrete difficulty or distress.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline": {
+          "meaning": "Usual functioning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "supports": {
+          "meaning": "Assistance helping preserve functioning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How have these changes affected your daily life?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "episode_timeline",
+      "label": "Episode timeline",
+      "definition": "Period linking symptoms and changes.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "onset": {
+          "meaning": "When this particular experience began; preserve approximate wording.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this particular experience has continued, not time needed to perform an activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "course": {
+          "meaning": "Continuity, fluctuation or change over the relevant period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "overlap": {
+          "meaning": "Whether symptoms occurred together.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "intervals": {
+          "meaning": "Earlier periods, recovery and residual symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "When did these changes begin?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "treatment_history",
+      "label": "Previous care",
+      "definition": "Prior mental-health assessment and care.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "reported_diagnosis": {
+          "meaning": "Person-reported professional diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "treatment": {
+          "meaning": "Therapy/medicines/admissions as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "period": {
+          "meaning": "When and for which symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "response": {
+          "meaning": "Reported benefits, persistence or unwanted effects.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "use": {
+          "meaning": "Actual use and barriers as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you received help for something similar before?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "family_history",
+      "label": "Family history",
+      "definition": "Relevant family mood/psychiatric history.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "relative": {
+          "meaning": "Relationship, without unnecessary identifying details.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_condition": {
+          "meaning": "Condition as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "certainty": {
+          "meaning": "How the person knows; unknown remains unknown.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Is there relevant mental-health history in your family?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "medical_context",
+      "label": "Medical context",
+      "definition": "Relevant reported medical history and symptoms.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "conditions": {
+          "meaning": "Reported conditions; distinguish reported diagnosis from confirmation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "timeline": {
+          "meaning": "Relationship to symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "investigations": {
+          "meaning": "Results only if actually supplied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "clinician_review": {
+          "meaning": "Known professional assessment or unresolved need.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Are there health conditions that might be relevant to these changes?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "exposure_context",
+      "label": "Medicines and substances",
+      "definition": "Relevant treatment/substance exposure account.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "name": {
+          "meaning": "Named exposure.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "dose_use": {
+          "meaning": "Reported amount/use; never recommend a dose.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "start_change_stop": {
+          "meaning": "Timing of changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "symptom_timing": {
+          "meaning": "Reported temporal relationship.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "source_kind": {
+          "meaning": "Medicine, alcohol, other substance or unclear.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have any medicines or substance-use patterns changed around this time?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "life_context",
+      "label": "Life context",
+      "definition": "Relevant stress, loss, trauma and support.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "events": {
+          "meaning": "Events relevant to symptom timeline.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "timing": {
+          "meaning": "Temporal relationship.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Current supports.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "barriers": {
+          "meaning": "Practical barriers.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "meaning": {
+          "meaning": "Person's interpretation of the context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has anything important been happening around the time these changes began?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "shared_depression_assessment"
+    },
+    {
+      "id": "activation_mood_energy",
+      "label": "Distinct activation period",
+      "definition": "A change in mood AND activity/energy compared with baseline, rather than ordinary happiness or lifelong temperament.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "mood": {
+          "meaning": "Reported unusually elevated, expansive or irritable mood.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "energy_activity": {
+          "meaning": "Change in energy/goal-directed activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset_duration": {
+          "meaning": "Start, end/ongoing and number of consecutive days.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "within_day_pattern": {
+          "meaning": "How much of the day and how often during that period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline_change": {
+          "meaning": "Difference from usual; distinguish episodic change from longstanding traits.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "observer": {
+          "meaning": "Who reportedly noticed, preserving source attribution.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "functional_consequences": {
+          "meaning": "Actual work/social/self-care consequences, not severity assigned from enthusiasm.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have there been distinct times when your mood and energy were unusually different from your usual self?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "If endorsed, clarify one period and actual changes; keep lifetime and current periods separate.",
+      "do_not_infer": "Irritability, racing worry or a busy productive day alone does not establish mania/hypomania."
+    },
+    {
+      "id": "reduced_sleep_need",
+      "label": "Reduced need for sleep",
+      "definition": "Less sleep with feeling rested/energetic, distinct from inability to sleep with exhaustion.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "sleep_amount": {
+          "meaning": "Actual amount as reported, no invented baseline.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "restedness": {
+          "meaning": "How the person felt after less sleep.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "usual_sleep": {
+          "meaning": "Usual amount, if supplied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "How long this pattern lasted.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "overlap": {
+          "meaning": "Whether it coincided with the same activation period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_reasons": {
+          "meaning": "Opportunity, shift work, substance or medical context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "When you slept less during that period, did you feel rested or tired afterwards?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify sleep opportunity and same-period energy; do not infer the answer from hours alone.",
+      "do_not_infer": "Short sleep plus fatigue is not reduced sleep need."
+    },
+    {
+      "id": "activation_associated_changes",
+      "label": "Associated activation features",
+      "definition": "Actual same-period changes in self-view, speech, thoughts, attention, activity or consequential behaviour.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "self_view": {
+          "meaning": "Unusual inflated confidence or grandiosity, not ordinary confidence.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "speech": {
+          "meaning": "More/pressured speech as reported, not judged from chat typing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "thought_speed": {
+          "meaning": "Racing thoughts or rapid shifts, distinguished from repetitive anxious worries.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "attention": {
+          "meaning": "Distractibility against baseline.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "activity": {
+          "meaning": "Purposeful activity or motor agitation as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "consequential_behaviour": {
+          "meaning": "Actual unusual spending, sexual/business or other risky actions without moral judgment.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "overlap": {
+          "meaning": "Which changes occurred together and during which period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What else changed during that same period?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Ask about relevant missing features individually rather than a long leading list.",
+      "do_not_infer": "Do not count symptoms from different periods together or diagnose from chat style."
+    },
+    {
+      "id": "activation_severity_context",
+      "label": "Activation severity and causal context",
+      "definition": "Reported marked impairment, hospitalization, psychotic experiences and exposure/medical context.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_BIPOLAR",
+        "NICE_185"
+      ],
+      "attribute_specs": {
+        "impairment": {
+          "meaning": "Actual severity/consequences as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "hospitalization": {
+          "meaning": "Whether/why admission was necessary or occurred, if reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "psychotic_experience": {
+          "meaning": "Reported perceptual/belief changes; needs interpretation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "exposures": {
+          "meaning": "Named medicines/substances and actual changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "persistence": {
+          "meaning": "What persisted after an already-occurring exposure change.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_context": {
+          "meaning": "Reported conditions and findings.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "current_concerns": {
+          "meaning": "Immediate concerns and actual available support.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Did that period cause serious problems or lead you to need urgent care?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Current severe activation or psychotic concerns change review urgency; do not wait for duration thresholds.",
+      "do_not_infer": "Do not recommend stopping/restarting treatment to test cause; one or two activation symptoms after medicine are not automatically a bipolar episode."
+    },
+    {
+      "id": "longterm_mood_fluctuation",
+      "label": "Long-term mood fluctuation",
+      "definition": "Repeated subthreshold high/low experiences across years, with gaps and possible full episodes reviewed separately.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "observation_span": {
+          "meaning": "Actual span described.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "high_periods": {
+          "meaning": "Reported activation symptoms and their duration.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "low_periods": {
+          "meaning": "Reported depressive symptoms and duration.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "proportion_of_time": {
+          "meaning": "How often symptoms were present across the span.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "longest_gap": {
+          "meaning": "Longest symptom-free interval, if actually known.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "full_episode_history": {
+          "meaning": "Earlier periods needing full mania/hypomania/depression review.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Over the longer term, how have the higher and lower periods alternated?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify sustained course and gaps; do not turn every mood fluctuation into an episode.",
+      "do_not_infer": "Mood swings do not automatically establish cyclothymia or bipolar illness."
+    },
+    {
+      "id": "worry_pattern",
+      "label": "Generalized worry pattern",
+      "definition": "Excessive or difficult-to-control worry across domains, rather than assuming all concentration/sleep problems come from depression.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_ANXIETY"
+      ],
+      "attribute_specs": {
+        "topics": {
+          "meaning": "Actual worries across domains.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "control": {
+          "meaning": "Difficulty controlling worry in the person's account.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency_duration": {
+          "meaning": "How often and for how long.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "associated_changes": {
+          "meaning": "Restlessness, fatigue, irritability, tension, sleep or concentration as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "mood_relationship": {
+          "meaning": "Worry before/during/outside depressive periods.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "burden": {
+          "meaning": "Concrete distress/interference.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What worries have been taking up your mind, and how hard are they to set aside?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify course and actual somatic/cognitive effects without equating ordinary worry with GAD.",
+      "do_not_infer": "Worry-related concentration difficulty is not automatically a separate depressive criterion."
+    },
+    {
+      "id": "panic_experience",
+      "label": "Panic-like episode",
+      "definition": "Abrupt intense fear/discomfort with rapid peak, actual sensations and context; medical symptoms need appropriate assessment.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_ANXIETY"
+      ],
+      "attribute_specs": {
+        "onset_peak": {
+          "meaning": "How abruptly it began and time to peak.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sensations": {
+          "meaning": "Actual bodily/perceptual symptoms and fears.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "unexpectedness": {
+          "meaning": "Unexpected versus linked to a specific situation/reminder.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "recurrence": {
+          "meaning": "Number/pattern of attacks.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "after_effects": {
+          "meaning": "Persistent concern or avoidance/behaviour change and duration.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_exposure_context": {
+          "meaning": "Relevant illness, substances or treatment; no assumed anxiety cause.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Could you describe what happens during one of those sudden episodes?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify immediate medical concerns before interpreting symptoms as panic.",
+      "do_not_infer": "One panic attack is not panic disorder, and fear of dying during an attack is not automatically suicidal intent."
+    },
+    {
+      "id": "social_fear_avoidance",
+      "label": "Social fear and avoidance",
+      "definition": "Fear of scrutiny/negative evaluation and avoidance, contrasted with low motivation, reduced pleasure or physical inability.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_159"
+      ],
+      "attribute_specs": {
+        "situations": {
+          "meaning": "Actual feared/avoided social or performance situations.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "feared_outcome": {
+          "meaning": "What the person expects others may think/do.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "avoidance": {
+          "meaning": "Avoided situations or endurance with fear.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "course": {
+          "meaning": "Timing and persistence relative to low mood.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "burden": {
+          "meaning": "Impact on relationships, education or work.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_reasons": {
+          "meaning": "Practical, physical or contextual reasons for reduced social activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What makes seeing people difficult: worry about what might happen, low interest, or something else?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify the person's own explanation; do not force the offered possibilities.",
+      "do_not_infer": "Not seeing friends does not by itself establish either social anxiety or anhedonia."
+    },
+    {
+      "id": "trauma_context",
+      "label": "Trauma context and assessment permission",
+      "definition": "Reported potentially traumatic exposure and current needs without eliciting unnecessary detailed recounting.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_116",
+        "NIMH_PTSD"
+      ],
+      "attribute_specs": {
+        "broad_event": {
+          "meaning": "Broad type/context only as volunteered or agreed; unnecessary graphic detail is not needed.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "time": {
+          "meaning": "When it happened and whether danger is ongoing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "exposure_kind": {
+          "meaning": "Reported experience/witnessing/learning/occupational context, without certifying criteria.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "participation": {
+          "meaning": "What the person is comfortable discussing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "current_needs": {
+          "meaning": "Immediate safety/support or assessment-access needs.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has anything frightening or traumatic happened that you feel may be connected, without going into details you do not want to share?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Ask permission and follow the person's pace; focus on effects and current safety.",
+      "do_not_infer": "Not every stressful event meets PTSD exposure requirements; do not infer trauma from symptoms or require a detailed retelling."
+    },
+    {
+      "id": "trauma_linked_symptoms",
+      "label": "Trauma-linked symptom pattern",
+      "definition": "Intrusion, avoidance, negative thoughts/mood, arousal and dissociation in relation to an event.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_116",
+        "NIMH_PTSD"
+      ],
+      "attribute_specs": {
+        "intrusions": {
+          "meaning": "Unwanted event-related memories, nightmares or reliving as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "avoidance": {
+          "meaning": "Avoidance of reminders/thoughts, without forcing disclosure.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "negative_mood_thoughts": {
+          "meaning": "Reported beliefs, blame, numbing or detachment and event relationship.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "arousal": {
+          "meaning": "Hypervigilance, startle, irritability or sleep changes as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "dissociation": {
+          "meaning": "Detachment/unreality experiences as described.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset_duration": {
+          "meaning": "Timing, persistence and fluctuation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "burden": {
+          "meaning": "Reported effects on functioning and distress.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How has it affected you—for example, in unwanted memories, feeling on guard or avoiding reminders?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify only endorsed domains; PTSD and depression may both need assessment.",
+      "do_not_infer": "Do not equate all low mood after stress with PTSD or all intrusive memories with psychosis."
+    },
+    {
+      "id": "stressor_response",
+      "label": "Stressor-linked response",
+      "definition": "An identifiable stressor, its consequences and symptom timing/meaning, with full mood and trauma alternatives reviewed.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_ADJUST"
+      ],
+      "attribute_specs": {
+        "stressor": {
+          "meaning": "Specific reported event or continuing circumstance.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "stressor_onset": {
+          "meaning": "When it began.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "symptom_onset": {
+          "meaning": "When emotional/behavioural symptoms started relative to it.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "continuing_consequences": {
+          "meaning": "Whether stressor or consequences continue and actual ending if known.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "response": {
+          "meaning": "Actual emotional/behavioural pattern and contextual meaning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "burden": {
+          "meaning": "Distress/interference and relevant cultural context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "previous_pattern": {
+          "meaning": "Whether this is new or an exacerbation of earlier symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What changed around the time this began, and is that situation or its impact still ongoing?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify response, timeline and alternatives without judging whether distress is legitimate.",
+      "do_not_infer": "A stressor does not automatically establish adjustment disorder or exclude MDD."
+    },
+    {
+      "id": "bereavement_context",
+      "label": "Bereavement and cultural context",
+      "definition": "Death of a close person, loss timing, relationship, cultural expectations and support without treating normal grief as illness.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_PGD",
+        "APA_GRIEF"
+      ],
+      "attribute_specs": {
+        "relationship": {
+          "meaning": "Who died and closeness as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "death_time": {
+          "meaning": "Actual time since death, preserving uncertainty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "cultural_context": {
+          "meaning": "Meaning, rituals and norms described by the person, not guessed from identity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "course": {
+          "meaning": "Waves/triggers, persistence and change since loss.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "functioning": {
+          "meaning": "Actual engagement and difficulties.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Relevant support and barriers.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Would you like to tell me about the loss and how it has affected you?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Respect grief without a fixed recovery timetable; ask only meaningful remaining details.",
+      "do_not_infer": "Time since death alone does not establish PGD, and grief does not exclude MDD."
+    },
+    {
+      "id": "grief_specific_experiences",
+      "label": "Grief-specific experiences",
+      "definition": "Longing/preoccupation and other loss-linked experiences, distinguished from generalized depressive symptoms.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_PGD"
+      ],
+      "attribute_specs": {
+        "longing_preoccupation": {
+          "meaning": "Actual yearning or preoccupation with the deceased.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "identity_disbelief": {
+          "meaning": "Reported identity disruption or disbelief.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "avoidance": {
+          "meaning": "Avoidance of reminders that the person died.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pain": {
+          "meaning": "Loss-linked emotional pain.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reintegration": {
+          "meaning": "Difficulty engaging in relationships/activities or future plans.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "numbness_meaning_loneliness": {
+          "meaning": "Actual numbness, meaninglessness or loneliness; preserve which is reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "recent_frequency": {
+          "meaning": "Most-day/nearly-daily pattern over the last month as actually described.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "burden_context": {
+          "meaning": "Distress/interference and cultural-context interpretation needs.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What has been hardest about the grief recently?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify loss-specific experiences and current frequency; do not count alternatives as separate criteria without evidence.",
+      "do_not_infer": "Yearning, broad depression and suicidal thoughts are distinct; any wish to die needs direct clarification rather than an assumed grief explanation."
+    },
+    {
+      "id": "psychotic_experiences",
+      "label": "Unusual perceptual or belief experiences",
+      "definition": "Reported perceptions, beliefs or disorganization requiring sensitive contextual and specialist interpretation.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_178",
+        "DSM_PSYCH"
+      ],
+      "attribute_specs": {
+        "experience": {
+          "meaning": "What the person actually experiences; neutral wording, no confirmation of the belief.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "context": {
+          "meaning": "Awake/asleep, bereavement, cultural/spiritual context and other circumstances.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "conviction_distress": {
+          "meaning": "Meaning, certainty and distress as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency_duration": {
+          "meaning": "Actual timing and persistence.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "thought_behaviour_changes": {
+          "meaning": "Reported disorganization or behaviour changes, not inferred from typing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "safety_content": {
+          "meaning": "Threatening/command content, distress and immediate needs if reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you noticed experiences such as hearing or seeing things that others do not seem to notice?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "If endorsed, explore neutral description, context and current concerns; arrange appropriate specialist assessment.",
+      "do_not_infer": "Do not endorse a delusion as fact, diagnose from a spiritual belief, or treat a hallucination report as schizophrenia by itself."
+    },
+    {
+      "id": "psychosis_mood_course",
+      "label": "Psychosis and mood across time",
+      "definition": "Relationship between psychotic experiences and full mood periods across the illness, not one isolated answer.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_PSYCH"
+      ],
+      "attribute_specs": {
+        "mood_periods": {
+          "meaning": "Actual depressive/activation periods and their boundaries.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "outside_mood_periods": {
+          "meaning": "Whether experiences occurred outside major mood periods and how long.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "overall_course": {
+          "meaning": "Proportion/sequence across active and residual illness, if genuinely known.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_diagnoses": {
+          "meaning": "Attributed specialist diagnoses, not confirmation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "exposure_medical_context": {
+          "meaning": "Concurrent exposures/illness and investigations.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have those experiences also happened at times when you were not having a low or unusually high mood period?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Keep uncertainty; a full lifetime timeline may require collateral/records and specialist review.",
+      "do_not_infer": "Two weeks of an unusual experience alone does not diagnose schizoaffective disorder."
+    },
+    {
+      "id": "acute_attention_change",
+      "label": "Acute/fluctuating cognitive change",
+      "definition": "New change over hours/days in attention, awareness or thinking, possibly hypoactive rather than agitated.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_103"
+      ],
+      "attribute_specs": {
+        "baseline": {
+          "meaning": "Usual cognition/behaviour.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset": {
+          "meaning": "Reported start and speed of change.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "fluctuation": {
+          "meaning": "Changes across the day.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "attention_awareness": {
+          "meaning": "Actual difficulty attending or altered awareness.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_changes": {
+          "meaning": "Reported lethargy/agitation, perception or sleep-wake changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_exposures": {
+          "meaning": "Recent illness, treatment or withdrawal context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "source": {
+          "meaning": "Who noticed, as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has there been a sudden change in confusion or ability to pay attention compared with usual?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Current acute change takes priority over the routine depression interview and needs medical assessment.",
+      "do_not_infer": "Do not rule out delirium because the person is quiet or has known dementia; chat is not a 4AT assessment."
+    },
+    {
+      "id": "cognitive_function_course",
+      "label": "Longer-term cognitive and functional course",
+      "definition": "Reported decline against prior abilities, daily independence and potentially reversible contributors.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_97"
+      ],
+      "attribute_specs": {
+        "domains": {
+          "meaning": "Actual memory, language, attention, planning or other cognitive changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "onset_progression": {
+          "meaning": "Gradual versus sudden onset and course.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "independence": {
+          "meaning": "Daily tasks and why help is required; cognitive versus physical/contextual limitations.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "mood_relationship": {
+          "meaning": "Cognition relative to mood periods.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "informant_context": {
+          "meaning": "Whether an appropriate informant/record is available, not imported as patient testimony.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "contributors": {
+          "meaning": "Sensory, medical, sleep and medication context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "tests_as_reported": {
+          "meaning": "Actual reported testing/result without verified interpretation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What changes have you noticed in memory or everyday tasks compared with your usual abilities?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify baseline, real examples and contributors; seek appropriate assessment.",
+      "do_not_infer": "Do not label dementia or dismiss decline as depression from one chat or one normal screening score."
+    },
+    {
+      "id": "sleep_opportunity_timing",
+      "label": "Sleep opportunity and schedule",
+      "definition": "Distinguish insomnia, restricted opportunity and schedule mismatch using actual sleep/wake patterns.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_SLEEP",
+        "AASM_2008"
+      ],
+      "attribute_specs": {
+        "bed_wake_times": {
+          "meaning": "Usual and variable timings, including days off.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "opportunity": {
+          "meaning": "Time and conditions available for sleep.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "difficulty": {
+          "meaning": "Falling asleep, staying asleep or early waking as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency_duration": {
+          "meaning": "Nights affected and how long the pattern has existed.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "daytime_effect": {
+          "meaning": "Sleepiness, fatigue and functional impact distinguished.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "shift_circadian_context": {
+          "meaning": "Work/schedule mismatch and sleep at preferred times.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "exposures": {
+          "meaning": "Actual caffeine/medicines/substance use and timing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "What does a typical night look like, including when you can sleep and when you need to get up?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Ask relevant detail; less time in bed is not automatically insomnia.",
+      "do_not_infer": "Do not assign a sleep disorder from hours alone, or reduced sleep need when exhausted."
+    },
+    {
+      "id": "sleep_breathing_clues",
+      "label": "Sleep-related breathing clues",
+      "definition": "Reported snoring, witnessed breathing pauses/choking and daytime effects that may merit sleep assessment.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_202"
+      ],
+      "attribute_specs": {
+        "snoring": {
+          "meaning": "Reported snoring and source.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "pauses_choking": {
+          "meaning": "Witnessed pauses, gasping/choking or uncertain report.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "refreshment": {
+          "meaning": "Whether sleep is refreshing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "daytime_effects": {
+          "meaning": "Actual sleepiness, fatigue or cognitive concerns.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "medical_context": {
+          "meaning": "Relevant reported health factors or tests.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "functional_safety": {
+          "meaning": "Reported effects on safety-sensitive activities.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has anyone noticed loud snoring or pauses in your breathing while you sleep?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Clarify actual reports and arrange appropriate clinical assessment when indicated.",
+      "do_not_infer": "Snoring alone, absent sleepiness or a questionnaire score does not independently confirm or exclude OSA."
+    },
+    {
+      "id": "assessment_limits",
+      "label": "Assessment participation and limits",
+      "definition": "Reported inability to recall, decline, uncertainty or communication difficulty; not symptom absence.",
+      "role": "focused_differential_information",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_222",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "target": {
+          "meaning": "Specific unresolved topic.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "limit": {
+          "meaning": "Reported limitation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "cannot_recall",
+            "declined",
+            "ambiguous",
+            "communication_difficulty",
+            "conflicting_reports",
+            "other_reported_limit"
+          ]
+        },
+        "known_part": {
+          "meaning": "Actual partial information.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support_requested": {
+          "meaning": "Actual requested accommodation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Would you prefer that I ask this another way or leave it for now?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_DESIGN",
+      "followup_focus": "Respect choice and carry the unresolved target into review.",
+      "do_not_infer": "A declined question does not establish a negative differential history."
+    }
+  ],
+  "value_sets": {
+    "finding_status": {
+      "reported_present": "Explicitly described or affirmed in context; not clinical confirmation.",
+      "reported_absent": "Explicitly denied for this subject/period.",
+      "unclear": "Meaning or polarity unresolved.",
+      "conflicting": "Accounts for the same subject/period conflict and are retained."
+    },
+    "temporal_status": {
+      "current": "Described as relevant to current period.",
+      "historical": "An earlier period.",
+      "unclear": "Timing unresolved."
+    },
+    "detail_status": {
+      "known": "A supported value is available.",
+      "unknown": "Relevant but unresolved; no value asserted.",
+      "not_applicable": "Inapplicability is explicitly justified; not equivalent to not asked."
+    },
+    "question_status": {
+      "not_asked": "No recorded question.",
+      "answered": "Target addressed.",
+      "partially_answered": "Some target information supplied.",
+      "unclear": "Response ambiguous.",
+      "declined": "Person chose not to answer."
+    },
+    "semantic_check_status": {
+      "supported": "Evidence appears to support the claim.",
+      "needs_review": "Meaning/attribution remains unresolved."
+    },
+    "safety_handoff_status": {
+      "not_assessed": "Available conversation has not assessed current safety; no reassuring inference.",
+      "no_signal_reported_in_available_text": "No concern reported in reviewed text; does not establish safety or predict future behaviour.",
+      "needs_clinical_review": "An unresolved concern requires clinical review; not a predictive risk category or proof of contact.",
+      "urgent_review_needed": "Current reported concerns require urgent human/medical review; no claim of response delivery."
+    }
+  },
+  "pathways": [
+    {
+      "id": "01_bipolar_spectrum",
+      "label": "Bipolar I, bipolar II and cyclothymic/other bipolar-spectrum presentations",
+      "purpose": "Check whether a depressive presentation belongs to an illness with lifetime mania, hypomania or sustained subthreshold activation.",
+      "benefit_for_depression_assessment": "Avoid summarizing depression as unipolar MDD while relevant activation history is missing; provide an interpretable specialist handoff.",
+      "scope": "Focused bipolar differential assessment with detailed episode/course information; not a complete bipolar management or coding package.",
+      "concept_ids": [
+        "activation_mood_energy",
+        "reduced_sleep_need",
+        "activation_associated_changes",
+        "activation_severity_context",
+        "longterm_mood_fluctuation",
+        "episode_timeline",
+        "treatment_history",
+        "family_history",
+        "death_suicide"
+      ],
+      "clinical_source_ids": [
+        "DSM_BIPOLAR",
+        "NICE_185",
+        "NIMH_BIPOLAR"
+      ],
+      "clinical_reference": [
+        "Bipolar I requires a qualifying lifetime manic episode; a depressive episode is common but not required. A reported history needs assessment, not acceptance as a confirmed diagnosis.",
+        "Mania reference: distinct abnormal mood plus increased energy/activity, generally at least one week (or any duration if hospitalization is necessary), with associated changes and marked impairment/hospitalization or psychotic features; medical/exposure and psychotic-disorder alternatives require review.",
+        "Hypomania reference: at least four consecutive days, observable/uncharacteristic change in functioning, and no marked impairment/hospitalization or psychotic features. Associated features need same-period review: grandiosity, reduced sleep need, speech pressure, racing thoughts, distractibility, activity/agitation and consequential behaviour; three are required, or four if mood is only irritable.",
+        "Bipolar II requires a qualifying hypomanic episode and a major depressive episode, with no manic episode; hypomania being less impairing than mania does not mean the overall illness is mild.",
+        "Adult cyclothymic reference: at least two years of numerous subthreshold high/low periods, present at least half the time, with no symptom-free gap longer than two months; full depressive, manic or hypomanic episodes have never been met, and burden/alternative explanations still matter.",
+        "Shorter or otherwise incomplete activation can still need specialist review. Do not force it into bipolar I/II or invent an other-specified bipolar subtype from an incomplete interview."
+      ],
+      "when_to_explore": "Lifetime activation is relevant in any depression assessment. Ask focused follow-ups if the account suggests a distinct high/irritable, energetic or disinhibited period, reduced sleep need, or prior bipolar formulation.",
+      "suggested_local_order": [
+        "Ask about a distinct lifetime change in mood/activity.",
+        "If endorsed, choose one period and clarify baseline, duration and same-period changes.",
+        "Clarify restedness after less sleep, observations and consequences.",
+        "Review hospitalization/psychotic symptoms, treatment/exposures and medical context.",
+        "Review depressive periods, interepisode course and professional assessment."
+      ],
+      "interpretation_limits": [
+        "Family history, irritability, ordinary happiness or one medication reaction does not confirm bipolar illness.",
+        "Insomnia with fatigue is not reduced sleep need.",
+        "Do not combine several different high periods into one qualifying episode.",
+        "NICE's four-day primary-care referral prompt is not a diagnostic algorithm or a reason to ignore a shorter concerning period.",
+        "NICE advises against questionnaires to identify bipolar disorder in primary care; no MDQ/HCL scorer is implemented here."
+      ],
+      "professional_review": "Possible current mania, severe depression, psychosis or immediate safety concerns change urgency. NICE recommends urgent specialist assessment when mania/severe depression or danger is suspected. Do not delay because a duration threshold is not yet met; the application must implement its human-review pathway.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "02_anxiety",
+      "label": "Anxiety presentations: generalized worry, panic and social anxiety",
+      "purpose": "Determine whether worry, fear, panic or avoidance explains part of the presentation or coexists with depression.",
+      "benefit_for_depression_assessment": "Distinguish overlapping sleep/fatigue/concentration complaints and reasons for withdrawal; avoid treating every worry or panic attack as a depressive symptom.",
+      "scope": "Focused GAD, panic and social-anxiety assessment; not an exhaustive implementation of all anxiety diagnoses. Other anxiety/OCD-related possibilities can be noted for professional review.",
+      "concept_ids": [
+        "worry_pattern",
+        "panic_experience",
+        "social_fear_avoidance",
+        "sleep_disturbance",
+        "cognition_decisions",
+        "functioning_distress",
+        "exposure_context"
+      ],
+      "clinical_source_ids": [
+        "DSM_ANXIETY",
+        "NICE_113",
+        "NICE_159"
+      ],
+      "clinical_reference": [
+        "GAD reference: excessive, difficult-to-control worry about multiple domains on more days than not for at least six months, with associated symptoms, burden and alternative-explanation review. Adult associated symptoms include restlessness, fatigue, concentration problems, irritability, tension and sleep disturbance; three are required for the formal syndrome.",
+        "Panic attacks are abrupt surges that peak within minutes with bodily/cognitive symptoms. The formal attack definition includes at least four symptoms from thirteen domains; capture actual sensations rather than making a yes-count from a vague account.",
+        "Panic symptom reference domains: racing/pounding heart, sweating, trembling, breathlessness, choking sensation, chest discomfort, nausea/abdominal distress, dizziness/faintness, chills/heat, numbness/tingling, unreality/detachment, fear of losing control and fear of dying. These describe experiences requiring context, not an instruction to dismiss physical symptoms as psychological.",
+        "Panic disorder additionally requires recurrent unexpected attacks and at least a month of concern or maladaptive behavioural change after an attack, plus medical/exposure and other mental-disorder review. An attack can occur in several disorders.",
+        "Social anxiety concerns fear of scrutiny/negative evaluation, avoidance or distressed endurance, persistence and burden. Clarify whether it existed before/outside depression; reduced social activity alone does not establish it."
+      ],
+      "when_to_explore": "Explore if worry/fear, sudden episodes or avoidance are reported, or when overlapping symptoms remain unexplained.",
+      "suggested_local_order": [
+        "Ask what makes the situation difficult.",
+        "Clarify worries, panic episodes or feared evaluation in the person's own words.",
+        "Check timing, context, persistence and burden.",
+        "Compare with depressive periods and medical/exposure factors."
+      ],
+      "interpretation_limits": [
+        "New concerning chest/breathing/fainting symptoms must not automatically be called panic.",
+        "Fear of death during panic is not equivalent to suicidal intent.",
+        "Do not infer social fear from physical inability or low opportunity to meet others.",
+        "GAD-2/7 or other scales, if later adopted, need verified versions and scoring; no diagnoses or scores are invented here."
+      ],
+      "professional_review": "Arrange appropriate professional assessment for possible anxiety disorders and competing medical causes; urgency follows current medical/safety concerns, not the word anxiety.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "03_trauma",
+      "label": "PTSD and other trauma-related presentations",
+      "purpose": "Check whether trauma-linked symptoms contribute to low mood, withdrawal, guilt, numbing or sleep difficulties.",
+      "benefit_for_depression_assessment": "Preserve the event relationship and avoid either missing trauma effects or assuming every stressful event causes PTSD.",
+      "scope": "Focused adult PTSD/trauma differential. Acute stress and complex presentations require their own professional formulation; no separate automated acute/complex PTSD diagnosis is implemented.",
+      "concept_ids": [
+        "trauma_context",
+        "trauma_linked_symptoms",
+        "episode_timeline",
+        "functioning_distress",
+        "death_suicide",
+        "assessment_limits"
+      ],
+      "clinical_source_ids": [
+        "NICE_116",
+        "NIMH_PTSD",
+        "VA_PCL5"
+      ],
+      "clinical_reference": [
+        "PTSD requires an appropriate exposure and a pattern of intrusion, avoidance, negative mood/thought and arousal changes with duration and impairment requirements. A distressing event label by itself does not establish the exposure criterion.",
+        "NIMH describes a duration longer than one month for the PTSD syndrome. Earlier distress can still need support and assessment; it is not automatically PTSD or acute stress disorder.",
+        "Dissociation, shame, relationship difficulties and trauma-related negative beliefs can be relevant. Do not silently equate ICD-11 complex PTSD with a DSM-5-TR subtype.",
+        "Depression and PTSD can coexist; determine what is event-linked and what is broader rather than forcing one explanation."
+      ],
+      "when_to_explore": "Explore when the person reports a potentially relevant event or trauma-linked effects. Ask permission and use broad context before symptom follow-ups.",
+      "suggested_local_order": [
+        "Check willingness to discuss broad context and current safety.",
+        "Explore actual effects without requiring graphic detail.",
+        "Clarify endorsed symptom domains, timing and functioning.",
+        "Preserve uncertainty about exposure/diagnostic requirements and seek appropriate review."
+      ],
+      "interpretation_limits": [
+        "Assessment is not trauma processing or exposure therapy.",
+        "Do not ask for detailed recounting to fill a form or assume silence means no trauma.",
+        "Reliving/dissociation and psychosis require contextual differentiation.",
+        "PCL-5 can support screening/monitoring and provisional assessment; clinician interview remains important. No scale or cutoff is implemented or inferred from chat."
+      ],
+      "professional_review": "Current danger, severe dissociation or safety concerns require the appropriate immediate review pathway. Trauma-informed professional assessment should respect participation and communication needs.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "04_adjustment",
+      "label": "Adjustment disorder and ordinary stress responses",
+      "purpose": "Examine symptoms linked to a stressor without treating every stress reaction as MDD or adjustment disorder.",
+      "benefit_for_depression_assessment": "Record stressor timing and continuing consequences, burden and competing full syndromes; avoid an automatic residual-depression label.",
+      "scope": "Focused adjustment assessment, especially depressed-mood and mixed anxiety/depressed-mood presentations; no full conduct-disorder management.",
+      "concept_ids": [
+        "stressor_response",
+        "depressed_mood",
+        "functioning_distress",
+        "episode_timeline",
+        "life_context",
+        "death_suicide"
+      ],
+      "clinical_source_ids": [
+        "DSM_ADJUST",
+        "NICE_222"
+      ],
+      "clinical_reference": [
+        "Reference onset is within three months of an identifiable stressor. Clinical significance involves disproportionate distress in context and/or functional impairment; ordinary understandable upset alone is not the diagnosis.",
+        "The particular stress-related symptoms are not better explained by another disorder or merely exacerbation of an existing one. Normal bereavement and PGD require differentiation.",
+        "Symptoms do not persist more than six additional months after the stressor or its consequences have ended. This is not a universal six-month-from-onset limit: ongoing stressors/consequences can support a persistent course.",
+        "Adjustment and another disorder may coexist when each is independently justified and the other disorder does not explain those particular stress-linked symptoms; do not make the categories universally exclusive."
+      ],
+      "when_to_explore": "Explore when a clear stressor is reported or symptoms are tightly linked to a change in circumstances.",
+      "suggested_local_order": [
+        "Identify the actual stressor and onset.",
+        "Clarify symptoms, burden and contextual meaning.",
+        "Ask if the stressor or consequences continue.",
+        "Review full depressive/trauma or other explanations before a residual formulation."
+      ],
+      "interpretation_limits": [
+        "A breakup, illness or job loss does not automatically establish adjustment disorder.",
+        "Do not judge cultural expectations from ethnicity or minimize legitimate distress.",
+        "The six-month reference does not mean wait six months before help."
+      ],
+      "professional_review": "Professional assessment determines whether the pattern is a disorder and which formulation applies; safety needs are assessed separately from the label.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "05_grief",
+      "label": "Ordinary grief and prolonged grief disorder",
+      "purpose": "Understand a bereavement response, identify loss-specific persistent difficulties and assess possible coexisting depression.",
+      "benefit_for_depression_assessment": "Avoid pathologizing normal grief, missing PGD or treating all bereavement-related sadness as one depressive diagnosis.",
+      "scope": "Adult DSM-5-TR PGD differential plus ordinary grief context; ICD-11 timing/requirements are not merged into DSM.",
+      "concept_ids": [
+        "bereavement_context",
+        "grief_specific_experiences",
+        "depressed_mood",
+        "interest_pleasure",
+        "functioning_distress",
+        "death_suicide"
+      ],
+      "clinical_source_ids": [
+        "DSM_PGD",
+        "APA_PGD",
+        "APA_GRIEF",
+        "PG13R_2021"
+      ],
+      "clinical_reference": [
+        "Adult DSM-5-TR reference requires the death of a close person at least twelve months earlier, a persistent longing/preoccupation response and clinically significant burden; time alone is insufficient.",
+        "At least one core separation-distress experience and at least three additional symptom groups are reviewed: identity disruption, disbelief, avoidance, emotional pain, reintegration difficulty, numbness, meaninglessness and loneliness.",
+        "Symptoms must have the required most-day/near-daily recent-month pattern, exceed expected social/cultural/religious norms in context, and not be better explained by another disorder, substance or medical condition.",
+        "Loss-focused longing and broader pervasive depression can be distinct and coexist. Neither an enjoyable moment nor bereavement excludes MDD. Acute grief can be very painful without PGD."
+      ],
+      "when_to_explore": "Explore when a death is reported or the account is strongly loss-focused; do not assume every loss is bereavement after a death.",
+      "suggested_local_order": [
+        "Ask about the relationship and time since death sensitively.",
+        "Explore the person's actual grief experiences and cultural meaning.",
+        "Clarify recent frequency, burden and life engagement.",
+        "Review broader depression, trauma, support and safety separately."
+      ],
+      "interpretation_limits": [
+        "Do not diagnose solely because twelve months have passed.",
+        "Do not withhold support before the diagnostic time window.",
+        "DSM adult twelve-month and ICD-11 timing are different frameworks.",
+        "A wish to be reunited with the deceased requires careful direct safety clarification; it is not automatically intent or automatically harmless.",
+        "PG-13-R is a research/measurement reference; no items, scoring or inherited accuracy are implemented."
+      ],
+      "professional_review": "Seek qualified review for persistent impairing grief or coexisting disorders; address safety and support needs regardless of time since death.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "06_psychosis",
+      "label": "Psychotic experiences, mood disorders with psychosis and schizoaffective alternatives",
+      "purpose": "Clarify unusual experiences and their relationship to mood episodes, exposures and medical context.",
+      "benefit_for_depression_assessment": "Avoid confusing psychotic depression with a primary psychotic disorder, trauma phenomena, cultural experiences or delirium.",
+      "scope": "Focused recognition and specialist handoff for schizophrenia-spectrum/schizoaffective alternatives; not full diagnosis or treatment of all psychotic disorders.",
+      "concept_ids": [
+        "psychotic_experiences",
+        "psychosis_mood_course",
+        "activation_mood_energy",
+        "episode_timeline",
+        "medical_context",
+        "exposure_context",
+        "death_suicide"
+      ],
+      "clinical_source_ids": [
+        "NICE_178",
+        "DSM_PSYCH"
+      ],
+      "clinical_reference": [
+        "A hallucination, unusual belief or disorganized account alone does not establish schizophrenia. Review exact experience, cultural/sleep/grief context, medical/exposure factors, function and timeline.",
+        "Psychotic symptoms during a depressive episode may need a psychotic-depression formulation, but a lifetime specialist assessment is needed to determine the relationship.",
+        "Schizoaffective reference includes a full major mood episode with the schizophrenia symptom syndrome, a lifetime interval of at least two weeks of delusions/hallucinations without a major mood episode, and mood episodes during the majority of the total active/residual illness. Those facts and causal exclusions must be considered together.",
+        "A report of psychosis outside low mood is a reason for clarification, not sufficient to assign schizoaffective disorder. The major depressive episode in its schizoaffective criterion must include depressed mood."
+      ],
+      "when_to_explore": "Explore when perceptual, belief, disorganization or prior psychotic-diagnosis information is reported; do not infer it from unfamiliar cultural expression.",
+      "suggested_local_order": [
+        "Ask a neutral description and current distress/safety.",
+        "Clarify awake/asleep and cultural/medical/exposure context.",
+        "Compare timing with full mood periods and lifetime course.",
+        "Preserve the account and seek specialist assessment without debating or validating delusional content."
+      ],
+      "interpretation_limits": [
+        "Do not endorse a threatening belief as established fact.",
+        "Typing errors or unusual wording do not prove thought disorder.",
+        "Trauma intrusions, grief experiences and sleep-transition perceptions need context.",
+        "Do not make a diagnosis from the two-week reference alone."
+      ],
+      "professional_review": "NICE supports timely specialist assessment for concerning psychotic presentations, including medical/exposure review. Current severe symptoms or safety concerns require the appropriate urgent pathway.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "07_delirium",
+      "label": "Delirium and acute medical/cognitive change",
+      "purpose": "Recognize acute/fluctuating attention or awareness changes that should interrupt routine psychiatric questioning.",
+      "benefit_for_depression_assessment": "Avoid treating a potentially urgent medical syndrome as ordinary depressive poor concentration or lack of engagement.",
+      "scope": "Focused recognition and medical handoff. NICE CG103 is a hospital/long-term-care guideline; this chat does not implement a validated delirium screen.",
+      "concept_ids": [
+        "acute_attention_change",
+        "medical_context",
+        "exposure_context",
+        "assessment_limits"
+      ],
+      "clinical_source_ids": [
+        "NICE_103"
+      ],
+      "clinical_reference": [
+        "Recent change over hours/days, fluctuation, reduced attention/awareness and altered thinking can indicate delirium; quiet withdrawal/lethargy may occur as well as agitation.",
+        "Known dementia does not exclude delirium superimposed on it. Where difficult to distinguish, NICE prioritizes delirium management.",
+        "The 2023 NICE update specifies assessment by a competent practitioner using 4AT where appropriate, with CAM-ICU/ICDSC in critical care/recovery and a final diagnosis by a professional with relevant expertise. This is not a script for the LLM to administer or score."
+      ],
+      "when_to_explore": "Pause routine questioning if current sudden confusion, altered attention/awareness or marked fluctuation is reported.",
+      "suggested_local_order": [
+        "Clarify briefly what changed, when and who observed it, only as feasible.",
+        "Prioritize medical assessment and communication/support needs.",
+        "Record actual escalation/contact status rather than continue until all fields are filled."
+      ],
+      "interpretation_limits": [
+        "No agitation or hallucinations does not rule out delirium.",
+        "Poor concentration alone is not delirium.",
+        "Do not claim a chat or JSON flag has delivered medical care."
+      ],
+      "professional_review": "Current acute cognitive/awareness change needs timely medical assessment, often urgent; the exact response depends on setting and current condition, through the implemented care pathway.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "08_neurocognitive",
+      "label": "Cognitive decline and possible neurocognitive disorder",
+      "purpose": "Understand longer-term decline, daily functioning and contributors while separating acute change from chronic symptoms.",
+      "benefit_for_depression_assessment": "Avoid both labelling depressive concentration problems as dementia and dismissing genuine cognitive decline as depression.",
+      "scope": "Focused cognitive differential, not full major/mild neurocognitive subtype diagnosis, capacity assessment or cognitive-test service.",
+      "concept_ids": [
+        "cognitive_function_course",
+        "cognition_decisions",
+        "episode_timeline",
+        "medical_context",
+        "exposure_context",
+        "sleep_opportunity_timing",
+        "assessment_limits"
+      ],
+      "clinical_source_ids": [
+        "NICE_97",
+        "NICE_103"
+      ],
+      "clinical_reference": [
+        "Review actual decline from prior ability, course and real-world function, with authorized informant/records where appropriate. Cognitive and physical reasons for needing help must be distinguished.",
+        "Depression, delirium, sensory impairment and medicines can contribute to cognitive complaints. Coexistence is possible; one explanation need not erase another.",
+        "NICE cautions against ruling out dementia solely because a cognitive instrument score is normal. Specialist assessment and appropriate investigations determine diagnosis; a short chat cannot establish etiology or capacity."
+      ],
+      "when_to_explore": "Explore when decline in memory, language, reasoning or daily tasks is reported; sudden change instead prioritizes the delirium pathway.",
+      "suggested_local_order": [
+        "Clarify baseline and concrete examples.",
+        "Determine onset/progression and cognitive versus physical reasons for difficulty.",
+        "Review mood, sleep, sensory, medical and medicine factors.",
+        "Identify professional/informant review needs with distinct source provenance."
+      ],
+      "interpretation_limits": [
+        "Do not infer dementia from age, forgetfulness or one score.",
+        "Depression-related cognition is not automatically benign or proven reversible.",
+        "Do not import another person's report as a patient quote or presume impaired decision-making capacity."
+      ],
+      "professional_review": "Appropriate medical/cognitive assessment is needed for suspected decline; rapidly progressive or acute changes need a more urgent clinical pathway.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "09_sleep",
+      "label": "Insomnia, sleep-disordered breathing and schedule-related problems",
+      "purpose": "Determine whether sleep opportunity, insomnia, breathing disruption or schedule mismatch contributes to mood, fatigue and cognition.",
+      "benefit_for_depression_assessment": "Avoid attributing every sleep complaint to depression and distinguish fatigue/sleepiness from reduced sleep need.",
+      "scope": "Focused insomnia/OSA/schedule differential. Other sleep disorders are review possibilities rather than fully implemented diagnostic modules.",
+      "concept_ids": [
+        "sleep_opportunity_timing",
+        "sleep_breathing_clues",
+        "sleep_disturbance",
+        "energy_fatigue",
+        "reduced_sleep_need",
+        "medical_context",
+        "exposure_context"
+      ],
+      "clinical_source_ids": [
+        "DSM_SLEEP",
+        "NICE_202",
+        "AASM_2008"
+      ],
+      "clinical_reference": [
+        "Insomnia reference includes difficulty initiating/maintaining sleep or early waking despite adequate opportunity, with burden and alternative explanations reviewed. DSM-5-TR reference frequency is at least three nights weekly for at least three months; shorter-duration problems can still need care.",
+        "An irregular/shift schedule or insufficient opportunity can explain short sleep without establishing insomnia. Clarify when the person sleeps on free days and whether sleep is possible at preferred times.",
+        "OSA clues include snoring, witnessed pauses/choking, unrefreshing sleep and daytime effects. Symptoms prompt appropriate clinical assessment/testing rather than a diagnosis from snoring or a questionnaire.",
+        "The older AASM guideline informs history and investigation principles; its ICSD-era duration is not substituted for the DSM reference. Routine polysomnography is not required for every insomnia complaint, although suspected breathing/other sleep disorders can need testing."
+      ],
+      "when_to_explore": "Explore any reported sleep change, unexplained fatigue/sleepiness, cognitive difficulty or breathing/schedule clue.",
+      "suggested_local_order": [
+        "Clarify actual schedule, opportunity and complaint.",
+        "Distinguish sleepiness, fatigue and restedness after short sleep.",
+        "Ask relevant breathing/other sleep clues and daytime consequences.",
+        "Review mood, medical/exposure context and professional assessment needs."
+      ],
+      "interpretation_limits": [
+        "Hours alone do not prove normal sleep, insomnia or mania.",
+        "No reported daytime sleepiness does not by itself exclude OSA.",
+        "Do not automatically prescribe sleep restriction or sleeping medication during assessment.",
+        "Restless legs, parasomnias or narcolepsy-like experiences can need specialist review; complete criteria/scoring are outside this package."
+      ],
+      "professional_review": "Professional sleep/medical assessment follows the actual findings; safety-sensitive daytime impairment deserves specific review without waiting for chronic-duration criteria.",
+      "existing_module_links": [],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "10_medical",
+      "label": "Medical conditions and depressive symptoms",
+      "purpose": "Identify reported illness, relevant investigations and physiological-cause versus comorbidity/stress/treatment possibilities.",
+      "benefit_for_depression_assessment": "Avoid a premature unipolar explanation and provide a traceable medical-review handoff without diagnosing physical illness from chat.",
+      "scope": "Reuse the detailed existing medical-condition depression package; focused clues, not a complete internal-medicine diagnostic service.",
+      "concept_ids": [
+        "medical_context",
+        "episode_timeline",
+        "treatment_history",
+        "functioning_distress",
+        "acute_attention_change",
+        "assessment_limits"
+      ],
+      "clinical_source_ids": [
+        "DSM_MEDICAL",
+        "NICE_145",
+        "NICE_239",
+        "VA_2022"
+      ],
+      "clinical_reference": [
+        "Physical illness and depression may coexist without a direct physiological causal disorder. Illness effects, distress, treatment effects and independent depression must be kept separate.",
+        "Keep physical-symptom onset, diagnosis, treatment changes and mood chronology distinct. Diagnosis date is not necessarily disease onset.",
+        "Examples already reviewed include thyroid/endocrine, neurological and B12-related contexts; source evidence varies. NICE advises clinician consideration of thyroid tests with depression and context-based B12 assessment, not an AI blanket laboratory panel.",
+        "Record actual reported findings and attributed professional interpretation. An abnormal result or temporal association does not independently establish the mood cause."
+      ],
+      "when_to_explore": "Take relevant medical history in depression assessment and explore targeted findings or atypical/acute changes when reported.",
+      "suggested_local_order": [
+        "Identify actual reported conditions and diagnostic basis.",
+        "Compare medical/mood/treatment timelines.",
+        "Record actual tests and their source.",
+        "Use the existing detailed module for targeted follow-ups and causal-review needs."
+      ],
+      "interpretation_limits": [
+        "Do not infer an illness from nonspecific fatigue or order universal scans/cancer testing.",
+        "Medical comorbidity does not exclude independent depression.",
+        "Do not convert a patient report into verified laboratory data."
+      ],
+      "professional_review": "The responsible clinician determines investigations, cause and appropriate urgency; current acute physical/cognitive concerns interrupt routine assessment.",
+      "existing_module_links": [
+        "Depression_Due_To_Medical_Condition"
+      ],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    },
+    {
+      "id": "11_substance_medication",
+      "label": "Substance, medication, intoxication and withdrawal-related presentations",
+      "purpose": "Clarify actual exposures and changes that may contribute to mood, anxiety, sleep, psychosis or cognition.",
+      "benefit_for_depression_assessment": "Prevent causal assumptions, identify relevant medical withdrawal concerns and separate independent depressive history from exposure timing.",
+      "scope": "Reuse the detailed substance/medication-induced depression package. Full substance-use-disorder diagnosis and withdrawal treatment are outside scope.",
+      "concept_ids": [
+        "exposure_context",
+        "episode_timeline",
+        "treatment_history",
+        "medical_context",
+        "acute_attention_change",
+        "death_suicide",
+        "assessment_limits"
+      ],
+      "clinical_source_ids": [
+        "DSM_INDUCED",
+        "TIP42",
+        "NICE_215",
+        "NICE_100"
+      ],
+      "clinical_reference": [
+        "Take a neutral history of prescribed/nonprescribed medicines, supplements, alcohol and other substances, with names, actual use and start/change/missed/stop/last-use events.",
+        "Separate each agent's timeline; a positive toxicology result, medicine warning or symptoms occurring afterward do not prove causation in an individual.",
+        "Preserve earlier depressive periods and actual course after already-occurring changes. Do not impose a universal abstinence month before support or independent-depression review.",
+        "Tolerance/dependence or withdrawal alone does not establish a substance use disorder. Intoxication/withdrawal labels need appropriate assessment rather than acceptance of a colloquial label."
+      ],
+      "when_to_explore": "Exposure history is relevant across assessment; expand when an exposure/change or related symptoms are reported.",
+      "suggested_local_order": [
+        "Ask neutrally what is used and actual changes.",
+        "Identify agents separately and compare with symptom onset.",
+        "Review earlier mood history and current medical/safety concerns.",
+        "Use the detailed exposure module and appropriate professional review."
+      ],
+      "interpretation_limits": [
+        "No abrupt-stop/restart/taper experiment to test causation.",
+        "Alcohol or sedative withdrawal can require medically supervised assessment; no home detox protocol is supplied.",
+        "Withdrawal low mood is not automatically an independently qualifying induced depressive disorder."
+      ],
+      "professional_review": "Current severe withdrawal/medical concerns need appropriate medical review; prescribers manage medication decisions. Depression/safety needs remain important while attribution is uncertain.",
+      "existing_module_links": [
+        "Substance_Medication_Induced_Depression"
+      ],
+      "question_sequence_origin": "PROJECT_SEMI_STRUCTURED_POLICY_NOT_VALIDATED_ORDER",
+      "independent_diagnosis_enabled": false
+    }
+  ],
+  "shared_rules": {
+    "coexistence_allowed": true,
+    "unknown_equals_absent": false,
+    "declined_equals_denied": false,
+    "diagnostic_automation_enabled": false,
+    "source_fields_and_wording_are_project_design": true,
+    "selected_question_is_not_only_extractable_fact": true,
+    "shared_fact_may_inform_multiple_pathways": true,
+    "routine_interview_continues_during_urgent_concern": false,
+    "model_error_or_turn_limit_is_diagnosis": false,
+    "questionnaires_equal_diagnoses": false
+  },
+  "policy_origin": "PROJECT_SEMI_STRUCTURED_DESIGN_INFORMED_BY_SOURCES_NOT_A_VALIDATED_SEQUENCE",
+  "runtime_integration": "NOT_CONNECTED",
+  "clinical_review": "NOT_PERFORMED",
+  "final_question_graph": "SHARED_DESIGN_AND_REFERENCE_ROUTER_AVAILABLE_NOT_CLINICALLY_VALIDATED",
+  "scope_gaps": [
+    "Not full diagnostic/treatment modules for every alternative or all anxiety/sleep/psychotic subtypes.",
+    "ADHD, personality disorders, OCD, eating disorders and other possibilities can require review; comprehensive modules are not implemented here.",
+    "Cross-disorder clinician review, final graph, tool selection, verified instrument versions, runtime safety operations and LLM evaluation remain pending."
+  ],
+  "route_handoff": {
+    "status": "ALL_CONCEPTS_MAPPED_TO_SCHEDULED_OR_CONDITIONAL_ROUTES",
+    "reference_base": "package_root",
+    "graph": "Workflow/Interview_Graph/question_graph.json",
+    "complete_route_index": "Integration/route_completion.json",
+    "guide": "README.md",
+    "actual_agents_connected": false,
+    "clinical_validation": false
+  }
+}

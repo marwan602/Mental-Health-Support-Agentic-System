@@ -1,0 +1,309 @@
+{
+  "audited_at": "2026-11-02T16:30:04.637626+00:00",
+  "scope": "Source/content spot checks of clinical foundations plus full mechanical/file/reference consistency audit; not expert clinical validation of every assertion.",
+  "passed": true,
+  "cross_package_checks": 42,
+  "module_test_total": 293,
+  "modules": [
+    {
+      "folder": "MDD",
+      "label": "Major depressive disorder",
+      "guide": "02_MDD_Assessment_Information_Requirements.md",
+      "module_id": "adult_mdd",
+      "package_version": "1.0.1-source-reviewed",
+      "schema_version": "1.0.1",
+      "concepts": 26,
+      "sources": 24,
+      "checks": 19,
+      "passed": true
+    },
+    {
+      "folder": "PDD",
+      "label": "Persistent depressive disorder",
+      "guide": "03_PDD_Assessment_Information_Requirements.md",
+      "module_id": "adult_pdd",
+      "package_version": "1.0.1-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 21,
+      "sources": 17,
+      "checks": 23,
+      "passed": true
+    },
+    {
+      "folder": "PMDD",
+      "label": "Premenstrual dysphoric disorder",
+      "guide": "04_PMDD_Assessment_Information_Requirements.md",
+      "module_id": "adult_pmdd",
+      "package_version": "1.0.0-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 26,
+      "sources": 15,
+      "checks": 28,
+      "passed": true
+    },
+    {
+      "folder": "Substance_Medication_Induced_Depression",
+      "label": "Substance/medication-induced depressive disorder",
+      "guide": "05_Substance_Medication_Induced_Depression_Assessment.md",
+      "module_id": "adult_substance_medication_induced_depression",
+      "package_version": "1.0.0-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 27,
+      "sources": 16,
+      "checks": 36,
+      "passed": true
+    },
+    {
+      "folder": "Depression_Due_To_Medical_Condition",
+      "label": "Depressive disorder due to another medical condition",
+      "guide": "06_Depression_Due_To_Medical_Condition_Assessment.md",
+      "module_id": "adult_depression_due_to_medical_condition",
+      "package_version": "1.0.0-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 30,
+      "sources": 18,
+      "checks": 46,
+      "passed": true
+    },
+    {
+      "folder": "Other_Specified_Depressive_Disorder",
+      "label": "Other specified depressive disorder",
+      "guide": "07_Other_Specified_Depressive_Disorder_Assessment.md",
+      "module_id": "adult_other_specified_depressive_disorder",
+      "package_version": "1.0.1-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 29,
+      "sources": 16,
+      "checks": 45,
+      "passed": true
+    },
+    {
+      "folder": "Unspecified_Depressive_Disorder",
+      "label": "Unspecified depressive disorder",
+      "guide": "08_Unspecified_Depressive_Disorder_Assessment.md",
+      "module_id": "adult_unspecified_depressive_disorder",
+      "package_version": "1.0.0-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 27,
+      "sources": 14,
+      "checks": 43,
+      "passed": true
+    },
+    {
+      "folder": "Alternatives",
+      "label": "Focused alternatives and coexisting-condition pathways",
+      "guide": "09_Alternative_Assessment_Pathways_and_Sources.md",
+      "module_id": "adult_depression_alternatives",
+      "package_version": "1.0.0-source-reviewed",
+      "schema_version": "1.0.0",
+      "concepts": 33,
+      "sources": 35,
+      "checks": 53,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "MDD: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "MDD: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "MDD: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "MDD: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "PDD: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "PDD: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "PDD: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "PDD: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "PMDD: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "PMDD: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "PMDD: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "PMDD: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "Substance_Medication_Induced_Depression: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "Substance_Medication_Induced_Depression: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "Substance_Medication_Induced_Depression: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "Substance_Medication_Induced_Depression: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "Depression_Due_To_Medical_Condition: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "Depression_Due_To_Medical_Condition: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "Depression_Due_To_Medical_Condition: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "Depression_Due_To_Medical_Condition: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "Other_Specified_Depressive_Disorder: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "Other_Specified_Depressive_Disorder: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "Other_Specified_Depressive_Disorder: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "Other_Specified_Depressive_Disorder: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "Unspecified_Depressive_Disorder: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "Unspecified_Depressive_Disorder: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "Unspecified_Depressive_Disorder: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "Unspecified_Depressive_Disorder: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "Alternatives: all structured source references resolve",
+      "passed": true
+    },
+    {
+      "check": "Alternatives: stable module identity in knowledge and output schema",
+      "passed": true
+    },
+    {
+      "check": "Alternatives: explicit adult scope",
+      "passed": true
+    },
+    {
+      "check": "Alternatives: readable guide and entry point exist",
+      "passed": true
+    },
+    {
+      "check": "all eight module suites pass",
+      "passed": true
+    },
+    {
+      "check": "all active JSON parses without duplicate keys",
+      "passed": true
+    },
+    {
+      "check": "all validator Python parses without generating caches",
+      "passed": true
+    },
+    {
+      "check": "local Markdown file links resolve",
+      "passed": true
+    },
+    {
+      "check": "no bundled proprietary manuals or API-key files",
+      "passed": true
+    },
+    {
+      "check": "MDD migration recorded",
+      "passed": true
+    },
+    {
+      "check": "2025 obsolete OSD exclusions removed from active example rules",
+      "passed": true
+    },
+    {
+      "check": "genuine exact-four-day ambiguity remains marked for review",
+      "passed": true
+    },
+    {
+      "check": "redundant alternative exports removed without losing canonical pathways",
+      "passed": true
+    },
+    {
+      "check": "PDD source precedence explicitly rejects mild-only simplification",
+      "passed": true
+    }
+  ],
+  "errors": {
+    "module_runs": [],
+    "json": [],
+    "python": [],
+    "local_links": []
+  },
+  "corrections": [
+    "Applied visually verified 2025 deletions to other-specified examples 2 and 3.",
+    "Added stable module_id to MDD knowledge/output, with explicit contract migration to 1.0.1; existing runtime unchanged.",
+    "Made PDD source precedence explicit where public overview suggests a mild-only scope.",
+    "Removed copied MDD-only criterion-review notes and dangling nested source IDs from other contexts; added recursive-reference regression checks in five suites.",
+    "Updated original coverage/index and removed 11 exactly duplicated alternative pathway JSON exports; canonical records retained."
+  ],
+  "removed_files": [
+    "Alternatives\\01_bipolar_spectrum.json",
+    "Alternatives\\02_anxiety.json",
+    "Alternatives\\03_trauma.json",
+    "Alternatives\\04_adjustment.json",
+    "Alternatives\\05_grief.json",
+    "Alternatives\\06_psychosis.json",
+    "Alternatives\\07_delirium.json",
+    "Alternatives\\08_neurocognitive.json",
+    "Alternatives\\09_sleep.json",
+    "Alternatives\\10_medical.json",
+    "Alternatives\\11_substance_medication.json"
+  ],
+  "backup": "C:\\Users\\DELL\\OneDrive\\Documents\\ChatGPT\\MENTAL HEALTH\\.knowledge_build\\audit_backups\\knowledge_before_audit_20261102.zip",
+  "clinical_review": "NOT_PERFORMED_BY_QUALIFIED_CLINICIAN",
+  "runtime_integration": "NOT_CONNECTED",
+  "readiness": {
+    "research_flowchart_drafting": "READY_WITH_EXPLICIT_REVIEW_GATES",
+    "automated_other_specified_four_day_decision": "DO_NOT_IMPLEMENT_WITHOUT_SOURCE_CLARIFICATION",
+    "clinical_use": "NOT_VALIDATED"
+  }
+}

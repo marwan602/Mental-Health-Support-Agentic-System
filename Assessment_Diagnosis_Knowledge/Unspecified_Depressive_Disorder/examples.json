@@ -1,0 +1,348 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What would you like to discuss today?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I feel low and worn out, and I missed two shifts at work. I cannot remember when it started."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Do you remember whether the low mood began before the start of term six weeks ago?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "Yes, around then. I think the low mood has been there for about six weeks."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "Have you had a professional assessment before?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "Last year a doctor wrote unspecified depressive disorder after a brief appointment. I do not remember any explanation."
+    },
+    {
+      "id": "m7",
+      "speaker": "assistant",
+      "text": "Have you ever had a period of unusually high energy and needing much less sleep?"
+    },
+    {
+      "id": "m8",
+      "speaker": "patient",
+      "text": "I am not ready to talk about that right now."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_unspecified_depressive_disorder",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "feel low"
+          },
+          "duration": {
+            "status": "unknown"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I feel low and worn out, and I missed two shifts at work. I cannot remember when it started.",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "energy_fatigue",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "experience": {
+            "status": "known",
+            "value": "worn out"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "worn out",
+            "supports": [
+              "finding_status",
+              "experience"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "functioning_distress",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "domain": {
+            "status": "known",
+            "value": "work"
+          },
+          "examples": {
+            "status": "known",
+            "value": "missed two shifts"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I missed two shifts at work.",
+            "supports": [
+              "finding_status",
+              "domain",
+              "examples"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_unspecified_depressive_disorder",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "feel low"
+          },
+          "duration": {
+            "status": "known",
+            "value": "about six weeks"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I feel low and worn out, and I missed two shifts at work. I cannot remember when it started.",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          },
+          {
+            "message_id": "m4",
+            "quote": "Yes, around then. I think the low mood has been there for about six weeks.",
+            "supports": [
+              "duration"
+            ],
+            "context_message_ids": [
+              "m3"
+            ]
+          }
+        ],
+        "uncertainty_notes": [
+          "Initial onset uncertainty retained in earlier source; later duration is approximate, not an exact onset date."
+        ],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "energy_fatigue",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "experience": {
+            "status": "known",
+            "value": "worn out"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "worn out",
+            "supports": [
+              "finding_status",
+              "experience"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "functioning_distress",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "domain": {
+            "status": "known",
+            "value": "work"
+          },
+          "examples": {
+            "status": "known",
+            "value": "missed two shifts"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I missed two shifts at work.",
+            "supports": [
+              "finding_status",
+              "domain",
+              "examples"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "reported_clinical_formulation",
+        "episode_key": "last_year",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "historical",
+        "time_reference": null,
+        "attributes": {
+          "label_as_reported": {
+            "status": "known",
+            "value": "unspecified depressive disorder"
+          },
+          "professional": {
+            "status": "known",
+            "value": "doctor"
+          },
+          "assessment_time": {
+            "status": "known",
+            "value": "last year"
+          },
+          "context": {
+            "status": "known",
+            "value": "brief appointment"
+          },
+          "certainty": {
+            "status": "known",
+            "value": "does not remember explanation"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m6",
+            "quote": "Last year a doctor wrote unspecified depressive disorder after a brief appointment. I do not remember any explanation.",
+            "supports": [
+              "finding_status",
+              "label_as_reported",
+              "professional",
+              "assessment_time",
+              "context",
+              "certainty"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "assessment_limit",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "target": {
+            "status": "known",
+            "value": "history of activation and reduced sleep need"
+          },
+          "reported_limit": {
+            "status": "known",
+            "value": "declines_for_now"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m8",
+            "quote": "I am not ready to talk about that right now.",
+            "supports": [
+              "finding_status",
+              "target",
+              "reported_limit"
+            ],
+            "context_message_ids": [
+              "m7"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [
+      {
+        "question_id": "activation_history.initial",
+        "question_status": "declined",
+        "unanswered_target": "Lifetime activation history remains unresolved."
+      }
+    ],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Current duration goes from unknown to approximate supported duration. A historical reported diagnosis stays historical/attributed. Declined activation history is not absent activation. The incomplete current assessment does not become unspecified depression. Safety remains unassessed; authored fixtures are not live-model performance."
+}

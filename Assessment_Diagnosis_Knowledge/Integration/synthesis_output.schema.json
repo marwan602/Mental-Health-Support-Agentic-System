@@ -1,0 +1,231 @@
+{
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "module": {
+            "enum": [
+              "Alternatives",
+              "Depression_Due_To_Medical_Condition",
+              "MDD",
+              "Other_Specified_Depressive_Disorder",
+              "PDD",
+              "PMDD",
+              "Substance_Medication_Induced_Depression",
+              "Unspecified_Depressive_Disorder"
+            ]
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "possible",
+              "less_supported",
+              "insufficient_information",
+              "requires_professional_review"
+            ]
+          },
+          "period_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "criteria_review": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "requirement": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "enum": [
+                    "supported",
+                    "contradicted",
+                    "unclear",
+                    "not_assessed",
+                    "requires_professional_review"
+                  ]
+                },
+                "evidence_pointers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_references": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "requirement",
+                "status",
+                "evidence_pointers",
+                "explanation",
+                "source_references"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "supported",
+                          "contradicted"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "evidence_pointers": {
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "minItems": 1
+          },
+          "alternative_explanations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "remaining_questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "module",
+          "explanation",
+          "status",
+          "period_ids",
+          "criteria_review",
+          "alternative_explanations",
+          "remaining_questions"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "safety_handoff": {
+      "type": "object",
+      "properties": {
+        "reported_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unresolved_needs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "response_delivered": {
+          "type": "boolean"
+        },
+        "delivery_record_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "reported_concerns",
+        "unresolved_needs",
+        "response_delivered",
+        "delivery_record_reference"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "response_delivered": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "delivery_record_reference": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "measurement_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "assessment_limits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "professional_review_required": {
+      "const": true
+    },
+    "confirmed_diagnosis": {
+      "type": "null"
+    },
+    "prescription": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "summary",
+    "candidates",
+    "safety_handoff",
+    "measurement_notes",
+    "assessment_limits",
+    "professional_review_required",
+    "confirmed_diagnosis",
+    "prescription"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

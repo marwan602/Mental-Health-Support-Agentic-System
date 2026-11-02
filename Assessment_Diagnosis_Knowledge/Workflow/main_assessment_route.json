@@ -1,0 +1,330 @@
+{
+  "route_id": "adult_depression_main_assessment",
+  "version": "0.1.0-design",
+  "date": "2026-11-02",
+  "status": "PROPOSED_SOURCE_INFORMED_PROJECT_DESIGN_NOT_CLINICALLY_VALIDATED",
+  "population": {
+    "min_age": 18,
+    "max_age": null,
+    "children_pathway_included": false
+  },
+  "interview_style": "semi_structured",
+  "runtime_integration": "NOT_CONNECTED",
+  "source_registry": "main_assessment_route_sources.json",
+  "exact_order_origin": "PROJECT_DESIGN",
+  "exact_order_clinically_validated": false,
+  "opening_mode": "open_invitation_after_participation_setup",
+  "default_module_order": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9"
+  ],
+  "modules": [
+    {
+      "id": "M0",
+      "title": "Welcome, scope and participation",
+      "knowledge_refs": [],
+      "source_ids": [
+        "NICE_197"
+      ],
+      "purpose": "Establish adult eligibility, usable channel and willingness to proceed; explain AI support and limits.",
+      "transition_condition": "Person chooses to proceed with an accessible channel, or scope/access/participation needs are recorded.",
+      "example_wording": "I’m an AI assessment assistant. I can help organize what you tell me for professional review. You can skip questions, pause or stop. Would you like to begin?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M1",
+      "title": "Person's story and initial orientation",
+      "knowledge_refs": [
+        "MDD/knowledge.json"
+      ],
+      "source_ids": [
+        "INTERVIEW_BOOK",
+        "WHO_TRAIN_DEP"
+      ],
+      "purpose": "Start openly; retain volunteered symptoms, initial time course, functional impact and separate care priorities.",
+      "transition_condition": "Enough of the main concern is understood to choose a focused target; no fixed number of opening questions.",
+      "example_wording": "What has been troubling you, and what would you like help with?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M2",
+      "title": "Early direct safety enquiry",
+      "knowledge_refs": [
+        "MDD/knowledge.json",
+        "Alternatives/knowledge.json"
+      ],
+      "source_ids": [
+        "NICE_222",
+        "NIMH_BSSA",
+        "NICE_225"
+      ],
+      "purpose": "Ask directly about suicide-related concerns; clarify passive death wishes, suicidal thoughts and self-harm separately when relevant. Any concern may interrupt every module.",
+      "transition_condition": "Current review needs and unresolved safety information are recorded; concern routes to the reviewed setting-specific safety pathway, not routine completion.",
+      "example_wording": "Have you recently had thoughts of ending your life?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M3",
+      "title": "Recent symptoms, timing and functioning",
+      "knowledge_refs": [
+        "MDD/knowledge.json"
+      ],
+      "source_ids": [
+        "WHO_TRAIN_DEP",
+        "NICE_222"
+      ],
+      "purpose": "Assess mood, interest/pleasure and the remaining relevant depressive symptom domains, with distress/function and baseline change. Preserve recent and longer periods separately.",
+      "transition_condition": "Core domains have meaningful coverage or explicit gaps; use local follow-up rules instead of exhaustive questioning about one symptom.",
+      "example_wording": "How has your mood been over the past two weeks?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M4",
+      "title": "Important alternative explanations",
+      "knowledge_refs": [
+        "Alternatives/knowledge.json",
+        "Substance_Medication_Induced_Depression/knowledge.json",
+        "Depression_Due_To_Medical_Condition/knowledge.json"
+      ],
+      "source_ids": [
+        "NICE_185",
+        "VA_POCKET_2022",
+        "APA_EVALUATION"
+      ],
+      "purpose": "Review activation history, physical/neurological conditions, medicines/supplements and substance exposure; expand relevant findings using the existing focused packages.",
+      "transition_condition": "Relevant alternative evidence or unresolved work-up is recorded before a depressive-disorder formulation; missing data never rule an alternative out.",
+      "example_wording": "Have there been distinct periods when your energy or activity was very different from usual?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M5",
+      "title": "Longitudinal course and previous care",
+      "knowledge_refs": [
+        "MDD/knowledge.json",
+        "PDD/knowledge.json",
+        "Other_Specified_Depressive_Disorder/knowledge.json"
+      ],
+      "source_ids": [
+        "APA_EVALUATION",
+        "NICE_222"
+      ],
+      "purpose": "Clarify first onset, previous periods, recovery intervals, long-standing symptoms, past diagnoses/treatment and response, and relevant family history.",
+      "transition_condition": "A provisional timeline distinguishes current episode, longstanding background and previous episodes, with uncertainties retained.",
+      "example_wording": "Before this recent period, were there other times when you felt similarly?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M6",
+      "title": "Applicable pattern and feature branches",
+      "knowledge_refs": [
+        "MDD/knowledge.json",
+        "PDD/knowledge.json",
+        "PMDD/knowledge.json",
+        "Other_Specified_Depressive_Disorder/knowledge.json",
+        "Unspecified_Depressive_Disorder/knowledge.json"
+      ],
+      "source_ids": [
+        "ACOG_4",
+        "ISPMD_2011",
+        "NIMH_SEASONAL"
+      ],
+      "purpose": "Use the branch index for menstrual timing, perinatal context, seasons, symptom features and unresolved/residual presentations. Verify each feature's applicability in its own package.",
+      "transition_condition": "Applicable branches are explored, deferred for longitudinal records, or retained for professional review; no requirement to ask every branch of every person.",
+      "example_wording": "Do these changes follow any recurring pattern over time?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M7",
+      "title": "Broader context, coexisting concerns and care priorities",
+      "knowledge_refs": [
+        "Alternatives/knowledge.json"
+      ],
+      "source_ids": [
+        "NICE_222",
+        "APA_EVALUATION",
+        "NICE_197",
+        "NIMH_DEP"
+      ],
+      "purpose": "Clarify relevant anxiety/trauma/loss, relationships, supports, stressors, sleep/cognitive concerns and care priorities. Avoid unnecessary trauma detail; distinguish clinical evidence from care context.",
+      "transition_condition": "Relevant context and coexisting pathways are recorded with priorities, barriers and remaining questions; topic refusal is respected.",
+      "example_wording": "What has changed in your day-to-day life since this began?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M8",
+      "title": "Optional standardized measurement checkpoint",
+      "knowledge_refs": [
+        "MDD/knowledge.json",
+        "PMDD/knowledge.json"
+      ],
+      "source_ids": [
+        "PHQ9_2001",
+        "PHQ2_2003",
+        "ISPMD_2011"
+      ],
+      "purpose": "Offer a separately specified appropriate measure if useful and acceptable. PHQ-2 is not required before PHQ-9, and neither is an all-type diagnostic gate.",
+      "transition_condition": "Tool result or reason not administered is recorded. Approved protocol/language, source answers, timeframe, missing-item policy and valid scoring are needed before use.",
+      "example_wording": "Would you be comfortable completing a brief questionnaire to help us record a baseline?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    },
+    {
+      "id": "M9",
+      "title": "Summary, correction and professional-review handoff",
+      "knowledge_refs": [
+        "MDD/knowledge.json",
+        "PDD/knowledge.json",
+        "PMDD/knowledge.json",
+        "Substance_Medication_Induced_Depression/knowledge.json",
+        "Depression_Due_To_Medical_Condition/knowledge.json",
+        "Other_Specified_Depressive_Disorder/knowledge.json",
+        "Unspecified_Depressive_Disorder/knowledge.json",
+        "Alternatives/knowledge.json"
+      ],
+      "source_ids": [
+        "VA_POCKET_2022",
+        "NICE_197"
+      ],
+      "purpose": "Summarize supported findings, conflicts, periods, unresolved questions and review needs. Invite correction; organize candidate explanations without confirming diagnoses.",
+      "transition_condition": "Useful handoff is prepared, or assessment pauses with gaps. Professional approval is never inferred from silence or unavailable review.",
+      "example_wording": "Have I understood your experience correctly, or is there something you would change or add?",
+      "example_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT_ITEM"
+    }
+  ],
+  "branch_index": [
+    {
+      "id": "current_episode",
+      "trigger": "Current/recent depressive symptom account",
+      "refs": [
+        "MDD/knowledge.json"
+      ],
+      "purpose": "Episode-level assessment; not every depressive episode establishes MDD."
+    },
+    {
+      "id": "persistent_course",
+      "trigger": "Longstanding low mood, incomplete recovery or unclear long-term baseline",
+      "refs": [
+        "PDD/knowledge.json",
+        "MDD/knowledge.json"
+      ],
+      "purpose": "Differentiate persistent background and superimposed episodes using the adult course contract."
+    },
+    {
+      "id": "menstrual_pattern",
+      "trigger": "Relevant menstrual/ovarian context established with consent; cyclicity may need clarification",
+      "refs": [
+        "PMDD/knowledge.json"
+      ],
+      "purpose": "Distinguish a possible cycle-linked disorder from premenstrual worsening; prospective records may require later contacts."
+    },
+    {
+      "id": "exposure",
+      "trigger": "Potential medication/substance temporal relationship or uncertain relevant exposure",
+      "refs": [
+        "Substance_Medication_Induced_Depression/knowledge.json"
+      ],
+      "purpose": "Document exposure, withdrawal/change and timeline; temporal coincidence does not establish cause."
+    },
+    {
+      "id": "medical_attribution",
+      "trigger": "Possible relevant physical/neurological illness or unexplained clinical presentation",
+      "refs": [
+        "Depression_Due_To_Medical_Condition/knowledge.json",
+        "Alternatives/knowledge.json"
+      ],
+      "purpose": "Document evidence and clinical work-up needed; no causal assignment from a chat or illness name."
+    },
+    {
+      "id": "residual_review",
+      "trigger": "Significant depressive presentation does not clearly fit after relevant review, or important information remains unavailable",
+      "refs": [
+        "Other_Specified_Depressive_Disorder/knowledge.json",
+        "Unspecified_Depressive_Disorder/knowledge.json"
+      ],
+      "purpose": "Professional classification review; incompleteness is not automatically unspecified depressive disorder. No automated four-day rule."
+    },
+    {
+      "id": "features_and_contexts",
+      "trigger": "Applicable clues, consented life-stage context or an important feature still unclear",
+      "refs": [
+        "MDD/knowledge.json",
+        "PDD/knowledge.json"
+      ],
+      "purpose": "Review perinatal/seasonal context and applicable anxious, mixed, melancholic, atypical, psychotic or catatonic features; do not attach every feature to every category."
+    },
+    {
+      "id": "alternatives_and_comorbidity",
+      "trigger": "Brief core review or relevant evidence/uncertainty",
+      "refs": [
+        "Alternatives/knowledge.json"
+      ],
+      "purpose": "Focused bipolar, anxiety, trauma, adjustment, grief, psychosis, delirium, cognitive, sleep, medical and exposure pathways; not full diagnosis of every alternative."
+    }
+  ],
+  "global_rules": {
+    "safety_review_at_any_module": true,
+    "early_safety_checkpoint": "M2",
+    "safety_priority_does_not_wait_for_module_order": true,
+    "safety_pathway_implemented": false,
+    "urgent_medical_or_mental_state_concerns_interrupt": true,
+    "participation_pause_skip_stop_at_any_module": true,
+    "source_linked_history_review_after_every_reply": true,
+    "extract_relevant_volunteered_information_from_any_module": true,
+    "module_coverage_is_not_diagnostic_sufficiency": true,
+    "negative_core_screen_does_not_close_all_depression_paths": true,
+    "repeated_question_allowed_only_for_documented_reason": true,
+    "causal_diagnosis_assigned_from_temporal_association": false,
+    "confirmed_diagnosis_assigned_by_ai": false,
+    "therapies_or_homework_are_diagnostic_criteria": false
+  },
+  "selection_policy": {
+    "origin": "PROJECT_DESIGN_TO_BE_EVALUATED",
+    "priority_order": [
+      "urgent_review_or_participation_need",
+      "unresolved_safety_target",
+      "ambiguity_or_contradiction_that_changes_next_step",
+      "useful_missing_detail_of_active_finding",
+      "uncovered_relevant_core_domain",
+      "applicable_branch_or_measurement",
+      "summary_with_gaps"
+    ],
+    "followup_condition": "Missing detail is applicable to this concept, not already answered for the same period, and useful for review or next selection.",
+    "burden_rule": "Do not require every optional attribute or finish all details of one concept before reviewing other important domains; no fixed question count or clinical numeric priority score is established.",
+    "off_topic_rule": "Extract relevant new information first; acknowledge it and update priority. Offer a gentle return only if the earlier target remains useful and the person wants to continue.",
+    "refusal_rule": "Distinguish decline, unclear answer, not answered and not applicable; never coerce or mark a refused target absent."
+  },
+  "project_coverage_states": {
+    "supported": "Relevant source-linked information is available for this particular target and period; not proof a diagnosis is established.",
+    "needs_clarification": "Some information exists but its meaning, period or detail is unclear.",
+    "not_asked": "No targeted enquiry yet; absence in the transcript is not symptom absence.",
+    "declined": "Person chose not to discuss this target.",
+    "deferred": "Target remains open for a later point/contact or professional work-up.",
+    "not_applicable": "Documented applicability reason; not inferred from age, name or appearance."
+  },
+  "coverage_state_origin": "PROJECT_SOFTWARE_DESIGN_NOT_CLINICAL_SCALE",
+  "planned_handoff": [
+    "source_linked_findings_by_concept_subject_and_period",
+    "patient_corrections_and_conflicts",
+    "question_coverage_and_remaining_gaps",
+    "focused_alternative_review_needs",
+    "instrument_results_or_not_administered_reason",
+    "safety_review_need_and_actual_delivery_status",
+    "separate_care_priorities_and_therapy_context",
+    "provisional_explanations_for_professional_review"
+  ],
+  "unresolved_before_execution": [
+    "clinical review of route and branch applicability",
+    "operational setting-specific safety/referral workflow",
+    "shared concept mapping across packages",
+    "final target catalogue and question/attribute graph",
+    "standardized instrument and language protocols",
+    "runtime integration and fictional-case evaluation"
+  ]
+}

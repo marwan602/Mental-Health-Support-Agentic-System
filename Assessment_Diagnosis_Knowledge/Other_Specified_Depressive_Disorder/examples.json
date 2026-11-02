@@ -1,0 +1,465 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What has been happening?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I get low spells. The latest one lasted about three days. In the latest one I felt sad, slept badly and could not concentrate. I missed a work shift."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Has that happened every month for the last year?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "Most months, but I cannot remember whether it happened in February or March."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "Do you feel back to your usual self between spells?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "Yes, usually."
+    },
+    {
+      "id": "m7",
+      "speaker": "assistant",
+      "text": "Have you ever had a much longer low period?"
+    },
+    {
+      "id": "m8",
+      "speaker": "patient",
+      "text": "When I was 22, I felt down for six weeks, but I never saw anyone about it."
+    },
+    {
+      "id": "m9",
+      "speaker": "assistant",
+      "text": "Is there anything you want to correct about the latest spell?"
+    },
+    {
+      "id": "m10",
+      "speaker": "patient",
+      "text": "Actually, the latest spell lasted exactly four days. The older spells were about three days."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_other_specified_depressive_disorder",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "felt sad"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "In the latest one I felt sad, slept badly and could not concentrate.",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "sleep_disturbance",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "pattern": {
+            "status": "unknown"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "slept badly",
+            "supports": [
+              "finding_status"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "cognition_decisions",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "kind": {
+            "status": "known",
+            "value": "concentration"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "could not concentrate",
+            "supports": [
+              "finding_status",
+              "kind"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "functioning_distress",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "domain": {
+            "status": "known",
+            "value": "work"
+          },
+          "examples": {
+            "status": "known",
+            "value": "missed a work shift"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I missed a work shift.",
+            "supports": [
+              "finding_status",
+              "domain",
+              "examples"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "brief_period_details",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "duration": {
+            "status": "known",
+            "value": "about three days"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "The latest one lasted about three days.",
+            "supports": [
+              "finding_status",
+              "duration"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_other_specified_depressive_disorder",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "felt sad"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "In the latest one I felt sad, slept badly and could not concentrate.",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "sleep_disturbance",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "pattern": {
+            "status": "unknown"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "slept badly",
+            "supports": [
+              "finding_status"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "cognition_decisions",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "kind": {
+            "status": "known",
+            "value": "concentration"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "could not concentrate",
+            "supports": [
+              "finding_status",
+              "kind"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "functioning_distress",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "domain": {
+            "status": "known",
+            "value": "work"
+          },
+          "examples": {
+            "status": "known",
+            "value": "missed a work shift"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I missed a work shift.",
+            "supports": [
+              "finding_status",
+              "domain",
+              "examples"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "brief_period_details",
+        "episode_key": "recent_spell",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "duration": {
+            "status": "known",
+            "value": "exactly four days, corrected by patient"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "The latest one lasted about three days.",
+            "supports": [
+              "finding_status",
+              "duration"
+            ],
+            "context_message_ids": []
+          },
+          {
+            "message_id": "m10",
+            "quote": "Actually, the latest spell lasted exactly four days. The older spells were about three days.",
+            "supports": [
+              "duration"
+            ],
+            "context_message_ids": [
+              "m9"
+            ]
+          }
+        ],
+        "uncertainty_notes": [
+          "Latest-period duration explicitly corrected; older source retained as history. Exact four-day classification boundary requires source clarification, but symptom/history requirements are also unresolved."
+        ],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "recurrence_pattern",
+        "episode_key": "reported_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "episodes_per_month": {
+            "status": "known",
+            "value": "most months"
+          },
+          "exceptions": {
+            "status": "known",
+            "value": "cannot remember February or March"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m4",
+            "quote": "Most months, but I cannot remember whether it happened in February or March.",
+            "supports": [
+              "finding_status",
+              "episodes_per_month",
+              "exceptions"
+            ],
+            "context_message_ids": [
+              "m3"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "between_period_course",
+        "episode_key": "reported_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "return_to_baseline": {
+            "status": "known",
+            "value": "usually returns to usual self"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m6",
+            "quote": "Yes, usually.",
+            "supports": [
+              "finding_status",
+              "return_to_baseline"
+            ],
+            "context_message_ids": [
+              "m5"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "lifetime_threshold_history",
+        "episode_key": "age_22",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "historical",
+        "time_reference": null,
+        "attributes": {
+          "previous_depressive_periods": {
+            "status": "known",
+            "value": "low for six weeks at age 22"
+          },
+          "uncertainty": {
+            "status": "known",
+            "value": "never assessed then"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m8",
+            "quote": "When I was 22, I felt down for six weeks, but I never saw anyone about it.",
+            "supports": [
+              "finding_status",
+              "previous_depressive_periods",
+              "uncertainty"
+            ],
+            "context_message_ids": [
+              "m7"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Only reported symptom domains are stored. Unknown symptoms are not absent. Most months is not verified monthly for 12 consecutive months. Earlier six-week low mood needs lifetime review. Contextual yes and explicit correction are preserved. No named example or category is diagnosed; exact four-day source issue is not resolved automatically. Snapshots are authored fixtures, not live LLM output."
+}

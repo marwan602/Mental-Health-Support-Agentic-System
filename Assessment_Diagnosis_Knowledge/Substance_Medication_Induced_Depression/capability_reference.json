@@ -1,0 +1,102 @@
+{
+  "purpose": "Reference knowledge, not patient evidence or a causal whitelist. Medication capability needs agent-specific current review.",
+  "classification_reference": [
+    {
+      "class": "alcohol",
+      "onset_contexts": [
+        "intoxication",
+        "withdrawal"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "phencyclidine",
+      "onset_contexts": [
+        "intoxication"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "other_hallucinogens",
+      "onset_contexts": [
+        "intoxication"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "inhalants",
+      "onset_contexts": [
+        "intoxication"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "opioids",
+      "onset_contexts": [
+        "intoxication",
+        "withdrawal"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "sedative_hypnotic_anxiolytic",
+      "onset_contexts": [
+        "intoxication",
+        "withdrawal"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "stimulants",
+      "onset_contexts": [
+        "intoxication",
+        "withdrawal"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    },
+    {
+      "class": "other_unknown_substance",
+      "onset_contexts": [
+        "intoxication",
+        "withdrawal"
+      ],
+      "source_id": "DSM_INDUCED",
+      "locator": "Table 1, printed pp.545–546"
+    }
+  ],
+  "table_boundary": "Caffeine, cannabis and tobacco have no depressive-disorder entry in this pinned table. This does not prove harmlessness or authorize relabelling them other/unknown to force a diagnosis.",
+  "medication_examples": [
+    {
+      "agent": "prednisone",
+      "evidence_kind": "label_warning",
+      "source_id": "PREDNISONE_LABEL",
+      "meaning": "Official label describes psychiatric disturbances including severe depression; individual causation not established."
+    },
+    {
+      "agent": "beta-blockers",
+      "evidence_kind": "research_uncertain_for_individual",
+      "source_id": "BETA_2021",
+      "meaning": "Meta-analysis does not support a blanket increased-depression rule; no individual exclusion inferred."
+    },
+    {
+      "agent": "isotretinoin",
+      "evidence_kind": "research_uncertain_for_individual",
+      "source_id": "ISOTRETINOIN_2024",
+      "meaning": "Population-level meta-analysis does not establish increased psychiatric risk overall; assess individuals and confounding."
+    }
+  ],
+  "capability_review_fields": {
+    "agent": "Precisely identified agent/formulation when possible.",
+    "source": "Current label or primary study, URL/version/date and exact locator.",
+    "finding": "Evidence for relevant effects and its limitations.",
+    "reviewer": "Responsible professional/reviewer and review date.",
+    "case_attribution": "Separate clinical judgment, not filled by this extractor."
+  }
+}

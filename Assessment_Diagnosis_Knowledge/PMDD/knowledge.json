@@ -1,0 +1,1749 @@
+{
+  "module_id": "adult_pmdd",
+  "package_version": "1.0.0-source-reviewed",
+  "date": "2026-11-02",
+  "status": "SOURCE_REVIEWED_ASSESSMENT_DESIGN_NOT_CLINICALLY_VALIDATED",
+  "population": {
+    "minimum_age": 18,
+    "maximum_age": null,
+    "origin": "PROJECT_SCOPE",
+    "applicability": "Assess actual menstrual/ovarian/hormonal context; no fixed upper age or assumption from gender."
+  },
+  "classification_basis": "DSM-5-TR PMDD; ISPMD core/variant PMD and C-PASS are separately labelled frameworks",
+  "clinical_reference_rules": {
+    "minimum_total_symptom_groups": 5,
+    "total_symptom_groups": 11,
+    "minimum_core_affective_groups": 1,
+    "core_affective_group_count": 4,
+    "minimum_additional_groups": 1,
+    "timing": "Final week before menses, improvement within a few days after onset, and minimal/absent symptoms in the postmenstrual week; preserve actual dates.",
+    "preceding_year_pattern_required": true,
+    "prospective_daily_confirmation_required": true,
+    "minimum_symptomatic_cycles_for_prospective_confirmation": 2,
+    "distress_or_interference": "OR",
+    "requires_both_distress_and_impairment": false,
+    "coexisting_disorder_automatically_excludes_pmdd": false,
+    "merely_premenstrual_exacerbation_sufficient": false,
+    "retrospective_chat_counts_as_prospective_diary": false,
+    "source_ids": [
+      "DSM_PMDD",
+      "ACOG_7"
+    ],
+    "caution": "Clinical reference requirements, not an automatic classifier or diagnostic sufficiency guarantee."
+  },
+  "criteria_information_map": [
+    {
+      "id": "A",
+      "meaning": "Cycle timing, overall symptom count and recurrence history.",
+      "concept_ids": [
+        "cyclical_timeline",
+        "cycle_context"
+      ],
+      "source_ids": [
+        "DSM_PMDD"
+      ]
+    },
+    {
+      "id": "B",
+      "meaning": "At least one required core affective group.",
+      "concept_ids": [
+        "mood_lability",
+        "irritability_anger",
+        "depressed_affect",
+        "anxiety_tension"
+      ],
+      "source_ids": [
+        "DSM_PMDD"
+      ]
+    },
+    {
+      "id": "C",
+      "meaning": "Additional symptom groups reaching the total; alternatives are not double-counted.",
+      "concept_ids": [
+        "reduced_interest",
+        "concentration_difficulty",
+        "low_energy",
+        "appetite_cravings",
+        "sleep_disturbance",
+        "overwhelmed_control",
+        "physical_symptoms"
+      ],
+      "source_ids": [
+        "ACOG_7",
+        "DSM_PMDD"
+      ]
+    },
+    {
+      "id": "D",
+      "meaning": "Clinically significant distress OR interference.",
+      "concept_ids": [
+        "functioning_distress"
+      ],
+      "source_ids": [
+        "DSM_PMDD"
+      ]
+    },
+    {
+      "id": "E",
+      "meaning": "Not merely exacerbation of another disorder; coexistence can require review.",
+      "concept_ids": [
+        "pme_review",
+        "background_symptoms",
+        "activation_history"
+      ],
+      "source_ids": [
+        "DSM_PMDD",
+        "ISPMD_2011"
+      ]
+    },
+    {
+      "id": "F",
+      "meaning": "Prospective daily confirmation across at least two symptomatic cycles; provisional professional assessment is distinct.",
+      "concept_ids": [
+        "prospective_records"
+      ],
+      "source_ids": [
+        "DSM_PMDD",
+        "ACOG_7"
+      ]
+    },
+    {
+      "id": "G",
+      "meaning": "Substance/medication/hormonal and medical explanations.",
+      "concept_ids": [
+        "hormone_exposure",
+        "medical_context",
+        "exposure_context"
+      ],
+      "source_ids": [
+        "DSM_PMDD"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "mood_lability",
+      "label": "Mood lability",
+      "definition": "Marked mood swings, sudden sadness/tearfulness or rejection sensitivity.",
+      "role": "core_affective",
+      "count_group": "lability",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NHS_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "changes": {
+          "meaning": "Actual mood shifts or rejection-related experiences.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "What kinds of mood changes have you noticed around that time?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Clarify actual shifts and cycle relationship.",
+      "do_not_infer": "Tearfulness alone does not automatically establish lability and a separate depressed-mood group."
+    },
+    {
+      "id": "irritability_anger",
+      "label": "Irritability, anger or conflict",
+      "definition": "Marked irritability/anger or increased interpersonal conflict.",
+      "role": "core_affective",
+      "count_group": "irritability",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NHS_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "examples": {
+          "meaning": "Reported irritability, anger or conflict; avoid blaming language.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Have you noticed changes in irritability or how you get along with others?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Collect examples and whether the change switches off outside the relevant interval.",
+      "do_not_infer": "Anger and conflict are alternatives within one group, not two criteria."
+    },
+    {
+      "id": "depressed_affect",
+      "label": "Depressed mood, hopelessness or self-critical thoughts",
+      "definition": "Marked depressive affect or the specified negative thoughts.",
+      "role": "core_affective",
+      "count_group": "depressive_affect",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NHS_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "content": {
+          "meaning": "Actual mood, future expectations or self-critical thought content.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "How do you feel about yourself and the future during those days?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Distinguish cyclical change from symptoms throughout the month.",
+      "do_not_infer": "Do not count hopelessness and depressed mood as two PMDD groups; assess suicide concerns separately."
+    },
+    {
+      "id": "anxiety_tension",
+      "label": "Anxiety or tension",
+      "definition": "Marked anxiety, tension, or keyed-up/on-edge feelings.",
+      "role": "core_affective",
+      "count_group": "anxiety",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NHS_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "experience": {
+          "meaning": "What the anxious/tension experience is like.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "What is anxiety or tension like for you during that time?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Clarify severity and the rest-of-cycle pattern.",
+      "do_not_infer": "Anxiety alone does not establish a separate anxiety disorder or PMDD."
+    },
+    {
+      "id": "reduced_interest",
+      "label": "Reduced interest",
+      "definition": "Less interest in usual activities.",
+      "role": "additional_symptom",
+      "count_group": "interest",
+      "clinical_source_ids": [
+        "DSM_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "activities": {
+          "meaning": "Usual activities with reduced interest or preserved engagement.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Does your interest in your usual activities change during those days?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Distinguish loss of interest from lack of time/opportunity.",
+      "do_not_infer": "Do not import MDD's two-week duration requirement into this PMDD group."
+    },
+    {
+      "id": "concentration_difficulty",
+      "label": "Concentration difficulty",
+      "definition": "Subjective difficulty concentrating.",
+      "role": "additional_symptom",
+      "count_group": "concentration",
+      "clinical_source_ids": [
+        "DSM_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "tasks": {
+          "meaning": "Concrete attention-related tasks affected.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Do you notice changes in concentration during those days?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Examples and timing, without assuming a cognitive disorder.",
+      "do_not_infer": "An isolated forgotten task is not a clinical threshold."
+    },
+    {
+      "id": "low_energy",
+      "label": "Low energy/fatigue",
+      "definition": "Lethargy, easy fatigue or marked lack of energy.",
+      "role": "additional_symptom",
+      "count_group": "energy",
+      "clinical_source_ids": [
+        "DSM_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "experience": {
+          "meaning": "Fatigue/low energy versus sleepiness as actually reported.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "How does your energy compare at different points in the month?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Clarify the cycle pattern and effect on activity.",
+      "do_not_infer": "Do not attribute all fatigue to the menstrual cycle or PMDD."
+    },
+    {
+      "id": "appetite_cravings",
+      "label": "Appetite, overeating or cravings",
+      "definition": "Marked appetite change, overeating or specific food cravings.",
+      "role": "additional_symptom",
+      "count_group": "appetite",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NHS_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "pattern": {
+          "meaning": "Whether appetite change, overeating, specific cravings, a mixture, or an unclear pattern is reported. Establish its cycle timing separately; the pattern label alone does not establish PMDD.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string",
+          "allowed_values": [
+            "appetite_change",
+            "overeating",
+            "specific_cravings",
+            "mixed",
+            "unclear"
+          ]
+        },
+        "details": {
+          "meaning": "Appetite direction, actual eating or named craving, as supplied.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Have you noticed changes in appetite, eating or cravings at that time?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Preserve which experience was reported.",
+      "do_not_infer": "These alternatives count as one group; appetite change does not establish weight change."
+    },
+    {
+      "id": "sleep_disturbance",
+      "label": "Sleep disturbance",
+      "definition": "Excessive sleep or insomnia.",
+      "role": "additional_symptom",
+      "count_group": "sleep",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NIMH_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "pattern": {
+          "meaning": "Reported sleep complaint.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string",
+          "allowed_values": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        },
+        "sleep_hours": {
+          "meaning": "Reported sleeping time with units/reference period.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "sleep_opportunity": {
+          "meaning": "Opportunity to sleep and external interruptions.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "latency": {
+          "meaning": "Reported time needed to fall asleep, not months of symptom recurrence.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "awakenings": {
+          "meaning": "Night waking and return-to-sleep account.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "wake_timing": {
+          "meaning": "Actual versus usual/intended waking time.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "daytime_effects": {
+          "meaning": "Reported sleepiness, exhaustion or other daytime effects.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Does your sleep change around that time?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Identify complaint before subtype-specific follow-ups.",
+      "do_not_infer": "Insomnia with fatigue is not reduced sleep need; do not infer cycle timing from another symptom."
+    },
+    {
+      "id": "overwhelmed_control",
+      "label": "Overwhelmed or out of control",
+      "definition": "Feeling overwhelmed or out of control.",
+      "role": "additional_symptom",
+      "count_group": "overwhelmed",
+      "clinical_source_ids": [
+        "DSM_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "meaning": {
+          "meaning": "What overwhelmed or out of control means to the person.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Do you feel overwhelmed or out of control during those days?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Clarify the meaning and timing without interpreting it as psychosis.",
+      "do_not_infer": "Do not automatically translate this into dangerous behaviour or a psychotic symptom."
+    },
+    {
+      "id": "physical_symptoms",
+      "label": "Physical symptom group",
+      "definition": "Breast tenderness/swelling, joint/muscle pain, bloating or reported weight gain.",
+      "role": "additional_symptom",
+      "count_group": "physical",
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NHS_PMDD"
+      ],
+      "attribute_specs": {
+        "description": {
+          "meaning": "The person's account of this experience; do not add a diagnosis.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "symptoms": {
+          "meaning": "Actual physical symptoms; multiple symptoms remain one PMDD group.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "weight_if_reported": {
+          "meaning": "Amount/units/time interval only if actually supplied; distinguish sensation of bloating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "onset_relative_to_bleeding": {
+          "meaning": "When this symptom starts relative to a reported period, preserving actual wording.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When this symptom starts to improve; improvement is not necessarily disappearance.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_level": {
+          "meaning": "This symptom outside the premenstrual interval; absent, low, persistent or unclear as actually described.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "duration_within_cycle": {
+          "meaning": "How long this symptom lasts within a cycle; not how many months the recurring pattern has existed.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "intensity_as_reported": {
+          "meaning": "Reported severity/meaning; do not manufacture an instrument rating.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "impact": {
+          "meaning": "Concrete consequence of this symptom.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "What physical changes, if any, do you notice around that time?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Identify each report and its own timing; distinguish pain at menses from premenstrual affective pattern.",
+      "do_not_infer": "Breast tenderness plus bloating is not two PMDD criteria; bloating is not a measured weight gain."
+    },
+    {
+      "id": "cycle_context",
+      "label": "Cycle/reproductive context",
+      "definition": "Reported cycles, bleeding and reproductive circumstances relevant to interpretation.",
+      "role": "cycle_context",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ACOG_7",
+        "ISPMD_2011"
+      ],
+      "attribute_specs": {
+        "bleeding_pattern": {
+          "meaning": "Reported pattern.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string",
+          "allowed_values": [
+            "regular",
+            "irregular",
+            "absent",
+            "unclear"
+          ]
+        },
+        "recent_periods": {
+          "meaning": "Actual reported onset/offset dates and uncertainty.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "usual_cycle_length": {
+          "meaning": "Reported length/variability, not assumed 28 days.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "reproductive_context": {
+          "meaning": "Relevant pregnancy/postpartum/perimenopausal, surgery or other context if supplied.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "hormonal_context": {
+          "meaning": "Whether a treatment may affect bleeding/ovarian activity.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "ovulation_information": {
+          "meaning": "Only actual available evidence; no inference from cycle day.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "What is your usual pattern of periods, and has it changed recently?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Establish actual context before interpreting timing.",
+      "do_not_infer": "Do not infer ovulation on day 14 or equate no bleeding with no ovarian activity."
+    },
+    {
+      "id": "cyclical_timeline",
+      "label": "Symptom timing across cycles",
+      "definition": "Reported onset, improvement, low-symptom interval and recurrence across cycles.",
+      "role": "cycle_pattern",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ACOG_7",
+        "DSM_PMDD"
+      ],
+      "attribute_specs": {
+        "onset_timing": {
+          "meaning": "When the reported group of symptoms starts relative to bleeding.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "improvement_timing": {
+          "meaning": "When improvement starts after bleeding begins.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "postmenstrual_course": {
+          "meaning": "Actual symptoms after menses, not assumed absence.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "history_duration": {
+          "meaning": "How long the recurring pattern has been noticed; this alone does not establish the proportion of affected cycles.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "preceding_year_pattern": {
+          "meaning": "Reported recurrence over the preceding year; do not invent percentages.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "cycles_described": {
+          "meaning": "Which/how many cycles were recalled.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "symptom_scope": {
+          "meaning": "Which symptoms a shared timing statement explicitly refers to.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "recall_limits": {
+          "meaning": "Uncertainty, variability or incomplete recall.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "What happens to those symptoms after your period starts?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Clarify onset and switching-off pattern; distinguish prospective data from memory.",
+      "do_not_infer": "Two retrospective examples do not establish prospective confirmation or the year-long pattern."
+    },
+    {
+      "id": "background_symptoms",
+      "label": "Symptoms outside the premenstrual interval",
+      "definition": "The rest-of-cycle symptom pattern, including ongoing illness or distinct cyclical symptoms.",
+      "role": "differential_context",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "ISPMD_2011",
+        "ACOG_7"
+      ],
+      "attribute_specs": {
+        "symptoms": {
+          "meaning": "What remains present outside the reported premenstrual days.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "timing": {
+          "meaning": "When and how persistently those symptoms occur.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "baseline_intensity": {
+          "meaning": "Reported background burden.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "premenstrual_difference": {
+          "meaning": "What changes premenstrually, including whether symptoms are the same or distinct.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "How do you feel at other times in the month?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Assess symptom-by-symptom pattern rather than ruling in/out from a global answer.",
+      "do_not_infer": "Any background condition does not automatically exclude coexisting PMDD; mere worsening of it is not sufficient for PMDD."
+    },
+    {
+      "id": "prospective_records",
+      "label": "Prospective-record history",
+      "definition": "What diary/rating records exist and what remains unverified.",
+      "role": "measurement_context",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ACOG_7",
+        "DRSP_2006",
+        "CPASS_2017"
+      ],
+      "attribute_specs": {
+        "availability": {
+          "meaning": "What is reported.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string",
+          "allowed_values": [
+            "not_collected",
+            "reportedly_available",
+            "unclear"
+          ]
+        },
+        "instrument": {
+          "meaning": "Tool/version/language actually used, if known.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "coverage": {
+          "meaning": "Actual dates/cycles supplied, not assumed complete.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "recording_method": {
+          "meaning": "Same-day versus recalled/backfilled entries as reported.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "missingness": {
+          "meaning": "Reported gaps or incomplete entries.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "review_history": {
+          "meaning": "Professional review actually reported; not our confirmation.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Have you kept daily symptom ratings across complete cycles?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Ask about records and obtain the actual data through the application, not reconstructed LLM scores.",
+      "do_not_infer": "A statement that a diary exists is not diary verification; retrospective chat never becomes prospective data."
+    },
+    {
+      "id": "hormone_exposure",
+      "label": "Hormonal exposure context",
+      "definition": "Reported contraception/hormone treatment and relevant changes.",
+      "role": "exposure_context",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "ISPMD_2011"
+      ],
+      "attribute_specs": {
+        "treatment": {
+          "meaning": "Name/formulation as supplied; do not infer composition.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "start_change_stop": {
+          "meaning": "Dates of starting/changing/stopping.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "regimen": {
+          "meaning": "Continuous/cyclic/unknown as actually reported.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "bleeding_relationship": {
+          "meaning": "Bleeding changes including possible withdrawal bleeding.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "symptom_relationship": {
+          "meaning": "Reported temporal association; no causal conclusion.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Have hormonal treatments or contraception changed around the time these symptoms changed?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Preserve actual exposure and dates for medical review.",
+      "do_not_infer": "Do not advise stopping/changing hormones or assume bleeding confirms ovulation."
+    },
+    {
+      "id": "pme_review",
+      "label": "Premenstrual exacerbation review",
+      "definition": "Possible premenstrual worsening of an underlying condition; not a new diagnosis assigned by the extractor.",
+      "role": "differential_context",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ISPMD_2011",
+        "DSM_PMDD"
+      ],
+      "attribute_specs": {
+        "underlying_history": {
+          "meaning": "Reported condition and who diagnosed it.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "baseline_pattern": {
+          "meaning": "Symptoms outside the premenstrual interval.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "worsening_pattern": {
+          "meaning": "What becomes worse, when and how much, as reported.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "distinct_symptoms": {
+          "meaning": "Possible new cyclical symptoms distinct from the underlying pattern.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        },
+        "records_needed": {
+          "meaning": "Unresolved cycle-wide symptom information.",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "type": "string"
+        }
+      },
+      "question_example": "Are these the same difficulties you have at other times, or do different symptoms appear?",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "followup_focus": "Preserve uncertainty until cycle-wide evidence and professional review are available.",
+      "do_not_infer": "Do not classify PMDD or PME from one sentence, or force them into a simplistic binary for every case."
+    },
+    {
+      "id": "death_suicide",
+      "label": "Death/suicide-related reports",
+      "definition": "Death/suicide-related reports requiring separate safety assessment; not an additional PMDD symptom-count group.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "ASQ_BSSA",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "experience": {
+          "meaning": "Preserve distinctions.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ]
+        },
+        "recency": {
+          "meaning": "When last/current; do not infer resolution.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "frequency": {
+          "meaning": "Reported recurrence within an explicit reference period; no invented numeric conversion.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "intent": {
+          "meaning": "Intent as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "plan_present": {
+          "meaning": "Whether a plan was explicitly reported or denied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        },
+        "access": {
+          "meaning": "Access to means as reported, without generating procedural details.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "past_behaviour": {
+          "meaning": "Historical self-injury/attempt account, intent and timing.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Available support as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you had thoughts about ending your life?",
+      "followup_focus": "Use dedicated safety pathway; preserve current versus historical information.",
+      "do_not_infer": "Fear of death is not automatically recurrent thoughts of death; self-harm and suicidal intent must be distinguished.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "functioning_distress",
+      "label": "Functioning and distress",
+      "definition": "Reported burden in important life areas.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "domain": {
+          "meaning": "Affected area such as work, relationships or self-care.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "examples": {
+          "meaning": "Concrete difficulty or distress.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "baseline": {
+          "meaning": "Usual functioning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "supports": {
+          "meaning": "Assistance helping preserve functioning.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "How have these changes affected your daily life?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "activation_history",
+      "label": "Activation history",
+      "definition": "Possible distinct elevated/overactive periods requiring review.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NIMH_BIPOLAR"
+      ],
+      "attribute_specs": {
+        "period": {
+          "meaning": "Current/historical time.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "mood": {
+          "meaning": "Elevated, expansive or irritable mood as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "energy_activity": {
+          "meaning": "Change in energy/activity.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "sleep_need": {
+          "meaning": "Sleep need and tiredness, not just sleep hours.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "other_changes": {
+          "meaning": "Associated speech, thoughts, confidence or risky behaviour.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "duration": {
+          "meaning": "Duration of that period.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "impact": {
+          "meaning": "Consequences or other observers.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "exposure_context": {
+          "meaning": "Medicines/substances/medical context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you had a distinct period of unusually increased energy or activity?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "medical_context",
+      "label": "Medical context",
+      "definition": "Relevant reported medical history and symptoms.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "conditions": {
+          "meaning": "Reported conditions; distinguish reported diagnosis from confirmation.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "timeline": {
+          "meaning": "Relationship to symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "investigations": {
+          "meaning": "Results only if actually supplied.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "clinician_review": {
+          "meaning": "Known professional assessment or unresolved need.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Are there health conditions that might be relevant to these changes?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "exposure_context",
+      "label": "Medicines and substances",
+      "definition": "Relevant treatment/substance exposure account.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_222",
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "name": {
+          "meaning": "Named exposure.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "dose_use": {
+          "meaning": "Reported amount/use; never recommend a dose.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "start_change_stop": {
+          "meaning": "Timing of changes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "symptom_timing": {
+          "meaning": "Reported temporal relationship.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "source_kind": {
+          "meaning": "Medicine, alcohol, other substance or unclear.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have any medicines or substance-use patterns changed around this time?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "psychotic_experience",
+      "label": "Psychotic experiences",
+      "definition": "Reported experiences requiring specialist interpretation.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "DSM_PMDD",
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "kind": {
+          "meaning": "Experience as described, not an automatic diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "content": {
+          "meaning": "Brief relevant content without affirming beliefs.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "mood_relationship": {
+          "meaning": "During versus outside mood episodes.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "conviction_context": {
+          "meaning": "Reported belief/context and uncertainty.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "safety_concerns": {
+          "meaning": "Any reported urgent implications.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_mood_congruence": {
+          "meaning": "Professional mood-congruence description if actually supplied; do not invent it.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false,
+          "allowed_values": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      "question_example": "Have you had experiences that other people do not seem to share?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "treatment_history",
+      "label": "Previous care",
+      "definition": "Prior mental-health assessment and care.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_222"
+      ],
+      "attribute_specs": {
+        "reported_diagnosis": {
+          "meaning": "Person-reported professional diagnosis.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "treatment": {
+          "meaning": "Therapy/medicines/admissions as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "period": {
+          "meaning": "When and for which symptoms.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "response": {
+          "meaning": "Reported benefits, persistence or unwanted effects.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "use": {
+          "meaning": "Actual use and barriers as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Have you received help for something similar before?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "family_history",
+      "label": "Family history",
+      "definition": "Relevant family mood/psychiatric history.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "VA_2022"
+      ],
+      "attribute_specs": {
+        "relative": {
+          "meaning": "Relationship, without unnecessary identifying details.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "reported_condition": {
+          "meaning": "Condition as reported.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "certainty": {
+          "meaning": "How the person knows; unknown remains unknown.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Is there relevant mental-health history in your family?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    },
+    {
+      "id": "life_context",
+      "label": "Life context",
+      "definition": "Relevant stress, loss, trauma and support.",
+      "count_group": null,
+      "clinical_source_ids": [
+        "NICE_222",
+        "APA_GRIEF"
+      ],
+      "attribute_specs": {
+        "events": {
+          "meaning": "Events relevant to symptom timeline.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "timing": {
+          "meaning": "Temporal relationship.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "support": {
+          "meaning": "Current supports.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "barriers": {
+          "meaning": "Practical barriers.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        },
+        "meaning": {
+          "meaning": "Person's interpretation of the context.",
+          "type": "string",
+          "origin": "PROJECT_DESIGN",
+          "required_on_every_report": false
+        }
+      },
+      "question_example": "Has anything important been happening around the time these changes began?",
+      "followup_focus": "Ask only relevant unanswered context; do not conduct every alternative interview.",
+      "do_not_infer": "A contextual association is not a confirmed causal explanation.",
+      "question_origin": "PROJECT_AUTHORED_NOT_VALIDATED_INSTRUMENT",
+      "field_origin": "PROJECT_FIELDS_OPERATIONALIZING_CITED_CLINICAL_DOMAINS",
+      "role": "supporting_review"
+    }
+  ],
+  "value_sets": {
+    "finding_status": {
+      "reported_present": "Explicitly described or affirmed in context; not clinical confirmation.",
+      "reported_absent": "Explicitly denied for this subject/period.",
+      "unclear": "Meaning or polarity unresolved.",
+      "conflicting": "Accounts for the same subject/period conflict and are retained."
+    },
+    "temporal_status": {
+      "current": "Described as relevant to current period.",
+      "historical": "An earlier period.",
+      "unclear": "Timing unresolved."
+    },
+    "detail_status": {
+      "known": "A supported value is available.",
+      "unknown": "Relevant but unresolved; no value asserted.",
+      "not_applicable": "Inapplicability is explicitly justified; not equivalent to not asked."
+    },
+    "question_status": {
+      "not_asked": "No recorded question.",
+      "answered": "Target addressed.",
+      "partially_answered": "Some target information supplied.",
+      "unclear": "Response ambiguous.",
+      "declined": "Person chose not to answer."
+    },
+    "semantic_check_status": {
+      "supported": "Evidence appears to support the claim.",
+      "needs_review": "Meaning/attribution remains unresolved."
+    },
+    "prospective_review_status": {
+      "not_evaluated": "No assessment of actual supplied diary data.",
+      "no_diary_supplied": "No actual diary data supplied; reported existence is separate.",
+      "incomplete_or_unverified": "Some data available, but completeness/provenance or interpretation unresolved.",
+      "requires_professional_review": "Available information needs professional interpretation; not diagnostic confirmation."
+    }
+  },
+  "prospective_measurement": {
+    "candidate_instrument": "DRSP",
+    "scale_minimum": 1,
+    "scale_maximum": 6,
+    "retrospective_screener": "PSST",
+    "research_scoring_reference": "C-PASS 2017",
+    "cpass_implemented": false,
+    "missing_rating_is_zero": false,
+    "source_ids": [
+      "DRSP_2006",
+      "PSST_2003",
+      "CPASS_2017"
+    ]
+  },
+  "diagnostic_automation_enabled": false,
+  "runtime_integration": "NOT_CONNECTED",
+  "clinical_review": "NOT_PERFORMED",
+  "final_question_graph": "SHARED_DESIGN_AND_REFERENCE_ROUTER_AVAILABLE_NOT_CLINICALLY_VALIDATED",
+  "route_handoff": {
+    "status": "ALL_CONCEPTS_MAPPED_TO_SCHEDULED_OR_CONDITIONAL_ROUTES",
+    "reference_base": "package_root",
+    "graph": "Workflow/Interview_Graph/question_graph.json",
+    "complete_route_index": "Integration/route_completion.json",
+    "guide": "README.md",
+    "actual_agents_connected": false,
+    "clinical_validation": false
+  }
+}

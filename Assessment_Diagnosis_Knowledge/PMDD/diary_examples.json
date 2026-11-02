@@ -1,0 +1,38 @@
+{
+  "fictional_only": true,
+  "example": {
+    "module_id": "adult_pmdd",
+    "instrument_id": "DRSP",
+    "instrument_version": "unverified_sample_metadata",
+    "language": "en",
+    "cycles": [],
+    "bleeding_events": [],
+    "ratings": [
+      {
+        "observation_date": "2026-10-29",
+        "recorded_at": "2026-10-29T21:00:00+02:00",
+        "observation_utc_offset": "+02:00",
+        "collection_mode": "prospective_daily",
+        "entry_origin": "fictional_example",
+        "item_id": 1,
+        "rating": 3,
+        "missing_reason": null,
+        "cycle_ref": null
+      },
+      {
+        "observation_date": "2026-10-30",
+        "recorded_at": null,
+        "observation_utc_offset": null,
+        "collection_mode": "imported_unverified",
+        "entry_origin": "fictional_example",
+        "item_id": 1,
+        "rating": null,
+        "missing_reason": "No entry supplied.",
+        "cycle_ref": null
+      }
+    ],
+    "provenance_notes": [
+      "Two fictional partial days, not two cycles. Metadata is illustrative and is not a verified instrument administration."
+    ]
+  }
+}

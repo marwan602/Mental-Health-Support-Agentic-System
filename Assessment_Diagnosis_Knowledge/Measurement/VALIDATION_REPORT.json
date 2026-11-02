@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "arithmetic_checks_passed": 24,
+  "profile_source_references": "PASS",
+  "item_concept_references": "PASS",
+  "graph_extension_reference": "PASS",
+  "local_links": "PASS",
+  "runtime_integration": "NOT_CONNECTED",
+  "clinical_validation": false,
+  "scope": "Arithmetic and structural checks only",
+  "profiles": 8,
+  "sources": 21,
+  "fictional_input_output_examples_checked": 4
+}

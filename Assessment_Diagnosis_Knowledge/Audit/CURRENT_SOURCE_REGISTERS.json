@@ -1,0 +1,1685 @@
+[
+  {
+    "register": "Alternatives\\sources.json",
+    "records": {
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_185": {
+        "title": "NICE CG185, Bipolar disorder",
+        "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+        "locator": "1.2.1–1.2.3; 1.3.1–1.3.3: recognition/referral, assessment and differential",
+        "used_for": "Depression presentations require lifetime overactivity/disinhibition history; specialist review; questionnaires not used for primary-care bipolar identification",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke et al., 2001, PHQ-9 validity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Abstract; Methods; diagnostic-status comparison",
+        "used_for": "Original validation of symptom/severity measure versus independent interview",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke et al., 2003, PHQ-2 validity",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract, Methods and Results",
+        "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+        "access": "Primary-study abstract inspected; full paper not accessed",
+        "checked_at": "2026-11-02"
+      },
+      "APA_GRIEF": {
+        "title": "APA, What Is Depression?",
+        "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+        "locator": "Grief versus depression discussion",
+        "used_for": "Loss context and possible coexistence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_145": {
+        "title": "NICE NG145, Thyroid disease: assessment and management",
+        "url": "https://www.nice.org.uk/guidance/ng145/chapter/Recommendations",
+        "locator": "1.2.1–1.2.6; particularly 1.2.3 and 1.2.6",
+        "used_for": "Clinician consideration of thyroid tests with depression and caution about acute illness affecting results",
+        "access": "Public primary-source recommendations/indexed extracts inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_239": {
+        "title": "NICE NG239, Vitamin B12 deficiency in over 16s (2024)",
+        "url": "https://www.nice.org.uk/guidance/ng239/chapter/recommendations",
+        "locator": "1.2.1–1.2.6; symptom/risk-factor boxes",
+        "used_for": "Possible mental-health associations, nonspecific symptoms and context-based testing",
+        "access": "Public primary-source recommendations/indexed extracts inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_MEDICAL": {
+        "title": "APA DSM-5-TR (2022), Depressive Disorder Due to Another Medical Condition",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.206–209; inspected PDF viewer pp.336–340. Major depressive episode reference: MDD criteria in same chapter.",
+        "used_for": "Criteria A–E, three descriptive specifiers, attribution, medical examples, course and differential",
+        "access": "Original APA text inspected locally through previously obtained public psychiatry.ru mirror. Publisher full text blocked; licensing/redistribution rights not inferred. No manual bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "DSM_INDUCED": {
+        "title": "APA DSM-5-TR (2022), Substance/Medication-Induced Depressive Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.201–206; substance-class Table 1 pp.545–546; PDF viewer pp.330–336 and 755–756",
+        "used_for": "Criteria-information map, onset descriptions, differential and substance-class reference",
+        "access": "Original APA text inspected through public psychiatry.ru mirror; publisher full text blocked; no redistribution rights inferred and no book bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "TIP42": {
+        "title": "SAMHSA TIP 42 (2020), Chapter 4",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK571021/",
+        "locator": "Substance-Induced Mental Disorders; Substance-Induced Depressive Disorders; Exhibits 4.16–4.18",
+        "used_for": "Longitudinal assessment, independent/induced distinction and co-occurring conditions",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_215": {
+        "title": "NICE NG215, medicines associated with dependence or withdrawal symptoms",
+        "url": "https://www.nice.org.uk/guidance/ng215/chapter/Recommendations",
+        "locator": "1.5.6; 1.5.15–1.5.17",
+        "used_for": "Withdrawal assessment and prescriber review; no abrupt-stop experiments",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_100": {
+        "title": "NICE CG100, alcohol-use disorders: physical complications",
+        "url": "https://www.nice.org.uk/guidance/cg100/chapter/recommendations",
+        "locator": "1.1.1 acute withdrawal assessment/admission and warning against sudden reduction",
+        "used_for": "Alcohol withdrawal safety boundary; no home detoxification protocol",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_BIPOLAR": {
+        "title": "APA DSM-5-TR (2022), Bipolar and Related Disorders",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787",
+        "locator": "Printed pp.140–143,150–154,160 / PDF viewer pp.256–259,268–272,279",
+        "used_for": "Mania/hypomania, bipolar I/II and adult cyclothymic boundaries",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "DSM_ANXIETY": {
+        "title": "APA DSM-5-TR (2022), Anxiety Disorders",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787",
+        "locator": "Printed pp.235–236 and 250–251 / PDF viewer pp.374–375 and 393",
+        "used_for": "Panic attack versus panic disorder; generalized worry criteria context",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "DSM_ADJUST": {
+        "title": "APA DSM-5-TR (2022), Adjustment Disorders",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787",
+        "locator": "Printed pp.319–320 / PDF viewer pp.477–478; differential/comorbidity p.322 / PDF p.481",
+        "used_for": "Stressor timing, burden, continuing consequences and alternatives",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "DSM_PGD": {
+        "title": "APA DSM-5-TR (2022), Prolonged Grief Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787",
+        "locator": "Printed pp.322–323 / PDF viewer pp.481–482",
+        "used_for": "Adult bereavement interval, core/additional symptoms, culture and differential",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "DSM_PSYCH": {
+        "title": "APA DSM-5-TR (2022), Schizoaffective Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787",
+        "locator": "Printed pp.121–122 / PDF viewer pp.232–233",
+        "used_for": "Mood/psychosis lifetime relationship; isolated duration is insufficient",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "DSM_SLEEP": {
+        "title": "APA DSM-5-TR (2022), Insomnia Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787",
+        "locator": "Printed p.410 / PDF viewer p.590",
+        "used_for": "Frequency/duration/opportunity and alternate sleep/exposure explanations",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror; no permission to redistribute inferred; manual not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "NICE_113": {
+        "title": "NICE CG113, Generalised anxiety disorder and panic disorder in adults",
+        "url": "https://www.nice.org.uk/guidance/cg113/chapter/Recommendations",
+        "locator": "1.2.6–1.2.8; 1.3.1–1.3.3",
+        "used_for": "Distress/function, comorbidity and assessment of panic presentations",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_159": {
+        "title": "NICE CG159, Social anxiety disorder",
+        "url": "https://www.nice.org.uk/guidance/cg159/chapter/recommendations",
+        "locator": "Adult identification/assessment section 1.2, especially fear/avoidance and depression relationship",
+        "used_for": "Distinguish social withdrawal related to negative evaluation from depressive withdrawal",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_116": {
+        "title": "NICE NG116, PTSD",
+        "url": "https://www.nice.org.uk/guidance/ng116/chapter/recommendations",
+        "locator": "1.1 recognition, symptom domains; 1.2 assessment/coordination",
+        "used_for": "Trauma-associated symptoms, impairment and appropriate assessment",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_PTSD": {
+        "title": "NIMH, Post-Traumatic Stress Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/post-traumatic-stress-disorder-ptsd",
+        "locator": "What is PTSD?; Signs and symptoms",
+        "used_for": "Exposure/cluster/duration context and coexistence with depression",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "VA_PCL5": {
+        "title": "US VA National Center for PTSD, PTSD Checklist for DSM-5",
+        "url": "https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp",
+        "locator": "Description; Administration and Scoring; availability",
+        "used_for": "Self-report screening/monitoring/provisional role versus clinician interview; no instrument implemented",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_178": {
+        "title": "NICE CG178, Psychosis and schizophrenia in adults",
+        "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations",
+        "locator": "1.2 recognition/referral; 1.3.3.1–1.3.3.4 multidisciplinary assessment and affective presentations",
+        "used_for": "Prompt specialist assessment and medical/exposure/cultural/contextual review",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_103": {
+        "title": "NICE CG103, delirium",
+        "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+        "locator": "1.3.1, 1.5 and 1.6.1–1.6.3; 2023 assessment update: competent practitioner/4AT and final clinical diagnosis",
+        "used_for": "Acute/fluctuating changes in attention/cognition need assessment; hospital/long-term-care guideline context",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_97": {
+        "title": "NICE NG97, Dementia assessment and management",
+        "url": "https://www.nice.org.uk/guidance/ng97/chapter/Recommendations",
+        "locator": "1.2.1–1.2.11; delirium/dementia differentiation",
+        "used_for": "Baseline decline, informant history, reversible contributors and test limitations",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_202": {
+        "title": "NICE NG202, Obstructive sleep apnoea/hypopnoea syndrome",
+        "url": "https://www.nice.org.uk/guidance/ng202/chapter/1-obstructive-sleep-apnoeahypopnoea-syndrome",
+        "locator": "1.1 initial assessment; symptom features and scales; rationale for initial assessment",
+        "used_for": "Sleep history, breathing clues, daytime effects and limits of sleepiness scales",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "AASM_2008": {
+        "title": "Schutte-Rodin et al. (2008), Clinical guideline for chronic insomnia evaluation in adults",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2576317/",
+        "locator": "J Clin Sleep Med 4(5):487–504; Summary Recommendations: Evaluation",
+        "used_for": "Sleep/medical/psychiatric/substance history; not routine polysomnography for all insomnia",
+        "access": "Primary AASM guideline/indexed full text inspected; older ICSD-era diagnostic duration is not substituted for DSM-5-TR thresholds.",
+        "checked_at": "2026-11-02"
+      },
+      "APA_PGD": {
+        "title": "APA, Prolonged Grief Disorder fact sheet",
+        "url": "https://www.psychiatry.org/getContentAsset/2a667a19-80ac-4aaf-8751-9ed240619757/dfc3d011-8f63-43f6-9ed8-4b444333a1d0/APA-DSM5TR-ProlongedGriefDisorder.pdf?language=en",
+        "locator": "p.1: description and adult/child timing",
+        "used_for": "Official overview; not a complete diagnostic interview",
+        "access": "Official primary guidance/indexed recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PG13R_2021": {
+        "title": "Prigerson et al. (2021), Validation of DSM-5-TR PGD criteria and PG-13-Revised",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7801836/",
+        "locator": "World Psychiatry 20:96–106; objectives, Table 1 and validation results",
+        "used_for": "Primary validation study supports grief-specific measurement; does not validate our wording or predict an individual",
+        "access": "Primary indexed article excerpts inspected; direct PMC text encountered a browser check. No raw data or scale items bundled.",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Depression_Due_To_Medical_Condition\\sources.json",
+    "records": {
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke et al., 2001, PHQ-9 validity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Abstract; Methods; diagnostic-status comparison",
+        "used_for": "Original validation of symptom/severity measure versus independent interview",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke et al., 2003, PHQ-2 validity",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract, Methods and Results",
+        "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+        "access": "Primary-study abstract inspected; full paper not accessed",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_103": {
+        "title": "NICE CG103, delirium",
+        "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+        "locator": "1.3.1 and 1.6.1–1.6.3",
+        "used_for": "Acute/fluctuating changes in attention/cognition need assessment; hospital/long-term-care guideline context",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_215": {
+        "title": "NICE NG215, medicines associated with dependence or withdrawal symptoms",
+        "url": "https://www.nice.org.uk/guidance/ng215/chapter/Recommendations",
+        "locator": "1.5.6; 1.5.15–1.5.17",
+        "used_for": "Withdrawal assessment and prescriber review; no abrupt-stop experiments",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_MEDICAL": {
+        "title": "APA DSM-5-TR (2022), Depressive Disorder Due to Another Medical Condition",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.206–209; inspected PDF viewer pp.336–340. Major depressive episode reference: MDD criteria in same chapter.",
+        "used_for": "Criteria A–E, three descriptive specifiers, attribution, medical examples, course and differential",
+        "access": "Original APA text inspected locally through previously obtained public psychiatry.ru mirror. Publisher full text blocked; licensing/redistribution rights not inferred. No manual bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "NICE_91": {
+        "title": "NICE CG91, Depression in adults with a chronic physical health problem",
+        "url": "https://www.nice.org.uk/guidance/cg91/chapter/Recommendations",
+        "locator": "1.1.1.1–1.1.1.2; 1.3.1.3–1.3.1.5; 1.3.2",
+        "used_for": "Assessment alongside physical illness, function, medicine review and communication; not a causal diagnostic standard",
+        "access": "Official indexed recommendations inspected; direct page returned 403. Older guideline uses DSM-IV definitions: these are not substituted for DSM-5-TR criteria.",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_145": {
+        "title": "NICE NG145, Thyroid disease: assessment and management",
+        "url": "https://www.nice.org.uk/guidance/ng145/chapter/Recommendations",
+        "locator": "1.2.1–1.2.6; particularly 1.2.3 and 1.2.6",
+        "used_for": "Clinician consideration of thyroid tests with depression and caution about acute illness affecting results",
+        "access": "Public primary-source recommendations/indexed extracts inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_239": {
+        "title": "NICE NG239, Vitamin B12 deficiency in over 16s (2024)",
+        "url": "https://www.nice.org.uk/guidance/ng239/chapter/recommendations",
+        "locator": "1.2.1–1.2.6; symptom/risk-factor boxes",
+        "used_for": "Possible mental-health associations, nonspecific symptoms and context-based testing",
+        "access": "Public primary-source recommendations/indexed extracts inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_71": {
+        "title": "NICE NG71, Parkinson's disease in adults",
+        "url": "https://www.nice.org.uk/guidance/ng71/chapter/Recommendations",
+        "locator": "Non-motor symptoms: Depression",
+        "used_for": "Parkinson depression assessment links to CG91; not proof of individual causal attribution",
+        "access": "Public primary-source recommendations/indexed extracts inspected",
+        "checked_at": "2026-11-02"
+      },
+      "STROKE_2025": {
+        "title": "Heart & Stroke, Canadian Stroke Best Practices, 7th edition update 2025, Part Three",
+        "url": "https://www.strokebestpractices.ca/recommendations/activity-participation-following-stroke/1-mood-and-depression",
+        "locator": "1.0 and 1.1, especially communication-accessible screening and expert assessment; PDF p.13 onward",
+        "used_for": "Trained-professional screening, timely diagnostic review and communication adaptations",
+        "access": "Official recommendation text/indexed PDF inspected. No screening instrument reproduced or validated for this system.",
+        "checked_at": "2026-11-02"
+      },
+      "STROKE_DEFINITIONS": {
+        "title": "Canadian Stroke Best Practices, Part Three: Definitions and Descriptions",
+        "url": "https://www.strokebestpractices.ca/recommendations/activity-participation-following-stroke/definitions-and-descriptions",
+        "locator": "Apathy; Pseudobulbar Affect following stroke",
+        "used_for": "Differentiate motivation and involuntary emotional expression from sustained depressive mood",
+        "access": "Official definitions inspected. Its abbreviated depression threshold is not used to override DSM-5-TR medical-condition specifiers.",
+        "checked_at": "2026-11-02"
+      },
+      "TRUST_2021": {
+        "title": "Wildisen et al. (2021), Effect of Levothyroxine Therapy on the Development of Depressive Symptoms in Older Adults With Subclinical Hypothyroidism",
+        "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2776099",
+        "locator": "JAMA Network Open 4(2):e2036645; Methods, Results, Strengths and Limitations; DOI 10.1001/jamanetworkopen.2020.36645; PMID33566107",
+        "used_for": "Primary randomized ancillary study illustrating subgroup-specific evidence and limits of causal/treatment assumptions",
+        "access": "Open-access primary article/indexed full text and PubMed abstract inspected. GDS-15 responses/scoring not implemented.",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "MDD\\sources.json",
+    "records": {
+      "DSM_TR": {
+        "title": "APA DSM-5-TR (2022), Depressive Disorders",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.183–185, 210–214; inspected mirror PDF viewer pp.309–311, 342–347",
+        "used_for": "Current-edition boundaries, episode/course and specifier cross-check",
+        "access": "Publisher full chapter blocked. Original APA text inspected in a publicly reachable psychiatry.ru mirror; no claim of verified redistribution/licensing rights; book not bundled",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "APA_MDD": {
+        "title": "APA DSM-5-TR MDD fact sheet",
+        "url": "https://www.psychiatry.org/getmedia/33fc7cdb-6fd8-46a7-9ff2-225ba7862f7f/APA-DSM5TR-MajorDepressiveDisorder.pdf",
+        "locator": "p.1, Rationale for Change",
+        "used_for": "Psychotic-disorder exclusion clarification",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "APA_UPDATES": {
+        "title": "APA DSM-5-TR cumulative supplement, September 2025",
+        "url": "https://www.psychiatry.org/getmedia/b68a5776-f88c-45c7-9535-fd219d7aa5cb/APA-DSM5TR-Update-September-2025.pdf",
+        "locator": "Included September 2022 update p.7 / cumulative PDF viewer p.43; September 2025 II.B p.7",
+        "used_for": "Non-stigmatizing suicide wording, prolonged-grief differential, other-specified boundary",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "SAMHSA_2020": {
+        "title": "SAMHSA TIP 42, updated 2020",
+        "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK571020/pdf/Bookshelf_NBK571020.pdf",
+        "locator": "Exhibit 4.1, body pp.72–73 / PDF viewer pp.102–103",
+        "used_for": "Symptom qualifiers and grouping; later APA corrections take precedence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_185": {
+        "title": "NICE CG185, Bipolar disorder",
+        "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+        "locator": "1.2.1",
+        "used_for": "Recognition/referral recommendation, not a four-day bipolar diagnostic shortcut",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "CANMAT_2016": {
+        "title": "CANMAT 2016 MDD guideline, Section 1",
+        "url": "https://journals.sagepub.com/doi/10.1177/0706743716659416",
+        "locator": "Table 4, episode specifiers and clinical dimensions",
+        "used_for": "Descriptive melancholic/atypical and other feature map",
+        "access": "Indexed table inspected; older guideline, cross-checked against 2022 text",
+        "checked_at": "2026-11-02"
+      },
+      "CANMAT_2023": {
+        "title": "CANMAT 2023 update, published 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/",
+        "locator": "Diagnostic/clinical-presentation discussion; Q.5.a measurement-based care",
+        "used_for": "Professional guideline context and measurement alongside assessment",
+        "access": "Indexed text inspected; direct PMC access intermittently blocked",
+        "checked_at": "2026-11-02"
+      },
+      "ANXIOUS_STUDY": {
+        "title": "McIntyre et al., 2016, anxious distress in adults with MDD",
+        "url": "https://doi.org/10.1177/2040622315627805",
+        "locator": "Introduction: DSM anxious-distress definition",
+        "used_for": "Five feature domains and majority-of-days context",
+        "access": "Primary observational study; indexed text inspected; not validation of our agents",
+        "checked_at": "2026-11-02"
+      },
+      "MIXED_STUDY": {
+        "title": "The prevalence and diagnostic classification of mixed features: multicenter study, 2019",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6877217/",
+        "locator": "Methods / DSM-5 mixed-feature assessment",
+        "used_for": "Mixed-feature clinical research context; threshold/definition cross-checked against DSM text",
+        "access": "Primary study; indexed material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "SEASONAL": {
+        "title": "NIMH, Seasonal Affective Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/seasonal-affective-disorder",
+        "locator": "Diagnosis section",
+        "used_for": "Seasonal course, repeated years and distinction from seasonal stressors",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ACOG_4": {
+        "title": "ACOG Clinical Practice Guideline No.4, 2023",
+        "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum",
+        "locator": "pp.1232, 1235; Box 1 p.1241 / mirrored PDF pp.1,4,10",
+        "used_for": "Perinatal assessment, first postpartum year versus formal onset modifier, postpartum psychosis",
+        "access": "ACOG guideline inspected through Illinois Perinatal Quality Collaborative institutional PDF mirror",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://ilpqc.org/wp-content/uploads/2025/05/Screening-and-Diagnosis-of-Mental-Health-Conditions-During-Pregnancy-and-Postpartum_ACOG-Clinical-Practice-Guideline-No.-4.pdf"
+      },
+      "UCL_CATATONIA": {
+        "title": "UCL, Catatonia diagnosis",
+        "url": "https://www.ucl.ac.uk/brain-sciences/psychiatry/research/epidemiology-and-applied-clinical-research-department/research-projects-groups/catatonia/diagnosis",
+        "locator": "DSM-5-TR criteria and examination table",
+        "used_for": "Named signs and need for observation/examination",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "BAP_2023": {
+        "title": "BAP evidence-based catatonia consensus guideline, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10101189/",
+        "locator": "Diagnosis; assessment; medical aetiology recommendations",
+        "used_for": "Professional assessment and medical differential; not an online self-diagnostic test",
+        "access": "Indexed guideline extracts inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke et al., 2001, PHQ-9 validity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Abstract; Methods; diagnostic-status comparison",
+        "used_for": "Original validation of symptom/severity measure versus independent interview",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke et al., 2003, PHQ-2 validity",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract, Methods and Results",
+        "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+        "access": "Primary-study abstract inspected; full paper not accessed",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_FORM": {
+        "title": "PHQ-9 form hosted by AHRQ",
+        "url": "https://integrationacademy.ahrq.gov/sites/default/files/2020-07/PHQ-9.pdf",
+        "locator": "pp.1–2",
+        "used_for": "Original response categories and scoring; form not reproduced here",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_META": {
+        "title": "PHQ-9 updated individual-participant-data meta-analysis, BMJ 2021",
+        "url": "https://www.bmj.com/content/375/bmj.n2183",
+        "locator": "Abstract / What this study adds",
+        "used_for": "Screening accuracy depends on reference standard/population; cutoff is not diagnostic certainty",
+        "access": "Indexed primary meta-analysis text inspected; direct page 403",
+        "checked_at": "2026-11-02"
+      },
+      "APA_GRIEF": {
+        "title": "APA, What Is Depression?",
+        "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+        "locator": "Grief versus depression discussion",
+        "used_for": "Loss context and possible coexistence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Measurement\\sources.json",
+    "records": {
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.4, 1.2.6-1.2.9; 1.4.3; severity definitions",
+        "used_for": "Validated measures alongside comprehensive assessment and follow-up; not automatic diagnosis or a requirement for every encounter",
+        "access": "Official indexed recommendation text inspected; direct retrieval intermittently blocked",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_197": {
+        "title": "NICE NG197, Shared decision making",
+        "url": "https://www.nice.org.uk/guidance/ng197/chapter/recommendations",
+        "locator": "1.2.7-1.2.11",
+        "used_for": "Participation, shared agenda and manageable information; exact invitation wording/placement is project design",
+        "access": "Previously inspected official recommendation text; same source retained",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke, Spitzer & Williams (2001), PHQ-9 validation",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "J Gen Intern Med 16:606-613; abstract, Methods and Appendix p.613",
+        "used_for": "Original validation, 0-27 total and conventional symptom-severity bands; independent professional interview comparison",
+        "access": "Full/indexed original text inspected via official IHS mirror https://www.ihs.gov/sites/crs/themes/responsive2017/display_objects/documents/phq_9.pdf; direct local download timed out",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke, Spitzer & Williams (2003), PHQ-2 validation",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract Methods/Results; Med Care 41:1284-1292",
+        "used_for": "Two-item, two-week case finding; 0-6 score and >=3 screening threshold in original study",
+        "access": "Primary abstract inspected; full article not claimed read",
+        "checked_at": "2026-11-02"
+      },
+      "CDC_DPQ": {
+        "title": "CDC NHANES August 2021-August 2023 depression screener documentation",
+        "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DPQ_L.htm",
+        "locator": "Component Description; Interview Setting; Analytic Notes; codebook",
+        "used_for": "Two-week item-frequency categories 0-3, complete-item total, separate functional-difficulty question and explicit missing/refused codes; no survey-specific routing imported",
+        "access": "Official/primary text inspected on 2 November 2026",
+        "checked_at": "2026-11-02"
+      },
+      "UW_PHQ_FORM": {
+        "title": "University of Washington-hosted PHQ-9 form and tally sheet",
+        "url": "https://depts.washington.edu/dbpeds/Screening%20Tools/PHQ9.pdf",
+        "locator": "PDF pp.1-2 form and numeric tally; p.3 arithmetic only",
+        "used_for": "Verification of item order, response coding and separate function item. Old treatment/diagnostic shortcuts on p.3 are not adopted",
+        "access": "Public form/indexed PDF inspected; no full questionnaire wording bundled here",
+        "checked_at": "2026-11-02"
+      },
+      "APA_ASSESSMENT": {
+        "title": "American Psychological Association, Depression assessment instruments",
+        "url": "https://www.apa.org/depression-guideline/assessment",
+        "locator": "PHQ-9 entry",
+        "used_for": "Official professional source lists PHQ-9 as free to use; availability does not establish validity of an altered language or mode",
+        "access": "Official indexed instrument entry inspected",
+        "checked_at": "2026-11-02"
+      },
+      "WHO5_2024": {
+        "title": "WHO (2024), The World Health Organization-Five Well-Being Index",
+        "url": "https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01",
+        "locator": "Questionnaire printed p.1 and scoring p.2 / PDF pp.6-7",
+        "used_for": "Five-item two-week well-being measure; 0-25 raw, x4 to 0-100, higher is better; raw <13 suggests further assessment",
+        "access": "Official PDF downloaded; scoring page rendered/visually reviewed. Publication licensed CC-BY-NC-SA 3.0 IGO; item wording not bundled",
+        "checked_at": "2026-11-02"
+      },
+      "ACOG_SCREEN": {
+        "title": "ACOG, Patient Screening",
+        "url": "https://www.acog.org/programs/perinatal-mental-health/patient-screening",
+        "locator": "Perinatal screening recommendations and tool resources",
+        "used_for": "Perinatal context uses a standardized validated instrument; PHQ-9 or EPDS can be relevant",
+        "access": "Official indexed page inspected; direct retrieval returned 402",
+        "checked_at": "2026-11-02"
+      },
+      "EPDS_1987": {
+        "title": "Cox, Holden & Sagovsky (1987), EPDS development",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/3651732/",
+        "locator": "Abstract; Br J Psychiatry 150:782-786",
+        "used_for": "Original ten-item postnatal screening scale, distinct from PHQ; no universal perinatal superiority claim",
+        "access": "Primary abstract inspected",
+        "checked_at": "2026-11-02"
+      },
+      "EPDS_FORM": {
+        "title": "Black Dog Institute, EPDS form and instructions",
+        "url": "https://www.blackdoginstitute.org.au/wp-content/uploads/2020/04/edinburgh-postnatal-depression-scale.pdf",
+        "locator": "Instrument description and scoring instructions",
+        "used_for": "Seven-day recall and item-specific coding; candidate protocol only, not an enabled scorer",
+        "access": "Institutional form/indexed instructions inspected; permissions/language/version review still required before bundling",
+        "checked_at": "2026-11-02"
+      },
+      "GDS_AUTHOR": {
+        "title": "Yesavage, Stanford Geriatric Depression Scale resource",
+        "url": "https://www-leland.stanford.edu/~yesavage/GDS.html",
+        "locator": "Scale purpose, short-form resources, basic references and translation disclaimer; linked English short-form scoring page specifies the past week",
+        "used_for": "Older-adult screening candidate; author states original scale public domain. Translation availability does not mean verified accuracy",
+        "access": "Author-maintained page and linked scoring key inspected; informal missing-item prorating suggestion is not adopted in this prototype",
+        "checked_at": "2026-11-02"
+      },
+      "MADRS_1979": {
+        "title": "Montgomery & Asberg (1979), A new depression scale designed to be sensitive to change",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/444788/",
+        "locator": "Abstract; Br J Psychiatry 134:382-389",
+        "used_for": "Original ten-item depression severity-rating development; not a license or an unrestricted conversation scoring method",
+        "access": "Primary abstract inspected",
+        "checked_at": "2026-11-02"
+      },
+      "SIGMA_2008": {
+        "title": "Williams & Kobak (2008), Development and reliability of a structured interview guide for MADRS (SIGMA)",
+        "url": "https://doi.org/10.1192/bjp.bp.106.032532",
+        "locator": "Publisher abstract; Br J Psychiatry 192:52-58",
+        "used_for": "Evidence that interview-based clinician rating uses a defined guide and rater process; not permission to let an unvalidated LLM assign scores",
+        "access": "Original publisher abstract inspected; instrument/manual not obtained. Publisher webpage upload date differs from original 2008 journal issue",
+        "checked_at": "2026-11-02"
+      },
+      "ISPMD_2011": {
+        "title": "O’Brien et al. (2011), ISPMD Montreal consensus",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4134928/",
+        "locator": "Methods of measurement",
+        "used_for": "Prospective cycle-wide records for premenstrual pattern assessment",
+        "access": "Previously inspected original consensus/indexed text; detailed PMDD module retained",
+        "checked_at": "2026-11-02"
+      },
+      "DRSP_2006": {
+        "title": "Endicott, Nee & Harrison (2006), DRSP reliability and validity",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16172836/",
+        "locator": "Arch Womens Ment Health 9:41-49; existing PMDD source register",
+        "used_for": "Daily symptom measurement for menstrual-pattern review; not a one-visit PHQ substitute",
+        "access": "Existing PMDD source review reused; item text/scorer not bundled",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_ASQ": {
+        "title": "NIMH, Ask Suicide-Screening Questions toolkit",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials",
+        "locator": "Adult materials; using the toolkit; response-plan requirement",
+        "used_for": "Dedicated safety screen/pathway is distinct from depression scoring; plan and trained follow-up required",
+        "access": "Official/primary text inspected on 2 November 2026",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_SAFETY_LIMIT": {
+        "title": "Limitations of Screening for Depression as a Proxy for Suicide Risk in Adult Medical Inpatients",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8258235/",
+        "locator": "Results and conclusions",
+        "used_for": "Adult inpatient evidence that a negative depression/item-9 result cannot stand in for dedicated suicide assessment",
+        "access": "Primary indexed study findings inspected; no universal performance estimate generalized",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1-1.6.6",
+        "used_for": "No predictive global low/medium/high risk labels or score-only treatment/discharge",
+        "access": "Existing official source review retained",
+        "checked_at": "2026-11-02"
+      },
+      "CHAT_PHQ_2021": {
+        "title": "Dosovitsky et al. (2021), Psychometric Properties of a Chatbot Version of the PHQ-9 With Adults and Older Adults",
+        "url": "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2021.645805/full",
+        "locator": "Methods, Results, Limitations",
+        "used_for": "Feasibility/internal consistency in 3895 respondents; no paper comparator or criterion/construct validation, so not proof of diagnostic equivalence",
+        "access": "Official/primary text inspected on 2 November 2026",
+        "checked_at": "2026-11-02"
+      },
+      "HOPEBOT_2026": {
+        "title": "Guo et al. (2026), Feasibility and user evaluation of HopeBot",
+        "url": "https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0001446",
+        "locator": "Published 25 June 2026; Methods, Results, Study limitations",
+        "used_for": "132 adults, chatbot vs self-administered PHQ-9 concordance; no clinician diagnostic reference, fixed order/recall and sample limitations; research design context only",
+        "access": "Official/primary text inspected on 2 November 2026",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Other_Specified_Depressive_Disorder\\sources.json",
+    "records": {
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_185": {
+        "title": "NICE CG185, Bipolar disorder",
+        "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+        "locator": "1.2.1",
+        "used_for": "Recognition/referral recommendation, not a four-day bipolar diagnostic shortcut",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke et al., 2001, PHQ-9 validity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Abstract; Methods; diagnostic-status comparison",
+        "used_for": "Original validation of symptom/severity measure versus independent interview",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke et al., 2003, PHQ-2 validity",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract, Methods and Results",
+        "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+        "access": "Primary-study abstract inspected; full paper not accessed",
+        "checked_at": "2026-11-02"
+      },
+      "APA_GRIEF": {
+        "title": "APA, What Is Depression?",
+        "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+        "locator": "Grief versus depression discussion",
+        "used_for": "Loss context and possible coexistence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_OTHER": {
+        "title": "APA DSM-5-TR (2022), Other Specified Depressive Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.209–210; PDF viewer pp.340–341; MDD episode reference in same chapter",
+        "used_for": "Category definition, four non-exhaustive examples and example-specific exclusions",
+        "access": "Original APA text inspected locally through previously obtained psychiatry.ru mirror. Publisher full text blocked. No manual or licensed questionnaire bundled; redistribution permission not inferred.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "APA_2025": {
+        "title": "APA DSM-5-TR cumulative update, September 2025",
+        "url": "https://www.psychiatry.org/getmedia/b68a5776-f88c-45c7-9535-fd219d7aa5cb/APA-DSM5TR-Update-September-2025.pdf",
+        "locator": "II.B, printed supplement p.7 / PDF viewer p.7; revised text read with visual revision marks",
+        "used_for": "Revised names and removal of obsolete exclusions in examples 2/3; four-day heading/body discrepancy remains for review",
+        "access": "Official page rendered and visually reviewed during 2 November audit. Red strikethrough is deleted text, not a retained criterion. Selected revisions only; supplement does not replace manual.",
+        "checked_at": "2026-11-02"
+      },
+      "APA_UPDATE_INDEX": {
+        "title": "APA, Updates to DSM-5-TR Criteria and Text",
+        "url": "https://www.psychiatry.org/psychiatrists/practice/dsm/updates-to-dsm/updates-to-dsm-5-tr-criteria-text/",
+        "locator": "September 2025 Updates and earlier-update list",
+        "used_for": "Version verification; September 2025 is the latest update listed on the inspected page",
+        "access": "Official page inspected on the recorded research date; future changes require rechecking.",
+        "checked_at": "2026-11-02"
+      },
+      "ANGST_1990": {
+        "title": "Angst, Merikangas, Scheidegger & Wicki (1990), Recurrent brief depression: a new subtype of affective disorder",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/2142703/",
+        "locator": "J Affect Disord 19(2):87–98; Abstract; DOI 10.1016/0165-0327(90)90013-X",
+        "used_for": "Historical prospective Zurich cohort research: importance of duration, recurrence and burden; not current DSM criteria",
+        "access": "Primary abstract/indexed material inspected; no full-text or reuse rights inferred",
+        "checked_at": "2026-11-02"
+      },
+      "MAIER_1994": {
+        "title": "Maier et al. (1994), Recurrent brief depression in general practice",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/7888417/",
+        "locator": "Eur Arch Psychiatry Clin Neurosci 244(4):196–204; Abstract; DOI 10.1007/BF02190398",
+        "used_for": "Primary-care study in 300 patients: clinical burden and need to assess suicide-related concerns despite brief episodes",
+        "access": "Primary abstract/indexed material inspected; no full-text or reuse rights inferred",
+        "checked_at": "2026-11-02"
+      },
+      "JUDD_1994": {
+        "title": "Judd et al. (1994), Subsyndromal symptomatic depression: a new mood disorder?",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8077164/",
+        "locator": "Abstract: proposed SSD definition and social dysfunction",
+        "used_for": "Historical research terminology differs from current DSM other-specified examples; do not merge definitions",
+        "access": "Primary abstract/indexed material inspected; no full-text or reuse rights inferred",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "PDD\\sources.json",
+    "records": {
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_185": {
+        "title": "NICE CG185, Bipolar disorder",
+        "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+        "locator": "1.2.1",
+        "used_for": "Recognition/referral recommendation, not a four-day bipolar diagnostic shortcut",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "CANMAT_2016": {
+        "title": "CANMAT 2016 MDD guideline, Section 1",
+        "url": "https://journals.sagepub.com/doi/10.1177/0706743716659416",
+        "locator": "Table 4, episode specifiers and clinical dimensions",
+        "used_for": "Descriptive melancholic/atypical and other feature map",
+        "access": "Indexed table inspected; older guideline, cross-checked against 2022 text",
+        "checked_at": "2026-11-02"
+      },
+      "CANMAT_2023": {
+        "title": "CANMAT 2023 update, published 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/",
+        "locator": "Diagnostic/clinical-presentation discussion; Q.5.a measurement-based care",
+        "used_for": "Professional guideline context and measurement alongside assessment",
+        "access": "Indexed text inspected; direct PMC access intermittently blocked",
+        "checked_at": "2026-11-02"
+      },
+      "ANXIOUS_STUDY": {
+        "title": "McIntyre et al., 2016, anxious distress in adults with MDD",
+        "url": "https://doi.org/10.1177/2040622315627805",
+        "locator": "Introduction: DSM anxious-distress definition",
+        "used_for": "Five feature domains and majority-of-days context",
+        "access": "Primary observational study; indexed text inspected; not validation of our agents",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke et al., 2001, PHQ-9 validity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Abstract; Methods; diagnostic-status comparison",
+        "used_for": "Original validation of symptom/severity measure versus independent interview",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_FORM": {
+        "title": "PHQ-9 form hosted by AHRQ",
+        "url": "https://integrationacademy.ahrq.gov/sites/default/files/2020-07/PHQ-9.pdf",
+        "locator": "pp.1–2",
+        "used_for": "Original response categories and scoring; form not reproduced here",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "APA_GRIEF": {
+        "title": "APA, What Is Depression?",
+        "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+        "locator": "Grief versus depression discussion",
+        "used_for": "Loss context and possible coexistence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_PDD": {
+        "title": "APA DSM-5-TR, Depressive Disorders (2022)",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.193–196; mirror PDF viewer pp.320–324. Shared specifier definitions pp.210–214 / viewer pp.342–347.",
+        "used_for": "PDD requirements, course/onset, MDD relationship, differential and feature applicability",
+        "access": "Original APA text inspected through public psychiatry.ru mirror after publisher access failed. No redistribution permission inferred; no book PDF bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "APA_PDD": {
+        "title": "APA DSM-5-TR PDD fact sheet (2022)",
+        "url": "https://www.psychiatry.org/getmedia/fd3dfaad-d409-4e94-8605-0350adec5b91/APA-DSM5TR-PersistentDepressive.pdf",
+        "locator": "p.1, Rationale for Change",
+        "used_for": "Category breadth and removal of extraneous feature specifiers",
+        "access": "Free official full fact sheet inspected",
+        "checked_at": "2026-11-02"
+      },
+      "SAMHSA_PDD": {
+        "title": "SAMHSA TIP 42 (2020)",
+        "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK571020/pdf/Bookshelf_NBK571020.pdf",
+        "locator": "Exhibit 4.2, body pp.74–75 / PDF viewer pp.104–105",
+        "used_for": "Mood, six associated symptom groups and continuity information; current APA text takes precedence",
+        "access": "Public government manual inspected. Older specifiers and apparent persistent-MDE/severity wording errors are explicitly not adopted.",
+        "checked_at": "2026-11-02"
+      },
+      "PDD_SURVEY_2020": {
+        "title": "Persistent depressive disorder across the adult lifespan: clinical and population surveys in Germany (2020)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7011512/",
+        "locator": "Methods: Assessment of chronicity; Discussion",
+        "used_for": "Research example of reconstructing chronic course from interview history; definitions depend on ascertainment",
+        "access": "Primary study; official indexed Methods extracts inspected. Older DSM-IV-based interviews do not replace current DSM-5-TR requirements.",
+        "checked_at": "2026-11-02"
+      },
+      "PDD_FOLLOWUP_2023": {
+        "title": "Koshikawa et al., Characteristics of persistent depression in the long-term (2023)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37886758/",
+        "locator": "Abstract and indexed article Results/Discussion; DOI 10.1016/j.heliyon.2023.e20917",
+        "used_for": "Primary follow-up research motivating residual-symptom and course records, not a diagnostic algorithm",
+        "access": "Abstract/indexed primary article excerpts inspected; no treatment recommendation or model-validation claim inferred.",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "PMDD\\sources.json",
+    "records": {
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "APA_GRIEF": {
+        "title": "APA, What Is Depression?",
+        "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+        "locator": "Grief versus depression discussion",
+        "used_for": "Loss context and possible coexistence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_PMDD": {
+        "title": "APA DSM-5-TR, Depressive Disorders (2022)",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.197–201 / inspected mirror PDF viewer pp.325–330",
+        "used_for": "PMDD criteria, recording procedures, course and differential",
+        "access": "Original APA text inspected through public psychiatry.ru mirror after publisher access failed; reuse permission not inferred; no manual PDF bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "ACOG_7": {
+        "title": "ACOG Clinical Practice Guideline No.7, Management of Premenstrual Disorders (2023)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37973069/",
+        "locator": "Diagnostic Evaluation p.1520 / PDF p.5; Box 1 p.1521 / PDF p.6",
+        "used_for": "Symptom assessment, prospective records, distress/functioning and differential",
+        "access": "Publisher page returned 402; ACOG-authored PDF inspected through DocRed-hosted mirror. Treatment recommendations are outside this module.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://docred-strapi-cms-prod.s3.sa-east-1.amazonaws.com/management_of_premenstrual_disorders_acog_34_3_007b8ebc6f.pdf"
+      },
+      "ISPMD_2011": {
+        "title": "O’Brien et al., ISPMD Montreal consensus (2011)",
+        "url": "https://doi.org/10.1007/s00737-010-0201-3",
+        "locator": "Table 1 and classification; Methods of measurement; consensus recommendations; PDF pp.4,7–8",
+        "used_for": "Core/variant PMD, PME, cycle-wide assessment and repeat-cycle review",
+        "access": "Original consensus PDF inspected through public Asarina-hosted mirror; distinct framework, not substituted for DSM PMDD.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://asarinapharma.com/wp-content/uploads/docs/publications/2011-OBrien-PMS-PMDD-consensus.pdf"
+      },
+      "DRSP_2006": {
+        "title": "Endicott, Nee & Harrison, DRSP reliability and validity (2006)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16172836/",
+        "locator": "pp.41–42 and Table 1 / inspected article PDF pp.1–3",
+        "used_for": "Prospective daily measurement, item structure and 1–6 scale",
+        "access": "Primary paper inspected through PMDD research-site mirror. Original DSM-IV-era validation; item wording and tool not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://pmddresearch.wordpress.com/wp-content/uploads/2013/11/drsp-reliability-and-validity.pdf"
+      },
+      "CPASS_2017": {
+        "title": "Eisenlohr-Moul et al., Carolina Premenstrual Assessment Scoring System (2017; online 2016)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5205545/",
+        "locator": "Tables 1–3; Development of the C-PASS; Participants and Procedure; Limitations",
+        "used_for": "Research operationalization of cycle timing, symptom dimensions, missing data and DSM symptom grouping",
+        "access": "Primary validation paper inspected via full/indexed PMC text; no implementation or universal accuracy claim adopted.",
+        "checked_at": "2026-11-02"
+      },
+      "PSST_2003": {
+        "title": "Steiner, Macdougall & Brown, Premenstrual Symptoms Screening Tool (2003)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12920618/",
+        "locator": "Abstract; development study",
+        "used_for": "Retrospective screening-tool role, separate from prospective confirmation",
+        "access": "Primary abstract/indexed material inspected; full questionnaire and scoring not reproduced or implemented.",
+        "checked_at": "2026-11-02"
+      },
+      "NHS_PMDD": {
+        "title": "NHS, PMDD",
+        "url": "https://www.nhs.uk/conditions/pmdd-premenstrual-dysphoric-disorder/",
+        "locator": "Introduction; Symptoms; How PMDD is diagnosed",
+        "used_for": "Plain-language symptom explanation and menstrual applicability",
+        "access": "Free public guidance; simplified diagnostic summary does not replace formal criteria.",
+        "checked_at": "2026-11-02"
+      },
+      "RCOG_48": {
+        "title": "RCOG Green-top Guideline No.48, PMS management",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/premenstrual-syndrome-management-green-top-guideline-no-48/",
+        "locator": "Guideline status page: 2016 edition, reviewed 2023, update in development",
+        "used_for": "Version/access context; not treated as a new PMDD classification",
+        "access": "Official status page/indexed guideline recommendation on prospective records inspected; no claim of completed newer edition.",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Substance_Medication_Induced_Depression\\sources.json",
+    "records": {
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1; 1.4.12–1.4.19, antidepressant withdrawal",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review; withdrawal versus relapse and prescriber review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_INDUCED": {
+        "title": "APA DSM-5-TR (2022), Substance/Medication-Induced Depressive Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed pp.201–206; substance-class Table 1 pp.545–546; PDF viewer pp.330–336 and 755–756",
+        "used_for": "Criteria-information map, onset descriptions, differential and substance-class reference",
+        "access": "Original APA text inspected through public psychiatry.ru mirror; publisher full text blocked; no redistribution rights inferred and no book bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "TIP42": {
+        "title": "SAMHSA TIP 42 (2020), Chapter 4",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK571021/",
+        "locator": "Substance-Induced Mental Disorders; Substance-Induced Depressive Disorders; Exhibits 4.16–4.18",
+        "used_for": "Longitudinal assessment, independent/induced distinction and co-occurring conditions",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_215": {
+        "title": "NICE NG215, medicines associated with dependence or withdrawal symptoms",
+        "url": "https://www.nice.org.uk/guidance/ng215/chapter/Recommendations",
+        "locator": "1.5.6; 1.5.15–1.5.17",
+        "used_for": "Withdrawal assessment and prescriber review; no abrupt-stop experiments",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_100": {
+        "title": "NICE CG100, alcohol-use disorders: physical complications",
+        "url": "https://www.nice.org.uk/guidance/cg100/chapter/recommendations",
+        "locator": "1.1.1 acute withdrawal assessment/admission and warning against sudden reduction",
+        "used_for": "Alcohol withdrawal safety boundary; no home detoxification protocol",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_103": {
+        "title": "NICE CG103, delirium",
+        "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+        "locator": "1.3.1 and 1.6.1–1.6.3",
+        "used_for": "Acute/fluctuating changes in attention/cognition need assessment; hospital/long-term-care guideline context",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PREDNISONE_LABEL": {
+        "title": "DailyMed: predniSONE Tablets, USP; A-S Medication Solutions",
+        "url": "https://www.dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=aaaa3460-0239-4203-857f-0ada303c2108&type=display",
+        "locator": "Precautions, Neuro-Psychiatric; set ID in URL",
+        "used_for": "Example of an official psychiatric-effects warning, not an individual causation finding",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      },
+      "SAMET_2013": {
+        "title": "Samet et al. (2013), independent and substance-induced major depression and remission/relapse",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22775406/",
+        "locator": "Addiction 108(1):115–123; Abstract, Methods/Findings; DOI 10.1111/j.1360-0443.2012.04010.x",
+        "used_for": "PRISM-based prospective research supports retaining independent/induced course distinctions",
+        "access": "Primary abstract inspected; free full text linked as PMC3767419. No PRISM questionnaire or scoring implemented.",
+        "checked_at": "2026-11-02"
+      },
+      "ABSTINENCE_2021": {
+        "title": "Depressive symptoms in early alcohol or opioid abstinence: course & correlates (2021)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33983108/",
+        "locator": "Abstract, methods/results/conclusions",
+        "used_for": "Example of change over early abstinence; cohort-specific, not a universal waiting rule",
+        "access": "Primary indexed abstract inspected; no full-text access or generalizability claim inferred.",
+        "checked_at": "2026-11-02"
+      },
+      "BETA_2021": {
+        "title": "Riemer et al. (2021), Do beta-Blockers Cause Depression?",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33719510/",
+        "locator": "Hypertension; DOI 10.1161/HYPERTENSIONAHA.120.16590; abstract/conclusion; linked 2022 correction PMID35138874",
+        "used_for": "RCT meta-analysis challenges blanket beta-blocker causation assumptions",
+        "access": "Primary abstract and author-institution summary inspected; no effect sizes transcribed.",
+        "checked_at": "2026-11-02"
+      },
+      "ISOTRETINOIN_2024": {
+        "title": "Tan et al. (2024), Risk of Suicide and Psychiatric Disorders Among Isotretinoin Users: A Meta-Analysis",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10687715/",
+        "locator": "JAMA Dermatology 160(1):54–62; Key Points, Results, Discussion/Limitations",
+        "used_for": "Population findings versus individual assessment; avoid a causal medication blacklist",
+        "access": "Public primary-source material; relevant sections inspected",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Unspecified_Depressive_Disorder\\sources.json",
+    "records": {
+      "VA_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+        "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+        "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+        "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+        "used_for": "Comprehensive assessment, communication, safety and specialist review",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+        "used_for": "Plain-language symptom domains and adult context",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BIPOLAR": {
+        "title": "NIMH, Bipolar Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+        "locator": "Types; symptom comparison; diagnosis",
+        "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_185": {
+        "title": "NICE CG185, Bipolar disorder",
+        "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+        "locator": "1.2.1",
+        "used_for": "Recognition/referral recommendation, not a four-day bipolar diagnostic shortcut",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke et al., 2001, PHQ-9 validity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Abstract; Methods; diagnostic-status comparison",
+        "used_for": "Original validation of symptom/severity measure versus independent interview",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke et al., 2003, PHQ-2 validity",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract, Methods and Results",
+        "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+        "access": "Primary-study abstract inspected; full paper not accessed",
+        "checked_at": "2026-11-02"
+      },
+      "APA_GRIEF": {
+        "title": "APA, What Is Depression?",
+        "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+        "locator": "Grief versus depression discussion",
+        "used_for": "Loss context and possible coexistence",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_UNSPECIFIED": {
+        "title": "APA DSM-5-TR (2022), Unspecified Depressive Disorder",
+        "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+        "locator": "Printed p.210 / inspected PDF viewer p.341; adjacent Other Specified Depressive Disorder pp.209–210 and Unspecified Mood Disorder p.210",
+        "used_for": "Category definition, clinically significant burden, adjustment exclusions, non-specification and insufficient-information context; comparison with adjacent categories",
+        "access": "Original APA text inspected locally through previously obtained public psychiatry.ru mirror. Publisher chapter blocked. No redistribution permission inferred; book not bundled.",
+        "checked_at": "2026-11-02",
+        "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+      },
+      "APA_2025": {
+        "title": "APA DSM-5-TR cumulative update, September 2025",
+        "url": "https://www.psychiatry.org/getmedia/b68a5776-f88c-45c7-9535-fd219d7aa5cb/APA-DSM5TR-Update-September-2025.pdf",
+        "locator": "II.B, printed supplement p.7 / PDF viewer p.7; revised text read with visual revision marks",
+        "used_for": "Version context and adjacent other-specified revisions; not claimed to supply a replacement definition for unspecified depressive disorder.",
+        "access": "Official page rendered and visually reviewed during 2 November audit. Red strikethrough is deleted text, not a retained criterion. Selected revisions only; supplement does not replace manual.",
+        "checked_at": "2026-11-02"
+      },
+      "APA_UPDATE_INDEX": {
+        "title": "APA, Updates to DSM-5-TR Criteria and Text",
+        "url": "https://www.psychiatry.org/psychiatrists/practice/dsm/updates-to-dsm/updates-to-dsm-5-tr-criteria-text/",
+        "locator": "September 2025 Updates and earlier-update list",
+        "used_for": "Version verification; September 2025 is the latest update listed on the inspected page",
+        "access": "Official page inspected on the recorded research date; future changes require rechecking.",
+        "checked_at": "2026-11-02"
+      },
+      "DSM_OVERVIEW": {
+        "title": "First et al., DSM-5-TR: Rationale, Process, and Overview of Changes",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36510761/",
+        "locator": "Psychiatric Services 74(8):869–875 (2023); DOI 10.1176/appi.ps.20220334; online 13 December 2022; indexed author discussion of diagnostic changes",
+        "used_for": "Primary account of manual revision; contextual distinction between residual depressive categories and qualifying adjustment presentations; not a validation of our agents",
+        "access": "Primary bibliographic record and indexed author article passages inspected; direct PubMed retrieval was incomplete. No full instrument or empirical accuracy result inferred.",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Workflow\\Interview_Graph\\sources.json",
+    "records": {
+      "INTERVIEW_BOOK": {
+        "title": "Lichstein, The Medical Interview, Clinical Methods, 3rd ed. (1990), chapter 3",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK349/",
+        "locator": "The History of Present Illness; open-to-focused questioning; metadata PMID 21250190",
+        "used_for": "General interviewing technique only; not current depressive diagnostic criteria or proof of our sequence",
+        "access": "Free book chapter; relevant search-indexed chapter text and PubMed metadata inspected; direct Bookshelf retrieval challenged",
+        "checked_at": "2026-11-02"
+      },
+      "APA_EVALUATION": {
+        "title": "APA Practice Guidelines for the Psychiatric Evaluation of Adults, executive summary (2015)",
+        "url": "https://psychiatryonline.org/doi/pdf/10.1176/appi.ajp.2015.1720501",
+        "locator": "Table 1, printed p.800: evaluation domains; official APA guideline landing page",
+        "used_for": "Psychiatric, treatment, medical, reproductive, medication and substance-use background domains",
+        "access": "Official APA page and indexed executive-summary text inspected; direct publisher PDF returned 403; full book not claimed read",
+        "checked_at": "2026-11-02"
+      },
+      "WHO_TRAIN_DEP": {
+        "title": "WHO mhGAP training manual for mhGAP-IG version 2.0 (for field testing), Depression module (2017)",
+        "url": "https://cdn.who.int/media/docs/default-source/brain-health/mhgap-training-manuals/dep_module.pdf",
+        "locator": "Session 2, printed pp.150-156 / PDF pp.8-14; especially pp.151,153,156",
+        "used_for": "Worked assessment example: patient's language, symptom/function assessment, other explanations, safety and appropriate modules",
+        "access": "Official PDF downloaded; relevant page text inspected and printed pp.151,153,156 rendered and visually inspected. Training aid, not current DSM criteria",
+        "checked_at": "2026-11-02"
+      },
+      "WHO_IG2": {
+        "title": "WHO mhGAP Intervention Guide version 2.0 (2016)",
+        "url": "https://www.who.int/publications/i/item/9789241549790",
+        "locator": "Essential Care and Practice; DEP 1 assessment, printed pp.21-25",
+        "used_for": "Modular decision-chart architecture for non-specialist clinical services; illustrative framework only",
+        "access": "Official overview/indexed DEP text inspected; direct IRIS PDF blocked; chart discussion checked in official training PDF. Not represented as a 2023 algorithm",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults: treatment and management",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.1-1.2.9: recognition, comprehensive assessment, relevant history and direct suicide enquiry",
+        "used_for": "Broad assessment requirements; does not prescribe our numbered route",
+        "access": "Official search-indexed recommendation text inspected; direct page intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "VA_POCKET_2022": {
+        "title": "VA/DoD MDD Clinical Practice Guideline pocket card (February 2022)",
+        "url": "https://www.healthquality.va.gov/guidelines/MH/mdd/VADoDMDDCPG_PocketCard_Final_508_updated.pdf",
+        "locator": "PDF p.1: Module A boxes 1-8 and Sidebar 1",
+        "used_for": "Suspected depression -> work-up/safety -> diagnostic review; history/function and optional PHQ-9",
+        "access": "Official PDF downloaded; first page rendered and visually inspected. MDD-only; abbreviated DSM-5 sidebar is not a complete/current DSM-5-TR contract",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_185": {
+        "title": "NICE CG185, Bipolar disorder: assessment and management",
+        "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+        "locator": "1.2.1-1.2.3; 1.3.2",
+        "used_for": "Explore previous activation in people presenting with depression; specialist assessment rather than questionnaire diagnosis",
+        "access": "Official search-indexed recommendation text inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; current thoughts, plan, past behaviour, supports and disposition",
+        "used_for": "Safety enquiry domains and need for qualified review; used after a positive ASQ in its original protocol",
+        "access": "Official page read; not an autonomous AI protocol or authorization to apply its disposition rules unchanged",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1-1.6.6",
+        "used_for": "Needs-focused safety assessment; no predictive low/medium/high labels or score-only discharge",
+        "access": "Official indexed recommendations inspected; self-harm guideline scope retained",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_197": {
+        "title": "NICE NG197, Shared decision making",
+        "url": "https://www.nice.org.uk/guidance/ng197/chapter/recommendations",
+        "locator": "1.2.7-1.2.11",
+        "used_for": "Shared agenda, participation, preferences and manageable information",
+        "access": "Official recommendation text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ9_2001": {
+        "title": "Kroenke, Spitzer & Williams (2001), The PHQ-9: Validity of a Brief Depression Severity Measure",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+        "locator": "Methods: Mental Health Professional Validation Interviews; PMID 11556941",
+        "used_for": "Original primary validation: questionnaire compared with independent interview; no proof of all-type diagnosis or our ordering",
+        "access": "Indexed full-text methods and PubMed abstract inspected; direct PMC retrieval challenged",
+        "checked_at": "2026-11-02"
+      },
+      "PHQ2_2003": {
+        "title": "Kroenke, Spitzer & Williams (2003), The Patient Health Questionnaire-2: validity of a two-item depression screener",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "locator": "Abstract, purpose and methods",
+        "used_for": "Brief two-item screening purpose; not a universal entry/exit gate for all depressive presentations",
+        "access": "Primary-study abstract inspected; full article not claimed read",
+        "checked_at": "2026-11-02"
+      },
+      "ISPMD_2011": {
+        "title": "O'Brien et al. (2011), ISPMD Montreal consensus",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4134928/",
+        "locator": "Methods of measurement; prospective daily symptom ratings",
+        "used_for": "Cycle-wide prospective tracking instead of confirming a menstrual pattern from a single conversation",
+        "access": "Indexed original consensus inspected; a consensus framework, not a substitute for the separate DSM PMDD contract",
+        "checked_at": "2026-11-02"
+      },
+      "ACOG_4": {
+        "title": "ACOG Clinical Practice Guideline No.4 (2023), Screening and Diagnosis of Mental Health Conditions During Pregnancy and Postpartum",
+        "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum",
+        "locator": "Purpose and target population; linked module has detailed source locations",
+        "used_for": "Perinatal context includes broader assessment than a formal onset specifier; includes bipolar and postpartum psychosis concerns",
+        "access": "Official overview inspected this turn; detailed criterion use remains in existing source-linked MDD package",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_DEP": {
+        "title": "NIMH, Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression",
+        "locator": "Symptoms; diagnosis; older-adult presentation",
+        "used_for": "Medical/contextual review and age-sensitive assessment; no exclusion of depression based on age",
+        "access": "Official public page/indexed text inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NIMH_SEASONAL": {
+        "title": "NIMH, Seasonal Affective Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/seasonal-affective-disorder",
+        "locator": "Diagnosis section",
+        "used_for": "Repeated seasonal course requires longitudinal history, not one winter episode",
+        "access": "Official public page inspected; detailed criteria remain in MDD package",
+        "checked_at": "2026-11-02"
+      },
+      "MINI_OFFICIAL": {
+        "title": "Adult MINI overview, instrument author/distributor",
+        "url": "https://harmresearch.org/mini_mini-kid/",
+        "locator": "What is the MINI?; branching-tree paragraph; licensing and format-validation statements",
+        "used_for": "General module/screen/conditional-expansion principle only; no question set or proprietary algorithm copied",
+        "access": "Official public page read 2 November 2026; instrument license not obtained",
+        "checked_at": "2026-11-02"
+      },
+      "MINI_1998": {
+        "title": "Sheehan et al. (1998), original MINI development/validation paper",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9881538/",
+        "locator": "J Clin Psychiatry 59 Suppl 20:22-33; abstract",
+        "used_for": "Historical structured-interview validation context; DSM-IV/ICD-10 era, not validation of our graph",
+        "access": "Primary-study abstract read; not a claim to have inspected the whole article",
+        "checked_at": "2026-11-02"
+      },
+      "SCID_OFFICIAL": {
+        "title": "Columbia University Diagnostic and Assessment Lab, SCID-5 FAQ",
+        "url": "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-12",
+        "locator": "What is SCID-5?; differences between versions; ordering/permission; electronic versions",
+        "used_for": "Semi-structured clinician assessment, version-specific scope/timeframes, and separation of screening from fuller assessment; no licensed item/skip algorithm reproduced",
+        "access": "Official FAQ read; SCID manual/item sets not obtained",
+        "checked_at": "2026-11-02"
+      },
+      "WHO_ECP": {
+        "title": "WHO mhGAP training manual, Essential care and practice module (2017, for field testing)",
+        "url": "https://cdn.who.int/media/docs/default-source/brain-health/mhgap-training-manuals/ecp_module.pdf",
+        "locator": "Printed pp.99-102 / PDF pp.9-12, active listening, questioning and summarizing; p.102 visually checked",
+        "used_for": "Clarify meaning, use open/focused questions appropriately, summarize for correction; does not establish our retry limits",
+        "access": "Official PDF inspected; p.102 rendered and visually reviewed",
+        "checked_at": "2026-11-02"
+      },
+      "MAGI_2025": {
+        "title": "Bi et al. (2025), MAGI: Multi-Agent Guided Interview for Psychiatric Assessment",
+        "url": "https://aclanthology.org/2025.findings-acl.1278/",
+        "pdf_url": "https://aclanthology.org/2025.findings-acl.1278.pdf",
+        "locator": "Figure 2 / printed p.24900 (PDF p.3); sections 3.1-3.3 / pp.24900-24901; Ethical Considerations and Limitations / p.24906",
+        "used_for": "Separate navigation, adaptive wording and response-adequacy assessment. Our graph adds explicit decline/defer states and does not adopt compelled forced-choice or its diagnostic automation",
+        "access": "Original ACL paper inspected; Figure 2/page 3 rendered and visually checked. Research architecture, not clinical authority or validation of our system",
+        "checked_at": "2026-11-02"
+      }
+    }
+  },
+  {
+    "register": "Workflow\\sources.json",
+    "records": {
+      "NICE_222": {
+        "title": "NICE NG222, Depression in adults",
+        "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+        "locator": "1.2.6–1.2.9; section 1.3; 1.4.2–1.4.3; psychological-intervention tables",
+        "used_for": "Assessment domains, treatment choice, therapy context and monitoring; not validation of this exact session sequence",
+        "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_225": {
+        "title": "NICE NG225, Self-harm",
+        "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+        "locator": "1.6.1–1.6.6",
+        "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "ASQ_BSSA": {
+        "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+        "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+        "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+        "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+        "access": "Public primary-source material inspected",
+        "checked_at": "2026-11-02"
+      },
+      "NICE_197": {
+        "title": "NICE NG197, Shared decision making",
+        "url": "https://www.nice.org.uk/guidance/ng197/chapter/recommendations",
+        "locator": "1.2.7–1.2.17: agenda, participation, options, joint plan and review",
+        "used_for": "Participation, goals/preferences, agreement and review; does not prescribe this agent architecture",
+        "access": "Official recommendation/indexed text inspected",
+        "checked_at": "2026-11-02"
+      }
+    }
+  }
+]

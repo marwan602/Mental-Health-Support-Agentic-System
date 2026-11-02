@@ -1,0 +1,1421 @@
+{
+  "type": "object",
+  "properties": {
+    "module_id": {
+      "const": "adult_pdd"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "question_tracking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question_status": {
+            "enum": [
+              "not_asked",
+              "answered",
+              "partially_answered",
+              "unclear",
+              "declined"
+            ]
+          },
+          "unanswered_target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "question_id",
+          "question_status",
+          "unanswered_target"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "safety_handoff": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_assessed",
+            "no_signal_reported_in_available_text",
+            "needs_clinical_review",
+            "urgent_review_needed"
+          ]
+        },
+        "reported_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unresolved_questions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "status",
+        "reported_concerns",
+        "unresolved_questions"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "module_id",
+    "schema_version",
+    "records",
+    "question_tracking",
+    "safety_handoff"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:adult-pdd:evidence-output:1.0.0",
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_message_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "message_id",
+        "quote",
+        "context_message_ids",
+        "supports"
+      ],
+      "additionalProperties": false
+    },
+    "detail_1": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "poor_appetite",
+                "overeating",
+                "both_or_variable",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_3": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "onset_difficulty",
+                "maintenance_difficulty",
+                "early_waking",
+                "excessive_sleep",
+                "mixed",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_4": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "concentration",
+                "indecision",
+                "both",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_5": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "start_raw": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "end_raw": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "duration_raw": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "change_kind": {
+                    "enum": [
+                      "partial_improvement",
+                      "absence_of_relevant_symptoms",
+                      "worsening",
+                      "unclear"
+                    ]
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "start_raw",
+                  "end_raw",
+                  "duration_raw",
+                  "change_kind",
+                  "description"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_6": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "death_thoughts",
+                "wish_not_alive",
+                "suicidal_thoughts",
+                "suicide_plan",
+                "suicide_attempt",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_7": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "reported",
+                "denied",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_8": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "congruent",
+                "incongruent_or_mixed",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "record": {
+      "type": "object",
+      "properties": {
+        "concept_id": {
+          "enum": [
+            "depressed_mood",
+            "appetite_eating",
+            "sleep_disturbance",
+            "energy_fatigue",
+            "low_self_esteem",
+            "cognition_decisions",
+            "hopelessness",
+            "longitudinal_timeline",
+            "onset_history",
+            "mde_history",
+            "death_suicide",
+            "functioning_distress",
+            "activation_history",
+            "medical_context",
+            "exposure_context",
+            "psychotic_experience",
+            "treatment_history",
+            "family_history",
+            "life_context",
+            "anxious_distress",
+            "atypical_features"
+          ]
+        },
+        "episode_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "const": "patient"
+        },
+        "finding_status": {
+          "enum": [
+            "reported_present",
+            "reported_absent",
+            "unclear",
+            "conflicting"
+          ]
+        },
+        "temporal_status": {
+          "enum": [
+            "current",
+            "historical",
+            "unclear"
+          ]
+        },
+        "time_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attributes": {
+          "type": "object"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        },
+        "uncertainty_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "semantic_check_status": {
+          "enum": [
+            "supported",
+            "needs_review"
+          ]
+        }
+      },
+      "required": [
+        "concept_id",
+        "episode_key",
+        "subject",
+        "finding_status",
+        "temporal_status",
+        "time_reference",
+        "attributes",
+        "evidence",
+        "uncertainty_notes",
+        "semantic_check_status"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "depressed_mood"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "proportion_of_day": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "course": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline_comparison": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "recall_limits": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "appetite_eating"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "overlap_with_low_mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "pattern": {
+                      "$ref": "#/$defs/detail_2"
+                    },
+                    "appetite_vs_intake": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "sleep_disturbance"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "overlap_with_low_mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "pattern": {
+                      "$ref": "#/$defs/detail_3"
+                    },
+                    "latency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "sleep_hours": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "opportunity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "daytime_effects": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline_comparison": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "energy_fatigue"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "overlap_with_low_mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline_comparison": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "low_self_esteem"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "self_evaluation": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "overlap_with_low_mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "context": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "cognition_decisions"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "kind": {
+                      "$ref": "#/$defs/detail_4"
+                    },
+                    "tasks": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "overlap_with_low_mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline_comparison": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "hopelessness"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "future_expectations": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "overlap_with_low_mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "context": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "longitudinal_timeline"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "onset": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "course": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "recall_limits": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "reference_window": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "longest_better_interval": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptom_absence_account": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "life_anchors": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "associated_symptom_overlap": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intervals": {
+                      "$ref": "#/$defs/detail_5"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "onset_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "age_or_period": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "approximation": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "continuity_to_adulthood": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "mde_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "period": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptoms": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "current_status": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "background_relationship": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "lower_symptom_intervals": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "professional_history": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "death_suicide"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "experience": {
+                      "$ref": "#/$defs/detail_6"
+                    },
+                    "recency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intent": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "plan_present": {
+                      "$ref": "#/$defs/detail_7"
+                    },
+                    "access": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "past_behaviour": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "support": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "functioning_distress"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "examples": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "supports": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "activation_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "period": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "energy_activity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "sleep_need": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "other_changes": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "exposure_context": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "medical_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "conditions": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timeline": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "investigations": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "clinician_review": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "exposure_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "dose_use": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "start_change_stop": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptom_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "source_kind": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "psychotic_experience"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "content": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "mood_relationship": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "conviction_context": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "safety_concerns": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "reported_mood_congruence": {
+                      "$ref": "#/$defs/detail_8"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "treatment_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "reported_diagnosis": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "treatment": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "period": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "response": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "use": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "family_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "relative": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "reported_condition": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "certainty": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "life_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "events": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "support": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "barriers": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "meaning": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "anxious_distress"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "tension": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "unusual_restlessness": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "worry_affecting_concentration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "fear_of_awful_event": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "fear_of_losing_control": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timing_frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "observer": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "depressed_period_overlap": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "atypical_features"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "mood_reactivity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "appetite_weight_gain": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "excessive_sleep": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "leaden_limbs": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "longstanding_rejection_sensitivity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timing_frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "observer": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "depressed_period_overlap": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

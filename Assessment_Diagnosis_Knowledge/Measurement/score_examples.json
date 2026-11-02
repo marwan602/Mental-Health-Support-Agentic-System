@@ -1,0 +1,412 @@
+{
+  "fictional_fixtures_only": true,
+  "examples": [
+    {
+      "name": "complete_PHQ9",
+      "input": {
+        "instrument_id": "PHQ9",
+        "profile_version": "0.1.0-research",
+        "age": 24,
+        "consent_to_measurement": true,
+        "administration_mode": "standardized_self_report",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "language": "en",
+        "protocol_language_reviewed": true,
+        "standardized_items_presented": true,
+        "standardized_timeframe_presented": true,
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "responses": [
+          {
+            "item_id": "PHQ9_1",
+            "status": "answered",
+            "category_code": 2,
+            "source_message_id": "fictional_m1",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_2",
+            "status": "answered",
+            "category_code": 2,
+            "source_message_id": "fictional_m2",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_3",
+            "status": "answered",
+            "category_code": 2,
+            "source_message_id": "fictional_m3",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_4",
+            "status": "answered",
+            "category_code": 1,
+            "source_message_id": "fictional_m4",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_5",
+            "status": "answered",
+            "category_code": 1,
+            "source_message_id": "fictional_m5",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_6",
+            "status": "answered",
+            "category_code": 1,
+            "source_message_id": "fictional_m6",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_7",
+            "status": "answered",
+            "category_code": 1,
+            "source_message_id": "fictional_m7",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_8",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m8",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_9",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m9",
+            "response_origin": "direct_selection"
+          }
+        ]
+      },
+      "output": {
+        "arithmetic_reference_only": true,
+        "administration_verification": "application_declaration_not_independently_verified",
+        "total": 10,
+        "symptom_band": "moderate",
+        "diagnosis": null,
+        "treatment_recommendation": null,
+        "item9_review": {
+          "safety_clearance": false,
+          "actual_review_delivered": false,
+          "status": "not_endorsed_in_this_item",
+          "followup_needed": false
+        },
+        "instrument_id": "PHQ9",
+        "profile_version": "0.1.0-research",
+        "score_direction": "more_reported_depressive_symptom_burden",
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "language": "en",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "administration_mode": "standardized_self_report",
+        "answered_items": 9,
+        "expected_items": 9,
+        "missing_or_unanswered_items": [],
+        "status": "complete",
+        "reason": "complete_declared_standardized_item_responses",
+        "screening_threshold_met": true,
+        "threshold_meaning": "Common PHQ-9 screening threshold; not a confirmed diagnosis, safety clearance or automatic treatment decision."
+      }
+    },
+    {
+      "name": "incomplete_PHQ9_with_item9_followup",
+      "input": {
+        "instrument_id": "PHQ9",
+        "profile_version": "0.1.0-research",
+        "age": 24,
+        "consent_to_measurement": true,
+        "administration_mode": "standardized_self_report",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "language": "en",
+        "protocol_language_reviewed": true,
+        "standardized_items_presented": true,
+        "standardized_timeframe_presented": true,
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "responses": [
+          {
+            "item_id": "PHQ9_1",
+            "status": "declined",
+            "category_code": null,
+            "source_message_id": "fictional_m1",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_2",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m2",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_3",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m3",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_4",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m4",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_5",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m5",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_6",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m6",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_7",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m7",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_8",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m8",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_9",
+            "status": "answered",
+            "category_code": 1,
+            "source_message_id": "fictional_m9",
+            "response_origin": "direct_selection"
+          }
+        ]
+      },
+      "output": {
+        "arithmetic_reference_only": true,
+        "administration_verification": "application_declaration_not_independently_verified",
+        "total": null,
+        "symptom_band": null,
+        "diagnosis": null,
+        "treatment_recommendation": null,
+        "item9_review": {
+          "safety_clearance": false,
+          "actual_review_delivered": false,
+          "status": "endorsed_requires_followup",
+          "followup_needed": true
+        },
+        "instrument_id": "PHQ9",
+        "profile_version": "0.1.0-research",
+        "score_direction": "more_reported_depressive_symptom_burden",
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "language": "en",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "administration_mode": "standardized_self_report",
+        "answered_items": 8,
+        "expected_items": 9,
+        "missing_or_unanswered_items": [
+          "PHQ9_1"
+        ],
+        "status": "incomplete",
+        "reason": "no_total_without_complete_items_in_this_reference"
+      }
+    },
+    {
+      "name": "WHO5_wellbeing_direction",
+      "input": {
+        "instrument_id": "WHO5",
+        "profile_version": "0.1.0-research",
+        "age": 24,
+        "consent_to_measurement": true,
+        "administration_mode": "standardized_self_report",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "language": "en",
+        "protocol_language_reviewed": true,
+        "standardized_items_presented": true,
+        "standardized_timeframe_presented": true,
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "responses": [
+          {
+            "item_id": "WHO5_1",
+            "status": "answered",
+            "category_code": 4,
+            "source_message_id": "fictional_m1",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "WHO5_2",
+            "status": "answered",
+            "category_code": 4,
+            "source_message_id": "fictional_m2",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "WHO5_3",
+            "status": "answered",
+            "category_code": 4,
+            "source_message_id": "fictional_m3",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "WHO5_4",
+            "status": "answered",
+            "category_code": 4,
+            "source_message_id": "fictional_m4",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "WHO5_5",
+            "status": "answered",
+            "category_code": 4,
+            "source_message_id": "fictional_m5",
+            "response_origin": "direct_selection"
+          }
+        ]
+      },
+      "output": {
+        "arithmetic_reference_only": true,
+        "administration_verification": "application_declaration_not_independently_verified",
+        "total": 20,
+        "symptom_band": null,
+        "diagnosis": null,
+        "treatment_recommendation": null,
+        "item9_review": {
+          "safety_clearance": false,
+          "actual_review_delivered": false,
+          "status": "not_assessed_by_this_instrument",
+          "followup_needed": null
+        },
+        "instrument_id": "WHO5",
+        "profile_version": "0.1.0-research",
+        "score_direction": "better_reported_wellbeing",
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "language": "en",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "administration_mode": "standardized_self_report",
+        "answered_items": 5,
+        "expected_items": 5,
+        "missing_or_unanswered_items": [],
+        "status": "complete",
+        "reason": "complete_declared_standardized_item_responses",
+        "wellbeing_percent": 80,
+        "poor_wellbeing_further_assessment_suggested": false,
+        "threshold_meaning": "WHO suggested poor-wellbeing/further-assessment threshold, not a depressive-disorder diagnosis."
+      }
+    },
+    {
+      "name": "unstructured_estimate_not_scored",
+      "input": {
+        "instrument_id": "PHQ9",
+        "profile_version": "0.1.0-research",
+        "age": 24,
+        "consent_to_measurement": true,
+        "administration_mode": "unstructured_chat_estimate",
+        "form_reference": "fictional_fixture_of_source_linked_form",
+        "language": "en",
+        "protocol_language_reviewed": true,
+        "standardized_items_presented": true,
+        "standardized_timeframe_presented": true,
+        "reference_date": "2026-11-02",
+        "recall_days": 14,
+        "responses": [
+          {
+            "item_id": "PHQ9_1",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m1",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_2",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m2",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_3",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m3",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_4",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m4",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_5",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m5",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_6",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m6",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_7",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m7",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_8",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m8",
+            "response_origin": "direct_selection"
+          },
+          {
+            "item_id": "PHQ9_9",
+            "status": "answered",
+            "category_code": 0,
+            "source_message_id": "fictional_m9",
+            "response_origin": "direct_selection"
+          }
+        ]
+      },
+      "output": {
+        "arithmetic_reference_only": true,
+        "administration_verification": "application_declaration_not_independently_verified",
+        "total": null,
+        "symptom_band": null,
+        "diagnosis": null,
+        "treatment_recommendation": null,
+        "item9_review": {
+          "safety_clearance": false,
+          "actual_review_delivered": false,
+          "status": "not_endorsed_in_this_item",
+          "followup_needed": false
+        },
+        "instrument_id": "PHQ9",
+        "profile_version": "0.1.0-research",
+        "score_direction": "more_reported_depressive_symptom_burden",
+        "status": "not_scored",
+        "reason": "not_standardized_item_administration"
+      }
+    }
+  ]
+}

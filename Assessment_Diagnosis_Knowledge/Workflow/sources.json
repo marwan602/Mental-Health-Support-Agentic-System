@@ -1,0 +1,34 @@
+{
+  "NICE_222": {
+    "title": "NICE NG222, Depression in adults",
+    "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+    "locator": "1.2.6–1.2.9; section 1.3; 1.4.2–1.4.3; psychological-intervention tables",
+    "used_for": "Assessment domains, treatment choice, therapy context and monitoring; not validation of this exact session sequence",
+    "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_225": {
+    "title": "NICE NG225, Self-harm",
+    "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+    "locator": "1.6.1–1.6.6",
+    "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "ASQ_BSSA": {
+    "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+    "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+    "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+    "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_197": {
+    "title": "NICE NG197, Shared decision making",
+    "url": "https://www.nice.org.uk/guidance/ng197/chapter/recommendations",
+    "locator": "1.2.7–1.2.17: agenda, participation, options, joint plan and review",
+    "used_for": "Participation, goals/preferences, agreement and review; does not prescribe this agent architecture",
+    "access": "Official recommendation/indexed text inspected",
+    "checked_at": "2026-11-02"
+  }
+}

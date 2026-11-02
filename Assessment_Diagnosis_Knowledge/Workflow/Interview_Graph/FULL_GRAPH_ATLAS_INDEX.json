@@ -1,0 +1,4066 @@
+{
+  "document": "13_Full_Numbered_Assessment_Graph.md",
+  "source_graph": "C:\\Users\\DELL\\OneDrive\\Desktop\\Assessment_Diagnosis_Knowledge\\Workflow\\Interview_Graph\\question_graph.json",
+  "diagrams": [
+    {
+      "id": "G001",
+      "title": "Start-to-finish assessment map",
+      "anchor": "master"
+    },
+    {
+      "id": "G002",
+      "title": "Universal ask, extract, review and select loop",
+      "anchor": "g002"
+    },
+    {
+      "id": "G003",
+      "title": "All reply outcomes and their return routes",
+      "anchor": "g003"
+    },
+    {
+      "id": "G003A",
+      "title": "G003 answer handling - clear, partial, unclear and conflicting",
+      "anchor": "g003a"
+    },
+    {
+      "id": "G003B",
+      "title": "G003 detour handling - relevant or unrelated topic, unknown and silence",
+      "anchor": "g003b"
+    },
+    {
+      "id": "G003C",
+      "title": "G003 participation and access handling",
+      "anchor": "g003c"
+    },
+    {
+      "id": "G004",
+      "title": "Safety and urgent medical or mental-state interruptions",
+      "anchor": "g004"
+    },
+    {
+      "id": "G005",
+      "title": "Follow-up eligibility and skip logic",
+      "anchor": "g005"
+    },
+    {
+      "id": "G006",
+      "title": "Branch opening, uncertainty and return to the main route",
+      "anchor": "g006"
+    },
+    {
+      "id": "G007",
+      "title": "Decline, pause, stop and later resumption",
+      "anchor": "g007"
+    },
+    {
+      "id": "G008",
+      "title": "Optional measurement and missing questionnaire responses",
+      "anchor": "g008"
+    },
+    {
+      "id": "G009",
+      "title": "Summary, corrections and professional diagnostic review",
+      "anchor": "g009"
+    },
+    {
+      "id": "G010",
+      "title": "Care handoff, end of contact and future monitoring",
+      "anchor": "g010"
+    },
+    {
+      "id": "G011",
+      "title": "M1 - Opening account",
+      "anchor": "g011"
+    },
+    {
+      "id": "G012",
+      "title": "M2 - Early safety information",
+      "anchor": "g012"
+    },
+    {
+      "id": "G013",
+      "title": "M3 - Depressive symptoms, timing and daily impact",
+      "anchor": "g013"
+    },
+    {
+      "id": "G014",
+      "title": "M4 - Important alternative explanations",
+      "anchor": "g014"
+    },
+    {
+      "id": "G015",
+      "title": "M5 - Long-term course, earlier care and family context",
+      "anchor": "g015"
+    },
+    {
+      "id": "G016",
+      "title": "M6 - Pattern and life-stage applicability",
+      "anchor": "g016"
+    },
+    {
+      "id": "G017",
+      "title": "M7 - Context and care priorities",
+      "anchor": "g017"
+    },
+    {
+      "id": "G018",
+      "title": "B01 - Persistent symptoms and PDD course",
+      "anchor": "branch-persistent"
+    },
+    {
+      "id": "G019",
+      "title": "B02 - Menstrual timing and PMDD review",
+      "anchor": "branch-menstrual"
+    },
+    {
+      "id": "G020",
+      "title": "B03 - Substance or medication attribution review",
+      "anchor": "branch-exposure"
+    },
+    {
+      "id": "G021",
+      "title": "B04 - Medical-condition attribution review",
+      "anchor": "branch-medical"
+    },
+    {
+      "id": "G022",
+      "title": "B05 - Brief, recurrent and other-specified presentation review",
+      "anchor": "branch-brief-residual"
+    },
+    {
+      "id": "G023",
+      "title": "B06 - Reported or unresolved residual formulation review",
+      "anchor": "branch-unresolved-formulation"
+    },
+    {
+      "id": "G024",
+      "title": "B07 - Anxious-distress features",
+      "anchor": "branch-anxious-distress"
+    },
+    {
+      "id": "G025",
+      "title": "B08 - Mixed features and activation review",
+      "anchor": "branch-mixed-features"
+    },
+    {
+      "id": "G026",
+      "title": "B09 - Melancholic-feature information",
+      "anchor": "branch-melancholic-features"
+    },
+    {
+      "id": "G027",
+      "title": "B10 - Atypical-feature information",
+      "anchor": "branch-atypical-features"
+    },
+    {
+      "id": "G028",
+      "title": "B11 - Seasonal-course information",
+      "anchor": "branch-seasonal-pattern"
+    },
+    {
+      "id": "G029",
+      "title": "B12 - Pregnancy and postpartum context",
+      "anchor": "branch-peripartum-context"
+    },
+    {
+      "id": "G030",
+      "title": "B13 - Catatonic signs: professional assessment boundary",
+      "anchor": "branch-catatonic-signs"
+    },
+    {
+      "id": "G031",
+      "title": "B14 - Bipolar I, bipolar II and cyclothymic/other bipolar-spectrum presentations",
+      "anchor": "branch-alternative-01-bipolar-spectrum"
+    },
+    {
+      "id": "G032",
+      "title": "B15 - Anxiety presentations: generalized worry, panic and social anxiety",
+      "anchor": "branch-alternative-02-anxiety"
+    },
+    {
+      "id": "G033",
+      "title": "B16 - PTSD and other trauma-related presentations",
+      "anchor": "branch-alternative-03-trauma"
+    },
+    {
+      "id": "G034",
+      "title": "B17 - Adjustment disorder and ordinary stress responses",
+      "anchor": "branch-alternative-04-adjustment"
+    },
+    {
+      "id": "G035",
+      "title": "B18 - Ordinary grief and prolonged grief disorder",
+      "anchor": "branch-alternative-05-grief"
+    },
+    {
+      "id": "G036",
+      "title": "B19 - Psychotic experiences, mood disorders with psychosis and schizoaffective alternatives",
+      "anchor": "branch-alternative-06-psychosis"
+    },
+    {
+      "id": "G037",
+      "title": "B20 - Delirium and acute medical/cognitive change",
+      "anchor": "branch-alternative-07-delirium"
+    },
+    {
+      "id": "G038",
+      "title": "B21 - Cognitive decline and possible neurocognitive disorder",
+      "anchor": "branch-alternative-08-neurocognitive"
+    },
+    {
+      "id": "G039",
+      "title": "B22 - Insomnia, sleep-disordered breathing and schedule-related problems",
+      "anchor": "branch-alternative-09-sleep"
+    },
+    {
+      "id": "G040",
+      "title": "B23 - Medical conditions and depressive symptoms",
+      "anchor": "branch-alternative-10-medical"
+    },
+    {
+      "id": "G041",
+      "title": "B24 - Substance, medication, intoxication and withdrawal-related presentations",
+      "anchor": "branch-alternative-11-substance-medication"
+    },
+    {
+      "id": "G042",
+      "title": "MDD / Depressed mood",
+      "anchor": "g042"
+    },
+    {
+      "id": "G043",
+      "title": "MDD / Interest and pleasure",
+      "anchor": "g043"
+    },
+    {
+      "id": "G044",
+      "title": "MDD / Appetite change",
+      "anchor": "g044"
+    },
+    {
+      "id": "G045",
+      "title": "MDD / Weight change",
+      "anchor": "g045"
+    },
+    {
+      "id": "G046",
+      "title": "MDD / Sleep disturbance",
+      "anchor": "g046"
+    },
+    {
+      "id": "G047",
+      "title": "MDD / Psychomotor change",
+      "anchor": "g047"
+    },
+    {
+      "id": "G048",
+      "title": "MDD / Energy and fatigue",
+      "anchor": "g048"
+    },
+    {
+      "id": "G049",
+      "title": "MDD / Worthlessness and guilt",
+      "anchor": "g049"
+    },
+    {
+      "id": "G050",
+      "title": "MDD / Concentration and decisions",
+      "anchor": "g050"
+    },
+    {
+      "id": "G051",
+      "title": "MDD / Death/suicide-related reports",
+      "anchor": "g051"
+    },
+    {
+      "id": "G052",
+      "title": "MDD / Episode timeline",
+      "anchor": "g052"
+    },
+    {
+      "id": "G053",
+      "title": "MDD / Functioning and distress",
+      "anchor": "g053"
+    },
+    {
+      "id": "G054",
+      "title": "MDD / Activation history",
+      "anchor": "g054"
+    },
+    {
+      "id": "G055",
+      "title": "MDD / Medical context",
+      "anchor": "g055"
+    },
+    {
+      "id": "G056",
+      "title": "MDD / Medicines and substances",
+      "anchor": "g056"
+    },
+    {
+      "id": "G057",
+      "title": "MDD / Psychotic experiences",
+      "anchor": "g057"
+    },
+    {
+      "id": "G058",
+      "title": "MDD / Previous care",
+      "anchor": "g058"
+    },
+    {
+      "id": "G059",
+      "title": "MDD / Family history",
+      "anchor": "g059"
+    },
+    {
+      "id": "G060",
+      "title": "MDD / Life context",
+      "anchor": "g060"
+    },
+    {
+      "id": "G061",
+      "title": "MDD / Anxious distress",
+      "anchor": "g061"
+    },
+    {
+      "id": "G062",
+      "title": "MDD / Mixed features",
+      "anchor": "g062"
+    },
+    {
+      "id": "G063",
+      "title": "MDD / Melancholic features",
+      "anchor": "g063"
+    },
+    {
+      "id": "G064",
+      "title": "MDD / Atypical features",
+      "anchor": "g064"
+    },
+    {
+      "id": "G065",
+      "title": "MDD / Seasonal pattern",
+      "anchor": "g065"
+    },
+    {
+      "id": "G066",
+      "title": "MDD / Peripartum/perinatal context",
+      "anchor": "g066"
+    },
+    {
+      "id": "G067",
+      "title": "MDD / Catatonic signs",
+      "anchor": "g067"
+    },
+    {
+      "id": "G068",
+      "title": "PDD / Persistent depressed-mood report",
+      "anchor": "g068"
+    },
+    {
+      "id": "G069",
+      "title": "PDD / Appetite or overeating",
+      "anchor": "g069"
+    },
+    {
+      "id": "G070",
+      "title": "PDD / Sleep disturbance",
+      "anchor": "g070"
+    },
+    {
+      "id": "G071",
+      "title": "PDD / Energy and fatigue",
+      "anchor": "g071"
+    },
+    {
+      "id": "G072",
+      "title": "PDD / Low self-esteem",
+      "anchor": "g072"
+    },
+    {
+      "id": "G073",
+      "title": "PDD / Concentration and decisions",
+      "anchor": "g073"
+    },
+    {
+      "id": "G074",
+      "title": "PDD / Hopelessness",
+      "anchor": "g074"
+    },
+    {
+      "id": "G075",
+      "title": "PDD / Longitudinal course",
+      "anchor": "g075"
+    },
+    {
+      "id": "G076",
+      "title": "PDD / Age-at-onset history",
+      "anchor": "g076"
+    },
+    {
+      "id": "G077",
+      "title": "PDD / Major depressive episode history",
+      "anchor": "g077"
+    },
+    {
+      "id": "G078",
+      "title": "PDD / Death/suicide-related reports",
+      "anchor": "g078"
+    },
+    {
+      "id": "G079",
+      "title": "PDD / Functioning and distress",
+      "anchor": "g079"
+    },
+    {
+      "id": "G080",
+      "title": "PDD / Activation history",
+      "anchor": "g080"
+    },
+    {
+      "id": "G081",
+      "title": "PDD / Medical context",
+      "anchor": "g081"
+    },
+    {
+      "id": "G082",
+      "title": "PDD / Medicines and substances",
+      "anchor": "g082"
+    },
+    {
+      "id": "G083",
+      "title": "PDD / Psychotic experiences",
+      "anchor": "g083"
+    },
+    {
+      "id": "G084",
+      "title": "PDD / Previous care",
+      "anchor": "g084"
+    },
+    {
+      "id": "G085",
+      "title": "PDD / Family history",
+      "anchor": "g085"
+    },
+    {
+      "id": "G086",
+      "title": "PDD / Life context",
+      "anchor": "g086"
+    },
+    {
+      "id": "G087",
+      "title": "PDD / Anxious distress",
+      "anchor": "g087"
+    },
+    {
+      "id": "G088",
+      "title": "PDD / Atypical features",
+      "anchor": "g088"
+    },
+    {
+      "id": "G089",
+      "title": "PMDD / Mood lability",
+      "anchor": "g089"
+    },
+    {
+      "id": "G090",
+      "title": "PMDD / Irritability, anger or conflict",
+      "anchor": "g090"
+    },
+    {
+      "id": "G091",
+      "title": "PMDD / Depressed mood, hopelessness or self-critical thoughts",
+      "anchor": "g091"
+    },
+    {
+      "id": "G092",
+      "title": "PMDD / Anxiety or tension",
+      "anchor": "g092"
+    },
+    {
+      "id": "G093",
+      "title": "PMDD / Reduced interest",
+      "anchor": "g093"
+    },
+    {
+      "id": "G094",
+      "title": "PMDD / Concentration difficulty",
+      "anchor": "g094"
+    },
+    {
+      "id": "G095",
+      "title": "PMDD / Low energy/fatigue",
+      "anchor": "g095"
+    },
+    {
+      "id": "G096",
+      "title": "PMDD / Appetite, overeating or cravings",
+      "anchor": "g096"
+    },
+    {
+      "id": "G097",
+      "title": "PMDD / Sleep disturbance",
+      "anchor": "g097"
+    },
+    {
+      "id": "G098",
+      "title": "PMDD / Overwhelmed or out of control",
+      "anchor": "g098"
+    },
+    {
+      "id": "G099",
+      "title": "PMDD / Physical symptom group",
+      "anchor": "g099"
+    },
+    {
+      "id": "G100",
+      "title": "PMDD / Cycle/reproductive context",
+      "anchor": "g100"
+    },
+    {
+      "id": "G101",
+      "title": "PMDD / Symptom timing across cycles",
+      "anchor": "g101"
+    },
+    {
+      "id": "G102",
+      "title": "PMDD / Symptoms outside the premenstrual interval",
+      "anchor": "g102"
+    },
+    {
+      "id": "G103",
+      "title": "PMDD / Prospective-record history",
+      "anchor": "g103"
+    },
+    {
+      "id": "G104",
+      "title": "PMDD / Hormonal exposure context",
+      "anchor": "g104"
+    },
+    {
+      "id": "G105",
+      "title": "PMDD / Premenstrual exacerbation review",
+      "anchor": "g105"
+    },
+    {
+      "id": "G106",
+      "title": "PMDD / Death/suicide-related reports",
+      "anchor": "g106"
+    },
+    {
+      "id": "G107",
+      "title": "PMDD / Functioning and distress",
+      "anchor": "g107"
+    },
+    {
+      "id": "G108",
+      "title": "PMDD / Activation history",
+      "anchor": "g108"
+    },
+    {
+      "id": "G109",
+      "title": "PMDD / Medical context",
+      "anchor": "g109"
+    },
+    {
+      "id": "G110",
+      "title": "PMDD / Medicines and substances",
+      "anchor": "g110"
+    },
+    {
+      "id": "G111",
+      "title": "PMDD / Psychotic experiences",
+      "anchor": "g111"
+    },
+    {
+      "id": "G112",
+      "title": "PMDD / Previous care",
+      "anchor": "g112"
+    },
+    {
+      "id": "G113",
+      "title": "PMDD / Family history",
+      "anchor": "g113"
+    },
+    {
+      "id": "G114",
+      "title": "PMDD / Life context",
+      "anchor": "g114"
+    },
+    {
+      "id": "G115",
+      "title": "Substance_Medication_Induced_Depression / Depressed mood",
+      "anchor": "g115"
+    },
+    {
+      "id": "G116",
+      "title": "Substance_Medication_Induced_Depression / Interest and pleasure",
+      "anchor": "g116"
+    },
+    {
+      "id": "G117",
+      "title": "Substance_Medication_Induced_Depression / Appetite change",
+      "anchor": "g117"
+    },
+    {
+      "id": "G118",
+      "title": "Substance_Medication_Induced_Depression / Weight change",
+      "anchor": "g118"
+    },
+    {
+      "id": "G119",
+      "title": "Substance_Medication_Induced_Depression / Sleep disturbance",
+      "anchor": "g119"
+    },
+    {
+      "id": "G120",
+      "title": "Substance_Medication_Induced_Depression / Psychomotor change",
+      "anchor": "g120"
+    },
+    {
+      "id": "G121",
+      "title": "Substance_Medication_Induced_Depression / Energy and fatigue",
+      "anchor": "g121"
+    },
+    {
+      "id": "G122",
+      "title": "Substance_Medication_Induced_Depression / Worthlessness and guilt",
+      "anchor": "g122"
+    },
+    {
+      "id": "G123",
+      "title": "Substance_Medication_Induced_Depression / Concentration and decisions",
+      "anchor": "g123"
+    },
+    {
+      "id": "G124",
+      "title": "Substance_Medication_Induced_Depression / Death/suicide-related reports",
+      "anchor": "g124"
+    },
+    {
+      "id": "G125",
+      "title": "Substance_Medication_Induced_Depression / Functioning and distress",
+      "anchor": "g125"
+    },
+    {
+      "id": "G126",
+      "title": "Substance_Medication_Induced_Depression / Activation history",
+      "anchor": "g126"
+    },
+    {
+      "id": "G127",
+      "title": "Substance_Medication_Induced_Depression / Medical context",
+      "anchor": "g127"
+    },
+    {
+      "id": "G128",
+      "title": "Substance_Medication_Induced_Depression / Psychotic experiences",
+      "anchor": "g128"
+    },
+    {
+      "id": "G129",
+      "title": "Substance_Medication_Induced_Depression / Previous care",
+      "anchor": "g129"
+    },
+    {
+      "id": "G130",
+      "title": "Substance_Medication_Induced_Depression / Family history",
+      "anchor": "g130"
+    },
+    {
+      "id": "G131",
+      "title": "Substance_Medication_Induced_Depression / Life context",
+      "anchor": "g131"
+    },
+    {
+      "id": "G132",
+      "title": "Substance_Medication_Induced_Depression / Overall depressive presentation",
+      "anchor": "g132"
+    },
+    {
+      "id": "G133",
+      "title": "Substance_Medication_Induced_Depression / Medicine/substance identification and use",
+      "anchor": "g133"
+    },
+    {
+      "id": "G134",
+      "title": "Substance_Medication_Induced_Depression / Exposure changes and last use",
+      "anchor": "g134"
+    },
+    {
+      "id": "G135",
+      "title": "Substance_Medication_Induced_Depression / Mood relative to exposure",
+      "anchor": "g135"
+    },
+    {
+      "id": "G136",
+      "title": "Substance_Medication_Induced_Depression / Depression outside the exposure period",
+      "anchor": "g136"
+    },
+    {
+      "id": "G137",
+      "title": "Substance_Medication_Induced_Depression / Course after an exposure change",
+      "anchor": "g137"
+    },
+    {
+      "id": "G138",
+      "title": "Substance_Medication_Induced_Depression / Possible intoxication/withdrawal context",
+      "anchor": "g138"
+    },
+    {
+      "id": "G139",
+      "title": "Substance_Medication_Induced_Depression / Acute confusion and attention changes",
+      "anchor": "g139"
+    },
+    {
+      "id": "G140",
+      "title": "Substance_Medication_Induced_Depression / Illness, treatment and competing explanations",
+      "anchor": "g140"
+    },
+    {
+      "id": "G141",
+      "title": "Substance_Medication_Induced_Depression / Reported tests and professional findings",
+      "anchor": "g141"
+    },
+    {
+      "id": "G142",
+      "title": "Depression_Due_To_Medical_Condition / Depressed mood",
+      "anchor": "g142"
+    },
+    {
+      "id": "G143",
+      "title": "Depression_Due_To_Medical_Condition / Interest and pleasure",
+      "anchor": "g143"
+    },
+    {
+      "id": "G144",
+      "title": "Depression_Due_To_Medical_Condition / Appetite change",
+      "anchor": "g144"
+    },
+    {
+      "id": "G145",
+      "title": "Depression_Due_To_Medical_Condition / Weight change",
+      "anchor": "g145"
+    },
+    {
+      "id": "G146",
+      "title": "Depression_Due_To_Medical_Condition / Sleep disturbance",
+      "anchor": "g146"
+    },
+    {
+      "id": "G147",
+      "title": "Depression_Due_To_Medical_Condition / Psychomotor change",
+      "anchor": "g147"
+    },
+    {
+      "id": "G148",
+      "title": "Depression_Due_To_Medical_Condition / Energy and fatigue",
+      "anchor": "g148"
+    },
+    {
+      "id": "G149",
+      "title": "Depression_Due_To_Medical_Condition / Worthlessness and guilt",
+      "anchor": "g149"
+    },
+    {
+      "id": "G150",
+      "title": "Depression_Due_To_Medical_Condition / Concentration and decisions",
+      "anchor": "g150"
+    },
+    {
+      "id": "G151",
+      "title": "Depression_Due_To_Medical_Condition / Death/suicide-related reports",
+      "anchor": "g151"
+    },
+    {
+      "id": "G152",
+      "title": "Depression_Due_To_Medical_Condition / Functioning and distress",
+      "anchor": "g152"
+    },
+    {
+      "id": "G153",
+      "title": "Depression_Due_To_Medical_Condition / Activation history",
+      "anchor": "g153"
+    },
+    {
+      "id": "G154",
+      "title": "Depression_Due_To_Medical_Condition / Psychotic experiences",
+      "anchor": "g154"
+    },
+    {
+      "id": "G155",
+      "title": "Depression_Due_To_Medical_Condition / Previous care",
+      "anchor": "g155"
+    },
+    {
+      "id": "G156",
+      "title": "Depression_Due_To_Medical_Condition / Family history",
+      "anchor": "g156"
+    },
+    {
+      "id": "G157",
+      "title": "Depression_Due_To_Medical_Condition / Life context",
+      "anchor": "g157"
+    },
+    {
+      "id": "G158",
+      "title": "Depression_Due_To_Medical_Condition / Overall depressive presentation",
+      "anchor": "g158"
+    },
+    {
+      "id": "G159",
+      "title": "Depression_Due_To_Medical_Condition / Acute confusion and attention changes",
+      "anchor": "g159"
+    },
+    {
+      "id": "G160",
+      "title": "Depression_Due_To_Medical_Condition / Reported medical condition and diagnostic basis",
+      "anchor": "g160"
+    },
+    {
+      "id": "G161",
+      "title": "Depression_Due_To_Medical_Condition / Medical illness chronology and course",
+      "anchor": "g161"
+    },
+    {
+      "id": "G162",
+      "title": "Depression_Due_To_Medical_Condition / Relationship of mood and medical course",
+      "anchor": "g162"
+    },
+    {
+      "id": "G163",
+      "title": "Depression_Due_To_Medical_Condition / Reported examination and investigation findings",
+      "anchor": "g163"
+    },
+    {
+      "id": "G164",
+      "title": "Depression_Due_To_Medical_Condition / Reported professional view of the relationship",
+      "anchor": "g164"
+    },
+    {
+      "id": "G165",
+      "title": "Depression_Due_To_Medical_Condition / Earlier depressive periods and baseline",
+      "anchor": "g165"
+    },
+    {
+      "id": "G166",
+      "title": "Depression_Due_To_Medical_Condition / Treatment, medication and substance alternatives",
+      "anchor": "g166"
+    },
+    {
+      "id": "G167",
+      "title": "Depression_Due_To_Medical_Condition / Symptoms with several possible explanations",
+      "anchor": "g167"
+    },
+    {
+      "id": "G168",
+      "title": "Depression_Due_To_Medical_Condition / Response to illness, loss and demoralization",
+      "anchor": "g168"
+    },
+    {
+      "id": "G169",
+      "title": "Depression_Due_To_Medical_Condition / Motivation, mood and involuntary expression",
+      "anchor": "g169"
+    },
+    {
+      "id": "G170",
+      "title": "Depression_Due_To_Medical_Condition / Communication, cognition and source limitations",
+      "anchor": "g170"
+    },
+    {
+      "id": "G171",
+      "title": "Depression_Due_To_Medical_Condition / Concurrent activation features for review",
+      "anchor": "g171"
+    },
+    {
+      "id": "G172",
+      "title": "Other_Specified_Depressive_Disorder / Depressed mood",
+      "anchor": "g172"
+    },
+    {
+      "id": "G173",
+      "title": "Other_Specified_Depressive_Disorder / Interest and pleasure",
+      "anchor": "g173"
+    },
+    {
+      "id": "G174",
+      "title": "Other_Specified_Depressive_Disorder / Appetite change",
+      "anchor": "g174"
+    },
+    {
+      "id": "G175",
+      "title": "Other_Specified_Depressive_Disorder / Weight change",
+      "anchor": "g175"
+    },
+    {
+      "id": "G176",
+      "title": "Other_Specified_Depressive_Disorder / Sleep disturbance",
+      "anchor": "g176"
+    },
+    {
+      "id": "G177",
+      "title": "Other_Specified_Depressive_Disorder / Psychomotor change",
+      "anchor": "g177"
+    },
+    {
+      "id": "G178",
+      "title": "Other_Specified_Depressive_Disorder / Energy and fatigue",
+      "anchor": "g178"
+    },
+    {
+      "id": "G179",
+      "title": "Other_Specified_Depressive_Disorder / Worthlessness and guilt",
+      "anchor": "g179"
+    },
+    {
+      "id": "G180",
+      "title": "Other_Specified_Depressive_Disorder / Concentration and decisions",
+      "anchor": "g180"
+    },
+    {
+      "id": "G181",
+      "title": "Other_Specified_Depressive_Disorder / Death/suicide-related reports",
+      "anchor": "g181"
+    },
+    {
+      "id": "G182",
+      "title": "Other_Specified_Depressive_Disorder / Episode timeline",
+      "anchor": "g182"
+    },
+    {
+      "id": "G183",
+      "title": "Other_Specified_Depressive_Disorder / Functioning and distress",
+      "anchor": "g183"
+    },
+    {
+      "id": "G184",
+      "title": "Other_Specified_Depressive_Disorder / Activation history",
+      "anchor": "g184"
+    },
+    {
+      "id": "G185",
+      "title": "Other_Specified_Depressive_Disorder / Medical context",
+      "anchor": "g185"
+    },
+    {
+      "id": "G186",
+      "title": "Other_Specified_Depressive_Disorder / Medicines and substances",
+      "anchor": "g186"
+    },
+    {
+      "id": "G187",
+      "title": "Other_Specified_Depressive_Disorder / Psychotic experiences",
+      "anchor": "g187"
+    },
+    {
+      "id": "G188",
+      "title": "Other_Specified_Depressive_Disorder / Previous care",
+      "anchor": "g188"
+    },
+    {
+      "id": "G189",
+      "title": "Other_Specified_Depressive_Disorder / Family history",
+      "anchor": "g189"
+    },
+    {
+      "id": "G190",
+      "title": "Other_Specified_Depressive_Disorder / Life context",
+      "anchor": "g190"
+    },
+    {
+      "id": "G191",
+      "title": "Other_Specified_Depressive_Disorder / Individual brief depressive period",
+      "anchor": "g191"
+    },
+    {
+      "id": "G192",
+      "title": "Other_Specified_Depressive_Disorder / Recurrence across months",
+      "anchor": "g192"
+    },
+    {
+      "id": "G193",
+      "title": "Other_Specified_Depressive_Disorder / Symptoms between low periods",
+      "anchor": "g193"
+    },
+    {
+      "id": "G194",
+      "title": "Other_Specified_Depressive_Disorder / Lifetime threshold and previous diagnostic history",
+      "anchor": "g194"
+    },
+    {
+      "id": "G195",
+      "title": "Other_Specified_Depressive_Disorder / Menstrual-cycle relationship when relevant",
+      "anchor": "g195"
+    },
+    {
+      "id": "G196",
+      "title": "Other_Specified_Depressive_Disorder / Stressors and adjustment-related alternatives",
+      "anchor": "g196"
+    },
+    {
+      "id": "G197",
+      "title": "Other_Specified_Depressive_Disorder / Mood episode alongside a reported psychotic disorder",
+      "anchor": "g197"
+    },
+    {
+      "id": "G198",
+      "title": "Other_Specified_Depressive_Disorder / Anxiety alongside depressive symptoms",
+      "anchor": "g198"
+    },
+    {
+      "id": "G199",
+      "title": "Other_Specified_Depressive_Disorder / Reported professional explanation of an unmet requirement",
+      "anchor": "g199"
+    },
+    {
+      "id": "G200",
+      "title": "Other_Specified_Depressive_Disorder / Unanswered or uncertain information",
+      "anchor": "g200"
+    },
+    {
+      "id": "G201",
+      "title": "Unspecified_Depressive_Disorder / Depressed mood",
+      "anchor": "g201"
+    },
+    {
+      "id": "G202",
+      "title": "Unspecified_Depressive_Disorder / Interest and pleasure",
+      "anchor": "g202"
+    },
+    {
+      "id": "G203",
+      "title": "Unspecified_Depressive_Disorder / Appetite change",
+      "anchor": "g203"
+    },
+    {
+      "id": "G204",
+      "title": "Unspecified_Depressive_Disorder / Weight change",
+      "anchor": "g204"
+    },
+    {
+      "id": "G205",
+      "title": "Unspecified_Depressive_Disorder / Sleep disturbance",
+      "anchor": "g205"
+    },
+    {
+      "id": "G206",
+      "title": "Unspecified_Depressive_Disorder / Psychomotor change",
+      "anchor": "g206"
+    },
+    {
+      "id": "G207",
+      "title": "Unspecified_Depressive_Disorder / Energy and fatigue",
+      "anchor": "g207"
+    },
+    {
+      "id": "G208",
+      "title": "Unspecified_Depressive_Disorder / Worthlessness and guilt",
+      "anchor": "g208"
+    },
+    {
+      "id": "G209",
+      "title": "Unspecified_Depressive_Disorder / Concentration and decisions",
+      "anchor": "g209"
+    },
+    {
+      "id": "G210",
+      "title": "Unspecified_Depressive_Disorder / Death/suicide-related reports",
+      "anchor": "g210"
+    },
+    {
+      "id": "G211",
+      "title": "Unspecified_Depressive_Disorder / Episode timeline",
+      "anchor": "g211"
+    },
+    {
+      "id": "G212",
+      "title": "Unspecified_Depressive_Disorder / Functioning and distress",
+      "anchor": "g212"
+    },
+    {
+      "id": "G213",
+      "title": "Unspecified_Depressive_Disorder / Activation history",
+      "anchor": "g213"
+    },
+    {
+      "id": "G214",
+      "title": "Unspecified_Depressive_Disorder / Medical context",
+      "anchor": "g214"
+    },
+    {
+      "id": "G215",
+      "title": "Unspecified_Depressive_Disorder / Medicines and substances",
+      "anchor": "g215"
+    },
+    {
+      "id": "G216",
+      "title": "Unspecified_Depressive_Disorder / Psychotic experiences",
+      "anchor": "g216"
+    },
+    {
+      "id": "G217",
+      "title": "Unspecified_Depressive_Disorder / Previous care",
+      "anchor": "g217"
+    },
+    {
+      "id": "G218",
+      "title": "Unspecified_Depressive_Disorder / Family history",
+      "anchor": "g218"
+    },
+    {
+      "id": "G219",
+      "title": "Unspecified_Depressive_Disorder / Life context",
+      "anchor": "g219"
+    },
+    {
+      "id": "G220",
+      "title": "Unspecified_Depressive_Disorder / Stressors and adjustment-related alternatives",
+      "anchor": "g220"
+    },
+    {
+      "id": "G221",
+      "title": "Unspecified_Depressive_Disorder / Symptoms between low periods",
+      "anchor": "g221"
+    },
+    {
+      "id": "G222",
+      "title": "Unspecified_Depressive_Disorder / Lifetime threshold and previous diagnostic history",
+      "anchor": "g222"
+    },
+    {
+      "id": "G223",
+      "title": "Unspecified_Depressive_Disorder / Anxiety alongside depressive symptoms",
+      "anchor": "g223"
+    },
+    {
+      "id": "G224",
+      "title": "Unspecified_Depressive_Disorder / Current depressive presentation and burden",
+      "anchor": "g224"
+    },
+    {
+      "id": "G225",
+      "title": "Unspecified_Depressive_Disorder / Reported clinician diagnosis or formulation",
+      "anchor": "g225"
+    },
+    {
+      "id": "G226",
+      "title": "Unspecified_Depressive_Disorder / Reported limits affecting assessment",
+      "anchor": "g226"
+    },
+    {
+      "id": "G227",
+      "title": "Unspecified_Depressive_Disorder / Changes reported at reassessment",
+      "anchor": "g227"
+    },
+    {
+      "id": "G228",
+      "title": "Alternatives / Depressed mood",
+      "anchor": "g228"
+    },
+    {
+      "id": "G229",
+      "title": "Alternatives / Interest and pleasure",
+      "anchor": "g229"
+    },
+    {
+      "id": "G230",
+      "title": "Alternatives / Sleep disturbance",
+      "anchor": "g230"
+    },
+    {
+      "id": "G231",
+      "title": "Alternatives / Energy and fatigue",
+      "anchor": "g231"
+    },
+    {
+      "id": "G232",
+      "title": "Alternatives / Concentration and decisions",
+      "anchor": "g232"
+    },
+    {
+      "id": "G233",
+      "title": "Alternatives / Death/suicide-related reports",
+      "anchor": "g233"
+    },
+    {
+      "id": "G234",
+      "title": "Alternatives / Functioning and distress",
+      "anchor": "g234"
+    },
+    {
+      "id": "G235",
+      "title": "Alternatives / Episode timeline",
+      "anchor": "g235"
+    },
+    {
+      "id": "G236",
+      "title": "Alternatives / Previous care",
+      "anchor": "g236"
+    },
+    {
+      "id": "G237",
+      "title": "Alternatives / Family history",
+      "anchor": "g237"
+    },
+    {
+      "id": "G238",
+      "title": "Alternatives / Medical context",
+      "anchor": "g238"
+    },
+    {
+      "id": "G239",
+      "title": "Alternatives / Medicines and substances",
+      "anchor": "g239"
+    },
+    {
+      "id": "G240",
+      "title": "Alternatives / Life context",
+      "anchor": "g240"
+    },
+    {
+      "id": "G241",
+      "title": "Alternatives / Distinct activation period",
+      "anchor": "g241"
+    },
+    {
+      "id": "G242",
+      "title": "Alternatives / Reduced need for sleep",
+      "anchor": "g242"
+    },
+    {
+      "id": "G243",
+      "title": "Alternatives / Associated activation features",
+      "anchor": "g243"
+    },
+    {
+      "id": "G244",
+      "title": "Alternatives / Activation severity and causal context",
+      "anchor": "g244"
+    },
+    {
+      "id": "G245",
+      "title": "Alternatives / Long-term mood fluctuation",
+      "anchor": "g245"
+    },
+    {
+      "id": "G246",
+      "title": "Alternatives / Generalized worry pattern",
+      "anchor": "g246"
+    },
+    {
+      "id": "G247",
+      "title": "Alternatives / Panic-like episode",
+      "anchor": "g247"
+    },
+    {
+      "id": "G248",
+      "title": "Alternatives / Social fear and avoidance",
+      "anchor": "g248"
+    },
+    {
+      "id": "G249",
+      "title": "Alternatives / Trauma context and assessment permission",
+      "anchor": "g249"
+    },
+    {
+      "id": "G250",
+      "title": "Alternatives / Trauma-linked symptom pattern",
+      "anchor": "g250"
+    },
+    {
+      "id": "G251",
+      "title": "Alternatives / Stressor-linked response",
+      "anchor": "g251"
+    },
+    {
+      "id": "G252",
+      "title": "Alternatives / Bereavement and cultural context",
+      "anchor": "g252"
+    },
+    {
+      "id": "G253",
+      "title": "Alternatives / Grief-specific experiences",
+      "anchor": "g253"
+    },
+    {
+      "id": "G254",
+      "title": "Alternatives / Unusual perceptual or belief experiences",
+      "anchor": "g254"
+    },
+    {
+      "id": "G255",
+      "title": "Alternatives / Psychosis and mood across time",
+      "anchor": "g255"
+    },
+    {
+      "id": "G256",
+      "title": "Alternatives / Acute/fluctuating cognitive change",
+      "anchor": "g256"
+    },
+    {
+      "id": "G257",
+      "title": "Alternatives / Longer-term cognitive and functional course",
+      "anchor": "g257"
+    },
+    {
+      "id": "G258",
+      "title": "Alternatives / Sleep opportunity and schedule",
+      "anchor": "g258"
+    },
+    {
+      "id": "G259",
+      "title": "Alternatives / Sleep-related breathing clues",
+      "anchor": "g259"
+    },
+    {
+      "id": "G260",
+      "title": "Alternatives / Assessment participation and limits",
+      "anchor": "g260"
+    }
+  ],
+  "diagram_structure": {
+    "G001": {
+      "nodes": 16,
+      "edges": 17
+    },
+    "G002": {
+      "nodes": 9,
+      "edges": 9
+    },
+    "G003": {
+      "nodes": 4,
+      "edges": 3
+    },
+    "G003A": {
+      "nodes": 7,
+      "edges": 6
+    },
+    "G003B": {
+      "nodes": 8,
+      "edges": 9
+    },
+    "G003C": {
+      "nodes": 6,
+      "edges": 7
+    },
+    "G004": {
+      "nodes": 8,
+      "edges": 8
+    },
+    "G005": {
+      "nodes": 8,
+      "edges": 10
+    },
+    "G006": {
+      "nodes": 7,
+      "edges": 8
+    },
+    "G007": {
+      "nodes": 8,
+      "edges": 9
+    },
+    "G008": {
+      "nodes": 9,
+      "edges": 11
+    },
+    "G009": {
+      "nodes": 9,
+      "edges": 10
+    },
+    "G010": {
+      "nodes": 8,
+      "edges": 9
+    },
+    "G011": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G012": {
+      "nodes": 5,
+      "edges": 4
+    },
+    "G013": {
+      "nodes": 13,
+      "edges": 12
+    },
+    "G014": {
+      "nodes": 6,
+      "edges": 5
+    },
+    "G015": {
+      "nodes": 6,
+      "edges": 5
+    },
+    "G016": {
+      "nodes": 5,
+      "edges": 4
+    },
+    "G017": {
+      "nodes": 4,
+      "edges": 3
+    },
+    "G018": {
+      "nodes": 12,
+      "edges": 11
+    },
+    "G019": {
+      "nodes": 20,
+      "edges": 19
+    },
+    "G020": {
+      "nodes": 10,
+      "edges": 9
+    },
+    "G021": {
+      "nodes": 11,
+      "edges": 10
+    },
+    "G022": {
+      "nodes": 10,
+      "edges": 9
+    },
+    "G023": {
+      "nodes": 6,
+      "edges": 5
+    },
+    "G024": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G025": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G026": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G027": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G028": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G029": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G030": {
+      "nodes": 3,
+      "edges": 2
+    },
+    "G031": {
+      "nodes": 11,
+      "edges": 10
+    },
+    "G032": {
+      "nodes": 9,
+      "edges": 8
+    },
+    "G033": {
+      "nodes": 8,
+      "edges": 7
+    },
+    "G034": {
+      "nodes": 8,
+      "edges": 7
+    },
+    "G035": {
+      "nodes": 8,
+      "edges": 7
+    },
+    "G036": {
+      "nodes": 9,
+      "edges": 8
+    },
+    "G037": {
+      "nodes": 6,
+      "edges": 5
+    },
+    "G038": {
+      "nodes": 9,
+      "edges": 8
+    },
+    "G039": {
+      "nodes": 9,
+      "edges": 8
+    },
+    "G040": {
+      "nodes": 8,
+      "edges": 7
+    },
+    "G041": {
+      "nodes": 9,
+      "edges": 8
+    },
+    "G042": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G043": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G044": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G045": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G046": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G047": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G048": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G049": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G050": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G051": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G052": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G053": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G054": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G055": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G056": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G057": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G058": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G059": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G060": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G061": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G062": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G063": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G064": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G065": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G066": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G067": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G068": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G069": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G070": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G071": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G072": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G073": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G074": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G075": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G076": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G077": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G078": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G079": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G080": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G081": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G082": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G083": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G084": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G085": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G086": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G087": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G088": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G089": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G090": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G091": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G092": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G093": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G094": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G095": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G096": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G097": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G098": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G099": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G100": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G101": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G102": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G103": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G104": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G105": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G106": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G107": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G108": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G109": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G110": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G111": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G112": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G113": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G114": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G115": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G116": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G117": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G118": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G119": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G120": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G121": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G122": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G123": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G124": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G125": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G126": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G127": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G128": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G129": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G130": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G131": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G132": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G133": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G134": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G135": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G136": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G137": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G138": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G139": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G140": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G141": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G142": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G143": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G144": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G145": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G146": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G147": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G148": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G149": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G150": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G151": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G152": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G153": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G154": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G155": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G156": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G157": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G158": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G159": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G160": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G161": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G162": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G163": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G164": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G165": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G166": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G167": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G168": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G169": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G170": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G171": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G172": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G173": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G174": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G175": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G176": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G177": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G178": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G179": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G180": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G181": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G182": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G183": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G184": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G185": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G186": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G187": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G188": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G189": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G190": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G191": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G192": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G193": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G194": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G195": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G196": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G197": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G198": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G199": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G200": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G201": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G202": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G203": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G204": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G205": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G206": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G207": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G208": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G209": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G210": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G211": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G212": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G213": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G214": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G215": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G216": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G217": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G218": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G219": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G220": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G221": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G222": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G223": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G224": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G225": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G226": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G227": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G228": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G229": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G230": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G231": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G232": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G233": {
+      "nodes": 6,
+      "edges": 6
+    },
+    "G234": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G235": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G236": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G237": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G238": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G239": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G240": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G241": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G242": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G243": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G244": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G245": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G246": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G247": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G248": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G249": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G250": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G251": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G252": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G253": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G254": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G255": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G256": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G257": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G258": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G259": {
+      "nodes": 5,
+      "edges": 5
+    },
+    "G260": {
+      "nodes": 5,
+      "edges": 5
+    }
+  },
+  "catalog_targets_represented": [
+    "detail/Alternatives/activation_associated_changes/activity",
+    "detail/Alternatives/activation_associated_changes/attention",
+    "detail/Alternatives/activation_associated_changes/consequential_behaviour",
+    "detail/Alternatives/activation_associated_changes/overlap",
+    "detail/Alternatives/activation_associated_changes/self_view",
+    "detail/Alternatives/activation_associated_changes/speech",
+    "detail/Alternatives/activation_associated_changes/thought_speed",
+    "detail/Alternatives/activation_mood_energy/baseline_change",
+    "detail/Alternatives/activation_mood_energy/energy_activity",
+    "detail/Alternatives/activation_mood_energy/functional_consequences",
+    "detail/Alternatives/activation_mood_energy/mood",
+    "detail/Alternatives/activation_mood_energy/observer",
+    "detail/Alternatives/activation_mood_energy/onset_duration",
+    "detail/Alternatives/activation_mood_energy/within_day_pattern",
+    "detail/Alternatives/activation_severity_context/current_concerns",
+    "detail/Alternatives/activation_severity_context/exposures",
+    "detail/Alternatives/activation_severity_context/hospitalization",
+    "detail/Alternatives/activation_severity_context/impairment",
+    "detail/Alternatives/activation_severity_context/medical_context",
+    "detail/Alternatives/activation_severity_context/persistence",
+    "detail/Alternatives/activation_severity_context/psychotic_experience",
+    "detail/Alternatives/acute_attention_change/attention_awareness",
+    "detail/Alternatives/acute_attention_change/baseline",
+    "detail/Alternatives/acute_attention_change/fluctuation",
+    "detail/Alternatives/acute_attention_change/medical_exposures",
+    "detail/Alternatives/acute_attention_change/onset",
+    "detail/Alternatives/acute_attention_change/other_changes",
+    "detail/Alternatives/acute_attention_change/source",
+    "detail/Alternatives/assessment_limits/known_part",
+    "detail/Alternatives/assessment_limits/limit",
+    "detail/Alternatives/assessment_limits/support_requested",
+    "detail/Alternatives/assessment_limits/target",
+    "detail/Alternatives/bereavement_context/course",
+    "detail/Alternatives/bereavement_context/cultural_context",
+    "detail/Alternatives/bereavement_context/death_time",
+    "detail/Alternatives/bereavement_context/functioning",
+    "detail/Alternatives/bereavement_context/relationship",
+    "detail/Alternatives/bereavement_context/support",
+    "detail/Alternatives/cognition_decisions/baseline_comparison",
+    "detail/Alternatives/cognition_decisions/duration",
+    "detail/Alternatives/cognition_decisions/frequency",
+    "detail/Alternatives/cognition_decisions/impact",
+    "detail/Alternatives/cognition_decisions/kind",
+    "detail/Alternatives/cognition_decisions/onset",
+    "detail/Alternatives/cognition_decisions/tasks",
+    "detail/Alternatives/cognitive_function_course/contributors",
+    "detail/Alternatives/cognitive_function_course/domains",
+    "detail/Alternatives/cognitive_function_course/independence",
+    "detail/Alternatives/cognitive_function_course/informant_context",
+    "detail/Alternatives/cognitive_function_course/mood_relationship",
+    "detail/Alternatives/cognitive_function_course/onset_progression",
+    "detail/Alternatives/cognitive_function_course/tests_as_reported",
+    "detail/Alternatives/death_suicide/access",
+    "detail/Alternatives/death_suicide/experience",
+    "detail/Alternatives/death_suicide/frequency",
+    "detail/Alternatives/death_suicide/intent",
+    "detail/Alternatives/death_suicide/past_behaviour",
+    "detail/Alternatives/death_suicide/plan_present",
+    "detail/Alternatives/death_suicide/recency",
+    "detail/Alternatives/death_suicide/support",
+    "detail/Alternatives/depressed_mood/baseline_comparison",
+    "detail/Alternatives/depressed_mood/days_per_week",
+    "detail/Alternatives/depressed_mood/description",
+    "detail/Alternatives/depressed_mood/duration",
+    "detail/Alternatives/depressed_mood/frequency",
+    "detail/Alternatives/depressed_mood/impact",
+    "detail/Alternatives/depressed_mood/onset",
+    "detail/Alternatives/depressed_mood/proportion_of_day",
+    "detail/Alternatives/energy_fatigue/baseline_comparison",
+    "detail/Alternatives/energy_fatigue/duration",
+    "detail/Alternatives/energy_fatigue/experience",
+    "detail/Alternatives/energy_fatigue/frequency",
+    "detail/Alternatives/energy_fatigue/impact",
+    "detail/Alternatives/energy_fatigue/onset",
+    "detail/Alternatives/energy_fatigue/sleepiness",
+    "detail/Alternatives/episode_timeline/course",
+    "detail/Alternatives/episode_timeline/duration",
+    "detail/Alternatives/episode_timeline/intervals",
+    "detail/Alternatives/episode_timeline/onset",
+    "detail/Alternatives/episode_timeline/overlap",
+    "detail/Alternatives/exposure_context/dose_use",
+    "detail/Alternatives/exposure_context/name",
+    "detail/Alternatives/exposure_context/source_kind",
+    "detail/Alternatives/exposure_context/start_change_stop",
+    "detail/Alternatives/exposure_context/symptom_timing",
+    "detail/Alternatives/family_history/certainty",
+    "detail/Alternatives/family_history/relative",
+    "detail/Alternatives/family_history/reported_condition",
+    "detail/Alternatives/functioning_distress/baseline",
+    "detail/Alternatives/functioning_distress/domain",
+    "detail/Alternatives/functioning_distress/examples",
+    "detail/Alternatives/functioning_distress/supports",
+    "detail/Alternatives/grief_specific_experiences/avoidance",
+    "detail/Alternatives/grief_specific_experiences/burden_context",
+    "detail/Alternatives/grief_specific_experiences/identity_disbelief",
+    "detail/Alternatives/grief_specific_experiences/longing_preoccupation",
+    "detail/Alternatives/grief_specific_experiences/numbness_meaning_loneliness",
+    "detail/Alternatives/grief_specific_experiences/pain",
+    "detail/Alternatives/grief_specific_experiences/recent_frequency",
+    "detail/Alternatives/grief_specific_experiences/reintegration",
+    "detail/Alternatives/interest_pleasure/activities",
+    "detail/Alternatives/interest_pleasure/baseline_comparison",
+    "detail/Alternatives/interest_pleasure/breadth",
+    "detail/Alternatives/interest_pleasure/days_per_week",
+    "detail/Alternatives/interest_pleasure/duration",
+    "detail/Alternatives/interest_pleasure/frequency",
+    "detail/Alternatives/interest_pleasure/interest",
+    "detail/Alternatives/interest_pleasure/onset",
+    "detail/Alternatives/interest_pleasure/pleasure",
+    "detail/Alternatives/interest_pleasure/proportion_of_day",
+    "detail/Alternatives/life_context/barriers",
+    "detail/Alternatives/life_context/events",
+    "detail/Alternatives/life_context/meaning",
+    "detail/Alternatives/life_context/support",
+    "detail/Alternatives/life_context/timing",
+    "detail/Alternatives/longterm_mood_fluctuation/full_episode_history",
+    "detail/Alternatives/longterm_mood_fluctuation/high_periods",
+    "detail/Alternatives/longterm_mood_fluctuation/longest_gap",
+    "detail/Alternatives/longterm_mood_fluctuation/low_periods",
+    "detail/Alternatives/longterm_mood_fluctuation/observation_span",
+    "detail/Alternatives/longterm_mood_fluctuation/proportion_of_time",
+    "detail/Alternatives/medical_context/clinician_review",
+    "detail/Alternatives/medical_context/conditions",
+    "detail/Alternatives/medical_context/investigations",
+    "detail/Alternatives/medical_context/timeline",
+    "detail/Alternatives/panic_experience/after_effects",
+    "detail/Alternatives/panic_experience/medical_exposure_context",
+    "detail/Alternatives/panic_experience/onset_peak",
+    "detail/Alternatives/panic_experience/recurrence",
+    "detail/Alternatives/panic_experience/sensations",
+    "detail/Alternatives/panic_experience/unexpectedness",
+    "detail/Alternatives/psychosis_mood_course/exposure_medical_context",
+    "detail/Alternatives/psychosis_mood_course/mood_periods",
+    "detail/Alternatives/psychosis_mood_course/outside_mood_periods",
+    "detail/Alternatives/psychosis_mood_course/overall_course",
+    "detail/Alternatives/psychosis_mood_course/reported_diagnoses",
+    "detail/Alternatives/psychotic_experiences/context",
+    "detail/Alternatives/psychotic_experiences/conviction_distress",
+    "detail/Alternatives/psychotic_experiences/experience",
+    "detail/Alternatives/psychotic_experiences/frequency_duration",
+    "detail/Alternatives/psychotic_experiences/safety_content",
+    "detail/Alternatives/psychotic_experiences/thought_behaviour_changes",
+    "detail/Alternatives/reduced_sleep_need/duration",
+    "detail/Alternatives/reduced_sleep_need/other_reasons",
+    "detail/Alternatives/reduced_sleep_need/overlap",
+    "detail/Alternatives/reduced_sleep_need/restedness",
+    "detail/Alternatives/reduced_sleep_need/sleep_amount",
+    "detail/Alternatives/reduced_sleep_need/usual_sleep",
+    "detail/Alternatives/sleep_breathing_clues/daytime_effects",
+    "detail/Alternatives/sleep_breathing_clues/functional_safety",
+    "detail/Alternatives/sleep_breathing_clues/medical_context",
+    "detail/Alternatives/sleep_breathing_clues/pauses_choking",
+    "detail/Alternatives/sleep_breathing_clues/refreshment",
+    "detail/Alternatives/sleep_breathing_clues/snoring",
+    "detail/Alternatives/sleep_disturbance/awakenings",
+    "detail/Alternatives/sleep_disturbance/baseline_comparison",
+    "detail/Alternatives/sleep_disturbance/daytime_effect",
+    "detail/Alternatives/sleep_disturbance/duration",
+    "detail/Alternatives/sleep_disturbance/frequency",
+    "detail/Alternatives/sleep_disturbance/latency",
+    "detail/Alternatives/sleep_disturbance/onset",
+    "detail/Alternatives/sleep_disturbance/pattern",
+    "detail/Alternatives/sleep_disturbance/sleep_opportunity",
+    "detail/Alternatives/sleep_disturbance/total_sleep",
+    "detail/Alternatives/sleep_disturbance/wake_timing",
+    "detail/Alternatives/sleep_opportunity_timing/bed_wake_times",
+    "detail/Alternatives/sleep_opportunity_timing/daytime_effect",
+    "detail/Alternatives/sleep_opportunity_timing/difficulty",
+    "detail/Alternatives/sleep_opportunity_timing/exposures",
+    "detail/Alternatives/sleep_opportunity_timing/frequency_duration",
+    "detail/Alternatives/sleep_opportunity_timing/opportunity",
+    "detail/Alternatives/sleep_opportunity_timing/shift_circadian_context",
+    "detail/Alternatives/social_fear_avoidance/avoidance",
+    "detail/Alternatives/social_fear_avoidance/burden",
+    "detail/Alternatives/social_fear_avoidance/course",
+    "detail/Alternatives/social_fear_avoidance/feared_outcome",
+    "detail/Alternatives/social_fear_avoidance/other_reasons",
+    "detail/Alternatives/social_fear_avoidance/situations",
+    "detail/Alternatives/stressor_response/burden",
+    "detail/Alternatives/stressor_response/continuing_consequences",
+    "detail/Alternatives/stressor_response/previous_pattern",
+    "detail/Alternatives/stressor_response/response",
+    "detail/Alternatives/stressor_response/stressor",
+    "detail/Alternatives/stressor_response/stressor_onset",
+    "detail/Alternatives/stressor_response/symptom_onset",
+    "detail/Alternatives/trauma_context/broad_event",
+    "detail/Alternatives/trauma_context/current_needs",
+    "detail/Alternatives/trauma_context/exposure_kind",
+    "detail/Alternatives/trauma_context/participation",
+    "detail/Alternatives/trauma_context/time",
+    "detail/Alternatives/trauma_linked_symptoms/arousal",
+    "detail/Alternatives/trauma_linked_symptoms/avoidance",
+    "detail/Alternatives/trauma_linked_symptoms/burden",
+    "detail/Alternatives/trauma_linked_symptoms/dissociation",
+    "detail/Alternatives/trauma_linked_symptoms/intrusions",
+    "detail/Alternatives/trauma_linked_symptoms/negative_mood_thoughts",
+    "detail/Alternatives/trauma_linked_symptoms/onset_duration",
+    "detail/Alternatives/treatment_history/period",
+    "detail/Alternatives/treatment_history/reported_diagnosis",
+    "detail/Alternatives/treatment_history/response",
+    "detail/Alternatives/treatment_history/treatment",
+    "detail/Alternatives/treatment_history/use",
+    "detail/Alternatives/worry_pattern/associated_changes",
+    "detail/Alternatives/worry_pattern/burden",
+    "detail/Alternatives/worry_pattern/control",
+    "detail/Alternatives/worry_pattern/frequency_duration",
+    "detail/Alternatives/worry_pattern/mood_relationship",
+    "detail/Alternatives/worry_pattern/topics",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/duration",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/energy_activity",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/exposure_context",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/impact",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/mood",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/other_changes",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/period",
+    "detail/Depression_Due_To_Medical_Condition/activation_history/sleep_need",
+    "detail/Depression_Due_To_Medical_Condition/acute_cognitive_change/change",
+    "detail/Depression_Due_To_Medical_Condition/acute_cognitive_change/fluctuation",
+    "detail/Depression_Due_To_Medical_Condition/acute_cognitive_change/medical_context",
+    "detail/Depression_Due_To_Medical_Condition/acute_cognitive_change/observer",
+    "detail/Depression_Due_To_Medical_Condition/acute_cognitive_change/onset",
+    "detail/Depression_Due_To_Medical_Condition/acute_cognitive_change/review_status",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/appetite_vs_intake",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/direction",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/duration",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/frequency",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/impact",
+    "detail/Depression_Due_To_Medical_Condition/appetite_change/onset",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/duration",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/frequency",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/impact",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/kind",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/onset",
+    "detail/Depression_Due_To_Medical_Condition/cognition_decisions/tasks",
+    "detail/Depression_Due_To_Medical_Condition/communication_assessment_context/adaptation",
+    "detail/Depression_Due_To_Medical_Condition/communication_assessment_context/assessment_limit",
+    "detail/Depression_Due_To_Medical_Condition/communication_assessment_context/barrier",
+    "detail/Depression_Due_To_Medical_Condition/communication_assessment_context/collateral_available",
+    "detail/Depression_Due_To_Medical_Condition/communication_assessment_context/understanding",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/energy_activity",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/mood",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/other_changes",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/overlap",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/predominance",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/sleep_need",
+    "detail/Depression_Due_To_Medical_Condition/concurrent_activation/speech_thoughts",
+    "detail/Depression_Due_To_Medical_Condition/condition_identification/diagnosing_professional",
+    "detail/Depression_Due_To_Medical_Condition/condition_identification/diagnosis_basis",
+    "detail/Depression_Due_To_Medical_Condition/condition_identification/diagnosis_time",
+    "detail/Depression_Due_To_Medical_Condition/condition_identification/name_as_reported",
+    "detail/Depression_Due_To_Medical_Condition/condition_identification/records_available",
+    "detail/Depression_Due_To_Medical_Condition/condition_identification/reported_subtype",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/access",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/experience",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/frequency",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/intent",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/past_behaviour",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/plan_present",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/recency",
+    "detail/Depression_Due_To_Medical_Condition/death_suicide/support",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/days_per_week",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/description",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/duration",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/frequency",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/impact",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/onset",
+    "detail/Depression_Due_To_Medical_Condition/depressed_mood/proportion_of_day",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/duration",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/experience",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/frequency",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/impact",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/onset",
+    "detail/Depression_Due_To_Medical_Condition/energy_fatigue/sleepiness",
+    "detail/Depression_Due_To_Medical_Condition/family_history/certainty",
+    "detail/Depression_Due_To_Medical_Condition/family_history/relative",
+    "detail/Depression_Due_To_Medical_Condition/family_history/reported_condition",
+    "detail/Depression_Due_To_Medical_Condition/functioning_distress/baseline",
+    "detail/Depression_Due_To_Medical_Condition/functioning_distress/domain",
+    "detail/Depression_Due_To_Medical_Condition/functioning_distress/examples",
+    "detail/Depression_Due_To_Medical_Condition/functioning_distress/supports",
+    "detail/Depression_Due_To_Medical_Condition/illness_related_distress/emotional_experience",
+    "detail/Depression_Due_To_Medical_Condition/illness_related_distress/pervasiveness",
+    "detail/Depression_Due_To_Medical_Condition/illness_related_distress/pleasure_preserved",
+    "detail/Depression_Due_To_Medical_Condition/illness_related_distress/stressors",
+    "detail/Depression_Due_To_Medical_Condition/illness_related_distress/support_needs",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/activities",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/breadth",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/days_per_week",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/duration",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/frequency",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/interest",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/onset",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/pleasure",
+    "detail/Depression_Due_To_Medical_Condition/interest_pleasure/proportion_of_day",
+    "detail/Depression_Due_To_Medical_Condition/life_context/barriers",
+    "detail/Depression_Due_To_Medical_Condition/life_context/events",
+    "detail/Depression_Due_To_Medical_Condition/life_context/meaning",
+    "detail/Depression_Due_To_Medical_Condition/life_context/support",
+    "detail/Depression_Due_To_Medical_Condition/life_context/timing",
+    "detail/Depression_Due_To_Medical_Condition/medical_condition_course/course",
+    "detail/Depression_Due_To_Medical_Condition/medical_condition_course/current_burden",
+    "detail/Depression_Due_To_Medical_Condition/medical_condition_course/recent_change",
+    "detail/Depression_Due_To_Medical_Condition/medical_condition_course/recognition_time",
+    "detail/Depression_Due_To_Medical_Condition/medical_condition_course/symptom_onset",
+    "detail/Depression_Due_To_Medical_Condition/medical_condition_course/treatment_events",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/course_comparison",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/interval",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/medical_event",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/mood_onset",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/patient_explanation",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/relationship",
+    "detail/Depression_Due_To_Medical_Condition/mood_medical_timing/uncertainty",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/control_triggers",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/enjoyment",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/event_duration",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/expression",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/felt_mood",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/initiation",
+    "detail/Depression_Due_To_Medical_Condition/motivation_emotional_expression/neurological_context",
+    "detail/Depression_Due_To_Medical_Condition/overlapping_symptoms/baseline",
+    "detail/Depression_Due_To_Medical_Condition/overlapping_symptoms/change",
+    "detail/Depression_Due_To_Medical_Condition/overlapping_symptoms/clinical_uncertainty",
+    "detail/Depression_Due_To_Medical_Condition/overlapping_symptoms/contexts",
+    "detail/Depression_Due_To_Medical_Condition/overlapping_symptoms/patient_attribution",
+    "detail/Depression_Due_To_Medical_Condition/overlapping_symptoms/symptom",
+    "detail/Depression_Due_To_Medical_Condition/prior_depressive_course/duration_course",
+    "detail/Depression_Due_To_Medical_Condition/prior_depressive_course/earlier_period",
+    "detail/Depression_Due_To_Medical_Condition/prior_depressive_course/family_context",
+    "detail/Depression_Due_To_Medical_Condition/prior_depressive_course/medical_context_then",
+    "detail/Depression_Due_To_Medical_Condition/prior_depressive_course/previous_diagnosis",
+    "detail/Depression_Due_To_Medical_Condition/prior_depressive_course/treatment_exposure_then",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/direction",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/examples",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/frequency",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/impact",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/observer",
+    "detail/Depression_Due_To_Medical_Condition/psychomotor_change/onset",
+    "detail/Depression_Due_To_Medical_Condition/psychotic_experience/content",
+    "detail/Depression_Due_To_Medical_Condition/psychotic_experience/conviction_context",
+    "detail/Depression_Due_To_Medical_Condition/psychotic_experience/kind",
+    "detail/Depression_Due_To_Medical_Condition/psychotic_experience/mood_relationship",
+    "detail/Depression_Due_To_Medical_Condition/psychotic_experience/reported_mood_congruence",
+    "detail/Depression_Due_To_Medical_Condition/psychotic_experience/safety_concerns",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/clinician_interpretation",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/document_status",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/investigation",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/reported_reference_range",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/reported_result",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/review_need",
+    "detail/Depression_Due_To_Medical_Condition/reported_investigation/test_time",
+    "detail/Depression_Due_To_Medical_Condition/reported_professional_opinion/opinion",
+    "detail/Depression_Due_To_Medical_Condition/reported_professional_opinion/opinion_time",
+    "detail/Depression_Due_To_Medical_Condition/reported_professional_opinion/reported_reasoning",
+    "detail/Depression_Due_To_Medical_Condition/reported_professional_opinion/review_plan",
+    "detail/Depression_Due_To_Medical_Condition/reported_professional_opinion/speaker",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/awakenings",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/baseline_comparison",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/daytime_effect",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/duration",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/frequency",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/latency",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/onset",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/pattern",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/sleep_opportunity",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/total_sleep",
+    "detail/Depression_Due_To_Medical_Condition/sleep_disturbance/wake_timing",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/clinical_attention",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/course",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/duration",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/intensity_as_reported",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/onset",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/predominance",
+    "detail/Depression_Due_To_Medical_Condition/syndrome_course/related_symptoms",
+    "detail/Depression_Due_To_Medical_Condition/treatment_exposure_review/actual_use",
+    "detail/Depression_Due_To_Medical_Condition/treatment_exposure_review/changes",
+    "detail/Depression_Due_To_Medical_Condition/treatment_exposure_review/named_exposures",
+    "detail/Depression_Due_To_Medical_Condition/treatment_exposure_review/other_changes",
+    "detail/Depression_Due_To_Medical_Condition/treatment_exposure_review/professional_review",
+    "detail/Depression_Due_To_Medical_Condition/treatment_exposure_review/symptom_relationship",
+    "detail/Depression_Due_To_Medical_Condition/treatment_history/period",
+    "detail/Depression_Due_To_Medical_Condition/treatment_history/reported_diagnosis",
+    "detail/Depression_Due_To_Medical_Condition/treatment_history/response",
+    "detail/Depression_Due_To_Medical_Condition/treatment_history/treatment",
+    "detail/Depression_Due_To_Medical_Condition/treatment_history/use",
+    "detail/Depression_Due_To_Medical_Condition/weight_change/amount",
+    "detail/Depression_Due_To_Medical_Condition/weight_change/baseline_weight",
+    "detail/Depression_Due_To_Medical_Condition/weight_change/direction",
+    "detail/Depression_Due_To_Medical_Condition/weight_change/intentionality",
+    "detail/Depression_Due_To_Medical_Condition/weight_change/interval",
+    "detail/Depression_Due_To_Medical_Condition/weight_change/measurement",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/content",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/context",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/duration",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/frequency",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/impact",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/kind",
+    "detail/Depression_Due_To_Medical_Condition/worthlessness_guilt/onset",
+    "detail/MDD/activation_history/duration",
+    "detail/MDD/activation_history/energy_activity",
+    "detail/MDD/activation_history/exposure_context",
+    "detail/MDD/activation_history/impact",
+    "detail/MDD/activation_history/mood",
+    "detail/MDD/activation_history/other_changes",
+    "detail/MDD/activation_history/period",
+    "detail/MDD/activation_history/sleep_need",
+    "detail/MDD/anxious_distress/episode_overlap",
+    "detail/MDD/anxious_distress/fear_of_awful_event",
+    "detail/MDD/anxious_distress/fear_of_losing_control",
+    "detail/MDD/anxious_distress/observer",
+    "detail/MDD/anxious_distress/tension",
+    "detail/MDD/anxious_distress/timing_frequency",
+    "detail/MDD/anxious_distress/unusual_restlessness",
+    "detail/MDD/anxious_distress/worry_affecting_concentration",
+    "detail/MDD/appetite_change/appetite_vs_intake",
+    "detail/MDD/appetite_change/baseline_comparison",
+    "detail/MDD/appetite_change/direction",
+    "detail/MDD/appetite_change/duration",
+    "detail/MDD/appetite_change/frequency",
+    "detail/MDD/appetite_change/impact",
+    "detail/MDD/appetite_change/onset",
+    "detail/MDD/atypical_features/appetite_weight_gain",
+    "detail/MDD/atypical_features/episode_overlap",
+    "detail/MDD/atypical_features/excessive_sleep",
+    "detail/MDD/atypical_features/leaden_limbs",
+    "detail/MDD/atypical_features/longstanding_rejection_sensitivity",
+    "detail/MDD/atypical_features/mood_reactivity",
+    "detail/MDD/atypical_features/observer",
+    "detail/MDD/atypical_features/timing_frequency",
+    "detail/MDD/catatonic_signs/catalepsy",
+    "detail/MDD/catatonic_signs/echolalia",
+    "detail/MDD/catatonic_signs/echopraxia",
+    "detail/MDD/catatonic_signs/episode_overlap",
+    "detail/MDD/catatonic_signs/grimacing",
+    "detail/MDD/catatonic_signs/mannerism",
+    "detail/MDD/catatonic_signs/mutism",
+    "detail/MDD/catatonic_signs/negativism",
+    "detail/MDD/catatonic_signs/observer",
+    "detail/MDD/catatonic_signs/posturing",
+    "detail/MDD/catatonic_signs/stereotypy",
+    "detail/MDD/catatonic_signs/stupor",
+    "detail/MDD/catatonic_signs/timing_frequency",
+    "detail/MDD/catatonic_signs/unprovoked_agitation",
+    "detail/MDD/catatonic_signs/waxy_flexibility",
+    "detail/MDD/cognition_decisions/baseline_comparison",
+    "detail/MDD/cognition_decisions/duration",
+    "detail/MDD/cognition_decisions/frequency",
+    "detail/MDD/cognition_decisions/impact",
+    "detail/MDD/cognition_decisions/kind",
+    "detail/MDD/cognition_decisions/onset",
+    "detail/MDD/cognition_decisions/tasks",
+    "detail/MDD/death_suicide/access",
+    "detail/MDD/death_suicide/experience",
+    "detail/MDD/death_suicide/frequency",
+    "detail/MDD/death_suicide/intent",
+    "detail/MDD/death_suicide/past_behaviour",
+    "detail/MDD/death_suicide/plan_present",
+    "detail/MDD/death_suicide/recency",
+    "detail/MDD/death_suicide/support",
+    "detail/MDD/depressed_mood/baseline_comparison",
+    "detail/MDD/depressed_mood/days_per_week",
+    "detail/MDD/depressed_mood/description",
+    "detail/MDD/depressed_mood/duration",
+    "detail/MDD/depressed_mood/frequency",
+    "detail/MDD/depressed_mood/impact",
+    "detail/MDD/depressed_mood/onset",
+    "detail/MDD/depressed_mood/proportion_of_day",
+    "detail/MDD/energy_fatigue/baseline_comparison",
+    "detail/MDD/energy_fatigue/duration",
+    "detail/MDD/energy_fatigue/experience",
+    "detail/MDD/energy_fatigue/frequency",
+    "detail/MDD/energy_fatigue/impact",
+    "detail/MDD/energy_fatigue/onset",
+    "detail/MDD/energy_fatigue/sleepiness",
+    "detail/MDD/episode_timeline/course",
+    "detail/MDD/episode_timeline/duration",
+    "detail/MDD/episode_timeline/intervals",
+    "detail/MDD/episode_timeline/onset",
+    "detail/MDD/episode_timeline/overlap",
+    "detail/MDD/exposure_context/dose_use",
+    "detail/MDD/exposure_context/name",
+    "detail/MDD/exposure_context/source_kind",
+    "detail/MDD/exposure_context/start_change_stop",
+    "detail/MDD/exposure_context/symptom_timing",
+    "detail/MDD/family_history/certainty",
+    "detail/MDD/family_history/relative",
+    "detail/MDD/family_history/reported_condition",
+    "detail/MDD/functioning_distress/baseline",
+    "detail/MDD/functioning_distress/domain",
+    "detail/MDD/functioning_distress/examples",
+    "detail/MDD/functioning_distress/supports",
+    "detail/MDD/interest_pleasure/activities",
+    "detail/MDD/interest_pleasure/baseline_comparison",
+    "detail/MDD/interest_pleasure/breadth",
+    "detail/MDD/interest_pleasure/days_per_week",
+    "detail/MDD/interest_pleasure/duration",
+    "detail/MDD/interest_pleasure/frequency",
+    "detail/MDD/interest_pleasure/interest",
+    "detail/MDD/interest_pleasure/onset",
+    "detail/MDD/interest_pleasure/pleasure",
+    "detail/MDD/interest_pleasure/proportion_of_day",
+    "detail/MDD/life_context/barriers",
+    "detail/MDD/life_context/events",
+    "detail/MDD/life_context/meaning",
+    "detail/MDD/life_context/support",
+    "detail/MDD/life_context/timing",
+    "detail/MDD/medical_context/clinician_review",
+    "detail/MDD/medical_context/conditions",
+    "detail/MDD/medical_context/investigations",
+    "detail/MDD/medical_context/timeline",
+    "detail/MDD/melancholic_features/appetite_weight_loss",
+    "detail/MDD/melancholic_features/distinct_mood_quality",
+    "detail/MDD/melancholic_features/early_waking",
+    "detail/MDD/melancholic_features/episode_overlap",
+    "detail/MDD/melancholic_features/excessive_guilt",
+    "detail/MDD/melancholic_features/low_mood_reactivity",
+    "detail/MDD/melancholic_features/marked_motor_change",
+    "detail/MDD/melancholic_features/morning_worsening",
+    "detail/MDD/melancholic_features/near_total_pleasure_loss",
+    "detail/MDD/melancholic_features/observer",
+    "detail/MDD/melancholic_features/timing_frequency",
+    "detail/MDD/mixed_features/elevated_expansive_mood",
+    "detail/MDD/mixed_features/episode_overlap",
+    "detail/MDD/mixed_features/grandiosity",
+    "detail/MDD/mixed_features/increased_energy_activity",
+    "detail/MDD/mixed_features/increased_talkativeness",
+    "detail/MDD/mixed_features/observer",
+    "detail/MDD/mixed_features/racing_thoughts",
+    "detail/MDD/mixed_features/reduced_sleep_need",
+    "detail/MDD/mixed_features/risky_activity",
+    "detail/MDD/mixed_features/timing_frequency",
+    "detail/MDD/peripartum_context/episode_overlap",
+    "detail/MDD/peripartum_context/episode_relationship",
+    "detail/MDD/peripartum_context/observer",
+    "detail/MDD/peripartum_context/parent_infant_functioning",
+    "detail/MDD/peripartum_context/postpartum_psychosis_concerns",
+    "detail/MDD/peripartum_context/pregnancy_delivery_timing",
+    "detail/MDD/peripartum_context/symptom_onset_timing",
+    "detail/MDD/peripartum_context/timing_frequency",
+    "detail/MDD/psychomotor_change/baseline_comparison",
+    "detail/MDD/psychomotor_change/direction",
+    "detail/MDD/psychomotor_change/examples",
+    "detail/MDD/psychomotor_change/frequency",
+    "detail/MDD/psychomotor_change/impact",
+    "detail/MDD/psychomotor_change/observer",
+    "detail/MDD/psychomotor_change/onset",
+    "detail/MDD/psychotic_experience/content",
+    "detail/MDD/psychotic_experience/conviction_context",
+    "detail/MDD/psychotic_experience/kind",
+    "detail/MDD/psychotic_experience/mood_relationship",
+    "detail/MDD/psychotic_experience/reported_mood_congruence",
+    "detail/MDD/psychotic_experience/safety_concerns",
+    "detail/MDD/seasonal_pattern/episode_overlap",
+    "detail/MDD/seasonal_pattern/lifetime_pattern",
+    "detail/MDD/seasonal_pattern/nonseasonal_episodes",
+    "detail/MDD/seasonal_pattern/observer",
+    "detail/MDD/seasonal_pattern/onset_season",
+    "detail/MDD/seasonal_pattern/remission_season",
+    "detail/MDD/seasonal_pattern/seasonal_stressors",
+    "detail/MDD/seasonal_pattern/timing_frequency",
+    "detail/MDD/seasonal_pattern/two_year_history",
+    "detail/MDD/sleep_disturbance/awakenings",
+    "detail/MDD/sleep_disturbance/baseline_comparison",
+    "detail/MDD/sleep_disturbance/daytime_effect",
+    "detail/MDD/sleep_disturbance/duration",
+    "detail/MDD/sleep_disturbance/frequency",
+    "detail/MDD/sleep_disturbance/latency",
+    "detail/MDD/sleep_disturbance/onset",
+    "detail/MDD/sleep_disturbance/pattern",
+    "detail/MDD/sleep_disturbance/sleep_opportunity",
+    "detail/MDD/sleep_disturbance/total_sleep",
+    "detail/MDD/sleep_disturbance/wake_timing",
+    "detail/MDD/treatment_history/period",
+    "detail/MDD/treatment_history/reported_diagnosis",
+    "detail/MDD/treatment_history/response",
+    "detail/MDD/treatment_history/treatment",
+    "detail/MDD/treatment_history/use",
+    "detail/MDD/weight_change/amount",
+    "detail/MDD/weight_change/baseline_weight",
+    "detail/MDD/weight_change/direction",
+    "detail/MDD/weight_change/intentionality",
+    "detail/MDD/weight_change/interval",
+    "detail/MDD/weight_change/measurement",
+    "detail/MDD/worthlessness_guilt/content",
+    "detail/MDD/worthlessness_guilt/context",
+    "detail/MDD/worthlessness_guilt/duration",
+    "detail/MDD/worthlessness_guilt/frequency",
+    "detail/MDD/worthlessness_guilt/impact",
+    "detail/MDD/worthlessness_guilt/kind",
+    "detail/MDD/worthlessness_guilt/onset",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/duration",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/energy_activity",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/exposure_context",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/impact",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/mood",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/other_changes",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/period",
+    "detail/Other_Specified_Depressive_Disorder/activation_history/sleep_need",
+    "detail/Other_Specified_Depressive_Disorder/anxiety_depression_overlap/anxiety_experiences",
+    "detail/Other_Specified_Depressive_Disorder/anxiety_depression_overlap/impact",
+    "detail/Other_Specified_Depressive_Disorder/anxiety_depression_overlap/reported_formulation",
+    "detail/Other_Specified_Depressive_Disorder/anxiety_depression_overlap/timing_overlap",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/appetite_vs_intake",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/direction",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/duration",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/frequency",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/impact",
+    "detail/Other_Specified_Depressive_Disorder/appetite_change/onset",
+    "detail/Other_Specified_Depressive_Disorder/assessment_information_gaps/basis",
+    "detail/Other_Specified_Depressive_Disorder/assessment_information_gaps/next_clarification",
+    "detail/Other_Specified_Depressive_Disorder/assessment_information_gaps/partial_information",
+    "detail/Other_Specified_Depressive_Disorder/assessment_information_gaps/target",
+    "detail/Other_Specified_Depressive_Disorder/between_period_course/longer_low_periods",
+    "detail/Other_Specified_Depressive_Disorder/between_period_course/mood_between",
+    "detail/Other_Specified_Depressive_Disorder/between_period_course/other_symptoms_between",
+    "detail/Other_Specified_Depressive_Disorder/between_period_course/return_to_baseline",
+    "detail/Other_Specified_Depressive_Disorder/between_period_course/symptom_free_intervals",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/baseline_change",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/cooccurring_symptoms",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/depressed_affect",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/duration",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/end_or_ongoing",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/recall_limit",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/start",
+    "detail/Other_Specified_Depressive_Disorder/brief_period_details/within_period_frequency",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/duration",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/frequency",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/impact",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/kind",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/onset",
+    "detail/Other_Specified_Depressive_Disorder/cognition_decisions/tasks",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/access",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/experience",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/frequency",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/intent",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/past_behaviour",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/plan_present",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/recency",
+    "detail/Other_Specified_Depressive_Disorder/death_suicide/support",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/days_per_week",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/description",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/duration",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/frequency",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/impact",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/onset",
+    "detail/Other_Specified_Depressive_Disorder/depressed_mood/proportion_of_day",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/duration",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/experience",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/frequency",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/impact",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/onset",
+    "detail/Other_Specified_Depressive_Disorder/energy_fatigue/sleepiness",
+    "detail/Other_Specified_Depressive_Disorder/episode_timeline/course",
+    "detail/Other_Specified_Depressive_Disorder/episode_timeline/duration",
+    "detail/Other_Specified_Depressive_Disorder/episode_timeline/intervals",
+    "detail/Other_Specified_Depressive_Disorder/episode_timeline/onset",
+    "detail/Other_Specified_Depressive_Disorder/episode_timeline/overlap",
+    "detail/Other_Specified_Depressive_Disorder/exposure_context/dose_use",
+    "detail/Other_Specified_Depressive_Disorder/exposure_context/name",
+    "detail/Other_Specified_Depressive_Disorder/exposure_context/source_kind",
+    "detail/Other_Specified_Depressive_Disorder/exposure_context/start_change_stop",
+    "detail/Other_Specified_Depressive_Disorder/exposure_context/symptom_timing",
+    "detail/Other_Specified_Depressive_Disorder/family_history/certainty",
+    "detail/Other_Specified_Depressive_Disorder/family_history/relative",
+    "detail/Other_Specified_Depressive_Disorder/family_history/reported_condition",
+    "detail/Other_Specified_Depressive_Disorder/functioning_distress/baseline",
+    "detail/Other_Specified_Depressive_Disorder/functioning_distress/domain",
+    "detail/Other_Specified_Depressive_Disorder/functioning_distress/examples",
+    "detail/Other_Specified_Depressive_Disorder/functioning_distress/supports",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/activities",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/breadth",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/days_per_week",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/duration",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/frequency",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/interest",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/onset",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/pleasure",
+    "detail/Other_Specified_Depressive_Disorder/interest_pleasure/proportion_of_day",
+    "detail/Other_Specified_Depressive_Disorder/life_context/barriers",
+    "detail/Other_Specified_Depressive_Disorder/life_context/events",
+    "detail/Other_Specified_Depressive_Disorder/life_context/meaning",
+    "detail/Other_Specified_Depressive_Disorder/life_context/support",
+    "detail/Other_Specified_Depressive_Disorder/life_context/timing",
+    "detail/Other_Specified_Depressive_Disorder/lifetime_threshold_history/activation_periods",
+    "detail/Other_Specified_Depressive_Disorder/lifetime_threshold_history/previous_depressive_periods",
+    "detail/Other_Specified_Depressive_Disorder/lifetime_threshold_history/prior_full_episode_review",
+    "detail/Other_Specified_Depressive_Disorder/lifetime_threshold_history/psychotic_history",
+    "detail/Other_Specified_Depressive_Disorder/lifetime_threshold_history/reported_diagnoses",
+    "detail/Other_Specified_Depressive_Disorder/lifetime_threshold_history/uncertainty",
+    "detail/Other_Specified_Depressive_Disorder/medical_context/clinician_review",
+    "detail/Other_Specified_Depressive_Disorder/medical_context/conditions",
+    "detail/Other_Specified_Depressive_Disorder/medical_context/investigations",
+    "detail/Other_Specified_Depressive_Disorder/medical_context/timeline",
+    "detail/Other_Specified_Depressive_Disorder/menstrual_relationship/applicability",
+    "detail/Other_Specified_Depressive_Disorder/menstrual_relationship/relationship",
+    "detail/Other_Specified_Depressive_Disorder/menstrual_relationship/timing",
+    "detail/Other_Specified_Depressive_Disorder/menstrual_relationship/tracking",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/direction",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/examples",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/frequency",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/impact",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/observer",
+    "detail/Other_Specified_Depressive_Disorder/psychomotor_change/onset",
+    "detail/Other_Specified_Depressive_Disorder/psychosis_mood_relationship/mood_timeline",
+    "detail/Other_Specified_Depressive_Disorder/psychosis_mood_relationship/overlap",
+    "detail/Other_Specified_Depressive_Disorder/psychosis_mood_relationship/psychosis_timeline",
+    "detail/Other_Specified_Depressive_Disorder/psychosis_mood_relationship/reported_condition",
+    "detail/Other_Specified_Depressive_Disorder/psychosis_mood_relationship/reported_schizoaffective_review",
+    "detail/Other_Specified_Depressive_Disorder/psychosis_mood_relationship/specialist_care",
+    "detail/Other_Specified_Depressive_Disorder/psychotic_experience/content",
+    "detail/Other_Specified_Depressive_Disorder/psychotic_experience/conviction_context",
+    "detail/Other_Specified_Depressive_Disorder/psychotic_experience/kind",
+    "detail/Other_Specified_Depressive_Disorder/psychotic_experience/mood_relationship",
+    "detail/Other_Specified_Depressive_Disorder/psychotic_experience/reported_mood_congruence",
+    "detail/Other_Specified_Depressive_Disorder/psychotic_experience/safety_concerns",
+    "detail/Other_Specified_Depressive_Disorder/recurrence_pattern/consecutive_months",
+    "detail/Other_Specified_Depressive_Disorder/recurrence_pattern/episodes_per_month",
+    "detail/Other_Specified_Depressive_Disorder/recurrence_pattern/exceptions",
+    "detail/Other_Specified_Depressive_Disorder/recurrence_pattern/observation_interval",
+    "detail/Other_Specified_Depressive_Disorder/recurrence_pattern/period_variability",
+    "detail/Other_Specified_Depressive_Disorder/recurrence_pattern/source_of_pattern",
+    "detail/Other_Specified_Depressive_Disorder/reported_diagnostic_reason/reason_as_reported",
+    "detail/Other_Specified_Depressive_Disorder/reported_diagnostic_reason/requirement_discussed",
+    "detail/Other_Specified_Depressive_Disorder/reported_diagnostic_reason/review_plan",
+    "detail/Other_Specified_Depressive_Disorder/reported_diagnostic_reason/speaker",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/awakenings",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/baseline_comparison",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/daytime_effect",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/duration",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/frequency",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/latency",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/onset",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/pattern",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/sleep_opportunity",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/total_sleep",
+    "detail/Other_Specified_Depressive_Disorder/sleep_disturbance/wake_timing",
+    "detail/Other_Specified_Depressive_Disorder/stressor_adjustment_review/course",
+    "detail/Other_Specified_Depressive_Disorder/stressor_adjustment_review/meaning",
+    "detail/Other_Specified_Depressive_Disorder/stressor_adjustment_review/other_explanations",
+    "detail/Other_Specified_Depressive_Disorder/stressor_adjustment_review/stressor",
+    "detail/Other_Specified_Depressive_Disorder/stressor_adjustment_review/timing",
+    "detail/Other_Specified_Depressive_Disorder/treatment_history/period",
+    "detail/Other_Specified_Depressive_Disorder/treatment_history/reported_diagnosis",
+    "detail/Other_Specified_Depressive_Disorder/treatment_history/response",
+    "detail/Other_Specified_Depressive_Disorder/treatment_history/treatment",
+    "detail/Other_Specified_Depressive_Disorder/treatment_history/use",
+    "detail/Other_Specified_Depressive_Disorder/weight_change/amount",
+    "detail/Other_Specified_Depressive_Disorder/weight_change/baseline_weight",
+    "detail/Other_Specified_Depressive_Disorder/weight_change/direction",
+    "detail/Other_Specified_Depressive_Disorder/weight_change/intentionality",
+    "detail/Other_Specified_Depressive_Disorder/weight_change/interval",
+    "detail/Other_Specified_Depressive_Disorder/weight_change/measurement",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/content",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/context",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/duration",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/frequency",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/impact",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/kind",
+    "detail/Other_Specified_Depressive_Disorder/worthlessness_guilt/onset",
+    "detail/PDD/activation_history/duration",
+    "detail/PDD/activation_history/energy_activity",
+    "detail/PDD/activation_history/exposure_context",
+    "detail/PDD/activation_history/impact",
+    "detail/PDD/activation_history/mood",
+    "detail/PDD/activation_history/other_changes",
+    "detail/PDD/activation_history/period",
+    "detail/PDD/activation_history/sleep_need",
+    "detail/PDD/anxious_distress/depressed_period_overlap",
+    "detail/PDD/anxious_distress/fear_of_awful_event",
+    "detail/PDD/anxious_distress/fear_of_losing_control",
+    "detail/PDD/anxious_distress/observer",
+    "detail/PDD/anxious_distress/tension",
+    "detail/PDD/anxious_distress/timing_frequency",
+    "detail/PDD/anxious_distress/unusual_restlessness",
+    "detail/PDD/anxious_distress/worry_affecting_concentration",
+    "detail/PDD/appetite_eating/appetite_vs_intake",
+    "detail/PDD/appetite_eating/description",
+    "detail/PDD/appetite_eating/duration",
+    "detail/PDD/appetite_eating/frequency",
+    "detail/PDD/appetite_eating/impact",
+    "detail/PDD/appetite_eating/onset",
+    "detail/PDD/appetite_eating/overlap_with_low_mood",
+    "detail/PDD/appetite_eating/pattern",
+    "detail/PDD/atypical_features/appetite_weight_gain",
+    "detail/PDD/atypical_features/depressed_period_overlap",
+    "detail/PDD/atypical_features/excessive_sleep",
+    "detail/PDD/atypical_features/leaden_limbs",
+    "detail/PDD/atypical_features/longstanding_rejection_sensitivity",
+    "detail/PDD/atypical_features/mood_reactivity",
+    "detail/PDD/atypical_features/observer",
+    "detail/PDD/atypical_features/timing_frequency",
+    "detail/PDD/cognition_decisions/baseline_comparison",
+    "detail/PDD/cognition_decisions/description",
+    "detail/PDD/cognition_decisions/duration",
+    "detail/PDD/cognition_decisions/frequency",
+    "detail/PDD/cognition_decisions/impact",
+    "detail/PDD/cognition_decisions/kind",
+    "detail/PDD/cognition_decisions/onset",
+    "detail/PDD/cognition_decisions/overlap_with_low_mood",
+    "detail/PDD/cognition_decisions/tasks",
+    "detail/PDD/death_suicide/access",
+    "detail/PDD/death_suicide/experience",
+    "detail/PDD/death_suicide/frequency",
+    "detail/PDD/death_suicide/intent",
+    "detail/PDD/death_suicide/past_behaviour",
+    "detail/PDD/death_suicide/plan_present",
+    "detail/PDD/death_suicide/recency",
+    "detail/PDD/death_suicide/support",
+    "detail/PDD/depressed_mood/baseline_comparison",
+    "detail/PDD/depressed_mood/course",
+    "detail/PDD/depressed_mood/description",
+    "detail/PDD/depressed_mood/duration",
+    "detail/PDD/depressed_mood/frequency",
+    "detail/PDD/depressed_mood/onset",
+    "detail/PDD/depressed_mood/proportion_of_day",
+    "detail/PDD/depressed_mood/recall_limits",
+    "detail/PDD/energy_fatigue/baseline_comparison",
+    "detail/PDD/energy_fatigue/description",
+    "detail/PDD/energy_fatigue/duration",
+    "detail/PDD/energy_fatigue/frequency",
+    "detail/PDD/energy_fatigue/impact",
+    "detail/PDD/energy_fatigue/onset",
+    "detail/PDD/energy_fatigue/overlap_with_low_mood",
+    "detail/PDD/exposure_context/dose_use",
+    "detail/PDD/exposure_context/name",
+    "detail/PDD/exposure_context/source_kind",
+    "detail/PDD/exposure_context/start_change_stop",
+    "detail/PDD/exposure_context/symptom_timing",
+    "detail/PDD/family_history/certainty",
+    "detail/PDD/family_history/relative",
+    "detail/PDD/family_history/reported_condition",
+    "detail/PDD/functioning_distress/baseline",
+    "detail/PDD/functioning_distress/domain",
+    "detail/PDD/functioning_distress/examples",
+    "detail/PDD/functioning_distress/supports",
+    "detail/PDD/hopelessness/context",
+    "detail/PDD/hopelessness/description",
+    "detail/PDD/hopelessness/duration",
+    "detail/PDD/hopelessness/frequency",
+    "detail/PDD/hopelessness/future_expectations",
+    "detail/PDD/hopelessness/impact",
+    "detail/PDD/hopelessness/onset",
+    "detail/PDD/hopelessness/overlap_with_low_mood",
+    "detail/PDD/life_context/barriers",
+    "detail/PDD/life_context/events",
+    "detail/PDD/life_context/meaning",
+    "detail/PDD/life_context/support",
+    "detail/PDD/life_context/timing",
+    "detail/PDD/longitudinal_timeline/associated_symptom_overlap",
+    "detail/PDD/longitudinal_timeline/course",
+    "detail/PDD/longitudinal_timeline/duration",
+    "detail/PDD/longitudinal_timeline/intervals",
+    "detail/PDD/longitudinal_timeline/life_anchors",
+    "detail/PDD/longitudinal_timeline/longest_better_interval",
+    "detail/PDD/longitudinal_timeline/onset",
+    "detail/PDD/longitudinal_timeline/recall_limits",
+    "detail/PDD/longitudinal_timeline/reference_window",
+    "detail/PDD/longitudinal_timeline/symptom_absence_account",
+    "detail/PDD/low_self_esteem/context",
+    "detail/PDD/low_self_esteem/description",
+    "detail/PDD/low_self_esteem/duration",
+    "detail/PDD/low_self_esteem/frequency",
+    "detail/PDD/low_self_esteem/impact",
+    "detail/PDD/low_self_esteem/onset",
+    "detail/PDD/low_self_esteem/overlap_with_low_mood",
+    "detail/PDD/low_self_esteem/self_evaluation",
+    "detail/PDD/mde_history/background_relationship",
+    "detail/PDD/mde_history/current_status",
+    "detail/PDD/mde_history/impact",
+    "detail/PDD/mde_history/lower_symptom_intervals",
+    "detail/PDD/mde_history/period",
+    "detail/PDD/mde_history/professional_history",
+    "detail/PDD/mde_history/symptoms",
+    "detail/PDD/medical_context/clinician_review",
+    "detail/PDD/medical_context/conditions",
+    "detail/PDD/medical_context/investigations",
+    "detail/PDD/medical_context/timeline",
+    "detail/PDD/onset_history/age_or_period",
+    "detail/PDD/onset_history/approximation",
+    "detail/PDD/onset_history/continuity_to_adulthood",
+    "detail/PDD/psychotic_experience/content",
+    "detail/PDD/psychotic_experience/conviction_context",
+    "detail/PDD/psychotic_experience/kind",
+    "detail/PDD/psychotic_experience/mood_relationship",
+    "detail/PDD/psychotic_experience/reported_mood_congruence",
+    "detail/PDD/psychotic_experience/safety_concerns",
+    "detail/PDD/sleep_disturbance/baseline_comparison",
+    "detail/PDD/sleep_disturbance/daytime_effects",
+    "detail/PDD/sleep_disturbance/duration",
+    "detail/PDD/sleep_disturbance/frequency",
+    "detail/PDD/sleep_disturbance/latency",
+    "detail/PDD/sleep_disturbance/onset",
+    "detail/PDD/sleep_disturbance/opportunity",
+    "detail/PDD/sleep_disturbance/overlap_with_low_mood",
+    "detail/PDD/sleep_disturbance/pattern",
+    "detail/PDD/sleep_disturbance/sleep_hours",
+    "detail/PDD/treatment_history/period",
+    "detail/PDD/treatment_history/reported_diagnosis",
+    "detail/PDD/treatment_history/response",
+    "detail/PDD/treatment_history/treatment",
+    "detail/PDD/treatment_history/use",
+    "detail/PMDD/activation_history/duration",
+    "detail/PMDD/activation_history/energy_activity",
+    "detail/PMDD/activation_history/exposure_context",
+    "detail/PMDD/activation_history/impact",
+    "detail/PMDD/activation_history/mood",
+    "detail/PMDD/activation_history/other_changes",
+    "detail/PMDD/activation_history/period",
+    "detail/PMDD/activation_history/sleep_need",
+    "detail/PMDD/anxiety_tension/description",
+    "detail/PMDD/anxiety_tension/duration_within_cycle",
+    "detail/PMDD/anxiety_tension/experience",
+    "detail/PMDD/anxiety_tension/impact",
+    "detail/PMDD/anxiety_tension/improvement_timing",
+    "detail/PMDD/anxiety_tension/intensity_as_reported",
+    "detail/PMDD/anxiety_tension/onset_relative_to_bleeding",
+    "detail/PMDD/anxiety_tension/postmenstrual_level",
+    "detail/PMDD/appetite_cravings/description",
+    "detail/PMDD/appetite_cravings/details",
+    "detail/PMDD/appetite_cravings/duration_within_cycle",
+    "detail/PMDD/appetite_cravings/improvement_timing",
+    "detail/PMDD/appetite_cravings/intensity_as_reported",
+    "detail/PMDD/appetite_cravings/onset_relative_to_bleeding",
+    "detail/PMDD/appetite_cravings/pattern",
+    "detail/PMDD/appetite_cravings/postmenstrual_level",
+    "detail/PMDD/background_symptoms/baseline_intensity",
+    "detail/PMDD/background_symptoms/premenstrual_difference",
+    "detail/PMDD/background_symptoms/symptoms",
+    "detail/PMDD/background_symptoms/timing",
+    "detail/PMDD/concentration_difficulty/description",
+    "detail/PMDD/concentration_difficulty/duration_within_cycle",
+    "detail/PMDD/concentration_difficulty/impact",
+    "detail/PMDD/concentration_difficulty/improvement_timing",
+    "detail/PMDD/concentration_difficulty/intensity_as_reported",
+    "detail/PMDD/concentration_difficulty/onset_relative_to_bleeding",
+    "detail/PMDD/concentration_difficulty/postmenstrual_level",
+    "detail/PMDD/concentration_difficulty/tasks",
+    "detail/PMDD/cycle_context/bleeding_pattern",
+    "detail/PMDD/cycle_context/hormonal_context",
+    "detail/PMDD/cycle_context/ovulation_information",
+    "detail/PMDD/cycle_context/recent_periods",
+    "detail/PMDD/cycle_context/reproductive_context",
+    "detail/PMDD/cycle_context/usual_cycle_length",
+    "detail/PMDD/cyclical_timeline/cycles_described",
+    "detail/PMDD/cyclical_timeline/history_duration",
+    "detail/PMDD/cyclical_timeline/improvement_timing",
+    "detail/PMDD/cyclical_timeline/onset_timing",
+    "detail/PMDD/cyclical_timeline/postmenstrual_course",
+    "detail/PMDD/cyclical_timeline/preceding_year_pattern",
+    "detail/PMDD/cyclical_timeline/recall_limits",
+    "detail/PMDD/cyclical_timeline/symptom_scope",
+    "detail/PMDD/death_suicide/access",
+    "detail/PMDD/death_suicide/experience",
+    "detail/PMDD/death_suicide/frequency",
+    "detail/PMDD/death_suicide/intent",
+    "detail/PMDD/death_suicide/past_behaviour",
+    "detail/PMDD/death_suicide/plan_present",
+    "detail/PMDD/death_suicide/recency",
+    "detail/PMDD/death_suicide/support",
+    "detail/PMDD/depressed_affect/content",
+    "detail/PMDD/depressed_affect/description",
+    "detail/PMDD/depressed_affect/duration_within_cycle",
+    "detail/PMDD/depressed_affect/impact",
+    "detail/PMDD/depressed_affect/improvement_timing",
+    "detail/PMDD/depressed_affect/intensity_as_reported",
+    "detail/PMDD/depressed_affect/onset_relative_to_bleeding",
+    "detail/PMDD/depressed_affect/postmenstrual_level",
+    "detail/PMDD/exposure_context/dose_use",
+    "detail/PMDD/exposure_context/name",
+    "detail/PMDD/exposure_context/source_kind",
+    "detail/PMDD/exposure_context/start_change_stop",
+    "detail/PMDD/exposure_context/symptom_timing",
+    "detail/PMDD/family_history/certainty",
+    "detail/PMDD/family_history/relative",
+    "detail/PMDD/family_history/reported_condition",
+    "detail/PMDD/functioning_distress/baseline",
+    "detail/PMDD/functioning_distress/domain",
+    "detail/PMDD/functioning_distress/examples",
+    "detail/PMDD/functioning_distress/supports",
+    "detail/PMDD/hormone_exposure/bleeding_relationship",
+    "detail/PMDD/hormone_exposure/regimen",
+    "detail/PMDD/hormone_exposure/start_change_stop",
+    "detail/PMDD/hormone_exposure/symptom_relationship",
+    "detail/PMDD/hormone_exposure/treatment",
+    "detail/PMDD/irritability_anger/description",
+    "detail/PMDD/irritability_anger/duration_within_cycle",
+    "detail/PMDD/irritability_anger/examples",
+    "detail/PMDD/irritability_anger/impact",
+    "detail/PMDD/irritability_anger/improvement_timing",
+    "detail/PMDD/irritability_anger/intensity_as_reported",
+    "detail/PMDD/irritability_anger/onset_relative_to_bleeding",
+    "detail/PMDD/irritability_anger/postmenstrual_level",
+    "detail/PMDD/life_context/barriers",
+    "detail/PMDD/life_context/events",
+    "detail/PMDD/life_context/meaning",
+    "detail/PMDD/life_context/support",
+    "detail/PMDD/life_context/timing",
+    "detail/PMDD/low_energy/description",
+    "detail/PMDD/low_energy/duration_within_cycle",
+    "detail/PMDD/low_energy/experience",
+    "detail/PMDD/low_energy/impact",
+    "detail/PMDD/low_energy/improvement_timing",
+    "detail/PMDD/low_energy/intensity_as_reported",
+    "detail/PMDD/low_energy/onset_relative_to_bleeding",
+    "detail/PMDD/low_energy/postmenstrual_level",
+    "detail/PMDD/medical_context/clinician_review",
+    "detail/PMDD/medical_context/conditions",
+    "detail/PMDD/medical_context/investigations",
+    "detail/PMDD/medical_context/timeline",
+    "detail/PMDD/mood_lability/changes",
+    "detail/PMDD/mood_lability/description",
+    "detail/PMDD/mood_lability/duration_within_cycle",
+    "detail/PMDD/mood_lability/impact",
+    "detail/PMDD/mood_lability/improvement_timing",
+    "detail/PMDD/mood_lability/intensity_as_reported",
+    "detail/PMDD/mood_lability/onset_relative_to_bleeding",
+    "detail/PMDD/mood_lability/postmenstrual_level",
+    "detail/PMDD/overwhelmed_control/description",
+    "detail/PMDD/overwhelmed_control/duration_within_cycle",
+    "detail/PMDD/overwhelmed_control/impact",
+    "detail/PMDD/overwhelmed_control/improvement_timing",
+    "detail/PMDD/overwhelmed_control/intensity_as_reported",
+    "detail/PMDD/overwhelmed_control/meaning",
+    "detail/PMDD/overwhelmed_control/onset_relative_to_bleeding",
+    "detail/PMDD/overwhelmed_control/postmenstrual_level",
+    "detail/PMDD/physical_symptoms/description",
+    "detail/PMDD/physical_symptoms/duration_within_cycle",
+    "detail/PMDD/physical_symptoms/impact",
+    "detail/PMDD/physical_symptoms/improvement_timing",
+    "detail/PMDD/physical_symptoms/intensity_as_reported",
+    "detail/PMDD/physical_symptoms/onset_relative_to_bleeding",
+    "detail/PMDD/physical_symptoms/postmenstrual_level",
+    "detail/PMDD/physical_symptoms/symptoms",
+    "detail/PMDD/physical_symptoms/weight_if_reported",
+    "detail/PMDD/pme_review/baseline_pattern",
+    "detail/PMDD/pme_review/distinct_symptoms",
+    "detail/PMDD/pme_review/records_needed",
+    "detail/PMDD/pme_review/underlying_history",
+    "detail/PMDD/pme_review/worsening_pattern",
+    "detail/PMDD/prospective_records/availability",
+    "detail/PMDD/prospective_records/coverage",
+    "detail/PMDD/prospective_records/instrument",
+    "detail/PMDD/prospective_records/missingness",
+    "detail/PMDD/prospective_records/recording_method",
+    "detail/PMDD/prospective_records/review_history",
+    "detail/PMDD/psychotic_experience/content",
+    "detail/PMDD/psychotic_experience/conviction_context",
+    "detail/PMDD/psychotic_experience/kind",
+    "detail/PMDD/psychotic_experience/mood_relationship",
+    "detail/PMDD/psychotic_experience/reported_mood_congruence",
+    "detail/PMDD/psychotic_experience/safety_concerns",
+    "detail/PMDD/reduced_interest/activities",
+    "detail/PMDD/reduced_interest/description",
+    "detail/PMDD/reduced_interest/duration_within_cycle",
+    "detail/PMDD/reduced_interest/impact",
+    "detail/PMDD/reduced_interest/improvement_timing",
+    "detail/PMDD/reduced_interest/intensity_as_reported",
+    "detail/PMDD/reduced_interest/onset_relative_to_bleeding",
+    "detail/PMDD/reduced_interest/postmenstrual_level",
+    "detail/PMDD/sleep_disturbance/awakenings",
+    "detail/PMDD/sleep_disturbance/daytime_effects",
+    "detail/PMDD/sleep_disturbance/description",
+    "detail/PMDD/sleep_disturbance/duration_within_cycle",
+    "detail/PMDD/sleep_disturbance/improvement_timing",
+    "detail/PMDD/sleep_disturbance/intensity_as_reported",
+    "detail/PMDD/sleep_disturbance/latency",
+    "detail/PMDD/sleep_disturbance/onset_relative_to_bleeding",
+    "detail/PMDD/sleep_disturbance/pattern",
+    "detail/PMDD/sleep_disturbance/postmenstrual_level",
+    "detail/PMDD/sleep_disturbance/sleep_hours",
+    "detail/PMDD/sleep_disturbance/sleep_opportunity",
+    "detail/PMDD/sleep_disturbance/wake_timing",
+    "detail/PMDD/treatment_history/period",
+    "detail/PMDD/treatment_history/reported_diagnosis",
+    "detail/PMDD/treatment_history/response",
+    "detail/PMDD/treatment_history/treatment",
+    "detail/PMDD/treatment_history/use",
+    "detail/Substance_Medication_Induced_Depression/activation_history/duration",
+    "detail/Substance_Medication_Induced_Depression/activation_history/energy_activity",
+    "detail/Substance_Medication_Induced_Depression/activation_history/exposure_context",
+    "detail/Substance_Medication_Induced_Depression/activation_history/impact",
+    "detail/Substance_Medication_Induced_Depression/activation_history/mood",
+    "detail/Substance_Medication_Induced_Depression/activation_history/other_changes",
+    "detail/Substance_Medication_Induced_Depression/activation_history/period",
+    "detail/Substance_Medication_Induced_Depression/activation_history/sleep_need",
+    "detail/Substance_Medication_Induced_Depression/acute_cognitive_change/change",
+    "detail/Substance_Medication_Induced_Depression/acute_cognitive_change/fluctuation",
+    "detail/Substance_Medication_Induced_Depression/acute_cognitive_change/medical_context",
+    "detail/Substance_Medication_Induced_Depression/acute_cognitive_change/observer",
+    "detail/Substance_Medication_Induced_Depression/acute_cognitive_change/onset",
+    "detail/Substance_Medication_Induced_Depression/acute_cognitive_change/review_status",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/appetite_vs_intake",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/direction",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/duration",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/frequency",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/impact",
+    "detail/Substance_Medication_Induced_Depression/appetite_change/onset",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/duration",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/frequency",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/impact",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/kind",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/onset",
+    "detail/Substance_Medication_Induced_Depression/cognition_decisions/tasks",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/access",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/experience",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/frequency",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/intent",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/past_behaviour",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/plan_present",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/recency",
+    "detail/Substance_Medication_Induced_Depression/death_suicide/support",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/days_per_week",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/description",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/duration",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/frequency",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/impact",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/onset",
+    "detail/Substance_Medication_Induced_Depression/depressed_mood/proportion_of_day",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/duration",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/experience",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/frequency",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/impact",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/onset",
+    "detail/Substance_Medication_Induced_Depression/energy_fatigue/sleepiness",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/certainty",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/dose_or_amount",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/formulation",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/indication",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/kind",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/name_as_reported",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/pattern",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/prescriber",
+    "detail/Substance_Medication_Induced_Depression/exposure_details/route",
+    "detail/Substance_Medication_Induced_Depression/exposure_events/event",
+    "detail/Substance_Medication_Induced_Depression/exposure_events/event_sequence",
+    "detail/Substance_Medication_Induced_Depression/exposure_events/event_time",
+    "detail/Substance_Medication_Induced_Depression/exposure_events/previous_use",
+    "detail/Substance_Medication_Induced_Depression/exposure_events/subsequent_use",
+    "detail/Substance_Medication_Induced_Depression/exposure_events/supervision",
+    "detail/Substance_Medication_Induced_Depression/exposure_mood_timing/baseline_before_event",
+    "detail/Substance_Medication_Induced_Depression/exposure_mood_timing/interval",
+    "detail/Substance_Medication_Induced_Depression/exposure_mood_timing/other_changes",
+    "detail/Substance_Medication_Induced_Depression/exposure_mood_timing/patient_explanation",
+    "detail/Substance_Medication_Induced_Depression/exposure_mood_timing/relation",
+    "detail/Substance_Medication_Induced_Depression/exposure_mood_timing/symptom_change",
+    "detail/Substance_Medication_Induced_Depression/family_history/certainty",
+    "detail/Substance_Medication_Induced_Depression/family_history/relative",
+    "detail/Substance_Medication_Induced_Depression/family_history/reported_condition",
+    "detail/Substance_Medication_Induced_Depression/functioning_distress/baseline",
+    "detail/Substance_Medication_Induced_Depression/functioning_distress/domain",
+    "detail/Substance_Medication_Induced_Depression/functioning_distress/examples",
+    "detail/Substance_Medication_Induced_Depression/functioning_distress/supports",
+    "detail/Substance_Medication_Induced_Depression/independent_depression_history/certainty",
+    "detail/Substance_Medication_Induced_Depression/independent_depression_history/earlier_period",
+    "detail/Substance_Medication_Induced_Depression/independent_depression_history/exposure_context_then",
+    "detail/Substance_Medication_Induced_Depression/independent_depression_history/onset_before_use",
+    "detail/Substance_Medication_Induced_Depression/independent_depression_history/previous_diagnosis",
+    "detail/Substance_Medication_Induced_Depression/independent_depression_history/recurrence",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/activities",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/breadth",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/days_per_week",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/duration",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/frequency",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/interest",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/onset",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/pleasure",
+    "detail/Substance_Medication_Induced_Depression/interest_pleasure/proportion_of_day",
+    "detail/Substance_Medication_Induced_Depression/intoxication_withdrawal_context/assessment_basis",
+    "detail/Substance_Medication_Induced_Depression/intoxication_withdrawal_context/current_medical_concern",
+    "detail/Substance_Medication_Induced_Depression/intoxication_withdrawal_context/past_complications",
+    "detail/Substance_Medication_Induced_Depression/intoxication_withdrawal_context/reported_state",
+    "detail/Substance_Medication_Induced_Depression/intoxication_withdrawal_context/symptoms",
+    "detail/Substance_Medication_Induced_Depression/intoxication_withdrawal_context/timing",
+    "detail/Substance_Medication_Induced_Depression/life_context/barriers",
+    "detail/Substance_Medication_Induced_Depression/life_context/events",
+    "detail/Substance_Medication_Induced_Depression/life_context/meaning",
+    "detail/Substance_Medication_Induced_Depression/life_context/support",
+    "detail/Substance_Medication_Induced_Depression/life_context/timing",
+    "detail/Substance_Medication_Induced_Depression/medical_context/clinician_review",
+    "detail/Substance_Medication_Induced_Depression/medical_context/conditions",
+    "detail/Substance_Medication_Induced_Depression/medical_context/investigations",
+    "detail/Substance_Medication_Induced_Depression/medical_context/timeline",
+    "detail/Substance_Medication_Induced_Depression/medical_indication_confounding/illness",
+    "detail/Substance_Medication_Induced_Depression/medical_indication_confounding/illness_timeline",
+    "detail/Substance_Medication_Induced_Depression/medical_indication_confounding/other_explanations",
+    "detail/Substance_Medication_Induced_Depression/medical_indication_confounding/records_available",
+    "detail/Substance_Medication_Induced_Depression/medical_indication_confounding/symptoms_before_treatment",
+    "detail/Substance_Medication_Induced_Depression/post_exposure_course/followup_available",
+    "detail/Substance_Medication_Induced_Depression/post_exposure_course/mood_course",
+    "detail/Substance_Medication_Induced_Depression/post_exposure_course/observation_interval",
+    "detail/Substance_Medication_Induced_Depression/post_exposure_course/ongoing_exposures",
+    "detail/Substance_Medication_Induced_Depression/post_exposure_course/other_symptom_course",
+    "detail/Substance_Medication_Induced_Depression/post_exposure_course/professional_review",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/direction",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/examples",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/frequency",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/impact",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/observer",
+    "detail/Substance_Medication_Induced_Depression/psychomotor_change/onset",
+    "detail/Substance_Medication_Induced_Depression/psychotic_experience/content",
+    "detail/Substance_Medication_Induced_Depression/psychotic_experience/conviction_context",
+    "detail/Substance_Medication_Induced_Depression/psychotic_experience/kind",
+    "detail/Substance_Medication_Induced_Depression/psychotic_experience/mood_relationship",
+    "detail/Substance_Medication_Induced_Depression/psychotic_experience/reported_mood_congruence",
+    "detail/Substance_Medication_Induced_Depression/psychotic_experience/safety_concerns",
+    "detail/Substance_Medication_Induced_Depression/reported_tests_review/professional_interpretation",
+    "detail/Substance_Medication_Induced_Depression/reported_tests_review/report_available",
+    "detail/Substance_Medication_Induced_Depression/reported_tests_review/reported_result",
+    "detail/Substance_Medication_Induced_Depression/reported_tests_review/test_or_assessment",
+    "detail/Substance_Medication_Induced_Depression/reported_tests_review/timing",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/awakenings",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/baseline_comparison",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/daytime_effect",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/duration",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/frequency",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/latency",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/onset",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/pattern",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/sleep_opportunity",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/total_sleep",
+    "detail/Substance_Medication_Induced_Depression/sleep_disturbance/wake_timing",
+    "detail/Substance_Medication_Induced_Depression/syndrome_course/clinical_attention",
+    "detail/Substance_Medication_Induced_Depression/syndrome_course/course",
+    "detail/Substance_Medication_Induced_Depression/syndrome_course/duration",
+    "detail/Substance_Medication_Induced_Depression/syndrome_course/onset",
+    "detail/Substance_Medication_Induced_Depression/syndrome_course/predominance",
+    "detail/Substance_Medication_Induced_Depression/syndrome_course/related_symptoms",
+    "detail/Substance_Medication_Induced_Depression/treatment_history/period",
+    "detail/Substance_Medication_Induced_Depression/treatment_history/reported_diagnosis",
+    "detail/Substance_Medication_Induced_Depression/treatment_history/response",
+    "detail/Substance_Medication_Induced_Depression/treatment_history/treatment",
+    "detail/Substance_Medication_Induced_Depression/treatment_history/use",
+    "detail/Substance_Medication_Induced_Depression/weight_change/amount",
+    "detail/Substance_Medication_Induced_Depression/weight_change/baseline_weight",
+    "detail/Substance_Medication_Induced_Depression/weight_change/direction",
+    "detail/Substance_Medication_Induced_Depression/weight_change/intentionality",
+    "detail/Substance_Medication_Induced_Depression/weight_change/interval",
+    "detail/Substance_Medication_Induced_Depression/weight_change/measurement",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/content",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/context",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/duration",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/frequency",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/impact",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/kind",
+    "detail/Substance_Medication_Induced_Depression/worthlessness_guilt/onset",
+    "detail/Unspecified_Depressive_Disorder/activation_history/duration",
+    "detail/Unspecified_Depressive_Disorder/activation_history/energy_activity",
+    "detail/Unspecified_Depressive_Disorder/activation_history/exposure_context",
+    "detail/Unspecified_Depressive_Disorder/activation_history/impact",
+    "detail/Unspecified_Depressive_Disorder/activation_history/mood",
+    "detail/Unspecified_Depressive_Disorder/activation_history/other_changes",
+    "detail/Unspecified_Depressive_Disorder/activation_history/period",
+    "detail/Unspecified_Depressive_Disorder/activation_history/sleep_need",
+    "detail/Unspecified_Depressive_Disorder/anxiety_depression_overlap/anxiety_experiences",
+    "detail/Unspecified_Depressive_Disorder/anxiety_depression_overlap/impact",
+    "detail/Unspecified_Depressive_Disorder/anxiety_depression_overlap/reported_formulation",
+    "detail/Unspecified_Depressive_Disorder/anxiety_depression_overlap/timing_overlap",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/appetite_vs_intake",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/direction",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/duration",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/frequency",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/impact",
+    "detail/Unspecified_Depressive_Disorder/appetite_change/onset",
+    "detail/Unspecified_Depressive_Disorder/assessment_limit/help_requested",
+    "detail/Unspecified_Depressive_Disorder/assessment_limit/partial_information",
+    "detail/Unspecified_Depressive_Disorder/assessment_limit/reported_limit",
+    "detail/Unspecified_Depressive_Disorder/assessment_limit/target",
+    "detail/Unspecified_Depressive_Disorder/between_period_course/longer_low_periods",
+    "detail/Unspecified_Depressive_Disorder/between_period_course/mood_between",
+    "detail/Unspecified_Depressive_Disorder/between_period_course/other_symptoms_between",
+    "detail/Unspecified_Depressive_Disorder/between_period_course/return_to_baseline",
+    "detail/Unspecified_Depressive_Disorder/between_period_course/symptom_free_intervals",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/duration",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/frequency",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/impact",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/kind",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/onset",
+    "detail/Unspecified_Depressive_Disorder/cognition_decisions/tasks",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/access",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/experience",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/frequency",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/intent",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/past_behaviour",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/plan_present",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/recency",
+    "detail/Unspecified_Depressive_Disorder/death_suicide/support",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/days_per_week",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/description",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/duration",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/frequency",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/impact",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/onset",
+    "detail/Unspecified_Depressive_Disorder/depressed_mood/proportion_of_day",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/duration",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/experience",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/frequency",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/impact",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/onset",
+    "detail/Unspecified_Depressive_Disorder/energy_fatigue/sleepiness",
+    "detail/Unspecified_Depressive_Disorder/episode_timeline/course",
+    "detail/Unspecified_Depressive_Disorder/episode_timeline/duration",
+    "detail/Unspecified_Depressive_Disorder/episode_timeline/intervals",
+    "detail/Unspecified_Depressive_Disorder/episode_timeline/onset",
+    "detail/Unspecified_Depressive_Disorder/episode_timeline/overlap",
+    "detail/Unspecified_Depressive_Disorder/exposure_context/dose_use",
+    "detail/Unspecified_Depressive_Disorder/exposure_context/name",
+    "detail/Unspecified_Depressive_Disorder/exposure_context/source_kind",
+    "detail/Unspecified_Depressive_Disorder/exposure_context/start_change_stop",
+    "detail/Unspecified_Depressive_Disorder/exposure_context/symptom_timing",
+    "detail/Unspecified_Depressive_Disorder/family_history/certainty",
+    "detail/Unspecified_Depressive_Disorder/family_history/relative",
+    "detail/Unspecified_Depressive_Disorder/family_history/reported_condition",
+    "detail/Unspecified_Depressive_Disorder/followup_change_report/comparison_period",
+    "detail/Unspecified_Depressive_Disorder/followup_change_report/functional_change",
+    "detail/Unspecified_Depressive_Disorder/followup_change_report/intervening_events",
+    "detail/Unspecified_Depressive_Disorder/followup_change_report/new_information",
+    "detail/Unspecified_Depressive_Disorder/followup_change_report/professional_followup",
+    "detail/Unspecified_Depressive_Disorder/followup_change_report/symptom_change",
+    "detail/Unspecified_Depressive_Disorder/functioning_distress/baseline",
+    "detail/Unspecified_Depressive_Disorder/functioning_distress/domain",
+    "detail/Unspecified_Depressive_Disorder/functioning_distress/examples",
+    "detail/Unspecified_Depressive_Disorder/functioning_distress/supports",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/activities",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/breadth",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/days_per_week",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/duration",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/frequency",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/interest",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/onset",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/pleasure",
+    "detail/Unspecified_Depressive_Disorder/interest_pleasure/proportion_of_day",
+    "detail/Unspecified_Depressive_Disorder/life_context/barriers",
+    "detail/Unspecified_Depressive_Disorder/life_context/events",
+    "detail/Unspecified_Depressive_Disorder/life_context/meaning",
+    "detail/Unspecified_Depressive_Disorder/life_context/support",
+    "detail/Unspecified_Depressive_Disorder/life_context/timing",
+    "detail/Unspecified_Depressive_Disorder/lifetime_threshold_history/activation_periods",
+    "detail/Unspecified_Depressive_Disorder/lifetime_threshold_history/previous_depressive_periods",
+    "detail/Unspecified_Depressive_Disorder/lifetime_threshold_history/prior_full_episode_review",
+    "detail/Unspecified_Depressive_Disorder/lifetime_threshold_history/psychotic_history",
+    "detail/Unspecified_Depressive_Disorder/lifetime_threshold_history/reported_diagnoses",
+    "detail/Unspecified_Depressive_Disorder/lifetime_threshold_history/uncertainty",
+    "detail/Unspecified_Depressive_Disorder/medical_context/clinician_review",
+    "detail/Unspecified_Depressive_Disorder/medical_context/conditions",
+    "detail/Unspecified_Depressive_Disorder/medical_context/investigations",
+    "detail/Unspecified_Depressive_Disorder/medical_context/timeline",
+    "detail/Unspecified_Depressive_Disorder/presentation_description/baseline_change",
+    "detail/Unspecified_Depressive_Disorder/presentation_description/burden",
+    "detail/Unspecified_Depressive_Disorder/presentation_description/duration_or_uncertainty",
+    "detail/Unspecified_Depressive_Disorder/presentation_description/experience",
+    "detail/Unspecified_Depressive_Disorder/presentation_description/intensity_as_reported",
+    "detail/Unspecified_Depressive_Disorder/presentation_description/predominant_concern",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/direction",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/examples",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/frequency",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/impact",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/observer",
+    "detail/Unspecified_Depressive_Disorder/psychomotor_change/onset",
+    "detail/Unspecified_Depressive_Disorder/psychotic_experience/content",
+    "detail/Unspecified_Depressive_Disorder/psychotic_experience/conviction_context",
+    "detail/Unspecified_Depressive_Disorder/psychotic_experience/kind",
+    "detail/Unspecified_Depressive_Disorder/psychotic_experience/mood_relationship",
+    "detail/Unspecified_Depressive_Disorder/psychotic_experience/reported_mood_congruence",
+    "detail/Unspecified_Depressive_Disorder/psychotic_experience/safety_concerns",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/assessment_time",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/certainty",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/context",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/label_as_reported",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/professional",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/reason_as_reported",
+    "detail/Unspecified_Depressive_Disorder/reported_clinical_formulation/record_availability",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/awakenings",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/baseline_comparison",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/daytime_effect",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/duration",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/frequency",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/latency",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/onset",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/pattern",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/sleep_opportunity",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/total_sleep",
+    "detail/Unspecified_Depressive_Disorder/sleep_disturbance/wake_timing",
+    "detail/Unspecified_Depressive_Disorder/stressor_adjustment_review/course",
+    "detail/Unspecified_Depressive_Disorder/stressor_adjustment_review/meaning",
+    "detail/Unspecified_Depressive_Disorder/stressor_adjustment_review/other_explanations",
+    "detail/Unspecified_Depressive_Disorder/stressor_adjustment_review/stressor",
+    "detail/Unspecified_Depressive_Disorder/stressor_adjustment_review/timing",
+    "detail/Unspecified_Depressive_Disorder/treatment_history/period",
+    "detail/Unspecified_Depressive_Disorder/treatment_history/reported_diagnosis",
+    "detail/Unspecified_Depressive_Disorder/treatment_history/response",
+    "detail/Unspecified_Depressive_Disorder/treatment_history/treatment",
+    "detail/Unspecified_Depressive_Disorder/treatment_history/use",
+    "detail/Unspecified_Depressive_Disorder/weight_change/amount",
+    "detail/Unspecified_Depressive_Disorder/weight_change/baseline_weight",
+    "detail/Unspecified_Depressive_Disorder/weight_change/direction",
+    "detail/Unspecified_Depressive_Disorder/weight_change/intentionality",
+    "detail/Unspecified_Depressive_Disorder/weight_change/interval",
+    "detail/Unspecified_Depressive_Disorder/weight_change/measurement",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/content",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/context",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/duration",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/frequency",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/impact",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/kind",
+    "detail/Unspecified_Depressive_Disorder/worthlessness_guilt/onset",
+    "q.care.priorities",
+    "q.context.menstrual",
+    "q.context.perinatal",
+    "q.context.seasonal",
+    "q.measurement.offer",
+    "q.opening",
+    "q.pattern.brief_recurrent",
+    "q.pattern.longstanding",
+    "q.safety.death_wish",
+    "q.safety.past_behaviour",
+    "q.safety.suicidal_thoughts",
+    "q.summary.check",
+    "q.welcome",
+    "root/Alternatives/activation_associated_changes",
+    "root/Alternatives/activation_mood_energy",
+    "root/Alternatives/activation_severity_context",
+    "root/Alternatives/acute_attention_change",
+    "root/Alternatives/assessment_limits",
+    "root/Alternatives/bereavement_context",
+    "root/Alternatives/cognition_decisions",
+    "root/Alternatives/cognitive_function_course",
+    "root/Alternatives/death_suicide",
+    "root/Alternatives/depressed_mood",
+    "root/Alternatives/energy_fatigue",
+    "root/Alternatives/episode_timeline",
+    "root/Alternatives/exposure_context",
+    "root/Alternatives/family_history",
+    "root/Alternatives/functioning_distress",
+    "root/Alternatives/grief_specific_experiences",
+    "root/Alternatives/interest_pleasure",
+    "root/Alternatives/life_context",
+    "root/Alternatives/longterm_mood_fluctuation",
+    "root/Alternatives/medical_context",
+    "root/Alternatives/panic_experience",
+    "root/Alternatives/psychosis_mood_course",
+    "root/Alternatives/psychotic_experiences",
+    "root/Alternatives/reduced_sleep_need",
+    "root/Alternatives/sleep_breathing_clues",
+    "root/Alternatives/sleep_disturbance",
+    "root/Alternatives/sleep_opportunity_timing",
+    "root/Alternatives/social_fear_avoidance",
+    "root/Alternatives/stressor_response",
+    "root/Alternatives/trauma_context",
+    "root/Alternatives/trauma_linked_symptoms",
+    "root/Alternatives/treatment_history",
+    "root/Alternatives/worry_pattern",
+    "root/Depression_Due_To_Medical_Condition/activation_history",
+    "root/Depression_Due_To_Medical_Condition/acute_cognitive_change",
+    "root/Depression_Due_To_Medical_Condition/appetite_change",
+    "root/Depression_Due_To_Medical_Condition/cognition_decisions",
+    "root/Depression_Due_To_Medical_Condition/communication_assessment_context",
+    "root/Depression_Due_To_Medical_Condition/concurrent_activation",
+    "root/Depression_Due_To_Medical_Condition/condition_identification",
+    "root/Depression_Due_To_Medical_Condition/death_suicide",
+    "root/Depression_Due_To_Medical_Condition/depressed_mood",
+    "root/Depression_Due_To_Medical_Condition/energy_fatigue",
+    "root/Depression_Due_To_Medical_Condition/family_history",
+    "root/Depression_Due_To_Medical_Condition/functioning_distress",
+    "root/Depression_Due_To_Medical_Condition/illness_related_distress",
+    "root/Depression_Due_To_Medical_Condition/interest_pleasure",
+    "root/Depression_Due_To_Medical_Condition/life_context",
+    "root/Depression_Due_To_Medical_Condition/medical_condition_course",
+    "root/Depression_Due_To_Medical_Condition/mood_medical_timing",
+    "root/Depression_Due_To_Medical_Condition/motivation_emotional_expression",
+    "root/Depression_Due_To_Medical_Condition/overlapping_symptoms",
+    "root/Depression_Due_To_Medical_Condition/prior_depressive_course",
+    "root/Depression_Due_To_Medical_Condition/psychomotor_change",
+    "root/Depression_Due_To_Medical_Condition/psychotic_experience",
+    "root/Depression_Due_To_Medical_Condition/reported_investigation",
+    "root/Depression_Due_To_Medical_Condition/reported_professional_opinion",
+    "root/Depression_Due_To_Medical_Condition/sleep_disturbance",
+    "root/Depression_Due_To_Medical_Condition/syndrome_course",
+    "root/Depression_Due_To_Medical_Condition/treatment_exposure_review",
+    "root/Depression_Due_To_Medical_Condition/treatment_history",
+    "root/Depression_Due_To_Medical_Condition/weight_change",
+    "root/Depression_Due_To_Medical_Condition/worthlessness_guilt",
+    "root/MDD/activation_history",
+    "root/MDD/anxious_distress",
+    "root/MDD/appetite_change",
+    "root/MDD/atypical_features",
+    "root/MDD/catatonic_signs",
+    "root/MDD/cognition_decisions",
+    "root/MDD/death_suicide",
+    "root/MDD/depressed_mood",
+    "root/MDD/energy_fatigue",
+    "root/MDD/episode_timeline",
+    "root/MDD/exposure_context",
+    "root/MDD/family_history",
+    "root/MDD/functioning_distress",
+    "root/MDD/interest_pleasure",
+    "root/MDD/life_context",
+    "root/MDD/medical_context",
+    "root/MDD/melancholic_features",
+    "root/MDD/mixed_features",
+    "root/MDD/peripartum_context",
+    "root/MDD/psychomotor_change",
+    "root/MDD/psychotic_experience",
+    "root/MDD/seasonal_pattern",
+    "root/MDD/sleep_disturbance",
+    "root/MDD/treatment_history",
+    "root/MDD/weight_change",
+    "root/MDD/worthlessness_guilt",
+    "root/Other_Specified_Depressive_Disorder/activation_history",
+    "root/Other_Specified_Depressive_Disorder/anxiety_depression_overlap",
+    "root/Other_Specified_Depressive_Disorder/appetite_change",
+    "root/Other_Specified_Depressive_Disorder/assessment_information_gaps",
+    "root/Other_Specified_Depressive_Disorder/between_period_course",
+    "root/Other_Specified_Depressive_Disorder/brief_period_details",
+    "root/Other_Specified_Depressive_Disorder/cognition_decisions",
+    "root/Other_Specified_Depressive_Disorder/death_suicide",
+    "root/Other_Specified_Depressive_Disorder/depressed_mood",
+    "root/Other_Specified_Depressive_Disorder/energy_fatigue",
+    "root/Other_Specified_Depressive_Disorder/episode_timeline",
+    "root/Other_Specified_Depressive_Disorder/exposure_context",
+    "root/Other_Specified_Depressive_Disorder/family_history",
+    "root/Other_Specified_Depressive_Disorder/functioning_distress",
+    "root/Other_Specified_Depressive_Disorder/interest_pleasure",
+    "root/Other_Specified_Depressive_Disorder/life_context",
+    "root/Other_Specified_Depressive_Disorder/lifetime_threshold_history",
+    "root/Other_Specified_Depressive_Disorder/medical_context",
+    "root/Other_Specified_Depressive_Disorder/menstrual_relationship",
+    "root/Other_Specified_Depressive_Disorder/psychomotor_change",
+    "root/Other_Specified_Depressive_Disorder/psychosis_mood_relationship",
+    "root/Other_Specified_Depressive_Disorder/psychotic_experience",
+    "root/Other_Specified_Depressive_Disorder/recurrence_pattern",
+    "root/Other_Specified_Depressive_Disorder/reported_diagnostic_reason",
+    "root/Other_Specified_Depressive_Disorder/sleep_disturbance",
+    "root/Other_Specified_Depressive_Disorder/stressor_adjustment_review",
+    "root/Other_Specified_Depressive_Disorder/treatment_history",
+    "root/Other_Specified_Depressive_Disorder/weight_change",
+    "root/Other_Specified_Depressive_Disorder/worthlessness_guilt",
+    "root/PDD/activation_history",
+    "root/PDD/anxious_distress",
+    "root/PDD/appetite_eating",
+    "root/PDD/atypical_features",
+    "root/PDD/cognition_decisions",
+    "root/PDD/death_suicide",
+    "root/PDD/depressed_mood",
+    "root/PDD/energy_fatigue",
+    "root/PDD/exposure_context",
+    "root/PDD/family_history",
+    "root/PDD/functioning_distress",
+    "root/PDD/hopelessness",
+    "root/PDD/life_context",
+    "root/PDD/longitudinal_timeline",
+    "root/PDD/low_self_esteem",
+    "root/PDD/mde_history",
+    "root/PDD/medical_context",
+    "root/PDD/onset_history",
+    "root/PDD/psychotic_experience",
+    "root/PDD/sleep_disturbance",
+    "root/PDD/treatment_history",
+    "root/PMDD/activation_history",
+    "root/PMDD/anxiety_tension",
+    "root/PMDD/appetite_cravings",
+    "root/PMDD/background_symptoms",
+    "root/PMDD/concentration_difficulty",
+    "root/PMDD/cycle_context",
+    "root/PMDD/cyclical_timeline",
+    "root/PMDD/death_suicide",
+    "root/PMDD/depressed_affect",
+    "root/PMDD/exposure_context",
+    "root/PMDD/family_history",
+    "root/PMDD/functioning_distress",
+    "root/PMDD/hormone_exposure",
+    "root/PMDD/irritability_anger",
+    "root/PMDD/life_context",
+    "root/PMDD/low_energy",
+    "root/PMDD/medical_context",
+    "root/PMDD/mood_lability",
+    "root/PMDD/overwhelmed_control",
+    "root/PMDD/physical_symptoms",
+    "root/PMDD/pme_review",
+    "root/PMDD/prospective_records",
+    "root/PMDD/psychotic_experience",
+    "root/PMDD/reduced_interest",
+    "root/PMDD/sleep_disturbance",
+    "root/PMDD/treatment_history",
+    "root/Substance_Medication_Induced_Depression/activation_history",
+    "root/Substance_Medication_Induced_Depression/acute_cognitive_change",
+    "root/Substance_Medication_Induced_Depression/appetite_change",
+    "root/Substance_Medication_Induced_Depression/cognition_decisions",
+    "root/Substance_Medication_Induced_Depression/death_suicide",
+    "root/Substance_Medication_Induced_Depression/depressed_mood",
+    "root/Substance_Medication_Induced_Depression/energy_fatigue",
+    "root/Substance_Medication_Induced_Depression/exposure_details",
+    "root/Substance_Medication_Induced_Depression/exposure_events",
+    "root/Substance_Medication_Induced_Depression/exposure_mood_timing",
+    "root/Substance_Medication_Induced_Depression/family_history",
+    "root/Substance_Medication_Induced_Depression/functioning_distress",
+    "root/Substance_Medication_Induced_Depression/independent_depression_history",
+    "root/Substance_Medication_Induced_Depression/interest_pleasure",
+    "root/Substance_Medication_Induced_Depression/intoxication_withdrawal_context",
+    "root/Substance_Medication_Induced_Depression/life_context",
+    "root/Substance_Medication_Induced_Depression/medical_context",
+    "root/Substance_Medication_Induced_Depression/medical_indication_confounding",
+    "root/Substance_Medication_Induced_Depression/post_exposure_course",
+    "root/Substance_Medication_Induced_Depression/psychomotor_change",
+    "root/Substance_Medication_Induced_Depression/psychotic_experience",
+    "root/Substance_Medication_Induced_Depression/reported_tests_review",
+    "root/Substance_Medication_Induced_Depression/sleep_disturbance",
+    "root/Substance_Medication_Induced_Depression/syndrome_course",
+    "root/Substance_Medication_Induced_Depression/treatment_history",
+    "root/Substance_Medication_Induced_Depression/weight_change",
+    "root/Substance_Medication_Induced_Depression/worthlessness_guilt",
+    "root/Unspecified_Depressive_Disorder/activation_history",
+    "root/Unspecified_Depressive_Disorder/anxiety_depression_overlap",
+    "root/Unspecified_Depressive_Disorder/appetite_change",
+    "root/Unspecified_Depressive_Disorder/assessment_limit",
+    "root/Unspecified_Depressive_Disorder/between_period_course",
+    "root/Unspecified_Depressive_Disorder/cognition_decisions",
+    "root/Unspecified_Depressive_Disorder/death_suicide",
+    "root/Unspecified_Depressive_Disorder/depressed_mood",
+    "root/Unspecified_Depressive_Disorder/energy_fatigue",
+    "root/Unspecified_Depressive_Disorder/episode_timeline",
+    "root/Unspecified_Depressive_Disorder/exposure_context",
+    "root/Unspecified_Depressive_Disorder/family_history",
+    "root/Unspecified_Depressive_Disorder/followup_change_report",
+    "root/Unspecified_Depressive_Disorder/functioning_distress",
+    "root/Unspecified_Depressive_Disorder/interest_pleasure",
+    "root/Unspecified_Depressive_Disorder/life_context",
+    "root/Unspecified_Depressive_Disorder/lifetime_threshold_history",
+    "root/Unspecified_Depressive_Disorder/medical_context",
+    "root/Unspecified_Depressive_Disorder/presentation_description",
+    "root/Unspecified_Depressive_Disorder/psychomotor_change",
+    "root/Unspecified_Depressive_Disorder/psychotic_experience",
+    "root/Unspecified_Depressive_Disorder/reported_clinical_formulation",
+    "root/Unspecified_Depressive_Disorder/sleep_disturbance",
+    "root/Unspecified_Depressive_Disorder/stressor_adjustment_review",
+    "root/Unspecified_Depressive_Disorder/treatment_history",
+    "root/Unspecified_Depressive_Disorder/weight_change",
+    "root/Unspecified_Depressive_Disorder/worthlessness_guilt"
+  ],
+  "branch_ids": [
+    "persistent",
+    "menstrual",
+    "exposure",
+    "medical",
+    "brief_residual",
+    "unresolved_formulation",
+    "anxious_distress",
+    "mixed_features",
+    "melancholic_features",
+    "atypical_features",
+    "seasonal_pattern",
+    "peripartum_context",
+    "catatonic_signs",
+    "alternative_01_bipolar_spectrum",
+    "alternative_02_anxiety",
+    "alternative_03_trauma",
+    "alternative_04_adjustment",
+    "alternative_05_grief",
+    "alternative_06_psychosis",
+    "alternative_07_delirium",
+    "alternative_08_neurocognitive",
+    "alternative_09_sleep",
+    "alternative_10_medical",
+    "alternative_11_substance_medication"
+  ],
+  "status": "DOCUMENTATION_OF_CURRENT_DESIGN_NOT_CLINICAL_VALIDATION",
+  "source_graph_sha256": "7d00508707bf9619b7c978c678abe83aa51a94c020cd8263071ff2013bbf31f6",
+  "document_sha256": "072b958222f52ad330f229ccb580dd8b66330ce134ff535958276fa2a52b9683"
+}

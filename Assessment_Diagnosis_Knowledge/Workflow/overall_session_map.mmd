@@ -1,0 +1,17 @@
+flowchart TD
+    W["1. Welcome, participation and channel"] --> O["2. Patient main concern"]
+    O --> A["3. Natural assessment conversation"]
+    A -->|"Reply, extract and replan"| A
+    A --> S["4. Summary and patient clarification"]
+    S -->|"Important correction or gap"| A
+    S --> D["5. Provisional impressions and professional review"]
+    D -->|"More information needed"| A
+    D --> P["6. Discuss and agree next care"]
+    P -->|"Applicable plan agreed and authorized"| T["7. Therapy or management support"]
+    P -->|"Support, referral or further assessment"| F["8. Close, monitor and follow up"]
+    T --> F
+    T -->|"New clinical information"| A
+    F -->|"Later focused reassessment"| A
+    X["At any stage: safety or acute medical review; pause or stop"] -.-> A
+    X -.-> D
+    X -.-> T

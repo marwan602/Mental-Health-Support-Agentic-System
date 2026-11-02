@@ -1,0 +1,130 @@
+{
+  "INTERVIEW_BOOK": {
+    "title": "Lichstein, The Medical Interview, Clinical Methods, 3rd ed. (1990), chapter 3",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK349/",
+    "locator": "The History of Present Illness; open-to-focused questioning; metadata PMID 21250190",
+    "used_for": "General interviewing technique only; not current depressive diagnostic criteria or proof of our sequence",
+    "access": "Free book chapter; relevant search-indexed chapter text and PubMed metadata inspected; direct Bookshelf retrieval challenged",
+    "checked_at": "2026-11-02"
+  },
+  "APA_EVALUATION": {
+    "title": "APA Practice Guidelines for the Psychiatric Evaluation of Adults, executive summary (2015)",
+    "url": "https://psychiatryonline.org/doi/pdf/10.1176/appi.ajp.2015.1720501",
+    "locator": "Table 1, printed p.800: evaluation domains; official APA guideline landing page",
+    "used_for": "Psychiatric, treatment, medical, reproductive, medication and substance-use background domains",
+    "access": "Official APA page and indexed executive-summary text inspected; direct publisher PDF returned 403; full book not claimed read",
+    "checked_at": "2026-11-02"
+  },
+  "WHO_TRAIN_DEP": {
+    "title": "WHO mhGAP training manual for mhGAP-IG version 2.0 (for field testing), Depression module (2017)",
+    "url": "https://cdn.who.int/media/docs/default-source/brain-health/mhgap-training-manuals/dep_module.pdf",
+    "locator": "Session 2, printed pp.150-156 / PDF pp.8-14; especially pp.151,153,156",
+    "used_for": "Worked assessment example: patient's language, symptom/function assessment, other explanations, safety and appropriate modules",
+    "access": "Official PDF downloaded; relevant page text inspected and printed pp.151,153,156 rendered and visually inspected. Training aid, not current DSM criteria",
+    "checked_at": "2026-11-02"
+  },
+  "WHO_IG2": {
+    "title": "WHO mhGAP Intervention Guide version 2.0 (2016)",
+    "url": "https://www.who.int/publications/i/item/9789241549790",
+    "locator": "Essential Care and Practice; DEP 1 assessment, printed pp.21-25",
+    "used_for": "Modular decision-chart architecture for non-specialist clinical services; illustrative framework only",
+    "access": "Official overview/indexed DEP text inspected; direct IRIS PDF blocked; chart discussion checked in official training PDF. Not represented as a 2023 algorithm",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_222": {
+    "title": "NICE NG222, Depression in adults: treatment and management",
+    "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+    "locator": "1.2.1-1.2.9: recognition, comprehensive assessment, relevant history and direct suicide enquiry",
+    "used_for": "Broad assessment requirements; does not prescribe our numbered route",
+    "access": "Official search-indexed recommendation text inspected; direct page intermittently 403",
+    "checked_at": "2026-11-02"
+  },
+  "VA_POCKET_2022": {
+    "title": "VA/DoD MDD Clinical Practice Guideline pocket card (February 2022)",
+    "url": "https://www.healthquality.va.gov/guidelines/MH/mdd/VADoDMDDCPG_PocketCard_Final_508_updated.pdf",
+    "locator": "PDF p.1: Module A boxes 1-8 and Sidebar 1",
+    "used_for": "Suspected depression -> work-up/safety -> diagnostic review; history/function and optional PHQ-9",
+    "access": "Official PDF downloaded; first page rendered and visually inspected. MDD-only; abbreviated DSM-5 sidebar is not a complete/current DSM-5-TR contract",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_185": {
+    "title": "NICE CG185, Bipolar disorder: assessment and management",
+    "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+    "locator": "1.2.1-1.2.3; 1.3.2",
+    "used_for": "Explore previous activation in people presenting with depression; specialist assessment rather than questionnaire diagnosis",
+    "access": "Official search-indexed recommendation text inspected; direct retrieval intermittently 403",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_BSSA": {
+    "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+    "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+    "locator": "Intended users; current thoughts, plan, past behaviour, supports and disposition",
+    "used_for": "Safety enquiry domains and need for qualified review; used after a positive ASQ in its original protocol",
+    "access": "Official page read; not an autonomous AI protocol or authorization to apply its disposition rules unchanged",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_225": {
+    "title": "NICE NG225, Self-harm",
+    "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+    "locator": "1.6.1-1.6.6",
+    "used_for": "Needs-focused safety assessment; no predictive low/medium/high labels or score-only discharge",
+    "access": "Official indexed recommendations inspected; self-harm guideline scope retained",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_197": {
+    "title": "NICE NG197, Shared decision making",
+    "url": "https://www.nice.org.uk/guidance/ng197/chapter/recommendations",
+    "locator": "1.2.7-1.2.11",
+    "used_for": "Shared agenda, participation, preferences and manageable information",
+    "access": "Official recommendation text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_2001": {
+    "title": "Kroenke, Spitzer & Williams (2001), The PHQ-9: Validity of a Brief Depression Severity Measure",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+    "locator": "Methods: Mental Health Professional Validation Interviews; PMID 11556941",
+    "used_for": "Original primary validation: questionnaire compared with independent interview; no proof of all-type diagnosis or our ordering",
+    "access": "Indexed full-text methods and PubMed abstract inspected; direct PMC retrieval challenged",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ2_2003": {
+    "title": "Kroenke, Spitzer & Williams (2003), The Patient Health Questionnaire-2: validity of a two-item depression screener",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+    "locator": "Abstract, purpose and methods",
+    "used_for": "Brief two-item screening purpose; not a universal entry/exit gate for all depressive presentations",
+    "access": "Primary-study abstract inspected; full article not claimed read",
+    "checked_at": "2026-11-02"
+  },
+  "ISPMD_2011": {
+    "title": "O'Brien et al. (2011), ISPMD Montreal consensus",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4134928/",
+    "locator": "Methods of measurement; prospective daily symptom ratings",
+    "used_for": "Cycle-wide prospective tracking instead of confirming a menstrual pattern from a single conversation",
+    "access": "Indexed original consensus inspected; a consensus framework, not a substitute for the separate DSM PMDD contract",
+    "checked_at": "2026-11-02"
+  },
+  "ACOG_4": {
+    "title": "ACOG Clinical Practice Guideline No.4 (2023), Screening and Diagnosis of Mental Health Conditions During Pregnancy and Postpartum",
+    "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum",
+    "locator": "Purpose and target population; linked module has detailed source locations",
+    "used_for": "Perinatal context includes broader assessment than a formal onset specifier; includes bipolar and postpartum psychosis concerns",
+    "access": "Official overview inspected this turn; detailed criterion use remains in existing source-linked MDD package",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_DEP": {
+    "title": "NIMH, Depression",
+    "url": "https://www.nimh.nih.gov/health/publications/depression",
+    "locator": "Symptoms; diagnosis; older-adult presentation",
+    "used_for": "Medical/contextual review and age-sensitive assessment; no exclusion of depression based on age",
+    "access": "Official public page/indexed text inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_SEASONAL": {
+    "title": "NIMH, Seasonal Affective Disorder",
+    "url": "https://www.nimh.nih.gov/health/publications/seasonal-affective-disorder",
+    "locator": "Diagnosis section",
+    "used_for": "Repeated seasonal course requires longitudinal history, not one winter episode",
+    "access": "Official public page inspected; detailed criteria remain in MDD package",
+    "checked_at": "2026-11-02"
+  }
+}

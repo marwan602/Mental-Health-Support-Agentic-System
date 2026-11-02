@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "suites": [
+    {
+      "suite": "Alternatives",
+      "passed": true
+    },
+    {
+      "suite": "Depression_Due_To_Medical_Condition",
+      "passed": true
+    },
+    {
+      "suite": "MDD",
+      "passed": true
+    },
+    {
+      "suite": "Other_Specified_Depressive_Disorder",
+      "passed": true
+    },
+    {
+      "suite": "PDD",
+      "passed": true
+    },
+    {
+      "suite": "PMDD",
+      "passed": true
+    },
+    {
+      "suite": "Substance_Medication_Induced_Depression",
+      "passed": true
+    },
+    {
+      "suite": "Unspecified_Depressive_Disorder",
+      "passed": true
+    },
+    {
+      "suite": "graph",
+      "passed": true
+    },
+    {
+      "suite": "measurement",
+      "passed": true
+    },
+    {
+      "suite": "handoff",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "scope": "Integrity, original module fixtures, annotated-state routing, measurement and handoff mechanics. Not clinical or model validation.",
+  "date": "2026-11-02",
+  "counts": {
+    "module_checks": 293,
+    "routing_cases": 35,
+    "measurement_tests": 24,
+    "handoff_tests": 34
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "purpose": "Illustrative conditions requiring clinical attribution review, not an exhaustive causal whitelist or screening checklist.",
+  "entries": [
+    {
+      "condition": "cerebrovascular_disease_or_stroke",
+      "assessment_relevance": "Neurological course, pre-event mood and separate physical/cognitive limitations; depression after stroke is not an automatic causal diagnosis.",
+      "source_ids": [
+        "DSM_MEDICAL",
+        "STROKE_2025"
+      ]
+    },
+    {
+      "condition": "traumatic_brain_injury_or_focal_brain_lesion",
+      "assessment_relevance": "Reported injury/lesion and course, treatment and neurocognitive changes; no inference from lesion location by the chatbot.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "condition": "parkinson_disease",
+      "assessment_relevance": "Motor/non-motor course and treatment; mood symptoms may precede recognition of the motor disorder.",
+      "source_ids": [
+        "DSM_MEDICAL",
+        "NICE_71"
+      ]
+    },
+    {
+      "condition": "huntington_disease",
+      "assessment_relevance": "Reported confirmed/suspected condition, neuropsychiatric course and specialist care; do not infer disease from depression/family clues.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "condition": "hypothyroidism",
+      "assessment_relevance": "Actual diagnosis/testing context; overt and subclinical presentations must not be merged.",
+      "source_ids": [
+        "DSM_MEDICAL",
+        "NICE_145",
+        "TRUST_2021"
+      ]
+    },
+    {
+      "condition": "cushing_syndrome",
+      "assessment_relevance": "Reported endocrine diagnosis and clinician findings; do not infer it from weight change or depression.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "condition": "pancreatic_cancer",
+      "assessment_relevance": "A manual example of potential physiological association; mood symptoms do not justify a cancer diagnosis or universal cancer screening.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "condition": "systemic_lupus_erythematosus",
+      "assessment_relevance": "Medical activity, medicines and other explanations require individualized specialist review.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    },
+    {
+      "condition": "vitamin_b12_deficiency",
+      "assessment_relevance": "Possible psychiatric association; assess reported symptoms/risk context, not depression as a specific deficiency marker.",
+      "source_ids": [
+        "DSM_MEDICAL",
+        "NICE_239"
+      ]
+    },
+    {
+      "condition": "multiple_sclerosis",
+      "assessment_relevance": "An example of association with variable causal evidence; preserve illness, treatment and psychosocial alternatives.",
+      "source_ids": [
+        "DSM_MEDICAL"
+      ]
+    }
+  ],
+  "exclusions": "Common comorbidity, epidemiological association or a reported abnormal test alone does not establish direct physiological causation.",
+  "professional_review_fields": {
+    "condition_identity": "Clinically established condition and basis, outside patient-only verification.",
+    "individual_evidence": "Relevant history/examination/investigation and current interpretation.",
+    "literature_context": "Condition-specific primary source/version, locator and evidence limitations.",
+    "competing_explanations": "Independent mood illness, stress response, treatments, delirium and other conditions.",
+    "judgment_and_uncertainty": "Responsible reviewer, date, supported provisional explanation and unresolved issues."
+  },
+  "automated_attribution": false,
+  "medical_tests_ordered": false
+}
