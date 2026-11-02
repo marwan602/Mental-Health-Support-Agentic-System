@@ -9,13 +9,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def file_digest(path):
+    """Ignore only Git's CRLF/LF transport difference for package text files."""
+    data = path.read_bytes()
+    if path.suffix.lower() in {'.json', '.md', '.py', '.txt', '.mmd'} or path.name in {'.gitattributes', '.gitignore'}:
+        data = data.replace(b'\r\n', b'\n')
+    return hashlib.sha256(data).hexdigest()
+
 def main():
     inventory = ROOT/'SHA256SUMS.json'
     errors, results = [], []
     if inventory.exists():
         for relative, digest in json.loads(inventory.read_text(encoding='utf-8')).items():
             path = ROOT/relative
-            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
+            if not path.is_file() or file_digest(path)!=digest:
                 errors.append('Checksum mismatch or missing file: '+relative)
     manifest = json.loads((ROOT/'Integration/manifest.json').read_text(encoding='utf-8'))
     # Original validators write their own reports; isolate those writes.
