@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "flow": [
+    "application -> planner selected target -> conversational wording -> patient",
+    "patient and full message history -> extractor -> validate and append snapshots",
+    "application reconciles coverage and participation -> planner -> next target",
+    "provisional synthesis at handoff or professional review checkpoint"
+  ],
+  "authority": {
+    "clinical": "Original module knowledge, source locators and precedence/update notes",
+    "evidence_output": "Original per-module evidence_output.schema.json; do not replace with an older workspace schema",
+    "routing": "Existing question_graph.json plus route_completion.json supplement overlay",
+    "measurement": "Measurement/knowledge.json and reviewed instrument profile; scoring by code only"
+  },
+  "message_contract": {
+    "id": "Unique application-assigned message ID",
+    "speaker": "patient or assistant",
+    "text": "Verbatim message/transcript; media uncertainty retained outside clinical findings"
+  },
+  "application_state": {
+    "adult_age": "Confirmed age >=18; no upper limit; developmental and older-adult communication needs retained",
+    "period_bindings": "Explicit contact/current/longterm/lifetime/cycle -> actual period IDs; create distinct bindings for distinct episodes",
+    "message_history": "Ordered immutable original messages, including earlier questions needed to interpret yes/no",
+    "snapshots": "Validated module snapshots appended across turns; never erase older reports",
+    "coverage": "Target + actual period + revision + support + finding status; software coverage is not diagnosis",
+    "blocked_targets": "Scoped decline/defer decisions independent of earlier findings",
+    "branch_facts": "open/not_indicated/unknown with reason and evidence; missing is unknown",
+    "supplement_requests": "Explicit unresolved requirements for a route_completion conditional target",
+    "corrections": "Explicit source-linked correction relations; recency alone never means the older fact is false",
+    "care_context": "Goals/preferences/access needs stored separately; do not discard clinically relevant function, stressors or barriers",
+    "therapy_specific_parameters": "Separate therapy-state namespace; not counted as depressive diagnostic criteria"
+  },
+  "conversational": {
+    "input": [
+      "selected_target",
+      "target definition and relevant attribute definition",
+      "relevant prior dialogue",
+      "communication preferences",
+      "participation",
+      "selected action"
+    ],
+    "output_schema": "conversation_output.schema.json",
+    "clinical_role": "Wording only; no independent target or diagnosis selection"
+  },
+  "extractor": {
+    "input": [
+      "ordered full conversation",
+      "latest patient message",
+      "selected target and earlier question",
+      "relevant module concept cards",
+      "existing evidence and period registry"
+    ],
+    "output": "Array of per-module snapshots; each independently matches its module evidence_output.schema.json. Empty records allowed when no supported clinical finding.",
+    "flexibility": "Attributes differ by concept; use only defined attributes and their allowed values. Omit unmentioned optional attributes; never populate them with guessed frequency or duration.",
+    "evidence_ids": "Model does not invent evidence IDs. Message IDs are application supplied; snapshot positions/revisions may be application assigned."
+  },
+  "planner": {
+    "input": [
+      "validated evidence across turns",
+      "coverage and unresolved contradictions",
+      "participation/decline scope",
+      "graph and route index",
+      "branch facts",
+      "pending reply"
+    ],
+    "output_schema": "planner_output.schema.json",
+    "rule": "One next action and one selected target when asking. Candidate selection is justified by missing information, not by filling every field."
+  },
+  "diagnosis_synthesis": {
+    "input": [
+      "source-linked evidence across modules/periods",
+      "rules/reference tables and current source precedence",
+      "missing/conflicting evidence",
+      "scores with administration metadata if valid"
+    ],
+    "output_schema": "synthesis_output.schema.json",
+    "rule": "Provisional explanations and criterion-by-criterion evidence review; no confirmed diagnosis, prescribing or automatic care activation."
+  },
+  "tools": {
+    "get_context": "Application calls knowledge_access.get_context(role, target_ids, module_names) and supplies returned JSON. Model cannot read disk just because a prompt says it can.",
+    "validate_snapshot": "Application calls knowledge_access.validate_snapshot(module, snapshot, messages); checks schema and provenance mechanics, not clinical truth.",
+    "history": "Application supplies full ordered history or a traceable complete evidence ledger plus retrievable original messages; never silently truncate necessary antecedents.",
+    "routing": "Application may call next_with_supplements with annotated state. Semantic extraction and appropriateness still require evaluation.",
+    "score": "Optional reviewed Measurement/score_answers.py only; no narrative-to-score guessing."
+  },
+  "tools_not_provided": [
+    "Clinical judgement",
+    "Automatic text-to-coverage semantic adapter",
+    "Emergency dispatch or clinician contact",
+    "Validated Arabic/voice/video interpretation"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "checked_at": "2026-11-02T21:34:32.184284+00:00",
+  "passed": true,
+  "check_count": 23,
+  "checks": [
+    {
+      "check": "source_and_concept_references_resolve",
+      "passed": true
+    },
+    {
+      "check": "pdd_six_groups_and_mde_compatibility_are_distinct",
+      "passed": true
+    },
+    {
+      "check": "first_snapshot_valid",
+      "passed": true
+    },
+    {
+      "check": "later_snapshot_contextual_yes_and_intervals_valid",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_module",
+      "passed": true
+    },
+    {
+      "check": "reject_invented_quote",
+      "passed": true
+    },
+    {
+      "check": "reject_future_context",
+      "passed": true
+    },
+    {
+      "check": "reject_same_message_context",
+      "passed": true
+    },
+    {
+      "check": "reject_unknown_source",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_concept_field",
+      "passed": true
+    },
+    {
+      "check": "reject_unknown_with_value",
+      "passed": true
+    },
+    {
+      "check": "reject_known_without_source_link",
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_concept_period",
+      "passed": true
+    },
+    {
+      "check": "reject_unjustified_conflict",
+      "passed": true
+    },
+    {
+      "check": "reject_invalid_interval_enum",
+      "passed": true
+    },
+    {
+      "check": "reject_unstructured_interval_value",
+      "passed": true
+    },
+    {
+      "check": "reject_claimed_diagnosis_field",
+      "passed": true
+    },
+    {
+      "check": "unknown_without_invented_value_allowed",
+      "passed": true
+    },
+    {
+      "check": "not_applicable_requires_explanation",
+      "passed": true
+    },
+    {
+      "check": "different_period_keys_supported_structurally",
+      "passed": true
+    },
+    {
+      "check": "gold_fixture_preserves_partial_improvement_and_safety_unknown",
+      "passed": true
+    },
+    {
+      "check": "only_applicable_feature_branches_and_no_automation",
+      "passed": true
+    },
+    {
+      "check": "reject_assistant_quote_as_patient_evidence",
+      "passed": true
+    }
+  ],
+  "clinical_validation": false,
+  "limits": "Mechanical contracts and manually authored gold fixtures only. Exact quotations and schema validity do not prove semantic interpretation, clinical criteria, safety or live-model behaviour."
+}

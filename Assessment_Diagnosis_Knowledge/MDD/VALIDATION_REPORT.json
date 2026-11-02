@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-11-02T21:34:31.430683+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "check": "source_links_unique_concepts_and_nine_groups",
+      "passed": true
+    },
+    {
+      "check": "first_snapshot_valid",
+      "passed": true
+    },
+    {
+      "check": "later_snapshot_contextual_yes_valid",
+      "passed": true
+    },
+    {
+      "check": "reject_missing_module_id",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_module_id",
+      "passed": true
+    },
+    {
+      "check": "reject_invented_quote",
+      "passed": true
+    },
+    {
+      "check": "reject_future_context",
+      "passed": true
+    },
+    {
+      "check": "reject_same_message_context",
+      "passed": true
+    },
+    {
+      "check": "reject_attribute_from_wrong_concept",
+      "passed": true
+    },
+    {
+      "check": "reject_unknown_with_invented_value",
+      "passed": true
+    },
+    {
+      "check": "reject_unsupported_known_detail",
+      "passed": true
+    },
+    {
+      "check": "reject_unknown_message",
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_period_record",
+      "passed": true
+    },
+    {
+      "check": "same_concept_distinct_period_keys_allowed",
+      "passed": true
+    },
+    {
+      "check": "reject_assistant_quote_as_patient_evidence",
+      "passed": true
+    },
+    {
+      "check": "reject_unjustified_conflict",
+      "passed": true
+    },
+    {
+      "check": "fictional_example_separates_mood_and_sleep_duration",
+      "passed": true
+    },
+    {
+      "check": "no_confirmed_diagnosis_field_or_automation",
+      "passed": true
+    },
+    {
+      "check": "explicit_unknown_detail_allowed",
+      "passed": true
+    }
+  ],
+  "check_count": 19,
+  "clinical_validation": false,
+  "limits": "Mechanical contract/fixture checks only. Exact quotations do not prove semantic attribution, clinical criteria, safety or live agent performance."
+}

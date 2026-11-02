@@ -1,0 +1,390 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What changes would you like to discuss?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "For about a year, I get irritable and have sudden mood swings in the week before my period. My breasts hurt and I feel bloated."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "What happens to those symptoms after your period starts?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "They start easing after about two days, and they're mostly gone the following week."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "Do you also feel low at other times in the month?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "Yes, I feel low most days, even after my period."
+    },
+    {
+      "id": "m7",
+      "speaker": "assistant",
+      "text": "Have you kept daily symptom ratings across complete cycles?"
+    },
+    {
+      "id": "m8",
+      "speaker": "patient",
+      "text": "No, I haven't kept a diary."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_pmdd",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "irritability_anger",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "irritable"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I get irritable",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "mood_lability",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "changes": {
+            "status": "known",
+            "value": "sudden mood swings"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "sudden mood swings",
+            "supports": [
+              "finding_status",
+              "changes"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "physical_symptoms",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "symptoms": {
+            "status": "known",
+            "value": "breast pain and bloating"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "My breasts hurt and I feel bloated.",
+            "supports": [
+              "finding_status",
+              "symptoms"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "cyclical_timeline",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "onset_timing": {
+            "status": "known",
+            "value": "in the week before my period"
+          },
+          "history_duration": {
+            "status": "known",
+            "value": "For about a year"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "For about a year, I get irritable and have sudden mood swings in the week before my period.",
+            "supports": [
+              "finding_status",
+              "onset_timing",
+              "history_duration"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "prospective_review": {
+      "status": "no_diary_supplied",
+      "limitations": [
+        "Retrospective conversation is not prospective confirmation."
+      ]
+    },
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_pmdd",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "irritability_anger",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "description": {
+            "status": "known",
+            "value": "irritable"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I get irritable",
+            "supports": [
+              "finding_status",
+              "description"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "mood_lability",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "changes": {
+            "status": "known",
+            "value": "sudden mood swings"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "sudden mood swings",
+            "supports": [
+              "finding_status",
+              "changes"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "physical_symptoms",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "symptoms": {
+            "status": "known",
+            "value": "breast pain and bloating"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "My breasts hurt and I feel bloated.",
+            "supports": [
+              "finding_status",
+              "symptoms"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "cyclical_timeline",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "onset_timing": {
+            "status": "known",
+            "value": "in the week before my period"
+          },
+          "history_duration": {
+            "status": "known",
+            "value": "For about a year"
+          },
+          "improvement_timing": {
+            "status": "known",
+            "value": "after about two days"
+          },
+          "postmenstrual_course": {
+            "status": "known",
+            "value": "mostly gone the following week"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "For about a year, I get irritable and have sudden mood swings in the week before my period.",
+            "supports": [
+              "finding_status",
+              "onset_timing",
+              "history_duration"
+            ],
+            "context_message_ids": []
+          },
+          {
+            "message_id": "m4",
+            "quote": "They start easing after about two days, and they're mostly gone the following week.",
+            "supports": [
+              "improvement_timing",
+              "postmenstrual_course"
+            ],
+            "context_message_ids": [
+              "m3"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "background_symptoms",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "symptoms": {
+            "status": "known",
+            "value": "low mood"
+          },
+          "timing": {
+            "status": "known",
+            "value": "most days, even after my period"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m6",
+            "quote": "Yes, I feel low most days, even after my period.",
+            "supports": [
+              "finding_status",
+              "symptoms",
+              "timing"
+            ],
+            "context_message_ids": [
+              "m5"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "prospective_records",
+        "episode_key": "reported_cycle_pattern",
+        "subject": "patient",
+        "finding_status": "reported_absent",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "availability": {
+            "status": "known",
+            "value": "not_collected"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m8",
+            "quote": "No, I haven't kept a diary.",
+            "supports": [
+              "finding_status",
+              "availability"
+            ],
+            "context_message_ids": [
+              "m7"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "prospective_review": {
+      "status": "no_diary_supplied",
+      "limitations": [
+        "Retrospective conversation is not prospective confirmation."
+      ]
+    },
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Three PMDD count groups are described, not four: physical symptoms share one group. Background low mood requires review; no confirmed PMDD/PME/MDD label is produced. No prospective diary is supplied."
+}

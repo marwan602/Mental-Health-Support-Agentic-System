@@ -1,0 +1,108 @@
+{
+  "classification_basis": "DSM-5-TR 2022 plus inspected September 2025 supplement",
+  "category_definition": "Predominant depressive symptoms causing clinically significant distress OR impairment, without full criteria for another depressive category or the specified adjustment presentations; clinician communicates the specific reason.",
+  "examples_are_exhaustive": false,
+  "examples_are_separate_peer_disorders": false,
+  "all_presentations_must_have_depressed_affect": false,
+  "named_examples": [
+    {
+      "id": "recurrent_brief_depression",
+      "label": "Recurrent brief depression",
+      "description": "Concurrent low mood plus at least four other depressive symptoms, lasting 2–13 days, at least monthly across at least 12 consecutive months; not linked to the menstrual cycle.",
+      "requirements": {
+        "depressed_affect_required": true,
+        "minimum_other_symptoms": 4,
+        "duration_days_inclusive": [
+          2,
+          13
+        ],
+        "recurrence": "At least once per month for at least 12 consecutive months",
+        "menstrual_association_allowed": false
+      },
+      "exclusions": [
+        "Lifetime presentation meeting another depressive or bipolar disorder",
+        "Current active or residual psychotic disorder"
+      ],
+      "source_ids": [
+        "DSM_OTHER"
+      ]
+    },
+    {
+      "id": "short_duration_depressive_like",
+      "label": "Short-duration depressive-like episodes",
+      "description": "Low mood with at least four other major-episode symptom domains and clinical burden; review shorter duration, history and recurrent-brief alternative.",
+      "requirements": {
+        "depressed_affect_required": true,
+        "minimum_other_symptoms": 4,
+        "published_heading_days": "4–13 days",
+        "published_body_duration": "Longer than four days and shorter than fourteen days",
+        "exact_four_day_boundary": "REQUIRES_CLINICAL_SOURCE_CLARIFICATION_NO_AUTOMATIC_RULE"
+      },
+      "exclusions": [
+        "Lifetime presentation meeting another depressive or bipolar disorder",
+        "Current active or residual psychotic disorder"
+      ],
+      "source_ids": [
+        "DSM_OTHER",
+        "APA_2025"
+      ]
+    },
+    {
+      "id": "insufficient_symptoms_depressive_like",
+      "label": "Depressive-like episode with insufficient symptoms",
+      "description": "Depressed affect plus at least one other major-episode symptom domain for at least two weeks, with clinical burden, but without full criteria for another depressive disorder.",
+      "requirements": {
+        "depressed_affect_required": true,
+        "minimum_other_symptoms": 1,
+        "minimum_duration_days": 14,
+        "full_other_disorder_not_met_required": true
+      },
+      "exclusions": [
+        "Lifetime presentation meeting another depressive or bipolar disorder",
+        "Current active or residual psychotic disorder"
+      ],
+      "source_ids": [
+        "DSM_OTHER",
+        "APA_2025"
+      ]
+    },
+    {
+      "id": "major_episode_superimposed_on_psychotic_disorder",
+      "label": "Major depressive episode superimposed on specified psychotic disorders",
+      "description": "A full major depressive episode superimposed on schizophrenia, schizophreniform disorder, delusional disorder, or another specified/unspecified schizophrenia-spectrum or other psychotic disorder.",
+      "requirements": {
+        "full_major_depressive_episode_required": true,
+        "specialist_psychosis_mood_review_required": true
+      },
+      "exclusions": [
+        "Major depressive episode that is part of schizoaffective disorder does not merit an additional other-specified depressive diagnosis"
+      ],
+      "source_ids": [
+        "DSM_OTHER"
+      ]
+    }
+  ],
+  "source_issues": [
+    {
+      "id": "four_day_boundary",
+      "meaning": "Published short-duration heading and body differ at exactly four days; preserve the duration and request clarification rather than choosing an automatic cutoff.",
+      "source_ids": [
+        "APA_2025"
+      ]
+    }
+  ],
+  "revision_application": {
+    "verified_by": "Visual review of official supplement page 7, 2 November 2026",
+    "deleted_exclusions_applied": true,
+    "example_2_removed": "Former recurrent-brief-depression exclusion is no longer applied.",
+    "example_3_removed": "Former mixed-anxiety/depressive exclusion is no longer applied.",
+    "source_ids": [
+      "APA_2025"
+    ]
+  },
+  "automated_classifier_implemented": false,
+  "clinical_source_ids": [
+    "DSM_OTHER",
+    "APA_2025"
+  ]
+}

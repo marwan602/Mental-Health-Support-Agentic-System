@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "checks": 45,
+  "results": [
+    {
+      "check": "schema valid Draft 2020-12",
+      "passed": true
+    },
+    {
+      "check": "first authored snapshot valid",
+      "passed": true
+    },
+    {
+      "check": "later context and correction snapshot valid",
+      "passed": true
+    },
+    {
+      "check": "all concept source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "all classification/example/source-issue references resolve",
+      "passed": true
+    },
+    {
+      "check": "source records include links locations uses access and dates",
+      "passed": true
+    },
+    {
+      "check": "unique concepts and described optional fields",
+      "passed": true
+    },
+    {
+      "check": "all four named examples included and linked",
+      "passed": true
+    },
+    {
+      "check": "examples not represented as exhaustive peer disorders",
+      "passed": true
+    },
+    {
+      "check": "2025 depressive-like example names used",
+      "passed": true
+    },
+    {
+      "check": "RBD duration recurrence menstrual and symptom requirements present",
+      "passed": true
+    },
+    {
+      "check": "exact-four-day source issue not silently classified",
+      "passed": true
+    },
+    {
+      "check": "2025 deleted recurrent-brief exclusion not applied to short-duration example",
+      "passed": true
+    },
+    {
+      "check": "2025 deleted mixed-anxiety exclusion not applied to insufficient-symptom example",
+      "passed": true
+    },
+    {
+      "check": "insufficient symptoms minimum not a fixed total",
+      "passed": true
+    },
+    {
+      "check": "psychosis branch and schizoaffective boundary retained",
+      "passed": true
+    },
+    {
+      "check": "psychosis exclusion not generalized to every example",
+      "passed": true
+    },
+    {
+      "check": "unknown incomplete or mildness shortcuts disabled",
+      "passed": true
+    },
+    {
+      "check": "adult scope and pending clinical/runtime status explicit",
+      "passed": true
+    },
+    {
+      "check": "gold recurrence leaves consecutive months unresolved",
+      "passed": true
+    },
+    {
+      "check": "prior longer period kept historical and separate",
+      "passed": true
+    },
+    {
+      "check": "contextual yes references preceding question",
+      "passed": true
+    },
+    {
+      "check": "latest correction keeps both source reports",
+      "passed": true
+    },
+    {
+      "check": "unknown unreported symptoms not fabricated absent in fixture",
+      "passed": true
+    },
+    {
+      "check": "invented quote rejected",
+      "passed": true
+    },
+    {
+      "check": "assistant cannot source patient evidence",
+      "passed": true
+    },
+    {
+      "check": "future context rejected",
+      "passed": true
+    },
+    {
+      "check": "same-message context rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown context message rejected",
+      "passed": true
+    },
+    {
+      "check": "unsupported known detail rejected",
+      "passed": true
+    },
+    {
+      "check": "wrong concept-specific detail rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown detail cannot carry value",
+      "passed": true
+    },
+    {
+      "check": "not-applicable needs reason",
+      "passed": true
+    },
+    {
+      "check": "confirmed diagnosis property rejected",
+      "passed": true
+    },
+    {
+      "check": "automated presentation label property rejected",
+      "passed": true
+    },
+    {
+      "check": "criterion count outside patient record rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid finding status rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown optional detail accepted without value",
+      "passed": true
+    },
+    {
+      "check": "same concept under a different period permitted",
+      "passed": true
+    },
+    {
+      "check": "duplicate snapshot key rejected",
+      "passed": true
+    },
+    {
+      "check": "unsubstantiated conflict rejected",
+      "passed": true
+    },
+    {
+      "check": "empty evidence rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate message ID rejected",
+      "passed": true
+    },
+    {
+      "check": "reference knowledge cannot be inserted into patient output",
+      "passed": true
+    },
+    {
+      "check": "all_nested_source_ids_resolve",
+      "passed": true
+    }
+  ],
+  "scope": "Mechanical schema/reference/provenance and authored-fixture checks; no clinical validation, semantic proof, live LLM or diagnostic accuracy evaluation."
+}

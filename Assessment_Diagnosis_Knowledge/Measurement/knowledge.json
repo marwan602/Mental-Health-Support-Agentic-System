@@ -1,0 +1,219 @@
+{
+  "module_id": "adult_depression_measurement",
+  "version": "0.1.0-research",
+  "date": "2026-11-02",
+  "status": "SOURCE_INFORMED_REQUIRES_CLINICAL_REVIEW",
+  "population": {
+    "min_age": 18,
+    "max_age": null
+  },
+  "runtime_integration": "NOT_CONNECTED",
+  "purpose": "Optional structured measurement alongside natural clinical evidence collection; no automatic diagnosis or treatment.",
+  "source_registry": "sources.json",
+  "instrument_registry": "instrument_profiles.json",
+  "recommended_initial_design": {
+    "default": "PHQ9",
+    "brief_case_finding": "PHQ2_optional_not_required_before_PHQ9",
+    "wellbeing": "WHO5_optional_not_automatically_added_to_PHQ9",
+    "perinatal": "PHQ9_or_candidate_EPDS_under_relevant_reviewed_protocol",
+    "older_adults": "same_adult_choice_with_optional_review_of_GDS15_fit_not_age_only",
+    "menstrual_pattern": "prospective_records_separate_from_PHQ_score",
+    "mandatory_for_every_encounter": false,
+    "selection_origin": "PROJECT_DESIGN_INFORMED_BY_SOURCES_NOT_HEAD_TO_HEAD_PROVEN_SUPERIORITY"
+  },
+  "separate_layers": {
+    "clinical_evidence": "Concept-specific source-linked facts with reported_present/reported_absent/unclear/conflicting status; no global numeric points.",
+    "target_coverage": "Question answered/unclear/declined/deferred status; software tracking, not symptom severity.",
+    "instrument_measurement": "Explicit item-category responses to a defined instrument/timeframe; arithmetic computed in code.",
+    "diagnostic_review": "Clinical synthesis of symptoms, duration, course, impairment, alternatives and uncertainty, for qualified review."
+  },
+  "conversation_policy": {
+    "offer_after": "Opening account and early safety review, before a long symptom inventory when useful; otherwise use M8 as a later checkpoint.",
+    "early_offer_is_project_design": true,
+    "do_not_delay_urgent_review": true,
+    "participation": "Offer purpose, choice, pause/skip/stop; do not block ordinary support or assessment on completion.",
+    "one_item_at_a_time": true,
+    "preserve_item_wording_timeframe_and_options": true,
+    "warmth_in": "Introduction, acknowledgments, transitions and debrief; not leading or scored-option coaching.",
+    "if_prior_comparable_measure": "Review existing date/version/language/mode and clinical relevance; do not repeat automatically.",
+    "if_declined": "Retain decline and continue useful assessment; do not automatically re-offer in the same contact.",
+    "if_answers_already_volunteered": "Reuse clinical information; formal instrument responses require explicit item/timeframe/category confirmation under the instrument protocol.",
+    "no_unvalidated_free_rephrasing_claim": true
+  },
+  "scoring_policy": {
+    "free_conversation_numeric_score": false,
+    "unstructured_PHQ_estimation_enabled": false,
+    "score_only": [
+      "explicit standardized item responses",
+      "participant-confirmed item category within standardized administration"
+    ],
+    "require_protocol_metadata": true,
+    "require_source_pointers": true,
+    "full_item_bank_bundled": false,
+    "require_complete_items_for_total": true,
+    "missingness_policy_origin": "CONSERVATIVE_PROJECT_RULE_NO_ZERO_FILL_OR_PRORATING_IN_THIS_REFERENCE",
+    "scores_calculated_by": "deterministic code rather than LLM arithmetic",
+    "no_cross_tool_composite": true,
+    "no_score_from_face_voice_or_empathy": true,
+    "raw_numeric_symptom_reports": "Preserve as reports with units/context; not automatically scale scores.",
+    "tool_score_does_not_override_narrative": true
+  },
+  "response_options": {
+    "PHQ": {
+      "recall_days": 14,
+      "categories": [
+        {
+          "code": 0,
+          "label": "Not at all"
+        },
+        {
+          "code": 1,
+          "label": "Several days"
+        },
+        {
+          "code": 2,
+          "label": "More than half the days"
+        },
+        {
+          "code": 3,
+          "label": "Nearly every day"
+        }
+      ],
+      "source_ids": [
+        "CDC_DPQ",
+        "UW_PHQ_FORM"
+      ]
+    },
+    "WHO5": {
+      "recall_days": 14,
+      "codes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "meaning": "Use the original WHO response category key; higher code is more positive well-being.",
+      "source_ids": [
+        "WHO5_2024"
+      ]
+    }
+  },
+  "item_evidence_links": [
+    {
+      "item_id": "PHQ9_1",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "interest_pleasure",
+      "limit": "Interest and pleasure are combined; clarify which experience changed and its breadth."
+    },
+    {
+      "item_id": "PHQ9_2",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "depressed_mood",
+      "limit": "Item frequency does not establish daily extent or the whole episode timeline."
+    },
+    {
+      "item_id": "PHQ9_3",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "sleep_disturbance",
+      "limit": "Clarify sleep pattern; do not infer reduced sleep need."
+    },
+    {
+      "item_id": "PHQ9_4",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "energy_fatigue",
+      "limit": "Clarify energy/fatigue and distinguish sleepiness when relevant."
+    },
+    {
+      "item_id": "PHQ9_5",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "appetite_change",
+      "limit": "Appetite/intake report is not a measured weight change."
+    },
+    {
+      "item_id": "PHQ9_6",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "worthlessness_guilt",
+      "limit": "Clarify the actual self-evaluation/guilt; do not automatically assert a diagnostic threshold."
+    },
+    {
+      "item_id": "PHQ9_7",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "cognition_decisions",
+      "limit": "Clarify affected tasks and context; do not infer every cognitive symptom."
+    },
+    {
+      "item_id": "PHQ9_8",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "psychomotor_change",
+      "limit": "Direction and observational support remain to be clarified."
+    },
+    {
+      "item_id": "PHQ9_9",
+      "knowledge_path": "../MDD/knowledge.json",
+      "concept_id": "death_suicide",
+      "limit": "Does not separate passive death wish, self-harm or active suicidal intent; review immediately when indicated, without awaiting total."
+    }
+  ],
+  "measurement_state_contract": {
+    "fields": {
+      "instrument_id": "Registry instrument ID",
+      "profile_version": "Research profile version used for arithmetic",
+      "form_reference": "Exact source/version of the presented form, not just the questionnaire family",
+      "language": "Actual form language; translation validation must be assessed for target use",
+      "administration_mode": "standardized_self_report or standardized_interviewer_readout",
+      "reference_date": "ISO date when measured; separate from episode duration",
+      "recall_days": "Instrument-specific recall period",
+      "standardized_items_presented": "Application-declared flag; not proof of validation",
+      "standardized_timeframe_presented": "Application-declared flag; not proof of validation",
+      "responses": "One object per item with item_id, status, category_code, source_message_id and response_origin",
+      "functioning_response": "Separate PHQ functional-difficulty information; never added to nine-item total",
+      "total": "Numeric only if complete and protocol requirements met; otherwise null",
+      "symptom_band": "Instrument-specific descriptive band where applicable; not a confirmed diagnosis",
+      "review_needs": "Separate from score and from review actually delivered"
+    },
+    "response_states": [
+      "answered",
+      "declined",
+      "does_not_know",
+      "unclear",
+      "not_asked"
+    ],
+    "response_origin_values": [
+      "direct_selection",
+      "confirmed_instrument_response"
+    ],
+    "source": "PROJECT_DATA_CONTRACT"
+  },
+  "safety": {
+    "item9_nonzero": "Trigger timely appropriate follow-up/review; do not wait for the complete total or infer intent/acuity.",
+    "item9_unanswered": "Retain information limit and review decision need; not an automatic positive or negative risk classification.",
+    "negative_item9": "No concern from this item alone; not safety clearance.",
+    "other_clinical_concern_overrides_total": true,
+    "no_low_medium_high_prediction": true,
+    "ASQ_is_separate_reviewed_protocol": true,
+    "operational_response_pathway_implemented": false
+  },
+  "monitoring": {
+    "repeat_at": "Planned clinically appropriate review points, not every conversational turn; use same appropriate instrument/protocol for comparison.",
+    "NICE_context": "NG222 1.4.3 describes treatment review at 2-4 weeks and considering outcome monitoring; not a universal scoring interval.",
+    "preserve_dates_and_recall_windows": true,
+    "overlapping_windows_need_interpretation": true,
+    "change_alone_proves_recovery": false,
+    "minimum_important_change_threshold_implemented": false
+  },
+  "evidence_limitations": [
+    "No clinical sign-off or patient outcome validation of this platform",
+    "Arithmetic tests do not validate natural-language category mapping",
+    "Mode, language, cultural context and population require review; no assumed Egyptian Arabic equivalence",
+    "PHQ does not distinguish all depressive categories, causal explanations or lifetime bipolar history",
+    "EPDS/GDS15/DRSP/ASQ item-level scoring protocols are candidates, not implemented scorers"
+  ],
+  "role_instructions": {
+    "conversational": "Offer without pressure; use approved item wording/options in instrument mode; retain warm transitions; clarify rather than guess a category.",
+    "extractor": "Keep free narrative and instrument answers distinct; use whole history; preserve exact item/period/category/source and conflicts; do not manufacture a PHQ number.",
+    "planner": "Choose whether a measure adds value; avoid duplicate tools or repeated questions; use measure replies to identify clinical gaps while retaining criterion-specific requirements.",
+    "application": "Load approved form/profile, validate codes and missingness, compute arithmetic, store provenance, route review needs and record actual delivery."
+  }
+}

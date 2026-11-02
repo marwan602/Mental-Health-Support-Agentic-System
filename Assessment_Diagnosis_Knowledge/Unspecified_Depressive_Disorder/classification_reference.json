@@ -1,0 +1,52 @@
+{
+  "classification_basis": "DSM-5-TR 2022 definition, with official update index and September 2025 supplement checked for version context",
+  "category_information": {
+    "presentation": "Predominant symptoms characteristic of a depressive disorder.",
+    "burden": "Clinically significant distress OR impairment in important functioning.",
+    "specificity": "No more specific depressive category is established for the presentation; clinician does not specify the reason.",
+    "context": "Includes some situations where information is insufficient for a more specific diagnosis, such as an emergency setting.",
+    "adjustment_boundary": "Qualifying adjustment disorder with depressed mood or mixed anxiety/depressed mood is not replaced by this category."
+  },
+  "distinctions": [
+    {
+      "term": "other_specified_depressive_disorder",
+      "meaning": "Clinician communicates the particular reason another depressive category's full requirements are not met."
+    },
+    {
+      "term": "unspecified_depressive_disorder",
+      "meaning": "Clinician does not specify that reason; insufficient-information presentations are included."
+    },
+    {
+      "term": "assessment_incomplete",
+      "meaning": "Project workflow status describing available information; not itself a diagnosis."
+    },
+    {
+      "term": "mdd_with_unspecified_severity_or_course",
+      "meaning": "Unspecified descriptor within an MDD formulation is different from unspecified depressive disorder."
+    },
+    {
+      "term": "unspecified_mood_disorder",
+      "meaning": "A separate category where choosing between bipolar and depressive classes is difficult; not a synonym or automatic agent fallback."
+    },
+    {
+      "term": "reported_or_provisional_diagnosis",
+      "meaning": "Attribution/provisional certainty describes the status of a formulation and is not synonymous with this category."
+    }
+  ],
+  "numeric_thresholds": {
+    "category_specific_minimum_symptom_count": null,
+    "category_specific_minimum_days": null,
+    "meaning": "No fixed category-specific numeric checklist is supplied by this definition. Do not interpret this as no clinical threshold or proof that any brief sadness qualifies."
+  },
+  "automatic_rules": {
+    "interview_stopped_means_diagnosis": false,
+    "model_error_means_diagnosis": false,
+    "missing_duration_means_diagnosis": false,
+    "low_score_means_diagnosis": false,
+    "unknown_equals_absent": false
+  },
+  "clinical_source_ids": [
+    "DSM_UNSPECIFIED"
+  ],
+  "automated_classifier_implemented": false
+}

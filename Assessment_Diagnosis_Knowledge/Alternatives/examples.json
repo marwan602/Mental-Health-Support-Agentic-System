@@ -1,0 +1,918 @@
+{
+  "fictional_only": true,
+  "cases": [
+    {
+      "id": "short_sleep_with_exhaustion",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "How has sleep been?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "I sleep three hours because I cannot get to sleep, and I feel exhausted the next day."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "sleep_opportunity_timing",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "difficulty": {
+                "status": "known",
+                "value": "cannot get to sleep"
+              },
+              "daytime_effect": {
+                "status": "known",
+                "value": "exhausted the next day"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "I sleep three hours because I cannot get to sleep, and I feel exhausted the next day.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "difficulty",
+                  "daytime_effect"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Do not extract reduced sleep need or mania from short sleep with exhaustion."
+    },
+    {
+      "id": "activation_clue_not_diagnosis",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "What happened during that higher-energy period?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "For four days I slept three hours but felt rested. My energy was unusually high."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "reduced_sleep_need",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "sleep_amount": {
+                "status": "known",
+                "value": "three hours"
+              },
+              "restedness": {
+                "status": "known",
+                "value": "felt rested"
+              },
+              "duration": {
+                "status": "known",
+                "value": "four days"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "For four days I slept three hours but felt rested. My energy was unusually high.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "sleep_amount",
+                  "restedness",
+                  "duration"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          },
+          {
+            "concept_id": "activation_mood_energy",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "energy_activity": {
+                "status": "known",
+                "value": "unusually high"
+              },
+              "onset_duration": {
+                "status": "known",
+                "value": "four days"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "For four days I slept three hours but felt rested. My energy was unusually high.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "energy_activity",
+                  "onset_duration"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Relevant activation/sleep clues require other episode and alternative-explanation information; not a bipolar diagnosis."
+    },
+    {
+      "id": "trauma_declined",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "Would you like to discuss what happened?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "I do not want to talk about that event."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "assessment_limits",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "target": {
+                "status": "known",
+                "value": "event discussion"
+              },
+              "limit": {
+                "status": "known",
+                "value": "declined"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "I do not want to talk about that event.",
+                "context_message_ids": [
+                  "m1"
+                ],
+                "supports": [
+                  "finding_status",
+                  "target",
+                  "limit"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [
+          {
+            "question_id": "trauma_context.initial",
+            "question_status": "declined",
+            "unanswered_target": "Event context remains unresolved."
+          }
+        ],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Decline is neither proof of trauma nor a denial of PTSD symptoms."
+    },
+    {
+      "id": "early_grief_not_automatic_pgd",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "How has the grief affected you?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "My mother died six months ago. I miss her every day, but I still enjoy time with my children."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "bereavement_context",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "relationship": {
+                "status": "known",
+                "value": "mother"
+              },
+              "death_time": {
+                "status": "known",
+                "value": "six months ago"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "My mother died six months ago. I miss her every day, but I still enjoy time with my children.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "relationship",
+                  "death_time"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          },
+          {
+            "concept_id": "grief_specific_experiences",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "longing_preoccupation": {
+                "status": "known",
+                "value": "miss her every day"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "My mother died six months ago. I miss her every day, but I still enjoy time with my children.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "longing_preoccupation"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Adult DSM PGD time requirement is not met by six months; grief/support and coexisting depression may still need assessment."
+    },
+    {
+      "id": "panic_fear_not_suicidal_intent",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "What happens in those sudden episodes?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "My heart races and I feel afraid I will die. It peaks in a few minutes."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "panic_experience",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "sensations": {
+                "status": "known",
+                "value": "heart races and fear of dying"
+              },
+              "onset_peak": {
+                "status": "known",
+                "value": "peaks in a few minutes"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "My heart races and I feel afraid I will die. It peaks in a few minutes.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "sensations",
+                  "onset_peak"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Do not equate fear of dying with suicidal intent or diagnose panic disorder from one account; medical context matters."
+    },
+    {
+      "id": "acute_change_interrupts_routine",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "Has your thinking changed?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "Since yesterday I keep losing track of where I am, and it comes and goes."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "acute_attention_change",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "onset": {
+                "status": "known",
+                "value": "since yesterday"
+              },
+              "fluctuation": {
+                "status": "known",
+                "value": "comes and goes"
+              },
+              "other_changes": {
+                "status": "known",
+                "value": "losing track of where I am"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "Since yesterday I keep losing track of where I am, and it comes and goes.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "onset",
+                  "fluctuation",
+                  "other_changes"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "urgent_review_needed",
+          "reported_concerns": [
+            "Since yesterday I keep losing track of where I am, and it comes and goes."
+          ],
+          "unresolved_questions": [
+            "Medical review/contact not confirmed."
+          ]
+        }
+      },
+      "expected_interpretation": "Current acute fluctuating change needs medical review; no confirmed delirium or claim of delivered care."
+    },
+    {
+      "id": "avoidance_not_automatic_anhedonia",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "What makes seeing people difficult?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "I want to see them, but I am afraid they will judge everything I say."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "social_fear_avoidance",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "feared_outcome": {
+                "status": "known",
+                "value": "they will judge everything I say"
+              },
+              "other_reasons": {
+                "status": "known",
+                "value": "wants to see them"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "I want to see them, but I am afraid they will judge everything I say.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "feared_outcome",
+                  "other_reasons"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Social fear is reported; do not infer loss of pleasure or a confirmed social anxiety disorder."
+    },
+    {
+      "id": "continuing_stressor_consequences",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "Are the difficulties after losing your job still affecting you?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "I lost my job nine months ago and I am still facing eviction because of the lost income."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "stressor_response",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "stressor": {
+                "status": "known",
+                "value": "job loss"
+              },
+              "stressor_onset": {
+                "status": "known",
+                "value": "nine months ago"
+              },
+              "continuing_consequences": {
+                "status": "known",
+                "value": "facing eviction because of lost income"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "I lost my job nine months ago and I am still facing eviction because of the lost income.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "stressor",
+                  "stressor_onset",
+                  "continuing_consequences"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Do not exclude adjustment possibilities solely because nine months passed; symptom/onset/full-syndrome review still needed."
+    },
+    {
+      "id": "psychosis_timeline_not_schizoaffective",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "When have you heard the voice?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "I heard it for two weeks when I did not feel low, but I cannot remember the rest of that year."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "psychosis_mood_course",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "outside_mood_periods": {
+                "status": "known",
+                "value": "voice for two weeks when not low"
+              },
+              "overall_course": {
+                "status": "known",
+                "value": "cannot remember rest of year"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "I heard it for two weeks when I did not feel low, but I cannot remember the rest of that year.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "outside_mood_periods",
+                  "overall_course"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Two-week report is insufficient for schizoaffective diagnosis; full mood/schizophrenia syndrome, total course and causal review needed."
+    },
+    {
+      "id": "physical_help_not_cognitive_dependence",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "What everyday difficulties have changed?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "I need help with shopping because my knee hurts. My memory seems the same as before."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "cognitive_function_course",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "independence": {
+                "status": "known",
+                "value": "shopping help due to knee pain"
+              },
+              "domains": {
+                "status": "known",
+                "value": "memory seems unchanged"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "I need help with shopping because my knee hurts. My memory seems the same as before.",
+                "context_message_ids": [],
+                "supports": [
+                  "finding_status",
+                  "independence",
+                  "domains"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Do not infer major neurocognitive disorder from needing physically motivated assistance."
+    },
+    {
+      "id": "exposure_timing_not_causation",
+      "messages": [
+        {
+          "id": "m1",
+          "speaker": "assistant",
+          "text": "Did the low mood begin before or after the tablets?"
+        },
+        {
+          "id": "m2",
+          "speaker": "patient",
+          "text": "Before. I started the tablets last week, but I had already felt low for six weeks."
+        }
+      ],
+      "output": {
+        "module_id": "adult_depression_alternatives",
+        "schema_version": "1.0.0",
+        "records": [
+          {
+            "concept_id": "exposure_context",
+            "episode_key": "presenting_period",
+            "subject": "patient",
+            "finding_status": "reported_present",
+            "temporal_status": "current",
+            "time_reference": null,
+            "attributes": {
+              "start_change_stop": {
+                "status": "known",
+                "value": "started last week"
+              },
+              "symptom_timing": {
+                "status": "known",
+                "value": "low mood already present for six weeks"
+              }
+            },
+            "evidence": [
+              {
+                "message_id": "m2",
+                "quote": "Before. I started the tablets last week, but I had already felt low for six weeks.",
+                "context_message_ids": [
+                  "m1"
+                ],
+                "supports": [
+                  "finding_status",
+                  "start_change_stop",
+                  "symptom_timing"
+                ]
+              }
+            ],
+            "uncertainty_notes": [],
+            "semantic_check_status": "supported"
+          }
+        ],
+        "question_tracking": [],
+        "safety_handoff": {
+          "status": "not_assessed",
+          "reported_concerns": [],
+          "unresolved_questions": []
+        }
+      },
+      "expected_interpretation": "Current timing does not prove a medicine cause or establish disease-free baseline; detailed exposure/medical modules retain separate agents/conditions."
+    }
+  ],
+  "history_case": {
+    "messages": [
+      {
+        "id": "m1",
+        "speaker": "assistant",
+        "text": "What was different during that period?"
+      },
+      {
+        "id": "m2",
+        "speaker": "patient",
+        "text": "My energy was much higher than usual."
+      },
+      {
+        "id": "m3",
+        "speaker": "assistant",
+        "text": "Was the shorter sleep during that same period?"
+      },
+      {
+        "id": "m4",
+        "speaker": "patient",
+        "text": "Yes, for four days. I felt rested after three hours."
+      }
+    ],
+    "first_snapshot": {
+      "module_id": "adult_depression_alternatives",
+      "schema_version": "1.0.0",
+      "records": [
+        {
+          "concept_id": "activation_mood_energy",
+          "episode_key": "presenting_period",
+          "subject": "patient",
+          "finding_status": "reported_present",
+          "temporal_status": "current",
+          "time_reference": null,
+          "attributes": {
+            "energy_activity": {
+              "status": "known",
+              "value": "much higher than usual"
+            }
+          },
+          "evidence": [
+            {
+              "message_id": "m2",
+              "quote": "My energy was much higher than usual.",
+              "context_message_ids": [],
+              "supports": [
+                "finding_status",
+                "energy_activity"
+              ]
+            }
+          ],
+          "uncertainty_notes": [],
+          "semantic_check_status": "supported"
+        }
+      ],
+      "question_tracking": [],
+      "safety_handoff": {
+        "status": "not_assessed",
+        "reported_concerns": [],
+        "unresolved_questions": []
+      }
+    },
+    "later_snapshot": {
+      "module_id": "adult_depression_alternatives",
+      "schema_version": "1.0.0",
+      "records": [
+        {
+          "concept_id": "activation_mood_energy",
+          "episode_key": "presenting_period",
+          "subject": "patient",
+          "finding_status": "reported_present",
+          "temporal_status": "current",
+          "time_reference": null,
+          "attributes": {
+            "energy_activity": {
+              "status": "known",
+              "value": "much higher than usual"
+            },
+            "onset_duration": {
+              "status": "known",
+              "value": "four days"
+            }
+          },
+          "evidence": [
+            {
+              "message_id": "m2",
+              "quote": "My energy was much higher than usual.",
+              "context_message_ids": [],
+              "supports": [
+                "finding_status",
+                "energy_activity"
+              ]
+            },
+            {
+              "message_id": "m4",
+              "quote": "Yes, for four days. I felt rested after three hours.",
+              "context_message_ids": [
+                "m1",
+                "m2",
+                "m3"
+              ],
+              "supports": [
+                "onset_duration"
+              ]
+            }
+          ],
+          "uncertainty_notes": [],
+          "semantic_check_status": "supported"
+        },
+        {
+          "concept_id": "reduced_sleep_need",
+          "episode_key": "presenting_period",
+          "subject": "patient",
+          "finding_status": "reported_present",
+          "temporal_status": "current",
+          "time_reference": null,
+          "attributes": {
+            "sleep_amount": {
+              "status": "known",
+              "value": "three hours"
+            },
+            "restedness": {
+              "status": "known",
+              "value": "rested"
+            },
+            "duration": {
+              "status": "known",
+              "value": "four days"
+            },
+            "overlap": {
+              "status": "known",
+              "value": "same earlier energy period"
+            }
+          },
+          "evidence": [
+            {
+              "message_id": "m4",
+              "quote": "Yes, for four days. I felt rested after three hours.",
+              "context_message_ids": [
+                "m1",
+                "m2",
+                "m3"
+              ],
+              "supports": [
+                "finding_status",
+                "sleep_amount",
+                "restedness",
+                "duration",
+                "overlap"
+              ]
+            }
+          ],
+          "uncertainty_notes": [],
+          "semantic_check_status": "supported"
+        }
+      ],
+      "question_tracking": [],
+      "safety_handoff": {
+        "status": "not_assessed",
+        "reported_concerns": [],
+        "unresolved_questions": []
+      }
+    }
+  },
+  "notes": "Authored fixtures demonstrate intended evidence storage; they are not live LLM outputs or validated clinical cases. Expected interpretations are project review targets, not diagnostic ground truth."
+}

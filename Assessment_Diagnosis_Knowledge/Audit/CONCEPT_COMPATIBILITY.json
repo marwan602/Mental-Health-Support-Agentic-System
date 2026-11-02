@@ -1,0 +1,2586 @@
+{
+  "policy": "Use (module_id, concept_id), plus that module's period/subject/exposure/condition key. Same local ID does not authorize merging different criterion contexts or fields.",
+  "shared_ids": {
+    "depressed_mood": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Reported low, sad or empty mood.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Low, sad or empty mood described over a relevant period.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "proportion_of_day",
+          "course",
+          "baseline_comparison",
+          "recall_limits"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Reported low, sad or empty mood.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Reported low, sad or empty mood.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Reported low, sad or empty mood.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Reported low, sad or empty mood.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Reported low, sad or empty mood.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "interest_pleasure": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Reduced desire for activities and/or reduced enjoyment.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "interest",
+          "pleasure",
+          "activities",
+          "breadth",
+          "baseline_comparison"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Reduced desire for activities and/or reduced enjoyment.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "interest",
+          "pleasure",
+          "activities",
+          "breadth",
+          "baseline_comparison"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Reduced desire for activities and/or reduced enjoyment.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "interest",
+          "pleasure",
+          "activities",
+          "breadth",
+          "baseline_comparison"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Reduced desire for activities and/or reduced enjoyment.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "interest",
+          "pleasure",
+          "activities",
+          "breadth",
+          "baseline_comparison"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Reduced desire for activities and/or reduced enjoyment.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "interest",
+          "pleasure",
+          "activities",
+          "breadth",
+          "baseline_comparison"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Reduced desire for activities and/or reduced enjoyment.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "days_per_week",
+          "proportion_of_day",
+          "interest",
+          "pleasure",
+          "activities",
+          "breadth",
+          "baseline_comparison"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "appetite_change": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Change in desire for food.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "direction",
+          "appetite_vs_intake",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "increased",
+            "decreased",
+            "variable",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Change in desire for food.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "direction",
+          "appetite_vs_intake",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "increased",
+            "decreased",
+            "variable",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Change in desire for food.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "direction",
+          "appetite_vs_intake",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "increased",
+            "decreased",
+            "variable",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Change in desire for food.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "direction",
+          "appetite_vs_intake",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "increased",
+            "decreased",
+            "variable",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Change in desire for food.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "direction",
+          "appetite_vs_intake",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "increased",
+            "decreased",
+            "variable",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "weight_change": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Reported change in body weight.",
+        "attribute_names": [
+          "direction",
+          "amount",
+          "interval",
+          "baseline_weight",
+          "measurement",
+          "intentionality"
+        ],
+        "controlled_values": {
+          "direction": [
+            "gain",
+            "loss",
+            "variable",
+            "unclear"
+          ],
+          "measurement": [
+            "measured_report",
+            "estimate",
+            "unclear"
+          ],
+          "intentionality": [
+            "intentional",
+            "unintentional",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Reported change in body weight.",
+        "attribute_names": [
+          "direction",
+          "amount",
+          "interval",
+          "baseline_weight",
+          "measurement",
+          "intentionality"
+        ],
+        "controlled_values": {
+          "direction": [
+            "gain",
+            "loss",
+            "variable",
+            "unclear"
+          ],
+          "measurement": [
+            "measured_report",
+            "estimate",
+            "unclear"
+          ],
+          "intentionality": [
+            "intentional",
+            "unintentional",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Reported change in body weight.",
+        "attribute_names": [
+          "direction",
+          "amount",
+          "interval",
+          "baseline_weight",
+          "measurement",
+          "intentionality"
+        ],
+        "controlled_values": {
+          "direction": [
+            "gain",
+            "loss",
+            "variable",
+            "unclear"
+          ],
+          "measurement": [
+            "measured_report",
+            "estimate",
+            "unclear"
+          ],
+          "intentionality": [
+            "intentional",
+            "unintentional",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Reported change in body weight.",
+        "attribute_names": [
+          "direction",
+          "amount",
+          "interval",
+          "baseline_weight",
+          "measurement",
+          "intentionality"
+        ],
+        "controlled_values": {
+          "direction": [
+            "gain",
+            "loss",
+            "variable",
+            "unclear"
+          ],
+          "measurement": [
+            "measured_report",
+            "estimate",
+            "unclear"
+          ],
+          "intentionality": [
+            "intentional",
+            "unintentional",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Reported change in body weight.",
+        "attribute_names": [
+          "direction",
+          "amount",
+          "interval",
+          "baseline_weight",
+          "measurement",
+          "intentionality"
+        ],
+        "controlled_values": {
+          "direction": [
+            "gain",
+            "loss",
+            "variable",
+            "unclear"
+          ],
+          "measurement": [
+            "measured_report",
+            "estimate",
+            "unclear"
+          ],
+          "intentionality": [
+            "intentional",
+            "unintentional",
+            "mixed",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "sleep_disturbance": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Difficulty sleeping or excessive sleep.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "pattern",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "total_sleep",
+          "sleep_opportunity",
+          "daytime_effect"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Difficulty sleeping or excessive sleep within the assessed course.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "overlap_with_low_mood",
+          "pattern",
+          "latency",
+          "sleep_hours",
+          "opportunity",
+          "daytime_effects",
+          "baseline_comparison"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Excessive sleep or insomnia.",
+        "attribute_names": [
+          "description",
+          "pattern",
+          "sleep_hours",
+          "sleep_opportunity",
+          "onset_relative_to_bleeding",
+          "improvement_timing",
+          "postmenstrual_level",
+          "duration_within_cycle",
+          "intensity_as_reported",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "daytime_effects"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Difficulty sleeping or excessive sleep.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "pattern",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "total_sleep",
+          "sleep_opportunity",
+          "daytime_effect"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Difficulty sleeping or excessive sleep.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "pattern",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "total_sleep",
+          "sleep_opportunity",
+          "daytime_effect"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Difficulty sleeping or excessive sleep.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "pattern",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "total_sleep",
+          "sleep_opportunity",
+          "daytime_effect"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Difficulty sleeping or excessive sleep.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "pattern",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "total_sleep",
+          "sleep_opportunity",
+          "daytime_effect"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Difficulty sleeping or excessive sleep.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "pattern",
+          "latency",
+          "awakenings",
+          "wake_timing",
+          "total_sleep",
+          "sleep_opportunity",
+          "daytime_effect"
+        ],
+        "controlled_values": {
+          "pattern": [
+            "onset_difficulty",
+            "maintenance_difficulty",
+            "early_waking",
+            "excessive_sleep",
+            "mixed",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "psychomotor_change": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Noticeable motor/speech slowing or agitation.",
+        "attribute_names": [
+          "onset",
+          "frequency",
+          "direction",
+          "examples",
+          "observer",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "slowing",
+            "agitation",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Noticeable motor/speech slowing or agitation.",
+        "attribute_names": [
+          "onset",
+          "frequency",
+          "direction",
+          "examples",
+          "observer",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "slowing",
+            "agitation",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Noticeable motor/speech slowing or agitation.",
+        "attribute_names": [
+          "onset",
+          "frequency",
+          "direction",
+          "examples",
+          "observer",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "slowing",
+            "agitation",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Noticeable motor/speech slowing or agitation.",
+        "attribute_names": [
+          "onset",
+          "frequency",
+          "direction",
+          "examples",
+          "observer",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "slowing",
+            "agitation",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Noticeable motor/speech slowing or agitation.",
+        "attribute_names": [
+          "onset",
+          "frequency",
+          "direction",
+          "examples",
+          "observer",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {
+          "direction": [
+            "slowing",
+            "agitation",
+            "both",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "energy_fatigue": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Unusual tiredness or reduced energy.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "experience",
+          "sleepiness",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Low energy or unusual tiredness.",
+        "attribute_names": [
+          "description",
+          "onset",
+          "duration",
+          "frequency",
+          "overlap_with_low_mood",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Unusual tiredness or reduced energy.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "experience",
+          "sleepiness",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Unusual tiredness or reduced energy.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "experience",
+          "sleepiness",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Unusual tiredness or reduced energy.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "experience",
+          "sleepiness",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Unusual tiredness or reduced energy.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "experience",
+          "sleepiness",
+          "impact"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Unusual tiredness or reduced energy.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "experience",
+          "sleepiness",
+          "impact"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "worthlessness_guilt": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Low self-worth or excessive/inappropriate guilt.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "content",
+          "kind",
+          "context",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "worthlessness",
+            "guilt",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Low self-worth or excessive/inappropriate guilt.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "content",
+          "kind",
+          "context",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "worthlessness",
+            "guilt",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Low self-worth or excessive/inappropriate guilt.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "content",
+          "kind",
+          "context",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "worthlessness",
+            "guilt",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Low self-worth or excessive/inappropriate guilt.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "content",
+          "kind",
+          "context",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "worthlessness",
+            "guilt",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Low self-worth or excessive/inappropriate guilt.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "content",
+          "kind",
+          "context",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "worthlessness",
+            "guilt",
+            "both",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "cognition_decisions": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Reported thinking, attention or decision difficulty.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "kind",
+          "tasks",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Poor concentration or difficulty making decisions.",
+        "attribute_names": [
+          "description",
+          "kind",
+          "tasks",
+          "onset",
+          "duration",
+          "frequency",
+          "overlap_with_low_mood",
+          "baseline_comparison",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "indecision",
+            "both",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Reported thinking, attention or decision difficulty.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "kind",
+          "tasks",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Reported thinking, attention or decision difficulty.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "kind",
+          "tasks",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Reported thinking, attention or decision difficulty.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "kind",
+          "tasks",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Reported thinking, attention or decision difficulty.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "kind",
+          "tasks",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Reported thinking, attention or decision difficulty.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "frequency",
+          "baseline_comparison",
+          "kind",
+          "tasks",
+          "impact"
+        ],
+        "controlled_values": {
+          "kind": [
+            "concentration",
+            "thinking",
+            "indecision",
+            "mixed",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "death_suicide": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Reported death/suicide-related experiences requiring separate safety assessment; not one of the six PDD associated groups.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Death/suicide-related reports requiring separate safety assessment; not an additional PMDD symptom-count group.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Death-related thoughts, suicidal thoughts, plans or attempts.",
+        "attribute_names": [
+          "experience",
+          "recency",
+          "frequency",
+          "intent",
+          "plan_present",
+          "access",
+          "past_behaviour",
+          "support"
+        ],
+        "controlled_values": {
+          "experience": [
+            "death_thoughts",
+            "wish_not_alive",
+            "suicidal_thoughts",
+            "suicide_plan",
+            "suicide_attempt",
+            "unclear"
+          ],
+          "plan_present": [
+            "reported",
+            "denied",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "episode_timeline": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Period linking symptoms and changes.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "course",
+          "overlap",
+          "intervals"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Period linking symptoms and changes.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "course",
+          "overlap",
+          "intervals"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Period linking symptoms and changes.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "course",
+          "overlap",
+          "intervals"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Period linking symptoms and changes.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "course",
+          "overlap",
+          "intervals"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "functioning_distress": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Reported burden in important life areas.",
+        "attribute_names": [
+          "domain",
+          "examples",
+          "baseline",
+          "supports"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "activation_history": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Possible distinct elevated/overactive periods requiring review.",
+        "attribute_names": [
+          "period",
+          "mood",
+          "energy_activity",
+          "sleep_need",
+          "other_changes",
+          "duration",
+          "impact",
+          "exposure_context"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "medical_context": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Relevant reported medical history and symptoms.",
+        "attribute_names": [
+          "conditions",
+          "timeline",
+          "investigations",
+          "clinician_review"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "exposure_context": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Relevant treatment/substance exposure account.",
+        "attribute_names": [
+          "name",
+          "dose_use",
+          "start_change_stop",
+          "symptom_timing",
+          "source_kind"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Relevant treatment/substance exposure account.",
+        "attribute_names": [
+          "name",
+          "dose_use",
+          "start_change_stop",
+          "symptom_timing",
+          "source_kind"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Relevant treatment/substance exposure account.",
+        "attribute_names": [
+          "name",
+          "dose_use",
+          "start_change_stop",
+          "symptom_timing",
+          "source_kind"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Relevant treatment/substance exposure account.",
+        "attribute_names": [
+          "name",
+          "dose_use",
+          "start_change_stop",
+          "symptom_timing",
+          "source_kind"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Relevant treatment/substance exposure account.",
+        "attribute_names": [
+          "name",
+          "dose_use",
+          "start_change_stop",
+          "symptom_timing",
+          "source_kind"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Relevant treatment/substance exposure account.",
+        "attribute_names": [
+          "name",
+          "dose_use",
+          "start_change_stop",
+          "symptom_timing",
+          "source_kind"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "psychotic_experience": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Reported experiences requiring specialist interpretation.",
+        "attribute_names": [
+          "kind",
+          "content",
+          "mood_relationship",
+          "conviction_context",
+          "safety_concerns",
+          "reported_mood_congruence"
+        ],
+        "controlled_values": {
+          "reported_mood_congruence": [
+            "congruent",
+            "incongruent_or_mixed",
+            "unclear"
+          ]
+        }
+      }
+    ],
+    "treatment_history": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Prior mental-health assessment and care.",
+        "attribute_names": [
+          "reported_diagnosis",
+          "treatment",
+          "period",
+          "response",
+          "use"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "family_history": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Relevant family mood/psychiatric history.",
+        "attribute_names": [
+          "relative",
+          "reported_condition",
+          "certainty"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "life_context": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pmdd",
+        "module_folder": "PMDD",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_alternatives",
+        "module_folder": "Alternatives",
+        "definition": "Relevant stress, loss, trauma and support.",
+        "attribute_names": [
+          "events",
+          "timing",
+          "support",
+          "barriers",
+          "meaning"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "anxious_distress": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "At least two anxiety features on most episode days; anxious-distress severity is distinct from overall MDD severity.",
+        "attribute_names": [
+          "tension",
+          "unusual_restlessness",
+          "worry_affecting_concentration",
+          "fear_of_awful_event",
+          "fear_of_losing_control",
+          "episode_overlap",
+          "timing_frequency",
+          "observer"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Anxiety features on the majority of symptomatic days of current PDD; at least two specified features need professional review.",
+        "attribute_names": [
+          "tension",
+          "unusual_restlessness",
+          "worry_affecting_concentration",
+          "fear_of_awful_event",
+          "fear_of_losing_control",
+          "timing_frequency",
+          "observer",
+          "depressed_period_overlap"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "atypical_features": [
+      {
+        "module_id": "adult_mdd",
+        "module_folder": "MDD",
+        "definition": "Predominant episode pattern: mood brightening with positive events plus at least two associated features; incompatible melancholic/catatonic criteria must be reviewed.",
+        "attribute_names": [
+          "mood_reactivity",
+          "appetite_weight_gain",
+          "excessive_sleep",
+          "leaden_limbs",
+          "longstanding_rejection_sensitivity",
+          "episode_overlap",
+          "timing_frequency",
+          "observer"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_pdd",
+        "module_folder": "PDD",
+        "definition": "Mood reactivity plus at least two of increased appetite/weight, excessive sleep, leaden limbs or longstanding impairing rejection sensitivity, predominant on the majority of symptomatic days of current PDD.",
+        "attribute_names": [
+          "mood_reactivity",
+          "appetite_weight_gain",
+          "excessive_sleep",
+          "leaden_limbs",
+          "longstanding_rejection_sensitivity",
+          "timing_frequency",
+          "observer",
+          "depressed_period_overlap"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "syndrome_course": [
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Whether depressive symptoms predominate, persist and warrant attention beyond usual transient exposure effects.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "course",
+          "predominance",
+          "related_symptoms",
+          "clinical_attention"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Predominance, persistence and actual course of the depressive presentation.",
+        "attribute_names": [
+          "onset",
+          "duration",
+          "course",
+          "predominance",
+          "related_symptoms",
+          "clinical_attention",
+          "intensity_as_reported"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "acute_cognitive_change": [
+      {
+        "module_id": "adult_substance_medication_induced_depression",
+        "module_folder": "Substance_Medication_Induced_Depression",
+        "definition": "Recent or fluctuating change in attention, awareness or thinking that requires medical assessment.",
+        "attribute_names": [
+          "change",
+          "onset",
+          "fluctuation",
+          "observer",
+          "medical_context",
+          "review_status"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_depression_due_to_medical_condition",
+        "module_folder": "Depression_Due_To_Medical_Condition",
+        "definition": "Recent or fluctuating change in attention, awareness or thinking that requires medical assessment.",
+        "attribute_names": [
+          "change",
+          "onset",
+          "fluctuation",
+          "observer",
+          "medical_context",
+          "review_status"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "between_period_course": [
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Whether symptoms remit, remain subthreshold or continue between apparently separate low spells.",
+        "attribute_names": [
+          "mood_between",
+          "other_symptoms_between",
+          "return_to_baseline",
+          "symptom_free_intervals",
+          "longer_low_periods"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Whether symptoms remit, remain subthreshold or continue between apparently separate low spells.",
+        "attribute_names": [
+          "mood_between",
+          "other_symptoms_between",
+          "return_to_baseline",
+          "symptom_free_intervals",
+          "longer_low_periods"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "lifetime_threshold_history": [
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Earlier depressive, bipolar and psychotic presentations relevant to example-specific exclusions.",
+        "attribute_names": [
+          "previous_depressive_periods",
+          "reported_diagnoses",
+          "prior_full_episode_review",
+          "activation_periods",
+          "psychotic_history",
+          "uncertainty"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Earlier mood, activation and psychotic experiences relevant to a more specific explanation.",
+        "attribute_names": [
+          "previous_depressive_periods",
+          "reported_diagnoses",
+          "prior_full_episode_review",
+          "activation_periods",
+          "psychotic_history",
+          "uncertainty"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "stressor_adjustment_review": [
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Relation to identifiable stressors plus symptom pattern and course; an adjustment diagnosis needs its own review.",
+        "attribute_names": [
+          "stressor",
+          "timing",
+          "meaning",
+          "course",
+          "other_explanations"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Relation to identifiable stressors plus symptom pattern and course; an adjustment diagnosis needs its own review.",
+        "attribute_names": [
+          "stressor",
+          "timing",
+          "meaning",
+          "course",
+          "other_explanations"
+        ],
+        "controlled_values": {}
+      }
+    ],
+    "anxiety_depression_overlap": [
+      {
+        "module_id": "adult_other_specified_depressive_disorder",
+        "module_folder": "Other_Specified_Depressive_Disorder",
+        "definition": "Actual anxiety and depressive experiences, kept separate from terminology in other classifications.",
+        "attribute_names": [
+          "anxiety_experiences",
+          "timing_overlap",
+          "impact",
+          "reported_formulation"
+        ],
+        "controlled_values": {}
+      },
+      {
+        "module_id": "adult_unspecified_depressive_disorder",
+        "module_folder": "Unspecified_Depressive_Disorder",
+        "definition": "Actual anxiety and depressive experiences, kept separate from terminology in other classifications.",
+        "attribute_names": [
+          "anxiety_experiences",
+          "timing_overlap",
+          "impact",
+          "reported_formulation"
+        ],
+        "controlled_values": {}
+      }
+    ]
+  },
+  "integration_rule": "Reuse patient facts through explicit reviewed mappings with preserved provenance; do not flatten all cards into a global id-only dictionary or union their thresholds.",
+  "clinical_validation": false
+}

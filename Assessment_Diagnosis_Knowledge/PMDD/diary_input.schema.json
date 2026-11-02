@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "properties": {
+    "module_id": {
+      "const": "adult_pmdd"
+    },
+    "instrument_id": {
+      "const": "DRSP"
+    },
+    "instrument_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cycles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cycle_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "onset_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "date_source": {
+            "enum": [
+              "participant_report",
+              "imported_record",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "cycle_ref",
+          "onset_date",
+          "date_source"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bleeding_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "kind": {
+            "enum": [
+              "menstrual_bleeding_report",
+              "spotting",
+              "withdrawal_bleeding_report",
+              "unclear"
+            ]
+          }
+        },
+        "required": [
+          "date",
+          "kind"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "ratings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "observation_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "recorded_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "observation_utc_offset": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[+-](?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+          },
+          "collection_mode": {
+            "enum": [
+              "prospective_daily",
+              "retrospective_entry",
+              "imported_unverified"
+            ]
+          },
+          "entry_origin": {
+            "enum": [
+              "participant_entry",
+              "import",
+              "fictional_example"
+            ]
+          },
+          "item_id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 24
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 6
+          },
+          "missing_reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "cycle_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "observation_date",
+          "recorded_at",
+          "observation_utc_offset",
+          "collection_mode",
+          "entry_origin",
+          "item_id",
+          "rating",
+          "missing_reason",
+          "cycle_ref"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "rating": {
+                  "type": "null"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "missing_reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "missing_reason": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "collection_mode": {
+                  "const": "prospective_daily"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "recorded_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "observation_utc_offset": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "provenance_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "module_id",
+    "instrument_id",
+    "instrument_version",
+    "language",
+    "cycles",
+    "bleeding_events",
+    "ratings",
+    "provenance_notes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:adult-pmdd:drsp-input:1.0.0",
+  "description": "Project storage contract for version-verified original DRSP responses; not a new questionnaire, validated adaptation or diagnostic scorer."
+}

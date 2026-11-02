@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "checks": 43,
+  "results": [
+    {
+      "check": "schema valid Draft 2020-12",
+      "passed": true
+    },
+    {
+      "check": "first fictional snapshot accepted",
+      "passed": true
+    },
+    {
+      "check": "later contextual snapshot accepted",
+      "passed": true
+    },
+    {
+      "check": "all card and rule sources resolve",
+      "passed": true
+    },
+    {
+      "check": "classification reference sources resolve",
+      "passed": true
+    },
+    {
+      "check": "sources have links locations uses access notes and dates",
+      "passed": true
+    },
+    {
+      "check": "unique concepts and described optional project fields",
+      "passed": true
+    },
+    {
+      "check": "clinical significance and predominance retained",
+      "passed": true
+    },
+    {
+      "check": "no invented fixed count or minimum duration",
+      "passed": true
+    },
+    {
+      "check": "no-threshold is not any sadness and no reason is invented",
+      "passed": true
+    },
+    {
+      "check": "all automatic diagnosis shortcuts disabled",
+      "passed": true
+    },
+    {
+      "check": "uncertainty not represented as verified negative differential",
+      "passed": true
+    },
+    {
+      "check": "separate diagnostic and workflow meanings represented",
+      "passed": true
+    },
+    {
+      "check": "adult scope and review/runtime limitations explicit",
+      "passed": true
+    },
+    {
+      "check": "initial duration unknown without value",
+      "passed": true
+    },
+    {
+      "check": "later approximate duration updated with provenance",
+      "passed": true
+    },
+    {
+      "check": "contextual answer links to earlier question",
+      "passed": true
+    },
+    {
+      "check": "reported prior formulation remains historical and attributed",
+      "passed": true
+    },
+    {
+      "check": "decline does not become absent activation",
+      "passed": true
+    },
+    {
+      "check": "declined target remains in question tracking",
+      "passed": true
+    },
+    {
+      "check": "safety not falsely marked assessed in fixture",
+      "passed": true
+    },
+    {
+      "check": "invented quote rejected",
+      "passed": true
+    },
+    {
+      "check": "assistant cannot supply patient evidence",
+      "passed": true
+    },
+    {
+      "check": "future context rejected",
+      "passed": true
+    },
+    {
+      "check": "same-message context rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown context rejected",
+      "passed": true
+    },
+    {
+      "check": "unsupported known detail rejected",
+      "passed": true
+    },
+    {
+      "check": "wrong concept-specific field rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown cannot carry value",
+      "passed": true
+    },
+    {
+      "check": "not-applicable requires reason",
+      "passed": true
+    },
+    {
+      "check": "confirmed diagnosis outside contract rejected",
+      "passed": true
+    },
+    {
+      "check": "billing code outside contract rejected",
+      "passed": true
+    },
+    {
+      "check": "criterion count outside record rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid finding status rejected",
+      "passed": true
+    },
+    {
+      "check": "invalid decline value rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown optional detail accepted without value",
+      "passed": true
+    },
+    {
+      "check": "different historical period allows a separate record",
+      "passed": true
+    },
+    {
+      "check": "duplicate snapshot key rejected",
+      "passed": true
+    },
+    {
+      "check": "unsubstantiated conflict rejected",
+      "passed": true
+    },
+    {
+      "check": "empty evidence rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate message ID rejected",
+      "passed": true
+    },
+    {
+      "check": "classification knowledge cannot be inserted as patient output",
+      "passed": true
+    },
+    {
+      "check": "all_nested_source_ids_resolve",
+      "passed": true
+    }
+  ],
+  "scope": "Mechanical schema/reference/provenance and authored-fixture checks only; no clinical validation, semantic proof, live LLM or diagnostic accuracy study."
+}

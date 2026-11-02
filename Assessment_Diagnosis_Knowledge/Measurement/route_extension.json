@@ -1,0 +1,32 @@
+{
+  "id": "optional_measurement_route_extension",
+  "version": "0.1.0-design",
+  "base_graph_id": "adult_depression_interview_graph",
+  "runtime_integration": "NOT_CONNECTED",
+  "knowledge_ref": "knowledge.json",
+  "anchor_after": [
+    "q.opening",
+    "early_safety_review"
+  ],
+  "early_offer_optional": true,
+  "early_offer_conditions": [
+    "Clinically useful baseline or brief case finding",
+    "Ordinary progression appropriate after safety/participation check",
+    "Person interested and approved form/language/mode available",
+    "No suitable existing measurement or decision to defer"
+  ],
+  "flow": [
+    "check urgent/safety and participation needs",
+    "review purpose and prior measure",
+    "offer appropriate instrument or no instrument",
+    "decline/defer -> resume clinical assessment",
+    "accept -> standardized items one at a time, with warm transitions",
+    "on any reply -> safety/history/participation check",
+    "missing/declined item -> preserve missingness and offer continue, pause or stop",
+    "calculate total only when complete and standardization requirements met",
+    "review result alongside narrative and remaining clinical gaps",
+    "return to interrupted target; M8 later checks whether anything further is useful"
+  ],
+  "tool_result_to_evidence": "Use source-linked item reports as potentially relevant evidence, without assuming item frequency establishes every diagnostic qualifier.",
+  "not_a_generic_numeric_score_for_open_conversation": true
+}

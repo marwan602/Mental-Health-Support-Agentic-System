@@ -1,0 +1,137 @@
+{
+  "type": "object",
+  "properties": {
+    "action": {
+      "enum": [
+        "ASK",
+        "CLARIFY",
+        "RETURN_OFFER",
+        "OFFER_OPTIONS",
+        "DEFER_TARGET",
+        "RECORD_DECLINE",
+        "RECONCILE_EVIDENCE",
+        "SUMMARY",
+        "HANDOFF_WITH_GAPS",
+        "PAUSE",
+        "STOP",
+        "PAUSE_CHANNEL",
+        "CHECK_SCOPE",
+        "OUT_OF_SCOPE",
+        "REVIEW_REQUIRED",
+        "URGENT_REVIEW",
+        "FEATURE_REVIEW_REQUIRED"
+      ]
+    },
+    "target_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "period_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supporting_message_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "requirement_references": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "unresolved_targets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "state_updates_proposed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "kind",
+          "target_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "clinical_conclusion": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "action",
+    "target_id",
+    "period_id",
+    "reason",
+    "supporting_message_ids",
+    "requirement_references",
+    "unresolved_targets",
+    "state_updates_proposed",
+    "clinical_conclusion"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "enum": [
+              "ASK",
+              "CLARIFY",
+              "RETURN_OFFER",
+              "OFFER_OPTIONS",
+              "DEFER_TARGET",
+              "RECONCILE_EVIDENCE"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "period_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

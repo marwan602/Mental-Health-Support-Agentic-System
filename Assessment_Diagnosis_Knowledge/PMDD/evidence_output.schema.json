@@ -1,0 +1,1585 @@
+{
+  "type": "object",
+  "properties": {
+    "module_id": {
+      "const": "adult_pmdd"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "question_tracking": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question_status": {
+            "enum": [
+              "not_asked",
+              "answered",
+              "partially_answered",
+              "unclear",
+              "declined"
+            ]
+          },
+          "unanswered_target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "question_id",
+          "question_status",
+          "unanswered_target"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "prospective_review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_evaluated",
+            "no_diary_supplied",
+            "incomplete_or_unverified",
+            "requires_professional_review"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "status",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "safety_handoff": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_assessed",
+            "no_signal_reported_in_available_text",
+            "needs_clinical_review",
+            "urgent_review_needed"
+          ]
+        },
+        "reported_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unresolved_questions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "status",
+        "reported_concerns",
+        "unresolved_questions"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "module_id",
+    "schema_version",
+    "records",
+    "question_tracking",
+    "prospective_review",
+    "safety_handoff"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:adult-pmdd:evidence-output:1.0.0",
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_message_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "message_id",
+        "quote",
+        "context_message_ids",
+        "supports"
+      ],
+      "additionalProperties": false
+    },
+    "detail_1": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "appetite_change",
+                "overeating",
+                "specific_cravings",
+                "mixed",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_3": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "onset_difficulty",
+                "maintenance_difficulty",
+                "early_waking",
+                "excessive_sleep",
+                "mixed",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_4": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "regular",
+                "irregular",
+                "absent",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_5": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "not_collected",
+                "reportedly_available",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_6": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "death_thoughts",
+                "wish_not_alive",
+                "suicidal_thoughts",
+                "suicide_plan",
+                "suicide_attempt",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_7": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "reported",
+                "denied",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "detail_8": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "known"
+            },
+            "value": {
+              "enum": [
+                "congruent",
+                "incongruent_or_mixed",
+                "unclear"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "unknown"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "not_applicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "record": {
+      "type": "object",
+      "properties": {
+        "concept_id": {
+          "enum": [
+            "mood_lability",
+            "irritability_anger",
+            "depressed_affect",
+            "anxiety_tension",
+            "reduced_interest",
+            "concentration_difficulty",
+            "low_energy",
+            "appetite_cravings",
+            "sleep_disturbance",
+            "overwhelmed_control",
+            "physical_symptoms",
+            "cycle_context",
+            "cyclical_timeline",
+            "background_symptoms",
+            "prospective_records",
+            "hormone_exposure",
+            "pme_review",
+            "death_suicide",
+            "functioning_distress",
+            "activation_history",
+            "medical_context",
+            "exposure_context",
+            "psychotic_experience",
+            "treatment_history",
+            "family_history",
+            "life_context"
+          ]
+        },
+        "episode_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "const": "patient"
+        },
+        "finding_status": {
+          "enum": [
+            "reported_present",
+            "reported_absent",
+            "unclear",
+            "conflicting"
+          ]
+        },
+        "temporal_status": {
+          "enum": [
+            "current",
+            "historical",
+            "unclear"
+          ]
+        },
+        "time_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attributes": {
+          "type": "object"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        },
+        "uncertainty_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "semantic_check_status": {
+          "enum": [
+            "supported",
+            "needs_review"
+          ]
+        }
+      },
+      "required": [
+        "concept_id",
+        "episode_key",
+        "subject",
+        "finding_status",
+        "temporal_status",
+        "time_reference",
+        "attributes",
+        "evidence",
+        "uncertainty_notes",
+        "semantic_check_status"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "mood_lability"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "changes": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "irritability_anger"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "examples": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "depressed_affect"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "content": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "anxiety_tension"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "experience": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "reduced_interest"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "activities": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "concentration_difficulty"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "tasks": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "low_energy"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "experience": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "appetite_cravings"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "pattern": {
+                      "$ref": "#/$defs/detail_2"
+                    },
+                    "details": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "sleep_disturbance"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "pattern": {
+                      "$ref": "#/$defs/detail_3"
+                    },
+                    "sleep_hours": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "sleep_opportunity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "latency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "awakenings": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "wake_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "daytime_effects": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "overwhelmed_control"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "meaning": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "physical_symptoms"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptoms": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "weight_if_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "onset_relative_to_bleeding": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_level": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration_within_cycle": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intensity_as_reported": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "cycle_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "bleeding_pattern": {
+                      "$ref": "#/$defs/detail_4"
+                    },
+                    "recent_periods": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "usual_cycle_length": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "reproductive_context": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "hormonal_context": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "ovulation_information": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "cyclical_timeline"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "onset_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "improvement_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "postmenstrual_course": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "history_duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "preceding_year_pattern": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "cycles_described": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptom_scope": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "recall_limits": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "background_symptoms"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "symptoms": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline_intensity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "premenstrual_difference": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "prospective_records"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "availability": {
+                      "$ref": "#/$defs/detail_5"
+                    },
+                    "instrument": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "coverage": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "recording_method": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "missingness": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "review_history": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "hormone_exposure"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "treatment": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "start_change_stop": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "regimen": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "bleeding_relationship": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptom_relationship": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "pme_review"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "underlying_history": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline_pattern": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "worsening_pattern": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "distinct_symptoms": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "records_needed": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "death_suicide"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "experience": {
+                      "$ref": "#/$defs/detail_6"
+                    },
+                    "recency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "frequency": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "intent": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "plan_present": {
+                      "$ref": "#/$defs/detail_7"
+                    },
+                    "access": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "past_behaviour": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "support": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "functioning_distress"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "examples": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "baseline": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "supports": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "activation_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "period": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "mood": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "energy_activity": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "sleep_need": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "other_changes": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "duration": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "impact": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "exposure_context": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "medical_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "conditions": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timeline": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "investigations": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "clinician_review": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "exposure_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "dose_use": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "start_change_stop": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "symptom_timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "source_kind": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "psychotic_experience"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "content": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "mood_relationship": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "conviction_context": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "safety_concerns": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "reported_mood_congruence": {
+                      "$ref": "#/$defs/detail_8"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "treatment_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "reported_diagnosis": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "treatment": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "period": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "response": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "use": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "family_history"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "relative": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "reported_condition": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "certainty": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "properties": {
+                "concept_id": {
+                  "const": "life_context"
+                },
+                "attributes": {
+                  "type": "object",
+                  "properties": {
+                    "events": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "timing": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "support": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "barriers": {
+                      "$ref": "#/$defs/detail_1"
+                    },
+                    "meaning": {
+                      "$ref": "#/$defs/detail_1"
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

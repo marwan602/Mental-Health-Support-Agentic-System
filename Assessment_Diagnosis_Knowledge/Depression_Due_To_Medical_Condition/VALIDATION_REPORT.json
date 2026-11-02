@@ -1,0 +1,191 @@
+{
+  "passed": true,
+  "checks": 46,
+  "results": [
+    {
+      "check": "schema valid Draft 2020-12",
+      "passed": true
+    },
+    {
+      "check": "first fictional snapshot accepted",
+      "passed": true
+    },
+    {
+      "check": "later contextual multi-condition snapshot accepted",
+      "passed": true
+    },
+    {
+      "check": "all card and clinical map sources resolve",
+      "passed": true
+    },
+    {
+      "check": "medical reference sources resolve",
+      "passed": true
+    },
+    {
+      "check": "sources have links locations uses access notes and check dates",
+      "passed": true
+    },
+    {
+      "check": "unique concepts with described optional project fields",
+      "passed": true
+    },
+    {
+      "check": "A-E information map resolves concept references",
+      "passed": true
+    },
+    {
+      "check": "all three medical-condition specifiers retained separately",
+      "passed": true
+    },
+    {
+      "check": "base category does not universally require a full major episode",
+      "passed": true
+    },
+    {
+      "check": "major-depressive-like specifier reference keeps five groups and two weeks separate from base category",
+      "passed": true
+    },
+    {
+      "check": "physiological attribution and differential requirements explicit",
+      "passed": true
+    },
+    {
+      "check": "unsupported causal shortcuts disabled",
+      "passed": true
+    },
+    {
+      "check": "adult scope and unconnected unvalidated status explicit",
+      "passed": true
+    },
+    {
+      "check": "reference file does not order tests or automate attribution",
+      "passed": true
+    },
+    {
+      "check": "fictional diagnosis-before-disease-onset ambiguity preserved",
+      "passed": true
+    },
+    {
+      "check": "contextual yes links to earlier question",
+      "passed": true
+    },
+    {
+      "check": "physical activity limitation does not become anhedonia in gold fixture",
+      "passed": true
+    },
+    {
+      "check": "treatment alternative preserved without forced condition attribution",
+      "passed": true
+    },
+    {
+      "check": "prior mood period separate with unknown medical context retained",
+      "passed": true
+    },
+    {
+      "check": "reported clinician uncertainty remains attributed",
+      "passed": true
+    },
+    {
+      "check": "same concept can belong to two different conditions",
+      "passed": true
+    },
+    {
+      "check": "invented quote rejected",
+      "passed": true
+    },
+    {
+      "check": "assistant cannot be source of patient claim",
+      "passed": true
+    },
+    {
+      "check": "future context reference rejected",
+      "passed": true
+    },
+    {
+      "check": "same-message context rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown context message rejected",
+      "passed": true
+    },
+    {
+      "check": "unsupported known detail rejected",
+      "passed": true
+    },
+    {
+      "check": "wrong concept-specific field rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown detail cannot have value",
+      "passed": true
+    },
+    {
+      "check": "not-applicable detail requires reason",
+      "passed": true
+    },
+    {
+      "check": "invalid diagnostic-basis value rejected",
+      "passed": true
+    },
+    {
+      "check": "patient-reported document cannot be declared verified",
+      "passed": true
+    },
+    {
+      "check": "confirmed diagnosis outside extractor contract rejected",
+      "passed": true
+    },
+    {
+      "check": "causal property outside record contract rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown condition reference rejected",
+      "passed": true
+    },
+    {
+      "check": "condition-specific record cannot be unassigned",
+      "passed": true
+    },
+    {
+      "check": "duplicate registry reference rejected",
+      "passed": true
+    },
+    {
+      "check": "invented registry condition name rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate snapshot key rejected",
+      "passed": true
+    },
+    {
+      "check": "unsubstantiated conflict rejected",
+      "passed": true
+    },
+    {
+      "check": "unknown optional detail accepted without fabricated value",
+      "passed": true
+    },
+    {
+      "check": "empty evidence rejected",
+      "passed": true
+    },
+    {
+      "check": "duplicate message ID rejected",
+      "passed": true
+    },
+    {
+      "check": "reference knowledge cannot be inserted as patient output",
+      "passed": true
+    },
+    {
+      "check": "all_nested_source_ids_resolve",
+      "passed": true
+    }
+  ],
+  "scope": "Mechanical schema, reference, provenance and authored-fixture checks; no live LLM, clinical validation, causal verification or diagnostic accuracy study."
+}

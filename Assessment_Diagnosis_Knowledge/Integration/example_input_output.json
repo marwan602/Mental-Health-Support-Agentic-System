@@ -1,0 +1,212 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What would you like to discuss?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I've felt down for six weeks. I have trouble falling asleep four nights a week."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Does it usually take longer to fall asleep than it used to?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "Yes."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "How long has that sleep difficulty been happening?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "The sleep problem started two weeks ago."
+    }
+  ],
+  "extraction_output": [
+    {
+      "module_id": "adult_mdd",
+      "schema_version": "1.0.1",
+      "records": [
+        {
+          "concept_id": "depressed_mood",
+          "episode_key": "presenting_period",
+          "subject": "patient",
+          "finding_status": "reported_present",
+          "temporal_status": "current",
+          "time_reference": null,
+          "attributes": {
+            "duration": {
+              "status": "known",
+              "value": "six weeks"
+            }
+          },
+          "evidence": [
+            {
+              "message_id": "m2",
+              "quote": "I've felt down for six weeks.",
+              "context_message_ids": [],
+              "supports": [
+                "finding_status",
+                "duration"
+              ]
+            }
+          ],
+          "uncertainty_notes": [],
+          "semantic_check_status": "supported"
+        },
+        {
+          "concept_id": "sleep_disturbance",
+          "episode_key": "presenting_period",
+          "subject": "patient",
+          "finding_status": "reported_present",
+          "temporal_status": "current",
+          "time_reference": null,
+          "attributes": {
+            "pattern": {
+              "status": "known",
+              "value": "onset_difficulty"
+            },
+            "frequency": {
+              "status": "known",
+              "value": "four nights a week"
+            },
+            "baseline_comparison": {
+              "status": "known",
+              "value": "Takes longer than it used to"
+            },
+            "duration": {
+              "status": "known",
+              "value": "two weeks"
+            }
+          },
+          "evidence": [
+            {
+              "message_id": "m2",
+              "quote": "I have trouble falling asleep four nights a week.",
+              "context_message_ids": [],
+              "supports": [
+                "finding_status",
+                "pattern",
+                "frequency"
+              ]
+            },
+            {
+              "message_id": "m4",
+              "quote": "Yes.",
+              "context_message_ids": [
+                "m3"
+              ],
+              "supports": [
+                "baseline_comparison"
+              ]
+            },
+            {
+              "message_id": "m6",
+              "quote": "The sleep problem started two weeks ago.",
+              "context_message_ids": [
+                "m5"
+              ],
+              "supports": [
+                "duration"
+              ]
+            }
+          ],
+          "uncertainty_notes": [],
+          "semantic_check_status": "supported"
+        }
+      ],
+      "question_tracking": [],
+      "safety_handoff": {
+        "status": "not_assessed",
+        "reported_concerns": [],
+        "unresolved_questions": []
+      }
+    }
+  ],
+  "conversation_output": {
+    "action": "ASK",
+    "target_id": "root/MDD/energy_fatigue",
+    "period_id": "presenting_period",
+    "acknowledgment": "Thank you for explaining the sleep difficulty.",
+    "spoken_text": "How has your energy been during this period?",
+    "target_preserved": true
+  },
+  "planner_output": {
+    "action": "ASK",
+    "target_id": "root/MDD/energy_fatigue",
+    "period_id": "presenting_period",
+    "reason": "Energy has not been described in the supplied fictional transcript. This is an example after earlier required checkpoints, not permission to skip safety assessment.",
+    "supporting_message_ids": [
+      "m2",
+      "m6"
+    ],
+    "requirement_references": [
+      "MDD/knowledge.json#concepts/energy_fatigue"
+    ],
+    "unresolved_targets": [
+      "root/MDD/energy_fatigue"
+    ],
+    "state_updates_proposed": [],
+    "clinical_conclusion": null
+  },
+  "synthesis_output": {
+    "summary": "The fictional patient reports low mood for six weeks and sleep-onset difficulty for two weeks. A complete depressive assessment is not available.",
+    "candidates": [
+      {
+        "module": "MDD",
+        "explanation": "A depressive episode is a possible explanation requiring further assessment; the available reports do not establish MDD.",
+        "status": "insufficient_information",
+        "period_ids": [
+          "presenting_period"
+        ],
+        "criteria_review": [
+          {
+            "requirement": "Reported depressed mood, including its persistence qualifiers in a shared episode period.",
+            "status": "unclear",
+            "evidence_pointers": [
+              "ledger[0].snapshot.records[0]"
+            ],
+            "explanation": "Mood and duration are reported; the supplied snapshot does not establish all persistence qualifiers.",
+            "source_references": [
+              "MDD/sources.json#SAMHSA_2020"
+            ]
+          }
+        ],
+        "alternative_explanations": [
+          "Bipolar history, physiological causes and other relevant explanations remain unassessed."
+        ],
+        "remaining_questions": [
+          "Assess the remaining symptom domains, impact, timing and alternatives."
+        ]
+      }
+    ],
+    "safety_handoff": {
+      "reported_concerns": [],
+      "unresolved_needs": [
+        "Safety assessment is not documented in this example."
+      ],
+      "response_delivered": false,
+      "delivery_record_reference": null
+    },
+    "measurement_notes": [
+      "No standardized measure was administered."
+    ],
+    "assessment_limits": [
+      "This is a deliberately partial fictional demonstration; no confirmed diagnosis is produced."
+    ],
+    "professional_review_required": true,
+    "confirmed_diagnosis": null,
+    "prescription": null
+  },
+  "pointer_convention": "The extraction snapshot is assumed appended as ledger[0]; application assigns revision positions. The planner example presupposes required early checks have been separately handled; the provided transcript alone is not a complete routing state."
+}

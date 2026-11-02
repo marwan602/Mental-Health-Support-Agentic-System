@@ -1,0 +1,222 @@
+{
+  "structure": {
+    "catalog_targets": 1660,
+    "branches": 24,
+    "scheduled_entry_targets": 125,
+    "references": "PASS"
+  },
+  "case_count": 35,
+  "cases": [
+    {
+      "case": "welcome",
+      "action": "ASK",
+      "target_id": "q.welcome",
+      "status": "PASS"
+    },
+    {
+      "case": "opening",
+      "action": "ASK",
+      "target_id": "q.opening",
+      "status": "PASS"
+    },
+    {
+      "case": "already_answered_all_mood_details",
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure",
+      "status": "PASS"
+    },
+    {
+      "case": "later_sleep_information_updates_history",
+      "action": "ASK",
+      "target_id": "detail/MDD/sleep_disturbance/frequency",
+      "status": "PASS"
+    },
+    {
+      "case": "sleep_subtype_guard",
+      "action": "ASK",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "denied_current_mood_no_duration_probe",
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure",
+      "status": "PASS"
+    },
+    {
+      "case": "unclear_reply_clarify",
+      "action": "CLARIFY",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "unclear_after_offer_defer",
+      "action": "DEFER_TARGET",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "relevant_detour_offer_return",
+      "action": "RETURN_OFFER",
+      "target_id": "root/MDD/sleep_disturbance",
+      "status": "PASS"
+    },
+    {
+      "case": "safety_detour_interrupts",
+      "action": "URGENT_REVIEW",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "declined_concept_preserves_facts",
+      "action": "RECORD_DECLINE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "repeated_detour_defer",
+      "action": "DEFER_TARGET",
+      "target_id": "root/MDD/sleep_disturbance",
+      "status": "PASS"
+    },
+    {
+      "case": "no_answer_offer_options",
+      "action": "OFFER_OPTIONS",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "no_answer_after_offer_defer",
+      "action": "DEFER_TARGET",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "different_period_does_not_satisfy_current_target",
+      "action": "ASK",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "persistent_branch_survives_negative_recent_mood",
+      "action": "ASK",
+      "target_id": "root/PDD/longitudinal_timeline",
+      "status": "PASS"
+    },
+    {
+      "case": "open_menstrual_branch",
+      "action": "ASK",
+      "target_id": "root/PMDD/cycle_context",
+      "status": "PASS"
+    },
+    {
+      "case": "stop_honoured",
+      "action": "STOP",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "stop_retains_urgent_review_need",
+      "action": "URGENT_REVIEW",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "invalid_attribute_rejected",
+      "action": "REJECT_INVALID_STATE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "new_safety_information_invalidates_old_review",
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts",
+      "status": "PASS"
+    },
+    {
+      "case": "review_record_allows_routing_without_safe_label",
+      "action": "ASK",
+      "target_id": "root/MDD/depressed_mood",
+      "status": "PASS"
+    },
+    {
+      "case": "declined_safety_is_not_negative",
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts",
+      "status": "PASS"
+    },
+    {
+      "case": "detail_burst_returns_to_breadth",
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure",
+      "status": "PASS"
+    },
+    {
+      "case": "string_boolean_rejected",
+      "action": "REJECT_INVALID_STATE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "missing_period_rejected",
+      "action": "REJECT_INVALID_STATE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "pause_honoured",
+      "action": "PAUSE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "core_coverage_does_not_claim_diagnosis",
+      "action": "PREPARE_SUMMARY",
+      "target_id": "q.summary.check",
+      "status": "PASS"
+    },
+    {
+      "case": "summary_silence_not_confirmation",
+      "action": "HANDOFF_WITH_GAPS",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "module_decline_blocks_followups_without_erasing_mood",
+      "action": "ASK",
+      "target_id": "root/MDD/activation_history",
+      "status": "PASS"
+    },
+    {
+      "case": "safety_scope_block_is_not_clearance",
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts",
+      "status": "PASS"
+    },
+    {
+      "case": "module_decline_emits_root_and_detail_blocks",
+      "action": "RECORD_DECLINE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "unknown_clinical_status_rejected",
+      "action": "REJECT_INVALID_STATE",
+      "target_id": null,
+      "status": "PASS"
+    },
+    {
+      "case": "supported_safety_without_polarity_needs_review",
+      "action": "REVIEW_REQUIRED",
+      "target_id": "q.safety.suicidal_thoughts",
+      "status": "PASS"
+    },
+    {
+      "case": "declined_parent_does_not_allow_detail_request",
+      "action": "ASK",
+      "target_id": "root/MDD/interest_pleasure",
+      "status": "PASS"
+    }
+  ],
+  "interpretation": "Mechanical routing of annotated fictional state only; not NLP extraction, diagnostic accuracy or clinical safety validation."
+}

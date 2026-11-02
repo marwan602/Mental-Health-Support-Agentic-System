@@ -1,0 +1,132 @@
+{
+  "checked_at": "2026-11-02T21:34:32.565101+00:00",
+  "passed": true,
+  "check_count": 28,
+  "checks": [
+    {
+      "check": "source_and_criteria_references_resolve",
+      "passed": true
+    },
+    {
+      "check": "eleven_groups_four_core_and_correct_boundaries",
+      "passed": true
+    },
+    {
+      "check": "first_snapshot_valid",
+      "passed": true
+    },
+    {
+      "check": "later_snapshot_valid",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_module",
+      "passed": true
+    },
+    {
+      "check": "reject_invented_quote",
+      "passed": true
+    },
+    {
+      "check": "reject_future_context",
+      "passed": true
+    },
+    {
+      "check": "reject_same_message_context",
+      "passed": true
+    },
+    {
+      "check": "reject_wrong_concept_detail",
+      "passed": true
+    },
+    {
+      "check": "reject_unknown_with_value",
+      "passed": true
+    },
+    {
+      "check": "reject_known_without_support",
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_concept_period",
+      "passed": true
+    },
+    {
+      "check": "reject_confirmed_prospective_state",
+      "passed": true
+    },
+    {
+      "check": "reject_diagnosis_field",
+      "passed": true
+    },
+    {
+      "check": "diary_partial_example_valid",
+      "passed": true
+    },
+    {
+      "check": "reject_drsp_zero",
+      "passed": true
+    },
+    {
+      "check": "reject_drsp_seven",
+      "passed": true
+    },
+    {
+      "check": "reject_invalid_item_number",
+      "passed": true
+    },
+    {
+      "check": "reject_invalid_calendar_date",
+      "passed": true
+    },
+    {
+      "check": "reject_missing_without_reason",
+      "passed": true
+    },
+    {
+      "check": "reject_prospective_without_timestamp",
+      "passed": true
+    },
+    {
+      "check": "reject_timestamp_before_observation",
+      "passed": true
+    },
+    {
+      "check": "utc_timestamp_respects_observation_calendar_offset",
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_day_item",
+      "passed": true
+    },
+    {
+      "check": "reject_unknown_cycle_reference",
+      "passed": true
+    },
+    {
+      "check": "two_partial_days_are_not_two_confirmed_cycles",
+      "passed": true
+    },
+    {
+      "check": "gold_fixture_grouping_background_and_diary_gap",
+      "passed": true
+    },
+    {
+      "check": "no_automatic_diagnosis_or_unimplemented_scorer_claim",
+      "passed": true
+    }
+  ],
+  "clinical_validation": false,
+  "diary_example_summary": {
+    "structurally_valid": true,
+    "limitations": [
+      "Entry is not verified prospective daily data.",
+      "Missing ratings retained, not zero-imputed.",
+      "Cycle coverage not established.",
+      "Instrument version not verified."
+    ],
+    "clinical_confirmation": "NOT_DETERMINED",
+    "distinct_observation_days": 2
+  },
+  "limits": "Mechanical contracts and manually authored fictional fixtures. No semantic/model/clinical accuracy established, no validated prospective administration or C-PASS implementation."
+}

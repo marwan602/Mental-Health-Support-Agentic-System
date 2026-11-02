@@ -1,0 +1,126 @@
+{
+  "NICE_222": {
+    "title": "NICE NG222, Depression in adults",
+    "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+    "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+    "used_for": "Comprehensive assessment, communication, safety and specialist review",
+    "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_225": {
+    "title": "NICE NG225, Self-harm",
+    "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+    "locator": "1.6.1–1.6.6",
+    "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "ASQ_BSSA": {
+    "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+    "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+    "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+    "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_BIPOLAR": {
+    "title": "NIMH, Bipolar Disorder",
+    "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+    "locator": "Types; symptom comparison; diagnosis",
+    "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_DEP": {
+    "title": "NIMH, Depression",
+    "url": "https://www.nimh.nih.gov/health/publications/depression",
+    "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+    "used_for": "Plain-language symptom domains and adult context",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "VA_2022": {
+    "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+    "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+    "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+    "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "APA_GRIEF": {
+    "title": "APA, What Is Depression?",
+    "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+    "locator": "Grief versus depression discussion",
+    "used_for": "Loss context and possible coexistence",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "DSM_PMDD": {
+    "title": "APA DSM-5-TR, Depressive Disorders (2022)",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+    "locator": "Printed pp.197–201 / inspected mirror PDF viewer pp.325–330",
+    "used_for": "PMDD criteria, recording procedures, course and differential",
+    "access": "Original APA text inspected through public psychiatry.ru mirror after publisher access failed; reuse permission not inferred; no manual PDF bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "ACOG_7": {
+    "title": "ACOG Clinical Practice Guideline No.7, Management of Premenstrual Disorders (2023)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37973069/",
+    "locator": "Diagnostic Evaluation p.1520 / PDF p.5; Box 1 p.1521 / PDF p.6",
+    "used_for": "Symptom assessment, prospective records, distress/functioning and differential",
+    "access": "Publisher page returned 402; ACOG-authored PDF inspected through DocRed-hosted mirror. Treatment recommendations are outside this module.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://docred-strapi-cms-prod.s3.sa-east-1.amazonaws.com/management_of_premenstrual_disorders_acog_34_3_007b8ebc6f.pdf"
+  },
+  "ISPMD_2011": {
+    "title": "O’Brien et al., ISPMD Montreal consensus (2011)",
+    "url": "https://doi.org/10.1007/s00737-010-0201-3",
+    "locator": "Table 1 and classification; Methods of measurement; consensus recommendations; PDF pp.4,7–8",
+    "used_for": "Core/variant PMD, PME, cycle-wide assessment and repeat-cycle review",
+    "access": "Original consensus PDF inspected through public Asarina-hosted mirror; distinct framework, not substituted for DSM PMDD.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://asarinapharma.com/wp-content/uploads/docs/publications/2011-OBrien-PMS-PMDD-consensus.pdf"
+  },
+  "DRSP_2006": {
+    "title": "Endicott, Nee & Harrison, DRSP reliability and validity (2006)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16172836/",
+    "locator": "pp.41–42 and Table 1 / inspected article PDF pp.1–3",
+    "used_for": "Prospective daily measurement, item structure and 1–6 scale",
+    "access": "Primary paper inspected through PMDD research-site mirror. Original DSM-IV-era validation; item wording and tool not bundled.",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://pmddresearch.wordpress.com/wp-content/uploads/2013/11/drsp-reliability-and-validity.pdf"
+  },
+  "CPASS_2017": {
+    "title": "Eisenlohr-Moul et al., Carolina Premenstrual Assessment Scoring System (2017; online 2016)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5205545/",
+    "locator": "Tables 1–3; Development of the C-PASS; Participants and Procedure; Limitations",
+    "used_for": "Research operationalization of cycle timing, symptom dimensions, missing data and DSM symptom grouping",
+    "access": "Primary validation paper inspected via full/indexed PMC text; no implementation or universal accuracy claim adopted.",
+    "checked_at": "2026-11-02"
+  },
+  "PSST_2003": {
+    "title": "Steiner, Macdougall & Brown, Premenstrual Symptoms Screening Tool (2003)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12920618/",
+    "locator": "Abstract; development study",
+    "used_for": "Retrospective screening-tool role, separate from prospective confirmation",
+    "access": "Primary abstract/indexed material inspected; full questionnaire and scoring not reproduced or implemented.",
+    "checked_at": "2026-11-02"
+  },
+  "NHS_PMDD": {
+    "title": "NHS, PMDD",
+    "url": "https://www.nhs.uk/conditions/pmdd-premenstrual-dysphoric-disorder/",
+    "locator": "Introduction; Symptoms; How PMDD is diagnosed",
+    "used_for": "Plain-language symptom explanation and menstrual applicability",
+    "access": "Free public guidance; simplified diagnostic summary does not replace formal criteria.",
+    "checked_at": "2026-11-02"
+  },
+  "RCOG_48": {
+    "title": "RCOG Green-top Guideline No.48, PMS management",
+    "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/premenstrual-syndrome-management-green-top-guideline-no-48/",
+    "locator": "Guideline status page: 2016 edition, reviewed 2023, update in development",
+    "used_for": "Version/access context; not treated as a new PMDD classification",
+    "access": "Official status page/indexed guideline recommendation on prospective records inspected; no claim of completed newer edition.",
+    "checked_at": "2026-11-02"
+  }
+}

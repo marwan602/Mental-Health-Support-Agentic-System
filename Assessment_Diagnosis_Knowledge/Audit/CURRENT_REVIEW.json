@@ -1,0 +1,80 @@
+{
+  "review_date": "2026-11-02",
+  "scope": "Current adult research knowledge packages, routing preview and measurement reference code",
+  "readiness": "READY_FOR_TEAMMATE_INTEGRATION_AND_FICTIONAL_EVALUATION_NOT_CLINICALLY_VALIDATED",
+  "mechanical_counts": {
+    "json": 72,
+    "python": 14,
+    "local_markdown_links": 605
+  },
+  "parse_errors": [],
+  "broken_local_links": [],
+  "module_validation": [
+    {
+      "module": "Alternatives",
+      "passed": true,
+      "checks": 53,
+      "error": null
+    },
+    {
+      "module": "Depression_Due_To_Medical_Condition",
+      "passed": true,
+      "checks": 46,
+      "error": null
+    },
+    {
+      "module": "MDD",
+      "passed": true,
+      "checks": 19,
+      "error": null
+    },
+    {
+      "module": "Other_Specified_Depressive_Disorder",
+      "passed": true,
+      "checks": 45,
+      "error": null
+    },
+    {
+      "module": "PDD",
+      "passed": true,
+      "checks": 23,
+      "error": null
+    },
+    {
+      "module": "PMDD",
+      "passed": true,
+      "checks": 28,
+      "error": null
+    },
+    {
+      "module": "Substance_Medication_Induced_Depression",
+      "passed": true,
+      "checks": 36,
+      "error": null
+    },
+    {
+      "module": "Unspecified_Depressive_Disorder",
+      "passed": true,
+      "checks": 43,
+      "error": null
+    }
+  ],
+  "module_checks_passed": 293,
+  "routing_cases": 35,
+  "measurement_unittests": {
+    "run": 24,
+    "passed": 24,
+    "scope": "Arithmetic and input-contract tests; run during this review"
+  },
+  "fixes": [
+    "Supported safety coverage without a finding now requires review acknowledgement.",
+    "Declined or deferred parent targets no longer allow automatic detail follow-up."
+  ],
+  "limitations": [
+    "Mechanical checks do not prove clinical completeness or accurate LLM extraction.",
+    "Source metadata is not proof that all URLs or full texts were independently re-read.",
+    "104 of 219 concept entry targets have explicit conditional routes in Integration/route_completion.json, rather than being mandatory default nodes; cross-module reuse remains a checked semantic operation."
+  ],
+  "handoff_release": "Integration/manifest.json",
+  "handoff_guide": "README.md"
+}

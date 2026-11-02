@@ -1,0 +1,206 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What would you like to discuss?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I've felt down for six weeks. I have trouble falling asleep four nights a week."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Does it usually take longer to fall asleep than it used to?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "Yes."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "How long has that sleep difficulty been happening?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "The sleep problem started two weeks ago."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_mdd",
+    "schema_version": "1.0.1",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "duration": {
+            "status": "known",
+            "value": "six weeks"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I've felt down for six weeks.",
+            "context_message_ids": [],
+            "supports": [
+              "finding_status",
+              "duration"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "sleep_disturbance",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "pattern": {
+            "status": "known",
+            "value": "onset_difficulty"
+          },
+          "frequency": {
+            "status": "known",
+            "value": "four nights a week"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I have trouble falling asleep four nights a week.",
+            "context_message_ids": [],
+            "supports": [
+              "finding_status",
+              "pattern",
+              "frequency"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_mdd",
+    "schema_version": "1.0.1",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "duration": {
+            "status": "known",
+            "value": "six weeks"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I've felt down for six weeks.",
+            "context_message_ids": [],
+            "supports": [
+              "finding_status",
+              "duration"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "sleep_disturbance",
+        "episode_key": "presenting_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "pattern": {
+            "status": "known",
+            "value": "onset_difficulty"
+          },
+          "frequency": {
+            "status": "known",
+            "value": "four nights a week"
+          },
+          "baseline_comparison": {
+            "status": "known",
+            "value": "Takes longer than it used to"
+          },
+          "duration": {
+            "status": "known",
+            "value": "two weeks"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I have trouble falling asleep four nights a week.",
+            "context_message_ids": [],
+            "supports": [
+              "finding_status",
+              "pattern",
+              "frequency"
+            ]
+          },
+          {
+            "message_id": "m4",
+            "quote": "Yes.",
+            "context_message_ids": [
+              "m3"
+            ],
+            "supports": [
+              "baseline_comparison"
+            ]
+          },
+          {
+            "message_id": "m6",
+            "quote": "The sleep problem started two weeks ago.",
+            "context_message_ids": [
+              "m5"
+            ],
+            "supports": [
+              "duration"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Mood duration is six weeks; sleep duration is two weeks. A contextual yes adds only the detail asked. No evidence UUIDs are generated by the model."
+}

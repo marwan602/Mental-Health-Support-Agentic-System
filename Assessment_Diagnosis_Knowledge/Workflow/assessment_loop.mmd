@@ -1,0 +1,12 @@
+flowchart LR
+    I["Patient text or speech"] --> N["Source-linked text; clarify uncertain transcription"]
+    N --> E["Evidence extractor: history and current reply"]
+    K["Relevant knowledge cards and source-linked rules"] --> E
+    E --> S["Updated clinical evidence and unanswered targets"]
+    S --> G{"Concern or pause changes the pathway?"}
+    G -->|"Yes"| H["Appropriate review or pause; record actual status"]
+    G -->|"Continue"| P["Planner selects useful unanswered target"]
+    K --> P
+    P --> C["Conversational agent asks naturally in context"]
+    C --> I
+    S -.-> TC["Separate care context and therapy-state candidates"]

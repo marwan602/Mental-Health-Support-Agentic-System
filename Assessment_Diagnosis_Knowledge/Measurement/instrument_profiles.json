@@ -1,0 +1,143 @@
+[
+  {
+    "id": "PHQ9",
+    "name": "Patient Health Questionnaire-9",
+    "role": "Optional default adult symptom baseline and monitoring; screening support",
+    "items": 9,
+    "recall_days": 14,
+    "code_min": 0,
+    "code_max": 3,
+    "total_min": 0,
+    "total_max": 27,
+    "higher_means": "more_reported_depressive_symptom_burden",
+    "scoring_reference_enabled": true,
+    "source_ids": [
+      "PHQ9_2001",
+      "CDC_DPQ",
+      "UW_PHQ_FORM"
+    ],
+    "item_bank_status": "source_linked_not_bundled",
+    "clinical_protocol_status": "requires_local_clinical_language_and_mode_review",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "PHQ2",
+    "name": "Patient Health Questionnaire-2",
+    "role": "Optional ultra-brief case finding when depression is not already established as the presenting concern",
+    "items": 2,
+    "recall_days": 14,
+    "code_min": 0,
+    "code_max": 3,
+    "total_min": 0,
+    "total_max": 6,
+    "higher_means": "more_reported_core_depressive_symptoms",
+    "scoring_reference_enabled": true,
+    "source_ids": [
+      "PHQ2_2003"
+    ],
+    "item_bank_status": "source_linked_not_bundled",
+    "clinical_protocol_status": "requires_local_clinical_language_and_mode_review",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "WHO5",
+    "name": "WHO Five Well-Being Index",
+    "role": "Optional positive well-being outcome where that construct is wanted; not a depression subtype test",
+    "items": 5,
+    "recall_days": 14,
+    "code_min": 0,
+    "code_max": 5,
+    "total_min": 0,
+    "total_max": 25,
+    "higher_means": "better_reported_wellbeing",
+    "scoring_reference_enabled": true,
+    "source_ids": [
+      "WHO5_2024"
+    ],
+    "item_bank_status": "source_linked_not_bundled",
+    "clinical_protocol_status": "requires_local_clinical_language_and_mode_review",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "EPDS",
+    "name": "Edinburgh Postnatal Depression Scale",
+    "role": "Perinatal alternative if adopted by the relevant clinical pathway; PHQ-9 is also relevant",
+    "items": 10,
+    "recall_days": 7,
+    "scoring_reference_enabled": false,
+    "source_ids": [
+      "ACOG_SCREEN",
+      "EPDS_1987",
+      "EPDS_FORM"
+    ],
+    "item_bank_status": "not_bundled",
+    "clinical_protocol_status": "candidate_requires_form_item_key_language_and_local_cutoff_review",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "GDS15",
+    "name": "15-item Geriatric Depression Scale",
+    "role": "Older-adult alternative when suitable to individual context; not selected by age alone",
+    "items": 15,
+    "recall_days": 7,
+    "scoring_reference_enabled": false,
+    "source_ids": [
+      "GDS_AUTHOR"
+    ],
+    "item_bank_status": "not_bundled",
+    "clinical_protocol_status": "candidate_requires_exact_short_form_key_language_and_applicability_review",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "MADRS",
+    "name": "Montgomery-Asberg Depression Rating Scale",
+    "role": "Clinician-rated severity candidate under a defined interview/anchor protocol; not background scoring of free conversation",
+    "items": 10,
+    "recall_days": null,
+    "scoring_reference_enabled": false,
+    "source_ids": [
+      "MADRS_1979",
+      "SIGMA_2008"
+    ],
+    "item_bank_status": "not_bundled",
+    "clinical_protocol_status": "candidate_requires_exact_form_interview_rating_anchors_trained_raters_and_permission_review",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "DRSP",
+    "name": "Daily Record of Severity of Problems",
+    "role": "Prospective daily menstrual-pattern record for relevant PMDD assessment",
+    "items": null,
+    "recall_days": 1,
+    "scoring_reference_enabled": false,
+    "source_ids": [
+      "ISPMD_2011",
+      "DRSP_2006"
+    ],
+    "item_bank_status": "not_bundled",
+    "clinical_protocol_status": "candidate_existing_PMDD_diary_contract_not_new_retrospective_total",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  },
+  {
+    "id": "ASQ",
+    "name": "Ask Suicide-Screening Questions",
+    "role": "Separate potential adult safety-screening protocol in an appropriate reviewed setting",
+    "items": null,
+    "recall_days": null,
+    "scoring_reference_enabled": false,
+    "source_ids": [
+      "NIMH_ASQ"
+    ],
+    "item_bank_status": "not_bundled",
+    "clinical_protocol_status": "requires_operational_response_pathway_and_trained_followup",
+    "diagnostic_confirmation": false,
+    "profile_version": "0.1.0-research"
+  }
+]

@@ -1,0 +1,258 @@
+{
+  "fictional_only": true,
+  "messages": [
+    {
+      "id": "m1",
+      "speaker": "assistant",
+      "text": "What would you like to discuss?"
+    },
+    {
+      "id": "m2",
+      "speaker": "patient",
+      "text": "I've felt low for about three years. I have trouble falling asleep."
+    },
+    {
+      "id": "m3",
+      "speaker": "assistant",
+      "text": "Have there been stretches when these difficulties disappeared completely?"
+    },
+    {
+      "id": "m4",
+      "speaker": "patient",
+      "text": "No. I felt better for six weeks last summer, but I was still low and sleeping badly."
+    },
+    {
+      "id": "m5",
+      "speaker": "assistant",
+      "text": "Has the sleep problem also lasted about three years?"
+    },
+    {
+      "id": "m6",
+      "speaker": "patient",
+      "text": "Yes."
+    },
+    {
+      "id": "m7",
+      "speaker": "assistant",
+      "text": "How did the future seem to you during that time?"
+    },
+    {
+      "id": "m8",
+      "speaker": "patient",
+      "text": "I don't expect things to get better."
+    }
+  ],
+  "first_snapshot": {
+    "module_id": "adult_pdd",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "longstanding_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "duration": {
+            "status": "known",
+            "value": "about three years"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I've felt low for about three years.",
+            "supports": [
+              "finding_status",
+              "duration"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "sleep_disturbance",
+        "episode_key": "longstanding_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "pattern": {
+            "status": "known",
+            "value": "onset_difficulty"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I have trouble falling asleep.",
+            "supports": [
+              "finding_status",
+              "pattern"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "later_snapshot": {
+    "module_id": "adult_pdd",
+    "schema_version": "1.0.0",
+    "records": [
+      {
+        "concept_id": "depressed_mood",
+        "episode_key": "longstanding_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "duration": {
+            "status": "known",
+            "value": "about three years"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I've felt low for about three years.",
+            "supports": [
+              "finding_status",
+              "duration"
+            ],
+            "context_message_ids": []
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "sleep_disturbance",
+        "episode_key": "longstanding_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "pattern": {
+            "status": "known",
+            "value": "onset_difficulty"
+          },
+          "duration": {
+            "status": "known",
+            "value": "about three years"
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m2",
+            "quote": "I have trouble falling asleep.",
+            "supports": [
+              "finding_status",
+              "pattern"
+            ],
+            "context_message_ids": []
+          },
+          {
+            "message_id": "m6",
+            "quote": "Yes.",
+            "supports": [
+              "duration"
+            ],
+            "context_message_ids": [
+              "m5"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "longitudinal_timeline",
+        "episode_key": "longstanding_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "intervals": {
+            "status": "known",
+            "value": [
+              {
+                "start_raw": "last summer",
+                "end_raw": null,
+                "duration_raw": "six weeks",
+                "change_kind": "partial_improvement",
+                "description": "Mood and sleep difficulties remained despite feeling better."
+              }
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m4",
+            "quote": "No. I felt better for six weeks last summer, but I was still low and sleeping badly.",
+            "supports": [
+              "finding_status",
+              "intervals"
+            ],
+            "context_message_ids": [
+              "m3"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      },
+      {
+        "concept_id": "hopelessness",
+        "episode_key": "longstanding_period",
+        "subject": "patient",
+        "finding_status": "reported_present",
+        "temporal_status": "current",
+        "time_reference": null,
+        "attributes": {
+          "future_expectations": {
+            "status": "known",
+            "value": "I don't expect things to get better."
+          }
+        },
+        "evidence": [
+          {
+            "message_id": "m8",
+            "quote": "I don't expect things to get better.",
+            "supports": [
+              "finding_status",
+              "future_expectations"
+            ],
+            "context_message_ids": [
+              "m7"
+            ]
+          }
+        ],
+        "uncertainty_notes": [],
+        "semantic_check_status": "supported"
+      }
+    ],
+    "question_tracking": [],
+    "safety_handoff": {
+      "status": "not_assessed",
+      "reported_concerns": [],
+      "unresolved_questions": []
+    }
+  },
+  "explanation": "Do not inherit sleep duration until answered. Better is partial improvement, not symptom freedom. Hopelessness does not establish suicidal intent. These are evidence snapshots, not confirmed PDD."
+}

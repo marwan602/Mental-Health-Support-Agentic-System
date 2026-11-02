@@ -1,0 +1,93 @@
+{
+  "package_id": "adult_depression_assessment_knowledge",
+  "version": "1.0.0-integration-handoff",
+  "date": "2026-11-02",
+  "population": {
+    "minimum_age": 18,
+    "maximum_age": null
+  },
+  "readiness": "READY_FOR_TEAMMATE_INTEGRATION_AND_FICTIONAL_EVALUATION",
+  "clinical_validation": false,
+  "actual_agents_connected": false,
+  "modules": {
+    "Alternatives": {
+      "module_id": "adult_depression_alternatives",
+      "knowledge": "Alternatives/knowledge.json",
+      "sources": "Alternatives/sources.json",
+      "evidence_schema": "Alternatives/evidence_output.schema.json",
+      "examples": "Alternatives/examples.json",
+      "concept_count": 33
+    },
+    "Depression_Due_To_Medical_Condition": {
+      "module_id": "adult_depression_due_to_medical_condition",
+      "knowledge": "Depression_Due_To_Medical_Condition/knowledge.json",
+      "sources": "Depression_Due_To_Medical_Condition/sources.json",
+      "evidence_schema": "Depression_Due_To_Medical_Condition/evidence_output.schema.json",
+      "examples": "Depression_Due_To_Medical_Condition/examples.json",
+      "concept_count": 30
+    },
+    "MDD": {
+      "module_id": "adult_mdd",
+      "knowledge": "MDD/knowledge.json",
+      "sources": "MDD/sources.json",
+      "evidence_schema": "MDD/evidence_output.schema.json",
+      "examples": "MDD/examples.json",
+      "concept_count": 26
+    },
+    "Other_Specified_Depressive_Disorder": {
+      "module_id": "adult_other_specified_depressive_disorder",
+      "knowledge": "Other_Specified_Depressive_Disorder/knowledge.json",
+      "sources": "Other_Specified_Depressive_Disorder/sources.json",
+      "evidence_schema": "Other_Specified_Depressive_Disorder/evidence_output.schema.json",
+      "examples": "Other_Specified_Depressive_Disorder/examples.json",
+      "concept_count": 29
+    },
+    "PDD": {
+      "module_id": "adult_pdd",
+      "knowledge": "PDD/knowledge.json",
+      "sources": "PDD/sources.json",
+      "evidence_schema": "PDD/evidence_output.schema.json",
+      "examples": "PDD/examples.json",
+      "concept_count": 21
+    },
+    "PMDD": {
+      "module_id": "adult_pmdd",
+      "knowledge": "PMDD/knowledge.json",
+      "sources": "PMDD/sources.json",
+      "evidence_schema": "PMDD/evidence_output.schema.json",
+      "examples": "PMDD/examples.json",
+      "concept_count": 26
+    },
+    "Substance_Medication_Induced_Depression": {
+      "module_id": "adult_substance_medication_induced_depression",
+      "knowledge": "Substance_Medication_Induced_Depression/knowledge.json",
+      "sources": "Substance_Medication_Induced_Depression/sources.json",
+      "evidence_schema": "Substance_Medication_Induced_Depression/evidence_output.schema.json",
+      "examples": "Substance_Medication_Induced_Depression/examples.json",
+      "concept_count": 27
+    },
+    "Unspecified_Depressive_Disorder": {
+      "module_id": "adult_unspecified_depressive_disorder",
+      "knowledge": "Unspecified_Depressive_Disorder/knowledge.json",
+      "sources": "Unspecified_Depressive_Disorder/sources.json",
+      "evidence_schema": "Unspecified_Depressive_Disorder/evidence_output.schema.json",
+      "examples": "Unspecified_Depressive_Disorder/examples.json",
+      "concept_count": 27
+    }
+  },
+  "graph": "Workflow/Interview_Graph/question_graph.json",
+  "route_completion": "Integration/route_completion.json",
+  "measurement": "Measurement/knowledge.json",
+  "contracts": "Integration/agent_contracts.json",
+  "diagnostic_review": "Integration/diagnostic_review_knowledge.json",
+  "source_policy": "Keep qualified source paths and IDs together. Clinical sources and engineering rules have distinct origins.",
+  "unresolved_source_policy": {
+    "other_specified_exact_four_days": "Retain both published formulations, do not choose an invented cutoff. Return source-boundary uncertainty and professional review.",
+    "restricted_manuals": "Do not reproduce MINI/SCID/DSM licensed item banks. Project questions are not standardized MINI/SCID interviews."
+  },
+  "implementation_boundaries": [
+    "Local safety delivery and referral setup belong to the application/service.",
+    "Semantic extraction and cross-module equivalence require testing; examples are not proof of LLM competence.",
+    "Approved instrument items, administration and language must be reviewed before use; linked candidate instruments are not bundled validated modules."
+  ]
+}

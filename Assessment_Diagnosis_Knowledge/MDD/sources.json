@@ -1,0 +1,196 @@
+{
+  "DSM_TR": {
+    "title": "APA DSM-5-TR (2022), Depressive Disorders",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787.x04_Depressive_Disorders",
+    "locator": "Printed pp.183–185, 210–214; inspected mirror PDF viewer pp.309–311, 342–347",
+    "used_for": "Current-edition boundaries, episode/course and specifier cross-check",
+    "access": "Publisher full chapter blocked. Original APA text inspected in a publicly reachable psychiatry.ru mirror; no claim of verified redistribution/licensing rights; book not bundled",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://www.psychiatry.ru/siteconst/userfiles/file/book/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D1%81%D0%B8%D1%85%D0%B8%D0%B0%D1%82%D1%80%D0%B8%D0%B8/DSM%205%20TR-APA%20%282022%29.pdf"
+  },
+  "APA_MDD": {
+    "title": "APA DSM-5-TR MDD fact sheet",
+    "url": "https://www.psychiatry.org/getmedia/33fc7cdb-6fd8-46a7-9ff2-225ba7862f7f/APA-DSM5TR-MajorDepressiveDisorder.pdf",
+    "locator": "p.1, Rationale for Change",
+    "used_for": "Psychotic-disorder exclusion clarification",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "APA_UPDATES": {
+    "title": "APA DSM-5-TR cumulative supplement, September 2025",
+    "url": "https://www.psychiatry.org/getmedia/b68a5776-f88c-45c7-9535-fd219d7aa5cb/APA-DSM5TR-Update-September-2025.pdf",
+    "locator": "Included September 2022 update p.7 / cumulative PDF viewer p.43; September 2025 II.B p.7",
+    "used_for": "Non-stigmatizing suicide wording, prolonged-grief differential, other-specified boundary",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "VA_2022": {
+    "title": "VA/DoD MDD Clinical Practice Guideline, 2022",
+    "url": "https://www.healthquality.va.gov/HEALTHQUALITY/guidelines/MH/mdd/VADODMDDCPGFinal508.pdf",
+    "locator": "p.19 Sidebars 1–2; pp.140–141 Appendix K; Appendix I pp.127–131",
+    "used_for": "Episode foundation, work-up and measurement context; sidebar is abbreviated DSM-5-era material",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "SAMHSA_2020": {
+    "title": "SAMHSA TIP 42, updated 2020",
+    "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK571020/pdf/Bookshelf_NBK571020.pdf",
+    "locator": "Exhibit 4.1, body pp.72–73 / PDF viewer pp.102–103",
+    "used_for": "Symptom qualifiers and grouping; later APA corrections take precedence",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_222": {
+    "title": "NICE NG222, Depression in adults",
+    "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+    "locator": "1.2.1–1.2.9; Definitions of depression/severity; 1.12.1",
+    "used_for": "Comprehensive assessment, communication, safety and specialist review",
+    "access": "Official search-indexed recommendation extracts inspected; direct retrieval intermittently 403",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_DEP": {
+    "title": "NIMH, Depression",
+    "url": "https://www.nimh.nih.gov/health/publications/depression",
+    "locator": "Signs/symptoms; diagnosis; age-presentation paragraphs",
+    "used_for": "Plain-language symptom domains and adult context",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NIMH_BIPOLAR": {
+    "title": "NIMH, Bipolar Disorder",
+    "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder",
+    "locator": "Types; symptom comparison; diagnosis",
+    "used_for": "Activation history, reduced sleep need and bipolar uncertainty",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_185": {
+    "title": "NICE CG185, Bipolar disorder",
+    "url": "https://www.nice.org.uk/guidance/cg185/chapter/recommendations",
+    "locator": "1.2.1",
+    "used_for": "Recognition/referral recommendation, not a four-day bipolar diagnostic shortcut",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "CANMAT_2016": {
+    "title": "CANMAT 2016 MDD guideline, Section 1",
+    "url": "https://journals.sagepub.com/doi/10.1177/0706743716659416",
+    "locator": "Table 4, episode specifiers and clinical dimensions",
+    "used_for": "Descriptive melancholic/atypical and other feature map",
+    "access": "Indexed table inspected; older guideline, cross-checked against 2022 text",
+    "checked_at": "2026-11-02"
+  },
+  "CANMAT_2023": {
+    "title": "CANMAT 2023 update, published 2024",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/",
+    "locator": "Diagnostic/clinical-presentation discussion; Q.5.a measurement-based care",
+    "used_for": "Professional guideline context and measurement alongside assessment",
+    "access": "Indexed text inspected; direct PMC access intermittently blocked",
+    "checked_at": "2026-11-02"
+  },
+  "ANXIOUS_STUDY": {
+    "title": "McIntyre et al., 2016, anxious distress in adults with MDD",
+    "url": "https://doi.org/10.1177/2040622315627805",
+    "locator": "Introduction: DSM anxious-distress definition",
+    "used_for": "Five feature domains and majority-of-days context",
+    "access": "Primary observational study; indexed text inspected; not validation of our agents",
+    "checked_at": "2026-11-02"
+  },
+  "MIXED_STUDY": {
+    "title": "The prevalence and diagnostic classification of mixed features: multicenter study, 2019",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6877217/",
+    "locator": "Methods / DSM-5 mixed-feature assessment",
+    "used_for": "Mixed-feature clinical research context; threshold/definition cross-checked against DSM text",
+    "access": "Primary study; indexed material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "SEASONAL": {
+    "title": "NIMH, Seasonal Affective Disorder",
+    "url": "https://www.nimh.nih.gov/health/publications/seasonal-affective-disorder",
+    "locator": "Diagnosis section",
+    "used_for": "Seasonal course, repeated years and distinction from seasonal stressors",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "ACOG_4": {
+    "title": "ACOG Clinical Practice Guideline No.4, 2023",
+    "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum",
+    "locator": "pp.1232, 1235; Box 1 p.1241 / mirrored PDF pp.1,4,10",
+    "used_for": "Perinatal assessment, first postpartum year versus formal onset modifier, postpartum psychosis",
+    "access": "ACOG guideline inspected through Illinois Perinatal Quality Collaborative institutional PDF mirror",
+    "checked_at": "2026-11-02",
+    "inspection_url": "https://ilpqc.org/wp-content/uploads/2025/05/Screening-and-Diagnosis-of-Mental-Health-Conditions-During-Pregnancy-and-Postpartum_ACOG-Clinical-Practice-Guideline-No.-4.pdf"
+  },
+  "UCL_CATATONIA": {
+    "title": "UCL, Catatonia diagnosis",
+    "url": "https://www.ucl.ac.uk/brain-sciences/psychiatry/research/epidemiology-and-applied-clinical-research-department/research-projects-groups/catatonia/diagnosis",
+    "locator": "DSM-5-TR criteria and examination table",
+    "used_for": "Named signs and need for observation/examination",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "BAP_2023": {
+    "title": "BAP evidence-based catatonia consensus guideline, 2023",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10101189/",
+    "locator": "Diagnosis; assessment; medical aetiology recommendations",
+    "used_for": "Professional assessment and medical differential; not an online self-diagnostic test",
+    "access": "Indexed guideline extracts inspected",
+    "checked_at": "2026-11-02"
+  },
+  "ASQ_BSSA": {
+    "title": "NIMH Adult Outpatient Brief Suicide Safety Assessment Guide",
+    "url": "https://www.nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials/adult-outpatient/adult-outpatient-brief-suicide-safety-assessment-guide",
+    "locator": "Intended users; thoughts, plan, past behaviour, supports and disposition sections",
+    "used_for": "Safety information domains; clinician guide following positive ASQ, not autonomous LLM validation",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "NICE_225": {
+    "title": "NICE NG225, Self-harm",
+    "url": "https://www.nice.org.uk/guidance/ng225/chapter/recommendations",
+    "locator": "1.6.1–1.6.6",
+    "used_for": "No predictive low/medium/high stratification; needs-focused assessment",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_2001": {
+    "title": "Kroenke et al., 2001, PHQ-9 validity",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1495268/",
+    "locator": "Abstract; Methods; diagnostic-status comparison",
+    "used_for": "Original validation of symptom/severity measure versus independent interview",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ2_2003": {
+    "title": "Kroenke et al., 2003, PHQ-2 validity",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+    "locator": "Abstract, Methods and Results",
+    "used_for": "Two-week screen, scoring range and screening threshold; abstract only",
+    "access": "Primary-study abstract inspected; full paper not accessed",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_FORM": {
+    "title": "PHQ-9 form hosted by AHRQ",
+    "url": "https://integrationacademy.ahrq.gov/sites/default/files/2020-07/PHQ-9.pdf",
+    "locator": "pp.1–2",
+    "used_for": "Original response categories and scoring; form not reproduced here",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  },
+  "PHQ9_META": {
+    "title": "PHQ-9 updated individual-participant-data meta-analysis, BMJ 2021",
+    "url": "https://www.bmj.com/content/375/bmj.n2183",
+    "locator": "Abstract / What this study adds",
+    "used_for": "Screening accuracy depends on reference standard/population; cutoff is not diagnostic certainty",
+    "access": "Indexed primary meta-analysis text inspected; direct page 403",
+    "checked_at": "2026-11-02"
+  },
+  "APA_GRIEF": {
+    "title": "APA, What Is Depression?",
+    "url": "https://www.psychiatry.org/patients-families/depression/what-is-depression",
+    "locator": "Grief versus depression discussion",
+    "used_for": "Loss context and possible coexistence",
+    "access": "Public primary-source material inspected",
+    "checked_at": "2026-11-02"
+  }
+}
