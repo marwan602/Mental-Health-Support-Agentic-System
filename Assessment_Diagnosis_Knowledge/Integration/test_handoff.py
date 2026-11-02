@@ -1,6 +1,8 @@
 import copy
 import json
 import unittest
+import tempfile
+from pathlib import Path
 from knowledge_access import (ROOT, GRAPH, ROUTES, MANIFEST, get_context, read,
     validate_snapshot, append_snapshot, concept_history, next_with_supplements, validate_role_output)
 
@@ -174,6 +176,26 @@ class HandoffTests(unittest.TestCase):
         data['candidates']=[]
         data['safety_handoff'].update(response_delivered=True,delivery_record_reference='unverified_delivery')
         with self.assertRaises(ValueError):validate_role_output('diagnosis',data)
+
+    def test_checksum_accepts_only_line_ending_equivalence(self):
+        from verify_package import file_digest
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'example.json'
+            path.write_bytes(b'{\n  "value": 1\n}\n')
+            expected=file_digest(path)
+            path.write_bytes(b'{\r\n  "value": 1\r\n}\r\n')
+            self.assertEqual(file_digest(path),expected)
+            path.write_bytes(b'{\n  "value": 2\n}\n')
+            self.assertNotEqual(file_digest(path),expected)
+
+    def test_checksum_keeps_nontext_bytes_exact(self):
+        from verify_package import file_digest
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'example.bin'
+            path.write_bytes(b'a\r\nb')
+            expected=file_digest(path)
+            path.write_bytes(b'a\nb')
+            self.assertNotEqual(file_digest(path),expected)
 
 if __name__=='__main__':
     unittest.main()

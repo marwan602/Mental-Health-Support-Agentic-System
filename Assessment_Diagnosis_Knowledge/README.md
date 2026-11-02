@@ -39,6 +39,8 @@ python Integration/verify_package.py
 
 The verifier checks file integrity, clinical-module fixtures, annotated-state routing, measurement arithmetic and integration contracts. It isolates validator report writes in a temporary copy. `SHA256SUMS.json` records this repository edition; regenerate it intentionally after modifying package files.
 
+Text-file checksums normalize CRLF to LF before hashing, so Git's Windows/Linux line-ending conversion does not cause a false integrity failure. All other bytes remain significant. The package's `.gitattributes` also specifies LF text in Git.
+
 ## Status and boundaries
 
 This is source-informed research knowledge for agent integration and fictional evaluation. Existing agents are not automatically connected by adding this folder. Clinical review, semantic extraction-to-coverage evaluation, model evaluation and locally configured safety/referral delivery remain separate requirements. Clinical content and engineering rules are distinguishable; a passing schema or routing test does not establish clinical accuracy.
