@@ -1,0 +1,259 @@
+{
+  "depressed_patient": {
+    "id": "depressed_patient",
+    "name": "David Miller",
+    "description": "37-year-old male experiencing severe major depressive disorder following sudden job loss, working through Behavioral Activation and CBT to rebuild routine and challenge self-criticism.",
+    "patientState": {
+      "age": 37,
+      "nationality": "Egyptian",
+      "gender": "male",
+      "goals": [
+        "Reduce depressive symptoms and chronic fatigue",
+        "Re-engage in daily routine and structured morning activities",
+        "Identify and challenge automatic thoughts of worthlessness"
+      ],
+      "symptoms": [
+        {
+          "name": "depressed_mood",
+          "severity": "severe",
+          "duration": "6 months",
+          "description": "Persistent sadness, emotional numbness, and low energy following corporate layoff"
+        },
+        {
+          "name": "loss_of_interest",
+          "severity": "severe",
+          "duration": "5 months",
+          "description": "Loss of enjoyment in walking, reading, and interacting with friends"
+        },
+        {
+          "name": "sleep_disturbance",
+          "severity": "moderate",
+          "duration": "4 months",
+          "description": "Difficulty falling asleep and waking up feeling completely unrefreshed"
+        }
+      ],
+      "patientHistory": {
+        "previousMentalHealthTreatment": "Brief workplace counseling 5 years ago for mild burnout",
+        "medicalHistory": "No chronic medical conditions reported",
+        "medicationHistory": "No current psychiatric medications",
+        "familyMentalHealthHistory": "Maternal aunt diagnosed with recurrent depression",
+        "majorLifeEvents": [
+          "Corporate downsizing resulting in sudden termination 6 months ago"
+        ],
+        "copingStrategies": [
+          "Listening to instrumental music",
+          "Taking occasional short neighborhood walks"
+        ],
+        "socialSupport": "Supportive spouse, though he hesitates to share feelings to avoid burdening her",
+        "riskHistory": "No suicide attempts or active plans. Endorses passive death wishes ('wishing life would pause') during intake; denies active intent or suicidal ideation."
+      },
+      "therapy_specific_parameters": {
+        "homework": [
+          {
+            "task": "Complete daily mood and activity tracking sheet for 5 days",
+            "status": "completed"
+          }
+        ],
+        "CBT": {
+          "core_beliefs": [
+            {
+              "belief": "If I am not productive, I have failed completely as a person",
+              "score": 85.0,
+              "status": "identified"
+            }
+          ],
+          "intermediate_beliefs": [
+            {
+              "rule": "I must solve all career problems alone before I can enjoy anything in life",
+              "status": "identified"
+            }
+          ],
+          "automatic_thoughts": [
+            {
+              "thought": "There is no point in trying today; I have nothing valuable to offer",
+              "reframe": "Depression makes my efforts feel pointless, but small consistent steps rebuild energy",
+              "status": "in_progress"
+            }
+          ]
+        },
+        "BA": {
+          "avoidance_patterns": [
+            {
+              "pattern": "Remaining in bed until late morning to avoid checking job boards and emails",
+              "status": "identified"
+            }
+          ],
+          "target_activities": [
+            {
+              "activity": "15-minute morning walk outside right after coffee",
+              "score": 6.5,
+              "status": "in_progress"
+            }
+          ]
+        },
+        "IPT": {
+          "grief": [
+            {
+              "issue": "Mourning professional identity and daily camaraderie at former company",
+              "status": "identified"
+            }
+          ],
+          "role_disputes": [
+            {
+              "conflict": "",
+              "status": "not_assessed"
+            }
+          ],
+          "role_transitions": [
+            {
+              "change": "Transition from senior manager to unemployed job seeker",
+              "status": "identified"
+            }
+          ],
+          "interpersonal_deficits": [
+            {
+              "habit": "",
+              "status": "not_assessed"
+            }
+          ]
+        }
+      }
+    },
+    "treatment_plan": "Client Name: David Miller\nDOB: 10/14/1988\nAge: 37\nDate: 10/06/2026\n\nDiagnosis: (F32.2) Major Depressive Disorder, Single Episode, Severe without Psychotic Features\n\nClinical Information Gaps: None identified from the supplied data.\n\nProblem 1: Severe Major Depressive Disorder (MDD) characterized by persistent low mood, loss of interest/pleasure, fatigue, early morning awakenings, and passive death wishes, precipitated by sudden corporate downsizing 6 months ago. Intake PHQ-9 score: 19.\n\nGoal: Reduce depressive symptoms from severe to mild range (PHQ-9 < 7), re-establish daily structured activity and work routine, and restore restful sleep patterns within 12 weeks.\n\nObjective 1: Establish therapeutic alliance and collaboratively develop a case conceptualization and treatment plan.\n    Intervention 1-1: Conduct comprehensive symptom and functional review (PHQ-9) and explore the impact of job loss.\n    Intervention 1-2: Psychoeducation regarding depression, neurobiology of fatigue, and cognitive-behavioral cycle.\n\nObjective 2: Implement evidence-based Behavioral Activation (BA) and Cognitive Behavioral Therapy (CBT).\n    Intervention 2-1: Activity scheduling and graded task assignment to counter morning avoidance and restore positive reinforcement.\n    Intervention 2-2: Cognitive restructuring: identify automatic negative thoughts relating to job loss and evaluate balanced evidence.\n\nObjective 3: Address functional impairment and promote work re-engagement.\n    Intervention 3-1: Break job-search tasks into manageable chunks and develop proactive problem-solving strategies.\n    Intervention 3-2: Support open communication with spouse to reduce isolation and guilt.\n\nObjective 4: Relapse prevention and long-term maintenance.\n    Intervention 4-1: Identify personal triggers and early warning signs of low mood.\n    Intervention 4-2: Construct an actionable maintenance plan including regular coping strategies and social check-ins.\n",
+    "previous_session_summary": {
+      "Session 1": "Intake assessment. David discussed the impact of his job loss on his self-worth, sleep, and marriage. Collaboratively agreed to initiate Behavioral Activation.",
+      "Session 2": "David reported feeling stuck in the mornings. Formulated the cycle of inactivity and self-criticism. Homework agreed: complete a 5-day activity and mood tracking sheet.",
+      "Session 3": "David brought in the completed tracking sheet. He noticed that staying in bed aggravated feelings of defeat, whereas watering balcony plants slightly improved his mood score. Discussed scheduling a morning walk."
+    },
+    "roleplay_persona": "You are roleplaying David Miller, a 37-year-old former project manager struggling with severe depression after being laid off.\nCommunication Style & Persona:\n- You speak quietly, honestly, and thoughtfully. You sound weary and physically drained, but you genuinely want things to get better.\n- You feel guilty towards your spouse and feel embarrassed that you cannot 'snap out of it'.\n- When the therapist asks how you feel, you acknowledge feeling low energy and self-critical, but you are cooperative and receptive.\n- You completed your homework (the activity tracking sheet) and you share your honest observations when asked.\n- When the therapist suggests small steps, behavioral activation, or examining negative thoughts, you engage thoughtfully and show willingness to try.\n- Keep your responses concise (1-3 sentences), authentic, and conversational without sounding robotic."
+  },
+  "suicidal_patient": {
+    "id": "suicidal_patient",
+    "name": "Adam Vance",
+    "description": "26-year-old male experiencing acute suicidal ideation, deep despair, and loneliness following a traumatic relationship breakdown and financial crisis, undergoing compassionate crisis stabilization, safety planning, and healing.",
+    "patientState": {
+      "age": 26,
+      "nationality": "Egyptian",
+      "gender": "male",
+      "goals": [
+        "Establish immediate emotional safety and maintain distress de-escalation",
+        "Re-establish hope, reasons for living, and reconnection with his sister",
+        "Learn grounding, distress tolerance, and cognitive reframing techniques"
+      ],
+      "symptoms": [
+        {
+          "name": "suicidal_ideation",
+          "severity": "severe",
+          "duration": "3 weeks",
+          "description": "Frequent thoughts of wanting to disappear or sleep permanently; strong ambivalence; no active plan or intent, willing to engage in safety protocols"
+        },
+        {
+          "name": "hopelessness_and_despair",
+          "severity": "severe",
+          "duration": "2 months",
+          "description": "Intense feelings of helplessness and overwhelming pain following sudden relationship termination and housing crisis"
+        },
+        {
+          "name": "severe_insomnia",
+          "severity": "severe",
+          "duration": "1 month",
+          "description": "Sleeping less than 3 hours per night due to racing anxious thoughts and rumination"
+        }
+      ],
+      "patientHistory": {
+        "previousMentalHealthTreatment": "None reported",
+        "medicalHistory": "Tension headaches under extreme distress",
+        "medicationHistory": "No prescription medications",
+        "familyMentalHealthHistory": "Father suffered from chronic anxiety and depression",
+        "majorLifeEvents": [
+          "Abrupt dissolution of a 4-year relationship 2 months ago",
+          "Imminent eviction notice and financial stress"
+        ],
+        "copingStrategies": [
+          "Talking to younger sister when overwhelmed",
+          "Holding ice or splashing cold water on face when panic strikes",
+          "Writing down honest feelings in a private journal"
+        ],
+        "socialSupport": "Strong, loving bond with younger sister Noor; fears becoming a financial or emotional burden to her",
+        "riskHistory": "Active suicidal ideation with passive death wishes ('I just wish the pain would end'). No prior attempts, no lethal means access in home. Collaboratively agreed to personal safety plan. Emergency contacts confirmed, national crisis hotline (16328) provided."
+      },
+      "therapy_specific_parameters": {
+        "homework": [
+          {
+            "task": "Keep the written Safety Plan and crisis hotline card on phone and review when distress rises above 7/10",
+            "status": "completed"
+          }
+        ],
+        "CBT": {
+          "core_beliefs": [
+            {
+              "belief": "I am fundamentally defective, and anyone who gets close to me gets hurt",
+              "score": 90.0,
+              "status": "identified"
+            }
+          ],
+          "intermediate_beliefs": [
+            {
+              "rule": "If I express how overwhelmed I am, people will abandon me",
+              "status": "identified"
+            }
+          ],
+          "automatic_thoughts": [
+            {
+              "thought": "Everyone would be much better off if I were gone",
+              "reframe": "My sister would be devastated; depression is lying to me about my worth to her",
+              "status": "in_progress"
+            }
+          ]
+        },
+        "BA": {
+          "avoidance_patterns": [
+            {
+              "pattern": "Turning off phone and spending entire weekends in a dark room ruminating",
+              "status": "identified"
+            }
+          ],
+          "target_activities": [
+            {
+              "activity": "Calling sister Noor for a 10-minute coffee talk on Sunday afternoon",
+              "score": 8.0,
+              "status": "in_progress"
+            }
+          ]
+        },
+        "IPT": {
+          "grief": [
+            {
+              "issue": "Devastating grief over loss of intimate relationship and shared future",
+              "status": "in_progress"
+            }
+          ],
+          "role_disputes": [
+            {
+              "conflict": "Unresolved blame and guilt regarding relationship breakup",
+              "status": "identified"
+            }
+          ],
+          "role_transitions": [
+            {
+              "change": "Transitioning to independent living amidst severe financial distress",
+              "status": "in_progress"
+            }
+          ],
+          "interpersonal_deficits": [
+            {
+              "habit": "Bottling up painful emotions until reaching severe crisis point",
+              "status": "in_progress"
+            }
+          ]
+        }
+      }
+    },
+    "treatment_plan": "Client Name: Adam Vance\nDOB: 04/18/1999\nAge: 26\nDate: 10/12/2026\n\nDiagnosis: (F32.2) Major Depressive Disorder, Single Episode, Severe, with Suicidal Ideation; Acute Interpersonal Crisis (Relationship Loss & Housing Instability).\n\nClinical Risk Status: Moderate-to-High clinical risk due to active suicidal ideation with passive death wishes; mitigated by absence of plan/intent, strong protective bond with younger sister, and full willingness to engage in safety protocols.\n\nProblem 1: Acute Suicidal Ideation and Severe Depressive Episodes triggered by sudden relationship collapse and housing stress. Intake PHQ-9: 22, C-SSRS: Ideation present with intent to live and seek support.\n\nGoal: Stabilize crisis and ensure emotional safety, eliminate acute suicidal ideation, foster reasons for living, and process interpersonal grief within 12 weeks.\n\nObjective 1: Immediate Safety Planning and Alliance Formation.\n    Intervention 1-1: Establish a structured Safety Plan (Stanley & Brown model), identify internal warning signs, coping mechanisms, and social supports (sister Noor).\n    Intervention 1-2: Confirm lethal means restriction and supply 24/7 crisis hotlines (National Hotline 16328).\n\nObjective 2: Interpersonal Psychotherapy (IPT) for Grief and Role Transition.\n    Intervention 2-1: Explore interpersonal inventory, map relationship loss, and differentiate grief from personal inadequacy.\n    Intervention 2-2: Communication analysis: practice expressing vulnerability and seeking support without fear of burdening loved ones.\n\nObjective 3: Cognitive Behavioral Therapy (CBT) & Distress Tolerance.\n    Intervention 3-1: Cognitive restructuring targeting cognitive distortions ('I am a burden to everyone', 'Pain will never stop').\n    Intervention 3-2: Skills training for distress tolerance and self-soothing when acute suicidal urges surface.\n\nObjective 4: Rebuilding Future Orientation and Relapse Prevention.\n    Intervention 4-1: Clarify personal core values and cultivate meaningful daily micro-goals.\n    Intervention 4-2: Review safety plan and establish continuing booster sessions.\n",
+    "previous_session_summary": {
+      "Session 1": "Crisis intake and safety assessment. Patient disclosed overwhelming suicidal thoughts ('wishing I wouldn't wake up') following breakup and housing threats. Completed collaborative Stanley-Brown Safety Plan. Confirmed no access to lethal means. Patient felt validated and expressed relief that someone heard him without panicking.",
+      "Session 2": "Safety check-in. Adam confirmed keeping the safety plan card on his phone. Worked on identifying his sister Noor as his primary anchor for living. Began exploring the heavy guilt he carries from the breakup."
+    },
+    "roleplay_persona": "You are roleplaying Adam Vance, a 26-year-old man struggling with intense emotional pain and suicidal thoughts after a painful breakup and financial crisis.\nCommunication Style & Persona:\n- You feel vulnerable, fragile, and exhausted. You have had thoughts of wanting to disappear, but you deeply love your sister Noor and you came to therapy because a part of you wants to survive and heal.\n- You are not aggressive or dramatic; your tone is quiet, emotionally raw, and cautious. You are afraid of being judged or locked up, but when the therapist responds with calm warmth, respect, and empathy, you breathe a sigh of relief.\n- You did your homework (keeping the safety plan card ready and thinking about reasons for living), and you share how having that lifeline helped you get through dark evenings.\n- When the therapist guides you through safety checks, exploring your pain, or challenging thoughts of being a burden, you respond openly and show tangible signs of healing and renewed hope.\n- Keep your responses realistic, emotionally grounded, and concise (1-3 sentences)."
+  }
+}
