@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.3.0",
+  "source": {
+    "protocol": "adult-semi-structured-no-kb-v7-interactive-1",
+    "case_id": "6ae6800b97a6438db519317b3a389021",
+    "run_id": "6ae6800b97a6438db519317b3a389021",
+    "interview_finished_at": "2026-11-22T14:34:38.079666+00:00",
+    "stop_reason": "planner_finish"
+  },
+  "presenting_concerns": [],
+  "functioning_baseline": [],
+  "evidence": [
+    {
+      "topic": "opening concern (offline fixture)",
+      "status": "unclear",
+      "time_reference": null,
+      "attributes": {},
+      "quote": "I've felt low for three weeks.",
+      "message_id": "m0002",
+      "context_message_ids": [],
+      "related_finding_id": null,
+      "finding_id": "f0001"
+    },
+    {
+      "topic": "work impact",
+      "status": "unclear",
+      "time_reference": null,
+      "attributes": {},
+      "quote": "I missed a shift because I couldn't concentrate.",
+      "message_id": "m0004",
+      "context_message_ids": [],
+      "related_finding_id": null,
+      "finding_id": "f0002"
+    }
+  ],
+  "assessment": {
+    "review_status": "provisional_for_review",
+    "primary_label": "INSUFFICIENT_INFORMATION",
+    "primary_label_display": "Insufficient information to choose a pattern",
+    "supporting_finding_ids": [],
+    "alternatives": [],
+    "interpretation_limits": []
+  },
+  "planning_context": {
+    "reason_for_seeking_help": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "goals": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "preferences": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "barriers": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "strengths_and_supports": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "current_support_and_care": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "previous_care_and_response": {
+      "status": "not_documented",
+      "statements": []
+    },
+    "coping_strategies": {
+      "status": "not_documented",
+      "statements": []
+    }
+  },
+  "open_questions": [],
+  "next_step_preference": {
+    "status": "not_discussed",
+    "source": null
+  }
+}

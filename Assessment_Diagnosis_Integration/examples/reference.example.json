@@ -1,0 +1,11 @@
+{
+  "actor_baseline": {"name": "Alex", "age": 30, "known_facts": ["Has felt low for three weeks.", "Missed a shift because concentrating was difficult."]},
+  "reference": {
+    "reference_presentation": "Insufficient information to identify a specific disorder",
+    "reasoning_expected": "Distinguish the reported mood change and concrete work impact from an established disorder.",
+    "common_error": "Treating one reported mood change and a missed shift as a confirmed diagnosis.",
+    "qualifier": "Only for this illustrative fictional scenario.",
+    "case_specific_evidence": ["Three weeks of feeling low.", "A missed shift associated with difficulty concentrating."]
+  },
+  "targets": ["What concern brought Alex to the conversation", "Duration of the reported change", "Impact on work", "What was reported about concentration"]
+}

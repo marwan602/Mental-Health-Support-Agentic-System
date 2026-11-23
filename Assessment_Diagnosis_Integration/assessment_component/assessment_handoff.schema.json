@@ -1,0 +1,502 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assessment to treatment and therapy handoff (fictional adult pilot, version 0.3)",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.3.0"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "interview_finished_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stop_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The reason the interview ended, separate from diagnostic sufficiency."
+        }
+      },
+      "required": [
+        "protocol",
+        "run_id",
+        "case_id",
+        "interview_finished_at",
+        "stop_reason"
+      ],
+      "additionalProperties": false
+    },
+    "presenting_concerns": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/supported_point"
+      }
+    },
+    "functioning_baseline": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/supported_point"
+      },
+      "description": "Concrete examples to revisit in follow-up. No score is inferred."
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "review_status": {
+          "enum": [
+            "provisional_for_review"
+          ]
+        },
+        "primary_label": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "primary_label_display": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "supporting_finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "finding_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "label",
+              "reason",
+              "finding_ids"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "interpretation_limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "review_status",
+        "primary_label",
+        "primary_label_display",
+        "supporting_finding_ids",
+        "alternatives",
+        "interpretation_limits"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "primary_label": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "primary_label_display": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "primary_label_display": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "planning_context": {
+      "type": "object",
+      "properties": {
+        "reason_for_seeking_help": {
+          "$ref": "#/$defs/patient_field",
+          "description": "What the patient says prompted them to seek help or come today. Symptoms or impairment alone do not establish their reason."
+        },
+        "goals": {
+          "$ref": "#/$defs/patient_field",
+          "description": "Changes the person says they hope for. Record stated priorities in their words."
+        },
+        "preferences": {
+          "$ref": "#/$defs/patient_field",
+          "description": "What the person says about how they want support to be offered, including any options they prefer or wish to avoid."
+        },
+        "barriers": {
+          "$ref": "#/$defs/patient_field"
+        },
+        "strengths_and_supports": {
+          "$ref": "#/$defs/patient_field"
+        },
+        "current_support_and_care": {
+          "$ref": "#/$defs/patient_field",
+          "description": "Help the person explicitly reports receiving now, including therapy or medication when stated."
+        },
+        "previous_care_and_response": {
+          "$ref": "#/$defs/patient_field",
+          "description": "What the person has tried before and how it went, if they say. Do not infer benefit or failure."
+        },
+        "coping_strategies": {
+          "$ref": "#/$defs/patient_field",
+          "description": "Things the person says they do to manage difficulties and whether they say these help."
+        }
+      },
+      "required": [
+        "reason_for_seeking_help",
+        "goals",
+        "preferences",
+        "barriers",
+        "strengths_and_supports",
+        "current_support_and_care",
+        "previous_care_and_response",
+        "coping_strategies"
+      ],
+      "additionalProperties": false,
+      "description": "Use volunteered answers first. Ground each recorded statement in an actual patient turn. Leave unmentioned information not_documented; further discussion is optional."
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_it_matters": {
+            "type": "string",
+            "minLength": 1
+          },
+          "related_finding_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "question",
+          "why_it_matters",
+          "related_finding_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "next_step_preference": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "wants_to_discuss",
+            "declined",
+            "undecided",
+            "not_discussed"
+          ]
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/patient_quote"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "source"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_discussed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "source": {
+                "$ref": "#/$defs/patient_quote"
+              }
+            }
+          }
+        }
+      ],
+      "description": "Records only an explicit preference for discussing next steps. Its presence does not authorize a treatment or intervention."
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "presenting_concerns",
+    "functioning_baseline",
+    "evidence",
+    "assessment",
+    "planning_context",
+    "open_questions",
+    "next_step_preference"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "reported_present",
+            "reported_absent",
+            "unclear"
+          ]
+        },
+        "time_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "attributes": {
+          "type": "object",
+          "description": "Only attributes relevant to this finding. Missing attributes remain unknown."
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_message_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "related_finding_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "finding_id",
+        "topic",
+        "status",
+        "time_reference",
+        "attributes",
+        "quote",
+        "message_id",
+        "context_message_ids",
+        "related_finding_id"
+      ],
+      "additionalProperties": false
+    },
+    "supported_point": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      },
+      "required": [
+        "text",
+        "finding_ids"
+      ],
+      "additionalProperties": false
+    },
+    "patient_quote": {
+      "type": "object",
+      "properties": {
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Exact words from this patient turn."
+        }
+      },
+      "required": [
+        "message_id",
+        "quote"
+      ],
+      "additionalProperties": false
+    },
+    "patient_statement": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/patient_quote"
+        }
+      },
+      "required": [
+        "text",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "patient_field": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "reported",
+            "patient_unsure",
+            "declined",
+            "not_documented"
+          ]
+        },
+        "statements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/patient_statement"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "statements"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_documented"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "statements": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "statements": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

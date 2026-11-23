@@ -1,0 +1,95 @@
+{
+  "arm": "part1",
+  "knowledge": null,
+  "opening": "{greeting}, it’s nice to see you. I’m an AI assessment assistant. How have you been feeling lately?",
+  "max_followups": 12,
+  "seed": 20261103,
+  "providers": {
+    "nvidia": {
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "api_key_env": "NVIDIA_API_KEY",
+      "shared_rpm": 38
+    }
+  },
+  "interviewers": {
+    "nemotron_ultra": {
+      "key": "nemotron_ultra",
+      "provider": "nvidia",
+      "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "role_in_study": "Four assessment roles",
+      "temperature": 0.0,
+      "max_tokens": 8192,
+      "json_mode": true,
+      "send_seed": false,
+      "rpm": 36
+    }
+  },
+  "allowed_labels": [
+    {
+      "label_id": "MDD_SINGLE",
+      "name": "Major depressive disorder, single episode"
+    },
+    {
+      "label_id": "MDD_RECURRENT",
+      "name": "Major depressive disorder, recurrent episode"
+    },
+    {
+      "label_id": "PDD",
+      "name": "Persistent depressive disorder"
+    },
+    {
+      "label_id": "BIPOLAR_DEPRESSED",
+      "name": "Bipolar disorder, current episode depressed"
+    },
+    {
+      "label_id": "SUBSTANCE_INDUCED",
+      "name": "Substance or medication-induced depressive disorder"
+    },
+    {
+      "label_id": "MEDICAL_CONDITION",
+      "name": "Depressive disorder due to another medical condition"
+    },
+    {
+      "label_id": "ADJUSTMENT_DEPRESSED",
+      "name": "Adjustment disorder with depressed mood"
+    },
+    {
+      "label_id": "NORMAL_GRIEF",
+      "name": "Uncomplicated bereavement (no mental disorder)"
+    },
+    {
+      "label_id": "GAD_NO_DEPRESSION",
+      "name": "Generalized anxiety disorder without a depressive disorder"
+    },
+    {
+      "label_id": "NO_DISORDER",
+      "name": "No mental disorder"
+    },
+    {
+      "label_id": "INSUFFICIENT_INFORMATION",
+      "name": "Insufficient information to choose a pattern"
+    },
+    {
+      "label_id": "PMDD",
+      "name": "Premenstrual dysphoric disorder"
+    },
+    {
+      "label_id": "OTHER_SPECIFIED_DEPRESSION",
+      "name": "Other specified depressive disorder"
+    },
+    {
+      "label_id": "UNSPECIFIED_DEPRESSION",
+      "name": "Unspecified depressive disorder"
+    }
+  ],
+  "judge": {
+    "provider": "nvidia",
+    "key": "judge",
+    "model_id": "mistralai/mistral-large-4-1t-a52b",
+    "role_in_study": "Independent post-interview evaluator",
+    "temperature": 0,
+    "max_tokens": 8192,
+    "send_seed": false,
+    "json_mode": true
+  }
+}
