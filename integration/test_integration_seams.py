@@ -2,9 +2,12 @@
 import copy
 import gc
 import json
+import os
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from integration import REPO_ROOT
 from integration.patient_record import (
@@ -19,28 +22,33 @@ from integration.patient_record import (
 )
 from integration.pipeline import check_clinical_gate
 from integration.therapy_runner import (
+    MODALITY_PATTERNS,
     ClinicalSessionController,
     DeliveryGuide,
     HomeworkUpdate,
     InterventionStep,
-    SESSION_TRACKER,
+    SessionStateTracker,
     StatePatch,
     SymptomUpdate,
     TherapyDecision,
     TherapyItemUpdate,
+    TherapySession,
     apply_state_patch,
+    build_clinical_tools,
     load_therapy_libraries,
     make_session_plan_schema,
-    pause_intervention,
     repair_plan_deterministic,
-    resume_intervention,
     retrieve_candidates,
     validate_plan_rules,
+    validate_replan_rules,
 )
 from integration.treatment_runner import (
+    DEFAULT_GEMINI_MODEL,
     ClinicalPlanEvaluation,
     _extract_text,
+    build_guideline_query,
     build_plan_header,
+    generate_treatment_plan,
     load_guideline_retriever,
     parse_evaluation_json,
     parse_treatment_plan,
@@ -230,6 +238,67 @@ class PatientRecordTests(unittest.TestCase):
         self.assertIn("insomnia (moderate)", brief2)
         self.assertIn("Session 1: Goal=Build morning routine", prev2)
 
+    def test_planning_context_session2_and_no_dangling_update_tag(self):
+        rec = create_record(name="Alex", age=30)
+        handoff = _sample_handoff()
+        handoff["evidence"].extend(
+            [
+                {
+                    "finding_id": "f0099",
+                    "topic": "sleep",
+                    "status": "unclear",
+                    "time_reference": None,
+                    "attributes": {},
+                    "quote": "Not sure when the early waking began.",
+                    "message_id": "m0099",
+                    "context_message_ids": [],
+                    "related_finding_id": None,
+                },
+                {
+                    "finding_id": "f0100",
+                    "topic": "sleep",
+                    "status": "reported_present",
+                    "time_reference": "2 weeks",
+                    "attributes": {},
+                    "quote": "Definitely waking at 4am every morning.",
+                    "message_id": "m0100",
+                    "context_message_ids": ["m0099"],
+                    "related_finding_id": "f0099",
+                },
+            ]
+        )
+        handoff["planning_context"]["preferences"] = {
+            "status": "reported",
+            "statements": [{"text": "Prefers practical between-session exercises."}],
+        }
+        handoff["planning_context"]["barriers"] = {
+            "status": "reported",
+            "statements": [{"text": "Late work shifts make evening sessions hard."}],
+        }
+        handoff["open_questions"] = [{"question": "Clarify onset of morning waking.", "topic": "sleep"}]
+        rec["assessment_handoff"] = handoff
+
+        findings_text = "\n".join(format_reported_findings(handoff))
+        self.assertIn("[f0100] sleep (2 weeks):", findings_text)
+        self.assertNotIn("updates f0099", findings_text)
+
+        rec["therapy_state"]["therapy_specific_parameters"]["CBT"]["automatic_thoughts"].append(
+            {"thought": "I always fail at work", "status": "examined"}
+        )
+        rec["therapy_state"]["coping_strategies"].append("Box breathing")
+        rec["therapy_state"]["risk_history_notes"].append("Denied intent in session 1")
+
+        profile = format_therapy_profile(rec)
+        self.assertIn("Documented Context (from assessment):", profile)
+        self.assertIn("- Preferences: Prefers practical between-session exercises.", profile)
+        self.assertIn("- Barriers: Late work shifts make evening sessions hard.", profile)
+        self.assertIn("Open Questions (from assessment):", profile)
+        self.assertIn("- Clarify onset of morning waking.", profile)
+        self.assertIn("Prior Therapy Notes:", profile)
+        self.assertIn("CBT automatic thoughts: I always fail at work (examined)", profile)
+        self.assertIn("Session Coping Strategies: Box breathing", profile)
+        self.assertIn("Session Risk Notes: Denied intent in session 1", profile)
+
 
 class TreatmentRunnerTests(unittest.TestCase):
     def test_extract_text_header_and_parsers(self):
@@ -294,6 +363,87 @@ class TreatmentRunnerTests(unittest.TestCase):
             self.assertIn("Source: NICE_Guidelines.pdf, page ", ctx2)
             del retriever, cached_retriever
             gc.collect()
+
+    def test_guideline_query_fits_minilm_256_tokens(self):
+        os.environ.setdefault("USE_TF", "0")
+        from transformers import AutoTokenizer
+
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        ti = build_treatment_input(rec)
+        q = build_guideline_query(ti)
+        self.assertLessEqual(len(q), 850)
+        self.assertIn("Major depressive disorder, single episode", q)
+        self.assertIn("I've felt low for three weeks.", q)
+        self.assertIn("Sleep better and feel steadier at work.", q)
+
+        tok = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2", local_files_only=True)
+        token_ids = tok.encode(q, add_special_tokens=True)
+        self.assertLessEqual(len(token_ids), 256)
+
+    def test_chroma_cache_invalidation_on_pdf_change(self):
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        ti = build_treatment_input(rec)
+
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            g_dir = Path(tmp) / "guidelines"
+            g_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(REPO_ROOT / "Treatment Planning" / "NICE_Guidelines.pdf", g_dir / "NICE_Guidelines.pdf")
+            chroma_dir = Path(tmp) / "chroma_nice"
+
+            r1 = load_guideline_retriever(guideline_dir=g_dir, persist_dir=chroma_dir)
+            meta_path = chroma_dir / "index_meta.json"
+            self.assertTrue(meta_path.is_file())
+            saved = json.loads(meta_path.read_text(encoding="utf-8"))
+            self.assertEqual(saved["pdfs"][0]["name"], "NICE_Guidelines.pdf")
+            orig_size = saved["pdfs"][0]["size"]
+            self.assertGreater(orig_size, 0)
+            del r1
+            gc.collect()
+
+            saved["pdfs"][0]["size"] = 0
+            meta_path.write_text(json.dumps(saved), encoding="utf-8")
+
+            r2 = load_guideline_retriever(guideline_dir=g_dir, persist_dir=chroma_dir)
+            rebuilt = json.loads(meta_path.read_text(encoding="utf-8"))
+            self.assertEqual(rebuilt["pdfs"][0]["size"], orig_size)
+            ctx = retrieve_guideline_context(ti, r2)
+            for tag in ("[G1]", "[G2]", "[G3]", "[G4]", "[G5]"):
+                self.assertIn(tag, ctx)
+            del r2
+            gc.collect()
+
+    def test_runtime_env_model_override(self):
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        ti = build_treatment_input(rec)
+
+        with (
+            patch("integration.treatment_runner.load_guideline_retriever", return_value=object()),
+            patch("integration.treatment_runner.retrieve_guideline_context", return_value="[G1] Source: NICE.pdf, page 1\nTest"),
+            patch("integration.treatment_runner._generate_plan_gemini", return_value=("Mock plan", None, None)) as mock_gen,
+        ):
+            with patch.dict(
+                os.environ,
+                {
+                    "TREATMENT_GEMINI_MODEL": "gemini-custom-gen",
+                    "TREATMENT_JUDGE_GEMINI_MODEL": "gemini-custom-judge",
+                },
+                clear=False,
+            ):
+                out = generate_treatment_plan(ti, backend="gemini")
+                self.assertEqual(out["generator_model"], "gemini-custom-gen")
+                self.assertEqual(out["judge_model"], "gemini-custom-judge")
+                self.assertEqual(mock_gen.call_args.kwargs["generator_model"], "gemini-custom-gen")
+                self.assertEqual(mock_gen.call_args.kwargs["judge_model"], "gemini-custom-judge")
+
+            with patch.dict(os.environ, {}, clear=False):
+                os.environ.pop("TREATMENT_GEMINI_MODEL", None)
+                os.environ.pop("TREATMENT_JUDGE_GEMINI_MODEL", None)
+                out_default = generate_treatment_plan(ti, backend="gemini")
+                self.assertEqual(out_default["generator_model"], DEFAULT_GEMINI_MODEL)
+                self.assertEqual(out_default["judge_model"], DEFAULT_GEMINI_MODEL)
 
 
 class TherapyRunnerTests(unittest.TestCase):
@@ -375,14 +525,15 @@ class TherapyRunnerTests(unittest.TestCase):
             )
         }
         ctrl = ClinicalSessionController(plan, guides)
-        SESSION_TRACKER.active_controller = ctrl
+        tracker = SessionStateTracker()
+        tracker.active_controller = ctrl
+        tools = {t.name: t for t in build_clinical_tools(tracker)}
 
         # Complete CHECK_IN and EXPLAIN_AGENDA
         for _ in range(2):
             obj = ctrl.current_objective()
             ctrl.turns_in_obj += 1
             d = TherapyDecision(selected_action="explore", goal="Check in", objective_complete=True)
-            ctrl.verify_criterion(d)
             ctrl.enforce_turn(d, obj)
             self.assertTrue(ctrl.advance_if_satisfied(obj))
 
@@ -400,11 +551,11 @@ class TherapyRunnerTests(unittest.TestCase):
         self.assertIsNotNone(ctrl.active_intervention)
         self.assertEqual(ctrl.active_intervention["step"], 1)  # type: ignore[index]
 
-        pause_res = pause_intervention.invoke({"reason": "Patient overwhelmed"})
+        pause_res = tools["pause_intervention"].invoke({"reason": "Patient overwhelmed"})
         self.assertIn("PAUSED", pause_res)
         self.assertEqual(ctrl.active_intervention["status"], "PAUSED")  # type: ignore[index]
 
-        resume_res = resume_intervention.invoke({})
+        resume_res = tools["resume_intervention"].invoke({})
         self.assertIn("RESUMED", resume_res)
         self.assertEqual(ctrl.active_intervention["status"], "ACTIVE")  # type: ignore[index]
 
@@ -422,6 +573,71 @@ class TherapyRunnerTests(unittest.TestCase):
         ctrl.enforce_turn(d_close, close_obj)
         self.assertTrue(ctrl.advance_if_satisfied(close_obj))
         self.assertEqual(ctrl.status, "ENDED")
+
+    def test_modality_regex_avoids_false_positives_and_matches_full_names(self):
+        matched_cbt = {m for m, pat in MODALITY_PATTERNS.items() if pat.search("evidence-based CBT plan with description".lower())}
+        self.assertEqual(matched_cbt, {"cbt"})
+
+        matched_full = {
+            m for m, pat in MODALITY_PATTERNS.items() if pat.search("behavioural activation and interpersonal psychotherapy".lower())
+        }
+        self.assertEqual(matched_full, {"ba", "ipt"})
+
+    def test_replan_validator_allows_remaining_phases_only(self):
+        libs = load_therapy_libraries()
+        cid = libs["interventions_all"][0]["intervention_id"]
+        PlanSchema = make_session_plan_schema([cid])
+        replan = PlanSchema(
+            session_goal="Focus on patient's work stress concern.",
+            session_objectives=[
+                {"phase": "WORK", "title": "Core exercise", "task": "Explore stressor.", "criterion": "Shares example", "intervention": cid},
+                {"phase": "CLOSING", "title": "Wrap up", "task": "Agree homework.", "criterion": "Confirms plan", "intervention": "NONE"},
+            ],
+        )
+        self.assertEqual(validate_replan_rules(replan, {"CHECK_IN", "EXPLAIN_AGENDA"}), [])
+
+        bad_plan = PlanSchema(
+            session_goal="Invalid replan.",
+            session_objectives=[
+                {"phase": "CHECK_IN", "title": "Mood check", "task": "Check mood.", "criterion": "Shares mood", "intervention": "NONE"},
+                {"phase": "WORK", "title": "Core exercise", "task": "Explore stressor.", "criterion": "Shares example", "intervention": cid},
+                {"phase": "CLOSING", "title": "Wrap up", "task": "Agree homework.", "criterion": "Confirms plan", "intervention": "NONE"},
+            ],
+        )
+        errs = validate_replan_rules(bad_plan, {"CHECK_IN"})
+        self.assertTrue(any("CHECK_IN" in e for e in errs))
+
+    def test_zero_turn_finish_does_not_append_session(self):
+        libs = load_therapy_libraries()
+        cid = libs["interventions_all"][0]["intervention_id"]
+        PlanSchema = make_session_plan_schema([cid])
+        plan = PlanSchema(
+            session_goal="Minimal plan",
+            session_objectives=[
+                {"phase": "CHECK_IN", "title": "Mood check", "task": "Check mood.", "criterion": "Shares mood", "intervention": "NONE"},
+                {"phase": "EXPLAIN_AGENDA", "title": "Agree agenda", "task": "Set focus.", "criterion": "Agrees", "intervention": "NONE"},
+                {"phase": "WORK", "title": "Core exercise", "task": "Run intervention.", "criterion": "Picks step", "intervention": cid},
+                {"phase": "CLOSING", "title": "Wrap up", "task": "Agree homework.", "criterion": "Confirms plan", "intervention": "NONE"},
+            ],
+        )
+        guides = {
+            cid: DeliveryGuide(
+                structure="sequential",
+                steps=[InterventionStep(step_number=1, instruction="Step 1", done_when="Done 1")],
+                completion_condition="Agreed on step.",
+            )
+        }
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        rec["treatment_plan"] = "Use CBT for depression."
+
+        sess = TherapySession(rec)
+        sess.session_plan = plan
+        sess.controller = ClinicalSessionController(plan, guides)
+        res = sess.finish()
+        self.assertIsNone(res["session_archive"])
+        self.assertEqual(res["state_patch"], {})
+        self.assertEqual(res["record"]["sessions"], [])
 
 
 class PipelineGateTests(unittest.TestCase):
