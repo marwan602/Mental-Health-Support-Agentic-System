@@ -45,6 +45,7 @@ from integration.therapy_runner import (
 )
 from integration.treatment_runner import (
     DEFAULT_GEMINI_MODEL,
+    DEFAULT_NVIDIA_MODEL,
     ClinicalPlanEvaluation,
     _extract_text,
     _invoke_gemini_with_retry,
@@ -460,6 +461,38 @@ class TreatmentRunnerTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             _invoke_gemini_with_retry(stub, [], retries=3)
         self.assertEqual(stub.calls, 1)
+
+    def test_nvidia_backend_env_override_and_wiring(self):
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        ti = build_treatment_input(rec)
+
+        with (
+            patch("integration.treatment_runner.load_guideline_retriever", return_value=object()),
+            patch("integration.treatment_runner.retrieve_guideline_context", return_value="[G1] Source: NICE.pdf, page 1\nTest"),
+            patch("integration.treatment_runner._generate_plan_nvidia", return_value=("Mock NVIDIA plan", None, None)) as mock_nv,
+        ):
+            with patch.dict(
+                os.environ,
+                {
+                    "TREATMENT_NVIDIA_MODEL": "nv-custom-gen",
+                    "TREATMENT_JUDGE_NVIDIA_MODEL": "nv-custom-judge",
+                },
+                clear=False,
+            ):
+                out = generate_treatment_plan(ti, backend="nvidia")
+                self.assertEqual(out["backend"], "nvidia")
+                self.assertEqual(out["generator_model"], "nv-custom-gen")
+                self.assertEqual(out["judge_model"], "nv-custom-judge")
+                self.assertEqual(mock_nv.call_args.kwargs["generator_model"], "nv-custom-gen")
+                self.assertEqual(mock_nv.call_args.kwargs["judge_model"], "nv-custom-judge")
+
+            with patch.dict(os.environ, {}, clear=False):
+                os.environ.pop("TREATMENT_NVIDIA_MODEL", None)
+                os.environ.pop("TREATMENT_JUDGE_NVIDIA_MODEL", None)
+                out_default = generate_treatment_plan(ti, backend="nvidia")
+                self.assertEqual(out_default["generator_model"], DEFAULT_NVIDIA_MODEL)
+                self.assertEqual(out_default["judge_model"], DEFAULT_NVIDIA_MODEL)
 
 
 class TherapyRunnerTests(unittest.TestCase):

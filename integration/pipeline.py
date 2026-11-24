@@ -393,7 +393,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--treatment-backend",
-        choices=("gemini", "local"),
+        choices=("gemini", "nvidia", "local"),
         default="gemini",
         help="Model backend for Treatment Planning (default: gemini)",
     )
@@ -412,7 +412,8 @@ def main(argv: Optional[list[str]] = None) -> int:
     if args.stage == "assessment":
         need_nvidia, need_google = True, False
     elif args.stage == "treatment":
-        need_nvidia, need_google = False, args.treatment_backend == "gemini"
+        need_nvidia = args.treatment_backend == "nvidia"
+        need_google = args.treatment_backend == "gemini"
     elif args.stage == "therapy":
         need_nvidia, need_google = True, True
     else:

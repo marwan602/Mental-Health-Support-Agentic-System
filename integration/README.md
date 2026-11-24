@@ -50,11 +50,12 @@ python -m pip install -r integration/requirements.txt
 
 ## Required Environment Variables
 
-- `NVIDIA_API_KEY`: used by **Assessment** (`nvidia/nemotron-3-ultra-550b-a55b`) and **Therapy** infrastructure agents (`nvidia/nemotron-3.5-lightning-30b-a3b`).
-- `GOOGLE_API_KEY` (or `GEMINI_API_KEY`): used by **Treatment Planning** (default `gemini-3.8-flash`) and **Therapy** Therapist Agent (`gemma-4-26b-a4b-it`).
+- `NVIDIA_API_KEY`: used by **Assessment** (`nvidia/nemotron-3-ultra-550b-a55b`), **Therapy** infrastructure agents (`nvidia/nemotron-3.5-lightning-30b-a3b`), and optional `--treatment-backend nvidia`.
+- `GOOGLE_API_KEY` (or `GEMINI_API_KEY`): used by **Treatment Planning** (default `gemma-4-26b-a4b-it`) and **Therapy** Therapist Agent (`gemma-4-26b-a4b-it`).
 
 Optional overrides:
-- `TREATMENT_GEMINI_MODEL` / `TREATMENT_JUDGE_GEMINI_MODEL`: override default Gemini models for Treatment Planning.
+- `TREATMENT_GEMINI_MODEL` / `TREATMENT_JUDGE_GEMINI_MODEL`: override default Google models for Treatment Planning.
+- `TREATMENT_NVIDIA_MODEL` / `TREATMENT_JUDGE_NVIDIA_MODEL`: override default NVIDIA NIM models when using `--treatment-backend nvidia` (default `nvidia/nemotron-3.5-lightning-30b-a3b`).
 - `HF_TOKEN`: only needed if running Treatment Planning with `--treatment-backend local` (`google/medgemma-27b-text-it`).
 
 ## Running the Integrated Pipeline

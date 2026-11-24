@@ -22,7 +22,8 @@ DEFAULT_GUIDELINE_DIR = REPO_ROOT / "Treatment Planning"
 DEFAULT_CHROMA_DIR = Path(__file__).resolve().parent / ".chroma_nice"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
-DEFAULT_GEMINI_MODEL = "gemini-3.8-flash"
+DEFAULT_GEMINI_MODEL = "gemma-4-26b-a4b-it"
+DEFAULT_NVIDIA_MODEL = "nvidia/nemotron-3.5-lightning-30b-a3b"
 DEFAULT_LOCAL_GENERATOR_MODEL = "google/medgemma-27b-text-it"
 DEFAULT_LOCAL_JUDGE_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 
@@ -451,7 +452,7 @@ def retrieve_guideline_context(patient_data: dict, retriever: Any) -> str:
     return "\n\n".join(context_parts)
 
 
-_NON_TRANSIENT_GEMINI_MARKERS = (
+_NON_TRANSIENT_API_MARKERS = (
     "400",
     "INVALID_ARGUMENT",
     "401",
@@ -463,8 +464,14 @@ _NON_TRANSIENT_GEMINI_MARKERS = (
 )
 
 
-def _invoke_gemini_with_retry(llm: Any, messages: list[Any], retries: int = 3) -> str:
-    """Invoke a ChatGoogleGenerativeAI model with exponential backoff on transient API errors."""
+def _invoke_chat_with_retry(
+    llm: Any,
+    messages: list[Any],
+    *,
+    retries: int = 3,
+    label: str = "TreatmentChat",
+) -> str:
+    """Invoke a LangChain chat model with exponential backoff on transient API errors."""
     for attempt in range(retries + 1):
         try:
             response = llm.invoke(messages)
@@ -473,16 +480,80 @@ def _invoke_gemini_with_retry(llm: Any, messages: list[Any], retries: int = 3) -
             err_str = str(exc)
             is_non_transient = (
                 type(exc).__name__ == "GoogleModelNotFoundError"
-                or any(marker in err_str for marker in _NON_TRANSIENT_GEMINI_MARKERS)
+                or any(marker in err_str for marker in _NON_TRANSIENT_API_MARKERS)
             )
             if is_non_transient or attempt >= retries:
                 raise
             backoff = (2 ** attempt) * 2.5 + random.uniform(1.0, 3.0)
             if any(k in err_str for k in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "high demand")):
                 backoff += 5.0
-            print(f"    [TreatmentGemini] Attempt {attempt + 1}/{retries + 1} failed ({type(exc).__name__}); retrying in {backoff:.1f}s...")
+            print(
+                f"    [{label}] Attempt {attempt + 1}/{retries + 1} failed "
+                f"({type(exc).__name__}: {err_str[:160]}); retrying in {backoff:.1f}s..."
+            )
             time.sleep(backoff)
-    raise RuntimeError("Gemini invocation failed unexpectedly.")
+    raise RuntimeError("API invocation failed unexpectedly.")
+
+
+def _invoke_gemini_with_retry(llm: Any, messages: list[Any], retries: int = 3) -> str:
+    """Invoke a Google Gemini/Gemma chat model with exponential backoff on transient errors."""
+    return _invoke_chat_with_retry(llm, messages, retries=retries, label="TreatmentGemini")
+
+
+def _run_chat_plan_and_judge(
+    gen_llm: Any,
+    judge_llm: Optional[Any],
+    user_prompt: str,
+    patient_json_str: str,
+    guideline_context: str,
+    *,
+    header: str,
+    invoke_fn: Any,
+) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
+    """Run plan generation + optional clinical audit using any chat backend."""
+    messages = [
+        SystemMessage(content=generator_system_prompt),
+        HumanMessage(content=user_prompt),
+    ]
+    raw_response = invoke_fn(gen_llm, messages)
+    try:
+        plan_body = parse_treatment_plan(raw_response)
+    except ValueError:
+        repair_messages = [
+            SystemMessage(content=generator_system_prompt),
+            HumanMessage(
+                content=user_prompt
+                + "\n\nIMPORTANT: Your previous response omitted the required `<treatment_plan>...</treatment_plan>` tags. "
+                "Output the complete treatment plan wrapped cleanly inside `<treatment_plan>` and `</treatment_plan>`."
+            ),
+        ]
+        raw_response = invoke_fn(gen_llm, repair_messages)
+        plan_body = parse_treatment_plan(raw_response)
+
+    generated_plan = header + "\n\n" + plan_body
+
+    evaluation_result: Optional[ClinicalPlanEvaluation] = None
+    judge_raw: Optional[str] = None
+    if judge_llm is not None:
+        judge_messages = [
+            SystemMessage(content=judge_system_prompt),
+            HumanMessage(content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)),
+        ]
+        judge_raw = invoke_fn(judge_llm, judge_messages)
+        evaluation_result = parse_evaluation_json(judge_raw)
+        if evaluation_result is None:
+            repair_judge_messages = [
+                SystemMessage(content=judge_system_prompt),
+                HumanMessage(
+                    content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)
+                    + "\n\nIMPORTANT: Your previous response could not be parsed as valid JSON. "
+                    "Return strictly one valid JSON object matching the schema inside `<evaluation_json>...</evaluation_json>` tags."
+                ),
+            ]
+            judge_raw = invoke_fn(judge_llm, repair_judge_messages)
+            evaluation_result = parse_evaluation_json(judge_raw)
+
+    return generated_plan, evaluation_result, judge_raw
 
 
 def _generate_plan_gemini(
@@ -495,7 +566,7 @@ def _generate_plan_gemini(
     judge_model: str,
     header: str,
 ) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
-    """Generate and optionally audit a treatment plan via Google Gemini API."""
+    """Generate and optionally audit a treatment plan via Google Gemini/Gemma API."""
     from langchain_google_genai import ChatGoogleGenerativeAI
 
     _sync_google_api_key()
@@ -504,54 +575,67 @@ def _generate_plan_gemini(
         temperature=0.0,
         max_output_tokens=8192,
     )
-    messages = [
-        SystemMessage(content=generator_system_prompt),
-        HumanMessage(content=user_prompt),
-    ]
-    raw_response = _invoke_gemini_with_retry(gen_llm, messages)
-    try:
-        plan_body = parse_treatment_plan(raw_response)
-    except ValueError:
-        repair_messages = [
-            SystemMessage(content=generator_system_prompt),
-            HumanMessage(
-                content=user_prompt
-                + "\n\nIMPORTANT: Your previous response omitted the required `<treatment_plan>...</treatment_plan>` tags. "
-                "Output the complete treatment plan wrapped cleanly inside `<treatment_plan>` and `</treatment_plan>`."
-            ),
-        ]
-        raw_response = _invoke_gemini_with_retry(gen_llm, repair_messages)
-        plan_body = parse_treatment_plan(raw_response)
-
-    generated_plan = header + "\n\n" + plan_body
-
-    evaluation_result: Optional[ClinicalPlanEvaluation] = None
-    judge_raw: Optional[str] = None
-    if run_judge:
-        judge_llm = ChatGoogleGenerativeAI(
+    judge_llm = (
+        ChatGoogleGenerativeAI(
             model=judge_model,
             temperature=0.0,
             max_output_tokens=4096,
         )
-        judge_messages = [
-            SystemMessage(content=judge_system_prompt),
-            HumanMessage(content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)),
-        ]
-        judge_raw = _invoke_gemini_with_retry(judge_llm, judge_messages)
-        evaluation_result = parse_evaluation_json(judge_raw)
-        if evaluation_result is None:
-            repair_judge_messages = [
-                SystemMessage(content=judge_system_prompt),
-                HumanMessage(
-                    content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)
-                    + "\n\nIMPORTANT: Your previous response could not be parsed as valid JSON. "
-                    "Return strictly one valid JSON object matching the schema inside `<evaluation_json>...</evaluation_json>` tags."
-                ),
-            ]
-            judge_raw = _invoke_gemini_with_retry(judge_llm, repair_judge_messages)
-            evaluation_result = parse_evaluation_json(judge_raw)
+        if run_judge
+        else None
+    )
+    return _run_chat_plan_and_judge(
+        gen_llm,
+        judge_llm,
+        user_prompt,
+        patient_json_str,
+        guideline_context,
+        header=header,
+        invoke_fn=_invoke_gemini_with_retry,
+    )
 
-    return generated_plan, evaluation_result, judge_raw
+
+def _generate_plan_nvidia(
+    user_prompt: str,
+    patient_json_str: str,
+    guideline_context: str,
+    *,
+    run_judge: bool,
+    generator_model: str,
+    judge_model: str,
+    header: str,
+) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
+    """Generate and optionally audit a treatment plan via NVIDIA NIM API."""
+    from langchain_nvidia_ai_endpoints import ChatNVIDIA
+
+    if not os.environ.get("NVIDIA_API_KEY", "").strip():
+        raise RuntimeError("NVIDIA_API_KEY must be set for the NVIDIA treatment backend.")
+
+    gen_llm = ChatNVIDIA(
+        model=generator_model,
+        temperature=0.0,
+        max_tokens=8192,
+        timeout=180,
+    )
+    judge_llm = (
+        ChatNVIDIA(
+            model=judge_model,
+            temperature=0.0,
+            max_tokens=4096,
+            timeout=180,
+        )
+        if run_judge
+        else None
+    )
+    return _run_chat_plan_and_judge(
+        gen_llm,
+        judge_llm,
+        user_prompt,
+        patient_json_str,
+        guideline_context,
+        header=header,
+        invoke_fn=lambda llm, msgs: _invoke_chat_with_retry(llm, msgs, label="TreatmentNVIDIA"),
+    )
 
 
 def _generate_plan_local(
@@ -653,7 +737,7 @@ def _generate_plan_local(
 def generate_treatment_plan(
     patient_data: dict,
     *,
-    backend: Literal["gemini", "local"] = "gemini",
+    backend: Literal["gemini", "nvidia", "local"] = "gemini",
     guideline_dir: Optional[Path] = None,
     persist_dir: Optional[Path] = None,
     run_judge: bool = True,
@@ -679,6 +763,18 @@ def generate_treatment_plan(
             judge_model=used_judge_model,
             header=header,
         )
+    elif backend == "nvidia":
+        used_gen_model = generator_model or os.environ.get("TREATMENT_NVIDIA_MODEL") or DEFAULT_NVIDIA_MODEL
+        used_judge_model = judge_model or os.environ.get("TREATMENT_JUDGE_NVIDIA_MODEL") or DEFAULT_NVIDIA_MODEL
+        generated_plan, evaluation_result, judge_raw = _generate_plan_nvidia(
+            user_prompt,
+            patient_json_str,
+            guideline_context,
+            run_judge=run_judge,
+            generator_model=used_gen_model,
+            judge_model=used_judge_model,
+            header=header,
+        )
     elif backend == "local":
         used_gen_model = generator_model or DEFAULT_LOCAL_GENERATOR_MODEL
         used_judge_model = judge_model or DEFAULT_LOCAL_JUDGE_MODEL
@@ -692,7 +788,7 @@ def generate_treatment_plan(
             header=header,
         )
     else:
-        raise ValueError(f"Unsupported treatment backend: {backend!r}. Expected 'gemini' or 'local'.")
+        raise ValueError(f"Unsupported treatment backend: {backend!r}. Expected 'gemini', 'nvidia', or 'local'.")
 
     return {
         "treatment_plan": generated_plan,
