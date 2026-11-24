@@ -95,11 +95,26 @@ def run_assessment_stage(
     service = AssessmentService(session_storage, mock=False)
 
     output_fn("\n=== STAGE 1: ASSESSMENT & DIAGNOSIS ===")
-    turn = service.start_session(fictional_name=demo["name"], age=demo["age"])
+    in_progress_sid = (record.get("assessment_meta") or {}).get("in_progress_session_id")
+    if in_progress_sid:
+        output_fn(f"Resuming in-progress assessment session: {in_progress_sid}")
+        turn = service.get_session(in_progress_sid)
+    else:
+        turn = service.start_session(fictional_name=demo["name"], age=demo["age"])
+        record["assessment_meta"] = {"in_progress_session_id": turn["session_id"]}
+        save_record(record_path, record)
+
     while turn["state"] == "awaiting_reply":
         output_fn(f"\nInterviewer: {turn['text']}")
         while True:
-            reply = input_fn("Patient: ").strip()
+            try:
+                reply = input_fn("Patient: ").strip()
+            except (EOFError, KeyboardInterrupt):
+                output_fn(
+                    f"\nAssessment paused cleanly; resume anytime with: "
+                    f"python -m integration.pipeline --resume \"{run_dir}\""
+                )
+                return record
             if not reply:
                 output_fn("Please enter a non-empty reply.")
                 continue
@@ -227,8 +242,12 @@ def run_therapy_stage(
         state = turn_res["state"]
 
     finish_res = session.finish()
-    updated_record = finish_res["record"]
     archive = finish_res["session_archive"]
+    if archive is None:
+        output_fn("\n[Stage 3] Ended with 0 turns; no session recorded.")
+        return record
+
+    updated_record = finish_res["record"]
     session_num = archive["session_number"]
 
     _write_json(run_dir / f"03_therapy_session_{session_num}.json", archive)
@@ -239,6 +258,37 @@ def run_therapy_stage(
         f"StatePatch keys updated: {list(finish_res['state_patch'].keys())}"
     )
     return updated_record
+
+
+def _prompt_adult_age(
+    input_fn: Callable[[str], str] = input,
+    output_fn: Callable[[str], None] = print,
+) -> int:
+    """Prompt until a valid whole-year adult age (18+) is entered."""
+    while True:
+        raw = input_fn("Fictional patient age (18+): ").strip()
+        try:
+            age = int(raw)
+        except ValueError:
+            output_fn("Please enter age as a whole number (e.g., 30).")
+            continue
+        if age < 18:
+            output_fn("Age must be 18 or older.")
+            continue
+        return age
+
+
+def _resolve_stages(record: dict[str, Any], stage: Optional[str]) -> list[str]:
+    """Determine which pipeline stages to run given an optional explicit `--stage`."""
+    if stage in ("assessment", "treatment", "therapy"):
+        return [stage]
+    stages: list[str] = []
+    if not record.get("assessment_handoff"):
+        stages.append("assessment")
+    if not record.get("treatment_plan"):
+        stages.append("treatment")
+    stages.append("therapy")
+    return stages
 
 
 def run_pipeline(
@@ -268,10 +318,10 @@ def run_pipeline(
             raise FileNotFoundError(f"Cannot resume: {record_path} not found.")
         record = load_record(record_path)
     else:
-        if not name or not name.strip():
+        while not name or not name.strip():
             name = input_fn("Fictional patient name: ").strip()
         if age is None:
-            age = int(input_fn("Fictional patient age (18+): ").strip())
+            age = _prompt_adult_age(input_fn=input_fn, output_fn=output_fn)
         record = create_record(
             name=name,
             age=age,
@@ -284,23 +334,12 @@ def run_pipeline(
         save_record(record_path, record)
 
     output_fn(f"Pipeline run directory: {run_dir}")
-
-    if stage == "assessment":
-        stages_to_run = ["assessment"]
-    elif stage == "treatment":
-        stages_to_run = ["treatment"]
-    elif stage == "therapy":
-        stages_to_run = ["therapy"]
-    else:
-        stages_to_run = []
-        if not record.get("assessment_handoff"):
-            stages_to_run.append("assessment")
-        if not record.get("treatment_plan"):
-            stages_to_run.append("treatment")
-        stages_to_run.append("therapy")
+    stages_to_run = _resolve_stages(record, stage)
 
     if "assessment" in stages_to_run:
         record = run_assessment_stage(run_dir, record, record_path, input_fn=input_fn, output_fn=output_fn)
+        if not record.get("assessment_handoff"):
+            return run_dir, record
         if "treatment" in stages_to_run:
             reasons = check_clinical_gate(record["assessment_handoff"])
             if reasons and not force:

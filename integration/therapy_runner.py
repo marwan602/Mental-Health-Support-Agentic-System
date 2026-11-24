@@ -191,6 +191,12 @@ CLINICAL_CONCEPT_MAP = {
     "transition": ["role transition", "life change", "interpersonal psychotherapy"],
 }
 
+MODALITY_PATTERNS = {
+    "cbt": re.compile(r"\bcbt\b|\bcognitive[- ]behavio(?:u)?ral\b"),
+    "ba": re.compile(r"\bba\b|\bbehavio(?:u)?ral activation\b"),
+    "ipt": re.compile(r"\bipt\b|\binterpersonal (?:therapy|psychotherapy)\b"),
+}
+
 
 def tokenize_clinical(text: str) -> list[str]:
     return [w for w in re.findall(r"[a-z][a-z0-9-]{2,}", str(text).lower()) if w not in STOP_WORDS]
@@ -301,11 +307,11 @@ def retrieve_candidates(
     query_str = f"{treatment_plan} {' '.join(goals)}"
     q_terms = expand_clinical_query(query_str)
 
-    active_mods = set()
-    raw_lower = treatment_plan.lower()
-    for m in ("cbt", "ba", "ipt"):
-        if m in raw_lower:
-            active_mods.add(m)
+    active_mods = {
+        m
+        for m, pat in MODALITY_PATTERNS.items()
+        if pat.search(treatment_plan.lower())
+    }
 
     ranked_general = bm25.search(q_terms, top_k=limit)
     selected_ids = {r["intervention_id"] for r in ranked_general}
@@ -453,6 +459,28 @@ def validate_plan_rules(plan: Any) -> list[str]:
     return problems
 
 
+def validate_replan_rules(plan: Any, completed_phases: set[str]) -> list[str]:
+    """Validate replanned remaining objectives without requiring already-completed phases."""
+    problems = []
+    order = ["CHECK_IN", "EXPLAIN_AGENDA", "WORK", "CLOSING"]
+    phases = [o.phase for o in plan.session_objectives]
+    if phases != sorted(phases, key=order.index):
+        problems.append("Objectives must strictly follow phase order: CHECK_IN, EXPLAIN_AGENDA, WORK, CLOSING.")
+    if "WORK" not in phases:
+        problems.append("Replanned objectives must include at least 1 WORK objective.")
+    if "CLOSING" not in phases:
+        problems.append("Replanned objectives must include at least 1 CLOSING objective.")
+    for p in ("CHECK_IN", "EXPLAIN_AGENDA"):
+        if p in completed_phases and p in phases:
+            problems.append(f"Do not regenerate already-completed phase '{p}'.")
+    for o in plan.session_objectives:
+        if not o.criterion.strip():
+            problems.append(f"Objective '{o.title}' lacks one observable criterion.")
+        if o.phase != "WORK" and getattr(o, "intervention", "NONE") != "NONE":
+            problems.append(f"Non-WORK objective '{o.title}' cannot carry an intervention ID.")
+    return problems
+
+
 def repair_plan_deterministic(plan: Any) -> Any:
     """Ensure every objective has a valid criterion and non-WORK phases carry 'NONE'."""
     for o in plan.session_objectives:
@@ -500,11 +528,9 @@ INTERVENTION_DELIVERY_SYSTEM_PROMPT = """You turn ONE approved clinical interven
 - Set structure='flexible' for adaptable principles, techniques, or guidelines that can be applied in any relevant order (psychoeducation, validation, behavioral activation principles).
 - ALL steps MUST be completable through CONVERSATION within THIS SINGLE SESSION (e.g., reviewing recent real-life examples from the past 24-72 hours, co-creating a concrete plan, troubleshooting barriers, and getting verbal agreement).
 - In-session exercises (e.g. brief grounding, breathing, or practicing a coping statement) are permitted when clinically indicated and consented to. Never create steps that require leaving the room or that happen between sessions (homework agreement is the final in-session step).
-- Keep the patient as the author: they produce the thoughts, evidence, ratings, and action plans; the therapist guides and prompts.
 - done_when: provide an observable indicator in the patient's words during this session.
 - completion_condition: define the overall therapeutic aim that indicates when this intervention has served its purpose.
 - adapt: provide 1-2 if-then branches (e.g. 'If patient feels overwhelmed: shrink activity into a 5-minute task').
-- Do not script dialogue; provide actionable therapeutic tasks.
 - Never use or mention standardized rating scales or scores (PHQ-9, GAD-7, BDI).
 """
 
@@ -670,8 +696,6 @@ Objective Completion
 - Setting `objective_complete=True` instructs the controller to advance to the next objective.
 
 ### Safety
-- Set `risk=watch` for passive hopelessness or mild suicidal ideation.
-- Set `risk=escalate` when immediate danger, suicidal intent, or imminent risk is indicated.
 - Take safety concerns seriously and prioritize appropriate human support when escalation is necessary, even if it interrupts the session plan."""
 
 
@@ -693,96 +717,93 @@ class SessionStateTracker:
         self.guide_cache: Optional[dict[str, DeliveryGuide]] = None
 
 
-SESSION_TRACKER = SessionStateTracker()
+def build_clinical_tools(tracker: SessionStateTracker) -> list[Any]:
+    """Create clinical tools bound to one `SessionStateTracker` instance."""
 
+    @tool
+    def breathing_exercise() -> str:
+        """Guide a 4-7-8 slow-breathing regulation exercise when the patient is flooded, panicked, or anxious."""
+        return "Guide slow paced breathing: inhale through nose for 4 counts, hold for 2, exhale slowly through mouth for 6. Repeat 3 times calmly."
 
-@tool
-def breathing_exercise() -> str:
-    """Guide a 4-7-8 slow-breathing regulation exercise when the patient is flooded, panicked, or anxious."""
-    return "Guide slow paced breathing: inhale through nose for 4 counts, hold for 2, exhale slowly through mouth for 6. Repeat 3 times calmly."
+    @tool
+    def grounding_exercise() -> str:
+        """Guide a 5-4-3-2-1 sensory grounding exercise when the patient is dissociating or overwhelmed."""
+        return "Invite patient to notice: 5 things they see around them, 4 things they can physically feel, 3 sounds they hear. Keep instructions gentle and paced."
 
-
-@tool
-def grounding_exercise() -> str:
-    """Guide a 5-4-3-2-1 sensory grounding exercise when the patient is dissociating or overwhelmed."""
-    return "Invite patient to notice: 5 things they see around them, 4 things they can physically feel, 3 sounds they hear. Keep instructions gentle and paced."
-
-
-@tool
-def psychoeducation(concept: str) -> str:
-    """Look up a brief, accessible patient-friendly explanation for a psychological concept."""
-    libs = SESSION_TRACKER.libs or load_therapy_libraries()
-    c_lower = concept.lower()
-    for card in libs["psychoeducation_cards"]:
-        if c_lower in card.get("concept_name", "").lower():
-            exp = card.get("patient_friendly_explanation", "")
-            return f"Concept ({card.get('concept_name')}): {clean_text(exp, 250)}"
-    return f"Explain '{concept}' in 1-2 conversational, validating sentences and check patient understanding."
-
-
-@tool
-def pause_intervention(reason: str) -> str:
-    """Pause the active intervention when the patient is in acute distress, overwhelmed, resistant, or asks to step back.
-
-    Args:
-        reason: Short clinical explanation for pausing.
-    """
-    controller = SESSION_TRACKER.active_controller
-    if not controller or not controller.active_intervention:
-        return "No active intervention to pause."
-    controller.active_intervention["status"] = "PAUSED"
-    controller.log_event("PAUSED", reason)
-    return f"Intervention '{controller.active_intervention['id']}' successfully PAUSED. Focus on validating, stabilizing, or clarifying."
-
-
-@tool
-def resume_intervention() -> str:
-    """Resume the previously paused intervention once the patient is regulated and ready to re-engage."""
-    controller = SESSION_TRACKER.active_controller
-    if not controller or not controller.active_intervention:
-        return "No intervention is currently paused."
-    if controller.active_intervention.get("status") != "PAUSED":
-        return f"Intervention status is '{controller.active_intervention.get('status')}', not PAUSED."
-    controller.active_intervention["status"] = "ACTIVE"
-    controller.log_event("RESUMED", "Resumed by therapist.")
-    return f"Intervention '{controller.active_intervention['id']}' RESUMED. Continue with current step."
-
-
-@tool
-def replan_session(stated_preference: str, reason: str) -> str:
-    """Call this only when you know what the patient wants, meaning they have clearly said what they want to work on or do not want to work on (for example, they rejected the agenda and named another topic). Do not call it when the patient is vague, silent, ambivalent or just deflecting. In that case keep exploring with open questions and reflection.
-
-    Args:
-        stated_preference: Required short paraphrase of what the patient explicitly said they want to work on or refuse.
-        reason: The clinical reason explaining the patient redirection.
-    """
-    tracker = SESSION_TRACKER
-    if len(tracker.replan_calls) >= 2:
-        msg = "Refused: Maximum replan limit reached (at most 2 calls allowed per session)."
-        tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": "REFUSED_MAX_CALLS"})
-        return msg
-    if tracker.current_turn - tracker.last_replan_turn < 3:
-        msg = f"Refused: Cannot replan within 3 turns of previous call (last at turn {tracker.last_replan_turn}, current {tracker.current_turn})."
-        tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": "REFUSED_COOLDOWN"})
-        return msg
-
-    controller = tracker.active_controller
-    record = tracker.active_case
-    if not controller or not record:
-        return "Replan unavailable: No active controller found."
-
-    tracker.completed_phases.add("EXPLAIN_AGENDA")
-    tracker.last_replan_turn = tracker.current_turn
-
-    try:
+    @tool
+    def psychoeducation(concept: str) -> str:
+        """Look up a brief, accessible patient-friendly explanation for a psychological concept."""
         libs = tracker.libs or load_therapy_libraries()
-        treatment_plan = record.get("treatment_plan") or ""
-        goals = extract_goals(record)
-        candidates = retrieve_candidates(f"{treatment_plan} {stated_preference}", goals, limit=10, libs=libs)
-        candidate_ids = [r["intervention_id"] for r in candidates]
-        rendered_cards = "\n\n".join(render_candidate_card(r) for r in candidates)
+        c_lower = concept.lower()
+        for card in libs["psychoeducation_cards"]:
+            if c_lower in card.get("concept_name", "").lower():
+                exp = card.get("patient_friendly_explanation", "")
+                return f"Concept ({card.get('concept_name')}): {clean_text(exp, 250)}"
+        return f"Explain '{concept}' in 1-2 conversational, validating sentences and check patient understanding."
 
-        replan_prompt = f"""PATIENT STATED PREFERENCE:
+    @tool
+    def pause_intervention(reason: str) -> str:
+        """Pause the active intervention when the patient is in acute distress, overwhelmed, resistant, or asks to step back.
+
+        Args:
+            reason: Short clinical explanation for pausing.
+        """
+        controller = tracker.active_controller
+        if not controller or not controller.active_intervention:
+            return "No active intervention to pause."
+        controller.active_intervention["status"] = "PAUSED"
+        controller.log_event("PAUSED", reason)
+        return f"Intervention '{controller.active_intervention['id']}' successfully PAUSED. Focus on validating, stabilizing, or clarifying."
+
+    @tool
+    def resume_intervention() -> str:
+        """Resume the previously paused intervention once the patient is regulated and ready to re-engage."""
+        controller = tracker.active_controller
+        if not controller or not controller.active_intervention:
+            return "No intervention is currently paused."
+        if controller.active_intervention.get("status") != "PAUSED":
+            return f"Intervention status is '{controller.active_intervention.get('status')}', not PAUSED."
+        controller.active_intervention["status"] = "ACTIVE"
+        controller.log_event("RESUMED", "Resumed by therapist.")
+        return f"Intervention '{controller.active_intervention['id']}' RESUMED. Continue with current step."
+
+    @tool
+    def replan_session(stated_preference: str, reason: str) -> str:
+        """Call this only when you know what the patient wants, meaning they have clearly said what they want to work on or do not want to work on (for example, they rejected the agenda and named another topic). Do not call it when the patient is vague, silent, ambivalent or just deflecting. In that case keep exploring with open questions and reflection.
+
+        Args:
+            stated_preference: Required short paraphrase of what the patient explicitly said they want to work on or refuse.
+            reason: The clinical reason explaining the patient redirection.
+        """
+        executed_replans = sum(
+            1 for c in tracker.replan_calls if not str(c.get("status", "")).startswith("REFUSED_")
+        )
+        if executed_replans >= 2:
+            msg = "Refused: Maximum replan limit reached (at most 2 calls allowed per session)."
+            tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": "REFUSED_MAX_CALLS"})
+            return msg
+        if tracker.current_turn - tracker.last_replan_turn < 3:
+            msg = f"Refused: Cannot replan within 3 turns of previous call (last at turn {tracker.last_replan_turn}, current {tracker.current_turn})."
+            tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": "REFUSED_COOLDOWN"})
+            return msg
+
+        controller = tracker.active_controller
+        record = tracker.active_case
+        if not controller or not record:
+            return "Replan unavailable: No active controller found."
+
+        tracker.completed_phases.add("EXPLAIN_AGENDA")
+        tracker.last_replan_turn = tracker.current_turn
+
+        try:
+            libs = tracker.libs or load_therapy_libraries()
+            treatment_plan = record.get("treatment_plan") or ""
+            goals = extract_goals(record)
+            candidates = retrieve_candidates(f"{treatment_plan} {stated_preference}", goals, limit=10, libs=libs)
+            candidate_ids = [r["intervention_id"] for r in candidates]
+            rendered_cards = "\n\n".join(render_candidate_card(r) for r in candidates)
+
+            replan_prompt = f"""PATIENT STATED PREFERENCE:
 The patient clearly redirected the session: '{stated_preference}'. Reason: {reason}.
 
 TREATMENT PLAN GOALS:
@@ -797,58 +818,58 @@ RETRIEVED CANDIDATES:
 INSTRUCTIONS:
 Rebuild ONLY the remaining session objectives around the patient's stated preference, consistent with treatment plan goals. Keep homework and summary at the end.
 """
-        DynamicSchema = make_session_plan_schema(candidate_ids)
-        new_plan = call_structured(
-            role="planner",
-            schema=DynamicSchema,
-            system_prompt=SESSION_PLANNER_SYSTEM_PROMPT,
-            user_prompt=replan_prompt,
-            validator=validate_plan_rules,
-            nvidia_model=tracker.nvidia_model,
-        )
-        if new_plan:
-            new_plan = repair_plan_deterministic(new_plan)
-            cur_idx = controller.obj_index
-            completed_objs = controller.objectives[: cur_idx + 1]
-            remaining_objs = [obj for obj in new_plan.session_objectives if obj.phase not in tracker.completed_phases]
-            if not remaining_objs:
-                remaining_objs = new_plan.session_objectives
-            controller.objectives = completed_objs + remaining_objs
-            for obj in remaining_objs:
-                if obj.phase == "WORK" and obj.intervention != "NONE" and obj.intervention not in controller.guides:
-                    g = build_delivery_guide(
-                        obj.intervention,
-                        obj.task,
-                        record,
-                        guide_cache=tracker.guide_cache,
-                        libs=libs,
-                        nvidia_model=tracker.nvidia_model,
-                    )
-                    if g:
-                        controller.guides[obj.intervention] = g
-            tracker.replan_calls.append({
-                "turn": tracker.current_turn,
-                "preference": stated_preference,
-                "reason": reason,
-                "status": "SUCCESS",
-            })
-            return (
-                f"Replan successful. New remaining goal: '{new_plan.session_goal}'. "
-                f"Remaining phases rebuilt around '{stated_preference}'. Homework and summary kept at the end."
+            DynamicSchema = make_session_plan_schema(candidate_ids)
+            new_plan = call_structured(
+                role="planner",
+                schema=DynamicSchema,
+                system_prompt=SESSION_PLANNER_SYSTEM_PROMPT,
+                user_prompt=replan_prompt,
+                validator=lambda p: validate_replan_rules(p, tracker.completed_phases),
+                nvidia_model=tracker.nvidia_model,
             )
-    except Exception as exc:
-        tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": f"ERROR: {exc}"})
-    return f"Replan logged. Adapting focus to '{stated_preference}'."
+            if new_plan:
+                new_plan = repair_plan_deterministic(new_plan)
+                cur_idx = controller.obj_index
+                completed_objs = controller.objectives[: cur_idx + 1]
+                remaining_objs = [obj for obj in new_plan.session_objectives if obj.phase not in tracker.completed_phases]
+                if not remaining_objs:
+                    remaining_objs = new_plan.session_objectives
+                controller.objectives = completed_objs + remaining_objs
+                for obj in remaining_objs:
+                    if obj.phase == "WORK" and obj.intervention != "NONE" and obj.intervention not in controller.guides:
+                        g = build_delivery_guide(
+                            obj.intervention,
+                            obj.task,
+                            record,
+                            guide_cache=tracker.guide_cache,
+                            libs=libs,
+                            nvidia_model=tracker.nvidia_model,
+                        )
+                        if g:
+                            controller.guides[obj.intervention] = g
+                tracker.replan_calls.append({
+                    "turn": tracker.current_turn,
+                    "preference": stated_preference,
+                    "reason": reason,
+                    "status": "SUCCESS",
+                })
+                return (
+                    f"Replan successful. New remaining goal: '{new_plan.session_goal}'. "
+                    f"Remaining phases rebuilt around '{stated_preference}'. Homework and summary kept at the end."
+                )
+        except Exception as exc:
+            tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": f"ERROR: {exc}"})
+        return f"Replan logged. Adapting focus to '{stated_preference}'."
 
+    return [
+        breathing_exercise,
+        grounding_exercise,
+        psychoeducation,
+        replan_session,
+        pause_intervention,
+        resume_intervention,
+    ]
 
-CLINICAL_TOOLS = [
-    breathing_exercise,
-    grounding_exercise,
-    psychoeducation,
-    replan_session,
-    pause_intervention,
-    resume_intervention,
-]
 
 THERAPIST_SYSTEM_PROMPT = """
 You are an experienced psychotherapist specializing in evidence-based CBT, IPT, and Behavioral Activation (BA) for individuals experiencing depression and suicidal thoughts.
@@ -869,7 +890,6 @@ Communication
 
 Therapy Management
 - Follow the selected therapeutic action, intervention, and its steps.
-- Make the patient an active collaborator when delivering interventions.
 - Balance immediate concerns with progress toward the current objective.
 - Avoid endless exploration or repetitive loops.
 - When an objective is completed or a transition is requested, move forward without unnecessarily revisiting it.
@@ -885,10 +905,10 @@ Safety
 """
 
 
-def create_therapist_runtime(gemma_model: str = GEMMA_MODEL):
+def create_therapist_runtime(tools: list[Any], gemma_model: str = GEMMA_MODEL):
     return create_agent(
         model=_get_therapist_client(gemma_model),
-        tools=CLINICAL_TOOLS,
+        tools=tools,
         system_prompt=THERAPIST_SYSTEM_PROMPT,
     )
 
@@ -908,27 +928,14 @@ class ClinicalSessionController:
         self.status = "ACTIVE"
 
         self.active_intervention: Optional[dict[str, Any]] = None
-        self.finished_interventions_in_obj: set[str] = set()
-        self.criterion_satisfied = False
-
         self.history_records: list[dict[str, Any]] = []
         self.intervention_events: list[dict[str, Any]] = []
-        self.established_facts: list[str] = []
         self.last_decision: Optional[TherapyDecision] = None
 
     def current_objective(self):
         if self.obj_index < len(self.objectives):
             return self.objectives[self.obj_index]
         return None
-
-    def record_turn(self, patient_msg: str, therapist_msg: str = ""):
-        self.turns_in_obj += 1
-        self.history_records.append({
-            "turn": len(self.history_records) + 1,
-            "objective_index": self.obj_index,
-            "patient": patient_msg,
-            "therapist": therapist_msg,
-        })
 
     def log_event(self, event_type: str, details: str = ""):
         intervention_id = self.active_intervention["id"] if self.active_intervention else "NONE"
@@ -938,10 +945,6 @@ class ClinicalSessionController:
             "event": event_type,
             "details": details,
         })
-
-    def verify_criterion(self, decision: Optional[TherapyDecision] = None, patient_msg: str = "", cur_obj: Any = None) -> None:
-        if decision and getattr(decision, "objective_complete", False):
-            self.criterion_satisfied = True
 
     def manage_intervention(self, decision: TherapyDecision, cur_obj: Any) -> TherapyDecision:
         objective_intervention = getattr(cur_obj, "intervention", "NONE")
@@ -965,25 +968,23 @@ class ClinicalSessionController:
                 return decision
 
             if self.active_intervention is None:
-                if requested_id not in self.finished_interventions_in_obj:
-                    guide = self.guides.get(requested_id)
-                    if guide is not None:
-                        valid_steps = {s.step_number for s in guide.steps}
-                        initial_step = (
-                            decision.recommended_focus
-                            if decision.recommended_focus in valid_steps
-                            else guide.steps[0].step_number
-                        )
-                        self.active_intervention = {
-                            "id": requested_id,
-                            "status": "ACTIVE",
-                            "step": initial_step,
-                            "completed_steps": set(),
-                            "guide": guide,
-                        }
-                        mode_label = getattr(guide, "structure", "flexible")
-                        self.log_event("STARTED", f"Started ({mode_label}) at focus {initial_step} via action={decision.selected_action}")
-                        print(f"    [INTERVENTION STARTED]: {requested_id} ({mode_label}, focus={initial_step})")
+                guide = self.guides.get(requested_id)
+                if guide is not None:
+                    valid_steps = {s.step_number for s in guide.steps}
+                    initial_step = (
+                        decision.recommended_focus
+                        if decision.recommended_focus in valid_steps
+                        else guide.steps[0].step_number
+                    )
+                    self.active_intervention = {
+                        "id": requested_id,
+                        "status": "ACTIVE",
+                        "step": initial_step,
+                        "guide": guide,
+                    }
+                    mode_label = getattr(guide, "structure", "flexible")
+                    self.log_event("STARTED", f"Started ({mode_label}) at focus {initial_step} via action={decision.selected_action}")
+                    print(f"    [INTERVENTION STARTED]: {requested_id} ({mode_label}, focus={initial_step})")
             else:
                 guide = self.active_intervention["guide"]
                 valid_steps = {s.step_number for s in guide.steps}
@@ -1023,8 +1024,6 @@ class ClinicalSessionController:
 
         self.obj_index += 1
         self.turns_in_obj = 0
-        self.criterion_satisfied = False
-        self.finished_interventions_in_obj.clear()
 
         if self.obj_index >= len(self.objectives):
             self.status = "ENDED"
@@ -1039,14 +1038,13 @@ def format_protocol_for_reasoning(guide: DeliveryGuide, active_int: Optional[dic
         if guide.is_sequential
         else "NON-SEQUENTIAL (flexible guidelines — apply in any order as needed; not all guidelines are required)"
     )
-    completed = active_int["completed_steps"] if active_int else set()
     cur_focus = active_int["step"] if active_int else None
     item_label = "Step" if guide.is_sequential else "Guideline"
 
     lines = []
     for s in guide.steps:
-        if s.step_number in completed:
-            tag = "[COMPLETED]" if guide.is_sequential else "[ADDRESSED]"
+        if guide.is_sequential and cur_focus is not None and s.step_number < cur_focus:
+            tag = "[EARLIER]"
         elif cur_focus == s.step_number:
             tag = "[CURRENT]" if guide.is_sequential else "[ACTIVE FOCUS]"
         else:
@@ -1060,19 +1058,18 @@ def format_protocol_for_reasoning(guide: DeliveryGuide, active_int: Optional[dic
 
 def format_guidance_for_therapist(active_int: dict) -> str:
     g = active_int["guide"]
-    completed = active_int["completed_steps"]
     cur_focus = active_int["step"]
     item_label = "Step" if g.is_sequential else "Guideline"
     mode_header = (
-        "MODE: SEQUENTIAL (follow the active step; NEVER repeat completed steps)"
+        "MODE: SEQUENTIAL (follow the active step; do not repeat earlier steps)"
         if g.is_sequential
-        else "MODE: NON-SEQUENTIAL (flexible guidelines; focus on the selected guideline without repeating already addressed ones)"
+        else "MODE: NON-SEQUENTIAL (flexible guidelines; focus on the selected guideline)"
     )
 
     lines = []
     for s in g.steps:
-        if s.step_number in completed:
-            tag = "COMPLETED - DO NOT REPEAT" if g.is_sequential else "ALREADY ADDRESSED - DO NOT REPEAT"
+        if g.is_sequential and cur_focus is not None and s.step_number < cur_focus:
+            tag = "ALREADY COVERED"
         elif s.step_number == cur_focus:
             tag = "FOCUS ON THIS NOW"
         else:
@@ -1086,7 +1083,7 @@ def format_guidance_for_therapist(active_int: dict) -> str:
         f"DELIVERING INTERVENTION: {active_int['id']}\n"
         f"{mode_header}\n"
         f"PROTOCOL:\n" + "\n".join(lines) + "\n"
-        f"Current Active Focus: {item_label} {cur_focus} (Completed so far: {sorted(completed)})"
+        f"Current Active Focus: {item_label} {cur_focus}"
     )
 
 
@@ -1240,6 +1237,7 @@ class TherapySession:
         self.libs = load_therapy_libraries(therapy_dir)
 
         self.guide_cache: dict[str, DeliveryGuide] = {}
+        self.tracker = SessionStateTracker()
         self.session_plan: Any = None
         self.intervention_guides: dict[str, DeliveryGuide] = {}
         self.controller: Optional[ClinicalSessionController] = None
@@ -1295,18 +1293,15 @@ RETRIEVED CANDIDATES:
                 )
 
         self.controller = ClinicalSessionController(self.session_plan, self.intervention_guides)
-        SESSION_TRACKER.completed_phases.clear()
-        SESSION_TRACKER.replan_calls.clear()
-        SESSION_TRACKER.last_replan_turn = -10
-        SESSION_TRACKER.current_turn = 0
-        SESSION_TRACKER.current_phase = "CHECK_IN"
-        SESSION_TRACKER.active_controller = self.controller
-        SESSION_TRACKER.active_case = self.record
-        SESSION_TRACKER.nvidia_model = self.nvidia_model
-        SESSION_TRACKER.libs = self.libs
-        SESSION_TRACKER.guide_cache = self.guide_cache
+        self.tracker = SessionStateTracker()
+        self.tracker.active_controller = self.controller
+        self.tracker.active_case = self.record
+        self.tracker.nvidia_model = self.nvidia_model
+        self.tracker.libs = self.libs
+        self.tracker.guide_cache = self.guide_cache
 
-        self.therapist_runtime = create_therapist_runtime(gemma_model=self.gemma_model)
+        tools = build_clinical_tools(self.tracker)
+        self.therapist_runtime = create_therapist_runtime(tools, gemma_model=self.gemma_model)
 
         if self.previous_session_summary.strip():
             greeting = "Hello, it's good to see you again. How have you been feeling since our last session?"
@@ -1321,35 +1316,16 @@ RETRIEVED CANDIDATES:
             "intervention_guides": {k: v.model_dump() for k, v in self.intervention_guides.items()},
         }
 
-    def submit_reply(self, patient_text: str) -> dict[str, Any]:
-        """Process one patient message through Reasoning -> Controller -> Therapist."""
-        if self.controller is None or self.therapist_runtime is None:
-            raise RuntimeError("Call start() before submit_reply().")
-        if not isinstance(patient_text, str) or not patient_text.strip():
-            raise ValueError("Supply a nonempty patient reply.")
-        if self.controller.status != "ACTIVE" or len(self.controller.history_records) >= self.max_turns:
-            raise RuntimeError("Therapy session has already ended.")
-
-        cur_obj = self.controller.current_objective()
-        if cur_obj is None:
-            self.controller.status = "ENDED"
-            raise RuntimeError("Therapy session has no remaining objectives.")
-
-        patient_utterance = patient_text.strip()
-        self.controller.turns_in_obj += 1
-        turn_no = len(self.controller.history_records) + 1
-        SESSION_TRACKER.current_turn = turn_no
-        SESSION_TRACKER.current_phase = cur_obj.phase
-
-        self.dialogue_history.append({"role": "patient", "content": patient_utterance})
+    def _build_reasoning_prompt(self, cur_obj: Any, patient_utterance: str) -> str:
+        """Assemble the Reasoning Decision prompt for the current turn."""
+        assert self.controller is not None
         full_dialogue_text = "\n".join(f"{m['role'].capitalize()}: {m['content']}" for m in self.dialogue_history)
 
         if self.controller.active_intervention:
             active_int_info = (
                 f"{self.controller.active_intervention['id']} "
                 f"(Status: {self.controller.active_intervention['status']}, "
-                f"Current Focus: {self.controller.active_intervention['step']}, "
-                f"Completed: {sorted(self.controller.active_intervention['completed_steps'])})"
+                f"Current Focus: {self.controller.active_intervention['step']})"
             )
         else:
             active_int_info = "NONE"
@@ -1374,10 +1350,7 @@ RETRIEVED CANDIDATES:
                 "objective_complete=True once the intervention's therapeutic aim and "
                 "objective criterion are genuinely satisfied so the controller can advance."
             )
-        elif (
-            cur_obj.intervention != "NONE"
-            and cur_obj.intervention not in self.controller.finished_interventions_in_obj
-        ):
+        elif cur_obj.intervention != "NONE":
             controller_note = (
                 f"This objective has approved intervention '{cur_obj.intervention}'. "
                 f"Set intervention_id='{cur_obj.intervention}' to start it (works with any selected_action)."
@@ -1385,12 +1358,11 @@ RETRIEVED CANDIDATES:
         else:
             controller_note = "NONE"
 
-        reasoning_prompt = f"""CURRENT PHASE: {cur_obj.phase}
+        return f"""CURRENT PHASE: {cur_obj.phase}
 CURRENT OBJECTIVE: {cur_obj.title}
 TURNS IN CURRENT OBJECTIVE: {self.controller.turns_in_obj}
 TASK: {cur_obj.task}
 CRITERION: {cur_obj.criterion}
-CRITERION SATISFIED: {self.controller.criterion_satisfied}
 CONTROLLER NOTE: {controller_note}
 APPROVED INTERVENTION FOR THIS OBJECTIVE: {cur_obj.intervention}
 ACTIVE INTERVENTION: {active_int_info}
@@ -1402,21 +1374,10 @@ FULL DIALOGUE TRANSCRIPT:
 LATEST PATIENT MESSAGE:
 {patient_utterance}
 """
-        decision = call_structured(
-            role="reasoning",
-            schema=TherapyDecision,
-            system_prompt=REASONING_SYSTEM_PROMPT,
-            user_prompt=reasoning_prompt,
-            fallback=TherapyDecision(selected_action="explore", goal=f"Work on {cur_obj.title}"),
-            nvidia_model=self.nvidia_model,
-        )
 
-        obj_patient_msgs = [
-            r["patient"] for r in self.controller.history_records if r.get("objective") == cur_obj.title
-        ] + [patient_utterance]
-        self.controller.verify_criterion(decision, " ".join(obj_patient_msgs))
-        decision = self.controller.enforce_turn(decision, cur_obj)
-
+    def _invoke_therapist(self, cur_obj: Any, decision: TherapyDecision, patient_utterance: str) -> str:
+        """Invoke the Therapist runtime with backoff retries on transient API failures."""
+        assert self.controller is not None
         if self.controller.active_intervention and self.controller.active_intervention.get("status") == "ACTIVE":
             delivery_guidance = format_guidance_for_therapist(self.controller.active_intervention)
         else:
@@ -1425,7 +1386,6 @@ LATEST PATIENT MESSAGE:
         recent_therapist_context = "\n".join(
             f"{m['role'].capitalize()}: {m['content']}" for m in self.dialogue_history[-16:-1]
         )
-
         therapist_turn_input = f"""RECENT CONVERSATION HISTORY:
 {recent_therapist_context or "None"}
 
@@ -1442,28 +1402,60 @@ Goal: {decision.goal}
 INTERVENTION PROTOCOL GUIDANCE:
 {delivery_guidance}
 """
-        therapist_reply = ""
         max_therapist_retries = 5
         for t_attempt in range(max_therapist_retries + 1):
             try:
                 therapist_res = self.therapist_runtime.invoke({"messages": [HumanMessage(content=therapist_turn_input)]})
-                therapist_reply = strip_think(therapist_res["messages"][-1].content).strip()
-                break
+                return strip_think(therapist_res["messages"][-1].content).strip()
             except Exception as t_exc:
                 t_err_str = str(t_exc)
                 print(
                     f"    [THERAPIST RETRY] (Attempt {t_attempt + 1}/{max_therapist_retries + 1}): "
                     f"{type(t_exc).__name__}: {t_err_str[:120]}"
                 )
-                if t_attempt < max_therapist_retries:
-                    backoff = (2 ** t_attempt) * 3.0 + random.uniform(1.5, 4.0)
-                    if any(k in t_err_str for k in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "high demand", "spikes in demand")):
-                        backoff += 6.0
-                    print(f"    Waiting {backoff:.1f}s before retrying therapist turn...")
-                    time.sleep(backoff)
-                else:
+                if t_attempt >= max_therapist_retries:
                     raise
+                backoff = (2 ** t_attempt) * 3.0 + random.uniform(1.5, 4.0)
+                if any(k in t_err_str for k in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "high demand", "spikes in demand")):
+                    backoff += 6.0
+                print(f"    Waiting {backoff:.1f}s before retrying therapist turn...")
+                time.sleep(backoff)
+        raise RuntimeError("Therapist invocation failed unexpectedly.")
 
+    def submit_reply(self, patient_text: str) -> dict[str, Any]:
+        """Process one patient message through Reasoning -> Controller -> Therapist."""
+        if self.controller is None or self.therapist_runtime is None:
+            raise RuntimeError("Call start() before submit_reply().")
+        if not isinstance(patient_text, str) or not patient_text.strip():
+            raise ValueError("Supply a nonempty patient reply.")
+        if self.controller.status != "ACTIVE" or len(self.controller.history_records) >= self.max_turns:
+            raise RuntimeError("Therapy session has already ended.")
+
+        cur_obj = self.controller.current_objective()
+        if cur_obj is None:
+            self.controller.status = "ENDED"
+            raise RuntimeError("Therapy session has no remaining objectives.")
+
+        patient_utterance = patient_text.strip()
+        self.controller.turns_in_obj += 1
+        turn_no = len(self.controller.history_records) + 1
+        self.tracker.current_turn = turn_no
+        self.tracker.current_phase = cur_obj.phase
+
+        self.dialogue_history.append({"role": "patient", "content": patient_utterance})
+        reasoning_prompt = self._build_reasoning_prompt(cur_obj, patient_utterance)
+
+        decision = call_structured(
+            role="reasoning",
+            schema=TherapyDecision,
+            system_prompt=REASONING_SYSTEM_PROMPT,
+            user_prompt=reasoning_prompt,
+            fallback=TherapyDecision(selected_action="explore", goal=f"Work on {cur_obj.title}"),
+            nvidia_model=self.nvidia_model,
+        )
+        decision = self.controller.enforce_turn(decision, cur_obj)
+
+        therapist_reply = self._invoke_therapist(cur_obj, decision, patient_utterance)
         self.dialogue_history.append({"role": "therapist", "content": therapist_reply})
         self.controller.history_records.append({
             "turn": turn_no,
@@ -1476,7 +1468,7 @@ INTERVENTION PROTOCOL GUIDANCE:
 
         advanced = self.controller.advance_if_satisfied(cur_obj)
         if advanced and not any(o.phase == cur_obj.phase for o in self.controller.objectives[self.controller.obj_index :]):
-            SESSION_TRACKER.completed_phases.add(cur_obj.phase)
+            self.tracker.completed_phases.add(cur_obj.phase)
 
         done = self.controller.status == "ENDED" or turn_no >= self.max_turns
         return {
@@ -1495,14 +1487,18 @@ INTERVENTION PROTOCOL GUIDANCE:
 
         records = self.controller.history_records
         if not records:
-            state_patch = StatePatch()
-        else:
-            transcript_str = "\n".join(
-                f"{r['turn']}. Patient: {r['patient']}\n   Therapist: {r['therapist']}" for r in records
-            )
-            findings = format_reported_findings(self.record.get("assessment_handoff") or {})
-            findings_block = "\n".join(findings) if findings else "- None documented"
-            patch_user_prompt = f"""CURRENT THERAPY STATE:
+            return {
+                "record": copy.deepcopy(self.record),
+                "state_patch": {},
+                "session_archive": None,
+            }
+
+        transcript_str = "\n".join(
+            f"{r['turn']}. Patient: {r['patient']}\n   Therapist: {r['therapist']}" for r in records
+        )
+        findings = format_reported_findings(self.record.get("assessment_handoff") or {})
+        findings_block = "\n".join(findings) if findings else "- None documented"
+        patch_user_prompt = f"""CURRENT THERAPY STATE:
 {json.dumps(self.record['therapy_state'], indent=2)}
 
 REPORTED ASSESSMENT FINDINGS (READ-ONLY):
@@ -1511,14 +1507,14 @@ REPORTED ASSESSMENT FINDINGS (READ-ONLY):
 COMPLETED SESSION TRANSCRIPT:
 {transcript_str}
 """
-            state_patch = call_structured(
-                role="state_updater",
-                schema=StatePatch,
-                system_prompt=STATE_UPDATER_SYSTEM_PROMPT,
-                user_prompt=patch_user_prompt,
-                fallback=StatePatch(),
-                nvidia_model=self.nvidia_model,
-            )
+        state_patch = call_structured(
+            role="state_updater",
+            schema=StatePatch,
+            system_prompt=STATE_UPDATER_SYSTEM_PROMPT,
+            user_prompt=patch_user_prompt,
+            fallback=StatePatch(),
+            nvidia_model=self.nvidia_model,
+        )
 
         updated_record = copy.deepcopy(self.record)
         updated_record["therapy_state"] = apply_state_patch(updated_record["therapy_state"], state_patch)
