@@ -22,8 +22,7 @@ DEFAULT_GUIDELINE_DIR = REPO_ROOT / "Treatment Planning"
 DEFAULT_CHROMA_DIR = Path(__file__).resolve().parent / ".chroma_nice"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
-DEFAULT_GEMINI_GENERATOR_MODEL = os.environ.get("TREATMENT_GEMINI_MODEL", "gemini-2.5-flash")
-DEFAULT_GEMINI_JUDGE_MODEL = os.environ.get("TREATMENT_JUDGE_GEMINI_MODEL", "gemini-2.5-flash")
+DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
 DEFAULT_LOCAL_GENERATOR_MODEL = "google/medgemma-27b-text-it"
 DEFAULT_LOCAL_JUDGE_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 
@@ -281,6 +280,19 @@ def _sync_google_api_key() -> str:
     return key
 
 
+def _guideline_fingerprint(guideline_dir: Path) -> list[dict[str, Any]]:
+    """Return sorted filename, size, and mtime metadata for PDFs in `guideline_dir`."""
+    pdfs = sorted(guideline_dir.rglob("*.pdf"), key=lambda p: str(p.relative_to(guideline_dir)))
+    return [
+        {
+            "name": str(p.relative_to(guideline_dir)).replace("\\", "/"),
+            "size": p.stat().st_size,
+            "mtime_ns": p.stat().st_mtime_ns,
+        }
+        for p in pdfs
+    ]
+
+
 def load_guideline_retriever(
     guideline_dir: Optional[Path] = None,
     persist_dir: Optional[Path] = None,
@@ -295,6 +307,7 @@ def load_guideline_retriever(
 
     g_dir = Path(guideline_dir or DEFAULT_GUIDELINE_DIR)
     p_dir = Path(persist_dir) if persist_dir is not None else DEFAULT_CHROMA_DIR
+    meta_path = p_dir / "index_meta.json"
 
     try:
         embeddings = HuggingFaceEmbeddings(
@@ -304,19 +317,37 @@ def load_guideline_retriever(
     except Exception:
         embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
-    if p_dir.exists() and any(p_dir.iterdir()):
-        vector_store = Chroma(
-            persist_directory=str(p_dir),
-            embedding_function=embeddings,
-        )
-        if vector_store._collection.count() > 0:
-            return vector_store.as_retriever(
-                search_type="mmr",
-                search_kwargs={"k": 5, "lambda_mult": 0.7},
-            )
-
     if not g_dir.is_dir():
+        if p_dir.exists() and any(p_dir.iterdir()):
+            vector_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+            if vector_store._collection.count() > 0:
+                return vector_store.as_retriever(
+                    search_type="mmr",
+                    search_kwargs={"k": 5, "lambda_mult": 0.7},
+                )
         raise FileNotFoundError(f"Guideline directory not found: {g_dir}")
+
+    current_meta = {
+        "embedding_model": EMBEDDING_MODEL_NAME,
+        "pdfs": _guideline_fingerprint(g_dir),
+    }
+
+    if p_dir.exists() and meta_path.is_file():
+        try:
+            saved_meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception:
+            saved_meta = None
+        if saved_meta == current_meta:
+            vector_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+            if vector_store._collection.count() > 0:
+                return vector_store.as_retriever(
+                    search_type="mmr",
+                    search_kwargs={"k": 5, "lambda_mult": 0.7},
+                )
+
+    if p_dir.exists() and any(p_dir.iterdir()):
+        stale_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+        stale_store.delete_collection()
 
     documents = PyPDFDirectoryLoader(str(g_dir)).load()
     if not documents:
@@ -333,20 +364,82 @@ def load_guideline_retriever(
         embeddings,
         persist_directory=str(p_dir),
     )
+    meta_path.write_text(json.dumps(current_meta, indent=2), encoding="utf-8")
     return vector_store.as_retriever(
         search_type="mmr",
         search_kwargs={"k": 5, "lambda_mult": 0.7},
     )
 
 
+def build_guideline_query(patient_data: dict, max_chars: int = 850) -> str:
+    """Build a compact plain-text query that fits inside MiniLM's 256-token window."""
+    parts = ["Clinical guideline recommendations for depression psychotherapy, monitoring, and safety."]
+
+    diagnosis = patient_field(patient_data, "diagnosis", "documented_diagnosis")
+    if diagnosis != "N/A":
+        parts.append(f"Diagnosis: {diagnosis}.")
+
+    alternatives = patient_data.get("alternatives") or []
+    alt_labels = [str(a.get("label")) for a in alternatives if isinstance(a, dict) and a.get("label")]
+    if alt_labels:
+        parts.append(f"Differential considerations: {', '.join(alt_labels)}.")
+
+    evidence = patient_data.get("evidence") or []
+    if evidence:
+        retracted_ids = {
+            e.get("related_finding_id")
+            for e in evidence
+            if isinstance(e, dict) and e.get("status") == "reported_absent" and e.get("related_finding_id")
+        }
+        findings = []
+        for e in evidence:
+            if not isinstance(e, dict) or e.get("status") != "reported_present":
+                continue
+            if e.get("finding_id") in retracted_ids:
+                continue
+            topic = str(e.get("topic") or "finding").strip()
+            tref = f" ({e['time_reference']})" if e.get("time_reference") else ""
+            quote = str(e.get("quote") or "").strip()
+            findings.append(f"{topic}{tref}: {quote}" if quote else f"{topic}{tref}")
+        if findings:
+            parts.append("Reported findings: " + "; ".join(findings).rstrip(".") + ".")
+    else:
+        concerns = [
+            str(c.get("text")).strip()
+            for c in (patient_data.get("presenting_concerns") or [])
+            if isinstance(c, dict) and c.get("text")
+        ]
+        if concerns:
+            parts.append("Presenting concerns: " + "; ".join(concerns).rstrip(".") + ".")
+        med_hist = patient_field(patient_data, "medical_hist", "history")
+        if med_hist != "N/A":
+            parts.append(f"History: {med_hist.rstrip('.')}.")
+
+    pc_goals = (patient_data.get("planning_context") or {}).get("goals", {}).get("statements", [])
+    goals = [str(s.get("text")).strip() for s in pc_goals if isinstance(s, dict) and s.get("text")]
+    legacy_goal = patient_field(patient_data, "goal")
+    if not goals and legacy_goal != "N/A":
+        goals = [legacy_goal]
+    if goals:
+        parts.append("Goals: " + "; ".join(goals).rstrip(".") + ".")
+
+    open_qs = [
+        str(q.get("question")).strip()
+        for q in (patient_data.get("open_questions") or [])
+        if isinstance(q, dict) and q.get("question")
+    ]
+    if open_qs:
+        parts.append("Open questions: " + "; ".join(open_qs).rstrip("?.") + ".")
+
+    query = re.sub(r"\s+", " ", " ".join(parts)).strip()
+    if len(query) <= max_chars:
+        return query
+    return query[: max_chars - 1].rsplit(" ", 1)[0] + "…"
+
+
 def retrieve_guideline_context(patient_data: dict, retriever: Any) -> str:
     """Retrieve the top 5 NICE guideline passages formatted with [G1]..[G5] citations."""
-    patient_text = json.dumps(patient_data, ensure_ascii=False, indent=2)
-    query = (
-        "Clinical guideline recommendations relevant to this patient's documented "
-        "depressive disorder, symptoms, psychotherapy, monitoring, and safety:\n"
-        + patient_text
-    )
+    query = build_guideline_query(patient_data)
     retrieved_docs = retriever.invoke(query)
     context_parts = []
     for idx, doc in enumerate(retrieved_docs, start=1):
@@ -430,6 +523,17 @@ def _generate_plan_gemini(
         ]
         judge_raw = _invoke_gemini_with_retry(judge_llm, judge_messages)
         evaluation_result = parse_evaluation_json(judge_raw)
+        if evaluation_result is None:
+            repair_judge_messages = [
+                SystemMessage(content=judge_system_prompt),
+                HumanMessage(
+                    content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)
+                    + "\n\nIMPORTANT: Your previous response could not be parsed as valid JSON. "
+                    "Return strictly one valid JSON object matching the schema inside `<evaluation_json>...</evaluation_json>` tags."
+                ),
+            ]
+            judge_raw = _invoke_gemini_with_retry(judge_llm, repair_judge_messages)
+            evaluation_result = parse_evaluation_json(judge_raw)
 
     return generated_plan, evaluation_result, judge_raw
 
@@ -548,8 +652,8 @@ def generate_treatment_plan(
     header = build_plan_header(patient_data)
 
     if backend == "gemini":
-        used_gen_model = generator_model or DEFAULT_GEMINI_GENERATOR_MODEL
-        used_judge_model = judge_model or DEFAULT_GEMINI_JUDGE_MODEL
+        used_gen_model = generator_model or os.environ.get("TREATMENT_GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
+        used_judge_model = judge_model or os.environ.get("TREATMENT_JUDGE_GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
         generated_plan, evaluation_result, judge_raw = _generate_plan_gemini(
             user_prompt,
             patient_json_str,
