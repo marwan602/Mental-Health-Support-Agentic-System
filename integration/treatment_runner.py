@@ -22,7 +22,7 @@ DEFAULT_GUIDELINE_DIR = REPO_ROOT / "Treatment Planning"
 DEFAULT_CHROMA_DIR = Path(__file__).resolve().parent / ".chroma_nice"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+DEFAULT_GEMINI_MODEL = "gemini-3.8-flash"
 DEFAULT_LOCAL_GENERATOR_MODEL = "google/medgemma-27b-text-it"
 DEFAULT_LOCAL_JUDGE_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 
@@ -451,6 +451,18 @@ def retrieve_guideline_context(patient_data: dict, retriever: Any) -> str:
     return "\n\n".join(context_parts)
 
 
+_NON_TRANSIENT_GEMINI_MARKERS = (
+    "400",
+    "INVALID_ARGUMENT",
+    "401",
+    "UNAUTHENTICATED",
+    "403",
+    "PERMISSION_DENIED",
+    "404",
+    "NOT_FOUND",
+)
+
+
 def _invoke_gemini_with_retry(llm: Any, messages: list[Any], retries: int = 3) -> str:
     """Invoke a ChatGoogleGenerativeAI model with exponential backoff on transient API errors."""
     for attempt in range(retries + 1):
@@ -459,7 +471,11 @@ def _invoke_gemini_with_retry(llm: Any, messages: list[Any], retries: int = 3) -
             return _extract_text(response.content)
         except Exception as exc:
             err_str = str(exc)
-            if attempt >= retries:
+            is_non_transient = (
+                type(exc).__name__ == "GoogleModelNotFoundError"
+                or any(marker in err_str for marker in _NON_TRANSIENT_GEMINI_MARKERS)
+            )
+            if is_non_transient or attempt >= retries:
                 raise
             backoff = (2 ** attempt) * 2.5 + random.uniform(1.0, 3.0)
             if any(k in err_str for k in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "high demand")):

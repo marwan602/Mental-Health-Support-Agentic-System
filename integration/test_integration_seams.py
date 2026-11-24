@@ -47,6 +47,7 @@ from integration.treatment_runner import (
     DEFAULT_GEMINI_MODEL,
     ClinicalPlanEvaluation,
     _extract_text,
+    _invoke_gemini_with_retry,
     build_guideline_query,
     build_plan_header,
     generate_treatment_plan,
@@ -445,6 +446,20 @@ class TreatmentRunnerTests(unittest.TestCase):
                 out_default = generate_treatment_plan(ti, backend="gemini")
                 self.assertEqual(out_default["generator_model"], DEFAULT_GEMINI_MODEL)
                 self.assertEqual(out_default["judge_model"], DEFAULT_GEMINI_MODEL)
+
+    def test_invoke_gemini_fails_fast_on_404_not_found(self):
+        class _StubNotFoundLLM:
+            def __init__(self):
+                self.calls = 0
+
+            def invoke(self, _messages):
+                self.calls += 1
+                raise RuntimeError("404 NOT_FOUND: models/missing-model not found")
+
+        stub = _StubNotFoundLLM()
+        with self.assertRaises(RuntimeError):
+            _invoke_gemini_with_retry(stub, [], retries=3)
+        self.assertEqual(stub.calls, 1)
 
 
 class TherapyRunnerTests(unittest.TestCase):

@@ -51,7 +51,7 @@ python -m pip install -r integration/requirements.txt
 ## Required Environment Variables
 
 - `NVIDIA_API_KEY`: used by **Assessment** (`nvidia/nemotron-3-ultra-550b-a55b`) and **Therapy** infrastructure agents (`nvidia/nemotron-3.5-lightning-30b-a3b`).
-- `GOOGLE_API_KEY` (or `GEMINI_API_KEY`): used by **Treatment Planning** (default `gemini-2.5-flash`) and **Therapy** Therapist Agent (`gemma-4-26b-a4b-it`).
+- `GOOGLE_API_KEY` (or `GEMINI_API_KEY`): used by **Treatment Planning** (default `gemini-3.8-flash`) and **Therapy** Therapist Agent (`gemma-4-26b-a4b-it`).
 
 Optional overrides:
 - `TREATMENT_GEMINI_MODEL` / `TREATMENT_JUDGE_GEMINI_MODEL`: override default Gemini models for Treatment Planning.
