@@ -339,6 +339,30 @@ class TreatmentRunnerTests(unittest.TestCase):
         self.assertEqual(parsed.overall_score, 4.5)
         self.assertFalse(parsed.critical_safety_violation)
 
+    def test_parse_treatment_plan_fallback_and_diagnostics(self):
+        with self.assertRaises(ValueError) as ctx1:
+            parse_treatment_plan("No tags here")
+        self.assertIn("len=12", str(ctx1.exception))
+        self.assertIn("No tags here", str(ctx1.exception))
+
+        with self.assertRaises(ValueError):
+            parse_treatment_plan("No tags here", allow_fallback=True)
+
+        valid_body = (
+            "Provisional Psychotherapy Treatment Plan (for clinician review)\n\n"
+            "Goals: Restore morning energy and work engagement.\n\n"
+            "Phase 1 — Week 1: CBT psychoeducation and Behavioral Activation monitoring.\n"
+            "Phase 2 — Week 2: Graded activity scheduling intervention and thought records.\n"
+            "Final Phase — Week 12: Relapse prevention planning and early warning signs."
+        )
+        with self.assertRaises(ValueError):
+            parse_treatment_plan("<treatment_plan>\n" + valid_body)
+        self.assertEqual(parse_treatment_plan("<treatment_plan>\n" + valid_body, allow_fallback=True), valid_body)
+
+        with self.assertRaises(ValueError):
+            parse_treatment_plan(valid_body)
+        self.assertEqual(parse_treatment_plan("```\n" + valid_body + "\n```", allow_fallback=True), valid_body)
+
     def test_real_nice_pdf_rag_and_persistence(self):
         rec = create_record(name="Alex", age=30)
         rec["assessment_handoff"] = _sample_handoff()

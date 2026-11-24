@@ -219,12 +219,43 @@ def build_plan_header(patient_data: dict) -> str:
     ])
 
 
-def parse_treatment_plan(raw_response: str) -> str:
+_CLINICAL_PLAN_MARKERS = (
+    "provisional",
+    "week 1",
+    "goal",
+    "phase",
+    "relapse prevention",
+    "intervention",
+)
+
+
+def parse_treatment_plan(raw_response: str, *, allow_fallback: bool = False) -> str:
     """Extract the body between <treatment_plan>...</treatment_plan> tags."""
-    plan_match = re.search(r"<treatment_plan>(.*?)</treatment_plan>", raw_response, re.DOTALL)
-    if not plan_match:
-        raise ValueError("Missing or incomplete <treatment_plan> tags in generator response.")
-    return plan_match.group(1).strip()
+    text = (raw_response or "").strip()
+    plan_match = re.search(r"<treatment_plan>(.*?)</treatment_plan>", text, re.DOTALL | re.IGNORECASE)
+    if plan_match and plan_match.group(1).strip():
+        return plan_match.group(1).strip()
+
+    if allow_fallback:
+        open_match = re.search(r"<treatment_plan>\s*(.*)", text, re.DOTALL | re.IGNORECASE)
+        if open_match:
+            body = open_match.group(1).strip()
+            if len(body) >= 200:
+                print("[TreatmentPlan] Warning: missing closing </treatment_plan> tag; using extracted body.")
+                return body
+
+        unwrapped = re.sub(r"^```[a-zA-Z0-9_-]*\s*|\s*```$", "", text).strip()
+        lowered = unwrapped.lower()
+        marker_hits = sum(1 for marker in _CLINICAL_PLAN_MARKERS if marker in lowered)
+        if len(unwrapped) >= 300 and marker_hits >= 2:
+            print("[TreatmentPlan] Warning: missing <treatment_plan> wrapper tags; using generated plan body.")
+            return unwrapped
+
+    collapsed = re.sub(r"\s+", " ", text)
+    raise ValueError(
+        f"Missing or incomplete <treatment_plan> tags "
+        f"(len={len(raw_response or '')}, head={collapsed[:200]!r}, tail={collapsed[-200:]!r})."
+    )
 
 
 def parse_evaluation_json(response_text: str) -> Optional[ClinicalPlanEvaluation]:
@@ -475,7 +506,17 @@ def _invoke_chat_with_retry(
     for attempt in range(retries + 1):
         try:
             response = llm.invoke(messages)
-            return _extract_text(response.content)
+            text = _extract_text(response.content)
+            if not text:
+                meta = getattr(response, "response_metadata", {}) or {}
+                add_kw = getattr(response, "additional_kwargs", {}) or {}
+                finish_reason = meta.get("finish_reason")
+                reasoning = add_kw.get("reasoning_content") or ""
+                print(
+                    f"    [{label}] Warning: empty content "
+                    f"(finish_reason={finish_reason}, reasoning_chars={len(str(reasoning))})."
+                )
+            return text
         except Exception as exc:
             err_str = str(exc)
             is_non_transient = (
@@ -517,8 +558,9 @@ def _run_chat_plan_and_judge(
     ]
     raw_response = invoke_fn(gen_llm, messages)
     try:
-        plan_body = parse_treatment_plan(raw_response)
-    except ValueError:
+        plan_body = parse_treatment_plan(raw_response, allow_fallback=False)
+    except ValueError as exc:
+        print(f"    [TreatmentPlan] Attempt 1 tag parse failed ({exc}); retrying with formatting reminder...")
         repair_messages = [
             SystemMessage(content=generator_system_prompt),
             HumanMessage(
@@ -528,7 +570,7 @@ def _run_chat_plan_and_judge(
             ),
         ]
         raw_response = invoke_fn(gen_llm, repair_messages)
-        plan_body = parse_treatment_plan(raw_response)
+        plan_body = parse_treatment_plan(raw_response, allow_fallback=True)
 
     generated_plan = header + "\n\n" + plan_body
 
@@ -614,14 +656,14 @@ def _generate_plan_nvidia(
     gen_llm = ChatNVIDIA(
         model=generator_model,
         temperature=0.0,
-        max_tokens=8192,
+        max_tokens=16384,
         timeout=180,
     )
     judge_llm = (
         ChatNVIDIA(
             model=judge_model,
             temperature=0.0,
-            max_tokens=4096,
+            max_tokens=8192,
             timeout=180,
         )
         if run_judge
