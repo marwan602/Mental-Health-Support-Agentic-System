@@ -40,6 +40,14 @@ Why `assessment_handoff` stays separate from `therapy_state`:
 - Assessment records raw, verified patient quotes and never scores symptom severity or risk history.
 - Keeping `assessment_handoff` immutable prevents translation/LLM hallucinations on intake data while letting `therapy_state` track ongoing `homework`, `CBT`/`BA`/`IPT` parameters, and session-observed symptoms cleanly across sessions.
 
+## Setup
+
+Install the pinned integration dependencies (keeps `transformers<5.0` and `sentence-transformers<5.2` compatible with PyTorch 2.5.x):
+
+```powershell
+python -m pip install -r integration/requirements.txt
+```
+
 ## Required Environment Variables
 
 - `NVIDIA_API_KEY`: used by **Assessment** (`nvidia/nemotron-3-ultra-550b-a55b`) and **Therapy** infrastructure agents (`nvidia/nemotron-3.5-lightning-30b-a3b`).

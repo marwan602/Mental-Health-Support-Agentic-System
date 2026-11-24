@@ -13,11 +13,7 @@ import time
 from pathlib import Path
 from typing import Any, Literal, Optional
 
-from langchain_chroma import Chroma
-from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pydantic import BaseModel, Field
 
 from . import REPO_ROOT
@@ -290,10 +286,23 @@ def load_guideline_retriever(
     persist_dir: Optional[Path] = None,
 ):
     """Load or build the persistent Chroma MMR retriever over NICE guidelines PDFs."""
+    # Prevent transformers from importing TensorFlow/Keras 3 when PyTorch is installed.
+    os.environ.setdefault("USE_TF", "0")
+    from langchain_chroma import Chroma
+    from langchain_community.document_loaders import PyPDFDirectoryLoader
+    from langchain_huggingface import HuggingFaceEmbeddings
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+
     g_dir = Path(guideline_dir or DEFAULT_GUIDELINE_DIR)
     p_dir = Path(persist_dir) if persist_dir is not None else DEFAULT_CHROMA_DIR
 
-    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+    try:
+        embeddings = HuggingFaceEmbeddings(
+            model_name=EMBEDDING_MODEL_NAME,
+            model_kwargs={"local_files_only": True},
+        )
+    except Exception:
+        embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
     if p_dir.exists() and any(p_dir.iterdir()):
         vector_store = Chroma(
@@ -436,6 +445,7 @@ def _generate_plan_local(
     header: str,
 ) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
     """Generate and optionally audit a treatment plan using local 4-bit MedGemma + Qwen."""
+    os.environ.setdefault("USE_TF", "0")
     import torch
     from huggingface_hub import login
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
