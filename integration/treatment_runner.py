@@ -655,15 +655,17 @@ def _generate_plan_nvidia(
 
     gen_llm = ChatNVIDIA(
         model=generator_model,
-        temperature=0.0,
+        temperature=0.3,
+        top_p=0.95,
         max_tokens=16384,
         timeout=180,
     )
     judge_llm = (
         ChatNVIDIA(
             model=judge_model,
-            temperature=0.0,
-            max_tokens=8192,
+            temperature=0.3,
+            top_p=0.95,
+            max_tokens=12288,
             timeout=180,
         )
         if run_judge

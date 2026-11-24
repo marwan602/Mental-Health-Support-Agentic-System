@@ -1031,6 +1031,7 @@ class ClinicalSessionController:
         self.active_intervention: Optional[dict[str, Any]] = None
         self.history_records: list[dict[str, Any]] = []
         self.intervention_events: list[dict[str, Any]] = []
+        self.current_turn: int = 0
         self.last_decision: Optional[TherapyDecision] = None
 
     def current_objective(self):
@@ -1041,7 +1042,7 @@ class ClinicalSessionController:
     def log_event(self, event_type: str, details: str = ""):
         intervention_id = self.active_intervention["id"] if self.active_intervention else "NONE"
         self.intervention_events.append({
-            "turn": len(self.history_records),
+            "turn": self.current_turn or len(self.history_records),
             "intervention": intervention_id,
             "event": event_type,
             "details": details,
@@ -1193,14 +1194,26 @@ def format_guidance_for_therapist(active_int: dict) -> str:
 # ====================================================================
 
 class SymptomUpdate(BaseModel):
-    name: str
-    severity: Optional[Literal["mild", "moderate", "severe", "resolved"]] = None
-    description: Optional[str] = None
+    name: str = Field(
+        description="Specific clinical symptom or state (e.g., 'depressed mood', 'sleep disturbance', 'work dissociation', 'fatigue', 'self-criticism')."
+    )
+    severity: Optional[Literal["mild", "moderate", "severe", "resolved"]] = Field(
+        default=None,
+        description="Estimated severity level if stated or clearly evident.",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="Brief factual summary including in-session mood/sleep details or ratings reported by the patient.",
+    )
 
 
 class HomeworkUpdate(BaseModel):
-    task: str
-    status: Literal["assigned", "in_progress", "completed", "incomplete"]
+    task: str = Field(
+        description="Concrete between-session action, scheduled activity, timer, or practice the patient agreed to try before next session."
+    )
+    status: Literal["assigned", "in_progress", "completed", "incomplete"] = Field(
+        description="'assigned' for newly agreed tasks; updated status for prior homework."
+    )
 
 
 class TherapyItemUpdate(BaseModel):
@@ -1222,17 +1235,41 @@ class TherapyItemUpdate(BaseModel):
 
 
 class StatePatch(BaseModel):
-    symptom_updates: list[SymptomUpdate] = Field(default_factory=list)
-    homework_updates: list[HomeworkUpdate] = Field(default_factory=list)
-    therapy_updates: list[TherapyItemUpdate] = Field(default_factory=list)
-    new_goals: list[str] = Field(default_factory=list)
-    new_coping_strategies: list[str] = Field(default_factory=list)
-    risk_history_note: Optional[str] = None
+    symptom_updates: list[SymptomUpdate] = Field(
+        default_factory=list,
+        description="Mood ratings, sleep/energy/dissociation patterns, or symptoms discussed or updated in-session.",
+    )
+    homework_updates: list[HomeworkUpdate] = Field(
+        default_factory=list,
+        description="All agreed between-session exercises, scheduled activities, or tracking tasks.",
+    )
+    therapy_updates: list[TherapyItemUpdate] = Field(
+        default_factory=list,
+        description="True modality-specific items only (e.g., verbatim automatic thoughts for CBT.automatic_thoughts, scheduled activities for BA.target_activities).",
+    )
+    new_goals: list[str] = Field(
+        default_factory=list,
+        description="New or refined patient therapy goals explicitly stated.",
+    )
+    new_coping_strategies: list[str] = Field(
+        default_factory=list,
+        description="Adaptive coping strategies practiced or adopted by the patient.",
+    )
+    next_session_topics: list[str] = Field(
+        default_factory=list,
+        description="Specific topics or concerns the patient or therapist explicitly agreed to revisit in the next session.",
+    )
+    risk_history_note: Optional[str] = Field(
+        default=None,
+        description="Concise safety/risk observation from the session if discussed or changed.",
+    )
 
 
 STATE_UPDATER_SYSTEM_PROMPT = """You are the Clinical State Manager. Output a delta StatePatch containing ONLY information that changed or was agreed upon in the session.
 - Do NOT rewrite or overwrite demographic or untouched history.
 - Mark newly assigned homework as 'assigned'. Update status of previously assigned homework.
+- Record EVERY concrete between-session action, scheduled activity, exercise, or timer the patient agreed to try before the next session in homework_updates with status='assigned' (even if not literally called 'homework' in the dialogue).
+- Record mood ratings, sleep, fatigue, dissociation, or other symptoms discussed in symptom_updates; reserve CBT.automatic_thoughts strictly for specific reflexive thoughts/appraisals in the patient's words. Record topics deferred to the next session in next_session_topics.
 - Add or update CBT/BA/IPT parameters that were explicitly discussed.
 - Ground all updates strictly in the dialogue transcript.
 """
@@ -1356,8 +1393,12 @@ class TherapySession:
         candidate_ids = [r["intervention_id"] for r in retrieved_candidates]
         rendered_cards = "\n\n".join(render_candidate_card(r) for r in retrieved_candidates)
         DynamicPlanSchema = make_session_plan_schema(candidate_ids)
+        session_num = len(self.record.get("sessions") or []) + 1
+        session_label = f"{session_num} (First session)" if session_num == 1 else f"{session_num} (Follow-up session)"
 
-        planner_user_prompt = f"""TREATMENT PLAN:
+        planner_user_prompt = f"""CURRENT SESSION NUMBER: {session_label}
+
+TREATMENT PLAN:
 {treatment_plan}
 
 PATIENT PROFILE:
@@ -1487,6 +1528,16 @@ LATEST PATIENT MESSAGE:
         recent_therapist_context = "\n".join(
             f"{m['role'].capitalize()}: {m['content']}" for m in self.dialogue_history[-16:-1]
         )
+        next_obj = (
+            self.controller.objectives[self.controller.obj_index + 1]
+            if self.controller.obj_index + 1 < len(self.controller.objectives)
+            else None
+        )
+        next_obj_text = (
+            f"{next_obj.phase}: {next_obj.title} ({next_obj.task})"
+            if next_obj is not None
+            else "NONE (this is the final objective)"
+        )
         therapist_turn_input = f"""RECENT CONVERSATION HISTORY:
 {recent_therapist_context or "None"}
 
@@ -1495,6 +1546,9 @@ LATEST PATIENT UTTERANCE:
 
 CURRENT OBJECTIVE:
 {cur_obj.title} ({cur_obj.task})
+
+NEXT PLANNED OBJECTIVE:
+{next_obj_text}
 
 DIRECTIVE FROM REASONING AGENT:
 Action: {decision.selected_action}
@@ -1540,6 +1594,7 @@ INTERVENTION PROTOCOL GUIDANCE:
         patient_utterance = patient_text.strip()
         self.controller.turns_in_obj += 1
         turn_no = len(self.controller.history_records) + 1
+        self.controller.current_turn = turn_no
         self.tracker.current_turn = turn_no
         self.tracker.current_phase = cur_obj.phase
 
@@ -1622,11 +1677,15 @@ COMPLETED SESSION TRANSCRIPT:
 
         delivered_interventions = list({r["intervention"] for r in records if r["intervention"] != "NONE"})
         assigned_homework = [h.task for h in state_patch.homework_updates if h.status == "assigned"]
+        next_session_topics = [
+            t.strip() for t in state_patch.next_session_topics if isinstance(t, str) and t.strip()
+        ]
         session_entry = {
             "timestamp": time.time(),
             "goal": self.session_plan.session_goal,
             "delivered_interventions": delivered_interventions,
             "assigned_homework": assigned_homework,
+            "next_session_topics": next_session_topics,
             "turn_count": len(records),
         }
         updated_record.setdefault("sessions", []).append(session_entry)

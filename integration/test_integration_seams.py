@@ -242,6 +242,34 @@ class PatientRecordTests(unittest.TestCase):
         self.assertIn("Morning walk", prof2)
         self.assertIn("insomnia (moderate)", brief2)
         self.assertIn("Session 1: Goal=Build morning routine", prev2)
+        self.assertNotIn("Deferred to next session", prev2)
+
+    def test_state_patch_descriptions_and_deferred_topics_continuity(self):
+        schema = StatePatch.model_json_schema()
+        props = schema["properties"]
+        for field in ("homework_updates", "symptom_updates", "next_session_topics"):
+            self.assertTrue(props[field].get("description", "").strip(), f"Missing description for {field}")
+        hw_props = schema["$defs"]["HomeworkUpdate"]["properties"]
+        sym_props = schema["$defs"]["SymptomUpdate"]["properties"]
+        self.assertTrue(hw_props["task"].get("description", "").strip())
+        self.assertTrue(sym_props["name"].get("description", "").strip())
+
+        patch = StatePatch(
+            homework_updates=[HomeworkUpdate(task="1 AM screen timer", status="assigned")],
+            symptom_updates=[SymptomUpdate(name="low mood", severity="moderate", description="Baseline 4/10")],
+            next_session_topics=["Explore detachment at work"],
+        )
+        self.assertEqual(patch.next_session_topics, ["Explore detachment at work"])
+
+        rec = create_record(name="Alex", age=30)
+        rec["sessions"].append({
+            "goal": "Week 1 plan",
+            "delivered_interventions": ["ba_activity_scheduling_and_structuring"],
+            "assigned_homework": ["1 AM screen timer"],
+            "next_session_topics": patch.next_session_topics,
+        })
+        summary = build_previous_session_summary(rec)
+        self.assertIn("Deferred to next session=['Explore detachment at work']", summary)
 
     def test_planning_context_session2_and_no_dangling_update_tag(self):
         rec = create_record(name="Alex", age=30)
@@ -517,6 +545,7 @@ class TreatmentRunnerTests(unittest.TestCase):
                 os.environ.pop("TREATMENT_NVIDIA_MODEL", None)
                 os.environ.pop("TREATMENT_JUDGE_NVIDIA_MODEL", None)
                 out_default = generate_treatment_plan(ti, backend="nvidia")
+                self.assertEqual(DEFAULT_NVIDIA_MODEL, "nvidia/nemotron-3.5-lightning-30b-a3b")
                 self.assertEqual(out_default["generator_model"], DEFAULT_NVIDIA_MODEL)
                 self.assertEqual(out_default["judge_model"], DEFAULT_NVIDIA_MODEL)
 
@@ -605,16 +634,18 @@ class TherapyRunnerTests(unittest.TestCase):
         tools = {t.name: t for t in build_clinical_tools(tracker)}
 
         # Complete CHECK_IN and EXPLAIN_AGENDA
-        for _ in range(2):
+        for t in (1, 2):
             obj = ctrl.current_objective()
             ctrl.turns_in_obj += 1
+            ctrl.current_turn = t
             d = TherapyDecision(selected_action="explore", goal="Check in", objective_complete=True)
             ctrl.enforce_turn(d, obj)
             self.assertTrue(ctrl.advance_if_satisfied(obj))
 
-        # WORK objective: start intervention, test pause/resume tools, verify focus update
+        # WORK objective: start intervention, test pause/resume tools, verify exact 1-based event turns
         work_obj = ctrl.current_objective()
         ctrl.turns_in_obj += 1
+        ctrl.current_turn = 3
         d_start = TherapyDecision(
             selected_action="intervene",
             goal="Start step 1",
@@ -625,6 +656,8 @@ class TherapyRunnerTests(unittest.TestCase):
         ctrl.enforce_turn(d_start, work_obj)
         self.assertIsNotNone(ctrl.active_intervention)
         self.assertEqual(ctrl.active_intervention["step"], 1)  # type: ignore[index]
+        self.assertEqual(ctrl.intervention_events[0]["event"], "STARTED")
+        self.assertEqual(ctrl.intervention_events[0]["turn"], 3)
 
         pause_res = tools["pause_intervention"].invoke({"reason": "Patient overwhelmed"})
         self.assertIn("PAUSED", pause_res)
@@ -636,10 +669,13 @@ class TherapyRunnerTests(unittest.TestCase):
 
         # Test 6-turn budget cap forces advance cleanly
         ctrl.turns_in_obj = 6
+        ctrl.current_turn = 8
         d_incomplete = TherapyDecision(selected_action="explore", goal="Keep working", objective_complete=False)
         ctrl.enforce_turn(d_incomplete, work_obj)
         self.assertTrue(ctrl.advance_if_satisfied(work_obj))
         self.assertIsNone(ctrl.active_intervention)
+        self.assertEqual(ctrl.intervention_events[-1]["event"], "CLOSED_ON_ADVANCE")
+        self.assertEqual(ctrl.intervention_events[-1]["turn"], 8)
 
         # Complete CLOSING -> ENDED
         close_obj = ctrl.current_objective()

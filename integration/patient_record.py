@@ -336,9 +336,13 @@ def build_previous_session_summary(record: dict[str, Any]) -> str:
         goal = sess.get("goal") or "N/A"
         interventions = sess.get("delivered_interventions") or []
         homework = sess.get("assigned_homework") or []
-        lines.append(
+        deferred = sess.get("next_session_topics") or []
+        line = (
             f"Session {idx}: Goal={goal}; "
             f"Delivered interventions={interventions}; "
             f"Assigned homework={homework}"
         )
+        if deferred:
+            line += f"; Deferred to next session={deferred}"
+        lines.append(line)
     return "\n".join(lines)
