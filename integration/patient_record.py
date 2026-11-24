@@ -172,10 +172,9 @@ def format_reported_findings(handoff: dict[str, Any]) -> list[str]:
 
         if status != "reported_present" and rel not in included_ids:
             continue
+        tag_parts = [f"{fid}, updates {rel}" if (rel and rel in included_ids) else fid]
         if fid != "?":
             included_ids.add(fid)
-
-        tag_parts = [f"{fid}, updates {rel}" if rel else fid]
         if status and status != "reported_present":
             tag_parts.append(status)
         tag = f"[{', '.join(tag_parts)}]"
@@ -184,6 +183,72 @@ def format_reported_findings(handoff: dict[str, Any]) -> list[str]:
         tref = f" ({e['time_reference']})" if e.get("time_reference") else ""
         quote = e.get("quote") or ""
         lines.append(f'- {tag} {topic}{tref}: "{quote}"')
+
+    return lines
+
+
+_PLANNING_CONTEXT_LABELS = (
+    ("reason_for_seeking_help", "Reason for seeking help"),
+    ("preferences", "Preferences"),
+    ("barriers", "Barriers"),
+    ("strengths_and_supports", "Strengths and supports"),
+    ("coping_strategies", "Coping strategies"),
+    ("current_support_and_care", "Current support and care"),
+    ("previous_care_and_response", "Previous care and response"),
+)
+
+
+def _format_documented_planning_context(handoff: dict[str, Any]) -> list[str]:
+    """Return bullet lines for documented non-goal planning_context fields."""
+    pc = handoff.get("planning_context") or {}
+    lines: list[str] = []
+    for key, label in _PLANNING_CONTEXT_LABELS:
+        field = pc.get(key) or {}
+        statements = [
+            str(s.get("text")).strip()
+            for s in (field.get("statements") or [])
+            if isinstance(s, dict) and s.get("text")
+        ]
+        if statements:
+            lines.append(f"- {label}: {'; '.join(statements)}")
+    return lines
+
+
+def _format_therapy_parameters_summary(therapy_state: dict[str, Any]) -> list[str]:
+    """Return concise lines for non-empty Session 2+ CBT/BA/IPT items and notes."""
+    tsp = therapy_state.get("therapy_specific_parameters") or {}
+    lines: list[str] = []
+    for modality in ("CBT", "BA", "IPT"):
+        bucket = tsp.get(modality) or {}
+        for category, items in bucket.items():
+            if not isinstance(items, list) or not items:
+                continue
+            rendered = []
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                text = next(
+                    (
+                        str(item[k]).strip()
+                        for k in ("thought", "belief", "activity", "pattern", "text")
+                        if item.get(k)
+                    ),
+                    "",
+                )
+                if not text:
+                    continue
+                status = item.get("status")
+                rendered.append(f"{text} ({status})" if status else text)
+            if rendered:
+                lines.append(f"- {modality} {category.replace('_', ' ')}: {'; '.join(rendered)}")
+
+    coping = [str(c).strip() for c in (therapy_state.get("coping_strategies") or []) if str(c).strip()]
+    if coping:
+        lines.append(f"- Session Coping Strategies: {'; '.join(coping)}")
+
+    risk_notes = [str(n).strip() for n in (therapy_state.get("risk_history_notes") or []) if str(n).strip()]
+    if risk_notes:
+        lines.append(f"- Session Risk Notes: {'; '.join(risk_notes)}")
 
     return lines
 
@@ -197,12 +262,19 @@ def format_therapy_profile(record: dict[str, Any]) -> str:
 
     goals = extract_goals(record)
     findings = format_reported_findings(handoff)
+    doc_context = _format_documented_planning_context(handoff)
+    open_questions = [
+        str(q.get("question")).strip()
+        for q in (handoff.get("open_questions") or [])
+        if isinstance(q, dict) and q.get("question")
+    ]
     tracked_syms = [
         f"{s['name']} ({s.get('severity', 'unspecified')})"
         for s in ts.get("symptoms", [])
         if isinstance(s, dict) and s.get("name")
     ]
     homework = (ts.get("therapy_specific_parameters") or {}).get("homework", [])
+    therapy_notes = _format_therapy_parameters_summary(ts)
 
     lines = [
         f"Age: {demo.get('age', 'Not specified')}, "
@@ -217,9 +289,18 @@ def format_therapy_profile(record: dict[str, Any]) -> str:
     lines.append(f"Goals: {goals if goals else ['Not documented yet']}")
     lines.append("Reported Findings (from assessment, verbatim):")
     lines.extend(findings if findings else ["- None documented"])
+    if doc_context:
+        lines.append("Documented Context (from assessment):")
+        lines.extend(doc_context)
+    if open_questions:
+        lines.append("Open Questions (from assessment):")
+        lines.extend(f"- {q}" for q in open_questions)
     if tracked_syms:
         lines.append(f"Tracked Symptoms (from therapy sessions): {tracked_syms}")
     lines.append(f"Active Homework: {homework}")
+    if therapy_notes:
+        lines.append("Prior Therapy Notes:")
+        lines.extend(therapy_notes)
     return "\n".join(lines)
 
 
