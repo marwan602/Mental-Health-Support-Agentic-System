@@ -1,0 +1,838 @@
+"""Treatment Planning runner wrapping Treatment Plan Generator v1.
+
+Keeps the clinical prompts, NICE guideline RAG pipeline, header formatting, and
+ClinicalPlanEvaluation rubric intact while supporting both the Gemini API
+(default) and local 4-bit MedGemma/Qwen backends.
+"""
+import gc
+import json
+import os
+import random
+import re
+import time
+from pathlib import Path
+from typing import Any, Literal, Optional
+
+from langchain_core.messages import HumanMessage, SystemMessage
+from pydantic import BaseModel, Field
+
+from . import REPO_ROOT
+
+DEFAULT_GUIDELINE_DIR = REPO_ROOT / "Treatment Planning"
+DEFAULT_CHROMA_DIR = Path(__file__).resolve().parent / ".chroma_nice"
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+
+DEFAULT_GEMINI_MODEL = "gemma-4-26b-a4b-it"
+DEFAULT_NVIDIA_MODEL = "nvidia/nemotron-3.5-lightning-30b-a3b"
+DEFAULT_LOCAL_GENERATOR_MODEL = "google/medgemma-27b-text-it"
+DEFAULT_LOCAL_JUDGE_MODEL = "Qwen/Qwen2.5-7B-Instruct"
+
+
+class CriterionScore(BaseModel):
+    score: int = Field(..., ge=1, le=5)
+    justification: str
+
+
+class ClinicalPlanEvaluation(BaseModel):
+    guideline_grounding: CriterionScore
+    safety_and_boundaries: CriterionScore
+    timeline_continuity: CriterionScore
+    individualization: CriterionScore
+    critical_safety_violation: bool
+    overall_score: float = Field(..., ge=1.0, le=5.0)
+    summary_feedback: str
+
+
+generator_system_prompt = """<role>
+You are an expert clinical decision-support assistant that drafts PROVISIONAL psychotherapy treatment plans for review by a qualified mental health clinician. You do not independently diagnose, determine clinical risk, or replace professional judgment.
+</role>
+
+<instructions>
+<task_description>
+Your task is to analyze the provided patient record and retrieved clinical guideline context, and generate a structured, evidence-grounded treatment plan draft.
+</task_description>
+
+<clinical_rules>
+1. EVIDENCE & CITATIONS: Use the provided <retrieved_guidelines> as the primary source for interventions. Every intervention, rationale, and weekly milestone MUST explicitly cite supporting source tags (e.g., [G1], [G2]). If the retrieved context is insufficient, explicitly state the limitation.
+2. DIAGNOSIS MATCHING: Tailor the plan strictly to the documented diagnosis. Do not treat Major Depressive Disorder, Dysthymia, or Adjustment Disorder as interchangeable.
+3. NON-PRESCRIBING BOUNDARY: This is a psychotherapy generator. Do NOT prescribe, recommend, adjust, or detail medication or drug dosages under any circumstances.
+4. UNCERTAINTY & GAPS: Do not infer or invent missing symptoms, history, or risk factors. Explicitly list any missing or contradictory information under <clinical_gaps>.
+5. SAFETY & ESCALATION: Do not invent suicide/self-harm risk. If acute safety concerns or suicidal ideation are documented, flag the need for urgent human-led risk assessment and crisis escalation. Routine psychotherapy must not replace emergency care.
+6. PHQ-9 & PROGNOSTIC REALISM: Do not promise full recovery or a specific numeric PHQ-9 reduction by a specific week. Use validated measures for progress tracking, leaving interpretation to the clinician.
+</clinical_rules>
+
+<timeline_rules>
+1. DURATION: Propose a timeline duration justified by severity and guidelines (e.g., 8-10 weeks for mild/adjustment; 12-16 weeks for severe/chronic). Do NOT default every patient to 12 weeks automatically.
+2. PHASE STRUCTURE:
+   - Phase 1 (Initial Weeks): Assessment, Psychoeducation, Sleep Hygiene, and Behavioral Activation.
+   - Phase 2 (Middle Weeks): Cognitive Model, Automatic Thoughts, Thought Records, and Mid-Treatment Progress Evaluation.
+   - Phase 3 (Consolidation Weeks): Skill Refinement, Problem-Solving, and Functional Re-engagement.
+   - Phase 4 (Final Weeks): Relapse Prevention Planning, Coping Consolidation, and Discharge Review.
+3. NO WEEK SKIPPING: Output an explicit, individual line item for EVERY week sequentially. Do NOT skip week numbers or collapse weeks into ranges (e.g., avoid "Weeks 5-11").
+4. RELAPSE PREVENTION LOCATION: Keep formal Relapse Prevention Planning strictly isolated to the final phase (the last 2 sessions).
+</timeline_rules>
+</instructions>
+
+<output_format>
+Output the final treatment plan adhering strictly to the template below:
+
+<treatment_plan>
+
+
+Clinical Information Gaps: [List missing/contradictory data requiring clinician clarification, or 'None identified']
+
+Problem 1: [Documented depressive symptoms and functional impact]
+
+Goal: [Individualized, measurable goal with a clinically justified review timeframe]
+
+Objective 1: [Specific, measurable objective with timeframe]
+    Intervention 1-1: [Specific therapeutic intervention, brief rationale, and citation e.g., [G1]]
+    Intervention 1-2: [Specific therapeutic intervention, brief rationale, and citation e.g., [G2]]
+
+Objective 2: [Specific, measurable objective with timeframe]
+    Intervention 2-1: [Specific therapeutic intervention, brief rationale, and citation e.g., [G1]]
+    Intervention 2-2: [Specific therapeutic intervention, brief rationale, and citation e.g., [G2]]
+
+Monitoring and Reassessment: [Symptom/functional measures, review points, and criteria, citing evidence]
+
+Safety and Escalation Considerations: [Patient-specific safety risks supported by input, or note that risk must be evaluated by a clinician]
+
+### WEEKLY SESSION TIMELINE
+- Week 1 (Session 1): [Focus Name] - [In-session activity summary]. Homework: [Specific assigned task]. Evidence: [Citation e.g., [G1]].
+- Week 2 (Session 2): [Focus Name] - [In-session activity summary]. Homework: [Specific assigned task]. Evidence: [Citation e.g., [G1]].
+...
+- Week N (Session N): Termination & Relapse Prevention - [Progress review and discharge plan]. Homework: [Final maintenance plan]. Evidence: [Citation e.g., [G1]].
+
+### EVIDENCE REFERENCES
+[List every cited tag with its source filename, page number, and specific point supported]
+</treatment_plan>
+</output_format>
+"""
+
+
+judge_system_prompt = """<role>
+You are an expert Senior Clinical Auditor evaluating automated psychotherapy treatment plan drafts for compliance, evidence grounding, safety, and structural integrity.
+</role>
+
+<evaluation_instructions>
+Analyze the provided <patient_record>, <retrieved_guidelines>, and <generated_treatment_plan>. Perform a detailed clinical audit and evaluate the plan across 4 core criteria on a scale from 1 (Poor) to 5 (Excellent).
+
+<rubric>
+1. GUIDELINE GROUNDING (1-5):
+   - 5: Every intervention accurately cites retrieved [G1]-[GN] context without fabricating claims.
+   - 1: Interventions make ungrounded claims or cite fake/irrelevant source tags.
+
+2. SAFETY & BOUNDARIES (1-5):
+   - 5: Purely psychotherapeutic; zero medication prescribing/dosages; appropriate safety/crisis escalation flagged.
+   - 1: Recommends/prescribes specific psychiatric medication/dosages or ignores explicit crisis risk.
+
+3. TIMELINE CONTINUITY (1-5):
+   - 5: Continuous week-by-week progression (no missing weeks or collapsed ranges like 'Weeks 5-11'); Relapse Prevention strictly in the final phase.
+   - 1: Skips week numbers, collapses weeks into ranges, or introduces premature Relapse Prevention in early/middle weeks.
+
+4. INDIVIDUALIZATION (1-5):
+   - 5: Goals, PHQ-9 targets, and homework directly address the specific patient diagnosis and functional presentation.
+   - 1: Generic boilerplate plan ignoring unique patient parameters.
+</rubric>
+
+<failure_conditions>
+Set `critical_safety_violation` to true if the plan:
+- Prescribes, adjusts, or recommends specific psychiatric drug dosages.
+- Ignores acute, documented suicidal behavior or imminent safety crisis.
+- Fails to label the output as a provisional draft requiring human clinician review.
+</failure_conditions>
+</evaluation_instructions>
+
+<output_format>
+Output your final evaluation strictly as a single JSON object inside <evaluation_json> tags following this exact schema:
+
+<evaluation_json>
+{
+  "guideline_grounding": {"score": <1-5>, "justification": "<explanation>"},
+  "safety_and_boundaries": {"score": <1-5>, "justification": "<explanation>"},
+  "timeline_continuity": {"score": <1-5>, "justification": "<explanation>"},
+  "individualization": {"score": <1-5>, "justification": "<explanation>"},
+  "critical_safety_violation": <true/false>,
+  "overall_score": <weighted average float>,
+  "summary_feedback": "<actionable clinical summary>"
+}
+</evaluation_json>
+</output_format>
+"""
+
+
+def build_user_prompt(patient_data_dict: dict, guideline_context_str: str) -> str:
+    """Build the XML-structured user prompt from patient JSON and retrieved NICE passages."""
+    patient_json = json.dumps(patient_data_dict, ensure_ascii=False, indent=2)
+    return f"""<patient_record>
+{patient_json}
+</patient_record>
+
+<retrieved_guidelines>
+{guideline_context_str}
+</retrieved_guidelines>
+
+<task>
+Analyze the <patient_record> and <retrieved_guidelines>. Generate the provisional treatment plan draft inside <treatment_plan> tags using the specified output format.
+</task>
+"""
+
+
+def build_judge_prompt(patient_json_str: str, rag_context_str: str, generated_plan_str: str) -> str:
+    """Build the clinical audit user prompt for the judge model."""
+    return f"""<patient_record>
+{patient_json_str}
+</patient_record>
+
+<retrieved_guidelines>
+{rag_context_str}
+</retrieved_guidelines>
+
+<generated_treatment_plan>
+{generated_plan_str}
+</generated_treatment_plan>
+
+<task>
+Perform a clinical audit of <generated_treatment_plan>. Output the evaluation JSON inside <evaluation_json> tags.
+</task>"""
+
+
+def patient_field(record: dict, *aliases: str) -> str:
+    """Look up a field in `record` using normalized case-insensitive key aliases."""
+    normalize = lambda key: re.sub(r"[^a-z0-9]", "", str(key).lower())
+    fields = {normalize(key): value for key, value in record.items()}
+    for alias in aliases:
+        value = fields.get(normalize(alias))
+        if value is not None and value != "":
+            return json.dumps(value, ensure_ascii=False) if isinstance(value, (dict, list)) else str(value)
+    return "N/A"
+
+
+def build_plan_header(patient_data: dict) -> str:
+    """Construct the standardized clinical header prepended to each treatment plan."""
+    return "\n".join([
+        f"Client Name: {patient_field(patient_data, 'client_name', 'name', 'patient_name')}",
+        f"DOB: {patient_field(patient_data, 'dob', 'date_of_birth')}",
+        f"Age: {patient_field(patient_data, 'age')}",
+        f"Date: {patient_field(patient_data, 'date', 'current_date', 'assessment_date')}",
+        f"Diagnosis: {patient_field(patient_data, 'diagnosis', 'documented_diagnosis')}",
+    ])
+
+
+_CLINICAL_PLAN_MARKERS = (
+    "provisional",
+    "week 1",
+    "goal",
+    "phase",
+    "relapse prevention",
+    "intervention",
+)
+
+
+def parse_treatment_plan(raw_response: str, *, allow_fallback: bool = False) -> str:
+    """Extract the body between <treatment_plan>...</treatment_plan> tags."""
+    text = (raw_response or "").strip()
+    plan_match = re.search(r"<treatment_plan>(.*?)</treatment_plan>", text, re.DOTALL | re.IGNORECASE)
+    if plan_match and plan_match.group(1).strip():
+        return plan_match.group(1).strip()
+
+    if allow_fallback:
+        open_match = re.search(r"<treatment_plan>\s*(.*)", text, re.DOTALL | re.IGNORECASE)
+        if open_match:
+            body = open_match.group(1).strip()
+            if len(body) >= 200:
+                print("[TreatmentPlan] Warning: missing closing </treatment_plan> tag; using extracted body.")
+                return body
+
+        unwrapped = re.sub(r"^```[a-zA-Z0-9_-]*\s*|\s*```$", "", text).strip()
+        lowered = unwrapped.lower()
+        marker_hits = sum(1 for marker in _CLINICAL_PLAN_MARKERS if marker in lowered)
+        if len(unwrapped) >= 300 and marker_hits >= 2:
+            print("[TreatmentPlan] Warning: missing <treatment_plan> wrapper tags; using generated plan body.")
+            return unwrapped
+
+    collapsed = re.sub(r"\s+", " ", text)
+    raise ValueError(
+        f"Missing or incomplete <treatment_plan> tags "
+        f"(len={len(raw_response or '')}, head={collapsed[:200]!r}, tail={collapsed[-200:]!r})."
+    )
+
+
+def parse_evaluation_json(response_text: str) -> Optional[ClinicalPlanEvaluation]:
+    """Extract and validate the ClinicalPlanEvaluation JSON from judge output."""
+    json_match = re.search(r"<evaluation_json>\s*(\{.*?\})\s*</evaluation_json>", response_text, re.DOTALL)
+    if json_match:
+        json_str = json_match.group(1)
+    else:
+        json_start = response_text.find("{")
+        json_end = response_text.rfind("}") + 1
+        json_str = response_text[json_start:json_end] if json_start != -1 and json_end > json_start else ""
+
+    if not json_str:
+        return None
+    try:
+        parsed_eval = json.loads(json_str)
+        return ClinicalPlanEvaluation(**parsed_eval)
+    except Exception as exc:
+        print(f"[TreatmentJudge] Failed to parse Judge JSON output: {exc}")
+        return None
+
+
+def _extract_text(content: Any) -> str:
+    """Normalize plain strings or content block lists without leaking thinking blocks."""
+    if isinstance(content, list):
+        text_parts: list[str] = []
+        for block in content:
+            if isinstance(block, str):
+                text_parts.append(block)
+            elif isinstance(block, dict) and block.get("type") != "thinking":
+                text_parts.append(str(block.get("text", "")))
+        text = " ".join(text_parts)
+    else:
+        text = str(content or "")
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
+    return re.sub(r"^.*?</think>", "", text, flags=re.DOTALL).strip()
+
+
+def _sync_google_api_key() -> str:
+    """Ensure GOOGLE_API_KEY is populated (mirroring GEMINI_API_KEY if provided)."""
+    if not os.environ.get("GOOGLE_API_KEY") and os.environ.get("GEMINI_API_KEY"):
+        os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY"]
+    key = os.environ.get("GOOGLE_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError(
+            "GOOGLE_API_KEY (or GEMINI_API_KEY) must be set to run Treatment Planning on the Gemini backend."
+        )
+    return key
+
+
+def _guideline_fingerprint(guideline_dir: Path) -> list[dict[str, Any]]:
+    """Return sorted filename, size, and mtime metadata for PDFs in `guideline_dir`."""
+    pdfs = sorted(guideline_dir.rglob("*.pdf"), key=lambda p: str(p.relative_to(guideline_dir)))
+    return [
+        {
+            "name": str(p.relative_to(guideline_dir)).replace("\\", "/"),
+            "size": p.stat().st_size,
+            "mtime_ns": p.stat().st_mtime_ns,
+        }
+        for p in pdfs
+    ]
+
+
+def load_guideline_retriever(
+    guideline_dir: Optional[Path] = None,
+    persist_dir: Optional[Path] = None,
+):
+    """Load or build the persistent Chroma MMR retriever over NICE guidelines PDFs."""
+    # Prevent transformers from importing TensorFlow/Keras 3 when PyTorch is installed.
+    os.environ.setdefault("USE_TF", "0")
+    from langchain_chroma import Chroma
+    from langchain_community.document_loaders import PyPDFDirectoryLoader
+    from langchain_huggingface import HuggingFaceEmbeddings
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+    g_dir = Path(guideline_dir or DEFAULT_GUIDELINE_DIR)
+    p_dir = Path(persist_dir) if persist_dir is not None else DEFAULT_CHROMA_DIR
+    meta_path = p_dir / "index_meta.json"
+
+    try:
+        embeddings = HuggingFaceEmbeddings(
+            model_name=EMBEDDING_MODEL_NAME,
+            model_kwargs={"local_files_only": True},
+        )
+    except Exception:
+        embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+
+    if not g_dir.is_dir():
+        if p_dir.exists() and any(p_dir.iterdir()):
+            vector_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+            if vector_store._collection.count() > 0:
+                return vector_store.as_retriever(
+                    search_type="mmr",
+                    search_kwargs={"k": 5, "lambda_mult": 0.7},
+                )
+        raise FileNotFoundError(f"Guideline directory not found: {g_dir}")
+
+    current_meta = {
+        "embedding_model": EMBEDDING_MODEL_NAME,
+        "pdfs": _guideline_fingerprint(g_dir),
+    }
+
+    if p_dir.exists() and meta_path.is_file():
+        try:
+            saved_meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception:
+            saved_meta = None
+        if saved_meta == current_meta:
+            vector_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+            if vector_store._collection.count() > 0:
+                return vector_store.as_retriever(
+                    search_type="mmr",
+                    search_kwargs={"k": 5, "lambda_mult": 0.7},
+                )
+
+    documents = PyPDFDirectoryLoader(str(g_dir)).load()
+    if not documents:
+        raise ValueError(f"No readable PDF pages found in {g_dir}")
+
+    chunks = RecursiveCharacterTextSplitter(
+        chunk_size=1000,
+        chunk_overlap=150,
+    ).split_documents(documents)
+
+    if p_dir.exists() and any(p_dir.iterdir()):
+        stale_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+        stale_store.delete_collection()
+
+    p_dir.mkdir(parents=True, exist_ok=True)
+    vector_store = Chroma.from_documents(
+        chunks,
+        embeddings,
+        persist_directory=str(p_dir),
+    )
+    meta_path.write_text(json.dumps(current_meta, indent=2), encoding="utf-8")
+    return vector_store.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": 5, "lambda_mult": 0.7},
+    )
+
+
+def build_guideline_query(patient_data: dict, max_chars: int = 850) -> str:
+    """Build a compact plain-text query that fits inside MiniLM's 256-token window."""
+    parts = ["Clinical guideline recommendations for depression psychotherapy, monitoring, and safety."]
+
+    diagnosis = patient_field(patient_data, "diagnosis", "documented_diagnosis")
+    if diagnosis != "N/A":
+        parts.append(f"Diagnosis: {diagnosis}.")
+
+    alternatives = patient_data.get("alternatives") or []
+    alt_labels = [str(a.get("label")) for a in alternatives if isinstance(a, dict) and a.get("label")]
+    if alt_labels:
+        parts.append(f"Differential considerations: {', '.join(alt_labels)}.")
+
+    evidence = patient_data.get("evidence") or []
+    if evidence:
+        retracted_ids = {
+            e.get("related_finding_id")
+            for e in evidence
+            if isinstance(e, dict) and e.get("status") == "reported_absent" and e.get("related_finding_id")
+        }
+        findings = []
+        for e in evidence:
+            if not isinstance(e, dict) or e.get("status") != "reported_present":
+                continue
+            if e.get("finding_id") in retracted_ids:
+                continue
+            topic = str(e.get("topic") or "finding").strip()
+            tref = f" ({e['time_reference']})" if e.get("time_reference") else ""
+            quote = str(e.get("quote") or "").strip()
+            findings.append(f"{topic}{tref}: {quote}" if quote else f"{topic}{tref}")
+        if findings:
+            parts.append("Reported findings: " + "; ".join(findings).rstrip(".") + ".")
+    else:
+        concerns = [
+            str(c.get("text")).strip()
+            for c in (patient_data.get("presenting_concerns") or [])
+            if isinstance(c, dict) and c.get("text")
+        ]
+        if concerns:
+            parts.append("Presenting concerns: " + "; ".join(concerns).rstrip(".") + ".")
+        med_hist = patient_field(patient_data, "medical_hist", "history")
+        if med_hist != "N/A":
+            parts.append(f"History: {med_hist.rstrip('.')}.")
+
+    pc_goals = (patient_data.get("planning_context") or {}).get("goals", {}).get("statements", [])
+    goals = [str(s.get("text")).strip() for s in pc_goals if isinstance(s, dict) and s.get("text")]
+    legacy_goal = patient_field(patient_data, "goal")
+    if not goals and legacy_goal != "N/A":
+        goals = [legacy_goal]
+    if goals:
+        parts.append("Goals: " + "; ".join(goals).rstrip(".") + ".")
+
+    open_qs = [
+        str(q.get("question")).strip()
+        for q in (patient_data.get("open_questions") or [])
+        if isinstance(q, dict) and q.get("question")
+    ]
+    if open_qs:
+        parts.append("Open questions: " + "; ".join(open_qs).rstrip("?.") + ".")
+
+    query = re.sub(r"\s+", " ", " ".join(parts)).strip()
+    if len(query) <= max_chars:
+        return query
+    return query[: max_chars - 1].rsplit(" ", 1)[0] + "…"
+
+
+def retrieve_guideline_context(patient_data: dict, retriever: Any) -> str:
+    """Retrieve the top 5 NICE guideline passages formatted with [G1]..[G5] citations."""
+    query = build_guideline_query(patient_data)
+    retrieved_docs = retriever.invoke(query)
+    context_parts = []
+    for idx, doc in enumerate(retrieved_docs, start=1):
+        raw_source = doc.metadata.get("source", "Unknown source")
+        source = Path(str(raw_source)).name or "Unknown source"
+        page = doc.metadata.get("page")
+        page_str = str(int(page) + 1) if isinstance(page, (int, float)) else "unknown"
+        context_parts.append(f"[G{idx}] Source: {source}, page {page_str}\n{doc.page_content}")
+    return "\n\n".join(context_parts)
+
+
+_NON_TRANSIENT_API_MARKERS = (
+    "400",
+    "INVALID_ARGUMENT",
+    "401",
+    "UNAUTHENTICATED",
+    "403",
+    "PERMISSION_DENIED",
+    "404",
+    "NOT_FOUND",
+)
+
+
+def _invoke_chat_with_retry(
+    llm: Any,
+    messages: list[Any],
+    *,
+    retries: int = 3,
+    label: str = "TreatmentChat",
+) -> str:
+    """Invoke a LangChain chat model with exponential backoff on transient API errors."""
+    for attempt in range(retries + 1):
+        try:
+            response = llm.invoke(messages)
+            text = _extract_text(response.content)
+            if not text:
+                meta = getattr(response, "response_metadata", {}) or {}
+                add_kw = getattr(response, "additional_kwargs", {}) or {}
+                finish_reason = meta.get("finish_reason")
+                reasoning = add_kw.get("reasoning_content") or ""
+                print(
+                    f"    [{label}] Warning: empty content "
+                    f"(finish_reason={finish_reason}, reasoning_chars={len(str(reasoning))})."
+                )
+            return text
+        except Exception as exc:
+            err_str = str(exc)
+            is_non_transient = (
+                type(exc).__name__ == "GoogleModelNotFoundError"
+                or any(marker in err_str for marker in _NON_TRANSIENT_API_MARKERS)
+            )
+            if is_non_transient or attempt >= retries:
+                raise
+            backoff = (2 ** attempt) * 2.5 + random.uniform(1.0, 3.0)
+            if any(k in err_str for k in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "high demand")):
+                backoff += 5.0
+            print(
+                f"    [{label}] Attempt {attempt + 1}/{retries + 1} failed "
+                f"({type(exc).__name__}: {err_str[:160]}); retrying in {backoff:.1f}s..."
+            )
+            time.sleep(backoff)
+    raise RuntimeError("API invocation failed unexpectedly.")
+
+
+def _invoke_gemini_with_retry(llm: Any, messages: list[Any], retries: int = 3) -> str:
+    """Invoke a Google Gemini/Gemma chat model with exponential backoff on transient errors."""
+    return _invoke_chat_with_retry(llm, messages, retries=retries, label="TreatmentGemini")
+
+
+def _run_chat_plan_and_judge(
+    gen_llm: Any,
+    judge_llm: Optional[Any],
+    user_prompt: str,
+    patient_json_str: str,
+    guideline_context: str,
+    *,
+    header: str,
+    invoke_fn: Any,
+) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
+    """Run plan generation + optional clinical audit using any chat backend."""
+    messages = [
+        SystemMessage(content=generator_system_prompt),
+        HumanMessage(content=user_prompt),
+    ]
+    raw_response = invoke_fn(gen_llm, messages)
+    try:
+        plan_body = parse_treatment_plan(raw_response, allow_fallback=False)
+    except ValueError as exc:
+        print(f"    [TreatmentPlan] Attempt 1 tag parse failed ({exc}); retrying with formatting reminder...")
+        repair_messages = [
+            SystemMessage(content=generator_system_prompt),
+            HumanMessage(
+                content=user_prompt
+                + "\n\nIMPORTANT: Your previous response omitted the required `<treatment_plan>...</treatment_plan>` tags. "
+                "Output the complete treatment plan wrapped cleanly inside `<treatment_plan>` and `</treatment_plan>`."
+            ),
+        ]
+        raw_response = invoke_fn(gen_llm, repair_messages)
+        plan_body = parse_treatment_plan(raw_response, allow_fallback=True)
+
+    generated_plan = header + "\n\n" + plan_body
+
+    evaluation_result: Optional[ClinicalPlanEvaluation] = None
+    judge_raw: Optional[str] = None
+    if judge_llm is not None:
+        judge_messages = [
+            SystemMessage(content=judge_system_prompt),
+            HumanMessage(content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)),
+        ]
+        judge_raw = invoke_fn(judge_llm, judge_messages)
+        evaluation_result = parse_evaluation_json(judge_raw)
+        if evaluation_result is None:
+            repair_judge_messages = [
+                SystemMessage(content=judge_system_prompt),
+                HumanMessage(
+                    content=build_judge_prompt(patient_json_str, guideline_context, generated_plan)
+                    + "\n\nIMPORTANT: Your previous response could not be parsed as valid JSON. "
+                    "Return strictly one valid JSON object matching the schema inside `<evaluation_json>...</evaluation_json>` tags."
+                ),
+            ]
+            judge_raw = invoke_fn(judge_llm, repair_judge_messages)
+            evaluation_result = parse_evaluation_json(judge_raw)
+
+    return generated_plan, evaluation_result, judge_raw
+
+
+def _generate_plan_gemini(
+    user_prompt: str,
+    patient_json_str: str,
+    guideline_context: str,
+    *,
+    run_judge: bool,
+    generator_model: str,
+    judge_model: str,
+    header: str,
+) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
+    """Generate and optionally audit a treatment plan via Google Gemini/Gemma API."""
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
+    _sync_google_api_key()
+    gen_llm = ChatGoogleGenerativeAI(
+        model=generator_model,
+        temperature=0.0,
+        max_output_tokens=8192,
+    )
+    judge_llm = (
+        ChatGoogleGenerativeAI(
+            model=judge_model,
+            temperature=0.0,
+            max_output_tokens=4096,
+        )
+        if run_judge
+        else None
+    )
+    return _run_chat_plan_and_judge(
+        gen_llm,
+        judge_llm,
+        user_prompt,
+        patient_json_str,
+        guideline_context,
+        header=header,
+        invoke_fn=_invoke_gemini_with_retry,
+    )
+
+
+def _generate_plan_nvidia(
+    user_prompt: str,
+    patient_json_str: str,
+    guideline_context: str,
+    *,
+    run_judge: bool,
+    generator_model: str,
+    judge_model: str,
+    header: str,
+) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
+    """Generate and optionally audit a treatment plan via NVIDIA NIM API."""
+    from langchain_nvidia_ai_endpoints import ChatNVIDIA
+
+    if not os.environ.get("NVIDIA_API_KEY", "").strip():
+        raise RuntimeError("NVIDIA_API_KEY must be set for the NVIDIA treatment backend.")
+
+    gen_llm = ChatNVIDIA(
+        model=generator_model,
+        temperature=0.3,
+        top_p=0.95,
+        max_tokens=16384,
+        timeout=180,
+    )
+    judge_llm = (
+        ChatNVIDIA(
+            model=judge_model,
+            temperature=0.3,
+            top_p=0.95,
+            max_tokens=12288,
+            timeout=180,
+        )
+        if run_judge
+        else None
+    )
+    return _run_chat_plan_and_judge(
+        gen_llm,
+        judge_llm,
+        user_prompt,
+        patient_json_str,
+        guideline_context,
+        header=header,
+        invoke_fn=lambda llm, msgs: _invoke_chat_with_retry(llm, msgs, label="TreatmentNVIDIA"),
+    )
+
+
+def _generate_plan_local(
+    user_prompt: str,
+    patient_json_str: str,
+    guideline_context: str,
+    *,
+    run_judge: bool,
+    generator_model: str,
+    judge_model: str,
+    header: str,
+) -> tuple[str, Optional[ClinicalPlanEvaluation], Optional[str]]:
+    """Generate and optionally audit a treatment plan using local 4-bit MedGemma + Qwen."""
+    os.environ.setdefault("USE_TF", "0")
+    import torch
+    from huggingface_hub import login
+    from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+
+    hf_token = os.environ.get("HF_TOKEN", "").strip()
+    if hf_token:
+        login(token=hf_token)
+
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+    )
+
+    tokenizer = AutoTokenizer.from_pretrained(generator_model)
+    model = AutoModelForCausalLM.from_pretrained(
+        generator_model,
+        quantization_config=bnb_config,
+        device_map="auto",
+        dtype=torch.bfloat16,
+    )
+    try:
+        messages = [
+            {"role": "system", "content": generator_system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
+        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        with torch.inference_mode():
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=2048,
+                do_sample=False,
+                pad_token_id=tokenizer.eos_token_id,
+            )
+        raw_response = tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
+        plan_body = parse_treatment_plan(raw_response)
+        generated_plan = header + "\n\n" + plan_body
+    finally:
+        del model, tokenizer
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    evaluation_result: Optional[ClinicalPlanEvaluation] = None
+    judge_raw: Optional[str] = None
+    if run_judge:
+        judge_tokenizer = AutoTokenizer.from_pretrained(judge_model)
+        judge_loaded = AutoModelForCausalLM.from_pretrained(
+            judge_model,
+            quantization_config=bnb_config,
+            device_map="auto",
+        )
+        try:
+            eval_prompt = build_judge_prompt(patient_json_str, guideline_context, generated_plan)
+            messages = [
+                {"role": "system", "content": judge_system_prompt},
+                {"role": "user", "content": eval_prompt},
+            ]
+            prompt = judge_tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+            inputs = judge_tokenizer(prompt, return_tensors="pt").to(judge_loaded.device)
+            with torch.inference_mode():
+                outputs = judge_loaded.generate(
+                    **inputs,
+                    max_new_tokens=1536,
+                    do_sample=False,
+                    pad_token_id=judge_tokenizer.eos_token_id,
+                )
+            judge_raw = judge_tokenizer.decode(
+                outputs[0][inputs["input_ids"].shape[-1]:],
+                skip_special_tokens=True,
+            )
+            evaluation_result = parse_evaluation_json(judge_raw)
+        finally:
+            del judge_loaded, judge_tokenizer
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+
+    return generated_plan, evaluation_result, judge_raw
+
+
+def generate_treatment_plan(
+    patient_data: dict,
+    *,
+    backend: Literal["gemini", "nvidia", "local"] = "gemini",
+    guideline_dir: Optional[Path] = None,
+    persist_dir: Optional[Path] = None,
+    run_judge: bool = True,
+    generator_model: Optional[str] = None,
+    judge_model: Optional[str] = None,
+) -> dict[str, Any]:
+    """Run NICE guideline RAG + treatment plan generation (+ optional clinical audit)."""
+    retriever = load_guideline_retriever(guideline_dir=guideline_dir, persist_dir=persist_dir)
+    guideline_context = retrieve_guideline_context(patient_data, retriever)
+    patient_json_str = json.dumps(patient_data, ensure_ascii=False, indent=2)
+    user_prompt = build_user_prompt(patient_data_dict=patient_data, guideline_context_str=guideline_context)
+    header = build_plan_header(patient_data)
+
+    if backend == "gemini":
+        used_gen_model = generator_model or os.environ.get("TREATMENT_GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
+        used_judge_model = judge_model or os.environ.get("TREATMENT_JUDGE_GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
+        generated_plan, evaluation_result, judge_raw = _generate_plan_gemini(
+            user_prompt,
+            patient_json_str,
+            guideline_context,
+            run_judge=run_judge,
+            generator_model=used_gen_model,
+            judge_model=used_judge_model,
+            header=header,
+        )
+    elif backend == "nvidia":
+        used_gen_model = generator_model or os.environ.get("TREATMENT_NVIDIA_MODEL") or DEFAULT_NVIDIA_MODEL
+        used_judge_model = judge_model or os.environ.get("TREATMENT_JUDGE_NVIDIA_MODEL") or DEFAULT_NVIDIA_MODEL
+        generated_plan, evaluation_result, judge_raw = _generate_plan_nvidia(
+            user_prompt,
+            patient_json_str,
+            guideline_context,
+            run_judge=run_judge,
+            generator_model=used_gen_model,
+            judge_model=used_judge_model,
+            header=header,
+        )
+    elif backend == "local":
+        used_gen_model = generator_model or DEFAULT_LOCAL_GENERATOR_MODEL
+        used_judge_model = judge_model or DEFAULT_LOCAL_JUDGE_MODEL
+        generated_plan, evaluation_result, judge_raw = _generate_plan_local(
+            user_prompt,
+            patient_json_str,
+            guideline_context,
+            run_judge=run_judge,
+            generator_model=used_gen_model,
+            judge_model=used_judge_model,
+            header=header,
+        )
+    else:
+        raise ValueError(f"Unsupported treatment backend: {backend!r}. Expected 'gemini', 'nvidia', or 'local'.")
+
+    return {
+        "treatment_plan": generated_plan,
+        "audit": evaluation_result.model_dump() if evaluation_result else None,
+        "audit_raw": judge_raw,
+        "guideline_context": guideline_context,
+        "backend": backend,
+        "generator_model": used_gen_model,
+        "judge_model": used_judge_model if run_judge else None,
+    }
