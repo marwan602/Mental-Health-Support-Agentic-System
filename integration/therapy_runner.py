@@ -317,14 +317,38 @@ def retrieve_candidates(
     selected_ids = {r["intervention_id"] for r in ranked_general}
     final_candidates = list(ranked_general)
 
-    for mod in active_mods:
-        if not any(r["therapy_id"].lower() == mod for r in final_candidates):
-            mod_hits = bm25.search(q_terms, top_k=2, modality_filter=mod)
-            for hit in mod_hits:
-                if hit["intervention_id"] not in selected_ids:
-                    final_candidates.append(hit)
+    protected_ids: set[str] = set()
+    for mod in sorted(active_mods):
+        first_match = next((r for r in final_candidates if r["therapy_id"].lower() == mod), None)
+        if first_match is not None:
+            protected_ids.add(first_match["intervention_id"])
+
+    for mod in sorted(active_mods):
+        if any(r["therapy_id"].lower() == mod for r in final_candidates):
+            continue
+        mod_hits = bm25.search(q_terms, top_k=2, modality_filter=mod)
+        for hit in mod_hits:
+            if hit["intervention_id"] in selected_ids:
+                continue
+            if len(final_candidates) < limit:
+                final_candidates.append(hit)
+                selected_ids.add(hit["intervention_id"])
+                protected_ids.add(hit["intervention_id"])
+            else:
+                replace_idx = next(
+                    (
+                        i
+                        for i in range(len(final_candidates) - 1, -1, -1)
+                        if final_candidates[i]["intervention_id"] not in protected_ids
+                    ),
+                    None,
+                )
+                if replace_idx is not None:
+                    selected_ids.discard(final_candidates[replace_idx]["intervention_id"])
+                    final_candidates[replace_idx] = hit
                     selected_ids.add(hit["intervention_id"])
-                    break
+                    protected_ids.add(hit["intervention_id"])
+            break
 
     return final_candidates[:limit]
 
@@ -899,7 +923,7 @@ Therapy Management
 Safety
 - Respond to suicidal thoughts with empathy and without judgment. Do not overreact or overwhelm the patient.
 - Suicidal thoughts alone do not automatically indicate an emergency; assess context and immediate risk.
-- If immediate danger is indicated or risk=escalate, prioritize safety and human support. Use the safety_tool to facilitate appropriate human intervention rather than managing the crisis through therapy alone.
+- If immediate danger is indicated, prioritize safety and appropriate human support rather than managing the crisis through therapy alone.
 - Do not introduce suicide or self-harm topics or topics that might overwhelm the patient unless raised by the patient or directly relevant to the therapeutic objective.
 - Without immediate danger, continue therapy naturally while remaining attentive to changes in safety.
 """

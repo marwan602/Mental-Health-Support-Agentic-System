@@ -35,6 +35,7 @@ from integration.therapy_runner import (
     TherapySession,
     apply_state_patch,
     build_clinical_tools,
+    expand_clinical_query,
     load_therapy_libraries,
     make_session_plan_schema,
     repair_plan_deterministic,
@@ -582,6 +583,19 @@ class TherapyRunnerTests(unittest.TestCase):
             m for m, pat in MODALITY_PATTERNS.items() if pat.search("behavioural activation and interpersonal psychotherapy".lower())
         }
         self.assertEqual(matched_full, {"ba", "ipt"})
+
+    def test_retrieve_candidates_preserves_missing_modality_within_limit(self):
+        libs = load_therapy_libraries()
+        plan = "CBT cognitive restructuring thought record automatic thoughts core beliefs and Interpersonal Psychotherapy (IPT)"
+        raw_top6 = libs["bm25_index"].search(expand_clinical_query(plan), top_k=6)
+        self.assertEqual(len(raw_top6), 6)
+        self.assertNotIn("ipt", {r["therapy_id"].lower() for r in raw_top6})
+
+        candidates = retrieve_candidates(plan, [], limit=6, libs=libs)
+        self.assertEqual(len(candidates), 6)
+        mods = {c["therapy_id"].lower() for c in candidates}
+        self.assertIn("cbt", mods)
+        self.assertIn("ipt", mods)
 
     def test_replan_validator_allows_remaining_phases_only(self):
         libs = load_therapy_libraries()
