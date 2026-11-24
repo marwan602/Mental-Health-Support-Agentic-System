@@ -74,6 +74,7 @@ def _get_nvidia_client(model_name: str = NVIDIA_MODEL) -> ChatNVIDIA:
             model=model_name,
             temperature=0.5,
             top_p=0.95,
+            max_tokens=8192,
             rate_limiter=nvidia_rate_limiter,
             timeout=120,
         )
@@ -123,6 +124,69 @@ def strip_think(content: Any) -> str:
     return re.sub(r"^.*?</think>", "", s, flags=re.DOTALL).strip()
 
 
+def _empty_content_note(res: Any) -> str:
+    meta = getattr(res, "response_metadata", {}) or {}
+    add_kw = getattr(res, "additional_kwargs", {}) or {}
+    finish_reason = meta.get("finish_reason")
+    reasoning = add_kw.get("reasoning_content") or ""
+    return f"finish_reason={finish_reason}, reasoning_chars={len(str(reasoning))}"
+
+
+def _parse_structured_json(raw_content: Any, schema: type[BaseModel]) -> BaseModel:
+    """Strip thinking/markdown wrappers, decode JSON, and validate against `schema`."""
+    cleaned = strip_think(raw_content).strip()
+    cleaned = re.sub(r"^```[a-zA-Z0-9_-]*\s*|\s*```$", "", cleaned).strip()
+    if not cleaned:
+        raise ValueError("Empty response content after stripping thinking blocks.")
+    try:
+        data = json.loads(cleaned)
+    except json.JSONDecodeError:
+        start = cleaned.find("{")
+        end = cleaned.rfind("}") + 1
+        if start == -1 or end <= start:
+            raise
+        data = json.loads(cleaned[start:end])
+    return schema.model_validate(data)
+
+
+def _invoke_nvidia_structured(
+    client: Any,
+    schema: type[BaseModel],
+    system_prompt: str,
+    user_prompt: str,
+    *,
+    role: str,
+    use_json_schema: bool,
+) -> tuple[BaseModel, bool]:
+    """Invoke NVIDIA NIM structured output cleanly (json_schema first, json_object fallback, never guided_json)."""
+    json_schema = schema.model_json_schema()
+    if use_json_schema:
+        try:
+            res = client.bind(
+                response_format={
+                    "type": "json_schema",
+                    "json_schema": {"name": schema.__name__, "schema": json_schema, "strict": False},
+                }
+            ).invoke([SystemMessage(content=system_prompt), HumanMessage(content=user_prompt)])
+            if not strip_think(res.content).strip():
+                raise ValueError(f"Empty json_schema content ({_empty_content_note(res)})")
+            return _parse_structured_json(res.content, schema), True
+        except Exception as exc:
+            print(f"    [STRUCTURED FALLBACK] Role '{role}' json_schema failed ({type(exc).__name__}: {str(exc)[:140]}); switching to json_object.")
+
+    compact_schema = json.dumps(json_schema, separators=(",", ":"))
+    schema_user_prompt = (
+        f"{user_prompt}\n\nReturn ONLY one valid JSON object matching this exact JSON Schema "
+        f"(no markdown, no extra text):\n{compact_schema}"
+    )
+    res = client.bind(response_format={"type": "json_object"}).invoke(
+        [SystemMessage(content=system_prompt), HumanMessage(content=schema_user_prompt)]
+    )
+    if not strip_think(res.content).strip():
+        raise ValueError(f"Empty json_object content ({_empty_content_note(res)})")
+    return _parse_structured_json(res.content, schema), False
+
+
 def call_structured(
     role: str,
     schema: type[BaseModel],
@@ -136,12 +200,25 @@ def call_structured(
     gemma_model: str = GEMMA_MODEL,
 ) -> Any:
     client = _get_therapist_client(gemma_model) if role == "therapist" else _get_nvidia_client(nvidia_model)
-    structured_runnable = client.with_structured_output(schema)
+    structured_runnable = client.with_structured_output(schema) if role == "therapist" else None
     messages = [SystemMessage(content=system_prompt), HumanMessage(content=user_prompt)]
+    use_json_schema = True
 
     for attempt in range(retries + 1):
         try:
-            parsed = structured_runnable.invoke(messages)
+            if role == "therapist":
+                assert structured_runnable is not None
+                parsed = structured_runnable.invoke(messages)
+            else:
+                parsed, use_json_schema = _invoke_nvidia_structured(
+                    client,
+                    schema,
+                    system_prompt,
+                    user_prompt,
+                    role=role,
+                    use_json_schema=use_json_schema,
+                )
+
             if parsed is not None:
                 if validator:
                     errs = validator(parsed)
@@ -154,7 +231,7 @@ def call_structured(
                 return parsed
         except Exception as exc:
             err_str = str(exc)
-            print(f"    [CALL_STRUCTURED ERROR] Role '{role}' (Attempt {attempt + 1}/{retries + 1}): {type(exc).__name__}: {err_str[:120]}")
+            print(f"    [CALL_STRUCTURED ERROR] Role '{role}' (Attempt {attempt + 1}/{retries + 1}): {type(exc).__name__}: {err_str[:160]}")
             if attempt < retries:
                 backoff = (2 ** attempt) * 2.5 + random.uniform(1.0, 3.0)
                 if any(k in err_str for k in ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "high demand")):

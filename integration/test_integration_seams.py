@@ -33,8 +33,10 @@ from integration.therapy_runner import (
     TherapyDecision,
     TherapyItemUpdate,
     TherapySession,
+    _parse_structured_json,
     apply_state_patch,
     build_clinical_tools,
+    call_structured,
     expand_clinical_query,
     load_therapy_libraries,
     make_session_plan_schema,
@@ -724,6 +726,62 @@ class TherapyRunnerTests(unittest.TestCase):
         self.assertIsNone(res["session_archive"])
         self.assertEqual(res["state_patch"], {})
         self.assertEqual(res["record"]["sessions"], [])
+
+    def test_call_structured_uses_json_schema_then_falls_back_to_json_object(self):
+        fenced_reply = '<think>plan reasoning</think>\n```json\n{"selected_action": "explore", "goal": "Explore sleep habits", "objective_complete": false}\n```'
+        parsed = _parse_structured_json(fenced_reply, TherapyDecision)
+        self.assertIsInstance(parsed, TherapyDecision)
+        self.assertEqual(parsed.selected_action, "explore")
+        self.assertEqual(parsed.goal, "Explore sleep habits")
+
+        class _FakeResp:
+            def __init__(self, content: str):
+                self.content = content
+                self.response_metadata = {"finish_reason": "stop"}
+                self.additional_kwargs = {}
+
+        class _FakeBoundLLM:
+            def __init__(self, rf: dict, fail_json_schema: bool, seen: list):
+                self.rf = rf
+                self.fail_json_schema = fail_json_schema
+                self.seen = seen
+
+            def invoke(self, messages):
+                self.seen.append((self.rf, messages))
+                if self.fail_json_schema and self.rf.get("type") == "json_schema":
+                    raise RuntimeError("[400] invalid schema")
+                return _FakeResp('{"selected_action": "validate", "goal": "Validate feeling", "objective_complete": true}')
+
+        class _FakeNvidiaClient:
+            def __init__(self, fail_json_schema: bool):
+                self.fail_json_schema = fail_json_schema
+                self.seen: list = []
+
+            def bind(self, **kwargs):
+                self.seen.append(("bind_keys", tuple(sorted(kwargs.keys()))))
+                return _FakeBoundLLM(kwargs["response_format"], self.fail_json_schema, self.seen)
+
+            def with_structured_output(self, _schema):
+                raise AssertionError("with_structured_output (guided_json) must not be called for NVIDIA roles")
+
+        primary_client = _FakeNvidiaClient(fail_json_schema=False)
+        with patch("integration.therapy_runner._get_nvidia_client", return_value=primary_client):
+            out1 = call_structured("planner", TherapyDecision, "sys", "usr")
+        self.assertIsInstance(out1, TherapyDecision)
+        self.assertEqual(out1.selected_action, "validate")
+        invoked_rf_1 = [item[0]["type"] for item in primary_client.seen if isinstance(item[0], dict)]
+        self.assertEqual(invoked_rf_1, ["json_schema"])
+        self.assertFalse(any("guided_json" in keys for tag, keys in primary_client.seen if tag == "bind_keys"))
+
+        fallback_client = _FakeNvidiaClient(fail_json_schema=True)
+        with patch("integration.therapy_runner._get_nvidia_client", return_value=fallback_client):
+            out2 = call_structured("reasoning", TherapyDecision, "sys", "usr")
+        self.assertIsInstance(out2, TherapyDecision)
+        self.assertTrue(out2.objective_complete)
+        invoked_items_2 = [item for item in fallback_client.seen if isinstance(item[0], dict)]
+        self.assertEqual([rf["type"] for rf, _ in invoked_items_2], ["json_schema", "json_object"])
+        self.assertIn("Return ONLY one valid JSON object", invoked_items_2[1][1][1].content)
+        self.assertFalse(any("guided_json" in keys for tag, keys in fallback_client.seen if tag == "bind_keys"))
 
 
 class PipelineGateTests(unittest.TestCase):
