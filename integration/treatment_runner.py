@@ -279,21 +279,15 @@ def parse_evaluation_json(response_text: str) -> Optional[ClinicalPlanEvaluation
 
 
 def _extract_text(content: Any) -> str:
-    """Normalize plain strings or langchain-google-genai>=4 content block lists."""
+    """Normalize plain strings or content block lists without leaking thinking blocks."""
     if isinstance(content, list):
-        text_parts = [
-            str(b.get("text", ""))
-            for b in content
-            if isinstance(b, dict) and b.get("type") != "thinking"
-        ]
-        if text_parts and any(p.strip() for p in text_parts):
-            text = " ".join(text_parts)
-        else:
-            text = " ".join(
-                str(b.get("text", b.get("thinking", "")))
-                for b in content
-                if isinstance(b, dict)
-            )
+        text_parts: list[str] = []
+        for block in content:
+            if isinstance(block, str):
+                text_parts.append(block)
+            elif isinstance(block, dict) and block.get("type") != "thinking":
+                text_parts.append(str(block.get("text", "")))
+        text = " ".join(text_parts)
     else:
         text = str(content or "")
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
@@ -377,10 +371,6 @@ def load_guideline_retriever(
                     search_kwargs={"k": 5, "lambda_mult": 0.7},
                 )
 
-    if p_dir.exists() and any(p_dir.iterdir()):
-        stale_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
-        stale_store.delete_collection()
-
     documents = PyPDFDirectoryLoader(str(g_dir)).load()
     if not documents:
         raise ValueError(f"No readable PDF pages found in {g_dir}")
@@ -389,6 +379,10 @@ def load_guideline_retriever(
         chunk_size=1000,
         chunk_overlap=150,
     ).split_documents(documents)
+
+    if p_dir.exists() and any(p_dir.iterdir()):
+        stale_store = Chroma(persist_directory=str(p_dir), embedding_function=embeddings)
+        stale_store.delete_collection()
 
     p_dir.mkdir(parents=True, exist_ok=True)
     vector_store = Chroma.from_documents(
@@ -709,13 +703,12 @@ def _generate_plan_local(
         bnb_4bit_use_double_quant=True,
     )
 
-    tokenizer = AutoTokenizer.from_pretrained(generator_model, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(generator_model)
     model = AutoModelForCausalLM.from_pretrained(
         generator_model,
         quantization_config=bnb_config,
         device_map="auto",
         dtype=torch.bfloat16,
-        trust_remote_code=True,
     )
     try:
         messages = [

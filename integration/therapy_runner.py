@@ -106,21 +106,18 @@ def clean_text(value: Any, limit: Optional[int] = None) -> str:
 
 
 def strip_think(content: Any) -> str:
+    """Strip thinking blocks/tags without ever falling back to internal reasoning text."""
     if isinstance(content, list):
-        text_parts = [
-            str(b.get("text", ""))
-            for b in content
-            if isinstance(b, dict) and b.get("type") != "thinking"
-        ]
-        if text_parts and any(p.strip() for p in text_parts):
-            content = " ".join(text_parts)
-        else:
-            content = " ".join(
-                str(b.get("text", b.get("thinking", "")))
-                for b in content
-                if isinstance(b, dict)
-            )
-    s = re.sub(r"<think>.*?</think>", "", str(content or ""), flags=re.DOTALL)
+        text_parts: list[str] = []
+        for block in content:
+            if isinstance(block, str):
+                text_parts.append(block)
+            elif isinstance(block, dict) and block.get("type") != "thinking":
+                text_parts.append(str(block.get("text", "")))
+        raw = " ".join(text_parts)
+    else:
+        raw = str(content or "")
+    s = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL)
     return re.sub(r"^.*?</think>", "", s, flags=re.DOTALL).strip()
 
 
@@ -645,8 +642,9 @@ def build_delivery_guide(
     libs: Optional[dict[str, Any]] = None,
     nvidia_model: str = NVIDIA_MODEL,
 ) -> DeliveryGuide:
-    if guide_cache is not None and intervention_id in guide_cache:
-        return guide_cache[intervention_id]
+    cache_key = f"{intervention_id}::{objective_task.strip()}"
+    if guide_cache is not None and cache_key in guide_cache:
+        return guide_cache[cache_key]
 
     loaded = libs or load_therapy_libraries()
     rec = loaded["interventions_by_id"].get(intervention_id, {})
@@ -696,7 +694,7 @@ PATIENT BRIEF:
         )
 
     if guide_cache is not None:
-        guide_cache[intervention_id] = guide
+        guide_cache[cache_key] = guide
     return guide
 
 
@@ -816,6 +814,7 @@ class SessionStateTracker:
         self.nvidia_model: str = NVIDIA_MODEL
         self.libs: Optional[dict[str, Any]] = None
         self.guide_cache: Optional[dict[str, DeliveryGuide]] = None
+        self.effective_session_goal: Optional[str] = None
 
 
 def build_clinical_tools(tracker: SessionStateTracker) -> list[Any]:
@@ -877,7 +876,7 @@ def build_clinical_tools(tracker: SessionStateTracker) -> list[Any]:
             reason: The clinical reason explaining the patient redirection.
         """
         executed_replans = sum(
-            1 for c in tracker.replan_calls if not str(c.get("status", "")).startswith("REFUSED_")
+            1 for c in tracker.replan_calls if c.get("status") == "SUCCESS"
         )
         if executed_replans >= 2:
             msg = "Refused: Maximum replan limit reached (at most 2 calls allowed per session)."
@@ -893,8 +892,7 @@ def build_clinical_tools(tracker: SessionStateTracker) -> list[Any]:
         if not controller or not record:
             return "Replan unavailable: No active controller found."
 
-        tracker.completed_phases.add("EXPLAIN_AGENDA")
-        tracker.last_replan_turn = tracker.current_turn
+        effective_completed = set(tracker.completed_phases) | {"EXPLAIN_AGENDA"}
 
         try:
             libs = tracker.libs or load_therapy_libraries()
@@ -911,7 +909,7 @@ TREATMENT PLAN GOALS:
 {treatment_plan}
 
 COMPLETED PHASES (NEVER REPEAT):
-{sorted(tracker.completed_phases)}
+{sorted(effective_completed)}
 
 RETRIEVED CANDIDATES:
 {rendered_cards}
@@ -925,19 +923,42 @@ Rebuild ONLY the remaining session objectives around the patient's stated prefer
                 schema=DynamicSchema,
                 system_prompt=SESSION_PLANNER_SYSTEM_PROMPT,
                 user_prompt=replan_prompt,
-                validator=lambda p: validate_replan_rules(p, tracker.completed_phases),
+                validator=lambda p: validate_replan_rules(p, effective_completed),
                 nvidia_model=tracker.nvidia_model,
             )
-            if new_plan:
-                new_plan = repair_plan_deterministic(new_plan)
-                cur_idx = controller.obj_index
-                completed_objs = controller.objectives[: cur_idx + 1]
-                remaining_objs = [obj for obj in new_plan.session_objectives if obj.phase not in tracker.completed_phases]
-                if not remaining_objs:
-                    remaining_objs = new_plan.session_objectives
-                controller.objectives = completed_objs + remaining_objs
-                for obj in remaining_objs:
-                    if obj.phase == "WORK" and obj.intervention != "NONE" and obj.intervention not in controller.guides:
+            if not new_plan:
+                tracker.replan_calls.append({
+                    "turn": tracker.current_turn,
+                    "preference": stated_preference,
+                    "status": "ERROR: planner returned no valid plan",
+                })
+                return "Replan failed: planner could not build a valid replacement agenda. Continuing with current session plan."
+
+            new_plan = repair_plan_deterministic(new_plan)
+            cur_idx = controller.obj_index
+            completed_objs = controller.objectives[: cur_idx + 1]
+            # Keep validated WORK/CLOSING replacement objectives even if replanning during CLOSING
+            remaining_objs = [
+                obj
+                for obj in new_plan.session_objectives
+                if not (obj.phase in ("CHECK_IN", "EXPLAIN_AGENDA") and obj.phase in effective_completed)
+            ]
+            if not remaining_objs:
+                remaining_objs = new_plan.session_objectives
+
+            new_guides: dict[str, DeliveryGuide] = {}
+            for obj in remaining_objs:
+                if obj.phase == "WORK" and obj.intervention != "NONE":
+                    cache_key = f"{obj.intervention}::{obj.task.strip()}"
+                    same_task_existing = any(
+                        o.intervention == obj.intervention and o.task.strip() == obj.task.strip()
+                        for o in controller.objectives
+                    )
+                    if tracker.guide_cache is not None and cache_key in tracker.guide_cache:
+                        new_guides[obj.intervention] = tracker.guide_cache[cache_key]
+                    elif obj.intervention in controller.guides and same_task_existing:
+                        new_guides[obj.intervention] = controller.guides[obj.intervention]
+                    else:
                         g = build_delivery_guide(
                             obj.intervention,
                             obj.task,
@@ -947,20 +968,26 @@ Rebuild ONLY the remaining session objectives around the patient's stated prefer
                             nvidia_model=tracker.nvidia_model,
                         )
                         if g:
-                            controller.guides[obj.intervention] = g
-                tracker.replan_calls.append({
-                    "turn": tracker.current_turn,
-                    "preference": stated_preference,
-                    "reason": reason,
-                    "status": "SUCCESS",
-                })
-                return (
-                    f"Replan successful. New remaining goal: '{new_plan.session_goal}'. "
-                    f"Remaining phases rebuilt around '{stated_preference}'. Homework and summary kept at the end."
-                )
+                            new_guides[obj.intervention] = g
+
+            controller.guides.update(new_guides)
+            controller.objectives = completed_objs + remaining_objs
+            tracker.completed_phases.add("EXPLAIN_AGENDA")
+            tracker.last_replan_turn = tracker.current_turn
+            tracker.effective_session_goal = new_plan.session_goal
+            tracker.replan_calls.append({
+                "turn": tracker.current_turn,
+                "preference": stated_preference,
+                "reason": reason,
+                "status": "SUCCESS",
+            })
+            return (
+                f"Replan successful. New remaining goal: '{new_plan.session_goal}'. "
+                f"Remaining phases rebuilt around '{stated_preference}'. Homework and summary kept at the end."
+            )
         except Exception as exc:
             tracker.replan_calls.append({"turn": tracker.current_turn, "preference": stated_preference, "status": f"ERROR: {exc}"})
-        return f"Replan logged. Adapting focus to '{stated_preference}'."
+        return f"Replan failed ({stated_preference}); continuing with current session plan."
 
     return [
         breathing_exercise,
@@ -1090,7 +1117,11 @@ class ClinicalSessionController:
             else:
                 guide = self.active_intervention["guide"]
                 valid_steps = {s.step_number for s in guide.steps}
-                if decision.recommended_focus is not None and decision.recommended_focus in valid_steps:
+                if (
+                    self.active_intervention.get("status") == "ACTIVE"
+                    and decision.recommended_focus is not None
+                    and decision.recommended_focus in valid_steps
+                ):
                     self.active_intervention["step"] = decision.recommended_focus
 
         return decision
@@ -1561,7 +1592,10 @@ INTERVENTION PROTOCOL GUIDANCE:
         for t_attempt in range(max_therapist_retries + 1):
             try:
                 therapist_res = self.therapist_runtime.invoke({"messages": [HumanMessage(content=therapist_turn_input)]})
-                return strip_think(therapist_res["messages"][-1].content).strip()
+                reply = strip_think(therapist_res["messages"][-1].content).strip()
+                if not reply:
+                    raise ValueError("Therapist model returned empty patient-facing text.")
+                return reply
             except Exception as t_exc:
                 t_err_str = str(t_exc)
                 print(
@@ -1592,26 +1626,47 @@ INTERVENTION PROTOCOL GUIDANCE:
             raise RuntimeError("Therapy session has no remaining objectives.")
 
         patient_utterance = patient_text.strip()
-        self.controller.turns_in_obj += 1
+        prev_turns_in_obj = self.controller.turns_in_obj
+        prev_ctrl_turn = self.controller.current_turn
+        prev_tracker_turn = self.tracker.current_turn
+        prev_tracker_phase = self.tracker.current_phase
+        prev_dialogue_len = len(self.dialogue_history)
+        prev_active_intervention = copy.deepcopy(self.controller.active_intervention)
+        prev_events_len = len(self.controller.intervention_events)
+        prev_last_decision = self.controller.last_decision
+
         turn_no = len(self.controller.history_records) + 1
-        self.controller.current_turn = turn_no
-        self.tracker.current_turn = turn_no
-        self.tracker.current_phase = cur_obj.phase
+        try:
+            self.controller.turns_in_obj += 1
+            self.controller.current_turn = turn_no
+            self.tracker.current_turn = turn_no
+            self.tracker.current_phase = cur_obj.phase
 
-        self.dialogue_history.append({"role": "patient", "content": patient_utterance})
-        reasoning_prompt = self._build_reasoning_prompt(cur_obj, patient_utterance)
+            self.dialogue_history.append({"role": "patient", "content": patient_utterance})
+            reasoning_prompt = self._build_reasoning_prompt(cur_obj, patient_utterance)
 
-        decision = call_structured(
-            role="reasoning",
-            schema=TherapyDecision,
-            system_prompt=REASONING_SYSTEM_PROMPT,
-            user_prompt=reasoning_prompt,
-            fallback=TherapyDecision(selected_action="explore", goal=f"Work on {cur_obj.title}"),
-            nvidia_model=self.nvidia_model,
-        )
-        decision = self.controller.enforce_turn(decision, cur_obj)
+            decision = call_structured(
+                role="reasoning",
+                schema=TherapyDecision,
+                system_prompt=REASONING_SYSTEM_PROMPT,
+                user_prompt=reasoning_prompt,
+                fallback=TherapyDecision(selected_action="explore", goal=f"Work on {cur_obj.title}"),
+                nvidia_model=self.nvidia_model,
+            )
+            decision = self.controller.enforce_turn(decision, cur_obj)
 
-        therapist_reply = self._invoke_therapist(cur_obj, decision, patient_utterance)
+            therapist_reply = self._invoke_therapist(cur_obj, decision, patient_utterance)
+        except Exception:
+            self.controller.turns_in_obj = prev_turns_in_obj
+            self.controller.current_turn = prev_ctrl_turn
+            self.tracker.current_turn = prev_tracker_turn
+            self.tracker.current_phase = prev_tracker_phase
+            del self.dialogue_history[prev_dialogue_len:]
+            self.controller.active_intervention = prev_active_intervention
+            del self.controller.intervention_events[prev_events_len:]
+            self.controller.last_decision = prev_last_decision
+            raise
+
         self.dialogue_history.append({"role": "therapist", "content": therapist_reply})
         self.controller.history_records.append({
             "turn": turn_no,
@@ -1663,17 +1718,31 @@ REPORTED ASSESSMENT FINDINGS (READ-ONLY):
 COMPLETED SESSION TRANSCRIPT:
 {transcript_str}
 """
-        state_patch = call_structured(
+        raw_patch = call_structured(
             role="state_updater",
             schema=StatePatch,
             system_prompt=STATE_UPDATER_SYSTEM_PROMPT,
             user_prompt=patch_user_prompt,
-            fallback=StatePatch(),
+            fallback=None,
             nvidia_model=self.nvidia_model,
         )
+        if raw_patch is None:
+            state_patch_status = "failed"
+            state_patch = StatePatch()
+            print("[Stage 3] Warning: state_updater failed; session archived with state_patch_status='failed'.")
+        else:
+            state_patch_status = "ok"
+            state_patch = raw_patch
 
         updated_record = copy.deepcopy(self.record)
         updated_record["therapy_state"] = apply_state_patch(updated_record["therapy_state"], state_patch)
+
+        effective_goal = self.tracker.effective_session_goal or self.session_plan.session_goal
+        effective_plan = {
+            "session_goal": effective_goal,
+            "session_objectives": [o.model_dump() for o in self.controller.objectives],
+        }
+        initial_plan = self.session_plan.model_dump()
 
         delivered_interventions = list({r["intervention"] for r in records if r["intervention"] != "NONE"})
         assigned_homework = [h.task for h in state_patch.homework_updates if h.status == "assigned"]
@@ -1682,26 +1751,31 @@ COMPLETED SESSION TRANSCRIPT:
         ]
         session_entry = {
             "timestamp": time.time(),
-            "goal": self.session_plan.session_goal,
+            "goal": effective_goal,
             "delivered_interventions": delivered_interventions,
             "assigned_homework": assigned_homework,
             "next_session_topics": next_session_topics,
             "turn_count": len(records),
+            "state_patch_status": state_patch_status,
         }
         updated_record.setdefault("sessions", []).append(session_entry)
 
-        session_archive = {
+        session_archive: dict[str, Any] = {
             "run_id": updated_record.get("run_id"),
             "session_number": len(updated_record["sessions"]),
-            "session_plan": self.session_plan.model_dump(),
-            "intervention_guides": {k: v.model_dump() for k, v in self.intervention_guides.items()},
+            "session_plan": effective_plan,
+            "intervention_guides": {k: v.model_dump() for k, v in self.controller.guides.items()},
             "history": records,
             "events": self.controller.intervention_events,
             "state_patch": state_patch.model_dump(exclude_defaults=True),
+            "state_patch_status": state_patch_status,
         }
+        if effective_plan != initial_plan:
+            session_archive["initial_session_plan"] = initial_plan
 
         return {
             "record": updated_record,
             "state_patch": state_patch.model_dump(exclude_defaults=True),
+            "state_patch_status": state_patch_status,
             "session_archive": session_archive,
         }

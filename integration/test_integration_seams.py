@@ -20,7 +20,7 @@ from integration.patient_record import (
     load_record,
     save_record,
 )
-from integration.pipeline import check_clinical_gate
+from integration.pipeline import check_clinical_gate, check_treatment_gate, run_pipeline
 from integration.therapy_runner import (
     MODALITY_PATTERNS,
     ClinicalSessionController,
@@ -42,6 +42,7 @@ from integration.therapy_runner import (
     make_session_plan_schema,
     repair_plan_deterministic,
     retrieve_candidates,
+    strip_think,
     validate_plan_rules,
     validate_replan_rules,
 )
@@ -338,6 +339,10 @@ class TreatmentRunnerTests(unittest.TestCase):
         self.assertEqual(_extract_text("<think>internal</think>Final answer"), "Final answer")
         blocks = [{"type": "thinking", "thinking": "hidden"}, {"type": "text", "text": "Visible text"}]
         self.assertEqual(_extract_text(blocks), "Visible text")
+        self.assertEqual(_extract_text([{"type": "thinking", "thinking": "secret only"}]), "")
+        self.assertEqual(_extract_text(["Visible str", {"type": "thinking", "thinking": "hidden"}]), "Visible str")
+        self.assertEqual(strip_think([{"type": "thinking", "thinking": "secret only"}]), "")
+        self.assertEqual(strip_think(["Part 1", {"type": "text", "text": "Part 2"}]), "Part 1 Part 2")
 
         rec = create_record(name="Alex", age=30)
         rec["assessment_handoff"] = _sample_handoff()
@@ -663,6 +668,17 @@ class TherapyRunnerTests(unittest.TestCase):
         self.assertIn("PAUSED", pause_res)
         self.assertEqual(ctrl.active_intervention["status"], "PAUSED")  # type: ignore[index]
 
+        # Focus must remain frozen at step 1 while PAUSED
+        d_paused = TherapyDecision(
+            selected_action="validate",
+            goal="Calm patient",
+            intervention_id=cid,
+            recommended_focus=2,
+            objective_complete=False,
+        )
+        ctrl.enforce_turn(d_paused, work_obj)
+        self.assertEqual(ctrl.active_intervention["step"], 1)  # type: ignore[index]
+
         resume_res = tools["resume_intervention"].invoke({})
         self.assertIn("RESUMED", resume_res)
         self.assertEqual(ctrl.active_intervention["status"], "ACTIVE")  # type: ignore[index]
@@ -819,6 +835,151 @@ class TherapyRunnerTests(unittest.TestCase):
         self.assertIn("Return ONLY one valid JSON object", invoked_items_2[1][1][1].content)
         self.assertFalse(any("guided_json" in keys for tag, keys in fallback_client.seen if tag == "bind_keys"))
 
+    def test_submit_reply_rollback_and_failed_state_patch_status(self):
+        libs = load_therapy_libraries()
+        cid = libs["interventions_all"][0]["intervention_id"]
+        PlanSchema = make_session_plan_schema([cid])
+        plan = PlanSchema(
+            session_goal="Practice grounding.",
+            session_objectives=[
+                {"phase": "CHECK_IN", "title": "Mood", "task": "Check mood.", "criterion": "Shares", "intervention": "NONE"},
+                {"phase": "EXPLAIN_AGENDA", "title": "Agenda", "task": "Set focus.", "criterion": "Agrees", "intervention": "NONE"},
+                {"phase": "WORK", "title": "Work", "task": "Run exercise.", "criterion": "Tries", "intervention": cid},
+                {"phase": "CLOSING", "title": "Close", "task": "Wrap up.", "criterion": "Confirms", "intervention": "NONE"},
+            ],
+        )
+        guides = {
+            cid: DeliveryGuide(
+                structure="sequential",
+                steps=[InterventionStep(step_number=1, instruction="Step 1", done_when="Done 1")],
+                completion_condition="Complete.",
+            )
+        }
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        rec["treatment_plan"] = "Use CBT for depression."
+
+        sess = TherapySession(rec, libs=libs) if "libs" in TherapySession.__init__.__code__.co_varnames else TherapySession(rec)
+        sess.session_plan = plan
+        sess.controller = ClinicalSessionController(plan, guides)
+        sess.controller.obj_index = 2  # WORK objective
+        sess.tracker.active_controller = sess.controller
+        sess.therapist_runtime = object()
+
+        with (
+            patch("integration.therapy_runner.call_structured", return_value=TherapyDecision(selected_action="intervene", goal="Start", intervention_id=cid, recommended_focus=1)),
+            patch.object(sess, "_invoke_therapist", side_effect=RuntimeError("provider down")),
+        ):
+            with self.assertRaises(RuntimeError):
+                sess.submit_reply("I'm ready to try")
+
+        # Turn-owned mutations must roll back cleanly on failure
+        self.assertEqual(sess.controller.turns_in_obj, 0)
+        self.assertEqual(sess.controller.current_turn, 0)
+        self.assertEqual(sess.dialogue_history, [])
+        self.assertIsNone(sess.controller.active_intervention)
+        self.assertEqual(sess.controller.intervention_events, [])
+
+        # Record 1 valid turn, then simulate state_updater returning None
+        sess.controller.history_records.append({
+            "turn": 1,
+            "objective": "Work",
+            "patient": "I feel stuck.",
+            "therapist": "Let's look at one thought.",
+            "action": "explore",
+            "intervention": "NONE",
+        })
+        with patch("integration.therapy_runner.call_structured", return_value=None):
+            res = sess.finish()
+        self.assertEqual(res["state_patch_status"], "failed")
+        self.assertEqual(res["session_archive"]["state_patch_status"], "failed")
+        self.assertEqual(res["record"]["sessions"][0]["state_patch_status"], "failed")
+
+    def test_replan_atomicity_closing_work_preservation_and_effective_goal(self):
+        libs = load_therapy_libraries()
+        cid = libs["interventions_all"][0]["intervention_id"]
+        PlanSchema = make_session_plan_schema([cid])
+        initial_plan = PlanSchema(
+            session_goal="Original session goal",
+            session_objectives=[
+                {"phase": "CHECK_IN", "title": "Mood", "task": "Check mood.", "criterion": "Shares", "intervention": "NONE"},
+                {"phase": "EXPLAIN_AGENDA", "title": "Agenda", "task": "Set focus.", "criterion": "Agrees", "intervention": "NONE"},
+                {"phase": "WORK", "title": "Work", "task": "Old task.", "criterion": "Done", "intervention": cid},
+                {"phase": "CLOSING", "title": "Close", "task": "Wrap up.", "criterion": "Confirms", "intervention": "NONE"},
+            ],
+        )
+        guide_old = DeliveryGuide(
+            structure="sequential",
+            steps=[InterventionStep(step_number=1, instruction="Old step", done_when="Done")],
+            completion_condition="Done",
+        )
+        ctrl = ClinicalSessionController(initial_plan, {cid: guide_old})
+        rec = create_record(name="Alex", age=30)
+        rec["assessment_handoff"] = _sample_handoff()
+        rec["treatment_plan"] = "Use CBT for depression."
+
+        tracker = SessionStateTracker()
+        tracker.active_controller = ctrl
+        tracker.active_case = rec
+        tracker.libs = libs
+        tracker.guide_cache = {}
+        tools = {t.name: t for t in build_clinical_tools(tracker)}
+
+        # Failure during CHECK_IN must NOT mark EXPLAIN_AGENDA complete or trigger cooldown
+        tracker.completed_phases = {"CHECK_IN"}
+        tracker.current_turn = 1
+        with patch("integration.therapy_runner.call_structured", return_value=None):
+            fail_msg = tools["replan_session"].invoke({"stated_preference": "sleep", "reason": "redirect"})
+        self.assertIn("Replan failed", fail_msg)
+        self.assertNotIn("EXPLAIN_AGENDA", tracker.completed_phases)
+        self.assertEqual(tracker.last_replan_turn, -10)
+
+        # Success during CLOSING must keep newly validated WORK objective + update effective_session_goal
+        tracker.completed_phases = {"CHECK_IN", "EXPLAIN_AGENDA", "WORK"}
+        ctrl.obj_index = 3  # CLOSING
+        tracker.current_turn = 4
+        replacement = PlanSchema(
+            session_goal="Pivot to urgent work stressor",
+            session_objectives=[
+                {"phase": "WORK", "title": "Address stressor", "task": "New task.", "criterion": "Plans step", "intervention": cid},
+                {"phase": "CLOSING", "title": "Wrap up", "task": "Confirm plan.", "criterion": "Confirms", "intervention": "NONE"},
+            ],
+        )
+        new_guide = DeliveryGuide(
+            structure="flexible",
+            steps=[InterventionStep(step_number=1, instruction="New step", done_when="New done")],
+            completion_condition="New done",
+        )
+        with (
+            patch("integration.therapy_runner.call_structured", return_value=replacement),
+            patch("integration.therapy_runner.build_delivery_guide", return_value=new_guide) as mock_guide,
+        ):
+            ok_msg = tools["replan_session"].invoke({"stated_preference": "work stressor", "reason": "redirect"})
+
+        self.assertIn("Replan successful", ok_msg)
+        self.assertEqual(mock_guide.call_count, 1)
+        self.assertEqual(tracker.effective_session_goal, "Pivot to urgent work stressor")
+        self.assertIn("WORK", [o.phase for o in ctrl.objectives[4:]])
+        self.assertEqual(ctrl.guides[cid].steps[0].instruction, "New step")
+
+        sess = TherapySession(rec)
+        sess.session_plan = initial_plan
+        sess.controller = ctrl
+        sess.tracker = tracker
+        ctrl.history_records.append({
+            "turn": 1,
+            "objective": "Close",
+            "patient": "Ok",
+            "therapist": "Great",
+            "action": "summarize",
+            "intervention": "NONE",
+        })
+        with patch("integration.therapy_runner.call_structured", return_value=StatePatch()):
+            fin = sess.finish()
+        self.assertEqual(fin["session_archive"]["session_plan"]["session_goal"], "Pivot to urgent work stressor")
+        self.assertEqual(fin["session_archive"]["initial_session_plan"]["session_goal"], "Original session goal")
+        self.assertEqual(fin["record"]["sessions"][0]["goal"], "Pivot to urgent work stressor")
+
 
 class PipelineGateTests(unittest.TestCase):
     def test_clinical_gate_conditions(self):
@@ -840,6 +1001,40 @@ class PipelineGateTests(unittest.TestCase):
         declined = copy.deepcopy(clean)
         declined["next_step_preference"]["status"] = "declined"
         self.assertEqual(len(check_clinical_gate(declined)), 1)
+
+    def test_treatment_safety_gate_and_resume_gates(self):
+        self.assertEqual(check_treatment_gate({"treatment_audit": {"critical_safety_violation": False}}), [])
+        self.assertEqual(len(check_treatment_gate({"treatment_audit": {"critical_safety_violation": True}})), 1)
+        self.assertEqual(
+            check_treatment_gate({"treatment_audit": {"critical_safety_violation": True}, "treatment_review_approved": True}),
+            [],
+        )
+
+        with tempfile.TemporaryDirectory() as tmp:
+            # 1. Resuming paused Stage 1 gate must still block Stage 2 when user declines
+            r1_dir = Path(tmp) / "run_clinical_gate"
+            rec1 = create_record(name="Alex", age=30, run_id="run_clinical_gate")
+            handoff_nd = _sample_handoff()
+            handoff_nd["assessment"]["primary_label"] = "NO_DISORDER"
+            rec1["assessment_handoff"] = handoff_nd
+            save_record(r1_dir / "patient_record.json", rec1)
+
+            with (
+                patch("integration.pipeline.run_treatment_stage", side_effect=AssertionError("Should not run treatment")),
+                patch("integration.pipeline.run_therapy_stage", side_effect=AssertionError("Should not run therapy")),
+            ):
+                run_pipeline(resume_dir=r1_dir, force=False, input_fn=lambda _: "n", output_fn=lambda _: None)
+
+            # 2. Resuming into Therapy with critical_safety_violation=True must block Stage 3 unless approved
+            r2_dir = Path(tmp) / "run_treatment_gate"
+            rec2 = create_record(name="Alex", age=30, run_id="run_treatment_gate")
+            rec2["assessment_handoff"] = _sample_handoff()
+            rec2["treatment_plan"] = "Flagged draft"
+            rec2["treatment_audit"] = {"critical_safety_violation": True}
+            save_record(r2_dir / "patient_record.json", rec2)
+
+            with patch("integration.pipeline.run_therapy_stage", side_effect=AssertionError("Should not start therapy")):
+                run_pipeline(resume_dir=r2_dir, force=False, input_fn=lambda _: "n", output_fn=lambda _: None)
 
 
 if __name__ == "__main__":

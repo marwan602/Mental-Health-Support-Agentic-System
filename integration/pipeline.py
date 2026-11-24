@@ -59,6 +59,21 @@ def check_clinical_gate(handoff: dict[str, Any]) -> list[str]:
     return reasons
 
 
+def check_treatment_gate(record: dict[str, Any]) -> list[str]:
+    """Return caution reasons if Stage 2's plan was flagged and lacks recorded approval."""
+    audit = record.get("treatment_audit")
+    if (
+        isinstance(audit, dict)
+        and audit.get("critical_safety_violation")
+        and not record.get("treatment_review_approved")
+    ):
+        return [
+            "Stage 2 Clinical Auditor flagged critical_safety_violation=True; "
+            "clinician review is required before starting Therapy."
+        ]
+    return []
+
+
 def ensure_api_keys(*, need_nvidia: bool, need_google: bool) -> None:
     """Verify required API keys (prompting securely in interactive terminals if missing)."""
     if need_google and not os.environ.get("GOOGLE_API_KEY") and os.environ.get("GEMINI_API_KEY"):
@@ -171,21 +186,21 @@ def run_treatment_stage(
 
     _write_text(run_dir / "02_treatment_plan.txt", result["treatment_plan"])
     _write_text(run_dir / "02_guideline_context.txt", result["guideline_context"])
-    if result.get("audit") is not None or result.get("audit_raw") is not None:
-        _write_json(
-            run_dir / "02_treatment_audit.json",
-            {
-                "backend": result["backend"],
-                "generator_model": result["generator_model"],
-                "judge_model": result["judge_model"],
-                "audit": result["audit"],
-                "audit_raw": result["audit_raw"],
-            },
-        )
+    audit_payload: dict[str, Any] = {
+        "backend": result["backend"],
+        "generator_model": result["generator_model"],
+        "judge_model": result["judge_model"],
+        "audit": result["audit"],
+        "audit_raw": result["audit_raw"],
+    }
+    if not run_judge:
+        audit_payload["skipped"] = True
+    _write_json(run_dir / "02_treatment_audit.json", audit_payload)
 
     record["treatment_input"] = treatment_input
     record["treatment_plan"] = result["treatment_plan"]
     record["treatment_audit"] = result["audit"]
+    record["treatment_review_approved"] = False
     save_record(record_path, record)
 
     output_fn("\n--- GENERATED TREATMENT PLAN ---")
@@ -237,7 +252,16 @@ def run_therapy_stage(
             output_fn("Please enter a non-empty reply (or type 'quit' to end).")
             continue
 
-        turn_res = session.submit_reply(reply)
+        try:
+            turn_res = session.submit_reply(reply)
+        except Exception as exc:
+            if session.controller and session.controller.history_records:
+                output_fn(
+                    f"\n[Stage 3] Provider error ({type(exc).__name__}: {str(exc)[:160]}). "
+                    "Saving completed turns..."
+                )
+                break
+            raise
         output_fn(f"\nTherapist: {turn_res['text']}")
         state = turn_res["state"]
 
@@ -340,18 +364,17 @@ def run_pipeline(
         record = run_assessment_stage(run_dir, record, record_path, input_fn=input_fn, output_fn=output_fn)
         if not record.get("assessment_handoff"):
             return run_dir, record
-        if "treatment" in stages_to_run:
-            reasons = check_clinical_gate(record["assessment_handoff"])
-            if reasons and not force:
-                output_fn("\n[Clinical Gate Notice]")
-                for r in reasons:
-                    output_fn(f"  - {r}")
-                answer = input_fn("Continue to Treatment Planning anyway? [y/N]: ").strip().lower()
-                if answer not in ("y", "yes"):
-                    output_fn("Pipeline paused after Stage 1. Use --resume to continue later.")
-                    return run_dir, record
 
     if "treatment" in stages_to_run:
+        reasons = check_clinical_gate(record.get("assessment_handoff") or {})
+        if reasons and not force:
+            output_fn("\n[Clinical Gate Notice]")
+            for r in reasons:
+                output_fn(f"  - {r}")
+            answer = input_fn("Continue to Treatment Planning anyway? [y/N]: ").strip().lower()
+            if answer not in ("y", "yes"):
+                output_fn("Pipeline paused before Treatment Planning. Use --resume to continue later.")
+                return run_dir, record
         record = run_treatment_stage(
             run_dir,
             record,
@@ -364,6 +387,17 @@ def run_pipeline(
         )
 
     if "therapy" in stages_to_run:
+        t_reasons = check_treatment_gate(record)
+        if t_reasons and not force:
+            output_fn("\n[Treatment Safety Gate Notice]")
+            for r in t_reasons:
+                output_fn(f"  - {r}")
+            answer = input_fn("Continue to Therapy anyway? [y/N]: ").strip().lower()
+            if answer not in ("y", "yes"):
+                output_fn("Pipeline paused before Therapy. Review 02_treatment_plan.txt and use --resume when approved.")
+                return run_dir, record
+            record["treatment_review_approved"] = True
+            save_record(record_path, record)
         record = run_therapy_stage(
             run_dir,
             record,
